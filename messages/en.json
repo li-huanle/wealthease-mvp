@@ -66,6 +66,39 @@
         "chartTitle": "Growth Over Time"
       },
       "saved": "Calculation saved to history"
+    },
+    "retirement": {
+      "title": "Retirement Planning Calculator",
+      "subtitle": "Plan your retirement savings and ensure a comfortable future",
+      "form": {
+        "title": "Retirement Planning",
+        "currentAge": "Current Age",
+        "retirementAge": "Retirement Age",
+        "currentSavings": "Current Savings ($)",
+        "monthlySavings": "Monthly Savings ($)",
+        "annualReturn": "Expected Annual Return (%)",
+        "retirementMonthlyExpense": "Monthly Expenses in Retirement ($)",
+        "lifeExpectancy": "Life Expectancy",
+        "calculate": "Calculate",
+        "reset": "Reset"
+      },
+      "results": {
+        "retirementSavings": "Retirement Savings",
+        "monthlyRetirementIncome": "Monthly Retirement Income",
+        "yearsInRetirement": "Years in Retirement",
+        "years": "years",
+        "age": "Age",
+        "savingsOverTime": "Savings Over Time",
+        "chartTitle": "Retirement Savings Projection",
+        "sufficient": "You're on Track! 🎉",
+        "insufficient": "Needs Attention ⚠️",
+        "sufficientMessage": "Your current savings plan should provide enough for a comfortable retirement.",
+        "insufficientMessage": "Your current savings may not be sufficient for your retirement goals. Consider increasing your monthly savings.",
+        "recommendation": "Recommendation",
+        "recommendationMessage": "To meet your retirement goals, you should increase your monthly savings:",
+        "recommendedMonthlySavings": "Recommended Monthly Savings",
+        "increase": "Increase"
+      }
     }
   },
   "footer": {

@@ -66,6 +66,39 @@
         "chartTitle": "增长曲线"
       },
       "saved": "计算已保存到历史记录"
+    },
+    "retirement": {
+      "title": "退休规划计算器",
+      "subtitle": "规划您的退休储蓄，确保舒适的未来生活",
+      "form": {
+        "title": "退休规划",
+        "currentAge": "当前年龄",
+        "retirementAge": "退休年龄",
+        "currentSavings": "当前储蓄 (¥)",
+        "monthlySavings": "每月储蓄 (¥)",
+        "annualReturn": "预期年化收益率 (%)",
+        "retirementMonthlyExpense": "退休后月支出 (¥)",
+        "lifeExpectancy": "预期寿命",
+        "calculate": "计算",
+        "reset": "重置"
+      },
+      "results": {
+        "retirementSavings": "退休时储蓄",
+        "monthlyRetirementIncome": "退休后月收入",
+        "yearsInRetirement": "退休生活年数",
+        "years": "年",
+        "age": "年龄",
+        "savingsOverTime": "储蓄随时间变化",
+        "chartTitle": "退休储蓄预测",
+        "sufficient": "您的计划很充分！🎉",
+        "insufficient": "需要调整 ⚠️",
+        "sufficientMessage": "您当前的储蓄计划应该能够提供舒适的退休生活。",
+        "insufficientMessage": "您当前的储蓄可能不足以支撑退休目标。建议增加每月储蓄金额。",
+        "recommendation": "建议",
+        "recommendationMessage": "为了达成您的退休目标，建议增加每月储蓄至：",
+        "recommendedMonthlySavings": "建议月储蓄",
+        "increase": "需增加"
+      }
     }
   },
   "footer": {

@@ -21,11 +21,11 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
       available: true,
     },
     {
-      icon: <PiggyBank className="w-10 h-10 text-gray-400" />,
+      icon: <PiggyBank className="w-10 h-10 text-primary-600" />,
       title: 'Retirement Calculator',
       description: 'Plan for a comfortable retirement',
       href: `/${locale}/calculators/retirement`,
-      available: false,
+      available: true,
     },
     {
       icon: <Calculator className="w-10 h-10 text-gray-400" />,
