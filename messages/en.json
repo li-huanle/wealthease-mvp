@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "home": "Home",
+    "calculators": "Calculators",
+    "blog": "Blog",
+    "about": "About"
+  },
+  "home": {
+    "hero": {
+      "title": "Smart Financial Tools for Your Wealth Journey",
+      "subtitle": "Free calculators and resources to help you make informed financial decisions",
+      "cta": "Explore Tools"
+    },
+    "features": {
+      "title": "Why Choose WealthEase?",
+      "accurate": {
+        "title": "Accurate Calculations",
+        "description": "Professional-grade financial formulas trusted by experts"
+      },
+      "easy": {
+        "title": "Easy to Use",
+        "description": "Clean interface designed for everyone, no financial background needed"
+      },
+      "free": {
+        "title": "100% Free",
+        "description": "All tools are completely free with no hidden fees"
+      }
+    },
+    "tools": {
+      "title": "Popular Financial Calculators",
+      "compound": "Compound Interest Calculator",
+      "compoundDesc": "Calculate how your investments grow over time with compound interest",
+      "retirement": "Retirement Planning Calculator",
+      "retirementDesc": "Plan your retirement savings and estimate future needs",
+      "loan": "Loan Payment Calculator",
+      "loanDesc": "Calculate monthly payments and total interest for loans",
+      "roi": "ROI Calculator",
+      "roiDesc": "Measure return on investment for your financial decisions",
+      "budget": "Budget Planner",
+      "budgetDesc": "Create and track your monthly budget effectively"
+    },
+    "newsletter": {
+      "title": "Stay Updated",
+      "subtitle": "Get financial tips and new tools delivered to your inbox",
+      "placeholder": "Enter your email",
+      "subscribe": "Subscribe"
+    }
+  },
+  "calculator": {
+    "compound": {
+      "title": "Compound Interest Calculator",
+      "subtitle": "Calculate how your money grows with compound interest over time",
+      "form": {
+        "initialInvestment": "Initial Investment",
+        "monthlyContribution": "Monthly Contribution",
+        "annualReturn": "Annual Interest Rate (%)",
+        "years": "Investment Period (Years)",
+        "calculate": "Calculate",
+        "reset": "Reset"
+      },
+      "results": {
+        "title": "Your Investment Results",
+        "finalBalance": "Final Balance",
+        "totalContributions": "Total Contributions",
+        "totalInterest": "Total Interest Earned",
+        "chartTitle": "Growth Over Time"
+      },
+      "saved": "Calculation saved to history"
+    }
+  },
+  "footer": {
+    "tagline": "Smart tools for smarter financial decisions",
+    "company": "Company",
+    "about": "About Us",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "resources": "Resources",
+    "blog": "Blog",
+    "tools": "All Tools",
+    "guides": "Financial Guides",
+    "copyright": "© 2025 WealthEase. All rights reserved."
+  }
+}

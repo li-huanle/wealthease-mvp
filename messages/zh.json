@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "home": "首页",
+    "calculators": "计算器",
+    "blog": "博客",
+    "about": "关于"
+  },
+  "home": {
+    "hero": {
+      "title": "智能理财工具，助力财富增长",
+      "subtitle": "免费的计算器和资源，帮助您做出明智的财务决策",
+      "cta": "探索工具"
+    },
+    "features": {
+      "title": "为什么选择 WealthEase？",
+      "accurate": {
+        "title": "精准计算",
+        "description": "专业级金融公式，值得信赖"
+      },
+      "easy": {
+        "title": "简单易用",
+        "description": "简洁界面，无需金融背景也能轻松使用"
+      },
+      "free": {
+        "title": "完全免费",
+        "description": "所有工具完全免费，没有隐藏费用"
+      }
+    },
+    "tools": {
+      "title": "热门理财计算器",
+      "compound": "复利计算器",
+      "compoundDesc": "计算投资随时间的复利增长",
+      "retirement": "退休规划计算器",
+      "retirementDesc": "规划退休储蓄，估算未来需求",
+      "loan": "贷款计算器",
+      "loanDesc": "计算贷款的月供和总利息",
+      "roi": "投资回报率计算器",
+      "roiDesc": "衡量投资决策的回报率",
+      "budget": "预算规划器",
+      "budgetDesc": "创建并跟踪每月预算"
+    },
+    "newsletter": {
+      "title": "获取最新资讯",
+      "subtitle": "理财技巧和新工具直达您的邮箱",
+      "placeholder": "输入您的邮箱",
+      "subscribe": "订阅"
+    }
+  },
+  "calculator": {
+    "compound": {
+      "title": "复利计算器",
+      "subtitle": "计算您的投资如何随复利增长",
+      "form": {
+        "initialInvestment": "初始投资",
+        "monthlyContribution": "每月投入",
+        "annualReturn": "年化收益率 (%)",
+        "years": "投资年限",
+        "calculate": "计算",
+        "reset": "重置"
+      },
+      "results": {
+        "title": "您的投资结果",
+        "finalBalance": "最终金额",
+        "totalContributions": "总投入",
+        "totalInterest": "总收益",
+        "chartTitle": "增长曲线"
+      },
+      "saved": "计算已保存到历史记录"
+    }
+  },
+  "footer": {
+    "tagline": "智能工具，助力明智财务决策",
+    "company": "公司",
+    "about": "关于我们",
+    "contact": "联系方式",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "resources": "资源",
+    "blog": "博客",
+    "tools": "所有工具",
+    "guides": "理财指南",
+    "copyright": "© 2025 WealthEase. 版权所有"
+  }
+}
