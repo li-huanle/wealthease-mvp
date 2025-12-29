@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import { TrendingUp, PiggyBank, Calculator, Home, BarChart3 } from 'lucide-react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 import { setRequestLocale } from 'next-intl/server';
 
 export const metadata = {
@@ -51,9 +49,7 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
   ];
 
   return (
-    <>
-      <Navigation />
-      <main className="py-12 bg-gray-50 min-h-screen">
+    <div className="py-12 bg-gray-50 min-h-screen">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -94,8 +90,6 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
             ))}
           </div>
         </div>
-      </main>
-      <Footer />
-    </>
+    </div>
   );
 }

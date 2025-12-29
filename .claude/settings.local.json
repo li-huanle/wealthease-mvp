@@ -21,7 +21,8 @@
       "Bash(find:*)",
       "WebFetch(domain:wealthease-mvp.vercel.app)",
       "Bash(for calc in mortgage roi retirement)",
-      "Bash(do echo -n \"$calc: \" curl -I \"https://wealthease-mvp.vercel.app/zh/calculators/$calc\")"
+      "Bash(do echo -n \"$calc: \" curl -I \"https://wealthease-mvp.vercel.app/zh/calculators/$calc\")",
+      "Bash(grep:*)"
     ]
   }
 }
