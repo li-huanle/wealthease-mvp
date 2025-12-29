@@ -28,7 +28,7 @@ export default function Navigation() {
             <Link href={`/${locale}`} className="text-gray-700 hover:text-primary-600 transition-colors">
               {t('home')}
             </Link>
-            <Link href={`/${locale}/calculators/compound-interest`} className="text-gray-700 hover:text-primary-600 transition-colors">
+            <Link href={`/${locale}/calculators`} className="text-gray-700 hover:text-primary-600 transition-colors">
               {t('calculators')}
             </Link>
             <Link href={`/${locale}/blog`} className="text-gray-700 hover:text-primary-600 transition-colors">

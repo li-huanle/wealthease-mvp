@@ -10,27 +10,27 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const tools = [
     {
       key: 'compound',
-      href: '/calculators/compound-interest',
+      href: `/${locale}/calculators/compound-interest`,
       icon: '💰'
     },
     {
       key: 'retirement',
-      href: '/calculators/retirement',
+      href: `/${locale}/calculators/retirement`,
       icon: '🏖️'
     },
     {
       key: 'loan',
-      href: '/calculators/loan',
+      href: `/${locale}/calculators/loan`,
       icon: '🏠'
     },
     {
       key: 'roi',
-      href: '/calculators/roi',
+      href: `/${locale}/calculators/roi`,
       icon: '📈'
     },
     {
       key: 'budget',
-      href: '/calculators/budget',
+      href: `/${locale}/calculators/budget`,
       icon: '💳'
     }
   ];
@@ -45,7 +45,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
           {t('hero.subtitle')}
         </p>
-        <Link href="/calculators/compound-interest" className="btn-primary inline-block">
+        <Link href={`/${locale}/calculators`} className="btn-primary inline-block">
           {t('hero.cta')}
         </Link>
       </section>
