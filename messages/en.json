@@ -99,6 +99,104 @@
         "recommendedMonthlySavings": "Recommended Monthly Savings",
         "increase": "Increase"
       }
+    },
+    "loan": {
+      "title": "Loan Calculator",
+      "subtitle": "Calculate monthly payments and total interest for any loan",
+      "form": {
+        "title": "Loan Details",
+        "loanAmount": "Loan Amount ($)",
+        "interestRate": "Annual Interest Rate (%)",
+        "loanTerm": "Loan Term (Years)",
+        "calculate": "Calculate",
+        "reset": "Reset"
+      },
+      "results": {
+        "monthlyPayment": "Monthly Payment",
+        "totalPayment": "Total Payment",
+        "totalInterest": "Total Interest",
+        "summary": "Loan Summary",
+        "loanAmount": "Loan Amount",
+        "interestRate": "Interest Rate",
+        "loanTerm": "Loan Term",
+        "years": "years",
+        "totalPayments": "Total Payments",
+        "months": "months",
+        "remainingBalance": "Remaining Balance",
+        "chartTitle": "Loan Balance Over Time",
+        "month": "Month"
+      }
+    },
+    "mortgage": {
+      "title": "Mortgage Calculator",
+      "subtitle": "Estimate your monthly mortgage payment including taxes and insurance",
+      "form": {
+        "title": "Mortgage Details",
+        "homePrice": "Home Price ($)",
+        "downPaymentPercent": "Down Payment (%)",
+        "interestRate": "Annual Interest Rate (%)",
+        "loanTerm": "Loan Term (Years)",
+        "propertyTax": "Annual Property Tax ($)",
+        "homeInsurance": "Annual Home Insurance ($)",
+        "hoaFees": "Monthly HOA Fees ($)",
+        "calculate": "Calculate",
+        "reset": "Reset"
+      },
+      "results": {
+        "totalMonthlyPayment": "Total Monthly Payment",
+        "loanAmount": "Loan Amount",
+        "downPayment": "Down Payment",
+        "totalInterest": "Total Interest",
+        "monthlyBreakdown": "Monthly Payment Breakdown",
+        "principalInterest": "Principal & Interest",
+        "propertyTax": "Property Tax",
+        "homeInsurance": "Home Insurance",
+        "pmi": "PMI",
+        "hoaFees": "HOA Fees",
+        "paymentDistribution": "Payment Distribution",
+        "balanceOverTime": "Loan Balance Over Time",
+        "loanBalance": "Loan Balance",
+        "year": "Year",
+        "pmiNotice": "PMI Notice",
+        "pmiNoticeMessage": "Your down payment is less than 20%, so PMI (Private Mortgage Insurance) is included. PMI can be removed once you reach 20% equity in your home."
+      }
+    },
+    "roi": {
+      "title": "ROI Calculator",
+      "subtitle": "Calculate return on investment and annualized returns",
+      "form": {
+        "title": "Investment Details",
+        "initialInvestment": "Initial Investment ($)",
+        "finalValue": "Final Value ($)",
+        "additionalInvestment": "Additional Investment ($)",
+        "years": "Years",
+        "months": "Months",
+        "calculate": "Calculate",
+        "reset": "Reset"
+      },
+      "results": {
+        "roi": "Return on Investment (ROI)",
+        "annualizedROI": "Annualized ROI (CAGR)",
+        "totalReturn": "Total Return",
+        "period": "Investment Period",
+        "years": "years",
+        "summary": "Investment Summary",
+        "totalInvested": "Total Invested",
+        "currentValue": "Current Value",
+        "netProfit": "Net Profit/Loss",
+        "profit": "Profitable Investment",
+        "loss": "Investment Loss",
+        "profitMessage": "Your investment has generated a positive return.",
+        "lossMessage": "Your investment has resulted in a loss. Review your strategy.",
+        "chartTitle": "Investment Comparison",
+        "invested": "Total Invested",
+        "amount": "Amount ($)",
+        "understanding": "Understanding Your Results",
+        "roiLabel": "ROI",
+        "roiExplanation": "Shows your total percentage gain or loss over the entire investment period.",
+        "annualizedLabel": "Annualized ROI (CAGR)",
+        "annualizedExplanation": "Shows the average yearly return, allowing you to compare investments of different durations."
+      }
     }
   },
   "footer": {

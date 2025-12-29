@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { TrendingUp, PiggyBank, Calculator, Home, CreditCard } from 'lucide-react';
+import { TrendingUp, PiggyBank, Calculator, Home, BarChart3 } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { setRequestLocale } from 'next-intl/server';
@@ -28,25 +28,25 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
       available: true,
     },
     {
-      icon: <Calculator className="w-10 h-10 text-gray-400" />,
+      icon: <Calculator className="w-10 h-10 text-primary-600" />,
       title: 'Loan Calculator',
       description: 'Calculate loan payments and total interest',
       href: `/${locale}/calculators/loan`,
-      available: false,
+      available: true,
     },
     {
-      icon: <Home className="w-10 h-10 text-gray-400" />,
+      icon: <Home className="w-10 h-10 text-primary-600" />,
       title: 'Mortgage Calculator',
       description: 'Estimate your monthly mortgage payments',
       href: `/${locale}/calculators/mortgage`,
-      available: false,
+      available: true,
     },
     {
-      icon: <CreditCard className="w-10 h-10 text-gray-400" />,
-      title: 'Budget Calculator',
-      description: 'Track your income and expenses',
-      href: `/${locale}/calculators/budget`,
-      available: false,
+      icon: <BarChart3 className="w-10 h-10 text-primary-600" />,
+      title: 'ROI Calculator',
+      description: 'Calculate return on investment and annualized returns',
+      href: `/${locale}/calculators/roi`,
+      available: true,
     },
   ];
 

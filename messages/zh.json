@@ -99,6 +99,104 @@
         "recommendedMonthlySavings": "建议月储蓄",
         "increase": "需增加"
       }
+    },
+    "loan": {
+      "title": "贷款计算器",
+      "subtitle": "计算任何贷款的月供和总利息",
+      "form": {
+        "title": "贷款详情",
+        "loanAmount": "贷款金额 (¥)",
+        "interestRate": "年利率 (%)",
+        "loanTerm": "贷款期限（年）",
+        "calculate": "计算",
+        "reset": "重置"
+      },
+      "results": {
+        "monthlyPayment": "月供",
+        "totalPayment": "总还款",
+        "totalInterest": "总利息",
+        "summary": "贷款摘要",
+        "loanAmount": "贷款金额",
+        "interestRate": "利率",
+        "loanTerm": "贷款期限",
+        "years": "年",
+        "totalPayments": "总还款次数",
+        "months": "月",
+        "remainingBalance": "剩余本金",
+        "chartTitle": "贷款余额随时间变化",
+        "month": "月份"
+      }
+    },
+    "mortgage": {
+      "title": "房贷计算器",
+      "subtitle": "估算月供，包括税费和保险",
+      "form": {
+        "title": "房贷详情",
+        "homePrice": "房价 (¥)",
+        "downPaymentPercent": "首付比例 (%)",
+        "interestRate": "年利率 (%)",
+        "loanTerm": "贷款期限（年）",
+        "propertyTax": "年度房产税 (¥)",
+        "homeInsurance": "年度房屋保险 (¥)",
+        "hoaFees": "月度物业费 (¥)",
+        "calculate": "计算",
+        "reset": "重置"
+      },
+      "results": {
+        "totalMonthlyPayment": "总月供",
+        "loanAmount": "贷款金额",
+        "downPayment": "首付",
+        "totalInterest": "总利息",
+        "monthlyBreakdown": "月供明细",
+        "principalInterest": "本金和利息",
+        "propertyTax": "房产税",
+        "homeInsurance": "房屋保险",
+        "pmi": "贷款保险",
+        "hoaFees": "物业费",
+        "paymentDistribution": "月供分布",
+        "balanceOverTime": "贷款余额随时间变化",
+        "loanBalance": "贷款余额",
+        "year": "年份",
+        "pmiNotice": "贷款保险说明",
+        "pmiNoticeMessage": "您的首付低于20%，因此包含PMI（私人抵押贷款保险）。当房屋净值达到20%时，可以申请移除PMI。"
+      }
+    },
+    "roi": {
+      "title": "投资回报率计算器",
+      "subtitle": "计算投资回报率和年化收益率",
+      "form": {
+        "title": "投资详情",
+        "initialInvestment": "初始投资 (¥)",
+        "finalValue": "最终价值 (¥)",
+        "additionalInvestment": "追加投资 (¥)",
+        "years": "年",
+        "months": "月",
+        "calculate": "计算",
+        "reset": "重置"
+      },
+      "results": {
+        "roi": "投资回报率 (ROI)",
+        "annualizedROI": "年化回报率 (CAGR)",
+        "totalReturn": "总收益",
+        "period": "投资期限",
+        "years": "年",
+        "summary": "投资摘要",
+        "totalInvested": "总投入",
+        "currentValue": "当前价值",
+        "netProfit": "净利润/亏损",
+        "profit": "盈利投资",
+        "loss": "投资亏损",
+        "profitMessage": "您的投资产生了正收益。",
+        "lossMessage": "您的投资出现亏损。建议重新审视投资策略。",
+        "chartTitle": "投资对比",
+        "invested": "总投入",
+        "amount": "金额 (¥)",
+        "understanding": "理解您的结果",
+        "roiLabel": "投资回报率",
+        "roiExplanation": "显示整个投资期间的总收益或亏损百分比。",
+        "annualizedLabel": "年化回报率 (CAGR)",
+        "annualizedExplanation": "显示平均年收益率，便于比较不同投资期限的投资产品。"
+      }
     }
   },
   "footer": {
