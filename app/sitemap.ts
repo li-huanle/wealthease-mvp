@@ -1,0 +1,68 @@
+import { MetadataRoute } from 'next';
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://wealthease-mvp.vercel.app';
+  const locales = ['en', 'zh'];
+
+  const calculators = [
+    'compound-interest',
+    'retirement',
+    'loan',
+    'mortgage',
+    'roi',
+  ];
+
+  const routes: MetadataRoute.Sitemap = [];
+
+  // Add home pages for each locale
+  locales.forEach((locale) => {
+    routes.push({
+      url: `${baseUrl}/${locale}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 1.0,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/en`,
+          zh: `${baseUrl}/zh`,
+        },
+      },
+    });
+  });
+
+  // Add calculator list pages for each locale
+  locales.forEach((locale) => {
+    routes.push({
+      url: `${baseUrl}/${locale}/calculators`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/en/calculators`,
+          zh: `${baseUrl}/zh/calculators`,
+        },
+      },
+    });
+  });
+
+  // Add individual calculator pages for each locale
+  calculators.forEach((calc) => {
+    locales.forEach((locale) => {
+      routes.push({
+        url: `${baseUrl}/${locale}/calculators/${calc}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.8,
+        alternates: {
+          languages: {
+            en: `${baseUrl}/en/calculators/${calc}`,
+            zh: `${baseUrl}/zh/calculators/${calc}`,
+          },
+        },
+      });
+    });
+  });
+
+  return routes;
+}

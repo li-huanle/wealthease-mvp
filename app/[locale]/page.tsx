@@ -1,6 +1,52 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import Link from 'next/link';
 import {Calculator, TrendingUp, Shield} from 'lucide-react';
+import { Metadata } from 'next';
+import { OrganizationSchema, WebApplicationSchema } from '@/components/StructuredData';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+
+  const metadata = {
+    en: {
+      title: 'WealthEase - Free Financial Calculators & Tools for Smart Money Management',
+      description: 'Free professional financial calculators including compound interest, retirement planning, loan, mortgage, and ROI calculators. Make informed financial decisions with accurate calculations and expert guidance.',
+      keywords: 'financial calculator, compound interest calculator, retirement calculator, loan calculator, mortgage calculator, ROI calculator, investment calculator, free financial tools',
+    },
+    zh: {
+      title: 'WealthEase - 免费理财计算器与智能财务管理工具',
+      description: '提供专业的免费理财计算器，包括复利计算器、退休规划计算器、贷款计算器、房贷计算器和投资回报率计算器。精准计算，助您做出明智的财务决策。',
+      keywords: '理财计算器, 复利计算器, 退休规划计算器, 贷款计算器, 房贷计算器, 投资回报率计算器, 财务工具, 免费计算器',
+    },
+  };
+
+  const lang = locale as 'en' | 'zh';
+
+  return {
+    title: metadata[lang].title,
+    description: metadata[lang].description,
+    keywords: metadata[lang].keywords,
+    openGraph: {
+      title: metadata[lang].title,
+      description: metadata[lang].description,
+      type: 'website',
+      locale: locale,
+      siteName: 'WealthEase',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: metadata[lang].title,
+      description: metadata[lang].description,
+    },
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        'en': '/en',
+        'zh': '/zh',
+      },
+    },
+  };
+}
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -36,6 +82,31 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   ];
 
   return (
+    <>
+      <OrganizationSchema
+        data={{
+          name: 'WealthEase',
+          url: 'https://wealthease-mvp.vercel.app',
+          logo: 'https://wealthease-mvp.vercel.app/logo.png',
+          description: locale === 'zh'
+            ? '提供专业的免费理财计算器，包括复利计算器、退休规划计算器、贷款计算器、房贷计算器和投资回报率计算器。'
+            : 'Professional free financial calculators including compound interest, retirement planning, loan, mortgage, and ROI calculators.',
+        }}
+      />
+      <WebApplicationSchema
+        data={{
+          name: 'WealthEase Financial Calculators',
+          url: 'https://wealthease-mvp.vercel.app',
+          description: locale === 'zh'
+            ? '免费的专业理财计算器套件，助您做出明智的财务决策'
+            : 'Free professional financial calculator suite to help you make smart money decisions',
+          applicationCategory: 'FinanceApplication',
+          offers: {
+            price: '0',
+            priceCurrency: 'USD',
+          },
+        }}
+      />
     <div className="bg-gradient-to-b from-primary-50 to-white">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 text-center">
@@ -118,5 +189,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
     </div>
+    </>
   );
 }
