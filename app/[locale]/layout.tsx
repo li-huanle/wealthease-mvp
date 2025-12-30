@@ -1,6 +1,7 @@
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
+import {Analytics} from '@vercel/analytics/next';
 import '../globals.css';
 import {Inter} from 'next/font/google';
 import Navigation from '@/components/Navigation';
@@ -45,6 +46,7 @@ export default async function LocaleLayout({
           </main>
           <Footer />
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );
