@@ -5,6 +5,7 @@ import '../globals.css';
 import {Inter} from 'next/font/google';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,12 +29,15 @@ export default async function LocaleLayout({
 
   const messages = await getMessages();
 
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
     <html lang={locale}>
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
+        {gaId && <GoogleAnalytics gaId={gaId} />}
         <NextIntlClientProvider messages={messages}>
           <Navigation />
           <main className="min-h-screen">
