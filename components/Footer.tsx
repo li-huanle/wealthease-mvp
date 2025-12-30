@@ -20,45 +20,45 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">{t('company')}</h4>
             <ul className="space-y-2">
               <li>
-                <Link href={`/${locale}/about`} className="hover:text-white transition-colors">
+                <span className="text-gray-500 cursor-not-allowed">
                   {t('about')}
-                </Link>
+                </span>
               </li>
               <li>
-                <Link href={`/${locale}/contact`} className="hover:text-white transition-colors">
+                <span className="text-gray-500 cursor-not-allowed">
                   {t('contact')}
-                </Link>
+                </span>
               </li>
               <li>
-                <Link href={`/${locale}/privacy`} className="hover:text-white transition-colors">
+                <span className="text-gray-500 cursor-not-allowed">
                   {t('privacy')}
-                </Link>
+                </span>
               </li>
               <li>
-                <Link href={`/${locale}/terms`} className="hover:text-white transition-colors">
+                <span className="text-gray-500 cursor-not-allowed">
                   {t('terms')}
-                </Link>
+                </span>
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-white font-semibold mb-4">{t('resources')}</h4>
             <ul className="space-y-2">
               <li>
-                <Link href={`/${locale}/blog`} className="hover:text-white transition-colors">
+                <span className="text-gray-500 cursor-not-allowed">
                   {t('blog')}
-                </Link>
+                </span>
               </li>
               <li>
-                <Link href={`/${locale}/calculators/compound-interest`} className="hover:text-white transition-colors">
+                <Link href={`/${locale}/calculators`} className="hover:text-white transition-colors">
                   {t('tools')}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/guides`} className="hover:text-white transition-colors">
+                <span className="text-gray-500 cursor-not-allowed">
                   {t('guides')}
-                </Link>
+                </span>
               </li>
             </ul>
           </div>
