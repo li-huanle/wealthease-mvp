@@ -211,5 +211,42 @@
     "tools": "所有工具",
     "guides": "理财指南",
     "copyright": "© 2025 WealthEase. 版权所有"
+  },
+  "about": {
+    "title": "关于 WealthEase",
+    "subtitle": "通过智能工具赋能财务决策",
+    "mission": {
+      "title": "我们的使命",
+      "description": "我们相信每个人都应该获得专业级的理财工具。WealthEase 提供免费、精准、易用的计算器，帮助您做出明智的财务决策，实现财富目标。"
+    },
+    "story": {
+      "title": "我们的故事",
+      "description": "WealthEase 成立于 2025 年，由一群金融专家和软件工程师创立，他们看到了对可访问的财务规划工具的需求。我们已经帮助成千上万的用户规划退休、计算投资，并做出更明智的财务决策。"
+    },
+    "values": {
+      "title": "我们的价值观",
+      "free": {
+        "title": "永久免费",
+        "description": "我们所有的工具都是 100% 免费，没有隐藏费用或高级版本。"
+      },
+      "accurate": {
+        "title": "精准可靠",
+        "description": "我们使用专业人士信赖的行业标准金融公式。"
+      },
+      "private": {
+        "title": "隐私优先",
+        "description": "您的计算结果保持私密。我们不存储或共享您的财务数据。"
+      },
+      "simple": {
+        "title": "简单易用",
+        "description": "无需金融学位。我们的工具为每个人设计。"
+      }
+    },
+    "stats": {
+      "users": "服务用户",
+      "calculations": "完成计算",
+      "tools": "免费工具",
+      "satisfaction": "用户满意度"
+    }
   }
 }

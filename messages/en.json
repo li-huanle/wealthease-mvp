@@ -211,5 +211,42 @@
     "tools": "All Tools",
     "guides": "Financial Guides",
     "copyright": "© 2025 WealthEase. All rights reserved."
+  },
+  "about": {
+    "title": "About WealthEase",
+    "subtitle": "Empowering financial decisions through smart tools",
+    "mission": {
+      "title": "Our Mission",
+      "description": "We believe everyone deserves access to professional-grade financial tools. WealthEase provides free, accurate, and easy-to-use calculators to help you make informed financial decisions and achieve your wealth goals."
+    },
+    "story": {
+      "title": "Our Story",
+      "description": "Founded in 2025, WealthEase was created by a team of financial experts and software engineers who saw the need for accessible financial planning tools. We've helped thousands of users plan their retirement, calculate investments, and make smarter financial decisions."
+    },
+    "values": {
+      "title": "Our Values",
+      "free": {
+        "title": "Always Free",
+        "description": "All our tools are 100% free with no hidden costs or premium tiers."
+      },
+      "accurate": {
+        "title": "Accurate & Reliable",
+        "description": "We use industry-standard financial formulas trusted by professionals."
+      },
+      "private": {
+        "title": "Privacy First",
+        "description": "Your calculations stay private. We don't store or share your financial data."
+      },
+      "simple": {
+        "title": "Simple to Use",
+        "description": "No financial degree required. Our tools are designed for everyone."
+      }
+    },
+    "stats": {
+      "users": "Users Served",
+      "calculations": "Calculations Made",
+      "tools": "Free Tools",
+      "satisfaction": "User Satisfaction"
+    }
   }
 }

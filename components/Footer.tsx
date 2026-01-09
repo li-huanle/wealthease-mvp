@@ -20,9 +20,9 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">{t('company')}</h4>
             <ul className="space-y-2">
               <li>
-                <span className="text-gray-500 cursor-not-allowed">
+                <Link href={`/${locale}/about`} className="hover:text-white transition-colors">
                   {t('about')}
-                </span>
+                </Link>
               </li>
               <li>
                 <span className="text-gray-500 cursor-not-allowed">
@@ -46,9 +46,9 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">{t('resources')}</h4>
             <ul className="space-y-2">
               <li>
-                <span className="text-gray-500 cursor-not-allowed">
+                <Link href={`/${locale}/blog`} className="hover:text-white transition-colors">
                   {t('blog')}
-                </span>
+                </Link>
               </li>
               <li>
                 <Link href={`/${locale}/calculators`} className="hover:text-white transition-colors">
