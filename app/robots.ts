@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/private/'],
       },
     ],
-    sitemap: 'https://wealthease-mvp.vercel.app/sitemap.xml',
+    sitemap: 'https://www.wealthease.top/sitemap.xml',
   };
 }

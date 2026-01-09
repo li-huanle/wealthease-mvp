@@ -25,6 +25,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
   };
 
+  const baseUrl = 'https://www.wealthease.top';
+
   return {
     title: metadata[lang].title,
     description: metadata[lang].description,
@@ -41,10 +43,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: metadata[lang].description,
     },
     alternates: {
-      canonical: `https://wealthease-mvp.vercel.app/${locale}/blog`,
+      canonical: `${baseUrl}/${locale}/blog`,
       languages: {
-        en: 'https://wealthease-mvp.vercel.app/en/blog',
-        zh: 'https://wealthease-mvp.vercel.app/zh/blog',
+        en: `${baseUrl}/en/blog`,
+        zh: `${baseUrl}/zh/blog`,
       },
     },
   };

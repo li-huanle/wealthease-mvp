@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 
   const lang = locale as 'en' | 'zh';
+  const baseUrl = 'https://www.wealthease.top';
 
   return {
     title: metadata[lang].title,
@@ -38,10 +39,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: metadata[lang].description,
     },
     alternates: {
-      canonical: `/${locale}/calculators`,
+      canonical: `${baseUrl}/${locale}/calculators`,
       languages: {
-        'en': '/en/calculators',
-        'zh': '/zh/calculators',
+        'en': `${baseUrl}/en/calculators`,
+        'zh': `${baseUrl}/zh/calculators`,
       },
     },
   };
