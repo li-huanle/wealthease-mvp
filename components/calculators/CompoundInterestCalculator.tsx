@@ -40,7 +40,8 @@ interface CalculationResult {
 
 export default function CompoundInterestCalculator() {
   const t = useTranslations('calculator.compound');
-  
+  const currency = useTranslations('common.currency');
+
   const [initialInvestment, setInitialInvestment] = useState<string>('10000');
   const [monthlyContribution, setMonthlyContribution] = useState<string>('500');
   const [annualReturn, setAnnualReturn] = useState<string>('7');
@@ -106,9 +107,9 @@ export default function CompoundInterestCalculator() {
   };
 
   const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat(currency('locale'), {
       style: 'currency',
-      currency: 'USD',
+      currency: currency('code'),
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(value);

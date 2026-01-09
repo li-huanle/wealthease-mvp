@@ -47,6 +47,7 @@ interface Results {
 
 export default function RetirementCalculator() {
   const t = useTranslations('calculator.retirement');
+  const currency = useTranslations('common.currency');
 
   const [formData, setFormData] = useState<FormData>({
     currentAge: 30,
@@ -167,9 +168,9 @@ export default function RetirementCalculator() {
   };
 
   const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat(currency('locale'), {
       style: 'currency',
-      currency: 'USD',
+      currency: currency('code'),
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(value);

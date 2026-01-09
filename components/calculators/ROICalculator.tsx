@@ -41,6 +41,7 @@ interface Results {
 
 export default function ROICalculator() {
   const t = useTranslations('calculator.roi');
+  const currency = useTranslations('common.currency');
 
   const [formData, setFormData] = useState<FormData>({
     initialInvestment: 10000,
@@ -129,9 +130,9 @@ export default function ROICalculator() {
   };
 
   const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat(currency('locale'), {
       style: 'currency',
-      currency: 'USD',
+      currency: currency('code'),
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(value);

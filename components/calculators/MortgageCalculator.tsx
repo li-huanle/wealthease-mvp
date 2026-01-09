@@ -53,6 +53,7 @@ interface Results {
 
 export default function MortgageCalculator() {
   const t = useTranslations('calculator.mortgage');
+  const currency = useTranslations('common.currency');
 
   const [formData, setFormData] = useState<FormData>({
     homePrice: 400000,
@@ -221,9 +222,9 @@ export default function MortgageCalculator() {
   };
 
   const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat(currency('locale'), {
       style: 'currency',
-      currency: 'USD',
+      currency: currency('code'),
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(value);

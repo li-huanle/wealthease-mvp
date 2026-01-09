@@ -46,6 +46,7 @@ interface Results {
 
 export default function LoanCalculator() {
   const t = useTranslations('calculator.loan');
+  const currency = useTranslations('common.currency');
 
   const [formData, setFormData] = useState<FormData>({
     loanAmount: 200000,
@@ -140,9 +141,9 @@ export default function LoanCalculator() {
   };
 
   const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat(currency('locale'), {
       style: 'currency',
-      currency: 'USD',
+      currency: currency('code'),
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(value);
