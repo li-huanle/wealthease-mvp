@@ -319,7 +319,7 @@ export default async function BlogPostPage({ params }: Props) {
               name: 'WealthEase',
               logo: {
                 '@type': 'ImageObject',
-                url: 'https://wealthease-mvp.vercel.app/logo.png',
+                url: 'https://www.wealthease.top/logo.png',
               },
             },
             articleSection: post.category,
