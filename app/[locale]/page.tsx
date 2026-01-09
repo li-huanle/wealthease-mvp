@@ -3,6 +3,7 @@ import Link from 'next/link';
 import {Calculator, TrendingUp, Shield} from 'lucide-react';
 import { Metadata } from 'next';
 import { OrganizationSchema, WebApplicationSchema } from '@/components/StructuredData';
+import NewsletterForm from '@/components/NewsletterForm';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -173,20 +174,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       {/* Newsletter Section */}
       <section className="container mx-auto px-4 py-16">
-        <div className="card max-w-2xl mx-auto text-center bg-gradient-to-r from-primary-500 to-primary-600 text-white">
-          <h2 className="text-3xl font-bold mb-4">{t('newsletter.title')}</h2>
-          <p className="mb-6 text-primary-100">{t('newsletter.subtitle')}</p>
-          <form className="flex gap-4 max-w-md mx-auto">
-            <input 
-              type="email" 
-              placeholder={t('newsletter.placeholder')}
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:ring-2 focus:ring-white outline-none"
-            />
-            <button type="submit" className="bg-white text-primary-600 font-semibold px-6 py-3 rounded-lg hover:bg-primary-50 transition-colors">
-              {t('newsletter.subscribe')}
-            </button>
-          </form>
-        </div>
+        <NewsletterForm />
       </section>
     </div>
     </>

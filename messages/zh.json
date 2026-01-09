@@ -43,7 +43,11 @@
       "title": "获取最新资讯",
       "subtitle": "理财技巧和新工具直达您的邮箱",
       "placeholder": "输入您的邮箱",
-      "subscribe": "订阅"
+      "subscribe": "订阅",
+      "subscribing": "订阅中...",
+      "success": "订阅成功！感谢您的加入。",
+      "error": "出现问题，请稍后再试。",
+      "errorInvalid": "请输入有效的邮箱地址。"
     }
   },
   "calculator": {

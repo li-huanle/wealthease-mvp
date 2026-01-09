@@ -43,7 +43,11 @@
       "title": "Stay Updated",
       "subtitle": "Get financial tips and new tools delivered to your inbox",
       "placeholder": "Enter your email",
-      "subscribe": "Subscribe"
+      "subscribe": "Subscribe",
+      "subscribing": "Subscribing...",
+      "success": "Successfully subscribed! Thank you for joining us.",
+      "error": "Something went wrong. Please try again later.",
+      "errorInvalid": "Please enter a valid email address."
     }
   },
   "calculator": {
