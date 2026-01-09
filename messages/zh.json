@@ -248,5 +248,32 @@
       "tools": "免费工具",
       "satisfaction": "用户满意度"
     }
+  },
+  "calculatorsPage": {
+    "title": "理财计算器",
+    "subtitle": "专业级工具，帮助您做出更明智的财务决策",
+    "tools": {
+      "compound": {
+        "title": "复利计算器",
+        "description": "计算投资随时间的复利增长"
+      },
+      "retirement": {
+        "title": "退休规划计算器",
+        "description": "规划舒适的退休生活"
+      },
+      "loan": {
+        "title": "贷款计算器",
+        "description": "计算贷款月供和总利息"
+      },
+      "mortgage": {
+        "title": "房贷计算器",
+        "description": "估算月度房贷支付"
+      },
+      "roi": {
+        "title": "投资回报率计算器",
+        "description": "计算投资回报率和年化收益"
+      }
+    },
+    "comingSoon": "即将推出"
   }
 }

@@ -248,5 +248,32 @@
       "tools": "Free Tools",
       "satisfaction": "User Satisfaction"
     }
+  },
+  "calculatorsPage": {
+    "title": "Financial Calculators",
+    "subtitle": "Professional-grade tools to help you make smarter financial decisions",
+    "tools": {
+      "compound": {
+        "title": "Compound Interest Calculator",
+        "description": "See how your investments grow with compound interest over time"
+      },
+      "retirement": {
+        "title": "Retirement Calculator",
+        "description": "Plan for a comfortable retirement"
+      },
+      "loan": {
+        "title": "Loan Calculator",
+        "description": "Calculate loan payments and total interest"
+      },
+      "mortgage": {
+        "title": "Mortgage Calculator",
+        "description": "Estimate your monthly mortgage payments"
+      },
+      "roi": {
+        "title": "ROI Calculator",
+        "description": "Calculate return on investment and annualized returns"
+      }
+    },
+    "comingSoon": "Coming soon"
   }
 }
