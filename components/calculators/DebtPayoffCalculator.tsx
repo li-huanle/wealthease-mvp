@@ -17,7 +17,7 @@ import {
 import CalculatorInput from '@/components/calculators/CalculatorInput';
 import ResultCard from '@/components/calculators/ResultCard';
 import ExpertTips from '@/components/calculators/ExpertTips';
-import {Shield, Calculator, TrendingUp, Lightbulb} from 'lucide-react';
+import {Calculator} from 'lucide-react';
 
 ChartJS.register(
   CategoryScale,
@@ -281,13 +281,6 @@ export default function DebtPayoffCalculator() {
         {/* Calculator Form */}
         <div className="lg:col-span-2">
           <div className="bg-white rounded-2xl shadow-card p-6 md:p-8 border border-gray-100">
-            <div className="flex items-center mb-6">
-              <div className="bg-primary-100 rounded-lg p-2 mr-3">
-                <Shield className="w-6 h-6 text-primary-600" />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-900">{t('form.title')}</h2>
-            </div>
-
             {/* Debt List */}
             <div className="space-y-4 mb-6">
               {debts.map((debt, index) => (
@@ -366,7 +359,7 @@ export default function DebtPayoffCalculator() {
                 value={extraPayment}
                 onChange={setExtraPayment}
                 min={0}
-                max={10000}
+                max={100000}
                 step={50}
                 prefix={currency('symbol')}
                 showSlider

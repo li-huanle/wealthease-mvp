@@ -15,7 +15,7 @@ import {
 import CalculatorInput from '@/components/calculators/CalculatorInput';
 import ResultCard from '@/components/calculators/ResultCard';
 import ExpertTips from '@/components/calculators/ExpertTips';
-import {TrendingUp, Calculator, Shield, Lightbulb} from 'lucide-react';
+import {Calculator} from 'lucide-react';
 
 ChartJS.register(
   CategoryScale,
@@ -186,13 +186,6 @@ export default function ROICalculator() {
         {/* Calculator Form */}
         <div className="lg:col-span-2">
           <div className="bg-white rounded-2xl shadow-card p-6 md:p-8 border border-gray-100">
-            <div className="flex items-center mb-6">
-              <div className="bg-primary-100 rounded-lg p-2 mr-3">
-                <TrendingUp className="w-6 h-6 text-primary-600" />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-900">{t('form.title')}</h2>
-            </div>
-
             <div className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <CalculatorInput
@@ -200,7 +193,7 @@ export default function ROICalculator() {
                   value={initialInvestment}
                   onChange={setInitialInvestment}
                   min={0}
-                  max={10000000}
+                  max={100000000}
                   step={100}
                   prefix={currency('symbol')}
                   showSlider
@@ -214,7 +207,7 @@ export default function ROICalculator() {
                   value={finalValue}
                   onChange={setFinalValue}
                   min={0}
-                  max={10000000}
+                  max={100000000}
                   step={100}
                   prefix={currency('symbol')}
                   showSlider
@@ -229,7 +222,7 @@ export default function ROICalculator() {
                 value={additionalInvestment}
                 onChange={setAdditionalInvestment}
                 min={0}
-                max={1000000}
+                max={50000000}
                 step={100}
                 prefix={currency('symbol')}
                 showSlider

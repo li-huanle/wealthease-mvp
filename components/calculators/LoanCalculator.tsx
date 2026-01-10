@@ -17,7 +17,7 @@ import {
 import CalculatorInput from '@/components/calculators/CalculatorInput';
 import ResultCard from '@/components/calculators/ResultCard';
 import ExpertTips from '@/components/calculators/ExpertTips';
-import {Calculator, TrendingUp, Shield, Lightbulb} from 'lucide-react';
+import {Calculator} from 'lucide-react';
 
 ChartJS.register(
   CategoryScale,
@@ -197,20 +197,13 @@ export default function LoanCalculator() {
         {/* Calculator Form */}
         <div className="lg:col-span-2">
           <div className="bg-white rounded-2xl shadow-card p-6 md:p-8 border border-gray-100">
-            <div className="flex items-center mb-6">
-              <div className="bg-primary-100 rounded-lg p-2 mr-3">
-                <Calculator className="w-6 h-6 text-primary-600" />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-900">{t('form.title')}</h2>
-            </div>
-
             <div className="space-y-6">
               <CalculatorInput
                 label={t('form.loanAmount')}
                 value={loanAmount}
                 onChange={setLoanAmount}
                 min={0}
-                max={10000000}
+                max={50000000}
                 step={1000}
                 prefix={currency('symbol')}
                 showSlider
