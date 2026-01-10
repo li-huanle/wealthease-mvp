@@ -37,6 +37,7 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <head>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="google-site-verification" content="sIjeN1dgXA_DE426qez6fNmHyDss1b8F0iAMiXXamY8" />
       </head>
       <body className={inter.className}>
         {gaId && <GoogleAnalytics gaId={gaId} />}
