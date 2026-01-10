@@ -1,6 +1,6 @@
 'use client';
 
-import { Slider } from '@/components/ui/Slider';
+import Slider from '@/components/ui/Slider';
 import { Info } from 'lucide-react';
 
 interface CalculatorInputProps {
