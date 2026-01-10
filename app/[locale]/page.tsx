@@ -68,6 +68,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       icon: '🏖️'
     },
     {
+      key: 'savingsGoal',
+      href: `/${locale}/calculators/savings-goal`,
+      icon: '🎯'
+    },
+    {
+      key: 'debtPayoff',
+      href: `/${locale}/calculators/debt-payoff`,
+      icon: '💳'
+    },
+    {
       key: 'loan',
       href: `/${locale}/calculators/loan`,
       icon: '🏠'
@@ -76,11 +86,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       key: 'roi',
       href: `/${locale}/calculators/roi`,
       icon: '📈'
-    },
-    {
-      key: 'budget',
-      href: `/${locale}/calculators/budget`,
-      icon: '💳'
     }
   ];
 
