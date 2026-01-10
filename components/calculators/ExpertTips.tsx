@@ -26,13 +26,21 @@ export default function ExpertTips({ tips, locale }: ExpertTipsProps) {
       title: 'Expert Tips',
       subtitle: 'Professional guidance for better financial decisions',
     },
+    'en-US': {
+      title: 'Expert Tips',
+      subtitle: 'Professional guidance for better financial decisions',
+    },
     zh: {
+      title: '专家建议',
+      subtitle: '专业指导，助您做出更明智的财务决策',
+    },
+    'zh-CN': {
       title: '专家建议',
       subtitle: '专业指导，助您做出更明智的财务决策',
     },
   };
 
-  const t = labels[locale as 'en' | 'zh'];
+  const t = labels[locale as keyof typeof labels] || labels.en;
 
   return (
     <div className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6 md:p-8 shadow-card">
