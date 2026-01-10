@@ -30,9 +30,9 @@ export default function Footer() {
                 </span>
               </li>
               <li>
-                <span className="text-gray-500 cursor-not-allowed">
+                <Link href={`/${locale}/privacy`} className="hover:text-white transition-colors">
                   {t('privacy')}
-                </span>
+                </Link>
               </li>
               <li>
                 <span className="text-gray-500 cursor-not-allowed">
