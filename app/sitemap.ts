@@ -7,9 +7,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const calculators = [
     'compound-interest',
     'retirement',
+    'savings-goal',
     'loan',
     'mortgage',
     'roi',
+    'debt-payoff',
   ];
 
   const routes: MetadataRoute.Sitemap = [];
