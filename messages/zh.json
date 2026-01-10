@@ -59,6 +59,7 @@
       "title": "复利计算器",
       "subtitle": "计算您的投资如何随复利增长",
       "form": {
+        "title": "投资详情",
         "initialInvestment": "初始投资",
         "monthlyContribution": "每月投入",
         "annualReturn": "年化收益率 (%)",

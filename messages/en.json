@@ -59,6 +59,7 @@
       "title": "Compound Interest Calculator",
       "subtitle": "Calculate how your money grows with compound interest over time",
       "form": {
+        "title": "Investment Details",
         "initialInvestment": "Initial Investment",
         "monthlyContribution": "Monthly Contribution",
         "annualReturn": "Annual Interest Rate (%)",
