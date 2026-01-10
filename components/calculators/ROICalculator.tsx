@@ -171,16 +171,6 @@ export default function ROICalculator() {
 
   return (
     <div className="space-y-8">
-      {/* Header */}
-      <div className="text-center mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-          {t('title')}
-        </h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          {t('subtitle')}
-        </p>
-      </div>
-
       {/* Main Content Grid */}
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Calculator Form */}
