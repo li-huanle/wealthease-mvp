@@ -2,9 +2,8 @@ import {useTranslations} from 'next-intl';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {CheckCircle, Users, Calculator, TrendingUp, Award} from 'lucide-react';
 import Link from 'next/link';
-import { Metadata } from 'next';
 
-export async function generateMetadata({params}: {params: Promise<{locale: string>}>) {
+export async function generateMetadata({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;
   const t = await getTranslations({locale, namespace: 'about'});
 
@@ -14,7 +13,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
   };
 }
 
-export default async function AboutPage({params}: {params: Promise<{locale: string>}>) {
+export default async function AboutPage({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;
   setRequestLocale(locale);
   const t = useTranslations('about');
