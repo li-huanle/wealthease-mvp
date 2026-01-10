@@ -1,8 +1,10 @@
 import {useTranslations} from 'next-intl';
-import {getTranslations} from 'next-intl/server';
+import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {CheckCircle, Users, Calculator, TrendingUp, Award} from 'lucide-react';
+import Link from 'next/link';
+import { Metadata } from 'next';
 
-export async function generateMetadata({params}: {params: Promise<{locale: string}>}) {
+export async function generateMetadata({params}: {params: Promise<{locale: string>}>) {
   const {locale} = await params;
   const t = await getTranslations({locale, namespace: 'about'});
 
@@ -12,7 +14,9 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
   };
 }
 
-export default function AboutPage() {
+export default async function AboutPage({params}: {params: Promise<{locale: string>}>) {
+  const {locale} = await params;
+  setRequestLocale(locale);
   const t = useTranslations('about');
 
   const values = [
@@ -48,7 +52,7 @@ export default function AboutPage() {
       label: t('stats.calculations'),
     },
     {
-      number: '5',
+      number: '7',
       label: t('stats.tools'),
     },
     {
@@ -151,17 +155,17 @@ export default function AboutPage() {
       <section className="py-20 px-4 bg-gradient-to-r from-primary-600 to-primary-700">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            {t('mission.title')}
+            {t('cta.title')}
           </h2>
           <p className="text-xl text-primary-100 mb-8">
-            {t('subtitle')}
+            {t('cta.subtitle')}
           </p>
-          <a
-            href="/zh/calculators"
+          <Link
+            href={`/${locale}/calculators`}
             className="inline-block bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
           >
-            {t('values.free.title')}
-          </a>
+            {t('cta.button')}
+          </Link>
         </div>
       </section>
     </div>

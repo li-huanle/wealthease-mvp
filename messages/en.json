@@ -327,6 +327,11 @@
       "calculations": "Calculations Made",
       "tools": "Free Tools",
       "satisfaction": "User Satisfaction"
+    },
+    "cta": {
+      "title": "Start Your Financial Journey Today",
+      "subtitle": "Join thousands of users making smarter financial decisions",
+      "button": "Explore Calculators"
     }
   },
   "calculatorsPage": {

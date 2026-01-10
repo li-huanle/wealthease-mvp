@@ -327,6 +327,11 @@
       "calculations": "完成计算",
       "tools": "免费工具",
       "satisfaction": "用户满意度"
+    },
+    "cta": {
+      "title": "立即开始您的理财之旅",
+      "subtitle": "加入成千上万明智理财的用户行列",
+      "button": "探索计算器"
     }
   },
   "calculatorsPage": {
