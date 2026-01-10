@@ -287,6 +287,7 @@
     "contact": "Contact",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
+    "disclaimer": "Disclaimer",
     "resources": "Resources",
     "blog": "Blog",
     "tools": "All Tools",
@@ -407,6 +408,195 @@
       "symbol": "$",
       "code": "USD",
       "locale": "en-US"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have questions or feedback? We'd love to hear from you. Our team is here to help.",
+    "email": {
+      "title": "Email Us",
+      "description": "For general inquiries, support, or feedback, send us an email and we'll get back to you."
+    },
+    "response": {
+      "title": "Response Time",
+      "description": "We typically respond to all inquiries within 24-48 business hours. For urgent matters, please mention it in your email subject."
+    },
+    "location": {
+      "title": "Global Service",
+      "description": "WealthEase is an online service available worldwide. We serve users in multiple languages to help them make better financial decisions."
+    },
+    "helpTopics": {
+      "title": "How Can We Help?",
+      "calculator": {
+        "title": "Calculator Questions",
+        "description": "Need help understanding our calculators or have questions about results? We're happy to explain."
+      },
+      "feedback": {
+        "title": "Feedback & Suggestions",
+        "description": "Have ideas for new features or improvements? We value your input and continuously improve based on user feedback."
+      },
+      "privacy": {
+        "title": "Privacy Concerns",
+        "description": "Questions about how we handle your data? Review our Privacy Policy or reach out directly."
+      }
+    },
+    "note": {
+      "title": "Important:",
+      "content": "We provide financial calculators for educational purposes only. We cannot provide personalized financial, investment, tax, or legal advice. Please consult a qualified professional for such guidance."
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "calculators": "All Calculators",
+      "blog": "Financial Blog",
+      "privacy": "Privacy Policy",
+      "about": "About Us"
+    }
+  },
+  "disclaimer": {
+    "title": "Disclaimer",
+    "lastUpdated": "Last Updated: January 11, 2025",
+    "importantNotice": {
+      "title": "Important Notice",
+      "content": "The information and calculators provided on WealthEase are for general educational and informational purposes only. They should not be construed as professional financial advice."
+    },
+    "general": {
+      "title": "General Disclaimer",
+      "content1": "WealthEase (\"we\", \"us\", or \"our\") operates the website wealthease.top and provides financial calculators and educational content. This disclaimer applies to all content on our website.",
+      "content2": "By using our website and tools, you acknowledge that you have read and understood this disclaimer and agree to its terms."
+    },
+    "notAdvice": {
+      "title": "Not Professional Financial Advice",
+      "content1": "The content and tools on WealthEase are provided for educational and informational purposes only. Nothing on this website should be considered as:",
+      "items": {
+        "financial": "Professional financial advice",
+        "investment": "Investment advice or recommendations",
+        "tax": "Tax advice or planning services",
+        "legal": "Legal advice",
+        "accounting": "Accounting or auditing services"
+      },
+      "content2": "Always consult with qualified professionals (such as financial advisors, tax professionals, or attorneys) before making any financial decisions."
+    },
+    "accuracy": {
+      "title": "Accuracy of Calculations",
+      "content1": "While we strive to ensure the accuracy of our calculators, the results are estimates based on:",
+      "items": {
+        "estimates": "Standard financial formulas and mathematical models",
+        "assumptions": "Assumptions that may not reflect your specific situation",
+        "market": "Market conditions at a specific point in time",
+        "personal": "Information you provide, which may be incomplete"
+      },
+      "content2": "Actual financial outcomes may differ significantly from calculator estimates due to market volatility, changing regulations, personal circumstances, and other factors."
+    },
+    "noGuarantee": {
+      "title": "No Guarantee of Results",
+      "content1": "We do not guarantee any specific financial outcomes from using our calculators or following information on our website. Past performance does not guarantee future results.",
+      "content2": "Investment and financial decisions involve risk, including the potential loss of principal. You should carefully consider your investment objectives, risk tolerance, and time horizon before making any financial decisions."
+    },
+    "thirdParty": {
+      "title": "Third-Party Content",
+      "content": "Our website may reference or link to third-party content, products, or services. We do not endorse, guarantee, or assume responsibility for any third-party content. References to external sources are for informational purposes only."
+    },
+    "userResponsibility": {
+      "title": "User Responsibility",
+      "content": "You are solely responsible for:",
+      "items": {
+        "verify": "Verifying the accuracy of any calculations before making decisions",
+        "consult": "Consulting with qualified professionals for personalized advice",
+        "research": "Conducting your own research and due diligence",
+        "decisions": "Any financial decisions you make based on our tools or content"
+      }
+    },
+    "limitation": {
+      "title": "Limitation of Liability",
+      "content": "To the maximum extent permitted by law, WealthEase and its owners, employees, and affiliates shall not be liable for any damages, losses, or expenses arising from the use of our website, calculators, or content. This includes, but is not limited to, direct, indirect, incidental, consequential, or punitive damages."
+    },
+    "seekAdvice": {
+      "title": "Seek Professional Advice",
+      "content": "For important financial decisions, we strongly recommend consulting with qualified professionals, including:",
+      "items": {
+        "cfa": "Chartered Financial Analysts (CFA)",
+        "cfp": "Certified Financial Planners (CFP)",
+        "cpa": "Certified Public Accountants (CPA)",
+        "attorney": "Licensed attorneys for legal matters"
+      }
+    },
+    "contact": {
+      "title": "Questions About This Disclaimer",
+      "content": "If you have any questions about this disclaimer, please contact us:"
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last Updated: January 11, 2025",
+    "acceptance": {
+      "title": "Acceptance of Terms",
+      "content1": "Welcome to WealthEase. By accessing or using our website (wealthease.top) and services, you agree to be bound by these Terms of Service ('Terms'). If you do not agree to these Terms, please do not use our services.",
+      "content2": "We may update these Terms from time to time. Your continued use of our services after any changes constitutes acceptance of the new Terms."
+    },
+    "services": {
+      "title": "Description of Services",
+      "content": "WealthEase provides free online financial calculators and educational resources, including but not limited to:",
+      "items": {
+        "calculators": "Financial calculators (compound interest, retirement planning, loan, mortgage, ROI, etc.)",
+        "blog": "Educational blog articles about personal finance",
+        "resources": "Financial planning guides and resources"
+      }
+    },
+    "useRules": {
+      "title": "Acceptable Use",
+      "content": "By using our services, you agree to:",
+      "items": {
+        "lawful": "Use the services only for lawful purposes",
+        "accurate": "Provide accurate information when using our calculators",
+        "noHarm": "Not attempt to harm, disrupt, or interfere with our services",
+        "noCommercial": "Not use our services for unauthorized commercial purposes",
+        "noReverse": "Not reverse engineer, decompile, or attempt to extract the source code"
+      }
+    },
+    "disclaimer": {
+      "title": "Financial Disclaimer",
+      "content1": "The calculators and information provided on WealthEase are for educational and informational purposes only. They are not intended to provide, and should not be relied upon for, financial, investment, tax, legal, or accounting advice.",
+      "content2": "The results from our calculators are estimates based on the information you provide and standard financial formulas. Actual results may vary based on numerous factors not considered by our tools.",
+      "content3": "Always consult with qualified financial professionals before making any financial decisions."
+    },
+    "accuracy": {
+      "title": "Accuracy of Information",
+      "content1": "While we strive to provide accurate and up-to-date information, we make no warranties or representations about the accuracy, reliability, completeness, or timeliness of any content on our website.",
+      "content2": "Financial markets and regulations change frequently. Information that was accurate at the time of publication may become outdated."
+    },
+    "intellectualProperty": {
+      "title": "Intellectual Property",
+      "content1": "All content on WealthEase, including but not limited to text, graphics, logos, images, calculators, and software, is the property of WealthEase and is protected by copyright and other intellectual property laws.",
+      "content2": "You may use our calculators for personal, non-commercial purposes. Any other use requires our prior written consent."
+    },
+    "thirdParty": {
+      "title": "Third-Party Links",
+      "content": "Our website may contain links to third-party websites or services. We are not responsible for the content, privacy policies, or practices of any third-party sites. Your use of third-party websites is at your own risk."
+    },
+    "limitation": {
+      "title": "Limitation of Liability",
+      "content1": "To the fullest extent permitted by law, WealthEase shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our services.",
+      "content2": "This includes, without limitation, damages for loss of profits, data, goodwill, or other intangible losses, even if we have been advised of the possibility of such damages."
+    },
+    "indemnification": {
+      "title": "Indemnification",
+      "content": "You agree to indemnify and hold harmless WealthEase, its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from your use of our services or violation of these Terms."
+    },
+    "termination": {
+      "title": "Termination",
+      "content": "We reserve the right to terminate or suspend your access to our services at any time, without prior notice, for any reason, including violation of these Terms."
+    },
+    "governingLaw": {
+      "title": "Governing Law",
+      "content": "These Terms shall be governed by and construed in accordance with applicable laws. Any disputes arising under these Terms shall be resolved through appropriate legal channels."
+    },
+    "changes": {
+      "title": "Changes to Terms",
+      "content": "We reserve the right to modify these Terms at any time. We will notify users of any material changes by posting the new Terms on this page and updating the 'Last Updated' date. Your continued use of our services after such modifications constitutes acceptance of the updated Terms."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "content": "If you have any questions about these Terms of Service, please contact us:"
     }
   },
   "privacy": {

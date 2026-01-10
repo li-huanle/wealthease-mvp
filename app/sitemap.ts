@@ -48,6 +48,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
+  // Add static pages for each locale
+  const staticPages = ['about', 'privacy', 'terms', 'disclaimer', 'contact', 'blog'];
+  staticPages.forEach((page) => {
+    locales.forEach((locale) => {
+      routes.push({
+        url: `${baseUrl}/${locale}/${page}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.6,
+        alternates: {
+          languages: {
+            en: `${baseUrl}/en/${page}`,
+            zh: `${baseUrl}/zh/${page}`,
+          },
+        },
+      });
+    });
+  });
+
   // Add individual calculator pages for each locale
   calculators.forEach((calc) => {
     locales.forEach((locale) => {

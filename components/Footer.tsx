@@ -2,7 +2,7 @@
 
 import {useTranslations, useLocale} from 'next-intl';
 import Link from 'next/link';
-import {TrendingUp, Mail, Shield} from 'lucide-react';
+import {TrendingUp, Mail, Shield, FileText, AlertTriangle} from 'lucide-react';
 
 export default function Footer() {
   const t = useTranslations('footer');
@@ -47,10 +47,10 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <span className="text-gray-600 cursor-not-allowed text-sm flex items-center">
-                  <span className="w-1 h-1 bg-gray-600 rounded-full mr-2"></span>
+                <Link href={`/${locale}/contact`} className="text-gray-400 hover:text-white transition-colors text-sm flex items-center group">
+                  <span className="w-1 h-1 bg-primary-500 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                   {t('contact')}
-                </span>
+                </Link>
               </li>
               <li>
                 <Link href={`/${locale}/privacy`} className="text-gray-400 hover:text-white transition-colors text-sm flex items-center group">
@@ -59,10 +59,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <span className="text-gray-600 cursor-not-allowed text-sm flex items-center">
-                  <span className="w-1 h-1 bg-gray-600 rounded-full mr-2"></span>
+                <Link href={`/${locale}/terms`} className="text-gray-400 hover:text-white transition-colors text-sm flex items-center group">
+                  <span className="w-1 h-1 bg-primary-500 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                   {t('terms')}
-                </span>
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/disclaimer`} className="text-gray-400 hover:text-white transition-colors text-sm flex items-center group">
+                  <span className="w-1 h-1 bg-primary-500 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  {t('disclaimer')}
+                </Link>
               </li>
             </ul>
           </div>
