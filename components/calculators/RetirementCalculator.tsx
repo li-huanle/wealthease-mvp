@@ -225,13 +225,6 @@ export default function RetirementCalculator() {
         {/* Calculator Form */}
         <div className="lg:col-span-2">
           <div className="bg-white rounded-2xl shadow-card p-6 md:p-8 border border-gray-100">
-            <div className="flex items-center mb-6">
-              <div className="bg-primary-100 rounded-lg p-2 mr-3">
-                <Calculator className="w-6 h-6 text-primary-600" />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-900">{t('form.title')}</h2>
-            </div>
-
             <div className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <CalculatorInput
