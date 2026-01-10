@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-import { useTranslations } from 'next-intl';
-import { Line } from 'react-chartjs-2';
+import {useState} from 'react';
+import {useTranslations} from 'next-intl';
+import {Line} from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -14,6 +14,10 @@ import {
   Legend,
   Filler
 } from 'chart.js';
+import CalculatorInput from '@/components/calculators/CalculatorInput';
+import ResultCard from '@/components/calculators/ResultCard';
+import ExpertTips from '@/components/calculators/ExpertTips';
+import {Umbrella, Calculator, TrendingUp, Shield} from 'lucide-react';
 
 ChartJS.register(
   CategoryScale,
@@ -26,63 +30,41 @@ ChartJS.register(
   Filler
 );
 
-interface FormData {
-  currentAge: number;
-  retirementAge: number;
-  currentSavings: number;
-  monthlySavings: number;
-  annualReturn: number;
-  retirementMonthlyExpense: number;
-  lifeExpectancy: number;
-}
-
-interface Results {
+interface CalculationResult {
   retirementSavings: number;
   yearsInRetirement: number;
   monthlyRetirementIncome: number;
   shortfall: number;
   isSufficient: boolean;
   recommendedMonthlySavings: number;
+  savingsData: number[];
+  years: number[];
 }
 
 export default function RetirementCalculator() {
   const t = useTranslations('calculator.retirement');
   const currency = useTranslations('common.currency');
 
-  const [formData, setFormData] = useState<FormData>({
-    currentAge: 30,
-    retirementAge: 65,
-    currentSavings: 50000,
-    monthlySavings: 1000,
-    annualReturn: 7,
-    retirementMonthlyExpense: 5000,
-    lifeExpectancy: 85,
-  });
-
-  const [results, setResults] = useState<Results | null>(null);
-  const [chartData, setChartData] = useState<any>(null);
+  const [currentAge, setCurrentAge] = useState<number>(30);
+  const [retirementAge, setRetirementAge] = useState<number>(65);
+  const [currentSavings, setCurrentSavings] = useState<number>(50000);
+  const [monthlySavings, setMonthlySavings] = useState<number>(1000);
+  const [annualReturn, setAnnualReturn] = useState<number>(7);
+  const [retirementMonthlyExpense, setRetirementMonthlyExpense] = useState<number>(5000);
+  const [lifeExpectancy, setLifeExpectancy] = useState<number>(85);
+  const [result, setResult] = useState<CalculationResult | null>(null);
 
   const calculateRetirement = () => {
-    const {
-      currentAge,
-      retirementAge,
-      currentSavings,
-      monthlySavings,
-      annualReturn,
-      retirementMonthlyExpense,
-      lifeExpectancy,
-    } = formData;
-
     const yearsToRetirement = retirementAge - currentAge;
     const yearsInRetirement = lifeExpectancy - retirementAge;
     const monthlyRate = annualReturn / 100 / 12;
 
-    // Calculate retirement savings using compound interest formula
+    if (yearsToRetirement <= 0 || yearsInRetirement <= 0) return;
+
     let savings = currentSavings;
     const savingsData: number[] = [currentSavings];
     const years: number[] = [currentAge];
 
-    // Accumulation phase
     for (let year = 1; year <= yearsToRetirement; year++) {
       for (let month = 1; month <= 12; month++) {
         savings = savings * (1 + monthlyRate) + monthlySavings;
@@ -92,12 +74,9 @@ export default function RetirementCalculator() {
     }
 
     const retirementSavings = savings;
-
-    // Calculate how long the savings will last in retirement
     const totalRetirementNeeds = retirementMonthlyExpense * 12 * yearsInRetirement;
     const monthlyRetirementIncome = (retirementSavings * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -yearsInRetirement * 12));
 
-    // Drawdown phase
     let remainingSavings = retirementSavings;
     for (let year = 1; year <= yearsInRetirement; year++) {
       for (let month = 1; month <= 12; month++) {
@@ -111,60 +90,34 @@ export default function RetirementCalculator() {
     const shortfall = totalRetirementNeeds - retirementSavings;
     const isSufficient = retirementSavings >= totalRetirementNeeds;
 
-    // Calculate recommended monthly savings if current plan is insufficient
     let recommendedMonthlySavings = monthlySavings;
     if (!isSufficient) {
-      // Use future value of annuity formula to calculate required monthly payment
       const fv = totalRetirementNeeds;
       const n = yearsToRetirement * 12;
       recommendedMonthlySavings = (fv - currentSavings * Math.pow(1 + monthlyRate, n)) * monthlyRate / (Math.pow(1 + monthlyRate, n) - 1);
     }
 
-    setResults({
+    setResult({
       retirementSavings,
       yearsInRetirement,
       monthlyRetirementIncome,
       shortfall,
       isSufficient,
       recommendedMonthlySavings,
+      savingsData,
+      years,
     });
-
-    // Prepare chart data
-    setChartData({
-      labels: years,
-      datasets: [
-        {
-          label: t('results.savingsOverTime'),
-          data: savingsData,
-          borderColor: 'rgb(59, 130, 246)',
-          backgroundColor: 'rgba(59, 130, 246, 0.1)',
-          fill: true,
-          tension: 0.4,
-        },
-      ],
-    });
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: parseFloat(value) || 0,
-    }));
   };
 
   const handleReset = () => {
-    setFormData({
-      currentAge: 30,
-      retirementAge: 65,
-      currentSavings: 50000,
-      monthlySavings: 1000,
-      annualReturn: 7,
-      retirementMonthlyExpense: 5000,
-      lifeExpectancy: 85,
-    });
-    setResults(null);
-    setChartData(null);
+    setCurrentAge(30);
+    setRetirementAge(65);
+    setCurrentSavings(50000);
+    setMonthlySavings(1000);
+    setAnnualReturn(7);
+    setRetirementMonthlyExpense(5000);
+    setLifeExpectancy(85);
+    setResult(null);
   };
 
   const formatCurrency = (value: number) => {
@@ -176,255 +129,320 @@ export default function RetirementCalculator() {
     }).format(value);
   };
 
+  const chartData = result ? {
+    labels: result.years,
+    datasets: [
+      {
+        label: t('results.savingsOverTime'),
+        data: result.savingsData,
+        borderColor: '#486581',
+        backgroundColor: 'rgba(72, 101, 129, 0.1)',
+        fill: true,
+        tension: 0.4,
+      },
+    ],
+  } : null;
+
+  const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: 'top' as const,
+      },
+      title: {
+        display: true,
+        text: t('results.chartTitle'),
+        font: {
+          size: 16
+        }
+      },
+      tooltip: {
+        callbacks: {
+          label: function(context: any) {
+            return context.dataset.label + ': ' + formatCurrency(context.parsed.y);
+          }
+        }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          callback: function(value: any) {
+            return formatCurrency(value);
+          }
+        }
+      }
+    }
+  };
+
+  const expertTips = [
+    {
+      icon: 'lightbulb' as const,
+      title: currency('code') === 'CNY' ? '尽早开始' : 'Start Early',
+      content: currency('code') === 'CNY'
+        ? '越早开始为退休储蓄，复利效应越显著。即使每月只储蓄少量资金，长期积累也能产生巨大收益。'
+        : 'The earlier you start saving for retirement, the more powerful compound interest becomes. Even small monthly contributions can grow significantly over time.'
+    },
+    {
+      icon: 'trending' as const,
+      title: currency('code') === 'CNY' ? '多元化投资' : 'Diversify Investments',
+      content: currency('code') === 'CNY'
+        ? '分散投资可以降低风险。考虑将资金分配到股票、债券、现金等不同资产类别中。'
+        : 'Diversification helps reduce risk. Consider allocating your investments across stocks, bonds, and cash for balanced growth.'
+    },
+    {
+      icon: 'calculator' as const,
+      title: currency('code') === 'CNY' ? '定期审查' : 'Regular Review',
+      content: currency('code') === 'CNY'
+        ? '每年审查一次您的退休计划，根据生活变化、收入增长和通货膨胀调整储蓄目标。'
+        : 'Review your retirement plan annually and adjust your savings goals based on life changes, income growth, and inflation.'
+    },
+    {
+      icon: 'shield' as const,
+      title: currency('code') === 'CNY' ? '应急基金' : 'Emergency Fund',
+      content: currency('code') === 'CNY'
+        ? '在退休储蓄之前，先建立3-6个月生活费的应急基金，以应对意外支出。'
+        : 'Before focusing on retirement savings, build an emergency fund covering 3-6 months of expenses to handle unexpected costs.'
+    }
+  ];
+
   return (
     <div className="space-y-8">
-      {/* Calculator Form */}
-      <div className="card">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('form.title')}</h2>
+      {/* Header */}
+      <div className="text-center mb-8">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+          {t('title')}
+        </h1>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          {t('subtitle')}
+        </p>
+      </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('form.currentAge')}
-            </label>
-            <input
-              type="number"
-              name="currentAge"
-              value={formData.currentAge}
-              onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              min="18"
-              max="100"
-            />
+      {/* Main Content Grid */}
+      <div className="grid lg:grid-cols-3 gap-8">
+        {/* Calculator Form */}
+        <div className="lg:col-span-2">
+          <div className="bg-white rounded-2xl shadow-card p-6 md:p-8 border border-gray-100">
+            <div className="flex items-center mb-6">
+              <div className="bg-primary-100 rounded-lg p-2 mr-3">
+                <Calculator className="w-6 h-6 text-primary-600" />
+              </div>
+              <h2 className="text-2xl font-bold text-gray-900">{t('form.title')}</h2>
+            </div>
+
+            <div className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <CalculatorInput
+                  label={t('form.currentAge')}
+                  value={currentAge}
+                  onChange={setCurrentAge}
+                  min={18}
+                  max={100}
+                  step={1}
+                  tooltip={currency('code') === 'CNY'
+                    ? '您当前的年龄，用于计算到退休还有多少年'
+                    : 'Your current age, used to calculate years until retirement'}
+                />
+
+                <CalculatorInput
+                  label={t('form.retirementAge')}
+                  value={retirementAge}
+                  onChange={setRetirementAge}
+                  min={50}
+                  max={100}
+                  step={1}
+                  tooltip={currency('code') === 'CNY'
+                    ? '计划退休的年龄，通常为60-70岁'
+                    : 'Planned retirement age, typically between 60-70'}
+                />
+              </div>
+
+              <CalculatorInput
+                label={t('form.currentSavings')}
+                value={currentSavings}
+                onChange={setCurrentSavings}
+                min={0}
+                max={10000000}
+                step={1000}
+                prefix={currency('symbol')}
+                showSlider
+                tooltip={currency('code') === 'CNY'
+                  ? '目前已为退休准备的储蓄总额'
+                  : 'Total amount you have already saved for retirement'}
+              />
+
+              <CalculatorInput
+                label={t('form.monthlySavings')}
+                value={monthlySavings}
+                onChange={setMonthlySavings}
+                min={0}
+                max={50000}
+                step={100}
+                prefix={currency('symbol')}
+                showSlider
+                tooltip={currency('code') === 'CNY'
+                  ? '每月计划为退休储蓄的金额'
+                  : 'Amount you plan to save monthly for retirement'}
+              />
+
+              <CalculatorInput
+                label={t('form.annualReturn')}
+                value={annualReturn}
+                onChange={setAnnualReturn}
+                min={0}
+                max={20}
+                step={0.1}
+                suffix="%"
+                showSlider
+                tooltip={currency('code') === 'CNY'
+                  ? '投资组合的预期年化收益率'
+                  : 'Expected annual return on your investment portfolio'}
+              />
+
+              <CalculatorInput
+                label={t('form.retirementMonthlyExpense')}
+                value={retirementMonthlyExpense}
+                onChange={setRetirementMonthlyExpense}
+                min={0}
+                max={50000}
+                step={100}
+                prefix={currency('symbol')}
+                showSlider
+                tooltip={currency('code') === 'CNY'
+                  ? '退休后每月预计的生活支出'
+                  : 'Estimated monthly living expenses during retirement'}
+              />
+
+              <CalculatorInput
+                label={t('form.lifeExpectancy')}
+                value={lifeExpectancy}
+                onChange={setLifeExpectancy}
+                min={60}
+                max={120}
+                step={1}
+                tooltip={currency('code') === 'CNY'
+                  ? '预期寿命，用于计算退休后需要多少年的资金'
+                  : 'Life expectancy, used to calculate how many years of retirement income you need'}
+              />
+
+              {/* Action Buttons */}
+              <div className="flex gap-4 pt-4">
+                <button
+                  onClick={calculateRetirement}
+                  className="flex-1 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-4 rounded-xl font-semibold hover:from-primary-700 hover:to-primary-800 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center text-lg group"
+                >
+                  <Calculator className="w-5 h-5 mr-2" />
+                  {t('form.calculate')}
+                </button>
+                <button
+                  onClick={handleReset}
+                  className="px-8 py-4 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-300 border border-gray-200 flex items-center justify-center text-lg"
+                >
+                  {t('form.reset')}
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('form.retirementAge')}
-            </label>
-            <input
-              type="number"
-              name="retirementAge"
-              value={formData.retirementAge}
-              onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              min="50"
-              max="100"
-            />
-          </div>
+          {/* Results Section */}
+          {result && (
+            <div className="mt-8 space-y-6">
+              {/* Status Banner */}
+              <div className={`rounded-2xl p-6 shadow-card ${
+                result.isSufficient ? 'bg-success-50 border-2 border-success-200' : 'bg-warning-50 border-2 border-warning-200'
+              }`}>
+                <div className="flex items-start gap-4">
+                  <div className="text-4xl">
+                    {result.isSufficient ? '✅' : '⚠️'}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      {result.isSufficient ? t('results.sufficient') : t('results.insufficient')}
+                    </h3>
+                    <p className="text-gray-700">
+                      {result.isSufficient
+                        ? t('results.sufficientMessage')
+                        : t('results.insufficientMessage')}
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('form.currentSavings')}
-            </label>
-            <input
-              type="number"
-              name="currentSavings"
-              value={formData.currentSavings}
-              onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              min="0"
-              step="1000"
-            />
-          </div>
+              {/* Result Cards */}
+              <div className="grid md:grid-cols-3 gap-4">
+                <ResultCard
+                  title={t('results.retirementSavings')}
+                  value={formatCurrency(result.retirementSavings)}
+                  highlight
+                  tooltip={currency('code') === 'CNY' ? '退休时可积累的总储蓄' : 'Total savings accumulated by retirement'}
+                />
+                <ResultCard
+                  title={t('results.monthlyRetirementIncome')}
+                  value={formatCurrency(result.monthlyRetirementIncome)}
+                  tooltip={currency('code') === 'CNY' ? '每月可提取的退休收入' : 'Monthly withdrawal amount during retirement'}
+                />
+                <ResultCard
+                  title={t('results.yearsInRetirement')}
+                  value={`${result.yearsInRetirement} ${t('results.years')}`}
+                  tooltip={currency('code') === 'CNY' ? '退休后需要资金支持的年数' : 'Number of years you need retirement income'}
+                />
+              </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('form.monthlySavings')}
-            </label>
-            <input
-              type="number"
-              name="monthlySavings"
-              value={formData.monthlySavings}
-              onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              min="0"
-              step="100"
-            />
-          </div>
+              {/* Recommendation */}
+              {!result.isSufficient && (
+                <div className="bg-accent-50 rounded-2xl p-6 border-2 border-accent-200 shadow-card">
+                  <h3 className="text-lg font-bold text-accent-900 mb-3 flex items-center">
+                    <span className="text-2xl mr-2">💡</span>
+                    {t('results.recommendation')}
+                  </h3>
+                  <p className="text-accent-800 mb-4">
+                    {t('results.recommendationMessage')}
+                  </p>
+                  <div className="bg-white rounded-xl p-4 border border-accent-200">
+                    <div className="text-sm text-accent-900 mb-1">
+                      {t('results.recommendedMonthlySavings')}
+                    </div>
+                    <div className="text-2xl font-bold text-accent-600">
+                      {formatCurrency(result.recommendedMonthlySavings)}
+                    </div>
+                    <div className="text-sm text-accent-700 mt-2">
+                      ({t('results.increase')}: {formatCurrency(result.recommendedMonthlySavings - monthlySavings)}/month)
+                    </div>
+                  </div>
+                </div>
+              )}
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('form.annualReturn')}
-            </label>
-            <input
-              type="number"
-              name="annualReturn"
-              value={formData.annualReturn}
-              onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              min="0"
-              max="20"
-              step="0.1"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('form.retirementMonthlyExpense')}
-            </label>
-            <input
-              type="number"
-              name="retirementMonthlyExpense"
-              value={formData.retirementMonthlyExpense}
-              onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              min="0"
-              step="100"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('form.lifeExpectancy')}
-            </label>
-            <input
-              type="number"
-              name="lifeExpectancy"
-              value={formData.lifeExpectancy}
-              onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              min="60"
-              max="120"
-            />
-          </div>
+              {/* Chart */}
+              <div className="bg-white rounded-2xl shadow-card p-6 border border-gray-100">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{t('results.chartTitle')}</h3>
+                <div style={{ height: '400px' }}>
+                  {chartData && <Line data={chartData} options={chartOptions} />}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
-        <div className="flex gap-4 mt-6">
-          <button
-            onClick={calculateRetirement}
-            className="btn-primary flex-1"
-          >
-            {t('form.calculate')}
-          </button>
-          <button
-            onClick={handleReset}
-            className="btn-secondary"
-          >
-            {t('form.reset')}
-          </button>
+        {/* Expert Tips Sidebar */}
+        <div className="lg:col-span-1">
+          <ExpertTips tips={expertTips} locale={currency('locale')} />
         </div>
       </div>
 
-      {/* Results */}
-      {results && (
-        <div className="space-y-6">
-          {/* Status Banner */}
-          <div className={`card ${results.isSufficient ? 'bg-green-50 border-green-200' : 'bg-yellow-50 border-yellow-200'}`}>
-            <div className="flex items-start gap-4">
-              <div className="text-4xl">
-                {results.isSufficient ? '✅' : '⚠️'}
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {results.isSufficient ? t('results.sufficient') : t('results.insufficient')}
-                </h3>
-                <p className="text-gray-700">
-                  {results.isSufficient
-                    ? t('results.sufficientMessage')
-                    : t('results.insufficientMessage')}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Key Metrics */}
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="card bg-blue-50 border-blue-200">
-              <div className="text-sm font-medium text-blue-900 mb-1">
-                {t('results.retirementSavings')}
-              </div>
-              <div className="text-3xl font-bold text-blue-600">
-                {formatCurrency(results.retirementSavings)}
-              </div>
-            </div>
-
-            <div className="card bg-purple-50 border-purple-200">
-              <div className="text-sm font-medium text-purple-900 mb-1">
-                {t('results.monthlyRetirementIncome')}
-              </div>
-              <div className="text-3xl font-bold text-purple-600">
-                {formatCurrency(results.monthlyRetirementIncome)}
-              </div>
-            </div>
-
-            <div className="card bg-green-50 border-green-200">
-              <div className="text-sm font-medium text-green-900 mb-1">
-                {t('results.yearsInRetirement')}
-              </div>
-              <div className="text-3xl font-bold text-green-600">
-                {results.yearsInRetirement} {t('results.years')}
-              </div>
-            </div>
-          </div>
-
-          {/* Recommendation */}
-          {!results.isSufficient && (
-            <div className="card bg-orange-50 border-orange-200">
-              <h3 className="text-lg font-bold text-orange-900 mb-3">
-                💡 {t('results.recommendation')}
-              </h3>
-              <p className="text-orange-800 mb-4">
-                {t('results.recommendationMessage')}
-              </p>
-              <div className="bg-white rounded-lg p-4 border border-orange-200">
-                <div className="text-sm text-orange-900 mb-1">
-                  {t('results.recommendedMonthlySavings')}
-                </div>
-                <div className="text-2xl font-bold text-orange-600">
-                  {formatCurrency(results.recommendedMonthlySavings)}
-                </div>
-                <div className="text-sm text-orange-700 mt-2">
-                  ({t('results.increase')}: {formatCurrency(results.recommendedMonthlySavings - formData.monthlySavings)}/month)
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Chart */}
-          {chartData && (
-            <div className="card">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">
-                {t('results.chartTitle')}
-              </h3>
-              <div className="h-80">
-                <Line
-                  data={chartData}
-                  options={{
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                      legend: {
-                        display: true,
-                        position: 'top',
-                      },
-                      tooltip: {
-                        callbacks: {
-                          label: (context) => {
-                            return `${context.dataset.label}: ${formatCurrency(context.parsed.y ?? 0)}`;
-                          },
-                        },
-                      },
-                    },
-                    scales: {
-                      y: {
-                        beginAtZero: true,
-                        ticks: {
-                          callback: (value) => formatCurrency(value as number),
-                        },
-                      },
-                      x: {
-                        title: {
-                          display: true,
-                          text: t('results.age'),
-                        },
-                      },
-                    },
-                  }}
-                />
-              </div>
-            </div>
-          )}
+      {/* Empty State */}
+      {!result && (
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-12 text-center border-2 border-dashed border-gray-300">
+          <div className="text-6xl mb-4">🏖️</div>
+          <h3 className="text-xl font-semibold text-gray-700 mb-2">
+            {currency('code') === 'CNY' ? '规划您的退休生活' : 'Plan Your Retirement'}
+          </h3>
+          <p className="text-gray-500 max-w-md mx-auto">
+            {currency('code') === 'CNY'
+              ? '输入您的信息并点击计算按钮，查看您的退休储蓄计划'
+              : 'Enter your information and click calculate to see your retirement savings plan'}
+          </p>
         </div>
       )}
     </div>

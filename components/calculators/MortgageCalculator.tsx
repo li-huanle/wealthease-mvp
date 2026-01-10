@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-import { useTranslations } from 'next-intl';
-import { Doughnut, Line } from 'react-chartjs-2';
+import {useState} from 'react';
+import {useTranslations} from 'next-intl';
+import {Doughnut, Line} from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -15,6 +15,10 @@ import {
   Legend,
   Filler
 } from 'chart.js';
+import CalculatorInput from '@/components/calculators/CalculatorInput';
+import ResultCard from '@/components/calculators/ResultCard';
+import ExpertTips from '@/components/calculators/ExpertTips';
+import {Home, Calculator, TrendingUp, Shield} from 'lucide-react';
 
 ChartJS.register(
   CategoryScale,
@@ -28,17 +32,7 @@ ChartJS.register(
   Filler
 );
 
-interface FormData {
-  homePrice: number;
-  downPaymentPercent: number;
-  interestRate: number;
-  loanTerm: number;
-  propertyTax: number;
-  homeInsurance: number;
-  hoaFees: number;
-}
-
-interface Results {
+interface CalculationResult {
   loanAmount: number;
   downPayment: number;
   monthlyPI: number;
@@ -49,52 +43,37 @@ interface Results {
   totalMonthlyPayment: number;
   totalPayment: number;
   totalInterest: number;
+  balanceData: number[];
+  years: number[];
+  breakdownData: number[];
+  breakdownLabels: string[];
 }
 
 export default function MortgageCalculator() {
   const t = useTranslations('calculator.mortgage');
   const currency = useTranslations('common.currency');
 
-  const [formData, setFormData] = useState<FormData>({
-    homePrice: 400000,
-    downPaymentPercent: 20,
-    interestRate: 6.5,
-    loanTerm: 30,
-    propertyTax: 3600,
-    homeInsurance: 1200,
-    hoaFees: 0,
-  });
-
-  const [results, setResults] = useState<Results | null>(null);
-  const [chartData, setChartData] = useState<any>(null);
-  const [balanceChartData, setBalanceChartData] = useState<any>(null);
+  const [homePrice, setHomePrice] = useState<number>(400000);
+  const [downPaymentPercent, setDownPaymentPercent] = useState<number>(20);
+  const [interestRate, setInterestRate] = useState<number>(6.5);
+  const [loanTerm, setLoanTerm] = useState<number>(30);
+  const [propertyTax, setPropertyTax] = useState<number>(3600);
+  const [homeInsurance, setHomeInsurance] = useState<number>(1200);
+  const [hoaFees, setHoaFees] = useState<number>(0);
+  const [result, setResult] = useState<CalculationResult | null>(null);
 
   const calculateMortgage = () => {
-    const {
-      homePrice,
-      downPaymentPercent,
-      interestRate,
-      loanTerm,
-      propertyTax,
-      homeInsurance,
-      hoaFees,
-    } = formData;
-
     const downPayment = (homePrice * downPaymentPercent) / 100;
     const loanAmount = homePrice - downPayment;
     const monthlyRate = interestRate / 100 / 12;
     const numberOfPayments = loanTerm * 12;
 
-    // Calculate monthly principal & interest
     const monthlyPI = monthlyRate === 0
       ? loanAmount / numberOfPayments
       : (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) /
         (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
 
-    // Calculate PMI (if down payment < 20%)
     const monthlyPMI = downPaymentPercent < 20 ? (loanAmount * 0.005) / 12 : 0;
-
-    // Monthly taxes and insurance
     const monthlyPropertyTax = propertyTax / 12;
     const monthlyInsurance = homeInsurance / 12;
     const monthlyHOA = hoaFees;
@@ -105,20 +84,6 @@ export default function MortgageCalculator() {
                         (monthlyHOA * numberOfPayments);
     const totalInterest = (monthlyPI * numberOfPayments) - loanAmount;
 
-    setResults({
-      loanAmount,
-      downPayment,
-      monthlyPI,
-      monthlyPropertyTax,
-      monthlyInsurance,
-      monthlyPMI,
-      monthlyHOA,
-      totalMonthlyPayment,
-      totalPayment,
-      totalInterest,
-    });
-
-    // Prepare pie chart data for payment breakdown
     const breakdownData = [
       monthlyPI,
       monthlyPropertyTax,
@@ -140,31 +105,6 @@ export default function MortgageCalculator() {
       breakdownLabels.push(t('results.hoaFees'));
     }
 
-    setChartData({
-      labels: breakdownLabels,
-      datasets: [
-        {
-          data: breakdownData,
-          backgroundColor: [
-            'rgba(59, 130, 246, 0.8)',
-            'rgba(16, 185, 129, 0.8)',
-            'rgba(245, 158, 11, 0.8)',
-            'rgba(239, 68, 68, 0.8)',
-            'rgba(139, 92, 246, 0.8)',
-          ],
-          borderColor: [
-            'rgb(59, 130, 246)',
-            'rgb(16, 185, 129)',
-            'rgb(245, 158, 11)',
-            'rgb(239, 68, 68)',
-            'rgb(139, 92, 246)',
-          ],
-          borderWidth: 2,
-        },
-      ],
-    });
-
-    // Generate balance over time data
     let balance = loanAmount;
     const balanceData: number[] = [loanAmount];
     const years: number[] = [0];
@@ -176,49 +116,39 @@ export default function MortgageCalculator() {
 
       if (balance < 0) balance = 0;
 
-      // Store data for chart (every 12 months or last month)
       if (month % 12 === 0 || month === numberOfPayments) {
         balanceData.push(balance);
         years.push(month / 12);
       }
     }
 
-    setBalanceChartData({
-      labels: years,
-      datasets: [
-        {
-          label: t('results.loanBalance'),
-          data: balanceData,
-          borderColor: 'rgb(59, 130, 246)',
-          backgroundColor: 'rgba(59, 130, 246, 0.1)',
-          fill: true,
-          tension: 0.4,
-        },
-      ],
+    setResult({
+      loanAmount,
+      downPayment,
+      monthlyPI,
+      monthlyPropertyTax,
+      monthlyInsurance,
+      monthlyPMI,
+      monthlyHOA,
+      totalMonthlyPayment,
+      totalPayment,
+      totalInterest,
+      balanceData,
+      years,
+      breakdownData,
+      breakdownLabels,
     });
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: parseFloat(value) || 0,
-    }));
   };
 
   const handleReset = () => {
-    setFormData({
-      homePrice: 400000,
-      downPaymentPercent: 20,
-      interestRate: 6.5,
-      loanTerm: 30,
-      propertyTax: 3600,
-      homeInsurance: 1200,
-      hoaFees: 0,
-    });
-    setResults(null);
-    setChartData(null);
-    setBalanceChartData(null);
+    setHomePrice(400000);
+    setDownPaymentPercent(20);
+    setInterestRate(6.5);
+    setLoanTerm(30);
+    setPropertyTax(3600);
+    setHomeInsurance(1200);
+    setHoaFees(0);
+    setResult(null);
   };
 
   const formatCurrency = (value: number) => {
@@ -230,303 +160,399 @@ export default function MortgageCalculator() {
     }).format(value);
   };
 
+  const chartData = result ? {
+    labels: result.breakdownLabels,
+    datasets: [
+      {
+        data: result.breakdownData,
+        backgroundColor: [
+          'rgba(72, 101, 129, 0.8)',
+          'rgba(34, 197, 94, 0.8)',
+          'rgba(245, 158, 11, 0.8)',
+          'rgba(239, 68, 68, 0.8)',
+          'rgba(139, 92, 246, 0.8)',
+        ],
+        borderColor: [
+          'rgb(72, 101, 129)',
+          'rgb(34, 197, 94)',
+          'rgb(245, 158, 11)',
+          'rgb(239, 68, 68)',
+          'rgb(139, 92, 246)',
+        ],
+        borderWidth: 2,
+      },
+    ],
+  } : null;
+
+  const balanceChartData = result ? {
+    labels: result.years,
+    datasets: [
+      {
+        label: t('results.loanBalance'),
+        data: result.balanceData,
+        borderColor: '#486581',
+        backgroundColor: 'rgba(72, 101, 129, 0.1)',
+        fill: true,
+        tension: 0.4,
+      },
+    ],
+  } : null;
+
+  const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: 'bottom' as const,
+      },
+      tooltip: {
+        callbacks: {
+          label: function(context: any) {
+            return context.label + ': ' + formatCurrency(context.parsed);
+          }
+        }
+      }
+    }
+  };
+
+  const lineChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: 'top' as const,
+      },
+      title: {
+        display: true,
+        text: t('results.balanceOverTime'),
+        font: {
+          size: 16
+        }
+      },
+      tooltip: {
+        callbacks: {
+          label: function(context: any) {
+            return context.dataset.label + ': ' + formatCurrency(context.parsed.y);
+          }
+        }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          callback: function(value: any) {
+            return formatCurrency(value);
+          }
+        }
+      }
+    }
+  };
+
+  const expertTips = [
+    {
+      icon: 'shield' as const,
+      title: currency('code') === 'CNY' ? '提高首付比例' : 'Increase Down Payment',
+      content: currency('code') === 'CNY'
+        ? '支付20%或更高的首付可以避免私人抵押保险(PMI)费用，并减少每月还款额。'
+        : 'Putting 20% or more down helps you avoid Private Mortgage Insurance (PMI) and reduces your monthly payment.'
+    },
+    {
+      icon: 'trending' as const,
+      title: currency('code') === 'CNY' ? '比较贷款方案' : 'Compare Loan Options',
+      content: currency('code') === 'CNY'
+        ? '不同的贷款机构和贷款类型有不同的利率和费用。货比三家可以获得更好的交易。'
+        : 'Different lenders and loan types offer varying rates and fees. Shop around to get the best deal.'
+    },
+    {
+      icon: 'calculator' as const,
+      title: currency('code') === 'CNY' ? '考虑贷款期限' : 'Consider Loan Term',
+      content: currency('code') === 'CNY'
+        ? '15年房贷的月供较高，但总利息远低于30年房贷。根据您的财务状况做出选择。'
+        : 'A 15-year mortgage has higher monthly payments but significantly less total interest than a 30-year loan.'
+    },
+    {
+      icon: 'lightbulb' as const,
+      title: currency('code') === 'CNY' ? '预留应急资金' : 'Keep Emergency Fund',
+      content: currency('code') === 'CNY'
+        ? '在购房后保留3-6个月的生活费作为应急资金，不要将所有积蓄用于首付。'
+        : 'Keep 3-6 months of expenses as an emergency fund after buying. Don\'t deplete all savings for the down payment.'
+    }
+  ];
+
   return (
     <div className="space-y-8">
-      {/* Calculator Form */}
-      <div className="card">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('form.title')}</h2>
+      {/* Header */}
+      <div className="text-center mb-8">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+          {t('title')}
+        </h1>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          {t('subtitle')}
+        </p>
+      </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('form.homePrice')}
-            </label>
-            <input
-              type="number"
-              name="homePrice"
-              value={formData.homePrice}
-              onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              min="0"
-              step="10000"
-            />
+      {/* Main Content Grid */}
+      <div className="grid lg:grid-cols-3 gap-8">
+        {/* Calculator Form */}
+        <div className="lg:col-span-2">
+          <div className="bg-white rounded-2xl shadow-card p-6 md:p-8 border border-gray-100">
+            <div className="flex items-center mb-6">
+              <div className="bg-primary-100 rounded-lg p-2 mr-3">
+                <Home className="w-6 h-6 text-primary-600" />
+              </div>
+              <h2 className="text-2xl font-bold text-gray-900">{t('form.title')}</h2>
+            </div>
+
+            <div className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <CalculatorInput
+                  label={t('form.homePrice')}
+                  value={homePrice}
+                  onChange={setHomePrice}
+                  min={0}
+                  max={10000000}
+                  step={10000}
+                  prefix={currency('symbol')}
+                  showSlider
+                  tooltip={currency('code') === 'CNY'
+                    ? '房屋的购买价格'
+                    : 'Purchase price of the home'}
+                />
+
+                <CalculatorInput
+                  label={t('form.downPaymentPercent')}
+                  value={downPaymentPercent}
+                  onChange={setDownPaymentPercent}
+                  min={0}
+                  max={100}
+                  step={1}
+                  suffix="%"
+                  showSlider
+                  tooltip={currency('code') === 'CNY'
+                    ? '首付占房价的比例'
+                    : 'Down payment as percentage of home price'}
+                />
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <CalculatorInput
+                  label={t('form.interestRate')}
+                  value={interestRate}
+                  onChange={setInterestRate}
+                  min={0}
+                  max={30}
+                  step={0.1}
+                  suffix="%"
+                  showSlider
+                  tooltip={currency('code') === 'CNY'
+                    ? '抵押贷款的年利率'
+                    : 'Annual interest rate for the mortgage'}
+                />
+
+                <CalculatorInput
+                  label={t('form.loanTerm')}
+                  value={loanTerm}
+                  onChange={setLoanTerm}
+                  min={1}
+                  max={40}
+                  step={1}
+                  suffix=" 年"
+                  showSlider
+                  tooltip={currency('code') === 'CNY'
+                    ? '贷款期限（年）'
+                    : 'Loan term in years'}
+                />
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6">
+                <CalculatorInput
+                  label={t('form.propertyTax')}
+                  value={propertyTax}
+                  onChange={setPropertyTax}
+                  min={0}
+                  max={50000}
+                  step={100}
+                  prefix={currency('symbol')}
+                  showSlider
+                  tooltip={currency('code') === 'CNY'
+                    ? '年度房产税'
+                    : 'Annual property tax'}
+                />
+
+                <CalculatorInput
+                  label={t('form.homeInsurance')}
+                  value={homeInsurance}
+                  onChange={setHomeInsurance}
+                  min={0}
+                  max={10000}
+                  step={100}
+                  prefix={currency('symbol')}
+                  showSlider
+                  tooltip={currency('code') === 'CNY'
+                    ? '年度房屋保险费'
+                    : 'Annual home insurance premium'}
+                />
+
+                <CalculatorInput
+                  label={t('form.hoaFees')}
+                  value={hoaFees}
+                  onChange={setHoaFees}
+                  min={0}
+                  max={5000}
+                  step={50}
+                  prefix={currency('symbol')}
+                  showSlider
+                  tooltip={currency('code') === 'CNY'
+                    ? '月度业主协会费'
+                    : 'Monthly HOA fees'}
+                />
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-4 pt-4">
+                <button
+                  onClick={calculateMortgage}
+                  className="flex-1 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-4 rounded-xl font-semibold hover:from-primary-700 hover:to-primary-800 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center text-lg group"
+                >
+                  <Calculator className="w-5 h-5 mr-2" />
+                  {t('form.calculate')}
+                </button>
+                <button
+                  onClick={handleReset}
+                  className="px-8 py-4 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-300 border border-gray-200 flex items-center justify-center text-lg"
+                >
+                  {t('form.reset')}
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('form.downPaymentPercent')}
-            </label>
-            <input
-              type="number"
-              name="downPaymentPercent"
-              value={formData.downPaymentPercent}
-              onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              min="0"
-              max="100"
-              step="1"
-            />
-          </div>
+          {/* Results Section */}
+          {result && (
+            <div className="mt-8 space-y-6">
+              {/* Main Monthly Payment */}
+              <div className="bg-gradient-to-r from-primary-50 to-primary-100 rounded-2xl p-8 border-2 border-primary-200 shadow-card">
+                <div className="text-center">
+                  <div className="text-sm font-medium text-primary-900 mb-2">
+                    {t('results.totalMonthlyPayment')}
+                  </div>
+                  <div className="text-5xl font-bold text-primary-600">
+                    {formatCurrency(result.totalMonthlyPayment)}
+                  </div>
+                </div>
+              </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('form.interestRate')}
-            </label>
-            <input
-              type="number"
-              name="interestRate"
-              value={formData.interestRate}
-              onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              min="0"
-              max="30"
-              step="0.1"
-            />
-          </div>
+              {/* Result Cards */}
+              <div className="grid md:grid-cols-3 gap-4">
+                <ResultCard
+                  title={t('results.loanAmount')}
+                  value={formatCurrency(result.loanAmount)}
+                  tooltip={currency('code') === 'CNY' ? '贷款金额' : 'Amount borrowed'}
+                />
+                <ResultCard
+                  title={t('results.downPayment')}
+                  value={formatCurrency(result.downPayment)}
+                  tooltip={currency('code') === 'CNY' ? '首付金额' : 'Down payment amount'}
+                />
+                <ResultCard
+                  title={t('results.totalInterest')}
+                  value={formatCurrency(result.totalInterest)}
+                  tooltip={currency('code') === 'CNY' ? '贷款期间的总利息' : 'Total interest over loan term'}
+                />
+              </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('form.loanTerm')}
-            </label>
-            <input
-              type="number"
-              name="loanTerm"
-              value={formData.loanTerm}
-              onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              min="1"
-              max="40"
-            />
-          </div>
+              {/* Payment Breakdown */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-2xl shadow-card p-6 border border-gray-100">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">
+                    {t('results.monthlyBreakdown')}
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center pb-2 border-b">
+                      <span className="text-gray-700">{t('results.principalInterest')}</span>
+                      <span className="font-semibold">{formatCurrency(result.monthlyPI)}</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-2 border-b">
+                      <span className="text-gray-700">{t('results.propertyTax')}</span>
+                      <span className="font-semibold">{formatCurrency(result.monthlyPropertyTax)}</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-2 border-b">
+                      <span className="text-gray-700">{t('results.homeInsurance')}</span>
+                      <span className="font-semibold">{formatCurrency(result.monthlyInsurance)}</span>
+                    </div>
+                    {result.monthlyPMI > 0 && (
+                      <div className="flex justify-between items-center pb-2 border-b">
+                        <span className="text-gray-700">{t('results.pmi')}</span>
+                        <span className="font-semibold">{formatCurrency(result.monthlyPMI)}</span>
+                      </div>
+                    )}
+                    {result.monthlyHOA > 0 && (
+                      <div className="flex justify-between items-center pb-2 border-b">
+                        <span className="text-gray-700">{t('results.hoaFees')}</span>
+                        <span className="font-semibold">{formatCurrency(result.monthlyHOA)}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('form.propertyTax')}
-            </label>
-            <input
-              type="number"
-              name="propertyTax"
-              value={formData.propertyTax}
-              onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              min="0"
-              step="100"
-            />
-          </div>
+                {/* Pie Chart */}
+                {chartData && (
+                  <div className="bg-white rounded-2xl shadow-card p-6 border border-gray-100">
+                    <h3 className="text-lg font-bold text-gray-900 mb-4">
+                      {t('results.paymentDistribution')}
+                    </h3>
+                    <div className="h-64 flex items-center justify-center">
+                      <Doughnut data={chartData} options={chartOptions} />
+                    </div>
+                  </div>
+                )}
+              </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('form.homeInsurance')}
-            </label>
-            <input
-              type="number"
-              name="homeInsurance"
-              value={formData.homeInsurance}
-              onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              min="0"
-              step="100"
-            />
-          </div>
+              {/* Balance Over Time Chart */}
+              {balanceChartData && (
+                <div className="bg-white rounded-2xl shadow-card p-6 border border-gray-100">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">{t('results.balanceOverTime')}</h3>
+                  <div style={{ height: '400px' }}>
+                    <Line data={balanceChartData} options={lineChartOptions} />
+                  </div>
+                </div>
+              )}
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('form.hoaFees')}
-            </label>
-            <input
-              type="number"
-              name="hoaFees"
-              value={formData.hoaFees}
-              onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              min="0"
-              step="50"
-            />
-          </div>
+              {/* PMI Warning */}
+              {result.monthlyPMI > 0 && (
+                <div className="bg-warning-50 rounded-2xl p-6 border-2 border-warning-200 shadow-card">
+                  <h3 className="text-lg font-bold text-warning-900 mb-3 flex items-center">
+                    <span className="text-2xl mr-2">ℹ️</span>
+                    {t('results.pmiNotice')}
+                  </h3>
+                  <p className="text-warning-800">
+                    {t('results.pmiNoticeMessage')}
+                  </p>
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
-        <div className="flex gap-4 mt-6">
-          <button
-            onClick={calculateMortgage}
-            className="btn-primary flex-1"
-          >
-            {t('form.calculate')}
-          </button>
-          <button
-            onClick={handleReset}
-            className="btn-secondary"
-          >
-            {t('form.reset')}
-          </button>
+        {/* Expert Tips Sidebar */}
+        <div className="lg:col-span-1">
+          <ExpertTips tips={expertTips} locale={currency('locale')} />
         </div>
       </div>
 
-      {/* Results */}
-      {results && (
-        <div className="space-y-6">
-          {/* Main Monthly Payment */}
-          <div className="card bg-gradient-to-r from-blue-50 to-blue-100 border-blue-200">
-            <div className="text-center">
-              <div className="text-sm font-medium text-blue-900 mb-2">
-                {t('results.totalMonthlyPayment')}
-              </div>
-              <div className="text-5xl font-bold text-blue-600">
-                {formatCurrency(results.totalMonthlyPayment)}
-              </div>
-            </div>
-          </div>
-
-          {/* Key Metrics */}
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="card bg-green-50 border-green-200">
-              <div className="text-sm font-medium text-green-900 mb-1">
-                {t('results.loanAmount')}
-              </div>
-              <div className="text-3xl font-bold text-green-600">
-                {formatCurrency(results.loanAmount)}
-              </div>
-            </div>
-
-            <div className="card bg-purple-50 border-purple-200">
-              <div className="text-sm font-medium text-purple-900 mb-1">
-                {t('results.downPayment')}
-              </div>
-              <div className="text-3xl font-bold text-purple-600">
-                {formatCurrency(results.downPayment)}
-              </div>
-            </div>
-
-            <div className="card bg-orange-50 border-orange-200">
-              <div className="text-sm font-medium text-orange-900 mb-1">
-                {t('results.totalInterest')}
-              </div>
-              <div className="text-3xl font-bold text-orange-600">
-                {formatCurrency(results.totalInterest)}
-              </div>
-            </div>
-          </div>
-
-          {/* Payment Breakdown */}
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="card">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">
-                {t('results.monthlyBreakdown')}
-              </h3>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center pb-2 border-b">
-                  <span className="text-gray-700">{t('results.principalInterest')}</span>
-                  <span className="font-semibold">{formatCurrency(results.monthlyPI)}</span>
-                </div>
-                <div className="flex justify-between items-center pb-2 border-b">
-                  <span className="text-gray-700">{t('results.propertyTax')}</span>
-                  <span className="font-semibold">{formatCurrency(results.monthlyPropertyTax)}</span>
-                </div>
-                <div className="flex justify-between items-center pb-2 border-b">
-                  <span className="text-gray-700">{t('results.homeInsurance')}</span>
-                  <span className="font-semibold">{formatCurrency(results.monthlyInsurance)}</span>
-                </div>
-                {results.monthlyPMI > 0 && (
-                  <div className="flex justify-between items-center pb-2 border-b">
-                    <span className="text-gray-700">{t('results.pmi')}</span>
-                    <span className="font-semibold">{formatCurrency(results.monthlyPMI)}</span>
-                  </div>
-                )}
-                {results.monthlyHOA > 0 && (
-                  <div className="flex justify-between items-center pb-2 border-b">
-                    <span className="text-gray-700">{t('results.hoaFees')}</span>
-                    <span className="font-semibold">{formatCurrency(results.monthlyHOA)}</span>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Pie Chart */}
-            {chartData && (
-              <div className="card">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">
-                  {t('results.paymentDistribution')}
-                </h3>
-                <div className="h-64 flex items-center justify-center">
-                  <Doughnut
-                    data={chartData}
-                    options={{
-                      responsive: true,
-                      maintainAspectRatio: true,
-                      plugins: {
-                        legend: {
-                          position: 'bottom',
-                        },
-                        tooltip: {
-                          callbacks: {
-                            label: (context) => {
-                              return `${context.label}: ${formatCurrency(context.parsed as number)}`;
-                            },
-                          },
-                        },
-                      },
-                    }}
-                  />
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Balance Over Time Chart */}
-          {balanceChartData && (
-            <div className="card">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">
-                {t('results.balanceOverTime')}
-              </h3>
-              <div className="h-80">
-                <Line
-                  data={balanceChartData}
-                  options={{
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                      legend: {
-                        display: true,
-                        position: 'top',
-                      },
-                      tooltip: {
-                        callbacks: {
-                          label: (context) => {
-                            return `${context.dataset.label}: ${formatCurrency(context.parsed.y ?? 0)}`;
-                          },
-                        },
-                      },
-                    },
-                    scales: {
-                      y: {
-                        beginAtZero: true,
-                        ticks: {
-                          callback: (value) => formatCurrency(value as number),
-                        },
-                      },
-                      x: {
-                        title: {
-                          display: true,
-                          text: t('results.year'),
-                        },
-                      },
-                    },
-                  }}
-                />
-              </div>
-            </div>
-          )}
-
-          {/* PMI Warning */}
-          {results.monthlyPMI > 0 && (
-            <div className="card bg-yellow-50 border-yellow-200">
-              <h3 className="text-lg font-bold text-yellow-900 mb-3">
-                ℹ️ {t('results.pmiNotice')}
-              </h3>
-              <p className="text-yellow-800">
-                {t('results.pmiNoticeMessage')}
-              </p>
-            </div>
-          )}
+      {/* Empty State */}
+      {!result && (
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-12 text-center border-2 border-dashed border-gray-300">
+          <div className="text-6xl mb-4">🏠</div>
+          <h3 className="text-xl font-semibold text-gray-700 mb-2">
+            {currency('code') === 'CNY' ? '计算您的房贷' : 'Calculate Your Mortgage'}
+          </h3>
+          <p className="text-gray-500 max-w-md mx-auto">
+            {currency('code') === 'CNY'
+              ? '输入房屋详情并点击计算按钮，查看您的月供和还款计划'
+              : 'Enter your home details and click calculate to see your monthly payment and payment plan'}
+          </p>
         </div>
       )}
     </div>
