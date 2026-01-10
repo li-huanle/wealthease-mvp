@@ -341,6 +341,14 @@
         "title": "退休规划计算器",
         "description": "规划舒适的退休生活"
       },
+      "savingsGoal": {
+        "title": "储蓄目标计算器",
+        "description": "规划您的储蓄，更快实现财务目标"
+      },
+      "debtPayoff": {
+        "title": "债务还清计算器",
+        "description": "制定计划，用经过验证的策略摆脱债务"
+      },
       "loan": {
         "title": "贷款计算器",
         "description": "计算贷款月供和总利息"

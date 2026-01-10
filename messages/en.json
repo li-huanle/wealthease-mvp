@@ -341,6 +341,14 @@
         "title": "Retirement Calculator",
         "description": "Plan for a comfortable retirement"
       },
+      "savingsGoal": {
+        "title": "Savings Goal Calculator",
+        "description": "Plan your savings and reach your financial goals faster"
+      },
+      "debtPayoff": {
+        "title": "Debt Payoff Calculator",
+        "description": "Create your plan to become debt-free with proven strategies"
+      },
       "loan": {
         "title": "Loan Calculator",
         "description": "Calculate loan payments and total interest"
