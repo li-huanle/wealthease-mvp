@@ -303,6 +303,38 @@
       "title": "Our Story",
       "description": "Founded in 2025, WealthEase was created by a team of financial experts and software engineers who saw the need for accessible financial planning tools. We've helped thousands of users plan their retirement, calculate investments, and make smarter financial decisions."
     },
+    "expertise": {
+      "title": "Professional Background & Reliability",
+      "subtitle": "Why You Can Trust Our Financial Guidance",
+      "formulas": {
+        "title": "Industry-Standard Financial Formulas",
+        "content": "All our calculators are based on standard financial mathematical formulas widely recognized and used by financial institutions and professionals. These formulas include:"
+      },
+      "formulasList": {
+        "compound": "Compound Interest - Using the standard compound interest formula A = P(1 + r/n)^(nt)",
+        "amortization": "Loan Amortization - Employing standard equal installment amortization methods",
+        "roi": "Return on Investment - Based on universally accepted ROI and CAGR calculation formulas",
+        "retirement": "Retirement Planning - Using industry-recognized present value and future value calculation methods"
+      },
+      "sources": {
+        "title": "Data Sources & References",
+        "content": "Our calculation methods and financial theories are based on the following authoritative sources:"
+      },
+      "sourcesList": {
+        "cfa": "CFA Institute investment calculation standards",
+        "fp": "CFP Board financial planning practice standards",
+        "federal": "U.S. Federal Reserve System financial literacy education materials",
+        "investopedia": "Investopedia and other reputable financial education resources"
+      },
+      "disclaimer": {
+        "title": "Important Disclaimer",
+        "content": "While we strive to provide accurate and useful calculation tools, please note:",
+        "point1": "All calculation results are for reference only and do not constitute professional financial, investment, or tax advice",
+        "point2": "Consult a licensed financial advisor or tax professional before making major financial decisions",
+        "point3": "Actual investment returns, interest rates, and fees may differ from our assumptions",
+        "point4": "We do not guarantee specific financial results from using our tools"
+      }
+    },
     "values": {
       "title": "Our Values",
       "free": {
