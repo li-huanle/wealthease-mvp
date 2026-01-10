@@ -39,7 +39,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
   };
 }
 
-export default async function PrivacyPage({params}: {params: Promise<{locale: string>}>) {
+export default async function PrivacyPage({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;
   setRequestLocale(locale);
   const t = await getTranslations({locale, namespace: 'privacy'});
