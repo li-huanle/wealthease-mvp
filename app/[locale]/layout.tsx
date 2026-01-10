@@ -6,6 +6,7 @@ import {Inter} from 'next/font/google';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import GoogleAdSense from '@/components/GoogleAdSense';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,6 +31,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
+  const adSenseId = process.env.NEXT_PUBLIC_ADSENSE_ID;
 
   return (
     <html lang={locale}>
@@ -38,6 +40,7 @@ export default async function LocaleLayout({
       </head>
       <body className={inter.className}>
         {gaId && <GoogleAnalytics gaId={gaId} />}
+        {adSenseId && <GoogleAdSense adSenseId={adSenseId} />}
         <NextIntlClientProvider messages={messages}>
           <Navigation />
           <main className="min-h-screen">
