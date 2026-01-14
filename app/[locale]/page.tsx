@@ -3,7 +3,20 @@ import Link from 'next/link';
 import {Calculator, TrendingUp, Shield, CheckCircle, ArrowRight, BarChart3, PiggyBank, Target} from 'lucide-react';
 import {Metadata} from 'next';
 import {OrganizationSchema, WebApplicationSchema} from '@/components/StructuredData';
-import NewsletterForm from '@/components/NewsletterForm';
+import dynamic from 'next/dynamic';
+
+// 动态导入 NewsletterForm，延迟加载非关键组件
+const NewsletterForm = dynamic(() => import('@/components/NewsletterForm'), {
+  loading: () => (
+    <div className="card max-w-2xl mx-auto text-center bg-gradient-to-r from-primary-500 to-primary-600 text-white p-12">
+      <div className="animate-pulse">
+        <div className="h-8 bg-white/30 rounded mb-4 mx-auto w-48"></div>
+        <div className="h-4 bg-white/20 rounded mb-6 mx-auto w-64"></div>
+        <div className="h-12 bg-white/20 rounded mx-auto max-w-md"></div>
+      </div>
+    </div>
+  ),
+});
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;

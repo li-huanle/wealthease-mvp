@@ -18,7 +18,7 @@ import {
 import CalculatorInput from '@/components/calculators/CalculatorInput';
 import ResultCard from '@/components/calculators/ResultCard';
 import ExpertTips from '@/components/calculators/ExpertTips';
-import {Calculator} from 'lucide-react';
+import {Calculator, TrendingUp, Home, DollarSign, Calendar, Shield, ChevronDown, ChevronUp} from 'lucide-react';
 
 ChartJS.register(
   CategoryScale,
@@ -32,9 +32,20 @@ ChartJS.register(
   Filler
 );
 
+interface AmortizationEntry {
+  year: number;
+  month: number;
+  payment: number;
+  principal: number;
+  interest: number;
+  balance: number;
+  cumulativeInterest: number;
+}
+
 interface CalculationResult {
   loanAmount: number;
   downPayment: number;
+  downPaymentPercent: number;
   monthlyPI: number;
   monthlyPropertyTax: number;
   monthlyInsurance: number;
@@ -47,24 +58,65 @@ interface CalculationResult {
   years: number[];
   breakdownData: number[];
   breakdownLabels: string[];
+  amortizationSchedule: AmortizationEntry[];
+  pmiCancelYear?: number;
 }
 
 export default function MortgageCalculator() {
   const t = useTranslations('calculator.mortgage');
   const currency = useTranslations('common.currency');
+  const isUS = currency('code') === 'USD';
 
+  // Form state
   const [homePrice, setHomePrice] = useState<number>(400000);
   const [downPaymentPercent, setDownPaymentPercent] = useState<number>(20);
+  const [downPaymentAmount, setDownPaymentAmount] = useState<number>(80000);
+  const [downPaymentMode, setDownPaymentMode] = useState<'percent' | 'amount'>('percent');
   const [interestRate, setInterestRate] = useState<number>(6.5);
   const [loanTerm, setLoanTerm] = useState<number>(30);
   const [propertyTax, setPropertyTax] = useState<number>(3600);
   const [homeInsurance, setHomeInsurance] = useState<number>(1200);
   const [hoaFees, setHoaFees] = useState<number>(0);
+  const [pmiRate, setPmiRate] = useState<number>(0.5);
+  const [pmiAutoCancel, setPmiAutoCancel] = useState<boolean>(true);
+
+  // Refinance mode
+  const [isRefinance, setIsRefinance] = useState<boolean>(false);
+  const [currentLoanBalance, setCurrentLoanBalance] = useState<number>(300000);
+  const [currentInterestRate, setCurrentInterestRate] = useState<number>(7.5);
+  const [cashOut, setCashOut] = useState<number>(0);
+
+  // Display options
+  const [showAmortization, setShowAmortization] = useState<boolean>(false);
+  const [amortizationView, setAmortizationView] = useState<'yearly' | 'monthly'>('yearly');
+
   const [result, setResult] = useState<CalculationResult | null>(null);
 
+  // Sync down payment values
+  const handleDownPaymentPercentChange = (value: number) => {
+    setDownPaymentPercent(value);
+    setDownPaymentAmount((homePrice * value) / 100);
+  };
+
+  const handleDownPaymentAmountChange = (value: number) => {
+    setDownPaymentAmount(value);
+    setDownPaymentPercent((value / homePrice) * 100);
+  };
+
   const calculateMortgage = () => {
-    const downPayment = (homePrice * downPaymentPercent) / 100;
-    const loanAmount = homePrice - downPayment;
+    // Handle down payment mode
+    const finalDownPayment = downPaymentMode === 'percent'
+      ? (homePrice * downPaymentPercent) / 100
+      : downPaymentAmount;
+
+    const finalDownPaymentPercent = (finalDownPayment / homePrice) * 100;
+    let loanAmount = homePrice - finalDownPayment;
+
+    // Handle refinance mode
+    if (isRefinance) {
+      loanAmount = currentLoanBalance + cashOut;
+    }
+
     const monthlyRate = interestRate / 100 / 12;
     const numberOfPayments = loanTerm * 12;
 
@@ -73,14 +125,49 @@ export default function MortgageCalculator() {
       : (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) /
         (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
 
-    const monthlyPMI = downPaymentPercent < 20 ? (loanAmount * 0.005) / 12 : 0;
+    // Enhanced PMI calculation with auto-cancel
+    let monthlyPMI = 0;
+    let pmiCancelYear: number | undefined;
+
+    if (finalDownPaymentPercent < 20 && !isRefinance) {
+      const annualPMI = (loanAmount * pmiRate) / 100;
+      monthlyPMI = annualPMI / 12;
+
+      // Calculate when PMI will be canceled (when LTV reaches 78%)
+      if (pmiAutoCancel) {
+        let balance = loanAmount;
+        for (let month = 1; month <= numberOfPayments; month++) {
+          const interestPayment = balance * monthlyRate;
+          const principalPayment = monthlyPI - interestPayment;
+          balance -= principalPayment;
+
+          // Check if balance is 78% of original home price
+          if (balance <= homePrice * 0.78) {
+            pmiCancelYear = Math.ceil(month / 12);
+            break;
+          }
+        }
+      }
+    }
+
     const monthlyPropertyTax = propertyTax / 12;
     const monthlyInsurance = homeInsurance / 12;
     const monthlyHOA = hoaFees;
 
     const totalMonthlyPayment = monthlyPI + monthlyPropertyTax + monthlyInsurance + monthlyPMI + monthlyHOA;
-    const totalPayment = (monthlyPI * numberOfPayments) + (monthlyPropertyTax * numberOfPayments) +
-                        (monthlyInsurance * numberOfPayments) + (monthlyPMI * numberOfPayments) +
+
+    // Calculate total payments with PMI consideration
+    let totalPMI = 0;
+    if (monthlyPMI > 0 && pmiCancelYear) {
+      totalPMI = monthlyPMI * pmiCancelYear * 12;
+    } else if (monthlyPMI > 0) {
+      totalPMI = monthlyPMI * numberOfPayments;
+    }
+
+    const totalPayment = (monthlyPI * numberOfPayments) +
+                        (monthlyPropertyTax * numberOfPayments) +
+                        (monthlyInsurance * numberOfPayments) +
+                        totalPMI +
                         (monthlyHOA * numberOfPayments);
     const totalInterest = (monthlyPI * numberOfPayments) - loanAmount;
 
@@ -105,7 +192,10 @@ export default function MortgageCalculator() {
       breakdownLabels.push(t('results.hoaFees'));
     }
 
+    // Generate detailed amortization schedule
+    const amortizationSchedule: AmortizationEntry[] = [];
     let balance = loanAmount;
+    let cumulativeInterest = 0;
     const balanceData: number[] = [loanAmount];
     const years: number[] = [0];
 
@@ -113,8 +203,20 @@ export default function MortgageCalculator() {
       const interestPayment = balance * monthlyRate;
       const principalPayment = monthlyPI - interestPayment;
       balance -= principalPayment;
+      cumulativeInterest += interestPayment;
 
       if (balance < 0) balance = 0;
+
+      // Add to amortization schedule
+      amortizationSchedule.push({
+        year: Math.ceil(month / 12),
+        month,
+        payment: monthlyPI,
+        principal: principalPayment,
+        interest: interestPayment,
+        balance,
+        cumulativeInterest,
+      });
 
       if (month % 12 === 0 || month === numberOfPayments) {
         balanceData.push(balance);
@@ -124,7 +226,8 @@ export default function MortgageCalculator() {
 
     setResult({
       loanAmount,
-      downPayment,
+      downPayment: finalDownPayment,
+      downPaymentPercent: finalDownPaymentPercent,
       monthlyPI,
       monthlyPropertyTax,
       monthlyInsurance,
@@ -137,27 +240,44 @@ export default function MortgageCalculator() {
       years,
       breakdownData,
       breakdownLabels,
+      amortizationSchedule,
+      pmiCancelYear,
     });
   };
 
   const handleReset = () => {
     setHomePrice(400000);
     setDownPaymentPercent(20);
+    setDownPaymentAmount(80000);
+    setDownPaymentMode('percent');
     setInterestRate(6.5);
     setLoanTerm(30);
     setPropertyTax(3600);
     setHomeInsurance(1200);
     setHoaFees(0);
+    setPmiRate(0.5);
+    setPmiAutoCancel(true);
+    setIsRefinance(false);
+    setCurrentLoanBalance(300000);
+    setCurrentInterestRate(7.5);
+    setCashOut(0);
+    setShowAmortization(false);
     setResult(null);
   };
 
+  // US-style currency formatting
   const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat(currency('locale'), {
+    return new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: currency('code'),
+      currency: 'USD',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(value);
+  };
+
+  // Format date in US style (MM/DD/YYYY)
+  const formatUSDate = (date: Date) => {
+    return date.toLocaleDateString('en-US');
   };
 
   const chartData = result ? {
@@ -282,13 +402,80 @@ export default function MortgageCalculator() {
 
   return (
     <div className="space-y-8">
+      {/* Refinance Mode Toggle (US only) */}
+      {isUS && (
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-200">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <Home className="w-5 h-5 text-blue-600" />
+              <span className="font-medium text-gray-900">
+                {isRefinance ? 'Refinance Mode' : 'Purchase Mode'}
+              </span>
+            </div>
+            <button
+              onClick={() => setIsRefinance(!isRefinance)}
+              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                isRefinance ? 'bg-blue-600' : 'bg-gray-300'
+              }`}
+            >
+              <span
+                className={`inline-block h-4 w-4 transform rounded-full bg-white transition ${
+                  isRefinance ? 'translate-x-6' : 'translate-x-1'
+                }`}
+              />
+            </button>
+          </div>
+          {isRefinance && (
+            <div className="mt-4 grid md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Current Loan Balance
+                </label>
+                <input
+                  type="number"
+                  value={currentLoanBalance}
+                  onChange={(e) => setCurrentLoanBalance(Number(e.target.value))}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                  placeholder="$300,000"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Current Interest Rate (%)
+                </label>
+                <input
+                  type="number"
+                  step="0.1"
+                  value={currentInterestRate}
+                  onChange={(e) => setCurrentInterestRate(Number(e.target.value))}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                  placeholder="7.5"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Cash Out Amount (Optional)
+                </label>
+                <input
+                  type="number"
+                  value={cashOut}
+                  onChange={(e) => setCashOut(Number(e.target.value))}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                  placeholder="$0"
+                />
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Main Content Grid */}
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Calculator Form */}
         <div className="lg:col-span-2">
           <div className="bg-white rounded-2xl shadow-card p-6 md:p-8 border border-gray-100">
             <div className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+              {!isRefinance && (
                 <CalculatorInput
                   label={t('form.homePrice')}
                   value={homePrice}
@@ -296,27 +483,74 @@ export default function MortgageCalculator() {
                   min={0}
                   max={50000000}
                   step={10000}
-                  prefix={currency('symbol')}
+                  prefix="$"
                   showSlider
-                  tooltip={currency('code') === 'CNY'
-                    ? '房屋的购买价格'
-                    : 'Purchase price of the home'}
+                  tooltip="Purchase price of the home"
                 />
+              )}
 
-                <CalculatorInput
-                  label={t('form.downPaymentPercent')}
-                  value={downPaymentPercent}
-                  onChange={setDownPaymentPercent}
-                  min={0}
-                  max={100}
-                  step={1}
-                  suffix="%"
-                  showSlider
-                  tooltip={currency('code') === 'CNY'
-                    ? '首付占房价的比例'
-                    : 'Down payment as percentage of home price'}
-                />
-              </div>
+              {/* Down Payment with Mode Toggle */}
+              {!isRefinance && (
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Down Payment
+                    </label>
+                    <div className="flex bg-gray-100 rounded-lg p-1">
+                      <button
+                        onClick={() => setDownPaymentMode('percent')}
+                        className={`px-3 py-1 rounded text-sm font-medium transition ${
+                          downPaymentMode === 'percent'
+                            ? 'bg-white text-gray-900 shadow'
+                            : 'text-gray-600'
+                        }`}
+                      >
+                        %
+                      </button>
+                      <button
+                        onClick={() => setDownPaymentMode('amount')}
+                        className={`px-3 py-1 rounded text-sm font-medium transition ${
+                          downPaymentMode === 'amount'
+                            ? 'bg-white text-gray-900 shadow'
+                            : 'text-gray-600'
+                        }`}
+                      >
+                        $
+                      </button>
+                    </div>
+                  </div>
+                  {downPaymentMode === 'percent' ? (
+                    <CalculatorInput
+                      label=""
+                      value={downPaymentPercent}
+                      onChange={handleDownPaymentPercentChange}
+                      min={0}
+                      max={100}
+                      step={1}
+                      suffix="%"
+                      showSlider
+                      tooltip="Down payment as percentage of home price"
+                    />
+                  ) : (
+                    <CalculatorInput
+                      label=""
+                      value={downPaymentAmount}
+                      onChange={handleDownPaymentAmountChange}
+                      min={0}
+                      max={homePrice}
+                      step={1000}
+                      prefix="$"
+                      showSlider
+                      tooltip="Down payment amount"
+                    />
+                  )}
+                  <div className="text-sm text-gray-500 mt-1">
+                    {downPaymentMode === 'percent'
+                      ? `Amount: ${formatCurrency(downPaymentAmount)}`
+                      : `Percent: ${downPaymentPercent.toFixed(1)}%`}
+                  </div>
+                </div>
+              )}
 
               <div className="grid md:grid-cols-2 gap-6">
                 <CalculatorInput
@@ -356,11 +590,9 @@ export default function MortgageCalculator() {
                   min={0}
                   max={100000}
                   step={100}
-                  prefix={currency('symbol')}
+                  prefix="$"
                   showSlider
-                  tooltip={currency('code') === 'CNY'
-                    ? '年度房产税'
-                    : 'Annual property tax'}
+                  tooltip="Annual property tax"
                 />
 
                 <CalculatorInput
@@ -370,11 +602,9 @@ export default function MortgageCalculator() {
                   min={0}
                   max={50000}
                   step={100}
-                  prefix={currency('symbol')}
+                  prefix="$"
                   showSlider
-                  tooltip={currency('code') === 'CNY'
-                    ? '年度房屋保险费'
-                    : 'Annual home insurance premium'}
+                  tooltip="Annual home insurance premium"
                 />
 
                 <CalculatorInput
@@ -384,13 +614,44 @@ export default function MortgageCalculator() {
                   min={0}
                   max={20000}
                   step={50}
-                  prefix={currency('symbol')}
+                  prefix="$"
                   showSlider
-                  tooltip={currency('code') === 'CNY'
-                    ? '月度业主协会费'
-                    : 'Monthly HOA fees'}
+                  tooltip="Monthly HOA fees"
                 />
               </div>
+
+              {/* PMI Settings (US only) */}
+              {isUS && !isRefinance && (
+                <div className="bg-blue-50 rounded-lg p-4 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <Shield className="w-4 h-4 text-blue-600" />
+                      <span className="text-sm font-medium text-gray-900">
+                        PMI Settings
+                      </span>
+                    </div>
+                    <label className="flex items-center gap-2 text-sm">
+                      <input
+                        type="checkbox"
+                        checked={pmiAutoCancel}
+                        onChange={(e) => setPmiAutoCancel(e.target.checked)}
+                        className="rounded border-gray-300"
+                      />
+                      <span className="text-gray-700">Auto-cancel at 78% LTV</span>
+                    </label>
+                  </div>
+                  <CalculatorInput
+                    label="PMI Rate (%)"
+                    value={pmiRate}
+                    onChange={setPmiRate}
+                    min={0}
+                    max={2}
+                    step={0.05}
+                    suffix="%"
+                    tooltip="Annual PMI rate (typically 0.3-1.5%)"
+                  />
+                </div>
+              )}
 
               {/* Action Buttons */}
               <div className="flex gap-4 pt-4">
@@ -502,18 +763,128 @@ export default function MortgageCalculator() {
                 </div>
               )}
 
-              {/* PMI Warning */}
+              {/* PMI Warning with Cancel Year */}
               {result.monthlyPMI > 0 && (
                 <div className="bg-warning-50 rounded-2xl p-6 border-2 border-warning-200 shadow-card">
                   <h3 className="text-lg font-bold text-warning-900 mb-3 flex items-center">
-                    <span className="text-2xl mr-2">ℹ️</span>
-                    {t('results.pmiNotice')}
+                    <Shield className="w-6 h-6 mr-2" />
+                    PMI Notice
                   </h3>
-                  <p className="text-warning-800">
-                    {t('results.pmiNoticeMessage')}
+                  <p className="text-warning-800 mb-3">
+                    Your down payment is less than 20%, so PMI is required.
+                    {result.pmiCancelYear && (
+                      <span className="font-semibold">
+                        {' '}Based on your payments, PMI will be automatically canceled after approximately{' '}
+                        <span className="font-bold">{result.pmiCancelYear} years</span>.
+                      </span>
+                    )}
                   </p>
+                  {!result.pmiCancelYear && (
+                    <p className="text-warning-700 text-sm">
+                      Consider increasing your down payment to 20% to avoid PMI and save {formatCurrency(result.monthlyPMI * 12 * loanTerm)} over the life of the loan.
+                    </p>
+                  )}
                 </div>
               )}
+
+              {/* Amortization Schedule Toggle */}
+              <div className="bg-white rounded-2xl shadow-card border border-gray-100 overflow-hidden">
+                <button
+                  onClick={() => setShowAmortization(!showAmortization)}
+                  className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition"
+                >
+                  <div className="flex items-center gap-3">
+                    <Calendar className="w-5 h-5 text-primary-600" />
+                    <span className="font-semibold text-gray-900">
+                      Amortization Schedule
+                    </span>
+                  </div>
+                  {showAmortization ? (
+                    <ChevronUp className="w-5 h-5 text-gray-500" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-gray-500" />
+                  )}
+                </button>
+
+                {showAmortization && (
+                  <div className="border-t border-gray-200">
+                    {/* View Toggle */}
+                    <div className="px-6 py-3 bg-gray-50 flex items-center justify-between border-b">
+                      <span className="text-sm text-gray-700">View by:</span>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => setAmortizationView('yearly')}
+                          className={`px-3 py-1 rounded text-sm font-medium transition ${
+                            amortizationView === 'yearly'
+                              ? 'bg-primary-600 text-white'
+                              : 'bg-white text-gray-700 border border-gray-300'
+                          }`}
+                        >
+                          Yearly
+                        </button>
+                        <button
+                          onClick={() => setAmortizationView('monthly')}
+                          className={`px-3 py-1 rounded text-sm font-medium transition ${
+                            amortizationView === 'monthly'
+                              ? 'bg-primary-600 text-white'
+                              : 'bg-white text-gray-700 border border-gray-300'
+                          }`}
+                        >
+                          Monthly
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Schedule Table */}
+                    <div className="overflow-x-auto max-h-96 overflow-y-auto">
+                      <table className="w-full text-sm">
+                        <thead className="bg-gray-50 sticky top-0">
+                          <tr>
+                            <th className="px-4 py-3 text-left font-semibold text-gray-900">
+                              {amortizationView === 'yearly' ? 'Year' : 'Month'}
+                            </th>
+                            <th className="px-4 py-3 text-right font-semibold text-gray-900">Payment</th>
+                            <th className="px-4 py-3 text-right font-semibold text-gray-900">Principal</th>
+                            <th className="px-4 py-3 text-right font-semibold text-gray-900">Interest</th>
+                            <th className="px-4 py-3 text-right font-semibold text-gray-900">Balance</th>
+                            <th className="px-4 py-3 text-right font-semibold text-gray-900">Total Interest</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-gray-200">
+                          {result.amortizationSchedule
+                            .filter((entry, index, arr) => {
+                              if (amortizationView === 'monthly') return true;
+                              // Show yearly data (first month of each year or last payment)
+                              return entry.month === 1 || index === arr.length - 1 || (result.amortizationSchedule[index + 1] && result.amortizationSchedule[index + 1].year !== entry.year);
+                            })
+                            .map((entry, index) => (
+                              <tr key={index} className="hover:bg-gray-50">
+                                <td className="px-4 py-3 text-gray-900">
+                                  {amortizationView === 'yearly' ? entry.year : entry.month}
+                                </td>
+                                <td className="px-4 py-3 text-right text-gray-900">
+                                  {formatCurrency(entry.payment)}
+                                </td>
+                                <td className="px-4 py-3 text-right text-green-700">
+                                  {formatCurrency(entry.principal)}
+                                </td>
+                                <td className="px-4 py-3 text-right text-red-700">
+                                  {formatCurrency(entry.interest)}
+                                </td>
+                                <td className="px-4 py-3 text-right text-gray-900">
+                                  {formatCurrency(entry.balance)}
+                                </td>
+                                <td className="px-4 py-3 text-right text-gray-600">
+                                  {formatCurrency(entry.cumulativeInterest)}
+                                </td>
+                              </tr>
+                            ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           )}
         </div>

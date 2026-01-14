@@ -2,14 +2,16 @@ import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import '../globals.css';
-import {Inter} from 'next/font/google';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import GoogleAdSense from '@/components/GoogleAdSense';
-import CookieConsent from '@/components/CookieConsent';
+import dynamic from 'next/dynamic';
 
-const inter = Inter({ subsets: ['latin'] });
+// 动态导入非关键组件，延迟加载
+const CookieConsent = dynamic(() => import('@/components/CookieConsent'), {
+  loading: () => null, // 加载时不显示任何内容
+});
 
 const locales = ['en', 'zh'];
 
@@ -40,7 +42,7 @@ export default async function LocaleLayout({
         <link rel="icon" href="/favicon.ico" />
         <meta name="google-site-verification" content="sIjeN1dgXA_DE426qez6fNmHyDss1b8F0iAMiXXamY8" />
       </head>
-      <body className={inter.className}>
+      <body>
         {gaId && <GoogleAnalytics gaId={gaId} />}
         {adSenseId && <GoogleAdSense adSenseId={adSenseId} />}
         <NextIntlClientProvider messages={messages}>

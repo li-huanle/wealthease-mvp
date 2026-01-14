@@ -1,5 +1,22 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
-import CompoundInterestCalculator from '@/components/calculators/CompoundInterestCalculator';
+import dynamic from 'next/dynamic';
+
+// 动态导入计算器组件，显示骨架屏
+const CompoundInterestCalculator = dynamic(
+  () => import('@/components/calculators/CompoundInterestCalculator'),
+  {
+    loading: () => (
+      <div className="animate-pulse">
+        <div className="bg-gray-200 rounded-lg h-96 mb-8"></div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-gray-200 rounded-lg h-32"></div>
+          <div className="bg-gray-200 rounded-lg h-32"></div>
+          <div className="bg-gray-200 rounded-lg h-32"></div>
+        </div>
+      </div>
+    ),
+  }
+);
 
 export default async function CompoundInterestPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -17,7 +34,7 @@ export default async function CompoundInterestPage({ params }: { params: Promise
             {t('subtitle')}
           </p>
         </div>
-        
+
         <CompoundInterestCalculator />
         
         {/* SEO Content */}

@@ -48,10 +48,12 @@ export default function GoogleAnalytics({ gaId }: { gaId: string }) {
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+        // 添加延迟加载属性
       />
       <Script
         id="google-analytics"
         strategy="afterInteractive"
+        // 延迟执行，不阻塞页面交互
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
@@ -59,6 +61,10 @@ export default function GoogleAnalytics({ gaId }: { gaId: string }) {
             gtag('js', new Date());
             gtag('config', '${gaId}', {
               page_path: window.location.pathname,
+              // 启用性能监控
+              send_page_view: true,
+              // 优化传输
+              transport_type: 'beacon',
             });
           `,
         }}
