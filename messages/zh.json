@@ -278,6 +278,131 @@
         "chartTitle": "债务还清进度",
         "timeline": "时间线"
       }
+    },
+    "inflation": {
+      "title": "通货膨胀计算器",
+      "subtitle": "使用历史 CPI 数据计算通货膨胀对购买力的影响",
+      "form": {
+        "title": "通货膨胀计算",
+        "startYear": "起始年份",
+        "endYear": "结束年份",
+        "amount": "金额 (¥)",
+        "customInflationRate": "预期年化通货膨胀率 (%)",
+        "useCustomRate": "自定义通货膨胀率",
+        "advancedOptions": "高级选项",
+        "calculate": "计算",
+        "reset": "重置"
+      },
+      "results": {
+        "title": "通货膨胀结果",
+        "originalAmount": "原始金额",
+        "adjustedAmount": "调整后金额",
+        "purchasingPower": "购买力",
+        "totalInflation": "总通货膨胀",
+        "inflationRate": "通货膨胀率",
+        "whatEquals": "{startYear} 年的 {amount} 在 {endYear} 年相当于：",
+        "thatsInflation": "在 {years} 年内通货膨胀率为 {inflation}%",
+        "originalIn": "{year} 年美元的价值",
+        "adjustedIn": "{year} 年的购买力",
+        "worthIn": "您在 {startYear} 年的 {amount} 在 {endYear} 年价值",
+        "comparisonChart": "价值对比",
+        "valueWithInflation": "考虑通货膨胀的价值",
+        "purchasingPowerOverTime": "购买力随时间变化",
+        "historicalCPI": "历史 CPI 数据",
+        "year": "年份",
+        "cpi": "CPI",
+        "value": "价值",
+        "inflation": "通货膨胀",
+        "historicalNote": "历史说明：从 {startYear} 年到 {endYear} 年，实际平均通货膨胀率为 {rate}%（历史数据）",
+        "historicalNoteCustom": "历史说明：从 {startYear} 年到 {endYear} 年，实际平均通货膨胀率为 {rate}%（自定义）",
+        "expertTips": {
+          "understanding": {
+            "title": "理解通货膨胀",
+            "content": "通货膨胀会随时间侵蚀购买力。按 3% 的年通货膨胀率，价格大约每 24 年翻倍。"
+          },
+          "investToBeat": {
+            "title": "投资以跑赢通货膨胀",
+            "content": "考虑那些历史上能跑赢通货膨胀的投资，如股票、房地产或通胀保护证券。"
+          },
+          "adjustBudget": {
+            "title": "调整您的预算",
+            "content": "在进行长期储蓄规划时要考虑通货膨胀。按 3% 的通货膨胀率，今天花费 ¥1,000 的商品在 30 年后可能需要花费 ¥2,400。"
+          },
+          "socialSecurity": {
+            "title": "社保 COLA",
+            "content": "社保包含生活成本调整（COLA），帮助受益人跟上通货膨胀的步伐。"
+          }
+        }
+      }
+    },
+    "investment401k": {
+      "title": "401(k) 退休计算器",
+      "subtitle": "规划退休储蓄，包含雇主匹配和复利增长",
+      "form": {
+        "title": "401(k) 详情",
+        "has401k": "401(k) 计划",
+        "currentAge": "当前年龄",
+        "retirementAge": "退休年龄",
+        "currentSavings": "当前储蓄 (¥)",
+        "annualSalary": "年薪",
+        "annualContribution": "年度供款",
+        "catchUp": "追加供款（50 岁以上）",
+        "catchUpDesc": "如果您年满 50 岁或以上，可额外供款",
+        "expectedAnnualReturn": "预期年化收益率 (%)",
+        "compoundFrequency": "复利频率",
+        "monthly": "每月",
+        "daily": "每日",
+        "annually": "每年",
+        "annualRetirementExpense": "退休年度支出 (¥)",
+        "lifeExpectancy": "预期寿命",
+        "employerMatchDetails": "雇主匹配详情",
+        "employerMatchPercent": "雇主匹配比例 %",
+        "employerMatchPercentTooltip": "雇主匹配的薪资百分比（例如：4%）",
+        "matchLimit": "匹配限制",
+        "matchLimitTooltip": "雇主匹配您供款的百分比上限",
+        "estimatedMatch": "预计雇主匹配：",
+        "year": "年",
+        "years": "年",
+        "calculate": "计算",
+        "reset": "重置",
+        "contributionLimit": "限额",
+        "exceedsLimit": "超出限额！",
+        "tips": {
+          "maximizeMatch": {
+            "title": "最大化雇主匹配",
+            "content": "不要放弃免费的雇主匹配资金。至少供款到可以获得全额雇主匹配的程度——这是 100% 的即时投资回报。"
+          },
+          "catchUp": {
+            "title": "利用追加供款",
+            "content": "如果您年满 50 岁或以上，您可以为 401(k) 追加供款高达 $31,000（2025 年）。"
+          },
+          "diversify": {
+            "title": "分散投资",
+            "content": "根据您的风险承受能力和时间跨度，考虑目标日期基金或股票和债券的组合。"
+          },
+          "review": {
+            "title": "定期审查和调整",
+            "content": "每年审查您的 401(k) 投资，并随着收入增长增加供款额。"
+          }
+        }
+      },
+      "results": {
+        "onTrack": "目标达成！",
+        "actionNeeded": "需要调整",
+        "onTrackMessage": "您的计划可以覆盖 {years} 年的退休支出。",
+        "actionNeededMessage": "您的储蓄与退休需求之间存在 {amount} 的缺口。",
+        "totalAtRetirement": "退休时总额",
+        "monthlyRetirementIncome": "退休月收入",
+        "yourContributions": "您的供款",
+        "employerMatch": "雇主匹配",
+        "investmentEarnings": "投资收益",
+        "portfolioComposition": "投资组合构成",
+        "savingsGrowth": "储蓄增长趋势",
+        "recommendation": "建议",
+        "recommendationMessage": "为实现退休目标，建议增加年度供款至：",
+        "recommendedAnnualSavings": "建议年度供款",
+        "increase": "增加"
+      }
     }
   },
   "footer": {
@@ -375,6 +500,14 @@
       "compound": {
         "title": "复利计算器",
         "description": "计算投资随时间的复利增长"
+      },
+      "investment401k": {
+        "title": "401(k) 退休计算器",
+        "description": "规划退休储蓄，包含雇主匹配和复利增长"
+      },
+      "inflation": {
+        "title": "通货膨胀计算器",
+        "description": "使用历史CPI数据计算通货膨胀对购买力的影响"
       },
       "retirement": {
         "title": "退休规划计算器",

@@ -278,6 +278,132 @@
         "chartTitle": "Debt Payoff Progress",
         "timeline": "Timeline"
       }
+    },
+    "inflation": {
+      "title": "Inflation Calculator",
+      "subtitle": "See how inflation affects your purchasing power over time using historical CPI data",
+      "form": {
+        "title": "Inflation Calculation",
+        "startYear": "Start Year",
+        "endYear": "End Year",
+        "amount": "Amount ($)",
+        "customInflationRate": "Expected Annual Inflation Rate (%)",
+        "useCustomRate": "Custom inflation rate",
+        "advancedOptions": "Advanced Options",
+        "calculate": "Calculate",
+        "reset": "Reset"
+      },
+      "results": {
+        "title": "Inflation Result",
+        "originalAmount": "Original Amount",
+        "adjustedAmount": "Adjusted Amount",
+        "purchasingPower": "Purchasing Power",
+        "totalInflation": "Total Inflation",
+        "inflationRate": "Inflation Rate",
+        "whatEquals": "What {amount} in {startYear} equals in {endYear}:",
+        "thatsInflation": "That's {inflation}% inflation over {years} years",
+        "originalIn": "Value in {year} dollars",
+        "adjustedIn": "Purchasing power in {year} dollars",
+        "worthIn": "Your {startYear} dollar is worth this much in {endYear}",
+        "comparisonChart": "Value Comparison",
+        "valueWithInflation": "Value with Inflation",
+        "originalAmount": "Original Amount",
+        "purchasingPowerOverTime": "Purchasing Power Over Time",
+        "historicalCPI": "Historical CPI Data",
+        "year": "Year",
+        "cpi": "CPI",
+        "value": "Value",
+        "inflation": "Inflation",
+        "historicalNote": "Historical Note: From {startYear} to {endYear}, actual average inflation rate was {rate}% (historical)",
+        "historicalNoteCustom": "Historical Note: From {startYear} to {endYear}, actual average inflation rate was {rate}% (custom)",
+        "expertTips": {
+          "understanding": {
+            "title": "Understanding Inflation",
+            "content": "Inflation erodes purchasing power over time. At 3% annual inflation, prices double approximately every 24 years."
+          },
+          "investToBeat": {
+            "title": "Invest to Beat Inflation",
+            "content": "Consider investments that historically outpace inflation, such as stocks, real estate, or inflation-protected securities."
+          },
+          "adjustBudget": {
+            "title": "Adjust Your Budget",
+            "content": "Account for inflation when planning long-term savings goals. What costs $1,000 today may cost $2,400 in 30 years at 3% inflation."
+          },
+          "socialSecurity": {
+            "title": "Social Security COLA",
+            "content": "Social Security includes Cost-of-Living Adjustments (COLA) to help beneficiaries keep pace with inflation."
+          }
+        }
+      }
+    },
+    "investment401k": {
+      "title": "401(k) & Retirement Calculator",
+      "subtitle": "Plan your retirement with 401(k) employer matching and compound growth",
+      "form": {
+        "title": "401(k) Details",
+        "has401k": "401(k) Plan",
+        "currentAge": "Current Age",
+        "retirementAge": "Retirement Age",
+        "currentSavings": "Current Savings ($)",
+        "annualSalary": "Annual Salary",
+        "annualContribution": "Annual Contribution",
+        "catchUp": "Catch-Up Contribution (Age 50+)",
+        "catchUpDesc": "Additional contribution if you're 50 or older",
+        "expectedAnnualReturn": "Expected Annual Return (%)",
+        "compoundFrequency": "Compound Frequency",
+        "monthly": "Monthly",
+        "daily": "Daily",
+        "annually": "Annually",
+        "annualRetirementExpense": "Annual Retirement Expenses ($)",
+        "lifeExpectancy": "Life Expectancy",
+        "employerMatchDetails": "Employer Match Details",
+        "employerMatchPercent": "Employer Match %",
+        "employerMatchPercentTooltip": "Percentage of salary employer matches (e.g., 4%)",
+        "matchLimit": "Match Limit",
+        "matchLimitTooltip": "Employer matches up to this % of your contribution",
+        "estimatedMatch": "Estimated Employer Match:",
+        "year": "year",
+        "years": "years",
+        "calculate": "Calculate",
+        "reset": "Reset",
+        "contributionLimit": "limit",
+        "exceedsLimit": "Exceeds limit!",
+        "tips": {
+          "maximizeMatch": {
+            "title": "Maximize Employer Match",
+            "content": "Never leave free money on the table. Contribute at least enough to get your full employer match - this is an instant 100% return on your investment."
+          },
+          "catchUp": {
+            "title": "Take Advantage of Catch-Up Contributions",
+            "content": "If you're 50 or older, you can contribute up to $31,000 (2025) to your 401(k) with catch-up provisions."
+          },
+          "diversify": {
+            "title": "Diversify Your Investments",
+            "content": "Consider target-date funds or a mix of stocks and bonds based on your risk tolerance and time horizon."
+          },
+          "review": {
+            "title": "Review and Adjust",
+            "content": "Review your 401(k) investments annually and increase contributions as your income grows."
+          }
+        }
+      },
+      "results": {
+        "onTrack": "On Track!",
+        "actionNeeded": "Action Needed",
+        "onTrackMessage": "You're on track to cover {years} years of retirement expenses.",
+        "actionNeededMessage": "There's a gap of {amount} between your savings and retirement needs.",
+        "totalAtRetirement": "Total at Retirement",
+        "monthlyRetirementIncome": "Monthly Retirement Income",
+        "yourContributions": "Your Contributions",
+        "employerMatch": "Employer Match",
+        "investmentEarnings": "Investment Earnings",
+        "portfolioComposition": "Portfolio Composition",
+        "savingsGrowth": "Savings Growth Over Time",
+        "recommendation": "Recommendation",
+        "recommendationMessage": "To meet your retirement goals, consider increasing your annual contribution to:",
+        "recommendedAnnualSavings": "Recommended Annual Savings",
+        "increase": "Increase"
+      }
     }
   },
   "footer": {
@@ -375,6 +501,14 @@
       "compound": {
         "title": "Compound Interest Calculator",
         "description": "See how your investments grow with compound interest over time"
+      },
+      "investment401k": {
+        "title": "401(k) & Retirement Calculator",
+        "description": "Plan your retirement with 401(k) employer matching and compound growth"
+      },
+      "inflation": {
+        "title": "Inflation Calculator",
+        "description": "Calculate the impact of inflation on your purchasing power using historical CPI data"
       },
       "retirement": {
         "title": "Retirement Calculator",

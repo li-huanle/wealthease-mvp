@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { TrendingUp, PiggyBank, Calculator, Home, BarChart3, Target, CreditCard } from 'lucide-react';
+import { TrendingUp, PiggyBank, Calculator, Home, BarChart3, Target, CreditCard, DollarSign } from 'lucide-react';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
 
@@ -8,14 +8,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   const metadata = {
     en: {
-      title: 'Free Financial Calculators - Compound Interest, Retirement, Loan & More | WealthEase',
-      description: 'Access 7 free professional financial calculators: Compound Interest, Retirement Planning, Savings Goal, Debt Payoff, Loan, Mortgage, and ROI Calculator. Get accurate results instantly with detailed charts and expert recommendations.',
-      keywords: 'financial calculators, compound interest calculator, retirement calculator, savings goal calculator, debt payoff calculator, loan calculator, mortgage calculator, ROI calculator, free calculators, investment tools',
+      title: 'Free Financial Calculators - 401(k), Inflation, Compound Interest, Mortgage & More | WealthEase',
+      description: 'Access 9 free professional financial calculators: 401(k) & Retirement, Inflation, Compound Interest, Savings Goal, Debt Payoff, Loan, Mortgage, and ROI Calculator. Get accurate results instantly with detailed charts and expert recommendations.',
+      keywords: 'financial calculators, 401k calculator, inflation calculator, compound interest calculator, retirement calculator, savings goal calculator, debt payoff calculator, loan calculator, mortgage calculator, ROI calculator, free calculators, investment tools',
     },
     zh: {
-      title: '免费理财计算器 - 复利、退休、贷款等专业工具 | WealthEase',
-      description: '提供7款免费专业理财计算器：复利计算器、退休规划计算器、储蓄目标计算器、债务还清计算器、贷款计算器、房贷计算器、投资回报率计算器。即时获取精准结果，配有详细图表和专业建议。',
-      keywords: '理财计算器, 复利计算器, 退休计算器, 储蓄目标计算器, 债务还清计算器, 贷款计算器, 房贷计算器, ROI计算器, 免费计算器, 投资工具',
+      title: '免费理财计算器 - 401(k)、通货膨胀、复利、房贷等专业工具 | WealthEase',
+      description: '提供9款免费专业理财计算器：401(k)退休、通货膨胀、复利计算器、退休规划计算器、储蓄目标计算器、债务还清计算器、贷款计算器、房贷计算器、投资回报率计算器。即时获取精准结果，配有详细图表和专业建议。',
+      keywords: '理财计算器, 401k计算器, 通货膨胀计算器, 复利计算器, 退休计算器, 储蓄目标计算器, 债务还清计算器, 贷款计算器, 房贷计算器, ROI计算器, 免费计算器, 投资工具',
     },
   };
 
@@ -64,9 +64,16 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
     },
     {
       icon: <PiggyBank className="w-10 h-10 text-primary-600" />,
-      title: t('tools.retirement.title'),
-      description: t('tools.retirement.description'),
-      href: `/${locale}/calculators/retirement`,
+      title: t('tools.investment401k.title'),
+      description: t('tools.investment401k.description'),
+      href: `/${locale}/calculators/investment-401k`,
+      available: true,
+    },
+    {
+      icon: <DollarSign className="w-10 h-10 text-primary-600" />,
+      title: t('tools.inflation.title'),
+      description: t('tools.inflation.description'),
+      href: `/${locale}/calculators/inflation`,
       available: true,
     },
     {

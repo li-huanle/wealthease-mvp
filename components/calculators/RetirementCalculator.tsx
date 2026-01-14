@@ -2,13 +2,14 @@
 
 import {useState} from 'react';
 import {useTranslations} from 'next-intl';
-import {Line} from 'react-chartjs-2';
+import {Line, Doughnut} from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
   PointElement,
   LineElement,
+  ArcElement,
   Title,
   Tooltip,
   Legend,
@@ -17,13 +18,14 @@ import {
 import CalculatorInput from '@/components/calculators/CalculatorInput';
 import ResultCard from '@/components/calculators/ResultCard';
 import ExpertTips from '@/components/calculators/ExpertTips';
-import {Umbrella, Calculator, TrendingUp, Shield} from 'lucide-react';
+import {Umbrella, Calculator, TrendingUp, Shield, Building, PiggyBank, Info} from 'lucide-react';
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
   PointElement,
   LineElement,
+  ArcElement,
   Title,
   Tooltip,
   Legend,
@@ -32,25 +34,59 @@ ChartJS.register(
 
 interface CalculationResult {
   retirementSavings: number;
+  employeeContributions: number;
+  employerMatch: number;
+  totalContributions: number;
+  totalEarnings: number;
   yearsInRetirement: number;
   monthlyRetirementIncome: number;
   shortfall: number;
   isSufficient: boolean;
   recommendedMonthlySavings: number;
   savingsData: number[];
+  employerMatchData: number[];
   years: number[];
 }
+
+// 2025/2026 401(k) and IRA contribution limits
+const CONTRIBUTION_LIMITS_2025 = {
+  '401k': 23500,
+  '401kCatchUp': 31000,
+  'ira': 7000,
+  'iraCatchUp': 8000,
+};
+
+const CONTRIBUTION_LIMITS_2026 = {
+  '401k': 24500,
+  '401kCatchUp': 32500,
+  'ira': 7500,
+  'iraCatchUp': 8500,
+};
 
 export default function RetirementCalculator() {
   const t = useTranslations('calculator.retirement');
   const currency = useTranslations('common.currency');
+  const isUS = currency('code') === 'USD';
 
   const [currentAge, setCurrentAge] = useState<number>(30);
   const [retirementAge, setRetirementAge] = useState<number>(65);
   const [currentSavings, setCurrentSavings] = useState<number>(50000);
-  const [monthlySavings, setMonthlySavings] = useState<number>(1000);
+  const [annualSavings, setAnnualSavings] = useState<number>(12000);
+  const [monthlySavingsState, setMonthlySavingsState] = useState<number>(1000);
+  const [retirementMonthlyExpenseState, setRetirementMonthlyExpenseState] = useState<number>(5000);
+
+  // US-specific: 401(k) features
+  const [has401k, setHas401k] = useState<boolean>(true);
+  const [employerMatchPercent, setEmployerMatchPercent] = useState<number>(4); // Match 4% of salary
+  const [employerMatchLimit, setEmployerMatchLimit] = useState<number>(50); // Match up to 50% of contribution
+  const [salary, setSalary] = useState<number>(100000);
+  const [contributeLimit, setContributeLimit] = useState<boolean>(true);
+
+  // Compound frequency
+  const [compoundFrequency, setCompoundFrequency] = useState<'monthly' | 'daily' | 'annually'>('monthly');
+
   const [annualReturn, setAnnualReturn] = useState<number>(7);
-  const [retirementMonthlyExpense, setRetirementMonthlyExpense] = useState<number>(5000);
+  const [retirementAnnualExpense, setRetirementAnnualExpense] = useState<number>(60000);
   const [lifeExpectancy, setLifeExpectancy] = useState<number>(85);
   const [result, setResult] = useState<CalculationResult | null>(null);
 
@@ -58,6 +94,7 @@ export default function RetirementCalculator() {
     const yearsToRetirement = retirementAge - currentAge;
     const yearsInRetirement = lifeExpectancy - retirementAge;
     const monthlyRate = annualReturn / 100 / 12;
+    const retirementMonthlyExpense = retirementMonthlyExpenseState;
 
     if (yearsToRetirement <= 0 || yearsInRetirement <= 0) return;
 
@@ -67,20 +104,20 @@ export default function RetirementCalculator() {
 
     for (let year = 1; year <= yearsToRetirement; year++) {
       for (let month = 1; month <= 12; month++) {
-        savings = savings * (1 + monthlyRate) + monthlySavings;
+        savings = savings * (1 + monthlyRate) + monthlySavingsState;
       }
       savingsData.push(savings);
       years.push(currentAge + year);
     }
 
     const retirementSavings = savings;
-    const totalRetirementNeeds = retirementMonthlyExpense * 12 * yearsInRetirement;
+    const totalRetirementNeeds = retirementAnnualExpense * 12 * yearsInRetirement;
     const monthlyRetirementIncome = (retirementSavings * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -yearsInRetirement * 12));
 
     let remainingSavings = retirementSavings;
     for (let year = 1; year <= yearsInRetirement; year++) {
       for (let month = 1; month <= 12; month++) {
-        remainingSavings = remainingSavings * (1 + monthlyRate) - retirementMonthlyExpense;
+        remainingSavings = remainingSavings * (1 + monthlyRate) - retirementAnnualExpense / 12;
         if (remainingSavings < 0) remainingSavings = 0;
       }
       savingsData.push(remainingSavings);
@@ -90,7 +127,7 @@ export default function RetirementCalculator() {
     const shortfall = totalRetirementNeeds - retirementSavings;
     const isSufficient = retirementSavings >= totalRetirementNeeds;
 
-    let recommendedMonthlySavings = monthlySavings;
+    let recommendedMonthlySavings = monthlySavingsState;
     if (!isSufficient) {
       const fv = totalRetirementNeeds;
       const n = yearsToRetirement * 12;
@@ -99,12 +136,17 @@ export default function RetirementCalculator() {
 
     setResult({
       retirementSavings,
+      employeeContributions: annualSavings * yearsToRetirement,
+      employerMatch: 0,
+      totalContributions: annualSavings * yearsToRetirement,
+      totalEarnings: retirementSavings - currentSavings - annualSavings * yearsToRetirement,
       yearsInRetirement,
       monthlyRetirementIncome,
       shortfall,
       isSufficient,
       recommendedMonthlySavings,
       savingsData,
+      employerMatchData: new Array(yearsToRetirement).fill(0),
       years,
     });
   };
@@ -113,9 +155,11 @@ export default function RetirementCalculator() {
     setCurrentAge(30);
     setRetirementAge(65);
     setCurrentSavings(50000);
-    setMonthlySavings(1000);
+    setAnnualSavings(12000);
+    setMonthlySavingsState(1000);
     setAnnualReturn(7);
-    setRetirementMonthlyExpense(5000);
+    setRetirementAnnualExpense(60000);
+    setRetirementMonthlyExpenseState(5000);
     setLifeExpectancy(85);
     setResult(null);
   };
@@ -258,8 +302,8 @@ export default function RetirementCalculator() {
 
               <CalculatorInput
                 label={t('form.monthlySavings')}
-                value={monthlySavings}
-                onChange={setMonthlySavings}
+                value={monthlySavingsState}
+                onChange={setMonthlySavingsState}
                 min={0}
                 max={50000}
                 step={100}
@@ -286,8 +330,8 @@ export default function RetirementCalculator() {
 
               <CalculatorInput
                 label={t('form.retirementMonthlyExpense')}
-                value={retirementMonthlyExpense}
-                onChange={setRetirementMonthlyExpense}
+                value={retirementMonthlyExpenseState}
+                onChange={setRetirementMonthlyExpenseState}
                 min={0}
                 max={50000}
                 step={100}
@@ -391,7 +435,7 @@ export default function RetirementCalculator() {
                       {formatCurrency(result.recommendedMonthlySavings)}
                     </div>
                     <div className="text-sm text-accent-700 mt-2">
-                      ({t('results.increase')}: {formatCurrency(result.recommendedMonthlySavings - monthlySavings)}/month)
+                      ({t('results.increase')}: {formatCurrency(result.recommendedMonthlySavings - monthlySavingsState)}/month)
                     </div>
                   </div>
                 </div>
