@@ -2,7 +2,7 @@
 
 import {useTranslations, useLocale} from 'next-intl';
 import Link from 'next/link';
-import {TrendingUp, Mail, Shield, FileText, AlertTriangle} from 'lucide-react';
+import {TrendingUp, Mail, Shield, FileText, AlertTriangle, Link2} from 'lucide-react';
 
 export default function Footer() {
   const t = useTranslations('footer');
@@ -117,6 +117,28 @@ export default function Footer() {
               <Mail className="w-4 h-4 mr-2" />
               {locale === 'zh' ? '立即订阅' : 'Subscribe Now'}
             </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Friend Links */}
+      <div className="border-t border-gray-800 bg-gray-900/50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex items-center space-x-2 mb-4">
+            <Link2 className="w-4 h-4 text-primary-400" />
+            <h4 className="text-white font-semibold text-sm uppercase tracking-wider">
+              {locale === 'zh' ? '友情链接' : 'Friend Links'}
+            </h4>
+          </div>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="https://valuristories.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-primary-400 hover:underline transition-colors text-sm"
+            >
+              ValuRistories
+            </a>
           </div>
         </div>
       </div>
