@@ -1,5 +1,6 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import DebtPayoffCalculator from '@/components/calculators/DebtPayoffCalculator';
+import RelatedCalculators from '@/components/RelatedCalculators';
 import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -175,6 +176,8 @@ export default async function DebtPayoffPage({ params }: { params: Promise<{ loc
             </>
           )}
         </div>
+
+        <RelatedCalculators currentCalculator="debt-payoff" />
       </div>
     </div>
   );

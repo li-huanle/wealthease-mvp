@@ -1,5 +1,6 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import LoanCalculator from '@/components/calculators/LoanCalculator';
+import RelatedCalculators from '@/components/RelatedCalculators';
 
 export default async function LoanPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -55,6 +56,8 @@ export default async function LoanPage({ params }: { params: Promise<{ locale: s
             penalties before signing a loan agreement.
           </p>
         </div>
+
+        <RelatedCalculators currentCalculator="loan" />
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import ROICalculator from '@/components/calculators/ROICalculator';
+import RelatedCalculators from '@/components/RelatedCalculators';
 
 export default async function ROIPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -71,6 +72,8 @@ export default async function ROIPage({ params }: { params: Promise<{ locale: st
             and adjust your strategy based on your financial goals and risk tolerance.
           </p>
         </div>
+
+        <RelatedCalculators currentCalculator="roi" />
       </div>
     </div>
   );

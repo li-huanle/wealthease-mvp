@@ -1,5 +1,6 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import RetirementCalculator from '@/components/calculators/RetirementCalculator';
+import RelatedCalculators from '@/components/RelatedCalculators';
 
 export default async function RetirementPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -56,6 +57,8 @@ export default async function RetirementPage({ params }: { params: Promise<{ loc
             across stocks, bonds, and other assets to balance risk and return.
           </p>
         </div>
+
+        <RelatedCalculators currentCalculator="retirement" />
       </div>
     </div>
   );

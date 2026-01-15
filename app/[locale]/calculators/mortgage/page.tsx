@@ -1,5 +1,6 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import MortgageCalculator from '@/components/calculators/MortgageCalculator';
+import RelatedCalculators from '@/components/RelatedCalculators';
 
 export default async function MortgagePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -67,6 +68,8 @@ export default async function MortgagePage({ params }: { params: Promise<{ local
             or appreciation. Contact your lender to request PMI removal when you reach this threshold.
           </p>
         </div>
+
+        <RelatedCalculators currentCalculator="mortgage" />
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import SavingsGoalCalculator from '@/components/calculators/SavingsGoalCalculator';
+import RelatedCalculators from '@/components/RelatedCalculators';
 import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -160,6 +161,8 @@ export default async function SavingsGoalPage({ params }: { params: Promise<{ lo
             </>
           )}
         </div>
+
+        <RelatedCalculators currentCalculator="savings-goal" />
       </div>
     </div>
   );

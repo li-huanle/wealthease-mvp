@@ -1,6 +1,7 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {Metadata} from 'next';
 import dynamic from 'next/dynamic';
+import RelatedCalculators from '@/components/RelatedCalculators';
 
 // Dynamic import for the calculator component
 const Investment401kCalculator = dynamic(
@@ -67,6 +68,8 @@ export default async function Investment401kPage({ params }: { params: Promise<{
         </div>
 
         <Investment401kCalculator />
+
+        <RelatedCalculators currentCalculator="investment-401k" />
       </div>
     </div>
   );

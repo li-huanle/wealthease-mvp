@@ -798,19 +798,7 @@
       "title": "Contact Us",
       "content": "If you have any questions about this Privacy Policy or our data practices, please contact us:"
     }
-  }
-}
-
   },
-  "seo": {
-    "description": "Free online financial calculators for retirement, mortgage, debt payoff, inflation, 401(k), and more. Make informed decisions about your money with our professional-grade tools.",
-    "keywords": "financial calculators, retirement calculator, mortgage calculator, debt payoff, inflation calculator, 401k calculator, compound interest, savings goal, ROI calculator, free tools, financial planning",
-    "og:title": "WealthEase - Free Financial Calculators",
-    "og:description": "Smart tools for smarter financial decisions. Free retirement, mortgage, debt payoff, inflation, 401(k), and more calculators.",
-    "og:type": "website",
-    "twitter:card": "summary_large_image"
-  }
-}},
   "seo": {
     "title": "WealthEase - Free Financial Calculators",
     "description": "Free online financial calculators for retirement, mortgage, debt payoff, inflation, 401(k), and more. Make informed decisions about your money with our professional-grade tools.",
@@ -821,4 +809,3 @@
     "twitter:card": "summary_large_image"
   }
 }
-        "subtitle": "Plan your retirement with 401(k) employer matching and compound growth",

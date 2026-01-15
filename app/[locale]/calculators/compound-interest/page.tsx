@@ -1,5 +1,6 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import dynamic from 'next/dynamic';
+import RelatedCalculators from '@/components/RelatedCalculators';
 
 // 动态导入计算器组件，显示骨架屏
 const CompoundInterestCalculator = dynamic(
@@ -57,10 +58,12 @@ export default async function CompoundInterestPage({ params }: { params: Promise
           
           <h2>The Power of Compound Interest</h2>
           <p>
-            Albert Einstein reportedly called compound interest "the eighth wonder of the world." 
+            Albert Einstein reportedly called compound interest "the eighth wonder of the world."
             The earlier you start investing, the more time your money has to grow exponentially.
           </p>
         </div>
+
+        <RelatedCalculators currentCalculator="compound-interest" />
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {Metadata} from 'next';
 import dynamic from 'next/dynamic';
+import RelatedCalculators from '@/components/RelatedCalculators';
 
 // Dynamic import for the calculator component
 const InflationCalculator = dynamic(
@@ -139,6 +140,8 @@ export default async function InflationPage({ params }: { params: Promise<{ loca
             fully match your actual inflation experience, especially in healthcare costs.
           </p>
         </div>
+
+        <RelatedCalculators currentCalculator="inflation" />
       </div>
     </div>
   );
