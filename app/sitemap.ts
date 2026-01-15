@@ -85,5 +85,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
+  // Add external links
+  routes.push({
+    url: 'https://valuristories.com/',
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.5,
+  });
+
   return routes;
 }
