@@ -41,6 +41,27 @@ export default async function LocaleLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="google-site-verification" content="sIjeN1dgXA_DE426qez6fNmHyDss1b8F0iAMiXXamY8" />
+
+        {/* SEO Meta Tags */}
+        <meta name="description" content={messages.seo.description} />
+        <meta name="keywords" content={messages.seo.keywords} />
+        <meta name="author" content="WealthEase" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={messages.seo.title} />
+        <meta property="og:description" content={messages.seo.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="WealthEase" />
+        <meta property="og:image" content="https://wealthease.com/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content={messages.seo.twitterCard} />
+        <meta name="twitter:title" content={messages.seo.title} />
+        <meta name="twitter:description" content={messages.seo.description} />
+        <meta name="twitter:image" content="https://wealthease.com/og-image.jpg" />
       </head>
       <body>
         {gaId && <GoogleAnalytics gaId={gaId} />}

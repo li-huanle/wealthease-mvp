@@ -1,4 +1,5 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
+import {Metadata} from 'next';
 import dynamic from 'next/dynamic';
 
 // Dynamic import for the calculator component
@@ -12,6 +13,42 @@ const InflationCalculator = dynamic(
     ),
   }
 );
+
+// Generate metadata for SEO
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations('calculator.inflation');
+  const seo = await getTranslations('seo');
+
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://wealthease.com';
+  const canonicalUrl = `${baseUrl}/${locale}/calculators/inflation`;
+
+  return {
+    title: t('title'),
+    description: seo('description'),
+    keywords: seo('keywords'),
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        'en': `${baseUrl}/en/calculators/inflation`,
+        'zh': `${baseUrl}/zh/calculators/inflation`,
+      },
+    },
+    openGraph: {
+      title: seo('og:title'),
+      description: seo('og:description'),
+      type: 'website',
+      siteName: 'WealthEase',
+      locale: locale,
+      url: canonicalUrl,
+    },
+    twitter: {
+      card: seo('twitter:card'),
+      title: seo('og:title'),
+      description: seo('og:description'),
+    } as any
+  };
+}
 
 export default async function InflationPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
