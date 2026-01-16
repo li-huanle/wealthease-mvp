@@ -29,7 +29,7 @@ export default function Footer() {
             <div className="flex items-center space-x-2 pt-2">
               <Shield className="w-4 h-4 text-success-400" />
               <span className="text-xs text-gray-500">
-                {locale === 'zh' ? '隐私优先 · 数据安全' : 'Privacy First · Secure'}
+                {locale === 'zh' ? '隐私优先 · 本地计算 · 数据不上传' : 'Privacy First · Client-Side · No Data Upload'}
               </span>
             </div>
           </div>
@@ -183,6 +183,20 @@ export default function Footer() {
               >
                 ValuRistories
               </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Legal Disclaimer */}
+        <div className="border-t border-gray-800 bg-gray-900/50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-xs text-gray-600">
+              <AlertTriangle className="w-4 h-4 text-amber-500 flex-shrink-0" />
+              <span>
+                {locale === 'zh'
+                  ? '免责声明：本网站仅用于教育目的，不构成财务或税务建议。所有计算均在您的浏览器本地执行，数据不上传至任何服务器，您的财务隐私绝对安全。'
+                  : 'Disclaimer: This website is for educational purposes only and does not constitute financial or tax advice. All calculations run locally in your browser - no data is sent to any server. Your financial privacy is 100% secure.'}
+              </span>
             </div>
           </div>
         </div>
