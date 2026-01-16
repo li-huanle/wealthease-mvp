@@ -404,6 +404,230 @@
         "recommendedAnnualSavings": "Recommended Annual Savings",
         "increase": "Increase"
       }
+    },
+    "rentVsBuy": {
+      "title": "Rent vs Buy Calculator",
+      "subtitle": "Compare the long-term financial costs of renting versus buying a home",
+      "form": {
+        "buyingSection": "Buying",
+        "rentingSection": "Renting",
+        "otherSection": "Other Parameters",
+        "homePrice": "Home Price",
+        "homePriceTooltip": "The purchase price of the home",
+        "downPaymentPercent": "Down Payment",
+        "downPaymentPercentTooltip": "Percentage of home price paid upfront (typically 20%)",
+        "mortgageRate": "Mortgage Rate",
+        "mortgageRateTooltip": "Annual interest rate for your home loan",
+        "loanTerm": "Loan Term",
+        "loanTermTooltip": "Length of the mortgage (typically 30 years)",
+        "propertyTaxRate": "Property Tax Rate",
+        "propertyTaxRateTooltip": "Annual property tax as percentage of home value (varies by location)",
+        "hoaFees": "HOA Fees",
+        "hoaFeesTooltip": "Monthly homeowners association fees (if applicable)",
+        "homeInsurance": "Home Insurance",
+        "homeInsuranceTooltip": "Annual homeowners insurance cost",
+        "maintenanceRate": "Maintenance Cost",
+        "maintenanceRateTooltip": "Annual maintenance as percentage of home value (typically 1%)",
+        "homeAppreciationRate": "Home Appreciation",
+        "homeAppreciationRateTooltip": "Expected annual increase in home value",
+        "closingCosts": "Closing Costs",
+        "closingCostsTooltip": "One-time costs when purchasing (typically 2-5% of home price)",
+        "monthlyRent": "Monthly Rent",
+        "monthlyRentTooltip": "Current monthly rental cost",
+        "rentIncreaseRate": "Rent Increase Rate",
+        "rentIncreaseRateTooltip": "Expected annual increase in rent",
+        "investmentReturnRate": "Investment Return",
+        "investmentReturnRateTooltip": "Expected annual return if down payment is invested instead",
+        "yearsToStay": "Years to Stay",
+        "yearsToStayTooltip": "How long you plan to live in the home/area",
+        "years": "years",
+        "perMonth": "/mo",
+        "perYear": "/yr",
+        "calculate": "Calculate"
+      },
+      "results": {
+        "title": "Results",
+        "buyingBetter": "Buying is Better",
+        "rentingBetter": "Renting is Better",
+        "buyingBetterDesc": "After {years} years, buying saves you {amount}",
+        "rentingBetterDesc": "After {years} years, renting saves you {amount}",
+        "breakEven": "Break-even point: {years} years",
+        "buyingTotalCost": "Net Cost of Buying",
+        "buyingTotalCostTooltip": "Total cost minus home equity built",
+        "rentingTotalCost": "Net Cost of Renting",
+        "rentingTotalCostTooltip": "Total rent paid plus opportunity cost of down payment",
+        "homeEquity": "Home Equity",
+        "homeEquityTooltip": "Home value minus remaining mortgage balance",
+        "investmentValue": "Investment Value",
+        "investmentValueTooltip": "Value of down payment if invested instead of buying",
+        "monthlyBuying": "Monthly Cost (Buying)",
+        "monthlyRenting": "Monthly Cost (Renting)"
+      },
+      "chart": {
+        "title": "Net Cost Over Time",
+        "header": "Cost Comparison",
+        "buyingCost": "Buying (Net Cost)",
+        "rentingCost": "Renting (Net Cost)"
+      },
+      "expertTips": {
+        "tip1": "The 5-Year Rule: Plan to stay at least 5 years for buying to make sense financially due to upfront costs and selling fees.",
+        "tip2": "Don't forget hidden costs: Property taxes, insurance, HOA fees, and maintenance can add 30-50% to your monthly mortgage payment.",
+        "tip3": "Consider opportunity cost: Money used for down payment could grow in investments. This calculator accounts for that.",
+        "tip4": "Location matters: In expensive markets with high price-to-rent ratios (>20), renting often makes more financial sense."
+      }
+    },
+    "collegeSavings": {
+      "title": "College Savings Calculator (529 Plan)",
+      "subtitle": "Plan and save for your child's college education with tax-advantaged 529 plans",
+      "form": {
+        "childInfo": "Child & Savings Information",
+        "collegeCostInfo": "College Cost Information",
+        "childAge": "Child's Current Age",
+        "childAgeTooltip": "Your child's current age in years",
+        "collegeAge": "College Entry Age",
+        "collegeAgeTooltip": "Expected age when child starts college (typically 18)",
+        "currentSavings": "Current Savings",
+        "currentSavingsTooltip": "Amount already saved in 529 or other college accounts",
+        "monthlyContribution": "Monthly Contribution",
+        "monthlyContributionTooltip": "How much you plan to save each month",
+        "expectedReturn": "Expected Annual Return",
+        "expectedReturnTooltip": "Expected investment return (conservative: 5%, moderate: 7%, aggressive: 9%)",
+        "annualCollegeCost": "Annual College Cost",
+        "annualCollegeCostTooltip": "Current annual cost for tuition, fees, room & board (calculator adjusts for inflation)",
+        "collegeCostInflation": "College Cost Inflation",
+        "collegeCostInflationTooltip": "Annual increase in college costs (historical average: 5-6%)",
+        "yearsInCollege": "Years in College",
+        "yearsInCollegeTooltip": "Number of years in college (typically 4)",
+        "years": "years",
+        "perMonth": "/mo",
+        "perYear": "/yr",
+        "calculate": "Calculate Savings Plan"
+      },
+      "results": {
+        "title": "Savings Projection",
+        "onTrack": "On Track!",
+        "actionNeeded": "Action Needed",
+        "onTrackMessage": "You'll have a surplus of {amount} for college costs",
+        "shortfallMessage": "There's a shortfall of {amount} for college costs",
+        "totalSavings": "Total Savings at College",
+        "totalSavingsTooltip": "Total amount saved when child starts college",
+        "totalCollegeCost": "Total College Cost",
+        "totalCollegeCostTooltip": "Projected total cost for all years of college",
+        "surplus": "Surplus",
+        "surplusTooltip": "Extra savings beyond college costs",
+        "shortfall": "Shortfall",
+        "shortfallTooltip": "Gap between savings and college costs",
+        "investmentEarnings": "Investment Earnings",
+        "investmentEarningsTooltip": "Total growth from investments",
+        "contributions": "Contributions",
+        "earnings": "Earnings",
+        "recommendation": "Recommendation",
+        "recommendationMessage": "To meet your college savings goal, increase your monthly contribution to:",
+        "recommendedMonthly": "Recommended Monthly Contribution",
+        "increase": "Increase needed"
+      },
+      "chart": {
+        "savingsTitle": "Savings Growth Over Time",
+        "savingsGrowth": "Total Savings",
+        "compositionTitle": "Savings Composition"
+      },
+      "expertTips": {
+        "tip1": "Start Early: Every year you wait nearly doubles the required monthly savings. Start as early as possible.",
+        "tip2": "Maximize State Tax Benefits: Many states offer tax deductions for 529 contributions - this is free money!",
+        "tip3": "Age-Based Portfolios: Consider target-date funds that automatically adjust risk as college approaches.",
+        "tip4": "Don't Sacrifice Retirement: Save for retirement first. You can borrow for college but not for retirement."
+      }
+    },
+    "dividendIncome": {
+      "title": "Dividend Income Calculator",
+      "subtitle": "Calculate your future dividend income and passive cash flow from dividend-paying stocks",
+      "form": {
+        "investmentSection": "Investment Details",
+        "dividendSection": "Dividend & Growth Rates",
+        "initialInvestment": "Initial Investment",
+        "initialInvestmentTooltip": "Starting amount to invest in dividend stocks",
+        "monthlyContribution": "Monthly Contribution",
+        "monthlyContributionTooltip": "Amount to invest each month",
+        "yearsToInvest": "Investment Period",
+        "yearsToInvestTooltip": "Number of years to invest and grow dividends",
+        "dividendYield": "Dividend Yield",
+        "dividendYieldTooltip": "Current average dividend yield of your portfolio (typical range: 2-5%)",
+        "dividendGrowthRate": "Dividend Growth Rate",
+        "dividendGrowthRateTooltip": "Expected annual increase in dividend payments (historical average: 5-7%)",
+        "stockPriceGrowth": "Stock Price Appreciation",
+        "stockPriceGrowthTooltip": "Expected annual increase in stock price (historical average: 6-8%)",
+        "reinvestDividends": "Reinvest Dividends (DRIP)",
+        "reinvestDividendsTooltip": "Automatically reinvest dividends to buy more shares (recommended for growth)",
+        "years": "years",
+        "perMonth": "/mo",
+        "perYear": "/yr",
+        "calculate": "Calculate Dividend Income"
+      },
+      "results": {
+        "title": "Dividend Projection",
+        "projectedIncome": "Your Future Dividend Income",
+        "monthlyDividend": "Monthly Dividend Income",
+        "annualDividend": "Annual Dividend Income",
+        "portfolioValue": "Total Portfolio Value",
+        "portfolioValueTooltip": "Total value of your dividend portfolio",
+        "totalDividends": "Total Dividends Received",
+        "totalDividendsTooltip": "Cumulative dividend payments over investment period",
+        "totalInvested": "Total Invested",
+        "totalInvestedTooltip": "Your total contributions over time",
+        "totalReturns": "Total Returns",
+        "totalReturnsTooltip": "Portfolio value minus total invested",
+        "invested": "Invested",
+        "returns": "Returns"
+      },
+      "chart": {
+        "portfolioTitle": "Portfolio Value Growth",
+        "portfolioValue": "Portfolio Value",
+        "dividendTitle": "Annual Dividend Income Growth",
+        "annualDividend": "Annual Dividend",
+        "compositionTitle": "Portfolio Composition"
+      },
+      "expertTips": {
+        "tip1": "Dividend Reinvestment: Enable DRIP to automatically reinvest dividends and accelerate compound growth, especially in early years.",
+        "tip2": "Focus on Dividend Growth: Companies that consistently increase dividends (Dividend Aristocrats) often outperform high-yield stocks long-term.",
+        "tip3": "Diversify Across Sectors: Spread dividend investments across multiple sectors to reduce risk of dividend cuts.",
+        "tip4": "Tax Efficiency: Hold dividend stocks in tax-advantaged accounts (IRA/401k) to avoid annual taxes on dividend income."
+      }
+    },
+    "investmentComparison": {
+      "title": "Investment Return Comparison Calculator",
+      "subtitle": "Compare different investment options side-by-side to make informed financial decisions",
+      "form": {
+        "commonParams": "Common Parameters",
+        "years": "Investment Period",
+        "yearsUnit": "years",
+        "yearsTooltip": "Number of years to compare investments",
+        "investment": "Investment Option",
+        "investmentName": "Investment Name",
+        "initialInvestment": "Initial Investment",
+        "monthlyContribution": "Monthly Contribution",
+        "annualReturn": "Expected Annual Return",
+        "taxRate": "Tax Rate on Gains",
+        "calculate": "Compare Investments"
+      },
+      "results": {
+        "bestInvestment": "Best Investment Option",
+        "finalValue": "Final Value (Pre-Tax)",
+        "totalContributions": "Total Contributions",
+        "totalReturns": "Total Returns",
+        "afterTaxValue": "After-Tax Value"
+      },
+      "chart": {
+        "growthTitle": "Investment Growth Comparison",
+        "comparisonTitle": "Side-by-Side Comparison",
+        "finalValue": "After-Tax Value",
+        "totalReturns": "Total Returns"
+      },
+      "expertTips": {
+        "tip1": "Consider Tax Impact: Different investments have different tax treatments. Use tax-advantaged accounts (IRA/401k) for tax-inefficient investments.",
+        "tip2": "Risk vs Return: Higher returns usually mean higher risk. Diversify across multiple asset classes to balance risk and reward.",
+        "tip3": "Time Horizon Matters: Longer time horizons allow for more aggressive allocations. Adjust to more conservative investments as you near your goal.",
+        "tip4": "Fees Matter: Even 1% in fees can cost hundreds of thousands over decades. Choose low-cost index funds when possible."
+      }
     }
   },
   "footer": {
@@ -533,6 +757,22 @@
       "roi": {
         "title": "ROI Calculator",
         "description": "Calculate return on investment and annualized returns"
+      },
+      "rentVsBuy": {
+        "title": "Rent vs Buy Calculator",
+        "description": "Compare the long-term financial costs of renting versus buying a home"
+      },
+      "collegeSavings": {
+        "title": "College Savings Calculator (529 Plan)",
+        "description": "Plan and save for your child's college education with tax-advantaged 529 plans"
+      },
+      "dividendIncome": {
+        "title": "Dividend Income Calculator",
+        "description": "Calculate your future dividend income and passive cash flow from dividend-paying stocks"
+      },
+      "investmentComparison": {
+        "title": "Investment Comparison Calculator",
+        "description": "Compare different investment options side-by-side to make informed financial decisions"
       }
     },
     "comingSoon": "Coming soon"

@@ -403,6 +403,230 @@
         "recommendedAnnualSavings": "建议年度供款",
         "increase": "增加"
       }
+    },
+    "rentVsBuy": {
+      "title": "租房 vs 买房计算器",
+      "subtitle": "比较租房和买房的长期财务成本",
+      "form": {
+        "buyingSection": "买房",
+        "rentingSection": "租房",
+        "otherSection": "其他参数",
+        "homePrice": "房价",
+        "homePriceTooltip": "房屋的购买价格",
+        "downPaymentPercent": "首付比例",
+        "downPaymentPercentTooltip": "预付的房价百分比（通常为20%）",
+        "mortgageRate": "房贷利率",
+        "mortgageRateTooltip": "房屋贷款的年利率",
+        "loanTerm": "贷款期限",
+        "loanTermTooltip": "抵押贷款的期限（通常为30年）",
+        "propertyTaxRate": "房产税率",
+        "propertyTaxRateTooltip": "以房屋价值百分比计算的年度房产税（因地区而异）",
+        "hoaFees": "物业费",
+        "hoaFeesTooltip": "每月业主协会费用（如适用）",
+        "homeInsurance": "房屋保险",
+        "homeInsuranceTooltip": "年度房屋保险费用",
+        "maintenanceRate": "维护成本",
+        "maintenanceRateTooltip": "以房屋价值百分比计算的年度维护费（通常为1%）",
+        "homeAppreciationRate": "房屋增值率",
+        "homeAppreciationRateTooltip": "预期的房屋价值年增长率",
+        "closingCosts": "过户费",
+        "closingCostsTooltip": "购房时的一次性费用（通常为房价的2-5%）",
+        "monthlyRent": "月租金",
+        "monthlyRentTooltip": "当前每月租金",
+        "rentIncreaseRate": "租金增长率",
+        "rentIncreaseRateTooltip": "预期的年度租金增长率",
+        "investmentReturnRate": "投资回报率",
+        "investmentReturnRateTooltip": "如果首付款用于投资的预期年回报率",
+        "yearsToStay": "居住年限",
+        "yearsToStayTooltip": "计划在该房屋/地区居住的时长",
+        "years": "年",
+        "perMonth": "/月",
+        "perYear": "/年",
+        "calculate": "计算"
+      },
+      "results": {
+        "title": "计算结果",
+        "buyingBetter": "买房更划算",
+        "rentingBetter": "租房更划算",
+        "buyingBetterDesc": "{years}年后，买房为您节省{amount}",
+        "rentingBetterDesc": "{years}年后，租房为您节省{amount}",
+        "breakEven": "盈亏平衡点：{years}年",
+        "buyingTotalCost": "买房净成本",
+        "buyingTotalCostTooltip": "总成本减去房屋净值",
+        "rentingTotalCost": "租房净成本",
+        "rentingTotalCostTooltip": "总租金支出加上首付款的机会成本",
+        "homeEquity": "房屋净值",
+        "homeEquityTooltip": "房屋价值减去剩余贷款余额",
+        "investmentValue": "投资价值",
+        "investmentValueTooltip": "如果首付款用于投资而非买房的价值",
+        "monthlyBuying": "月供成本（买房）",
+        "monthlyRenting": "月租成本（租房）"
+      },
+      "chart": {
+        "title": "随时间变化的净成本",
+        "header": "成本对比",
+        "buyingCost": "买房（净成本）",
+        "rentingCost": "租房（净成本）"
+      },
+      "expertTips": {
+        "tip1": "5年规则：由于前期成本和销售费用，计划至少居住5年才能使买房在财务上有意义。",
+        "tip2": "别忘了隐性成本：房产税、保险、物业费和维护费可使您的月供增加30-50%。",
+        "tip3": "考虑机会成本：用于首付的资金可以在投资中增值。本计算器已考虑了这一点。",
+        "tip4": "地理位置很重要：在房价租金比高（>20）的昂贵市场，租房往往在财务上更合理。"
+      }
+    },
+    "collegeSavings": {
+      "title": "大学学费储蓄计算器（529计划）",
+      "subtitle": "使用税收优惠的529计划为孩子的大学教育储蓄",
+      "form": {
+        "childInfo": "子女与储蓄信息",
+        "collegeCostInfo": "大学费用信息",
+        "childAge": "子女当前年龄",
+        "childAgeTooltip": "您孩子的当前年龄",
+        "collegeAge": "入学年龄",
+        "collegeAgeTooltip": "预期孩子上大学的年龄（通常为18岁）",
+        "currentSavings": "当前储蓄",
+        "currentSavingsTooltip": "已在529或其他教育账户中储蓄的金额",
+        "monthlyContribution": "月度供款",
+        "monthlyContributionTooltip": "计划每月储蓄的金额",
+        "expectedReturn": "预期年回报率",
+        "expectedReturnTooltip": "预期投资回报率（保守：5%，适中：7%，激进：9%）",
+        "annualCollegeCost": "年度大学费用",
+        "annualCollegeCostTooltip": "当前学费、杂费、食宿的年度费用（计算器会调整通胀）",
+        "collegeCostInflation": "学费增长率",
+        "collegeCostInflationTooltip": "大学费用的年度增长率（历史平均：5-6%）",
+        "yearsInCollege": "就读年限",
+        "yearsInCollegeTooltip": "在大学就读的年数（通常为4年）",
+        "years": "年",
+        "perMonth": "/月",
+        "perYear": "/年",
+        "calculate": "计算储蓄计划"
+      },
+      "results": {
+        "title": "储蓄预测",
+        "onTrack": "进度良好！",
+        "actionNeeded": "需要调整",
+        "onTrackMessage": "您将有{amount}的盈余用于大学费用",
+        "shortfallMessage": "大学费用还有{amount}的缺口",
+        "totalSavings": "大学时总储蓄",
+        "totalSavingsTooltip": "孩子上大学时的总储蓄金额",
+        "totalCollegeCost": "大学总费用",
+        "totalCollegeCostTooltip": "预计所有大学年份的总费用",
+        "surplus": "盈余",
+        "surplusTooltip": "超出大学费用的额外储蓄",
+        "shortfall": "缺口",
+        "shortfallTooltip": "储蓄与大学费用之间的差距",
+        "investmentEarnings": "投资收益",
+        "investmentEarningsTooltip": "投资增长的总收益",
+        "contributions": "供款",
+        "earnings": "收益",
+        "recommendation": "建议",
+        "recommendationMessage": "为实现大学储蓄目标，请将月度供款增加至：",
+        "recommendedMonthly": "建议月度供款",
+        "increase": "需增加"
+      },
+      "chart": {
+        "savingsTitle": "储蓄增长趋势",
+        "savingsGrowth": "总储蓄",
+        "compositionTitle": "储蓄构成"
+      },
+      "expertTips": {
+        "tip1": "尽早开始：每推迟一年，所需的月度储蓄几乎翻倍。越早开始越好。",
+        "tip2": "最大化州税优惠：许多州为529供款提供税收减免 - 这是免费的钱！",
+        "tip3": "年龄基金：考虑目标日期基金，随着大学临近自动调整风险。",
+        "tip4": "别牺牲退休金：先为退休储蓄。可以贷款上大学，但不能贷款退休。"
+      }
+    },
+    "dividendIncome": {
+      "title": "股息收入计算器",
+      "subtitle": "计算来自分红股票的未来股息收入和被动现金流",
+      "form": {
+        "investmentSection": "投资详情",
+        "dividendSection": "股息与增长率",
+        "initialInvestment": "初始投资",
+        "initialInvestmentTooltip": "投资于分红股票的起始金额",
+        "monthlyContribution": "月度供款",
+        "monthlyContributionTooltip": "每月投资的金额",
+        "yearsToInvest": "投资期限",
+        "yearsToInvestTooltip": "投资和增长股息的年数",
+        "dividendYield": "股息率",
+        "dividendYieldTooltip": "投资组合的当前平均股息率（典型范围：2-5%）",
+        "dividendGrowthRate": "股息增长率",
+        "dividendGrowthRateTooltip": "股息支付的预期年增长率（历史平均：5-7%）",
+        "stockPriceGrowth": "股价增值率",
+        "stockPriceGrowthTooltip": "股价的预期年增长率（历史平均：6-8%）",
+        "reinvestDividends": "股息再投资（DRIP）",
+        "reinvestDividendsTooltip": "自动将股息再投资购买更多股份（推荐用于增长）",
+        "years": "年",
+        "perMonth": "/月",
+        "perYear": "/年",
+        "calculate": "计算股息收入"
+      },
+      "results": {
+        "title": "股息预测",
+        "projectedIncome": "您的未来股息收入",
+        "monthlyDividend": "月度股息收入",
+        "annualDividend": "年度股息收入",
+        "portfolioValue": "投资组合总价值",
+        "portfolioValueTooltip": "您的股息投资组合的总价值",
+        "totalDividends": "累计股息收入",
+        "totalDividendsTooltip": "投资期间的累计股息支付",
+        "totalInvested": "总投入",
+        "totalInvestedTooltip": "您随时间的总供款",
+        "totalReturns": "总收益",
+        "totalReturnsTooltip": "投资组合价值减去总投入",
+        "invested": "投入",
+        "returns": "收益"
+      },
+      "chart": {
+        "portfolioTitle": "投资组合价值增长",
+        "portfolioValue": "投资组合价值",
+        "dividendTitle": "年度股息收入增长",
+        "annualDividend": "年度股息",
+        "compositionTitle": "投资组合构成"
+      },
+      "expertTips": {
+        "tip1": "股息再投资：启用DRIP自动将股息再投资，加速复利增长，特别是在早期阶段。",
+        "tip2": "关注股息增长：持续增加股息的公司（股息贵族）长期往往优于高收益股票。",
+        "tip3": "跨行业分散：将股息投资分散到多个行业，降低股息削减的风险。",
+        "tip4": "税收效率：在税收优惠账户（IRA/401k）中持有分红股票，避免年度股息收入税。"
+      }
+    },
+    "investmentComparison": {
+      "title": "投资回报对比计算器",
+      "subtitle": "并排比较不同投资选项，做出明智的财务决策",
+      "form": {
+        "commonParams": "通用参数",
+        "years": "投资期限",
+        "yearsUnit": "年",
+        "yearsTooltip": "对比投资的年数",
+        "investment": "投资选项",
+        "investmentName": "投资名称",
+        "initialInvestment": "初始投资",
+        "monthlyContribution": "月度供款",
+        "annualReturn": "预期年回报率",
+        "taxRate": "收益税率",
+        "calculate": "对比投资"
+      },
+      "results": {
+        "bestInvestment": "最佳投资选项",
+        "finalValue": "最终价值（税前）",
+        "totalContributions": "总供款",
+        "totalReturns": "总收益",
+        "afterTaxValue": "税后价值"
+      },
+      "chart": {
+        "growthTitle": "投资增长对比",
+        "comparisonTitle": "并排对比",
+        "finalValue": "税后价值",
+        "totalReturns": "总收益"
+      },
+      "expertTips": {
+        "tip1": "考虑税收影响：不同投资有不同的税收待遇。对税收效率低的投资使用税收优惠账户（IRA/401k）。",
+        "tip2": "风险与回报：更高的回报通常意味着更高的风险。跨多个资产类别分散投资以平衡风险和回报。",
+        "tip3": "时间跨度很重要：更长的时间跨度允许更激进的配置。随着接近目标调整为更保守的投资。",
+        "tip4": "费用很重要：即使1%的费用也可能在几十年内花费数十万美元。尽可能选择低成本指数基金。"
+      }
     }
   },
   "footer": {
@@ -532,6 +756,22 @@
       "roi": {
         "title": "投资回报率计算器",
         "description": "计算投资回报率和年化收益"
+      },
+      "rentVsBuy": {
+        "title": "租房 vs 买房计算器",
+        "description": "比较租房和买房的长期财务成本"
+      },
+      "collegeSavings": {
+        "title": "大学学费储蓄计算器（529计划）",
+        "description": "使用税收优惠的529计划为孩子的大学教育储蓄"
+      },
+      "dividendIncome": {
+        "title": "股息收入计算器",
+        "description": "计算来自分红股票的未来股息收入和被动现金流"
+      },
+      "investmentComparison": {
+        "title": "投资回报对比计算器",
+        "description": "并排比较不同投资选项，做出明智的财务决策"
       }
     },
     "comingSoon": "即将推出"

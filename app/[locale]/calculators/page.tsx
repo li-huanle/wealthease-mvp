@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { TrendingUp, PiggyBank, Calculator, Home, BarChart3, Target, CreditCard, DollarSign } from 'lucide-react';
+import { TrendingUp, PiggyBank, Calculator, Home, BarChart3, Target, CreditCard, DollarSign, GraduationCap, PieChart } from 'lucide-react';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
 
@@ -9,13 +9,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const metadata = {
     en: {
       title: 'Free Financial Calculators - 401(k), Inflation, Compound Interest, Mortgage & More | WealthEase',
-      description: 'Access 9 free professional financial calculators: 401(k) & Retirement, Inflation, Compound Interest, Savings Goal, Debt Payoff, Loan, Mortgage, and ROI Calculator. Get accurate results instantly with detailed charts and expert recommendations.',
-      keywords: 'financial calculators, 401k calculator, inflation calculator, compound interest calculator, retirement calculator, savings goal calculator, debt payoff calculator, loan calculator, mortgage calculator, ROI calculator, free calculators, investment tools',
+      description: 'Access 13 free professional financial calculators: 401(k) & Retirement, Inflation, Compound Interest, Savings Goal, Debt Payoff, Loan, Mortgage, ROI, Rent vs Buy, College Savings, Dividend Income, and Investment Comparison Calculator. Get accurate results instantly with detailed charts and expert recommendations.',
+      keywords: 'financial calculators, 401k calculator, inflation calculator, compound interest calculator, retirement calculator, savings goal calculator, debt payoff calculator, loan calculator, mortgage calculator, ROI calculator, rent vs buy calculator, college savings calculator, 529 plan calculator, dividend income calculator, investment comparison calculator, free calculators, investment tools',
     },
     zh: {
       title: '免费理财计算器 - 401(k)、通货膨胀、复利、房贷等专业工具 | WealthEase',
-      description: '提供9款免费专业理财计算器：401(k)退休、通货膨胀、复利计算器、退休规划计算器、储蓄目标计算器、债务还清计算器、贷款计算器、房贷计算器、投资回报率计算器。即时获取精准结果，配有详细图表和专业建议。',
-      keywords: '理财计算器, 401k计算器, 通货膨胀计算器, 复利计算器, 退休计算器, 储蓄目标计算器, 债务还清计算器, 贷款计算器, 房贷计算器, ROI计算器, 免费计算器, 投资工具',
+      description: '提供13款免费专业理财计算器：401(k)退休、通货膨胀、复利计算器、退休规划计算器、储蓄目标计算器、债务还清计算器、贷款计算器、房贷计算器、ROI计算器、租房vs买房计算器、大学学费储蓄计算器、股息收入计算器、投资回报对比计算器。即时获取精准结果，配有详细图表和专业建议。',
+      keywords: '理财计算器, 401k计算器, 通货膨胀计算器, 复利计算器, 退休计算器, 储蓄目标计算器, 债务还清计算器, 贷款计算器, 房贷计算器, ROI计算器, 租房买房计算器, 大学储蓄计算器, 529计划计算器, 股息收入计算器, 投资对比计算器, 免费计算器, 投资工具',
     },
   };
 
@@ -109,6 +109,34 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
       title: t('tools.roi.title'),
       description: t('tools.roi.description'),
       href: `/${locale}/calculators/roi`,
+      available: true,
+    },
+    {
+      icon: <Home className="w-10 h-10 text-primary-600" />,
+      title: t('tools.rentVsBuy.title'),
+      description: t('tools.rentVsBuy.description'),
+      href: `/${locale}/calculators/rent-vs-buy`,
+      available: true,
+    },
+    {
+      icon: <GraduationCap className="w-10 h-10 text-primary-600" />,
+      title: t('tools.collegeSavings.title'),
+      description: t('tools.collegeSavings.description'),
+      href: `/${locale}/calculators/college-savings`,
+      available: true,
+    },
+    {
+      icon: <TrendingUp className="w-10 h-10 text-primary-600" />,
+      title: t('tools.dividendIncome.title'),
+      description: t('tools.dividendIncome.description'),
+      href: `/${locale}/calculators/dividend-income`,
+      available: true,
+    },
+    {
+      icon: <PieChart className="w-10 h-10 text-primary-600" />,
+      title: t('tools.investmentComparison.title'),
+      description: t('tools.investmentComparison.description'),
+      href: `/${locale}/calculators/investment-comparison`,
       available: true,
     },
   ];
