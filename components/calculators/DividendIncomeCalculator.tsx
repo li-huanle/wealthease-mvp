@@ -48,6 +48,15 @@ export default function DividendIncomeCalculator() {
   const t = useTranslations('calculator.dividendIncome');
   const currency = useTranslations('common.currency');
 
+  const formatCurrency = (value: number) => {
+    return new Intl.NumberFormat(currency('locale'), {
+      style: 'currency',
+      currency: currency('code'),
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(value);
+  };
+
   // Input states
   const [initialInvestment, setInitialInvestment] = useState<number>(10000);
   const [monthlyContribution, setMonthlyContribution] = useState<number>(500);
@@ -177,7 +186,7 @@ export default function DividendIncomeCalculator() {
               label += ': ';
             }
             if (context.parsed.y !== null) {
-              label += currency('format', {value: Math.round(context.parsed.y)});
+              label += formatCurrency(context.parsed.y);
             }
             return label;
           }
@@ -334,14 +343,14 @@ export default function DividendIncomeCalculator() {
                 <div>
                   <p className="text-green-100 text-sm mb-1">{t('results.monthlyDividend')}</p>
                   <p className="text-3xl font-bold">
-                    {currency('format', {value: Math.round(result.monthlyDividendIncome)})}
+                    {formatCurrency(result.monthlyDividendIncome)}
                     <span className="text-sm ml-2">{t('form.perMonth')}</span>
                   </p>
                 </div>
                 <div>
                   <p className="text-green-100 text-sm mb-1">{t('results.annualDividend')}</p>
                   <p className="text-3xl font-bold">
-                    {currency('format', {value: Math.round(result.annualDividendIncome)})}
+                    {formatCurrency(result.annualDividendIncome)}
                     <span className="text-sm ml-2">{t('form.perYear')}</span>
                   </p>
                 </div>
@@ -351,28 +360,28 @@ export default function DividendIncomeCalculator() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <ResultCard
                 title={t('results.portfolioValue')}
-                value={currency('format', {value: Math.round(result.totalPortfolioValue)})}
+                value={formatCurrency(result.totalPortfolioValue)}
                 icon={<PieChart className="w-6 h-6 text-blue-600" />}
                 tooltip={t('results.portfolioValueTooltip')}
               />
 
               <ResultCard
                 title={t('results.totalDividends')}
-                value={currency('format', {value: Math.round(result.totalDividendsReceived)})}
+                value={formatCurrency(result.totalDividendsReceived)}
                 icon={<DollarSign className="w-6 h-6 text-green-600" />}
                 tooltip={t('results.totalDividendsTooltip')}
               />
 
               <ResultCard
                 title={t('results.totalInvested')}
-                value={currency('format', {value: Math.round(result.totalInvested)})}
+                value={formatCurrency(result.totalInvested)}
                 icon={<DollarSign className="w-6 h-6 text-gray-600" />}
                 tooltip={t('results.totalInvestedTooltip')}
               />
 
               <ResultCard
                 title={t('results.totalReturns')}
-                value={currency('format', {value: Math.round(result.totalReturns)})}
+                value={formatCurrency(result.totalReturns)}
                 icon={<TrendingUp className="w-6 h-6 text-purple-600" />}
                 highlight={true}
                 tooltip={t('results.totalReturnsTooltip')}
@@ -422,7 +431,7 @@ export default function DividendIncomeCalculator() {
                           const value = context.parsed || 0;
                           const total = context.dataset.data.reduce((a: number, b: number) => a + b, 0);
                           const percentage = ((value / total) * 100).toFixed(1);
-                          return `${label}: ${currency('format', {value: Math.round(value)})} (${percentage}%)`;
+                          return `${label}: ${formatCurrency(value)} (${percentage}%)`;
                         }
                       }
                     }

@@ -49,6 +49,15 @@ export default function CollegeSavingsCalculator() {
   const t = useTranslations('calculator.collegeSavings');
   const currency = useTranslations('common.currency');
 
+  const formatCurrency = (value: number) => {
+    return new Intl.NumberFormat(currency('locale'), {
+      style: 'currency',
+      currency: currency('code'),
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(value);
+  };
+
   // Input states
   const [childAge, setChildAge] = useState<number>(5);
   const [collegeAge, setCollegeAge] = useState<number>(18);
@@ -181,7 +190,7 @@ export default function CollegeSavingsCalculator() {
               label += ': ';
             }
             if (context.parsed.y !== null) {
-              label += currency('format', {value: Math.round(context.parsed.y)});
+              label += formatCurrency(context.parsed.y);
             }
             return label;
           }
@@ -347,29 +356,29 @@ export default function CollegeSavingsCalculator() {
               </h4>
               <p className="text-green-100">
                 {result.isSufficient
-                  ? t('results.onTrackMessage', {amount: currency('format', {value: Math.abs(result.surplus)})})
-                  : t('results.shortfallMessage', {amount: currency('format', {value: Math.abs(result.surplus)})})}
+                  ? t('results.onTrackMessage', {amount: formatCurrency(Math.abs(result.surplus))})
+                  : t('results.shortfallMessage', {amount: formatCurrency(Math.abs(result.surplus))})}
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <ResultCard
                 title={t('results.totalSavings')}
-                value={currency('format', {value: Math.round(result.totalSavings)})}
+                value={formatCurrency(result.totalSavings)}
                 icon={<PiggyBank className="w-6 h-6 text-green-600" />}
                 tooltip={t('results.totalSavingsTooltip')}
               />
 
               <ResultCard
                 title={t('results.totalCollegeCost')}
-                value={currency('format', {value: Math.round(result.totalCollegeCost)})}
+                value={formatCurrency(result.totalCollegeCost)}
                 icon={<GraduationCap className="w-6 h-6 text-blue-600" />}
                 tooltip={t('results.totalCollegeCostTooltip')}
               />
 
               <ResultCard
                 title={result.isSufficient ? t('results.surplus') : t('results.shortfall')}
-                value={currency('format', {value: Math.abs(Math.round(result.surplus))})}
+                value={formatCurrency(Math.abs(result.surplus))}
                 icon={<TrendingUp className={`w-6 h-6 ${result.isSufficient ? 'text-green-600' : 'text-orange-600'}`} />}
                 highlight={!result.isSufficient}
                 tooltip={result.isSufficient ? t('results.surplusTooltip') : t('results.shortfallTooltip')}
@@ -377,7 +386,7 @@ export default function CollegeSavingsCalculator() {
 
               <ResultCard
                 title={t('results.investmentEarnings')}
-                value={currency('format', {value: Math.round(result.investmentEarnings)})}
+                value={formatCurrency(result.investmentEarnings)}
                 icon={<TrendingUp className="w-6 h-6 text-purple-600" />}
                 tooltip={t('results.investmentEarningsTooltip')}
               />
@@ -394,11 +403,11 @@ export default function CollegeSavingsCalculator() {
                 <div className="bg-white rounded-lg p-4 inline-block">
                   <p className="text-sm text-gray-600 mb-1">{t('results.recommendedMonthly')}</p>
                   <p className="text-3xl font-bold text-orange-600">
-                    {currency('format', {value: Math.round(result.recommendedMonthlyContribution)})}
+                    {formatCurrency(result.recommendedMonthlyContribution)}
                     <span className="text-sm text-gray-500 ml-2">{t('form.perMonth')}</span>
                   </p>
                   <p className="text-sm text-gray-600 mt-2">
-                    {t('results.increase')}: {currency('format', {value: Math.round(result.recommendedMonthlyContribution - monthlyContribution)})}
+                    {t('results.increase')}: {formatCurrency(result.recommendedMonthlyContribution - monthlyContribution)}
                   </p>
                 </div>
               </div>
@@ -436,7 +445,7 @@ export default function CollegeSavingsCalculator() {
                             const value = context.parsed || 0;
                             const total = context.dataset.data.reduce((a: number, b: number) => a + b, 0);
                             const percentage = ((value / total) * 100).toFixed(1);
-                            return `${label}: ${currency('format', {value: Math.round(value)})} (${percentage}%)`;
+                            return `${label}: ${formatCurrency(value)} (${percentage}%)`;
                           }
                         }
                       }

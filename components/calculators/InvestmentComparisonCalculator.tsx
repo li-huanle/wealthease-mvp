@@ -54,6 +54,15 @@ export default function InvestmentComparisonCalculator() {
   const t = useTranslations('calculator.investmentComparison');
   const currency = useTranslations('common.currency');
 
+  const formatCurrency = (value: number) => {
+    return new Intl.NumberFormat(currency('locale'), {
+      style: 'currency',
+      currency: currency('code'),
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(value);
+  };
+
   // Investment Option 1
   const [name1, setName1] = useState<string>('Stock Market Index Fund');
   const [initial1, setInitial1] = useState<number>(10000);
@@ -190,7 +199,7 @@ export default function InvestmentComparisonCalculator() {
               label += ': ';
             }
             if (context.parsed.y !== null) {
-              label += currency('format', {value: Math.round(context.parsed.y)});
+              label += formatCurrency(context.parsed.y);
             }
             return label;
           }
@@ -446,7 +455,7 @@ export default function InvestmentComparisonCalculator() {
             </div>
             <p className="text-xl font-semibold mb-2">{bestInvestment.name}</p>
             <p className="text-lg">
-              {t('results.afterTaxValue')}: <span className="font-bold">{currency('format', {value: Math.round(bestInvestment.afterTaxValue)})}</span>
+              {t('results.afterTaxValue')}: <span className="font-bold">{formatCurrency(bestInvestment.afterTaxValue)}</span>
             </p>
           </div>
 
@@ -458,22 +467,22 @@ export default function InvestmentComparisonCalculator() {
 
                 <ResultCard
                   title={t('results.finalValue')}
-                  value={currency('format', {value: Math.round(result.finalValue)})}
+                  value={formatCurrency(result.finalValue)}
                   icon={<TrendingUp className={`w-6 h-6 ${index === 0 ? 'text-blue-600' : index === 1 ? 'text-green-600' : 'text-orange-600'}`} />}
                 />
 
                 <div className="mt-4 space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-600">{t('results.totalContributions')}</span>
-                    <span className="font-semibold text-gray-900">{currency('format', {value: Math.round(result.totalContributions)})}</span>
+                    <span className="font-semibold text-gray-900">{formatCurrency(result.totalContributions)}</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-600">{t('results.totalReturns')}</span>
-                    <span className="font-semibold text-green-600">{currency('format', {value: Math.round(result.totalReturns)})}</span>
+                    <span className="font-semibold text-green-600">{formatCurrency(result.totalReturns)}</span>
                   </div>
                   <div className="flex justify-between items-center border-t pt-2">
                     <span className="text-sm font-semibold text-gray-700">{t('results.afterTaxValue')}</span>
-                    <span className="font-bold text-gray-900">{currency('format', {value: Math.round(result.afterTaxValue)})}</span>
+                    <span className="font-bold text-gray-900">{formatCurrency(result.afterTaxValue)}</span>
                   </div>
                 </div>
               </div>

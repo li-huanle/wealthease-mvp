@@ -49,6 +49,15 @@ export default function RentVsBuyCalculator() {
   const t = useTranslations('calculator.rentVsBuy');
   const currency = useTranslations('common.currency');
 
+  const formatCurrency = (value: number) => {
+    return new Intl.NumberFormat(currency('locale'), {
+      style: 'currency',
+      currency: currency('code'),
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(value);
+  };
+
   // Home purchase inputs
   const [homePrice, setHomePrice] = useState<number>(400000);
   const [downPaymentPercent, setDownPaymentPercent] = useState<number>(20);
@@ -224,7 +233,7 @@ export default function RentVsBuyCalculator() {
               label += ': ';
             }
             if (context.parsed.y !== null) {
-              label += currency('format', {value: Math.round(context.parsed.y)});
+              label += formatCurrency(context.parsed.y);
             }
             return label;
           }
@@ -461,8 +470,8 @@ export default function RentVsBuyCalculator() {
               </h4>
               <p className="text-green-100">
                 {result.isBuyingBetter
-                  ? t('results.buyingBetterDesc', {amount: currency('format', {value: Math.abs(result.difference)})})
-                  : t('results.rentingBetterDesc', {amount: currency('format', {value: Math.abs(result.difference)})})}
+                  ? t('results.buyingBetterDesc', {amount: formatCurrency(Math.abs(result.difference))})
+                  : t('results.rentingBetterDesc', {amount: formatCurrency(Math.abs(result.difference))})}
               </p>
               {result.breakEvenYear && (
                 <p className="mt-2 text-sm">
@@ -474,28 +483,28 @@ export default function RentVsBuyCalculator() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <ResultCard
                 title={t('results.buyingTotalCost')}
-                value={currency('format', {value: Math.round(result.buyingTotalCost)})}
+                value={formatCurrency(result.buyingTotalCost)}
                 icon={<Home className="w-6 h-6 text-blue-600" />}
                 tooltip={t('results.buyingTotalCostTooltip')}
               />
 
               <ResultCard
                 title={t('results.rentingTotalCost')}
-                value={currency('format', {value: Math.round(result.rentingTotalCost)})}
+                value={formatCurrency(result.rentingTotalCost)}
                 icon={<DollarSign className="w-6 h-6 text-red-600" />}
                 tooltip={t('results.rentingTotalCostTooltip')}
               />
 
               <ResultCard
                 title={t('results.homeEquity')}
-                value={currency('format', {value: Math.round(result.homeEquity)})}
+                value={formatCurrency(result.homeEquity)}
                 icon={<TrendingUp className="w-6 h-6 text-green-600" />}
                 tooltip={t('results.homeEquityTooltip')}
               />
 
               <ResultCard
                 title={t('results.investmentValue')}
-                value={currency('format', {value: Math.round(result.investmentValue)})}
+                value={formatCurrency(result.investmentValue)}
                 icon={<TrendingUp className="w-6 h-6 text-purple-600" />}
                 tooltip={t('results.investmentValueTooltip')}
               />
@@ -505,14 +514,14 @@ export default function RentVsBuyCalculator() {
               <div className="bg-gray-50 rounded-xl p-4">
                 <h5 className="font-semibold text-gray-700 mb-2">{t('results.monthlyBuying')}</h5>
                 <p className="text-2xl font-bold text-gray-900">
-                  {currency('format', {value: Math.round(result.monthlyMortgage)})}
+                  {formatCurrency(result.monthlyMortgage)}
                   <span className="text-sm text-gray-500 ml-2">{t('form.perMonth')}</span>
                 </p>
               </div>
               <div className="bg-gray-50 rounded-xl p-4">
                 <h5 className="font-semibold text-gray-700 mb-2">{t('results.monthlyRenting')}</h5>
                 <p className="text-2xl font-bold text-gray-900">
-                  {currency('format', {value: Math.round(result.monthlyRent)})}
+                  {formatCurrency(result.monthlyRent)}
                   <span className="text-sm text-gray-500 ml-2">{t('form.perMonth')}</span>
                 </p>
               </div>
