@@ -665,7 +665,8 @@
         "numberOfPeople": "Number of People",
         "tipPercentage": "Tip Percentage",
         "custom": "Custom",
-        "reset": "Reset"
+        "reset": "Reset",
+        "calculate": "Calculate"
       },
       "results": {
         "title": "Tip Summary",

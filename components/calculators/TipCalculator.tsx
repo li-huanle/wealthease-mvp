@@ -212,6 +212,44 @@ export default function TipCalculator() {
               }`}
             />
           </div>
+
+        {/* Calculate Button - Manual trigger for users who want explicit control */}
+        <button
+          onClick={() => {
+            // Force calculation by triggering the useEffect dependency update
+            const currentBill = parseFloat(billAmount) || 0;
+            if (currentBill > 0) {
+              const bill = currentBill;
+              const tip = bill * (tipPercentage / 100);
+              const total = bill + tip;
+
+              if (numberOfPeople === 1) {
+                setPeople([{
+                  name: t('results.person'),
+                  billShare: bill,
+                  tipShare: tip,
+                  totalShare: total,
+                }]);
+              } else {
+                const billPerPerson = bill / numberOfPeople;
+                const tipPerPerson = tip / numberOfPeople;
+                const totalPerPerson = total / numberOfPeople;
+
+                const newPeople = people.map((person, index) => ({
+                  ...person,
+                  billShare: Math.round(billPerPerson * 100) / 100,
+                  tipShare: Math.round(tipPerPerson * 100) / 100,
+                  totalShare: Math.round(totalPerPerson * 100) / 100,
+                }));
+                setPeople(newPeople);
+              }
+            }
+          }}
+          disabled={!billAmount || parseFloat(billAmount) <= 0}
+          className="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white py-4 rounded-xl font-semibold shadow-lg hover:from-primary-600 hover:to-primary-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed mb-8"
+        >
+          {t('form.calculate') || 'Calculate'}
+        </button>
         </div>
       </div>
 
