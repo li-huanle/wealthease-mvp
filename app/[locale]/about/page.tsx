@@ -50,7 +50,7 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
       label: t('stats.calculations'),
     },
     {
-      number: '7',
+      number: '12',
       label: t('stats.tools'),
     },
     {

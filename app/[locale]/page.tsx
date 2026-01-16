@@ -101,10 +101,52 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
       color: 'from-orange-500 to-orange-600',
     },
     {
+      key: 'mortgage',
+      href: `/${locale}/calculators/mortgage`,
+      icon: '🏡',
+      color: 'from-teal-500 to-teal-600',
+    },
+    {
       key: 'roi',
       href: `/${locale}/calculators/roi`,
       icon: '📊',
       color: 'from-indigo-500 to-indigo-600',
+    },
+    {
+      key: 'inflation',
+      href: `/${locale}/calculators/inflation`,
+      icon: '📉',
+      color: 'from-pink-500 to-pink-600',
+    },
+    {
+      key: 'investment401k',
+      href: `/${locale}/calculators/investment-401k`,
+      icon: '💰',
+      color: 'from-amber-500 to-amber-600',
+    },
+    {
+      key: 'rentVsBuy',
+      href: `/${locale}/calculators/rent-vs-buy`,
+      icon: '🏘️',
+      color: 'from-cyan-500 to-cyan-600',
+    },
+    {
+      key: 'collegeSavings',
+      href: `/${locale}/calculators/college-savings`,
+      icon: '🎓',
+      color: 'from-violet-500 to-violet-600',
+    },
+    {
+      key: 'dividendIncome',
+      href: `/${locale}/calculators/dividend-income`,
+      icon: '💵',
+      color: 'from-emerald-500 to-emerald-600',
+    },
+    {
+      key: 'investmentComparison',
+      href: `/${locale}/calculators/investment-comparison`,
+      icon: '⚖️',
+      color: 'from-rose-500 to-rose-600',
     },
   ];
 
@@ -131,7 +173,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
 
   const stats = [
     {value: '50,000+', label: locale === 'zh' ? '服务用户' : 'Users Served'},
-    {value: '7', label: locale === 'zh' ? '专业工具' : 'Professional Tools'},
+    {value: '12', label: locale === 'zh' ? '专业工具' : 'Professional Tools'},
     {value: '100%', label: locale === 'zh' ? '永久免费' : 'Always Free'},
     {value: '24/7', label: locale === 'zh' ? '随时可用' : 'Always Available'},
   ];
