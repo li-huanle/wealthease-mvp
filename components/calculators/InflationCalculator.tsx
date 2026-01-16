@@ -15,6 +15,7 @@ import {
   Legend,
   Filler
 } from 'chart.js';
+import type { ChartTooltipContext, ChartTickValue } from '@/types/chart';
 import CalculatorInput from '@/components/calculators/CalculatorInput';
 import ResultCard from '@/components/calculators/ResultCard';
 import ExpertTips from '@/components/calculators/ExpertTips';
@@ -239,8 +240,8 @@ export default function InflationCalculator() {
       },
       tooltip: {
         callbacks: {
-          label: function(context: any) {
-            return context.dataset.label + ': ' + formatCurrency(context.parsed.y);
+          label: function(context: ChartTooltipContext) {
+            return context.dataset.label + ': ' + formatCurrency(context.parsed.y ?? 0);
           }
         }
       }
@@ -249,8 +250,8 @@ export default function InflationCalculator() {
       y: {
         beginAtZero: true,
         ticks: {
-          callback: function(value: any) {
-            return currency('symbol') + value.toFixed(2);
+          callback: function(value: ChartTickValue) {
+            return currency('symbol') + Number(value).toFixed(2);
           }
         }
       }

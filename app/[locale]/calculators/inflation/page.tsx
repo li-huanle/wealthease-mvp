@@ -44,10 +44,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       url: canonicalUrl,
     },
     twitter: {
-      card: seo('twitter:card'),
+      card: 'summary_large_image' as const,
       title: seo('og:title'),
       description: seo('og:description'),
-    } as any
+    }
   };
 }
 

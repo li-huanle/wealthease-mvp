@@ -89,7 +89,7 @@ export default function CookieConsent() {
     }
   }, []);
 
-  const handleAcceptAll = () => {
+  const handleAcceptAll = (): void => {
     const consentData = {
       state: 'accepted' as ConsentState,
       preferences: {necessary: true, analytics: true, advertising: true},
@@ -109,7 +109,7 @@ export default function CookieConsent() {
     }
   };
 
-  const handleDecline = () => {
+  const handleDecline = (): void => {
     const consentData = {
       state: 'declined' as ConsentState,
       preferences: {necessary: true, analytics: false, advertising: false},
@@ -129,7 +129,7 @@ export default function CookieConsent() {
     }
   };
 
-  const handleSavePreferences = () => {
+  const handleSavePreferences = (): void => {
     const consentData = {
       state: 'customized' as ConsentState,
       preferences,

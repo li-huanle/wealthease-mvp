@@ -15,6 +15,7 @@ import {
   Legend,
   Filler
 } from 'chart.js';
+import type { ChartTooltipContext, ChartTickValue } from '@/types/chart';
 import CalculatorInput from '@/components/calculators/CalculatorInput';
 import ResultCard from '@/components/calculators/ResultCard';
 import ExpertTips from '@/components/calculators/ExpertTips';
@@ -257,8 +258,8 @@ export default function Investment401kCalculator() {
       },
       tooltip: {
         callbacks: {
-          label: function(context: any) {
-            return 'Savings: ' + formatCurrency(context.parsed.y);
+          label: function(context: ChartTooltipContext) {
+            return 'Savings: ' + formatCurrency(context.parsed.y ?? 0);
           }
         }
       }
@@ -267,8 +268,8 @@ export default function Investment401kCalculator() {
       y: {
         beginAtZero: true,
         ticks: {
-          callback: function(value: any) {
-            return currency('symbol') + (value / 1000).toFixed(0) + 'k';
+          callback: function(value: ChartTickValue) {
+            return currency('symbol') + (Number(value) / 1000).toFixed(0) + 'k';
           }
         }
       }
@@ -480,7 +481,7 @@ export default function Investment401kCalculator() {
                   </label>
                   <select
                     value={compoundFrequency}
-                    onChange={(e) => setCompoundFrequency(e.target.value as any)}
+                    onChange={(e) => setCompoundFrequency(e.target.value as 'monthly' | 'daily' | 'annually')}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="monthly">Monthly</option>
@@ -607,8 +608,9 @@ export default function Investment401kCalculator() {
                           },
                           tooltip: {
                             callbacks: {
-                              label: function(context: any) {
-                                return context.label + ': ' + formatCurrency(context.parsed);
+                              label: function(context: ChartTooltipContext) {
+                                const value = typeof context.parsed === 'number' ? context.parsed : 0;
+                                return context.label + ': ' + formatCurrency(value);
                               }
                             }
                           }

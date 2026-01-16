@@ -12,7 +12,7 @@ export default function Navigation() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const toggleLocale = () => {
+  const toggleLocale = (): void => {
     const newLocale = locale === 'en' ? 'zh' : 'en';
     const newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
     window.location.href = newPath;

@@ -14,6 +14,7 @@ import {
   Legend,
   Filler
 } from 'chart.js';
+import type { ChartTooltipContext, ChartTickValue } from '@/types/chart';
 import CalculatorInput from '@/components/calculators/CalculatorInput';
 import ResultCard from '@/components/calculators/ResultCard';
 import ExpertTips from '@/components/calculators/ExpertTips';
@@ -35,6 +36,11 @@ interface Debt {
   balance: number;
   interestRate: number;
   minimumPayment: number;
+}
+
+interface PaymentScheduleItem {
+  month: number;
+  balance: number;
 }
 
 interface CalculationResult {
@@ -97,7 +103,7 @@ export default function DebtPayoffCalculator() {
     let totalPaid = 0;
     let totalInterest = 0;
     let month = 0;
-    const schedule: any[] = [];
+    const schedule: PaymentScheduleItem[] = [];
 
     if (method === 'avalanche') {
       debtList.sort((a, b) => b.interestRate - a.interestRate);
@@ -213,8 +219,8 @@ export default function DebtPayoffCalculator() {
       },
       tooltip: {
         callbacks: {
-          label: function(context: any) {
-            return context.dataset.label + ': ' + formatCurrency(context.parsed.y);
+          label: function(context: ChartTooltipContext) {
+            return context.dataset.label + ': ' + formatCurrency(context.parsed.y ?? 0);
           }
         }
       }
@@ -223,8 +229,8 @@ export default function DebtPayoffCalculator() {
       y: {
         beginAtZero: true,
         ticks: {
-          callback: function(value: any) {
-            return formatCurrency(value);
+          callback: function(value: ChartTickValue) {
+            return formatCurrency(Number(value));
           }
         }
       }

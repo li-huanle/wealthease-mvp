@@ -1,5 +1,6 @@
 'use client';
 
+import { ChangeEvent } from 'react';
 import Slider from '@/components/ui/Slider';
 import { Info } from 'lucide-react';
 
@@ -28,7 +29,7 @@ export default function CalculatorInput({
   tooltip,
   showSlider = true,
 }: CalculatorInputProps) {
-  const formatValue = (val: number) => {
+  const formatValue = (val: number): string => {
     return `${prefix}${val.toLocaleString()}${suffix}`;
   };
 
@@ -51,7 +52,7 @@ export default function CalculatorInput({
           <input
             type="number"
             value={value}
-            onChange={(e) => onChange(Number(e.target.value))}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => onChange(Number(e.target.value))}
             min={min}
             max={max}
             step={step}

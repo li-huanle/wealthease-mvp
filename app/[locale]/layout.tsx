@@ -13,7 +13,8 @@ const CookieConsent = dynamic(() => import('@/components/CookieConsent'), {
   loading: () => null, // 加载时不显示任何内容
 });
 
-const locales = ['en', 'zh'];
+const locales = ['en', 'zh'] as const;
+type Locale = typeof locales[number];
 
 export function generateStaticParams() {
   return locales.map((locale) => ({locale}));
@@ -27,7 +28,7 @@ export default async function LocaleLayout({
   params: Promise<{locale: string}>;
 }) {
   const {locale} = await params;
-  if (!locales.includes(locale as any)) {
+  if (!locales.includes(locale as Locale)) {
     notFound();
   }
 

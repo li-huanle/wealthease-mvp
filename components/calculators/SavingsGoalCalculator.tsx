@@ -14,6 +14,7 @@ import {
   Legend,
   Filler
 } from 'chart.js';
+import type { ChartTooltipContext, ChartTickValue } from '@/types/chart';
 import CalculatorInput from '@/components/calculators/CalculatorInput';
 import ResultCard from '@/components/calculators/ResultCard';
 import ExpertTips from '@/components/calculators/ExpertTips';
@@ -54,7 +55,7 @@ export default function SavingsGoalCalculator() {
   const [annualReturn, setAnnualReturn] = useState<number>(5);
   const [result, setResult] = useState<CalculationResult | null>(null);
 
-  const calculateGoal = () => {
+  const calculateGoal = (): void => {
     const monthlyRate = annualReturn / 100 / 12;
     const targetMonths = timeline * 12;
 
@@ -107,7 +108,7 @@ export default function SavingsGoalCalculator() {
     });
   };
 
-  const handleReset = () => {
+  const handleReset = (): void => {
     setGoalAmount(50000);
     setCurrentSavings(10000);
     setMonthlyContribution(500);
@@ -116,7 +117,7 @@ export default function SavingsGoalCalculator() {
     setResult(null);
   };
 
-  const formatCurrency = (value: number) => {
+  const formatCurrency = (value: number): string => {
     return new Intl.NumberFormat(currency('locale'), {
       style: 'currency',
       currency: currency('code'),
@@ -163,8 +164,8 @@ export default function SavingsGoalCalculator() {
       },
       tooltip: {
         callbacks: {
-          label: function(context: any) {
-            return context.dataset.label + ': ' + formatCurrency(context.parsed.y);
+          label: function(context: ChartTooltipContext) {
+            return context.dataset.label + ': ' + formatCurrency(context.parsed.y ?? 0);
           }
         }
       }
@@ -173,8 +174,8 @@ export default function SavingsGoalCalculator() {
       y: {
         beginAtZero: true,
         ticks: {
-          callback: function(value: any) {
-            return formatCurrency(value);
+          callback: function(value: ChartTickValue) {
+            return formatCurrency(Number(value));
           }
         }
       }

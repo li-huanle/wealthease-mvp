@@ -15,6 +15,7 @@ import {
   Legend,
   Filler
 } from 'chart.js';
+import type { ChartTooltipContext, ChartTickValue } from '@/types/chart';
 import CalculatorInput from '@/components/calculators/CalculatorInput';
 import ResultCard from '@/components/calculators/ResultCard';
 import ExpertTips from '@/components/calculators/ExpertTips';
@@ -327,8 +328,9 @@ export default function MortgageCalculator() {
       },
       tooltip: {
         callbacks: {
-          label: function(context: any) {
-            return context.label + ': ' + formatCurrency(context.parsed);
+          label: function(context: ChartTooltipContext) {
+            const value = typeof context.parsed === 'number' ? context.parsed : 0;
+            return context.label + ': ' + formatCurrency(value);
           }
         }
       }
@@ -351,8 +353,8 @@ export default function MortgageCalculator() {
       },
       tooltip: {
         callbacks: {
-          label: function(context: any) {
-            return context.dataset.label + ': ' + formatCurrency(context.parsed.y);
+          label: function(context: ChartTooltipContext) {
+            return context.dataset.label + ': ' + formatCurrency(context.parsed.y ?? 0);
           }
         }
       }
@@ -361,8 +363,8 @@ export default function MortgageCalculator() {
       y: {
         beginAtZero: true,
         ticks: {
-          callback: function(value: any) {
-            return formatCurrency(value);
+          callback: function(value: ChartTickValue) {
+            return formatCurrency(Number(value));
           }
         }
       }
