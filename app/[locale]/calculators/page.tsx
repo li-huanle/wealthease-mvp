@@ -16,6 +16,7 @@ import {
   Ruler,
   Receipt,
   Wallet,
+  GraduationCap as GraduationIcon,
 } from 'lucide-react';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
@@ -25,14 +26,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   const metadata = {
     en: {
-      title: 'Free Financial Calculators - Income & Tax, Housing, Lifestyle Tools | WealthEase',
-      description: 'Free financial calculators organized by life scenarios: Income & Tax (401(k), Take-home Pay), Housing (Mortgage, Rent vs Buy), and Lifestyle (Tip, Car Loan, Inflation). Get instant accurate results.',
-      keywords: 'financial calculators, income tax calculator, 401k calculator, take home pay calculator, mortgage calculator, rent vs buy calculator, tip calculator, car loan calculator, inflation calculator, free calculators, investment tools, tax bracket calculator, hoa calculator',
+      title: 'Free Financial Calculators - Income & Tax, Housing, Lifestyle, Investment Tools | WealthEase',
+      description: 'Free financial calculators organized by life scenarios: Income & Tax, Housing, Lifestyle, Investment, and more. Get instant accurate results.',
+      keywords: 'financial calculators, income tax calculator, 401k calculator, take home pay calculator, mortgage calculator, rent vs buy calculator, tip calculator, car loan calculator, inflation calculator, compound interest calculator, retirement calculator, savings goal calculator, debt payoff calculator, college savings calculator, dividend income calculator, investment comparison calculator, free calculators, investment tools',
     },
     zh: {
-      title: '免费理财计算器 - 薪酬税务、房产居住、生活消费工具 | WealthEase',
-      description: '按生活场景组织的免费理财计算器：薪酬与税务（401(k)、到手工资）、房产与居住（房贷、租房买房）、生活与消费（小费、车贷、通胀）。即时获取精准结果。',
-      keywords: '理财计算器, 薪资税计算器, 401k计算器, 到手工资计算器, 房贷计算器, 租房买房计算器, 小费计算器, 车贷计算器, 通胀计算器, 免费计算器, 投资工具, 税阶查询, HOA计算器',
+      title: '免费理财计算器 - 薪酬税务、房产居住、生活消费、投资工具 | WealthEase',
+      description: '按生活场景组织的免费理财计算器：薪酬与税务、房产与居住、生活与消费、投资及其他。即时获取精准结果。',
+      keywords: '理财计算器, 薪资税计算器, 401k计算器, 到手工资计算器, 房贷计算器, 租房买房计算器, 小费计算器, 车贷计算器, 通胀计算器, 复利计算器, 退休计算器, 储蓄目标计算器, 债务还清计算器, 大学储蓄计算器, 股息收入计算器, 投资对比计算器, 免费计算器, 投资工具',
     },
   };
 
@@ -122,6 +123,13 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
           available: true,
         },
         {
+          icon: <Home className="w-8 h-8 text-primary-600" />,
+          title: t('tools.rentVsBuy.title'),
+          description: t('tools.rentVsBuy.description'),
+          href: `/${locale}/calculators/rent-vs-buy`,
+          available: true,
+        },
+        {
           icon: <Ruler className="w-8 h-8 text-primary-600" />,
           title: t('tools.areaConversion.title'),
           description: t('tools.areaConversion.description'),
@@ -141,7 +149,7 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
           title: t('tools.tip.title'),
           description: t('tools.tip.description'),
           href: `/${locale}/calculators/tip`,
-          available: false,
+          available: true,
         },
         {
           icon: <Car className="w-8 h-8 text-primary-600" />,
@@ -155,6 +163,71 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
           title: t('tools.inflation.title'),
           description: t('tools.inflation.description'),
           href: `/${locale}/calculators/inflation`,
+          available: true,
+        },
+      ],
+    },
+    {
+      id: 'investment',
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: locale === 'zh' ? '投资与规划' : 'Investment & Planning',
+      description: locale === 'zh' ? '复利、储蓄目标、债务还清等投资规划工具' : 'Compound interest, savings goals, debt payoff and other investment planning tools',
+      calculators: [
+        {
+          icon: <TrendingUp className="w-8 h-8 text-primary-600" />,
+          title: t('tools.compound.title'),
+          description: t('tools.compound.description'),
+          href: `/${locale}/calculators/compound-interest`,
+          available: true,
+        },
+        {
+          icon: <GraduationIcon className="w-8 h-8 text-primary-600" />,
+          title: t('tools.retirement.title'),
+          description: t('tools.retirement.description'),
+          href: `/${locale}/calculators/retirement`,
+          available: true,
+        },
+        {
+          icon: <Target className="w-8 h-8 text-primary-600" />,
+          title: t('tools.savingsGoal.title'),
+          description: t('tools.savingsGoal.description'),
+          href: `/${locale}/calculators/savings-goal`,
+          available: true,
+        },
+        {
+          icon: <CreditCard className="w-8 h-8 text-primary-600" />,
+          title: t('tools.debtPayoff.title'),
+          description: t('tools.debtPayoff.description'),
+          href: `/${locale}/calculators/debt-payoff`,
+          available: true,
+        },
+      ],
+    },
+    {
+      id: 'education',
+      icon: <GraduationCap className="w-8 h-8" />,
+      title: locale === 'zh' ? '教育与家庭' : 'Education & Family',
+      description: locale === 'zh' ? '大学学费储蓄、股息收入等家庭财务工具' : 'College savings, dividend income and other family financial tools',
+      calculators: [
+        {
+          icon: <GraduationIcon className="w-8 h-8 text-primary-600" />,
+          title: t('tools.collegeSavings.title'),
+          description: t('tools.collegeSavings.description'),
+          href: `/${locale}/calculators/college-savings`,
+          available: true,
+        },
+        {
+          icon: <PieChart className="w-8 h-8 text-primary-600" />,
+          title: t('tools.dividendIncome.title'),
+          description: t('tools.dividendIncome.description'),
+          href: `/${locale}/calculators/dividend-income`,
+          available: true,
+        },
+        {
+          icon: <PieChart className="w-8 h-8 text-primary-600" />,
+          title: t('tools.investmentComparison.title'),
+          description: t('tools.investmentComparison.description'),
+          href: `/${locale}/calculators/investment-comparison`,
           available: true,
         },
       ],
@@ -236,6 +309,8 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
                   <li><strong>薪酬与税务</strong>：了解您的税后收入，规划退休储蓄，查询美国联邦税阶</li>
                   <li><strong>房产与居住</strong>：计算房贷月供，比较租房与买房的长期成本，换算房屋面积单位</li>
                   <li><strong>生活与消费</strong>：快速计算小费金额，估算车贷月供，了解通胀对购买力的影响</li>
+                  <li><strong>投资与规划</strong>：复利计算、储蓄目标、债务还清等投资规划工具</li>
+                  <li><strong>教育与家庭</strong>：大学学费储蓄、股息收入等家庭财务工具</li>
                 </ul>
               </>
             ) : (
@@ -247,6 +322,8 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
                   <li><strong>Income & Tax</strong>: Understand your take-home pay, plan retirement savings, check US federal tax brackets</li>
                   <li><strong>Housing</strong>: Calculate mortgage payments, compare long-term costs of renting vs buying, convert area units</li>
                   <li><strong>Lifestyle</strong>: Quickly calculate tip amounts, estimate car loan payments, understand inflation's impact on purchasing power</li>
+                  <li><strong>Investment & Planning</strong>: Compound interest, savings goals, debt payoff and other investment planning tools</li>
+                  <li><strong>Education & Family</strong>: College savings, dividend income and other family financial tools</li>
                 </ul>
               </>
             )}
