@@ -13,7 +13,11 @@ type CalculatorType =
   | 'debt-payoff'
   | 'loan'
   | 'mortgage'
-  | 'roi';
+  | 'roi'
+  | 'rent-vs-buy'
+  | 'college-savings'
+  | 'dividend-income'
+  | 'investment-comparison';
 
 interface CalculatorInfo {
   id: CalculatorType;
@@ -78,19 +82,47 @@ const calculators: Record<CalculatorType, CalculatorInfo> = {
     descKey: 'roi.description',
     icon: '📊',
   },
+  'rent-vs-buy': {
+    id: 'rent-vs-buy',
+    titleKey: 'rentVsBuy.title',
+    descKey: 'rentVsBuy.description',
+    icon: '🏘️',
+  },
+  'college-savings': {
+    id: 'college-savings',
+    titleKey: 'collegeSavings.title',
+    descKey: 'collegeSavings.description',
+    icon: '🎓',
+  },
+  'dividend-income': {
+    id: 'dividend-income',
+    titleKey: 'dividendIncome.title',
+    descKey: 'dividendIncome.description',
+    icon: '💰',
+  },
+  'investment-comparison': {
+    id: 'investment-comparison',
+    titleKey: 'investmentComparison.title',
+    descKey: 'investmentComparison.description',
+    icon: '⚖️',
+  },
 };
 
 // 定义计算器之间的关联关系
 const relatedCalculatorsMap: Record<CalculatorType, CalculatorType[]> = {
-  'compound-interest': ['retirement', 'investment-401k', 'savings-goal', 'roi'],
-  'retirement': ['investment-401k', 'compound-interest', 'inflation', 'savings-goal'],
-  'investment-401k': ['retirement', 'compound-interest', 'inflation', 'roi'],
-  'inflation': ['retirement', 'investment-401k', 'savings-goal', 'compound-interest'],
-  'savings-goal': ['compound-interest', 'retirement', 'debt-payoff', 'roi'],
+  'compound-interest': ['retirement', 'investment-401k', 'savings-goal', 'dividend-income'],
+  'retirement': ['investment-401k', 'compound-interest', 'inflation', 'dividend-income'],
+  'investment-401k': ['retirement', 'compound-interest', 'inflation', 'college-savings'],
+  'inflation': ['retirement', 'investment-401k', 'rent-vs-buy', 'college-savings'],
+  'savings-goal': ['compound-interest', 'college-savings', 'debt-payoff', 'retirement'],
   'debt-payoff': ['loan', 'mortgage', 'savings-goal', 'roi'],
-  'loan': ['mortgage', 'debt-payoff', 'roi', 'compound-interest'],
-  'mortgage': ['loan', 'debt-payoff', 'inflation', 'savings-goal'],
-  'roi': ['compound-interest', 'investment-401k', 'savings-goal', 'retirement'],
+  'loan': ['mortgage', 'debt-payoff', 'rent-vs-buy', 'roi'],
+  'mortgage': ['loan', 'rent-vs-buy', 'inflation', 'debt-payoff'],
+  'roi': ['investment-comparison', 'dividend-income', 'compound-interest', 'investment-401k'],
+  'rent-vs-buy': ['mortgage', 'loan', 'inflation', 'investment-comparison'],
+  'college-savings': ['savings-goal', 'compound-interest', 'investment-401k', 'inflation'],
+  'dividend-income': ['roi', 'compound-interest', 'investment-comparison', 'retirement'],
+  'investment-comparison': ['roi', 'dividend-income', 'compound-interest', 'investment-401k'],
 };
 
 interface RelatedCalculatorsProps {
