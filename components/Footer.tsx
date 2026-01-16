@@ -14,7 +14,7 @@ export default function Footer() {
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-300">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-8">
           {/* Brand Column */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -91,11 +91,44 @@ export default function Footer() {
                   {t('tools')}
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          {/* Hot Searches Column */}
+          <div>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+              {locale === 'zh' ? '热门搜索' : 'Hot Searches'}
+            </h4>
+            <ul className="space-y-3">
               <li>
-                <span className="text-gray-600 cursor-not-allowed text-sm flex items-center">
-                  <span className="w-1 h-1 bg-gray-600 rounded-full mr-2"></span>
-                  {t('guides')}
-                </span>
+                <Link href={`/${locale}/calculators/mortgage`} className="text-gray-400 hover:text-primary-400 transition-colors text-sm flex items-center group">
+                  <span className="w-1 h-1 bg-primary-500 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  {locale === 'zh' ? '房贷利率计算' : 'Mortgage Rate Calculator'}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/calculators/inflation`} className="text-gray-400 hover:text-primary-400 transition-colors text-sm flex items-center group">
+                  <span className="w-1 h-1 bg-primary-500 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  {locale === 'zh' ? '通货膨胀计算方法' : 'How to Calculate Inflation'}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/calculators/compound-interest`} className="text-gray-400 hover:text-primary-400 transition-colors text-sm flex items-center group">
+                  <span className="w-1 h-1 bg-primary-500 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  {locale === 'zh' ? '复利计算公式' : 'Compound Interest Formula'}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/calculators/debt-payoff`} className="text-gray-400 hover:text-primary-400 transition-colors text-sm flex items-center group">
+                  <span className="w-1 h-1 bg-primary-500 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  {locale === 'zh' ? '如何快速还清债务' : 'How to Pay Off Debt Fast'}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/calculators/retirement`} className="text-gray-400 hover:text-primary-400 transition-colors text-sm flex items-center group">
+                  <span className="w-1 h-1 bg-primary-500 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  {locale === 'zh' ? '退休规划多少钱够' : 'How Much to Save for Retirement'}
+                </Link>
               </li>
             </ul>
           </div>
