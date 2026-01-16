@@ -470,10 +470,14 @@
         "rentingCost": "Renting (Net Cost)"
       },
       "expertTips": {
-        "tip1": "The 5-Year Rule: Plan to stay at least 5 years for buying to make sense financially due to upfront costs and selling fees.",
-        "tip2": "Don't forget hidden costs: Property taxes, insurance, HOA fees, and maintenance can add 30-50% to your monthly mortgage payment.",
-        "tip3": "Consider opportunity cost: Money used for down payment could grow in investments. This calculator accounts for that.",
-        "tip4": "Location matters: In expensive markets with high price-to-rent ratios (>20), renting often makes more financial sense."
+        "tip1Title": "The 5-Year Rule",
+        "tip1": "Plan to stay at least 5 years for buying to make sense financially due to upfront costs and selling fees.",
+        "tip2Title": "Hidden Costs",
+        "tip2": "Property taxes, insurance, HOA fees, and maintenance can add 30-50% to your monthly mortgage payment.",
+        "tip3Title": "Opportunity Cost",
+        "tip3": "Money used for down payment could grow in investments. This calculator accounts for that.",
+        "tip4Title": "Location Matters",
+        "tip4": "In expensive markets with high price-to-rent ratios (>20), renting often makes more financial sense."
       }
     },
     "collegeSavings": {
@@ -532,10 +536,14 @@
         "compositionTitle": "Savings Composition"
       },
       "expertTips": {
-        "tip1": "Start Early: Every year you wait nearly doubles the required monthly savings. Start as early as possible.",
-        "tip2": "Maximize State Tax Benefits: Many states offer tax deductions for 529 contributions - this is free money!",
-        "tip3": "Age-Based Portfolios: Consider target-date funds that automatically adjust risk as college approaches.",
-        "tip4": "Don't Sacrifice Retirement: Save for retirement first. You can borrow for college but not for retirement."
+        "tip1Title": "Start Early",
+        "tip1": "Every year you wait nearly doubles the required monthly savings. Start as early as possible.",
+        "tip2Title": "State Tax Benefits",
+        "tip2": "Many states offer tax deductions for 529 contributions - this is free money!",
+        "tip3Title": "Age-Based Portfolios",
+        "tip3": "Consider target-date funds that automatically adjust risk as college approaches.",
+        "tip4Title": "Retirement First",
+        "tip4": "Save for retirement first. You can borrow for college but not for retirement."
       }
     },
     "dividendIncome": {
@@ -587,10 +595,14 @@
         "compositionTitle": "Portfolio Composition"
       },
       "expertTips": {
-        "tip1": "Dividend Reinvestment: Enable DRIP to automatically reinvest dividends and accelerate compound growth, especially in early years.",
-        "tip2": "Focus on Dividend Growth: Companies that consistently increase dividends (Dividend Aristocrats) often outperform high-yield stocks long-term.",
-        "tip3": "Diversify Across Sectors: Spread dividend investments across multiple sectors to reduce risk of dividend cuts.",
-        "tip4": "Tax Efficiency: Hold dividend stocks in tax-advantaged accounts (IRA/401k) to avoid annual taxes on dividend income."
+        "tip1Title": "Dividend Reinvestment",
+        "tip1": "Enable DRIP to automatically reinvest dividends and accelerate compound growth, especially in early years.",
+        "tip2Title": "Focus on Growth",
+        "tip2": "Companies that consistently increase dividends (Dividend Aristocrats) often outperform high-yield stocks long-term.",
+        "tip3Title": "Diversify Sectors",
+        "tip3": "Spread dividend investments across multiple sectors to reduce risk of dividend cuts.",
+        "tip4Title": "Tax Efficiency",
+        "tip4": "Hold dividend stocks in tax-advantaged accounts (IRA/401k) to avoid annual taxes on dividend income."
       }
     },
     "investmentComparison": {
@@ -623,10 +635,14 @@
         "totalReturns": "Total Returns"
       },
       "expertTips": {
-        "tip1": "Consider Tax Impact: Different investments have different tax treatments. Use tax-advantaged accounts (IRA/401k) for tax-inefficient investments.",
-        "tip2": "Risk vs Return: Higher returns usually mean higher risk. Diversify across multiple asset classes to balance risk and reward.",
-        "tip3": "Time Horizon Matters: Longer time horizons allow for more aggressive allocations. Adjust to more conservative investments as you near your goal.",
-        "tip4": "Fees Matter: Even 1% in fees can cost hundreds of thousands over decades. Choose low-cost index funds when possible."
+        "tip1Title": "Tax Impact",
+        "tip1": "Different investments have different tax treatments. Use tax-advantaged accounts (IRA/401k) for tax-inefficient investments.",
+        "tip2Title": "Risk vs Return",
+        "tip2": "Higher returns usually mean higher risk. Diversify across multiple asset classes to balance risk and reward.",
+        "tip3Title": "Time Horizon",
+        "tip3": "Longer time horizons allow for more aggressive allocations. Adjust to more conservative investments as you near your goal.",
+        "tip4Title": "Fees Matter",
+        "tip4": "Even 1% in fees can cost hundreds of thousands over decades. Choose low-cost index funds when possible."
       }
     }
   },

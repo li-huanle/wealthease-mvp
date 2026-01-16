@@ -503,11 +503,28 @@ export default function InvestmentComparisonCalculator() {
           {/* Expert Tips */}
           <ExpertTips
             tips={[
-              t('expertTips.tip1'),
-              t('expertTips.tip2'),
-              t('expertTips.tip3'),
-              t('expertTips.tip4'),
+              {
+                icon: 'shield' as const,
+                title: t('expertTips.tip1Title'),
+                content: t('expertTips.tip1'),
+              },
+              {
+                icon: 'calculator' as const,
+                title: t('expertTips.tip2Title'),
+                content: t('expertTips.tip2'),
+              },
+              {
+                icon: 'trending' as const,
+                title: t('expertTips.tip3Title'),
+                content: t('expertTips.tip3'),
+              },
+              {
+                icon: 'lightbulb' as const,
+                title: t('expertTips.tip4Title'),
+                content: t('expertTips.tip4'),
+              },
             ]}
+            locale={currency('locale')}
           />
         </div>
       )}
