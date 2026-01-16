@@ -2,7 +2,7 @@
 
 import {useTranslations, useLocale} from 'next-intl';
 import Link from 'next/link';
-import {TrendingUp, Mail, Shield, FileText, AlertTriangle, Link2} from 'lucide-react';
+import {TrendingUp, Mail, Shield, FileText, AlertTriangle} from 'lucide-react';
 
 export default function Footer() {
   const t = useTranslations('footer');
@@ -121,28 +121,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Friend Links */}
-      <div className="border-t border-gray-800 bg-gray-900/50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex items-center space-x-2 mb-4">
-            <Link2 className="w-4 h-4 text-primary-400" />
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider">
-              {locale === 'zh' ? '友情链接' : 'Friend Links'}
-            </h4>
-          </div>
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="https://valuristories.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-primary-400 hover:underline transition-colors text-sm"
-            >
-              ValuRistories
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -151,7 +129,7 @@ export default function Footer() {
               © {currentYear} WealthEase. {locale === 'zh' ? '版权所有' : 'All rights reserved.'}
             </p>
 
-            <div className="flex items-center space-x-6 text-xs text-gray-600">
+            <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-600">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse"></div>
                 <span>{locale === 'zh' ? '系统运行正常' : 'All Systems Operational'}</span>
@@ -164,6 +142,14 @@ export default function Footer() {
                   {locale === 'zh' ? 'Cookie 设置' : 'Cookie Settings'}
                 </span>
               </div>
+              <a
+                href="https://valuristories.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 hover:text-gray-500 hover:underline transition-colors text-xs"
+              >
+                ValuRistories
+              </a>
             </div>
           </div>
         </div>

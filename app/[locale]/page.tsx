@@ -172,10 +172,10 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
   ];
 
   const stats = [
-    {value: '50,000+', label: locale === 'zh' ? '服务用户' : 'Users Served'},
     {value: '12', label: locale === 'zh' ? '专业工具' : 'Professional Tools'},
-    {value: '100%', label: locale === 'zh' ? '永久免费' : 'Always Free'},
-    {value: '24/7', label: locale === 'zh' ? '随时可用' : 'Always Available'},
+    {value: '100%', label: locale === 'zh' ? '数据不上传' : 'No Data Upload'},
+    {value: '本地', label: locale === 'zh' ? '纯前端计算' : 'Client-Side Only'},
+    {value: '永久', label: locale === 'zh' ? '完全免费' : 'Forever Free'},
   ];
 
   return (
