@@ -655,6 +655,75 @@
         "tip4Title": "费用影响",
         "tip4": "即使1%的费用也可能在几十年内花费数十万美元。尽可能选择低成本指数基金。"
       }
+    },
+    "tip": {
+      "title": "小费计算器",
+      "subtitle": "快速计算小费金额，和朋友轻松分摊账单",
+      "form": {
+        "title": "计算小费",
+        "billAmount": "账单金额",
+        "numberOfPeople": "人数",
+        "tipPercentage": "小费比例",
+        "custom": "自定义",
+        "reset": "重置"
+      },
+      "results": {
+        "title": "小费汇总",
+        "tipAmount": "小费金额",
+        "totalAmount": "总金额",
+        "person": "您",
+        "perPerson": "每人",
+        "bill": "账单",
+        "tip": "小费",
+        "total": "合计"
+      },
+      "tips": {
+        "title": "实用小贴士",
+        "tip1": {
+          "title": "常用小费比例",
+          "content": "在美国，15-20% 的小费是常见标准。15% 通常被认为是良好服务的标准小费。"
+        },
+        "tip2": {
+          "title": "给小费前先检查",
+          "content": "一些餐厅会自动加收服务费。给小费前先检查账单，避免重复给小费。"
+        },
+        "tip3": {
+          "title": "了解当地习俗",
+          "content": "不同国家的小费习俗差异很大。在日本，小费不常见；而在美国，给小费是预期行为。"
+        }
+      },
+      "seo": {
+        "howToUse": {
+          "title": "如何使用这个小费计算器",
+          "step1": "输入账单总金额",
+          "step2": "选择小费比例或输入自定义比例",
+          "step3": "如果分摊账单，调整人数",
+          "step4": "查看每个人的小费和总金额"
+        },
+        "customTip": {
+          "title": "使用自定义小费比例",
+          "content": "虽然提供了常用的小费比例（10%、12%、15%、18%、20%、25%），但您可以输入任何适合您情况或当地习俗的自定义比例。"
+        },
+        "splitting": {
+          "title": "分摊账单",
+          "content": "和一群人一起用餐时，使用此计算器可以轻松地在所有用餐成员之间分摊账单加小费。每个人都按比例支付自己应承担的账单和小费部分。"
+        },
+        "standardTips": {
+          "title": "不同地区的小费标准",
+          "usa": "🇺🇸 美国：餐厅、出租车和沙龙的 15-20% 是标准小费",
+          "europe": "🇪🇺 欧洲：餐厅 5-10% 很常见，但在许多国家并非必须",
+          "asia": "🇨🇳 亚洲：小费差异很大 - 日本、泰国很常见，但中国、韩国不常见",
+          "australia": "🇦🇺 澳洲/新西兰：10% 是典型比例，但非强制"
+        },
+        "groupDining": {
+          "title": "轻松实现多人聚餐",
+          "content": "对于大型聚会，手动计算个人分摊既耗时又容易出错。这个计算器可以瞬间完成所有计算，让您专注于与朋友和家人共进餐。"
+        },
+        "tax": {
+          "title": "了解税和小费",
+          "content": "在大多数情况下，您基于税前小计计算小费。检查账单是否单独显示税款，以便准确地在较低金额上给小费。有些人喜欢在含税总额上给小费 - 两种方式都是可接受的。"
+        }
+      }
     }
   },
   "footer": {
@@ -747,19 +816,57 @@
   },
   "calculatorsPage": {
     "title": "理财计算器",
-    "subtitle": "专业级工具，帮助您做出更明智的财务决策",
+    "subtitle": "按生活场景组织的专业工具，助您做出明智的财务决策",
+    "categories": {
+      "incomeTax": {
+        "title": "薪酬与税务",
+        "description": "了解税后收入、规划退休储蓄、查询联邦税阶"
+      },
+      "housing": {
+        "title": "房产与居住",
+        "description": "计算房贷月供、比较租房买房成本、换算房屋面积单位"
+      },
+      "lifestyle": {
+        "title": "生活与消费",
+        "description": "快速计算小费、估算车贷月供、了解通胀对购买力的影响"
+      }
+    },
     "tools": {
-      "compound": {
-        "title": "复利计算器",
-        "description": "计算投资随时间的复利增长"
+      "takeHomePay": {
+        "title": "到手工资计算器",
+        "description": "计算扣除联邦税、州税和FICA后的税后收入"
       },
       "investment401k": {
         "title": "401(k) 退休计算器",
-        "description": "规划退休储蓄，包含雇主匹配和复利增长"
+        "description": "利用雇主匹配和复利增长规划退休储蓄"
+      },
+      "taxBracket": {
+        "title": "联邦税阶查询",
+        "description": "查找您的税阶并计算边际税率"
+      },
+      "mortgage": {
+        "title": "房贷计算器（含HOA/地税）",
+        "description": "计算包含地税、保险和HOA费用的月供"
+      },
+      "roi": {
+        "title": "租售比计算器",
+        "description": "计算房价租金比，分析房产投资价值"
+      },
+      "areaConversion": {
+        "title": "面积单位换算",
+        "description": "在平方英尺、平方米、英亩等单位之间换算"
+      },
+      "tip": {
+        "title": "小费计算器",
+        "description": "快速计算小费，和朋友分摊账单"
+      },
+      "carLoan": {
+        "title": "车贷计算器",
+        "description": "估算车贷月供和总利息"
       },
       "inflation": {
-        "title": "通货膨胀计算器",
-        "description": "使用历史CPI数据计算通货膨胀对购买力的影响"
+        "title": "通胀计算器",
+        "description": "使用历史CPI数据计算通胀对购买力的影响"
       },
       "retirement": {
         "title": "退休规划计算器",
@@ -767,7 +874,7 @@
       },
       "savingsGoal": {
         "title": "储蓄目标计算器",
-        "description": "规划您的储蓄，更快实现财务目标"
+        "description": "规划储蓄，更快实现财务目标"
       },
       "debtPayoff": {
         "title": "债务还清计算器",
@@ -777,13 +884,9 @@
         "title": "贷款计算器",
         "description": "计算贷款月供和总利息"
       },
-      "mortgage": {
-        "title": "房贷计算器",
-        "description": "估算月度房贷支付"
-      },
-      "roi": {
-        "title": "投资回报率计算器",
-        "description": "计算投资回报率和年化收益"
+      "compound": {
+        "title": "复利计算器",
+        "description": "查看投资如何随复利增长"
       },
       "rentVsBuy": {
         "title": "租房 vs 买房计算器",

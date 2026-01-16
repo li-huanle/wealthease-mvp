@@ -111,8 +111,8 @@
         "age": "Age",
         "savingsOverTime": "Savings Over Time",
         "chartTitle": "Retirement Savings Projection",
-        "sufficient": "You're on Track! 🎉",
-        "insufficient": "Needs Attention ⚠️",
+        "sufficient": "You're on Track! \ud83c\udf89",
+        "insufficient": "Needs Attention \u26a0\ufe0f",
         "sufficientMessage": "Your current savings plan should provide enough for a comfortable retirement.",
         "insufficientMessage": "Your current savings may not be sufficient for your retirement goals. Consider increasing your monthly savings.",
         "recommendation": "Recommendation",
@@ -233,8 +233,8 @@
         "reset": "Reset"
       },
       "results": {
-        "goalReached": "Goal Reached! 🎉",
-        "goalNotReached": "Keep Going! 📈",
+        "goalReached": "Goal Reached! \ud83c\udf89",
+        "goalNotReached": "Keep Going! \ud83d\udcc8",
         "reachedIn": "You'll reach your goal in",
         "years": "years",
         "shortfall": "Shortfall",
@@ -275,7 +275,7 @@
         "reset": "Reset"
       },
       "results": {
-        "debtFree": "You'll Be Debt-Free! 🎉",
+        "debtFree": "You'll Be Debt-Free! \ud83c\udf89",
         "debtFreeMessage": "Following this plan, you'll be debt-free in",
         "years": "years",
         "months": "months",
@@ -319,7 +319,6 @@
         "worthIn": "Your {startYear} dollar is worth this much in {endYear}",
         "comparisonChart": "Value Comparison",
         "valueWithInflation": "Value with Inflation",
-        "originalAmount": "Original Amount",
         "purchasingPowerOverTime": "Purchasing Power Over Time",
         "historicalCPI": "Historical CPI Data",
         "year": "Year",
@@ -656,6 +655,75 @@
         "tip4Title": "Fees Matter",
         "tip4": "Even 1% in fees can cost hundreds of thousands over decades. Choose low-cost index funds when possible."
       }
+    },
+    "tip": {
+      "title": "Tip Calculator",
+      "subtitle": "Calculate tips quickly by percentage and split bills with friends",
+      "form": {
+        "title": "Calculate Tip",
+        "billAmount": "Bill Amount",
+        "numberOfPeople": "Number of People",
+        "tipPercentage": "Tip Percentage",
+        "custom": "Custom",
+        "reset": "Reset"
+      },
+      "results": {
+        "title": "Tip Summary",
+        "tipAmount": "Tip Amount",
+        "totalAmount": "Total Amount",
+        "person": "You",
+        "perPerson": "Per Person",
+        "bill": "Bill",
+        "tip": "Tip",
+        "total": "Total"
+      },
+      "tips": {
+        "title": "Helpful Tips",
+        "tip1": {
+          "title": "Quick Tip Percentages",
+          "content": "Common tip rates are 15-20% in the US. 15% is considered standard for good service."
+        },
+        "tip2": {
+          "title": "Check Before Tipping",
+          "content": "Some restaurants add a service charge automatically. Check your bill first to avoid double-tipping."
+        },
+        "tip3": {
+          "title": "Know Local Customs",
+          "content": "Tipping practices vary by country. In Japan, tipping is uncommon, while in the US, it is expected."
+        }
+      },
+      "seo": {
+        "howToUse": {
+          "title": "How to Use This Tip Calculator",
+          "step1": "Enter the total bill amount",
+          "step2": "Select a tip percentage or enter a custom percentage",
+          "step3": "Adjust the number of people if splitting the bill",
+          "step4": "View the tip amount and total for each person"
+        },
+        "customTip": {
+          "title": "Using Custom Tip Percentages",
+          "content": "While common tip percentages are provided (10%, 12%, 15%, 18%, 20%, 25%), you can enter any custom percentage that fits your situation or local customs."
+        },
+        "splitting": {
+          "title": "Splitting the Bill",
+          "content": "When dining with a group, use this calculator to easily divide the total bill plus tip among all party members. Each person pays their fair share including both the bill portion and tip portion."
+        },
+        "standardTips": {
+          "title": "Standard Tipping by Region",
+          "usa": "\ud83c\uddfa\ud83c\uddf8 United States: 15-20% is standard for restaurants, taxis, and salons",
+          "europe": "\ud83c\uddea\ud83c\uddfa Europe: 5-10% is common in restaurants, though not expected in many countries",
+          "asia": "\ud83c\udde8\ud83c\uddf3 Asia: Tipping varies widely - common in Japan, Thailand, but not in China, South Korea",
+          "australia": "\ud83c\udde6\ud83c\uddfa Australia/New Zealand: 10% is typical, though not mandatory"
+        },
+        "groupDining": {
+          "title": "Group Dining Made Easy",
+          "content": "For large groups, calculating individual shares manually can be time-consuming and error-prone. This calculator handles all the math instantly, letting you focus on enjoying the meal with friends and family."
+        },
+        "tax": {
+          "title": "Understanding Tax and Tipping",
+          "content": "In most cases, you calculate the tip based on the pre-tax subtotal. Check if your bill shows tax separately and tip on the lower amount for accuracy. Some prefer tipping on the total including tax - both approaches are acceptable."
+        }
+      }
     }
   },
   "footer": {
@@ -670,7 +738,7 @@
     "blog": "Blog",
     "tools": "All Tools",
     "guides": "Financial Guides",
-    "copyright": "© 2025 WealthEase. All rights reserved."
+    "copyright": "\u00a9 2025 WealthEase. All rights reserved."
   },
   "about": {
     "title": "About WealthEase",
@@ -749,18 +817,56 @@
   "calculatorsPage": {
     "title": "Financial Calculators",
     "subtitle": "Professional-grade tools to help you make smarter financial decisions",
+    "categories": {
+      "incomeTax": {
+        "title": "Income & Tax",
+        "description": "Manage your paycheck, plan retirement, and understand tax brackets"
+      },
+      "housing": {
+        "title": "Housing",
+        "description": "Calculate mortgages, compare rent vs buy, and convert area units"
+      },
+      "lifestyle": {
+        "title": "Lifestyle",
+        "description": "Tips, car loans, and inflation for everyday decisions"
+      }
+    },
     "tools": {
-      "compound": {
-        "title": "Compound Interest Calculator",
-        "description": "See how your investments grow with compound interest over time"
+      "takeHomePay": {
+        "title": "Take-Home Pay Calculator",
+        "description": "Calculate your after-tax income with federal, state, and FICA taxes"
       },
       "investment401k": {
-        "title": "401(k) & Retirement Calculator",
+        "title": "401(k) Retirement Calculator",
         "description": "Plan your retirement with 401(k) employer matching and compound growth"
+      },
+      "taxBracket": {
+        "title": "Federal Tax Bracket Calculator",
+        "description": "Find your tax bracket and calculate marginal tax rates"
+      },
+      "mortgage": {
+        "title": "Mortgage Calculator (with HOA & Tax)",
+        "description": "Calculate monthly payments including property tax, insurance, and HOA fees"
+      },
+      "roi": {
+        "title": "Rent-to-Value Ratio Calculator",
+        "description": "Calculate price-to-rent ratio for real estate investment analysis"
+      },
+      "areaConversion": {
+        "title": "Area Unit Converter",
+        "description": "Convert between sq ft, sq meters, acres, and other area units"
+      },
+      "tip": {
+        "title": "Tip Calculator",
+        "description": "Calculate tips quickly by percentage or split bills with friends"
+      },
+      "carLoan": {
+        "title": "Car Loan Calculator",
+        "description": "Estimate monthly car payments and total interest"
       },
       "inflation": {
         "title": "Inflation Calculator",
-        "description": "Calculate the impact of inflation on your purchasing power using historical CPI data"
+        "description": "Calculate impact of inflation on your purchasing power using historical CPI data"
       },
       "retirement": {
         "title": "Retirement Calculator",
@@ -778,13 +884,9 @@
         "title": "Loan Calculator",
         "description": "Calculate loan payments and total interest"
       },
-      "mortgage": {
-        "title": "Mortgage Calculator",
-        "description": "Estimate your monthly mortgage payments"
-      },
-      "roi": {
-        "title": "ROI Calculator",
-        "description": "Calculate return on investment and annualized returns"
+      "compound": {
+        "title": "Compound Interest Calculator",
+        "description": "See how your investments grow with compound interest over time"
       },
       "rentVsBuy": {
         "title": "Rent vs Buy Calculator",

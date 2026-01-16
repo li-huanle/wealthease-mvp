@@ -17,7 +17,8 @@ type CalculatorType =
   | 'rent-vs-buy'
   | 'college-savings'
   | 'dividend-income'
-  | 'investment-comparison';
+  | 'investment-comparison'
+  | 'tip';
 
 interface CalculatorInfo {
   id: CalculatorType;
@@ -106,6 +107,12 @@ const calculators: Record<CalculatorType, CalculatorInfo> = {
     descKey: 'investmentComparison.description',
     icon: '⚖️',
   },
+  'tip': {
+    id: 'tip',
+    titleKey: 'tip.title',
+    descKey: 'tip.description',
+    icon: '💵',
+  },
 };
 
 // 定义计算器之间的关联关系
@@ -123,6 +130,7 @@ const relatedCalculatorsMap: Record<CalculatorType, CalculatorType[]> = {
   'college-savings': ['savings-goal', 'compound-interest', 'investment-401k', 'inflation'],
   'dividend-income': ['roi', 'compound-interest', 'investment-comparison', 'retirement'],
   'investment-comparison': ['roi', 'dividend-income', 'compound-interest', 'investment-401k'],
+  'tip': ['loan', 'inflation', 'mortgage'],
 };
 
 interface RelatedCalculatorsProps {

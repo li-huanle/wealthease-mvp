@@ -5,6 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const locales = ['en', 'zh'];
 
   const calculators = [
+    // Existing calculators
     'compound-interest',
     'retirement',
     'savings-goal',
@@ -12,6 +13,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'mortgage',
     'roi',
     'debt-payoff',
+    'investment-401k',
+    'inflation',
+    'rent-vs-buy',
+    'college-savings',
+    'dividend-income',
+    'investment-comparison',
+    // Coming soon calculators (adding to sitemap for SEO)
+    'take-home-pay',
+    'tax-bracket',
+    'area-conversion',
+    'tip',
   ];
 
   const routes: MetadataRoute.Sitemap = [];
