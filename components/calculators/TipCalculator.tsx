@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { DollarSign, Users, Plus, Minus, RefreshCw } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
@@ -50,39 +50,46 @@ export default function TipCalculator() {
     setPeople(newPeople);
   };
 
-  const calculateTip = () => {
+  // Auto-calculate when inputs change
+  useEffect(() => {
     const bill = parseFloat(billAmount) || 0;
-    const tip = bill * (tipPercentage / 100);
-    const total = bill + tip;
+    if (bill > 0) {
+      const tip = bill * (tipPercentage / 100);
+      const total = bill + tip;
 
-    if (numberOfPeople === 1) {
-      setPeople([{
-        name: t('results.person'),
-        billShare: bill,
-        tipShare: tip,
-        totalShare: total,
-      }]);
-    } else {
-      const billPerPerson = bill / numberOfPeople;
-      const tipPerPerson = tip / numberOfPeople;
-      const totalPerPerson = total / numberOfPeople;
+      if (numberOfPeople === 1) {
+        setPeople([{
+          name: t('results.person'),
+          billShare: bill,
+          tipShare: tip,
+          totalShare: total,
+        }]);
+      } else {
+        const billPerPerson = bill / numberOfPeople;
+        const tipPerPerson = tip / numberOfPeople;
+        const totalPerPerson = total / numberOfPeople;
 
-      const newPeople = people.map((person, index) => ({
-        ...person,
-        billShare: Math.round(billPerPerson * 100) / 100,
-        tipShare: Math.round(tipPerPerson * 100) / 100,
-        totalShare: Math.round(totalPerPerson * 100) / 100,
-      }));
-      setPeople(newPeople);
+        const newPeople = people.map((person, index) => ({
+          ...person,
+          billShare: Math.round(billPerPerson * 100) / 100,
+          tipShare: Math.round(tipPerPerson * 100) / 100,
+          totalShare: Math.round(totalPerPerson * 100) / 100,
+        }));
+        setPeople(newPeople);
+      }
     }
-  };
+  }, [billAmount, tipPercentage, numberOfPeople, t]);
 
   const handlePersonBillChange = (index: number, value: string) => {
     const newPeople = [...people];
     const billShare = parseFloat(value) || 0;
-    newPeople[index].billShare = billShare;
-    newPeople[index].tipShare = billShare * (tipPercentage / 100);
-    newPeople[index].totalShare = billShare + newPeople[index].tipShare;
+    const tipShare = billShare * (tipPercentage / 100);
+    newPeople[index] = {
+      ...newPeople[index],
+      billShare,
+      tipShare,
+      totalShare: billShare + tipShare,
+    };
     setPeople(newPeople);
   };
 
@@ -128,7 +135,6 @@ export default function TipCalculator() {
                 type="number"
                 value={billAmount}
                 onChange={(e) => setBillAmount(e.target.value)}
-                onInput={calculateTip}
                 placeholder="0.00"
                 step="0.01"
                 min="0"

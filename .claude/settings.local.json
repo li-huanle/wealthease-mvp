@@ -24,7 +24,8 @@
       "Bash(do echo -n \"$calc: \" curl -I \"https://wealthease-mvp.vercel.app/zh/calculators/$calc\")",
       "Bash(grep:*)",
       "Bash(vercel env:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(git pull:*)"
     ]
   }
 }
