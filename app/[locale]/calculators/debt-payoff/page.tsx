@@ -1,4 +1,4 @@
-import {getTranslations, setRequestLocale} from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import DebtPayoffCalculator from '@/components/calculators/DebtPayoffCalculator';
 import RelatedCalculators from '@/components/RelatedCalculators';
 import { Metadata } from 'next';
@@ -70,110 +70,68 @@ export default async function DebtPayoffPage({ params }: { params: Promise<{ loc
 
         {/* SEO Content */}
         <div className="mt-16 prose prose-lg max-w-none">
-          {locale === 'en' ? (
-            <>
-              <h2>How to Use This Debt Payoff Calculator</h2>
+          {locale === 'zh' ? (
+            <div className="mt-16 prose prose-lg max-w-none">
+              <h2>债务还清指南：如何更快实现无债一身轻？</h2>
               <p>
-                Becoming debt-free starts with a plan. This calculator helps you visualize your path to
-                financial freedom by showing you exactly when you'll be debt-free and how much you'll save in interest.
+                摆脱债务是理财自由的第一步。本计算器不仅能帮您算出何时能还清债务，还能对比不同的还款策略，看看它们能为您节省多少利息。
               </p>
 
-              <h3>Step-by-Step Guide</h3>
+              <h3>两大核心还款策略</h3>
+              <ul>
+                <li><strong>雪崩法 (Avalanche Method)</strong>：<br />
+                  <em>优先偿还利率最高的债务</em>（如高息信用卡）。从数学上讲，这是最优策略，因为它能最大程度减少利息支出，帮您最快上岸。
+                </li>
+                <li><strong>雪球法 (Snowball Method)</strong>：<br />
+                  <em>优先偿还余额最小的债务</em>。虽然总体利息可能稍多，但这种方法能让您通过快速消灭小额债务获得成就感，心理上更容易坚持。
+                </li>
+              </ul>
+
+              <h2>如何使用此工具？</h2>
               <ol>
-                <li><strong>List Your Debts:</strong> Enter all your debts with balances, interest rates, and minimum payments</li>
-                <li><strong>Add Extra Payments:</strong> See how much you can save by paying more than the minimum</li>
-                <li><strong>Choose Your Strategy:</strong> Compare avalanche (highest interest first) vs snowball (smallest balance first)</li>
-                <li><strong>See Your Timeline:</strong> Get your debt-free date and total interest paid</li>
+                <li><strong>列出所有债务</strong>：点击"添加债务"，输入每笔贷款的当前余额、年利率和最低月还款额。</li>
+                <li><strong>输入额外还款</strong>：如果您每月能省下几百元用于额外还债，请在"额外月还款"中填入，您会惊讶地发现这能把还款期缩短数年！</li>
+                <li><strong>选择策略</strong>：切换"雪崩法"与"雪球法"，观察利息总额的变化。</li>
               </ol>
 
-              <h3>Debt Payoff Strategies: Avalanche vs Snowball</h3>
+              <h2>加速还债的小贴士</h2>
               <p>
-                <strong>The Debt Avalanche Method</strong> pays off debts with the highest interest rates first.
-                This is the mathematically optimal approach that saves the most money in interest payments.
+                1. <strong>暂停不必要的开支</strong>：暂时取消订阅服务、减少外出就餐，将省下的钱全部投入到"额外还款"中。<br />
+                2. <strong>债务重组</strong>：如果您的信用卡利率高达20%，考虑申请一笔利率较低（如8%-10%）的个人贷款将其一次性置换。<br />
+                3. <strong>不仅是支付最低额</strong>：只还最低还款额通常会导致您支付巨额利息且需数十年才能还清。
               </p>
-              <p>
-                <strong>The Debt Snowball Method</strong> pays off the smallest balances first.
-                This provides quick wins and psychological motivation to keep going.
-              </p>
-
-              <h3>Why Pay Off Debt Early?</h3>
-              <ul>
-                <li><strong>Save Money:</strong> Pay less interest over time</li>
-                <li><strong>Improve Credit Score:</strong> Lower credit utilization boosts your score</li>
-                <li><strong>Reduce Stress:</strong> Financial peace of mind</li>
-                <li><strong>More Options:</strong> Freedom to pursue other goals without debt burden</li>
-              </ul>
-
-              <h3>Tips to Pay Off Debt Faster</h3>
-              <ul>
-                <li>Pay more than the minimum on one debt while paying minimums on others</li>
-                <li>Use windfalls (tax refunds, bonuses) to make lump-sum payments</li>
-                <li>Consider consolidating high-interest debt to a lower rate</li>
-                <li>Cut expenses temporarily and direct savings to debt payments</li>
-                <li>Negotiate lower interest rates with creditors</li>
-              </ul>
-
-              <h3>Common Types of Debt</h3>
-              <ul>
-                <li><strong>Credit Cards:</strong> Typically 15-25% APR - prioritize these!</li>
-                <li><strong>Personal Loans:</strong> Usually 6-36% APR depending on credit</li>
-                <li><strong>Student Loans:</strong> Federal loans 3-7%, private loans may vary</li>
-                <li><strong>Car Loans:</strong> Typically 3-10% APR</li>
-                <li><strong>Mortgages:</strong> Usually lowest rate, pay off after other debts</li>
-              </ul>
-            </>
+            </div>
           ) : (
-            <>
-              <h2>如何使用债务还清计算器</h2>
+            <div className="mt-16 prose prose-lg max-w-none">
+              <h2>Debt Payoff Guide: How to Become Debt-Free Faster</h2>
               <p>
-                摆脱债务始于计划。这个计算器通过向您展示确切的无债日期和节省的利息金额，
-                帮助您可视化财务自由之路。
+                Getting out of debt is the first step toward financial freedom. This calculator helps you forecast your debt-free date and compares different payoff strategies to see how much interest you can save.
               </p>
 
-              <h3>分步指南</h3>
+              <h3>Top 2 Payoff Strategies</h3>
+              <ul>
+                <li><strong>Avalanche Method</strong>:<br />
+                  <em>Prioritize the debt with the highest interest rate.</em> Mathematically, this is the best strategy. By attacking high-interest debts (like credit cards) first, you pay less interest overall and get out of debt faster.
+                </li>
+                <li><strong>Snowball Method</strong>:<br />
+                  <em>Prioritize the debt with the smallest balance.</em> Comparing to the Avalanche method, you might pay slightly more interest, but knocking out small debts quickly gives you psychological "wins" that keep you motivated.
+                </li>
+              </ul>
+
+              <h2>How to Use This Tool</h2>
               <ol>
-                <li><strong>列出债务：</strong> 输入所有债务的余额、利率和最低还款额</li>
-                <li><strong>增加额外还款：</strong> 查看超过最低还款额能节省多少</li>
-                <li><strong>选择策略：</strong> 比较雪崩法（最高利率优先）vs 雪球法（最小余额优先）</li>
-                <li><strong>查看时间线：</strong> 获得无债日期和总利息支出</li>
+                <li><strong>List Your Debts</strong>: Add all your loans, credit cards, or other debts. Enter the current balance, APR, and minimum monthly payment for each.</li>
+                <li><strong>Add Extra Payments</strong>: If you can squeeze an extra $50 or $100 from your budget, enter it in the "Monthly Extra Payment" field. You'll stick to see how many months (or years!) this shaves off your timeline.</li>
+                <li><strong>Compare</strong>: Toggle between Avalanche and Snowball to see the difference in total interest paid.</li>
               </ol>
 
-              <h3>债务还清策略：雪崩法 vs 雪球法</h3>
+              <h2>Tips to Speed Up Repayment</h2>
               <p>
-                <strong>债务雪崩法</strong>优先偿还利率最高的债务。
-                这是数学上最优的方法，能节省最多的利息支出。
+                1. <strong>Stop New Debt</strong>: Put the credit cards in a drawer. Stop adding to the pile while you're trying to shovel it away.<br />
+                2. <strong>Debt Consolidation</strong>: If you have high-interest debt (20%+), see if you qualify for a personal loan with a lower rate (e.g., 10%) to pay it off instantly.<br />
+                3. <strong>Windfalls</strong>: Use tax refunds, bonuses, or cash gifts to make lump-sum payments on your principal.
               </p>
-              <p>
-                <strong>债务雪球法</strong>优先偿还余额最小的债务。
-                这提供快速胜利和心理动力，让您坚持下去。
-              </p>
-
-              <h3>为什么要提前还清债务？</h3>
-              <ul>
-                <li><strong>省钱：</strong> 随时间支付更少的利息</li>
-                <li><strong>提高信用评分：</strong> 更低的信用利用率提高您的分数</li>
-                <li><strong>减少压力：</strong> 财务内心平静</li>
-                <li><strong>更多选择：</strong> 没有债务负担，可以追求其他目标</li>
-              </ul>
-
-              <h3>更快还清债务的技巧</h3>
-              <ul>
-                <li>对一笔债务支付超过最低还款额，同时对其他债务支付最低额</li>
-                <li>利用意外之财（退税、奖金）进行一次性还款</li>
-                <li>考虑将高息债务合并到较低利率</li>
-                <li>暂时削减支出，将节省的钱用于还债</li>
-                <li>与债权人协商降低利率</li>
-              </ul>
-
-              <h3>常见债务类型</h3>
-              <ul>
-                <li><strong>信用卡：</strong> 通常15-25%年利率 - 优先处理这些！</li>
-                <li><strong>个人贷款：</strong> 通常6-36%年利率，取决于信用</li>
-                <li><strong>学生贷款：</strong> 联邦贷款3-7%，私人贷款可能不同</li>
-                <li><strong>汽车贷款：</strong> 通常3-10%年利率</li>
-                <li><strong>抵押贷款：</strong> 通常利率最低，在其他债务之后还清</li>
-              </ul>
-            </>
+            </div>
           )}
         </div>
 

@@ -1,4 +1,4 @@
-import {getTranslations, setRequestLocale} from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import SavingsGoalCalculator from '@/components/calculators/SavingsGoalCalculator';
 import RelatedCalculators from '@/components/RelatedCalculators';
 import { Metadata } from 'next';
@@ -70,95 +70,74 @@ export default async function SavingsGoalPage({ params }: { params: Promise<{ lo
 
         {/* SEO Content */}
         <div className="mt-16 prose prose-lg max-w-none">
-          {locale === 'en' ? (
-            <>
-              <h2>How to Use This Savings Goal Calculator</h2>
+          {locale === 'zh' ? (
+            <div className="mt-16 prose prose-lg max-w-none">
+              <h2>储蓄目标计算器：规划您的梦想</h2>
               <p>
-                Planning for your financial future starts with setting clear savings goals.
-                Whether you're saving for a down payment on a house, building an emergency fund,
-                or planning a dream vacation, this calculator helps you create a realistic savings plan.
+                无论是买房首付、婚礼基金还是梦想假期的旅费，设定一个清晰的储蓄目标是实现梦想的第一步。本计算器帮您将宏大的目标拆解为每月可执行的储蓄计划。
               </p>
 
-              <h3>Step-by-Step Guide</h3>
+              <h3>如何制定SMART储蓄目标？</h3>
+              <ul>
+                <li><strong>S (Specific) 具体</strong>：不要说"我想存钱"，而要说"我想存30万作为首付"。</li>
+                <li><strong>M (Measurable) 可衡量</strong>：确定具体的金额和截止日期。</li>
+                <li><strong>A (Achievable) 可实现</strong>：确保目标金额在您的收入能力范围内。</li>
+                <li><strong>R (Relevant) 相关性</strong>：这个目标对您现阶段的生活重要吗？</li>
+                <li><strong>T (Time-bound) 有时限</strong>：给自己设定一个明确的Deadline（截止日期）。</li>
+              </ul>
+
+              <h2>如何使用此工具？</h2>
               <ol>
-                <li><strong>Set Your Goal Amount:</strong> Enter the total amount you want to save</li>
-                <li><strong>Current Savings:</strong> Input any money you've already saved</li>
-                <li><strong>Monthly Contributions:</strong> Decide how much you can save each month</li>
-                <li><strong>Timeline:</strong> Set your target date for reaching your goal</li>
-                <li><strong>Expected Returns:</strong> Include interest rate if investing your savings</li>
-                <li><strong>Calculate:</strong> See if you're on track and get personalized recommendations</li>
+                <li><strong>目标金额</strong>：您总共需要存多少钱？</li>
+                <li><strong>当前储蓄</strong>：您现在手头已经有多少启动资金？</li>
+                <li><strong>每月投入</strong>：您计划每个月存入多少钱？</li>
+                <li><strong>投资回报率</strong>：如果您将储蓄用于理财，预期的年化收益率是多少（保守估计建议填2%-3%）？</li>
               </ol>
+              <p>
+                点击计算后，系统会告诉您按目前的进度何时能达成目标，或者建议您每月应该存多少钱才能按时达成。
+              </p>
 
-              <h3>Why Set Savings Goals?</h3>
-              <ul>
-                <li><strong>Motivation:</strong> Clear goals keep you focused and motivated</li>
-                <li><strong>Tracking:</strong> Measure your progress over time</li>
-                <li><strong>Planning:</strong> Create realistic timelines for major purchases</li>
-                <li><strong>Compound Growth:</strong> See how interest accelerates your savings</li>
-              </ul>
-
-              <h3>Tips for Reaching Your Savings Goals Faster</h3>
-              <ul>
-                <li>Automate your savings - set up automatic transfers</li>
-                <li>Start with high-yield savings accounts (3-4% APY)</li>
-                <li>Use windfalls (tax refunds, bonuses) to boost savings</li>
-                <li>Reduce small expenses that add up over time</li>
-                <li>Consider investing for longer-term goals</li>
-              </ul>
-
-              <h3>Popular Savings Goals</h3>
-              <ul>
-                <li><strong>Emergency Fund:</strong> 3-6 months of expenses</li>
-                <li><strong>Home Down Payment:</strong> 10-20% of home price</li>
-                <li><strong>Vacation:</strong> $5,000 - $10,000 depending on destination</li>
-                <li><strong>Car:</strong> 20% or more of vehicle price</li>
-                <li><strong>Wedding:</strong> $20,000 - $30,000 on average</li>
-              </ul>
-            </>
+              <h3>加速储蓄的3个秘诀</h3>
+              <p>
+                1. <strong>自动化（Pay Yourself First）</strong>：工资到账当天设置自动转账到储蓄账户，先储蓄后消费。<br />
+                2. <strong>高收益账户</strong>：不要让钱躺在活期账户里睡觉，放入货币基金或短期理财产品中赚取收益。<br />
+                3. <strong>积少成多</strong>：每天少喝一杯奶茶，一年就能多存几千元。
+              </p>
+            </div>
           ) : (
-            <>
-              <h2>如何使用储蓄目标计算器</h2>
+            <div className="mt-16 prose prose-lg max-w-none">
+              <h2>Savings Goal Calculator: Plan Your Dream</h2>
               <p>
-                规划财务未来始于设定明确的储蓄目标。无论您是为购房首付储蓄、建立应急基金，
-                还是计划梦想假期，这个计算器都能帮助您创建现实的储蓄计划。
+                Whether it's a down payment for a home, a wedding fund, or a dream vacation, setting a clear savings goal is the first step to making it a reality. This calculator breaks down your big goals into manageable monthly savings targets.
               </p>
 
-              <h3>分步指南</h3>
+              <h3>Setting SMART Savings Goals</h3>
+              <ul>
+                <li><strong>Specific</strong>: Don't just say "I want to save." Say "I want to save $30,000 for a down payment."</li>
+                <li><strong>Measurable</strong>: Define the exact amount and the deadline.</li>
+                <li><strong>Achievable</strong>: Ensure the goal is realistic given your income.</li>
+                <li><strong>Relevant</strong>: Does this goal matter to your life right now?</li>
+                <li><strong>Time-bound</strong>: Set a firm deadline to keep yourself accountable.</li>
+              </ul>
+
+              <h2>How to Use This Tool</h2>
               <ol>
-                <li><strong>设定目标金额：</strong> 输入您想要储蓄的总金额</li>
-                <li><strong>当前储蓄：</strong> 输入您已经存下的钱</li>
-                <li><strong>月度投入：</strong> 决定您每月能存多少钱</li>
-                <li><strong>时间线：</strong> 设定实现目标的目标日期</li>
-                <li><strong>预期回报：</strong> 如果投资储蓄，包含利率</li>
-                <li><strong>计算：</strong> 查看您是否按计划并获得个性化建议</li>
+                <li><strong>Goal Amount</strong>: How much total money do you need?</li>
+                <li><strong>Current Savings</strong>: How much do you have saved up right now?</li>
+                <li><strong>Monthly Contribution</strong>: How much can you save each month?</li>
+                <li><strong>Expected Return</strong>: If you invest your savings, what's the annual return? (Conservative estimate: 2-4% for high-yield savings).</li>
               </ol>
+              <p>
+                After calculating, we'll tell you when you'll reach your goal at your current pace, or how much more you need to save to hit your target date.
+              </p>
 
-              <h3>为什么要设定储蓄目标？</h3>
-              <ul>
-                <li><strong>动力：</strong> 明确的目标让您保持专注和动力</li>
-                <li><strong>追踪：</strong> 随时间衡量进度</li>
-                <li><strong>规划：</strong> 为重大购买创建现实的时间线</li>
-                <li><strong>复利增长：</strong> 看到利息如何加速储蓄增长</li>
-              </ul>
-
-              <h3>更快达成储蓄目标的技巧</h3>
-              <ul>
-                <li>自动化储蓄 - 设置自动转账</li>
-                <li>使用高收益储蓄账户（3-4% APY）</li>
-                <li>利用意外之财（退税、奖金）增加储蓄</li>
-                <li>减少累积起来的小开支</li>
-                <li>为长期目标考虑投资</li>
-              </ul>
-
-              <h3>常见储蓄目标</h3>
-              <ul>
-                <li><strong>应急基金：</strong> 3-6个月的支出</li>
-                <li><strong>房屋首付：</strong> 房价的10-20%</li>
-                <li><strong>度假：</strong> 5,000-10,000元，取决于目的地</li>
-                <li><strong>汽车：</strong> 车价的20%或更多</li>
-                <li><strong>婚礼：</strong> 平均20,000-30,000元</li>
-              </ul>
-            </>
+              <h3>3 Secrets to Saving Faster</h3>
+              <p>
+                1. <strong>Automate It</strong>: Set up an automatic transfer on payday. "Pay yourself first" before you have a chance to spend it.<br />
+                2. <strong>High-Yield Accounts</strong>: Don't let your money sleep in a checking account. Move it to a High-Yield Savings Account (HYSA) to earn interest.<br />
+                3. <strong>Micro-Habits</strong>: Cutting one small daily expense can add up to thousands over a few years.
+              </p>
+            </div>
           )}
         </div>
 

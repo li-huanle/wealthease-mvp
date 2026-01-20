@@ -2,5 +2,8 @@
     "files.associations": {
         "*.ttml": "xml",
         "*.ttss": "css"
+    },
+    "go.experiments": {
+        "testExplorer": true
     }
 }
