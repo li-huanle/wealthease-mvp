@@ -236,7 +236,7 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
 
   return (
     <div className="py-12 bg-gradient-to-b from-gray-50 to-white min-h-screen">
-      <div className="container-custom max-w-6xl">
+      <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
