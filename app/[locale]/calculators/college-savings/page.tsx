@@ -54,194 +54,311 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function CollegeSavingsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations('calculator.collegeSavings');
 
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            College Savings Calculator (529 Plan)
+            {t('title')}
           </h1>
           <p className="text-xl text-gray-600">
-            Plan and save for your child's college education with tax-advantaged 529 plans
+            {t('subtitle')}
           </p>
         </div>
 
         <CollegeSavingsCalculator />
 
         {/* SEO Content */}
-        <div className="mt-16 prose prose-lg max-w-none">
-          <h2>Planning for College Education Costs</h2>
-          <p>
-            College costs have been rising faster than inflation for decades, making early planning essential.
-            A 529 college savings plan offers tax-advantaged growth to help you save for future education expenses.
-            This calculator helps you determine if you're on track and how much you should be saving monthly.
-          </p>
+        <div className="mt-16">
+          {locale === 'zh' ? (
+            <div className="space-y-12">
+              <section className="bg-white rounded-2xl shadow-card p-8">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span className="text-2xl">🎓</span>
+                  </div>
+                  <div className="flex-1">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">大学储蓄计划：529计划详解</h2>
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      大学学费几十年来涨幅超过通胀，<strong>提前规划至关重要</strong>。
+                      529教育储蓄计划是专为此设计的税收优惠账户。
+                    </p>
+                    <p className="text-gray-600 leading-relaxed">
+                      本计算器帮助您了解是否在正确的储蓄轨道上，以及每月需要储蓄多少。
+                    </p>
+                  </div>
+                </div>
+              </section>
 
-          <h2>What is a 529 Plan?</h2>
-          <p>
-            A 529 plan is a tax-advantaged savings account specifically designed for education expenses. Named after
-            Section 529 of the Internal Revenue Code, these plans offer several key benefits:
-          </p>
-          <ul>
-            <li><strong>Tax-Free Growth:</strong> Investments grow federal tax-free</li>
-            <li><strong>Tax-Free Withdrawals:</strong> Qualified education expenses can be withdrawn tax-free</li>
-            <li><strong>State Tax Benefits:</strong> Many states offer tax deductions or credits for contributions</li>
-            <li><strong>High Contribution Limits:</strong> Most states allow over $300,000 in total contributions</li>
-            <li><strong>Flexibility:</strong> Can be used at any accredited college or university nationwide</li>
-            <li><strong>Control:</strong> Account owner maintains control, not the beneficiary</li>
-          </ul>
+              <section className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">529计划的核心优势</h3>
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="bg-white rounded-xl p-5 text-center">
+                    <p className="text-3xl mb-2">💰</p>
+                    <p className="font-semibold text-gray-900 mb-1">免税增长</p>
+                    <p className="text-gray-600 text-sm">投资收益免税累积</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-5 text-center">
+                    <p className="text-3xl mb-2">🏦</p>
+                    <p className="font-semibold text-gray-900 mb-1">提现免税</p>
+                    <p className="text-gray-600 text-sm">符合条件支出免联邦税</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-5 text-center">
+                    <p className="text-3xl mb-2">🧾</p>
+                    <p className="font-semibold text-gray-900 mb-1">州税优惠</p>
+                    <p className="text-gray-600 text-sm">多数州提供税收减免</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-5 text-center">
+                    <p className="text-3xl mb-2">📈</p>
+                    <p className="font-semibold text-gray-900 mb-1">高存款限额</p>
+                    <p className="text-gray-600 text-sm">多数州允许超30万美元</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-5 text-center">
+                    <p className="text-3xl mb-2">🏫</p>
+                    <p className="font-semibold text-gray-900 mb-1">灵活使用</p>
+                    <p className="text-gray-600 text-sm">全国任何认证院校可用</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-5 text-center">
+                    <p className="text-3xl mb-2">👤</p>
+                    <p className="font-semibold text-gray-900 mb-1">账户控制</p>
+                    <p className="text-gray-600 text-sm">账户所有人掌控资金</p>
+                  </div>
+                </div>
+              </section>
 
-          <h2>Current College Cost Trends</h2>
-          <p>
-            Understanding college cost trends is crucial for planning:
-          </p>
-          <ul>
-            <li><strong>Public In-State:</strong> Average $10,000-$15,000 per year (tuition + fees)</li>
-            <li><strong>Public Out-of-State:</strong> Average $25,000-$30,000 per year</li>
-            <li><strong>Private College:</strong> Average $35,000-$50,000 per year</li>
-            <li><strong>Elite Private:</strong> Can exceed $60,000-$80,000 per year</li>
-            <li><strong>Total 4-Year Cost:</strong> $100,000 to $320,000+ depending on school type</li>
-            <li><strong>Historical Inflation:</strong> College costs have increased 5-6% annually for decades</li>
-          </ul>
+              <section className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">越早开始越轻松</h3>
+                <p className="text-gray-600 mb-4">基于10万美金大学目标，假设7%年化收益：</p>
+                <div className="bg-white rounded-xl overflow-hidden">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-gray-50">
+                        <tr>
+                          <th className="px-4 py-3 text-left font-semibold text-gray-900">开始时间</th>
+                          <th className="px-4 py-3 text-left font-semibold text-gray-900">持有年限</th>
+                          <th className="px-4 py-3 text-left font-semibold text-gray-900">月存金额</th>
+                          <th className="px-4 py-3 text-left font-semibold text-gray-900">节省比例</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-100">
+                        <tr>
+                          <td className="px-4 py-3">出生时</td>
+                          <td className="px-4 py-3">18年</td>
+                          <td className="px-4 py-3 text-green-600 font-semibold">¥1,450/月</td>
+                          <td className="px-4 py-3 text-green-600">基准</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3">5岁时</td>
+                          <td className="px-4 py-3">13年</td>
+                          <td className="px-4 py-3 text-green-600 font-semibold">¥2,520/月</td>
+                          <td className="px-4 py-3">需多存74%</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3">10岁时</td>
+                          <td className="px-4 py-3">8年</td>
+                          <td className="px-4 py-3 text-green-600 font-semibold">¥5,110/月</td>
+                          <td className="px-4 py-3">需多存252%</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3">15岁时</td>
+                          <td className="px-4 py-3">3年</td>
+                          <td className="px-4 py-3 text-green-600 font-semibold">¥16,680/月</td>
+                          <td className="px-4 py-3">需多存1050%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <p className="text-amber-700 mt-4 text-sm">
+                  💡 提前5年开始，月存金额可减少40%以上！
+                </p>
+              </section>
 
-          <h2>The Power of Starting Early</h2>
-          <p>
-            Time is your greatest ally when saving for college. Consider these examples based on a $100,000 college
-            cost goal with 7% annual returns:
-          </p>
-          <ul>
-            <li><strong>Start at Birth (18 years):</strong> $212/month needed</li>
-            <li><strong>Start at Age 5 (13 years):</strong> $368/month needed</li>
-            <li><strong>Start at Age 10 (8 years):</strong> $746/month needed</li>
-            <li><strong>Start at Age 15 (3 years):</strong> $2,435/month needed</li>
-          </ul>
-          <p>
-            Starting just 5 years earlier can cut your required monthly savings by 40% or more!
-          </p>
+              <section className="bg-white rounded-2xl shadow-card p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">当前大学费用趋势</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-gray-50 rounded-xl p-5">
+                    <p className="font-semibold text-gray-900 mb-2">公立州内大学</p>
+                    <p className="text-gray-600 text-sm">约¥7-11万/年（含学费和食宿）</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-xl p-5">
+                    <p className="font-semibold text-gray-900 mb-2">公立州外大学</p>
+                    <p className="text-gray-600 text-sm">约¥18-22万/年</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-xl p-5">
+                    <p className="font-semibold text-gray-900 mb-2">私立大学</p>
+                    <p className="text-gray-600 text-sm">约¥25-36万/年</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-xl p-5">
+                    <p className="font-semibold text-gray-900 mb-2">精英私立大学</p>
+                    <p className="text-gray-600 text-sm">可达¥45-60万+/年</p>
+                  </div>
+                </div>
+              </section>
 
-          <h2>Investment Strategies for 529 Plans</h2>
-          <p>
-            Most 529 plans offer various investment options:
-          </p>
-          <ul>
-            <li><strong>Age-Based Portfolios:</strong> Automatically become more conservative as college approaches (recommended for most)</li>
-            <li><strong>Aggressive Growth:</strong> 100% stocks, suitable when child is young (typical 8-10% historical returns)</li>
-            <li><strong>Moderate Growth:</strong> 60-80% stocks, balanced approach (typical 6-8% historical returns)</li>
-            <li><strong>Conservative:</strong> Bonds and stable value, used close to college (typical 3-5% historical returns)</li>
-            <li><strong>Target-Date Funds:</strong> Automatically adjust based on expected college enrollment year</li>
-          </ul>
+              <section className="bg-white rounded-2xl shadow-card p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">投资策略建议</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-amber-800 mb-1">年龄型组合（推荐）</p>
+                    <p className="text-gray-600 text-sm">随孩子年龄自动调整风险，幼儿时高股票比例，临近大学转为保守。</p>
+                  </div>
+                  <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-blue-800 mb-1">积极成长型</p>
+                    <p className="text-gray-600 text-sm">100%股票，适合幼儿，历史收益约8-10%。</p>
+                  </div>
+                  <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-green-800 mb-1">平衡型</p>
+                    <p className="text-gray-600 text-sm">60-80%股票，适合学龄儿童，收益约6-8%。</p>
+                  </div>
+                  <div className="bg-purple-50 border-l-4 border-purple-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-purple-800 mb-1">保守型</p>
+                    <p className="text-gray-600 text-sm">债券和稳定价值产品，临近大学使用，收益约3-5%。</p>
+                  </div>
+                </div>
+              </section>
 
-          <h2>Qualified Education Expenses</h2>
-          <p>
-            529 plan funds can be used tax-free for these qualified expenses:
-          </p>
-          <ul>
-            <li>Tuition and mandatory fees</li>
-            <li>Room and board (if enrolled at least half-time)</li>
-            <li>Required books, supplies, and equipment</li>
-            <li>Computer and internet access (if required)</li>
-            <li>Special needs equipment</li>
-            <li>Up to $10,000 per year for K-12 tuition</li>
-            <li>Up to $10,000 lifetime for student loan repayment</li>
-          </ul>
+              <section className="bg-white rounded-2xl shadow-card p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">常见问题 (FAQ)</h3>
+                <div className="space-y-4">
+                  <details className="group">
+                    <summary className="cursor-pointer font-semibold text-gray-900 flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                      <span>Q: 存多了怎么办？孩子用不完？</span>
+                      <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-4 text-gray-600">
+                      <p><strong>A:</strong> 有几个选择：1）更换受益人（其他家庭成员）；2）保留读研；3）2024年起可转入Roth IRA（终身最高3.5万）；4）非合格提现仅对收益部分征税+10%罚款。</p>
+                    </div>
+                  </details>
+                  <details className="group">
+                    <summary className="cursor-pointer font-semibold text-gray-900 flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                      <span>Q: 529计划影响 FAFSA 助学金吗？</span>
+                      <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-4 text-gray-600">
+                      <p><strong>A:</strong> 父母拥有的529计划在FAFSA中仅以5.64%评估，影响很小。学生拥有的账户评估20%。祖父母拥有的计划在2024年简化后不再报告。</p>
+                    </div>
+                  </details>
+                  <details className="group">
+                    <summary className="cursor-pointer font-semibold text-gray-900 flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                      <span>Q: 哪些支出符合免税条件？</span>
+                      <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-4 text-gray-600">
+                      <p><strong>A:</strong> 符合条件支出包括：学费和必修费、半职以上的食宿、必修教材、电脑和网络（符合条件时）、特殊需求设备、K-12每年最多1万美元、大学贷款终身最多1万美元。</p>
+                    </div>
+                  </details>
+                  <details className="group">
+                    <summary className="cursor-pointer font-semibold text-gray-900 flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                      <span>Q: 应该用州税减免还是选择低费率计划？</span>
+                      <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-4 text-gray-600">
+                      <p><strong>A:</strong> 如果您所在州提供529税收减免，通常应使用本州计划。但若本州计划费率过高，可考虑其他州低费率计划（可能失去州税减免，但节省的费用可能更多）。</p>
+                    </div>
+                  </details>
+                  <details className="group">
+                    <summary className="cursor-pointer font-semibold text-gray-900 flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                      <span>Q: 529计划和 Roth IRA 哪个更好？</span>
+                      <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-4 text-gray-600">
+                      <p><strong>A:</strong> 两者用途不同：529专用于教育，Roth IRA可用于任何目的（但教育支出也可提现）。通常建议优先使用529获得州税减免，再用Roth IRA作为补充。</p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+            </div>
+          ) : (
+            <div className="space-y-12">
+              <section className="bg-white rounded-2xl shadow-card p-8">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex-items-center justify-center flex-shrink-0">
+                    <span className="text-2xl">🎓</span>
+                  </div>
+                  <div className="flex-1">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">529 College Savings Plans</h2>
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      College costs have risen faster than inflation for decades, making
+                      <strong> early planning essential</strong>. A 529 plan offers tax-advantaged growth.
+                    </p>
+                    <p className="text-gray-600 leading-relaxed">
+                      Use this calculator to see if you're on track and how much to save monthly.
+                    </p>
+                  </div>
+                </div>
+              </section>
 
-          <h2>State Tax Benefits</h2>
-          <p>
-            Over 30 states offer tax deductions or credits for 529 contributions. Examples:
-          </p>
-          <ul>
-            <li><strong>New York:</strong> Up to $10,000 deduction ($20,000 married)</li>
-            <li><strong>Illinois:</strong> Up to $10,000 deduction ($20,000 married)</li>
-            <li><strong>Colorado:</strong> Full deduction, no limit</li>
-            <li><strong>Indiana:</strong> 20% credit up to $1,000 (on $5,000 contribution)</li>
-          </ul>
-          <p>
-            Always check your state's specific benefits - you may need to use your home state's plan to get the tax break.
-          </p>
+              <section className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">529 Plan Benefits</h3>
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="bg-white rounded-xl p-5 text-center">
+                    <p className="text-3xl mb-2">💰</p>
+                    <p className="font-semibold text-gray-900 mb-1">Tax-Free Growth</p>
+                    <p className="text-gray-600 text-sm">Earnings not taxed annually</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-5 text-center">
+                    <p className="text-3xl mb-2">🏦</p>
+                    <p className="font-semibold text-gray-900 mb-1">Tax-Free Withdrawals</p>
+                    <p className="text-gray-600 text-sm">For qualified education expenses</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-5 text-center">
+                    <p className="text-3xl mb-2">🧾</p>
+                    <p className="font-semibold text-gray-900 mb-1">State Tax Benefits</p>
+                    <p className="text-gray-600 text-sm">30+ states offer deductions</p>
+                  </div>
+                </div>
+              </section>
 
-          <h2>What If You Save Too Much?</h2>
-          <p>
-            If your child doesn't use all the funds, you have several options:
-          </p>
-          <ul>
-            <li><strong>Change Beneficiary:</strong> Transfer to another family member (siblings, cousins, even yourself)</li>
-            <li><strong>Save for Graduate School:</strong> Funds can be used for advanced degrees</li>
-            <li><strong>Roll to Roth IRA:</strong> New in 2024, up to $35,000 lifetime can roll to Roth (subject to rules)</li>
-            <li><strong>Non-Qualified Withdrawal:</strong> Pay tax + 10% penalty on earnings only (contributions come out tax/penalty-free)</li>
-            <li><strong>Scholarship Exception:</strong> If child gets scholarship, can withdraw that amount penalty-free (still pay tax on earnings)</li>
-          </ul>
+              <section className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">The Power of Starting Early</h3>
+                <p className="text-gray-600 mb-4">Based on $100,000 goal with 7% annual returns:</p>
+                <div className="bg-white rounded-xl overflow-hidden">
+                  <table className="w-full text-sm">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="px-4 py-3 text-left">Start Time</th>
+                        <th className="px-4 py-3 text-left">Years</th>
+                        <th className="px-4 py-3 text-left">Monthly</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100">
+                      <tr><td className="px-4 py-3">At Birth (18 years)</td><td className="px-4 py-3">18</td><td className="px-4 py-3 text-green-600">$212</td></tr>
+                      <tr><td className="px-4 py-3">Age 5 (13 years)</td><td className="px-4 py-3">13</td><td className="px-4 py-3 text-green-600">$368</td></tr>
+                      <tr><td className="px-4 py-3">Age 10 (8 years)</td><td className="px-4 py-3">8</td><td className="px-4 py-3 text-green-600">$746</td></tr>
+                      <tr><td className="px-4 py-3">Age 15 (3 years)</td><td className="px-4 py-3">3</td><td className="px-4 py-3 text-green-600">$2,435</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
 
-          <h2>Alternatives and Supplements to 529 Plans</h2>
-          <p>
-            While 529 plans are excellent, consider these complementary strategies:
-          </p>
-          <ul>
-            <li><strong>Roth IRA:</strong> Contributions (not earnings) can be withdrawn tax/penalty-free for education</li>
-            <li><strong>Coverdell ESA:</strong> Similar to 529 but lower limits ($2,000/year), can be used for K-12</li>
-            <li><strong>UGMA/UTMA:</strong> Custodial accounts with more flexibility but less favorable tax treatment</li>
-            <li><strong>Taxable Account:</strong> Most flexible but no tax advantages</li>
-            <li><strong>Series I Bonds:</strong> Tax-free for education if income limits met</li>
-          </ul>
-
-          <h2>Financial Aid Impact</h2>
-          <p>
-            529 plans are treated favorably in financial aid calculations:
-          </p>
-          <ul>
-            <li><strong>Parent-Owned 529:</strong> Assessed at max 5.64% in FAFSA calculations (minimal impact)</li>
-            <li><strong>Student-Owned Accounts:</strong> Assessed at 20% (much worse for aid)</li>
-            <li><strong>Grandparent-Owned 529:</strong> Not reported on FAFSA (as of 2024 FAFSA simplification)</li>
-            <li><strong>Strategic Timing:</strong> Use 529 funds in later college years to minimize aid impact</li>
-          </ul>
-
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li><strong>Waiting Too Long:</strong> Starting even 2-3 years earlier makes a huge difference</li>
-            <li><strong>Too Conservative Too Soon:</strong> Being overly risk-averse when child is young limits growth</li>
-            <li><strong>Ignoring State Tax Benefits:</strong> Free money from state tax deductions</li>
-            <li><strong>Sacrificing Retirement:</strong> You can borrow for college but not for retirement</li>
-            <li><strong>Over-Contributing:</strong> Don't save so much you sacrifice other financial goals</li>
-            <li><strong>Forgetting to Rebalance:</strong> Review and adjust investments as college approaches</li>
-          </ul>
-
-          <h2>How to Use This Calculator</h2>
-          <ol>
-            <li>Enter your child's current age and expected college entry age</li>
-            <li>Input current 529 savings and monthly contribution amount</li>
-            <li>Set expected investment return (conservative: 5%, moderate: 7%, aggressive: 9%)</li>
-            <li>Estimate annual college costs (use current prices - calculator adjusts for inflation)</li>
-            <li>Set college cost inflation rate (historical average is 5-6%)</li>
-            <li>Specify years in college (typically 4, but can adjust for 2-year or graduate school)</li>
-            <li>Click Calculate to see if you're on track</li>
-          </ol>
-
-          <h2>Recommended Savings Guidelines</h2>
-          <p>
-            As a rule of thumb, consider these monthly savings targets to cover 100% of projected costs:
-          </p>
-          <ul>
-            <li><strong>Public In-State Goal ($100k total):</strong> $212/month from birth, $368/month from age 5</li>
-            <li><strong>Public Out-of-State Goal ($150k total):</strong> $318/month from birth, $552/month from age 5</li>
-            <li><strong>Private College Goal ($250k total):</strong> $530/month from birth, $920/month from age 5</li>
-          </ul>
-          <p>
-            Remember, you don't have to save 100% - many families aim for 50-70% and use a combination of
-            savings, current income, financial aid, and student loans.
-          </p>
-
-          <h2>Getting Started</h2>
-          <p>
-            To open a 529 plan:
-          </p>
-          <ol>
-            <li>Research your state's plan and compare fees</li>
-            <li>Consider highly-rated plans from other states if your state doesn't offer tax benefits</li>
-            <li>Look for low-fee index fund options (fees under 0.25% annually)</li>
-            <li>Consider direct-sold plans to avoid advisor fees (unless you need guidance)</li>
-            <li>Set up automatic monthly contributions to maintain discipline</li>
-            <li>Review and rebalance annually</li>
-          </ol>
+              <section className="bg-white rounded-2xl shadow-card p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">FAQ</h3>
+                <div className="space-y-4">
+                  <details className="group">
+                    <summary className="cursor-pointer font-semibold text-gray-900 flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                      <span>Q: What if we save too much?</span>
+                      <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-4 text-gray-600">
+                      <p><strong>A:</strong> Change beneficiary, save for grad school, roll to Roth IRA ($35K lifetime), or pay 10% penalty on earnings only.</p>
+                    </div>
+                  </details>
+                  <details className="group">
+                    <summary className="cursor-pointer font-semibold text-gray-900 flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                      <span>Q: How do 529 plans affect financial aid?</span>
+                      <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-4 text-gray-600">
+                      <p><strong>A:</strong> Parent-owned 529s are assessed at only 5.64% on FAFSA. Grandparent-owned plans aren't reported (2024+).</p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+            </div>
+          )}
         </div>
 
         <RelatedCalculators currentCalculator="college-savings" />

@@ -54,259 +54,323 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function InvestmentComparisonPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations('calculator.investmentComparison');
 
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Investment Return Comparison Calculator
+            {t('title')}
           </h1>
           <p className="text-xl text-gray-600">
-            Compare different investment options side-by-side to make informed financial decisions
+            {t('subtitle')}
           </p>
         </div>
 
         <InvestmentComparisonCalculator />
 
         {/* SEO Content */}
-        <div className="mt-16 prose prose-lg max-w-none">
-          <h2>Making Informed Investment Decisions</h2>
-          <p>
-            Choosing between investment options can be challenging. Should you invest in stocks, bonds, real estate,
-            or keep your money in a high-yield savings account? This calculator helps you compare up to three different
-            investment scenarios side-by-side, accounting for returns, taxes, and time horizon.
-          </p>
+        <div className="mt-16">
+          {locale === 'zh' ? (
+            <div className="space-y-12">
+              <section className="bg-white rounded-2xl shadow-card p-8">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span className="text-2xl">⚖️</span>
+                  </div>
+                  <div className="flex-1">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">投资比较：做出明智的财务决策</h2>
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      选择投资选项可能很困难。应该投资股票、债券、房地产，还是高息储蓄账户？
+                      <strong>本计算器帮助您并排比较最多三个不同投资方案</strong>，综合考虑回报、税费和时间周期。
+                    </p>
+                  </div>
+                </div>
+              </section>
 
-          <h2>Common Investment Comparisons</h2>
-          <h3>1. Stocks vs Bonds vs Cash</h3>
-          <ul>
-            <li><strong>Stocks (S&P 500 Index):</strong> Historical average 10% annual return, high volatility, 15% long-term capital gains tax</li>
-            <li><strong>Bonds (Aggregate Bond Index):</strong> Historical average 4-5% annual return, moderate volatility, taxed as ordinary income</li>
-            <li><strong>High-Yield Savings:</strong> 3-5% current rates, no volatility, interest taxed as ordinary income (22-37%)</li>
-          </ul>
+              <section className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">各资产类别的历史平均回报</h3>
+                <div className="grid md:grid-cols-4 gap-4">
+                  <div className="bg-white rounded-xl p-5 text-center">
+                    <p className="font-semibold text-gray-900 mb-2">大盘股 (标普500)</p>
+                    <p className="text-2xl font-bold text-green-600">~10%</p>
+                    <p className="text-xs text-gray-500">高波动</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-5 text-center">
+                    <p className="font-semibold text-gray-900 mb-2">小盘股</p>
+                    <p className="text-2xl font-bold text-green-600">~12%</p>
+                    <p className="text-xs text-gray-500">更高波动</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-5 text-center">
+                    <p className="font-semibold text-gray-900 mb-2">国际股票</p>
+                    <p className="text-2xl font-bold text-green-600">~8-9%</p>
+                    <p className="text-xs text-gray-500">需分散风险</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-5 text-center">
+                    <p className="font-semibold text-gray-900 mb-2">债券</p>
+                    <p className="text-2xl font-bold text-blue-600">~4-5%</p>
+                    <p className="text-xs text-gray-500">低波动</p>
+                  </div>
+                </div>
+              </section>
 
-          <h3>2. Tax-Advantaged vs Taxable Accounts</h3>
-          <ul>
-            <li><strong>Roth IRA:</strong> Tax-free growth and withdrawals, 0% tax on gains</li>
-            <li><strong>Traditional 401(k):</strong> Tax-deferred growth, taxed as ordinary income in retirement</li>
-            <li><strong>Taxable Brokerage:</strong> Immediate access, 15-20% long-term capital gains tax, annual dividend taxes</li>
-          </ul>
+              <section className="bg-white rounded-2xl shadow-card p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">常见投资组合比较</h3>
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="bg-gray-50 rounded-xl p-5">
+                    <p className="font-semibold text-gray-900 mb-2">股票 vs 债券 vs 现金</p>
+                    <ul className="text-gray-600 text-sm space-y-1">
+                      <li>• 股票：~10%回报，高波动</li>
+                      <li>• 债券：~4-5%回报，中等波动</li>
+                      <li>• 储蓄：当前3-5%，无波动</li>
+                    </ul>
+                  </div>
+                  <div className="bg-gray-50 rounded-xl p-5">
+                    <p className="font-semibold text-gray-900 mb-2">税收优惠 vs 征税账户</p>
+                    <ul className="text-gray-600 text-sm space-y-1">
+                      <li>• Roth IRA：免税增长和提取</li>
+                      <li>• 传统401(k)：延税，退休时纳税</li>
+                      <li>• 税务账户：即时可得，资本利得税</li>
+                    </ul>
+                  </div>
+                  <div className="bg-gray-50 rounded-xl p-5">
+                    <p className="font-semibold text-gray-900 mb-2">主动 vs 被动投资</p>
+                    <ul className="text-gray-600 text-sm space-y-1">
+                      <li>• 指数基金：低费用0.03-0.2%</li>
+                      <li>• 主动基金：费用0.5-2%，可能跑输</li>
+                      <li>• 个股：无基金费用，需研究</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
 
-          <h3>3. Active vs Passive Investing</h3>
-          <ul>
-            <li><strong>Index Funds:</strong> Low fees (0.03-0.20%), match market returns (~10% historical)</li>
-            <li><strong>Actively Managed Funds:</strong> Higher fees (0.5-2%), may underperform market after fees</li>
-            <li><strong>Individual Stock Picking:</strong> No fund fees, requires research, higher risk/reward potential</li>
-          </ul>
+              <section className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">复利与时间的威力</h3>
+                <p className="text-gray-600 mb-4">假设月投$500，年回报8%：</p>
+                <div className="bg-white rounded-xl overflow-hidden">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-gray-50">
+                        <tr>
+                          <th className="px-4 py-3 text-left font-semibold text-gray-900">时间</th>
+                          <th className="px-4 py-3 text-left font-semibold text-gray-900">总投入</th>
+                          <th className="px-4 py-3 text-left font-semibold text-gray-900">总价值</th>
+                          <th className="px-4 py-3 text-left font-semibold text-gray-900">收益</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-100">
+                        <tr>
+                          <td className="px-4 py-3">10年</td>
+                          <td className="px-4 py-3">$60,000</td>
+                          <td className="px-4 py-3 text-green-600 font-semibold">$91,000</td>
+                          <td className="px-4 py-3">+$31,000</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3">20年</td>
+                          <td className="px-4 py-3">$120,000</td>
+                          <td className="px-4 py-3 text-green-600 font-semibold">$294,000</td>
+                          <td className="px-4 py-3">+$174,000</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3">30年</td>
+                          <td className="px-4 py-3">$180,000</td>
+                          <td className="px-4 py-3 text-green-600 font-semibold">$745,000</td>
+                          <td className="px-4 py-3">+$565,000</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3">40年</td>
+                          <td className="px-4 py-3">$240,000</td>
+                          <td className="px-4 py-3 text-green-600 font-semibold">$1,750,000</td>
+                          <td className="px-4 py-3">+$1,510,000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <p className="text-amber-600 mt-4 font-semibold">
+                  注意：收益最终远超本金——这就是复利的魔力！
+                </p>
+              </section>
 
-          <h2>Understanding Investment Returns</h2>
-          <h3>Historical Average Returns by Asset Class</h3>
-          <ul>
-            <li><strong>Large Cap Stocks (S&P 500):</strong> ~10% annual (1926-2024)</li>
-            <li><strong>Small Cap Stocks:</strong> ~12% annual but higher volatility</li>
-            <li><strong>International Stocks:</strong> ~8-9% annual</li>
-            <li><strong>REITs (Real Estate):</strong> ~10-11% annual</li>
-            <li><strong>Corporate Bonds:</strong> ~5-6% annual</li>
-            <li><strong>Government Bonds:</strong> ~3-4% annual</li>
-            <li><strong>Commodities (Gold):</strong> ~3-4% annual</li>
-            <li><strong>Savings Accounts:</strong> Variable, currently 3-5%</li>
-          </ul>
+              <section className="bg-white rounded-2xl shadow-card p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">费用对回报的长期影响</h3>
+                <p className="text-gray-600 mb-4">10万投资30年，年回报8%：</p>
+                <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
+                  <div className="grid md:grid-cols-4 gap-4 text-center">
+                    <div>
+                      <p className="text-sm text-gray-600 mb-1">0.05% 费率</p>
+                      <p className="text-xl font-bold text-green-600">$99万</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-600 mb-1">0.5% 费率</p>
+                      <p className="text-xl font-bold text-blue-600">$89万</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-600 mb-1">1% 费率</p>
+                      <p className="text-xl font-bold text-amber-600">$79万</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-600 mb-1">2% 费率</p>
+                      <p className="text-xl font-bold text-red-600">$63万</p>
+                    </div>
+                  </div>
+                  <p className="text-center text-gray-600 mt-4 text-sm">
+                    看似微小的费用差异，30年后造成高达<span className="font-semibold text-red-600">36万</span>的财富差距！
+                  </p>
+                </div>
+              </section>
 
-          <h3>Risk-Adjusted Returns</h3>
-          <p>
-            Higher returns typically come with higher risk (volatility). The Sharpe Ratio measures risk-adjusted returns:
-          </p>
-          <ul>
-            <li><strong>Stocks:</strong> Higher returns but 15-20% annual volatility</li>
-            <li><strong>Bonds:</strong> Lower returns but only 3-5% volatility</li>
-            <li><strong>60/40 Portfolio:</strong> Balanced approach with moderate risk/return</li>
-          </ul>
+              <section className="bg-white rounded-2xl shadow-card p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">专家建议</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-amber-800 mb-1">低成本优先</p>
+                    <p className="text-gray-600 text-sm">费用是长期回报的最大杀手。</p>
+                  </div>
+                  <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-blue-800 mb-1">分散投资</p>
+                    <p className="text-gray-600 text-sm">不要把所有鸡蛋放在一个篮子里。</p>
+                  </div>
+                  <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-green-800 mb-1">长期持有</p>
+                    <p className="text-gray-600 text-sm">时间在市场中比择时更重要。</p>
+                  </div>
+                  <div className="bg-purple-50 border-l-4 border-purple-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-purple-800 mb-1">考虑通胀</p>
+                    <p className="text-gray-600 text-sm">实际回报（扣除通胀）才是真正收益。</p>
+                  </div>
+                </div>
+              </section>
 
-          <h2>Tax Impact on Investment Returns</h2>
-          <p>
-            Taxes can significantly reduce investment returns. Understanding tax treatment is crucial:
-          </p>
+              <section className="bg-white rounded-2xl shadow-card p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">常见问题 (FAQ)</h3>
+                <div className="space-y-4">
+                  <details className="group">
+                    <summary className="cursor-pointer font-semibold text-gray-900 flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                      <span>Q: 什么是合理的投资回报预期？</span>
+                      <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-4 text-gray-600">
+                      <p><strong>A:</strong> 历史来看：股票约8-10%（经通胀调整后约5-7%），债券约3-5%。应基于您的风险承受能力和投资期限设定现实预期。</p>
+                    </div>
+                  </details>
+                  <details className="group">
+                    <summary className="cursor-pointer font-semibold text-gray-900 flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                      <span>Q: 60/40组合还合理吗？</span>
+                      <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-4 text-gray-600">
+                      <p><strong>A:</strong> 60股票/40债券仍是经典组合，但现代版本可能更激进（如100减去年龄的股票比例）。关键是匹配您的风险承受度。</p>
+                    </div>
+                  </details>
+                  <details className="group">
+                    <summary className="cursor-pointer font-semibold text-gray-900 flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                      <span>Q: 应该选单一指数基金还是多个？</span>
+                      <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-4 text-gray-600">
+                      <p><strong>A:</strong> 最简单：全市场指数基金（如VTI）覆盖美国所有股票。更分散：加上国际股票（VXUS）和债券（BND）。</p>
+                    </div>
+                  </details>
+                  <details className="group">
+                    <summary className="cursor-pointer font-semibold text-gray-900 flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                      <span>Q: 税收如何影响投资选择？</span>
+                      <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-4 text-gray-600">
+                      <p><strong>A:</strong> 税收优惠账户优先使用（401k、IRA、529）。税务账户中，长期资本利得税（15-20%）低于短期（普通税率）。应税债券利息按普通税率征收。</p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+            </div>
+          ) : (
+            <div className="space-y-12">
+              <section className="bg-white rounded-2xl shadow-card p-8">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span className="text-2xl">⚖️</span>
+                  </div>
+                  <div className="flex-1">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">Make Informed Investment Decisions</h2>
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      Should you invest in stocks, bonds, real estate, or savings?
+                      <strong> This calculator helps compare up to 3 investment scenarios</strong> side-by-side.
+                    </p>
+                  </div>
+                </div>
+              </section>
 
-          <h3>Tax Rates by Investment Type (2024)</h3>
-          <ul>
-            <li><strong>Long-Term Capital Gains:</strong> 0%, 15%, or 20% based on income (assets held 1+ year)</li>
-            <li><strong>Short-Term Capital Gains:</strong> Taxed as ordinary income, 10-37%</li>
-            <li><strong>Qualified Dividends:</strong> Same as long-term capital gains, 0-20%</li>
-            <li><strong>Ordinary Dividends:</strong> Taxed as ordinary income, 10-37%</li>
-            <li><strong>Interest Income:</strong> Taxed as ordinary income, 10-37%</li>
-            <li><strong>REIT Dividends:</strong> Generally taxed as ordinary income</li>
-          </ul>
+              <section className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Historical Returns by Asset Class</h3>
+                <div className="grid md:grid-cols-4 gap-4">
+                  <div className="bg-white rounded-xl p-5 text-center">
+                    <p className="font-semibold text-gray-900 mb-2">S&P 500</p>
+                    <p className="text-2xl font-bold text-green-600">~10%</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-5 text-center">
+                    <p className="font-semibold text-gray-900 mb-2">Small Caps</p>
+                    <p className="text-2xl font-bold text-green-600">~12%</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-5 text-center">
+                    <p className="font-semibold text-gray-900 mb-2">Int'l Stocks</p>
+                    <p className="text-2xl font-bold text-green-600">~8-9%</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-5 text-center">
+                    <p className="font-semibold text-gray-900 mb-2">Bonds</p>
+                    <p className="text-2xl font-bold text-blue-600">~4-5%</p>
+                  </div>
+                </div>
+              </section>
 
-          <h3>Tax-Advantaged Account Benefits</h3>
-          <ul>
-            <li><strong>Traditional IRA/401(k):</strong> Tax-deferred growth, reduce current taxable income</li>
-            <li><strong>Roth IRA/401(k):</strong> Tax-free growth and withdrawals in retirement</li>
-            <li><strong>HSA (Health Savings Account):</strong> Triple tax advantage - deductible, tax-free growth, tax-free medical withdrawals</li>
-            <li><strong>529 Plan:</strong> Tax-free growth for education expenses</li>
-          </ul>
+              <section className="bg-white rounded-2xl shadow-card p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Expert Tips</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-amber-800 mb-1">Low Fees Win</p>
+                    <p className="text-gray-600 text-sm">Fees compound negatively over time.</p>
+                  </div>
+                  <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-blue-800 mb-1">Diversify</p>
+                    <p className="text-gray-600 text-sm">Don't put all eggs in one basket.</p>
+                  </div>
+                  <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-green-800 mb-1">Time in Market</p>
+                    <p className="text-gray-600 text-sm">Outperforms timing the market.</p>
+                  </div>
+                  <div className="bg-purple-50 border-l-4 border-purple-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-purple-800 mb-1">Adjust for Inflation</p>
+                    <p className="text-gray-600 text-sm">Real returns matter most.</p>
+                  </div>
+                </div>
+              </section>
 
-          <h2>The Power of Time and Compounding</h2>
-          <p>
-            Time is the most powerful factor in investment growth. Compare investing $500/month at 8% return:
-          </p>
-          <ul>
-            <li><strong>10 years:</strong> $91,000 total value ($60,000 invested, $31,000 gains)</li>
-            <li><strong>20 years:</strong> $294,000 total value ($120,000 invested, $174,000 gains)</li>
-            <li><strong>30 years:</strong> $745,000 total value ($180,000 invested, $565,000 gains)</li>
-            <li><strong>40 years:</strong> $1,750,000 total value ($240,000 invested, $1,510,000 gains)</li>
-          </ul>
-          <p>
-            Notice how gains eventually far exceed contributions - that's compound interest at work!
-          </p>
-
-          <h2>Inflation-Adjusted Returns</h2>
-          <p>
-            Real returns (after inflation) are what matter for purchasing power. With 3% inflation:
-          </p>
-          <ul>
-            <li>10% stock return → 7% real return</li>
-            <li>5% bond return → 2% real return</li>
-            <li>3% savings account → 0% real return (breaks even with inflation)</li>
-            <li>1% savings account → -2% real return (losing purchasing power)</li>
-          </ul>
-
-          <h2>Common Investment Strategies</h2>
-          <h3>1. Target-Date Funds</h3>
-          <p>
-            Automatically adjust asset allocation as you age. Start aggressive (90% stocks) when young,
-            gradually shift conservative (30% stocks) near retirement. Ideal for hands-off investors.
-          </p>
-
-          <h3>2. Three-Fund Portfolio</h3>
-          <ul>
-            <li>60% Total U.S. Stock Market Index</li>
-            <li>30% Total International Stock Index</li>
-            <li>10% Total Bond Market Index</li>
-          </ul>
-          <p>Simple, diversified, low-cost approach popularized by Bogleheads.</p>
-
-          <h3>3. Age-Based Allocation</h3>
-          <p>
-            Traditional rule: "Your age in bonds" (e.g., at 40 years old, hold 40% bonds, 60% stocks).
-            Modern variant: "120 minus your age in stocks" (more aggressive given longer lifespans).
-          </p>
-
-          <h3>4. Core-Satellite Approach</h3>
-          <p>
-            80% in core index funds (low-cost, diversified), 20% in satellite investments (individual stocks,
-            sector funds, real estate) for potential outperformance.
-          </p>
-
-          <h2>Fees and Their Impact</h2>
-          <p>
-            Investment fees compound negatively over time. $100,000 invested for 30 years at 8% return:
-          </p>
-          <ul>
-            <li><strong>0.05% fee (index fund):</strong> $990,000 final value</li>
-            <li><strong>0.50% fee (low-cost fund):</strong> $890,000 final value (-$100k)</li>
-            <li><strong>1.00% fee (typical mutual fund):</strong> $790,000 final value (-$200k)</li>
-            <li><strong>2.00% fee (some actively managed):</strong> $630,000 final value (-$360k)</li>
-          </ul>
-          <p>
-            Even small fee differences create massive wealth gaps over decades!
-          </p>
-
-          <h2>Risk Considerations</h2>
-          <h3>Market Risk (Volatility)</h3>
-          <ul>
-            <li>Stocks can drop 20-50% in bear markets</li>
-            <li>Recovery takes 2-5 years on average</li>
-            <li>Long time horizon (10+ years) smooths out volatility</li>
-            <li>Dollar-cost averaging reduces timing risk</li>
-          </ul>
-
-          <h3>Sequence of Returns Risk</h3>
-          <p>
-            Returns matter more near retirement. A market crash in your last working year is far worse than
-            a crash 20 years before retirement. Consider shifting to bonds 5-10 years before retirement.
-          </p>
-
-          <h3>Diversification</h3>
-          <p>
-            Don't put all eggs in one basket. Diversify across:
-          </p>
-          <ul>
-            <li>Asset classes (stocks, bonds, real estate)</li>
-            <li>Geographic regions (U.S., international, emerging markets)</li>
-            <li>Company sizes (large cap, mid cap, small cap)</li>
-            <li>Sectors (tech, healthcare, financials, etc.)</li>
-          </ul>
-
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li><strong>Chasing Past Performance:</strong> Last year's winner is often next year's loser</li>
-            <li><strong>Panic Selling:</strong> Selling during downturns locks in losses</li>
-            <li><strong>Timing the Market:</strong> Time in market beats timing the market</li>
-            <li><strong>Ignoring Fees:</strong> 1-2% annual fees devastate long-term returns</li>
-            <li><strong>Over-Concentration:</strong> Too much in one stock or sector increases risk</li>
-            <li><strong>Not Rebalancing:</strong> Let winners ride too far from target allocation</li>
-            <li><strong>Tax Inefficiency:</strong> Not utilizing tax-advantaged accounts</li>
-          </ul>
-
-          <h2>How to Use This Calculator</h2>
-          <ol>
-            <li>Set your investment time horizon (years)</li>
-            <li>For each investment option:
-              <ul>
-                <li>Give it a descriptive name (e.g., "S&P 500 Index Fund")</li>
-                <li>Enter initial investment amount</li>
-                <li>Set monthly contribution (if any)</li>
-                <li>Input expected annual return (be conservative!)</li>
-                <li>Set tax rate on gains (use 15% for long-term capital gains, 22-37% for ordinary income)</li>
-              </ul>
-            </li>
-            <li>Click Compare to see side-by-side results</li>
-            <li>Review growth charts and after-tax values</li>
-            <li>Consider risk factors not captured in calculations</li>
-          </ol>
-
-          <h2>Sample Scenarios to Compare</h2>
-          <h3>Scenario 1: Young Professional (Age 30)</h3>
-          <ul>
-            <li><strong>Option A:</strong> Aggressive - 100% stocks, 9% return, 15% tax</li>
-            <li><strong>Option B:</strong> Balanced - 70/30 stocks/bonds, 7% return, 15% tax</li>
-            <li><strong>Option C:</strong> Conservative - High-yield savings, 4% return, 25% tax</li>
-          </ul>
-
-          <h3>Scenario 2: Pre-Retiree (Age 55)</h3>
-          <ul>
-            <li><strong>Option A:</strong> Balanced - 60/40 stocks/bonds, 6% return, 15% tax</li>
-            <li><strong>Option B:</strong> Conservative - 40/60 stocks/bonds, 4.5% return, 15% tax</li>
-            <li><strong>Option C:</strong> Dividend Focus - Dividend stocks, 5% return, 20% tax</li>
-          </ul>
-
-          <h3>Scenario 3: Account Type Comparison</h3>
-          <ul>
-            <li><strong>Option A:</strong> Roth IRA - 8% return, 0% tax (tax-free withdrawals)</li>
-            <li><strong>Option B:</strong> Traditional IRA - 8% return, 25% tax (deferred to retirement)</li>
-            <li><strong>Option C:</strong> Taxable - 8% return, 15% tax (pay as you go)</li>
-          </ul>
-
-          <h2>Beyond the Numbers</h2>
-          <p>
-            While this calculator provides valuable quantitative comparisons, also consider:
-          </p>
-          <ul>
-            <li><strong>Liquidity Needs:</strong> Can you access funds when needed?</li>
-            <li><strong>Risk Tolerance:</strong> Can you stomach 30-50% drops without panic selling?</li>
-            <li><strong>Time Commitment:</strong> How much management does the investment require?</li>
-            <li><strong>Expertise Required:</strong> Do you understand what you're investing in?</li>
-            <li><strong>Sleep-at-Night Factor:</strong> Will you worry constantly about this investment?</li>
-          </ul>
-
-          <h2>Recommended Resources</h2>
-          <ul>
-            <li><strong>Books:</strong> "A Random Walk Down Wall Street" by Burton Malkiel, "The Simple Path to Wealth" by JL Collins</li>
-            <li><strong>Websites:</strong> Bogleheads.org forum, Mr. Money Mustache, The White Coat Investor</li>
-            <li><strong>Tools:</strong> Personal Capital (portfolio tracking), Morningstar (fund research)</li>
-            <li><strong>Podcasts:</strong> ChooseFI, BiggerPockets Money, Afford Anything</li>
-          </ul>
+              <section className="bg-white rounded-2xl shadow-card p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">FAQ</h3>
+                <div className="space-y-4">
+                  <details className="group">
+                    <summary className="cursor-pointer font-semibold text-gray-900 flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                      <span>Q: What are realistic return expectations?</span>
+                      <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-4 text-gray-600">
+                      <p><strong>A:</strong> Stocks: 8-10% (5-7% real after inflation). Bonds: 3-5%. Adjust based on your risk tolerance and time horizon.</p>
+                    </div>
+                  </details>
+                  <details className="group">
+                    <summary className="cursor-pointer font-semibold text-gray-900 flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                      <span>Q: How do fees impact returns?</span>
+                      <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-4 text-gray-600">
+                      <p><strong>A:</strong> Small fee differences compound dramatically. 1-2% annual fee can cost $100K+ over 30 years on a $100K investment.</p>
+                    </div>
+                  </details>
+                </div>
+              </section>
+            </div>
+          )}
         </div>
 
         <RelatedCalculators currentCalculator="investment-comparison" />
