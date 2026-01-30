@@ -418,7 +418,7 @@
     },
     "rentVsBuy": {
       "title": "租房 vs 买房计算器",
-      "subtitle": "比较租房和买房的长期财务成本",
+      "subtitle": "比较租房与买房的长期成本，做出明智选择",
       "form": {
         "buyingSection": "买房",
         "rentingSection": "租房",
@@ -493,7 +493,7 @@
     },
     "collegeSavings": {
       "title": "大学学费储蓄计算器（529计划）",
-      "subtitle": "使用税收优惠的529计划为孩子的大学教育储蓄",
+      "subtitle": "利用529计划为孩子教育做税务优化储蓄",
       "form": {
         "childInfo": "子女与储蓄信息",
         "collegeCostInfo": "大学费用信息",
@@ -559,7 +559,7 @@
     },
     "dividendIncome": {
       "title": "股息收入计算器",
-      "subtitle": "计算来自分红股票的未来股息收入和被动现金流",
+      "subtitle": "计算分红股的被动现金流和复利增长",
       "form": {
         "investmentSection": "投资详情",
         "dividendSection": "股息与增长率",
@@ -618,7 +618,7 @@
     },
     "investmentComparison": {
       "title": "投资回报对比计算器",
-      "subtitle": "并排比较不同投资选项，做出明智的财务决策",
+      "subtitle": "横向比较不同投资选项的回报和风险",
       "form": {
         "commonParams": "通用参数",
         "years": "投资期限",
@@ -728,7 +728,7 @@
     },
     "creditScore": {
       "title": "信用分计算器",
-      "subtitle": "估算您的信用分数，了解影响因素",
+      "subtitle": "估算信用分数，了解影响因素并获取提升建议",
       "form": {
         "title": "信用信息",
         "paymentHistory": "按时还款比例 (%)",
@@ -777,7 +777,7 @@
     },
     "tax": {
       "title": "税务计算器",
-      "subtitle": "估算您的联邦税、州税和实际到手收入",
+      "subtitle": "估算联邦税、州税和FICA，了解实际到手收入",
       "form": {
         "title": "收入信息",
         "annualIncome": "年收入 ($)",
@@ -837,7 +837,7 @@
     },
     "cd": {
       "title": "定期存款计算器",
-      "subtitle": "计算定期存单(CD)的到期收益和利息收入",
+      "subtitle": "计算CD到期收益，比较不同存期和利率",
       "form": {
         "title": "定期存款信息",
         "depositAmount": "存款金额 ($)",
@@ -886,7 +886,7 @@
     },
     "annuity": {
       "title": "年金计算器",
-      "subtitle": "规划您的退休收入，计算年金支付金额",
+      "subtitle": "规划退休收入流，计算年金支付金额",
       "form": {
         "title": "年金信息",
         "annuityType": "年金类型",
@@ -940,7 +940,7 @@
     },
     "socialSecurity": {
       "title": "社保金计算器",
-      "subtitle": "估算您的退休社保福利金和最佳领取时间",
+      "subtitle": "估算退休福利金，了解最佳领取时间",
       "form": {
         "title": "社保信息",
         "currentAge": "当前年龄",
@@ -1164,79 +1164,79 @@
       },
       "roi": {
         "title": "租售比计算器",
-        "description": "计算房价租金比，分析房产投资价值"
+        "description": "计算投资回报率ROI，分析投资收益和亏损"
       },
       "areaConversion": {
         "title": "面积单位换算",
-        "description": "在平方英尺、平方米、英亩等单位之间换算"
+        "description": "在平方英尺、平方米、英亩等单位间快速换算"
       },
       "tip": {
         "title": "小费计算器",
-        "description": "快速计算小费，和朋友分摊账单"
+        "description": "快速计算小费和账单分摊金额"
       },
       "carLoan": {
         "title": "车贷计算器",
-        "description": "估算车贷月供和总利息"
+        "description": "估算月供和总利息，找到最优贷款方案"
       },
       "inflation": {
         "title": "通胀计算器",
-        "description": "使用历史CPI数据计算通胀对购买力的影响"
+        "description": "了解通胀对购买力的影响，计算未来价值"
       },
       "retirement": {
         "title": "退休规划计算器",
-        "description": "规划舒适的退休生活"
+        "description": "规划退休储蓄目标，计算所需月存金额"
       },
       "savingsGoal": {
         "title": "储蓄目标计算器",
-        "description": "规划储蓄，更快实现财务目标"
+        "description": "设定储蓄目标，计算达成时间和月存金额"
       },
       "debtPayoff": {
         "title": "债务还清计算器",
-        "description": "制定计划，用经过验证的策略摆脱债务"
+        "description": "选择雪球法或雪崩法，制定最快还清债务计划"
       },
       "loan": {
         "title": "贷款计算器",
-        "description": "计算贷款月供和总利息"
+        "description": "计算各种贷款月供和总利息支出"
       },
       "compound": {
         "title": "复利计算器",
-        "description": "查看投资如何随复利增长"
+        "description": "体验时间的力量，让钱为您工作"
       },
       "rentVsBuy": {
         "title": "租房 vs 买房计算器",
-        "description": "比较租房和买房的长期财务成本"
+        "description": "比较租房与买房的长期成本，做出明智选择"
       },
       "collegeSavings": {
         "title": "大学学费储蓄计算器（529计划）",
-        "description": "使用税收优惠的529计划为孩子的大学教育储蓄"
+        "description": "利用529计划为孩子教育做税务优化储蓄"
       },
       "dividendIncome": {
         "title": "股息收入计算器",
-        "description": "计算来自分红股票的未来股息收入和被动现金流"
+        "description": "计算分红股的被动现金流和复利增长"
       },
       "investmentComparison": {
         "title": "投资回报对比计算器",
-        "description": "并排比较不同投资选项，做出明智的财务决策"
+        "description": "横向比较不同投资选项的回报和风险"
       },
       "creditScore": {
         "title": "信用分计算器",
-        "description": "估算您的信用分数，了解影响因素"
+        "description": "估算信用分数，了解影响因素并获取提升建议"
       },
       "tax": {
         "title": "税务计算器",
-        "description": "估算您的联邦税、州税和实际到手收入"
+        "description": "估算联邦税、州税和FICA，了解实际到手收入"
       },
       "cd": {
         "title": "定期存款计算器",
-        "description": "计算定期存单(CD)的到期收益和利息收入"
+        "description": "计算CD到期收益，比较不同存期和利率"
       },
       "annuity": {
         "title": "年金计算器",
-        "description": "规划您的退休收入，计算年金支付金额"
+        "description": "规划退休收入流，计算年金支付金额"
       },
       "socialSecurity": {
         "title": "社保金计算器",
-        "description": "估算您的退休社保福利金和最佳领取时间"
+        "description": "估算退休福利金，了解最佳领取时间"
       },
       "autoLoan": {
         "title": "车贷计算器",

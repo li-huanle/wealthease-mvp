@@ -33,9 +33,9 @@
       "retirement": "Retirement Planning Calculator",
       "retirementDesc": "Plan your retirement savings and estimate future needs",
       "savingsGoal": "Savings Goal Calculator",
-      "savingsGoalDesc": "Plan your savings and reach your financial goals faster",
+      "savingsGoalDesc": "Set savings goals and calculate timeline and monthly contributions",
       "debtPayoff": "Debt Payoff Calculator",
-      "debtPayoffDesc": "Create your plan to become debt-free with proven strategies",
+      "debtPayoffDesc": "Choose debt snowball or avalanche method for fastest payoff",
       "loan": "Loan Payment Calculator",
       "loanDesc": "Calculate monthly payments and total interest for loans",
       "mortgage": "Mortgage Calculator",
@@ -418,7 +418,7 @@
     },
     "rentVsBuy": {
       "title": "Rent vs Buy Calculator",
-      "subtitle": "Compare the long-term financial costs of renting versus buying a home",
+      "subtitle": "Compare renting vs buying long-term costs and make informed decisions",
       "form": {
         "buyingSection": "Buying",
         "rentingSection": "Renting",
@@ -493,7 +493,7 @@
     },
     "collegeSavings": {
       "title": "College Savings Calculator (529 Plan)",
-      "subtitle": "Plan and save for your child's college education with tax-advantaged 529 plans",
+      "subtitle": "Use 529 plans for tax-optimized education savings",
       "form": {
         "childInfo": "Child & Savings Information",
         "collegeCostInfo": "College Cost Information",
@@ -559,7 +559,7 @@
     },
     "dividendIncome": {
       "title": "Dividend Income Calculator",
-      "subtitle": "Calculate your future dividend income and passive cash flow from dividend-paying stocks",
+      "subtitle": "Calculate dividend stock passive cash flow and compound growth",
       "form": {
         "investmentSection": "Investment Details",
         "dividendSection": "Dividend & Growth Rates",
@@ -618,7 +618,7 @@
     },
     "investmentComparison": {
       "title": "Investment Return Comparison Calculator",
-      "subtitle": "Compare different investment options side-by-side to make informed financial decisions",
+      "subtitle": "Compare different investment options by returns and risks side-by-side",
       "form": {
         "commonParams": "Common Parameters",
         "years": "Investment Period",
@@ -728,7 +728,7 @@
     },
     "creditScore": {
       "title": "Credit Score Calculator",
-      "subtitle": "Estimate your credit score and understand the factors that affect it",
+      "subtitle": "Estimate credit score and get improvement tips",
       "form": {
         "title": "Credit Information",
         "paymentHistory": "On-Time Payment Rate (%)",
@@ -777,7 +777,7 @@
     },
     "tax": {
       "title": "Income Tax Calculator",
-      "subtitle": "Estimate your federal, state, and take-home pay",
+      "subtitle": "Estimate federal, state, and FICA taxes for your actual take-home pay",
       "form": {
         "title": "Income Information",
         "annualIncome": "Annual Income ($)",
@@ -837,7 +837,7 @@
     },
     "cd": {
       "title": "CD Calculator",
-      "subtitle": "Calculate your Certificate of Deposit returns and interest earnings",
+      "subtitle": "Calculate CD maturity returns and compare different terms and rates",
       "form": {
         "title": "CD Information",
         "depositAmount": "Deposit Amount ($)",
@@ -886,7 +886,7 @@
     },
     "annuity": {
       "title": "Annuity Calculator",
-      "subtitle": "Plan your retirement income and calculate annuity payments",
+      "subtitle": "Plan retirement income stream and calculate annuity payment amounts",
       "form": {
         "title": "Annuity Information",
         "annuityType": "Annuity Type",
@@ -940,7 +940,7 @@
     },
     "socialSecurity": {
       "title": "Social Security Calculator",
-      "subtitle": "Estimate your retirement benefits and optimal claiming age",
+      "subtitle": "Estimate retirement benefits and find the optimal claiming age",
       "form": {
         "title": "Social Security Information",
         "currentAge": "Current Age",
@@ -1160,83 +1160,83 @@
       },
       "mortgage": {
         "title": "Mortgage Calculator (with HOA & Tax)",
-        "description": "Calculate monthly payments including property tax, insurance, and HOA fees"
+        "description": "Calculate monthly payments, principal-interest ratios, and prepayment savings"
       },
       "roi": {
         "title": "Rent-to-Value Ratio Calculator",
-        "description": "Calculate price-to-rent ratio for real estate investment analysis"
+        "description": "Calculate ROI and analyze investment returns and gains"
       },
       "areaConversion": {
         "title": "Area Unit Converter",
-        "description": "Convert between sq ft, sq meters, acres, and other area units"
+        "description": "Quickly convert between sq ft, sq meters, acres, and other units"
       },
       "tip": {
         "title": "Tip Calculator",
-        "description": "Calculate tips quickly by percentage or split bills with friends"
+        "description": "Calculate tips and split bills quickly with friends"
       },
       "carLoan": {
         "title": "Car Loan Calculator",
-        "description": "Estimate monthly car payments and total interest"
+        "description": "Estimate monthly payments and total interest to find the best loan"
       },
       "inflation": {
         "title": "Inflation Calculator",
-        "description": "Calculate impact of inflation on your purchasing power using historical CPI data"
+        "description": "Understand inflation impact on purchasing power and calculate future values"
       },
       "retirement": {
         "title": "Retirement Calculator",
-        "description": "Plan for a comfortable retirement"
+        "description": "Plan retirement savings goals and calculate required monthly contributions"
       },
       "savingsGoal": {
         "title": "Savings Goal Calculator",
-        "description": "Plan your savings and reach your financial goals faster"
+        "description": "Set savings goals and calculate timeline and monthly contributions"
       },
       "debtPayoff": {
         "title": "Debt Payoff Calculator",
-        "description": "Create your plan to become debt-free with proven strategies"
+        "description": "Choose debt snowball or avalanche method for fastest payoff"
       },
       "loan": {
         "title": "Loan Calculator",
-        "description": "Calculate loan payments and total interest"
+        "description": "Calculate various loan monthly payments and total interest costs"
       },
       "compound": {
         "title": "Compound Interest Calculator",
-        "description": "See how your investments grow with compound interest over time"
+        "description": "Experience the power of time and let money work for you"
       },
       "rentVsBuy": {
         "title": "Rent vs Buy Calculator",
-        "description": "Compare the long-term financial costs of renting versus buying a home"
+        "description": "Compare renting vs buying long-term costs and make informed decisions"
       },
       "collegeSavings": {
         "title": "College Savings Calculator (529 Plan)",
-        "description": "Plan and save for your child's college education with tax-advantaged 529 plans"
+        "description": "Use 529 plans for tax-optimized education savings"
       },
       "dividendIncome": {
         "title": "Dividend Income Calculator",
-        "description": "Calculate your future dividend income and passive cash flow from dividend-paying stocks"
+        "description": "Calculate dividend stock passive cash flow and compound growth"
       },
       "investmentComparison": {
         "title": "Investment Comparison Calculator",
-        "description": "Compare different investment options side-by-side to make informed financial decisions"
+        "description": "Compare different investment options by returns and risks side-by-side"
       },
       "creditScore": {
         "title": "Credit Score Calculator",
-        "description": "Estimate your credit score and understand the factors that affect it"
+        "description": "Estimate credit score and get improvement tips"
       },
       "tax": {
         "title": "Income Tax Calculator",
-        "description": "Estimate your federal, state, and take-home pay"
+        "description": "Estimate federal, state, and FICA taxes for your actual take-home pay"
       },
       "cd": {
         "title": "CD Calculator",
-        "description": "Calculate your Certificate of Deposit returns and interest earnings"
+        "description": "Calculate CD maturity returns and compare different terms and rates"
       },
       "annuity": {
         "title": "Annuity Calculator",
-        "description": "Plan your retirement income and calculate annuity payments"
+        "description": "Plan retirement income stream and calculate annuity payment amounts"
       },
       "socialSecurity": {
         "title": "Social Security Calculator",
-        "description": "Estimate your retirement benefits and optimal claiming age"
+        "description": "Estimate retirement benefits and find the optimal claiming age"
       },
       "autoLoan": {
         "title": "Auto Loan Calculator",
