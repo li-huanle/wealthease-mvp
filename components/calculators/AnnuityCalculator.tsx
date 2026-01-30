@@ -202,7 +202,8 @@ export default function AnnuityCalculator({ onCalculate }: AnnuityCalculatorProp
       {showResults && (
         <div className="mt-8 space-y-6">
           {/* Main Result */}
-          <ResultCard title={locale === 'zh' ? '年金收入估算' : 'Annuity Income Estimate'}>
+          <div className="rounded-xl p-6 shadow-card bg-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{locale === 'zh' ? '年金收入估算' : 'Annuity Income Estimate'}</h3>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="text-center p-4 bg-blue-50 rounded-xl">
                 <p className="text-sm text-blue-600 mb-1">{locale === 'zh' ? '月收入' : 'Monthly Income'}</p>
@@ -223,10 +224,11 @@ export default function AnnuityCalculator({ onCalculate }: AnnuityCalculatorProp
                 </p>
               </div>
             </div>
-          </ResultCard>
+          </div>
 
           {/* Payout Timeline */}
-          <ResultCard title={locale === 'zh' ? '领取时间表' : 'Payout Timeline'}>
+          <div className="rounded-xl p-6 shadow-card bg-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{locale === 'zh' ? '领取时间表' : 'Payout Timeline'}</h3>
             <div className="space-y-4">
               <div className="flex items-center gap-4">
                 <div className="w-24 text-sm text-gray-500">{locale === 'zh' ? '当前' : 'Now'}</div>
@@ -251,10 +253,11 @@ export default function AnnuityCalculator({ onCalculate }: AnnuityCalculatorProp
                 </div>
               </div>
             </div>
-          </ResultCard>
+          </div>
 
           {/* Types Explanation */}
-          <ResultCard title={locale === 'zh' ? '年金类型说明' : 'Annuity Types Explained'}>
+          <div className="rounded-xl p-6 shadow-card bg-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{locale === 'zh' ? '年金类型说明' : 'Annuity Types Explained'}</h3>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="p-4 bg-blue-50 rounded-lg border border-blue-100">
                 <p className="font-semibold text-blue-800 mb-2">{locale === 'zh' ? '立即年金' : 'Immediate Annuity'}</p>
@@ -273,7 +276,7 @@ export default function AnnuityCalculator({ onCalculate }: AnnuityCalculatorProp
                 </ul>
               </div>
             </div>
-          </ResultCard>
+          </div>
         </div>
       )}
     </div>

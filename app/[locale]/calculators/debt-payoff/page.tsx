@@ -261,7 +261,7 @@ export default async function DebtPayoffPage({ params }: { params: Promise<{ loc
                       <ul className="list-disc list-inside mt-2 space-y-1">
                         <li><strong>数学角度：</strong>雪崩法更优，总利息支出更少</li>
                         <li><strong>心理角度：</strong>雪球法更有成就感，更容易坚持</li>
-                        <li>如果您的利率差异大（>5%），建议用雪崩法</li>
+                        <li>如果您的利率差异大（&gt;5%），建议用雪崩法</li>
                         <li>如果您需要心理激励，选择雪球法</li>
                       </ul>
                     </div>

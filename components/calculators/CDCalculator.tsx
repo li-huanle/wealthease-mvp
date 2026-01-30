@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import ResultCard from './ResultCard';
 
 interface CDCalculatorProps {
   onCalculate?: (result: any) => void;
@@ -192,7 +191,8 @@ export default function CDCalculator({ onCalculate }: CDCalculatorProps) {
       {showResults && (
         <div className="mt-8 space-y-6">
           {/* Main Result */}
-          <ResultCard title={locale === 'zh' ? '存款收益' : 'Investment Returns'}>
+          <div className="rounded-xl p-6 shadow-card bg-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{locale === 'zh' ? '存款收益' : 'Investment Returns'}</h3>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="text-center p-4 bg-blue-50 rounded-xl">
                 <p className="text-sm text-blue-600 mb-1">{locale === 'zh' ? '到期本息' : 'Maturity Amount'}</p>
@@ -211,10 +211,11 @@ export default function CDCalculator({ onCalculate }: CDCalculatorProps) {
                 <p className="text-2xl font-bold text-amber-600">{(rate + 0.5).toFixed(2)}%</p>
               </div>
             </div>
-          </ResultCard>
+          </div>
 
           {/* Comparison Table */}
-          <ResultCard title={locale === 'zh' ? '不同存期收益对比' : 'Returns by Term Comparison'}>
+          <div className="rounded-xl p-6 shadow-card bg-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{locale === 'zh' ? '不同存期收益对比' : 'Returns by Term Comparison'}</h3>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead className="bg-gray-50">
@@ -247,10 +248,11 @@ export default function CDCalculator({ onCalculate }: CDCalculatorProps) {
                 </tbody>
               </table>
             </div>
-          </ResultCard>
+          </div>
 
           {/* Tips */}
-          <ResultCard title={locale === 'zh' ? '定期存款小贴士' : 'CD Investment Tips'}>
+          <div className="rounded-xl p-6 shadow-card bg-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{locale === 'zh' ? '定期存款小贴士' : 'CD Investment Tips'}</h3>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="p-4 bg-amber-50 rounded-lg border border-amber-100">
                 <p className="font-semibold text-amber-800 mb-1">{locale === 'zh' ? '阶梯存款法' : 'Laddering Strategy'}</p>
@@ -289,7 +291,7 @@ export default function CDCalculator({ onCalculate }: CDCalculatorProps) {
                 </p>
               </div>
             </div>
-          </ResultCard>
+          </div>
         </div>
       )}
     </div>

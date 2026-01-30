@@ -1217,6 +1217,30 @@
       "investmentComparison": {
         "title": "投资回报对比计算器",
         "description": "并排比较不同投资选项，做出明智的财务决策"
+      },
+      "creditScore": {
+        "title": "信用分计算器",
+        "description": "估算您的信用分数，了解影响因素"
+      },
+      "tax": {
+        "title": "税务计算器",
+        "description": "估算您的联邦税、州税和实际到手收入"
+      },
+      "cd": {
+        "title": "定期存款计算器",
+        "description": "计算定期存单(CD)的到期收益和利息收入"
+      },
+      "annuity": {
+        "title": "年金计算器",
+        "description": "规划您的退休收入，计算年金支付金额"
+      },
+      "socialSecurity": {
+        "title": "社保金计算器",
+        "description": "估算您的退休社保福利金和最佳领取时间"
+      },
+      "autoLoan": {
+        "title": "车贷计算器",
+        "description": "估算汽车贷款的月供、总利息和最佳贷款方案"
       }
     },
     "comingSoon": "即将推出"

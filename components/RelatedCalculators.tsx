@@ -18,7 +18,13 @@ type CalculatorType =
   | 'college-savings'
   | 'dividend-income'
   | 'investment-comparison'
-  | 'tip';
+  | 'tip'
+  | 'credit-score'
+  | 'tax'
+  | 'cd'
+  | 'annuity'
+  | 'social-security'
+  | 'auto-loan';
 
 interface CalculatorInfo {
   id: CalculatorType;
@@ -113,6 +119,42 @@ const calculators: Record<CalculatorType, CalculatorInfo> = {
     descKey: 'tip.description',
     icon: '💵',
   },
+  'credit-score': {
+    id: 'credit-score',
+    titleKey: 'creditScore.title',
+    descKey: 'creditScore.description',
+    icon: '📋',
+  },
+  'tax': {
+    id: 'tax',
+    titleKey: 'tax.title',
+    descKey: 'tax.description',
+    icon: '🧾',
+  },
+  'cd': {
+    id: 'cd',
+    titleKey: 'cd.title',
+    descKey: 'cd.description',
+    icon: '🏦',
+  },
+  'annuity': {
+    id: 'annuity',
+    titleKey: 'annuity.title',
+    descKey: 'annuity.description',
+    icon: '🔄',
+  },
+  'social-security': {
+    id: 'social-security',
+    titleKey: 'socialSecurity.title',
+    descKey: 'socialSecurity.description',
+    icon: '🛡️',
+  },
+  'auto-loan': {
+    id: 'auto-loan',
+    titleKey: 'autoLoan.title',
+    descKey: 'autoLoan.description',
+    icon: '🚗',
+  },
 };
 
 // 定义计算器之间的关联关系
@@ -131,6 +173,12 @@ const relatedCalculatorsMap: Record<CalculatorType, CalculatorType[]> = {
   'dividend-income': ['roi', 'compound-interest', 'investment-comparison', 'retirement'],
   'investment-comparison': ['roi', 'dividend-income', 'compound-interest', 'investment-401k'],
   'tip': ['loan', 'inflation', 'mortgage'],
+  'credit-score': ['loan', 'mortgage', 'auto-loan'],
+  'tax': ['investment-401k', 'retirement', 'annuity'],
+  'cd': ['investment-comparison', 'compound-interest', 'annuity'],
+  'annuity': ['retirement', 'social-security', 'investment-401k'],
+  'social-security': ['retirement', 'annuity', 'tax'],
+  'auto-loan': ['loan', 'mortgage', 'credit-score'],
 };
 
 interface RelatedCalculatorsProps {

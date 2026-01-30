@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import ResultCard from './ResultCard';
 
 interface SocialSecurityCalculatorProps {
   onCalculate?: (result: any) => void;
@@ -199,7 +198,8 @@ export default function SocialSecurityCalculator({ onCalculate }: SocialSecurity
       {showResults && (
         <div className="mt-8 space-y-6">
           {/* Main Result */}
-          <ResultCard title={locale === 'zh' ? '社保金估算' : 'Social Security Estimate'}>
+          <div className="rounded-xl p-6 shadow-card bg-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{locale === 'zh' ? '社保金估算' : 'Social Security Estimate'}</h3>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="text-center p-4 bg-blue-50 rounded-xl">
                 <p className="text-sm text-blue-600 mb-1">{locale === 'zh' ? '月收入' : 'Monthly Benefit'}</p>
@@ -220,10 +220,11 @@ export default function SocialSecurityCalculator({ onCalculate }: SocialSecurity
                 </p>
               </div>
             </div>
-          </ResultCard>
+          </div>
 
           {/* Filing Age Impact */}
-          <ResultCard title={locale === 'zh' ? '领取年龄影响' : 'Impact of Filing Age'}>
+          <div className="rounded-xl p-6 shadow-card bg-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{locale === 'zh' ? '领取年龄影响' : 'Impact of Filing Age'}</h3>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead className="bg-gray-50">
@@ -257,10 +258,11 @@ export default function SocialSecurityCalculator({ onCalculate }: SocialSecurity
                 </tbody>
               </table>
             </div>
-          </ResultCard>
+          </div>
 
           {/* Tips */}
-          <ResultCard title={locale === 'zh' ? '社保金小贴士' : 'Social Security Tips'}>
+          <div className="rounded-xl p-6 shadow-card bg-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{locale === 'zh' ? '社保金小贴士' : 'Social Security Tips'}</h3>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="p-4 bg-amber-50 rounded-lg border border-amber-100">
                 <p className="font-semibold text-amber-800 mb-1">{locale === 'zh' ? '最大化策略' : 'Maximize Strategy'}</p>
@@ -299,7 +301,7 @@ export default function SocialSecurityCalculator({ onCalculate }: SocialSecurity
                 </p>
               </div>
             </div>
-          </ResultCard>
+          </div>
         </div>
       )}
     </div>

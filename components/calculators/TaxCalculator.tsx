@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import ResultCard from './ResultCard';
 
 interface TaxCalculatorProps {
   onCalculate?: (result: any) => void;
@@ -16,7 +15,7 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
   const [age, setAge] = useState(30);
   const [isBlind, setIsBlind] = useState(false);
   const [dependentCount, setDependentCount] = useState(0);
-  const [401kContribution, set401kContribution] = useState(0);
+  const [k401Contribution, setk401Contribution] = useState(0);
   const [hsaContribution, setHsaContribution] = useState(0);
   const [hasTraditionalIRA, setHasTraditionalIRA] = useState(false);
 
@@ -40,7 +39,7 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
                               filingStatus === 'head' ? 21900 : 14600;
 
     // 调整后收入
-    const deductions = 401kContribution + hsaContribution + (hasTraditionalIRA ? Math.min(7000, income * 0.1) : 0);
+    const deductions = k401Contribution + hsaContribution + (hasTraditionalIRA ? Math.min(7000, income * 0.1) : 0);
     const taxableIncome = Math.max(0, income - standardDeduction - deductions);
 
     // 计算联邦税
@@ -196,8 +195,8 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
               </span>
               <input
                 type="number"
-                value={401kContribution}
-                onChange={(e) => set401kContribution(Number(e.target.value))}
+                value={k401Contribution}
+                onChange={(e) => setk401Contribution(Number(e.target.value))}
                 className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
               />
             </div>
@@ -273,7 +272,8 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
       {showResults && (
         <div className="mt-8 space-y-6">
           {/* Income Summary */}
-          <ResultCard title={locale === 'zh' ? '收入摘要' : 'Income Summary'}>
+          <div className="rounded-xl p-6 shadow-card bg-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{locale === 'zh' ? '收入摘要' : 'Income Summary'}</h3>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="text-center p-4 bg-gray-50 rounded-xl">
                 <p className="text-sm text-gray-500 mb-1">{locale === 'zh' ? '总收入' : 'Gross Income'}</p>
@@ -284,7 +284,7 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
               <div className="text-center p-4 bg-gray-50 rounded-xl">
                 <p className="text-sm text-gray-500 mb-1">{locale === 'zh' ? '应税收入' : 'Taxable Income'}</p>
                 <p className="text-2xl font-bold text-blue-600">
-                  {locale === 'zh' ? '¥' : '$'}{(income - 401kContribution - hsaContribution - 14600).toLocaleString()}
+                  {locale === 'zh' ? '¥' : '$'}{(income - k401Contribution - hsaContribution - 14600).toLocaleString()}
                 </p>
               </div>
               <div className="text-center p-4 bg-gray-50 rounded-xl">
@@ -294,10 +294,11 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
                 </p>
               </div>
             </div>
-          </ResultCard>
+          </div>
 
           {/* Tax Breakdown */}
-          <ResultCard title={locale === 'zh' ? '税款明细' : 'Tax Breakdown'}>
+          <div className="rounded-xl p-6 shadow-card bg-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{locale === 'zh' ? '税款明细' : 'Tax Breakdown'}</h3>
             <div className="space-y-4">
               <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                 <span className="text-gray-700">{locale === 'zh' ? '联邦所得税' : 'Federal Income Tax'}</span>
@@ -324,10 +325,11 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
                 </span>
               </div>
             </div>
-          </ResultCard>
+          </div>
 
           {/* Take Home Pay */}
-          <ResultCard title={locale === 'zh' ? '实际到手收入' : 'Take-Home Pay'}>
+          <div className="rounded-xl p-6 shadow-card bg-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{locale === 'zh' ? '实际到手收入' : 'Take-Home Pay'}</h3>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="text-center p-4 bg-green-50 rounded-xl border border-green-100">
                 <p className="text-sm text-green-600 mb-1">{locale === 'zh' ? '每周' : 'Per Week'}</p>
@@ -356,7 +358,7 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
                 }
               </p>
             </div>
-          </ResultCard>
+          </div>
         </div>
       )}
     </div>

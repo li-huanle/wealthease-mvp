@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
-import ResultCard from './ResultCard';
 import { Info } from 'lucide-react';
 
 interface CreditScoreCalculatorProps {
@@ -9,6 +8,7 @@ interface CreditScoreCalculatorProps {
 }
 
 export default function CreditScoreCalculator({ onCalculate }: CreditScoreCalculatorProps) {
+  const [locale, setLocale] = useState<'en' | 'zh'>('zh');
   const [paymentHistory, setPaymentHistory] = useState(95);
   const [creditUtilization, setCreditUtilization] = useState(30);
   const [creditHistoryLength, setCreditHistoryLength] = useState(5);
@@ -262,7 +262,7 @@ export default function CreditScoreCalculator({ onCalculate }: CreditScoreCalcul
       {showResults && (
         <div className="mt-8 space-y-6 animate-fade-in">
           {/* Score Display */}
-          <ResultCard>
+          <div className="rounded-xl p-6 shadow-card bg-white">
             <div className="text-center">
               <p className="text-sm text-gray-500 mb-2">
                 {locale === 'zh' ? '预估信用分范围' : 'Estimated Credit Score Range'}
@@ -282,10 +282,11 @@ export default function CreditScoreCalculator({ onCalculate }: CreditScoreCalcul
                 {getScoreGrade(scoreRange.baseScore).label}
               </div>
             </div>
-          </ResultCard>
+          </div>
 
           {/* Improvement Factors */}
-          <ResultCard title={locale === 'zh' ? '提升信用的建议' : 'Tips to Improve Your Score'}>
+          <div className="rounded-xl p-6 shadow-card bg-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{locale === 'zh' ? '提升信用的建议' : 'Tips to Improve Your Score'}</h3>
             <div className="space-y-4">
               {getFactorAdvice().map((factor, index) => (
                 <div key={index} className={`p-4 rounded-lg ${factor.impact === 'high' ? 'bg-red-50 border border-red-100' : 'bg-gray-50'}`}>
@@ -299,7 +300,7 @@ export default function CreditScoreCalculator({ onCalculate }: CreditScoreCalcul
                 </div>
               ))}
             </div>
-          </ResultCard>
+          </div>
 
           {/* Info Note */}
           <div className="flex items-start gap-3 p-4 bg-blue-50 rounded-xl">
@@ -308,7 +309,7 @@ export default function CreditScoreCalculator({ onCalculate }: CreditScoreCalcul
               {locale === 'zh'
                 ? '此估算基于FICO评分模型，仅供参考。实际信用分由三大信用局（Equifax、Experian、TransUnion）根据更多因素计算。定期检查您的信用报告，确保信息准确。'
                 : 'This estimate is based on the FICO model for reference only. Actual scores vary. Check your credit report regularly for accuracy.'
-            }
+              }
             </p>
           </div>
         </div>

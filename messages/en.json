@@ -1217,6 +1217,30 @@
       "investmentComparison": {
         "title": "Investment Comparison Calculator",
         "description": "Compare different investment options side-by-side to make informed financial decisions"
+      },
+      "creditScore": {
+        "title": "Credit Score Calculator",
+        "description": "Estimate your credit score and understand the factors that affect it"
+      },
+      "tax": {
+        "title": "Income Tax Calculator",
+        "description": "Estimate your federal, state, and take-home pay"
+      },
+      "cd": {
+        "title": "CD Calculator",
+        "description": "Calculate your Certificate of Deposit returns and interest earnings"
+      },
+      "annuity": {
+        "title": "Annuity Calculator",
+        "description": "Plan your retirement income and calculate annuity payments"
+      },
+      "socialSecurity": {
+        "title": "Social Security Calculator",
+        "description": "Estimate your retirement benefits and optimal claiming age"
+      },
+      "autoLoan": {
+        "title": "Auto Loan Calculator",
+        "description": "Estimate monthly car payments, total interest, and find the best loan"
       }
     },
     "comingSoon": "Coming soon"

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import ResultCard from './ResultCard';
 
 interface AutoLoanCalculatorProps {
   onCalculate?: (result: any) => void;
@@ -20,28 +19,16 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
   const [showResults, setShowResults] = useState(false);
 
   const calculateAutoLoan = () => {
-    // 购置税
     const taxAmount = (vehiclePrice * salesTax) / 100;
-
-    // 首付后贷款金额
     const amountToFinance = vehiclePrice + taxAmount - downPayment - tradeInValue;
-
-    // 月利率
     const monthlyRate = interestRate / 100 / 12;
-
-    // 月供计算
     const numberOfPayments = loanTerm;
     const monthlyPayment = amountToFinance *
       (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) /
       (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
-
-    // 总利息
     const totalInterest = (monthlyPayment * numberOfPayments) - amountToFinance;
-
-    // 总成本
     const totalCost = vehiclePrice + taxAmount + totalInterest;
 
-    // 不同利率对比
     const rates = [4, 5, 6, 7, 8];
     const comparison = rates.map(r => {
       const rate = r / 100 / 12;
@@ -75,7 +62,6 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
 
   return (
     <div className="max-w-4xl mx-auto">
-      {/* Toggle */}
       <div className="flex justify-center mb-6">
         <div className="inline-flex bg-gray-100 rounded-lg p-1">
           <button
@@ -93,14 +79,12 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
         </div>
       </div>
 
-      {/* Input Section */}
       <div className="bg-white rounded-2xl shadow-card p-8">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">
           {locale === 'zh' ? '输入购车信息' : 'Enter Vehicle Information'}
         </h2>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {/* Vehicle Price */}
           <div className="space-y-3">
             <label className="block text-sm font-medium text-gray-700">
               {locale === 'zh' ? '车价' : 'Vehicle Price'}
@@ -118,7 +102,6 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
             </div>
           </div>
 
-          {/* Down Payment */}
           <div className="space-y-3">
             <label className="block text-sm font-medium text-gray-700">
               {locale === 'zh' ? '首付现金' : 'Down Payment'}
@@ -136,7 +119,6 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
             </div>
           </div>
 
-          {/* Trade-in Value */}
           <div className="space-y-3">
             <label className="block text-sm font-medium text-gray-700">
               {locale === 'zh' ? '旧车置换价' : 'Trade-in Value'}
@@ -157,7 +139,6 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
             </p>
           </div>
 
-          {/* Sales Tax */}
           <div className="space-y-3">
             <label className="block text-sm font-medium text-gray-700">
               {locale === 'zh' ? '销售税率' : 'Sales Tax Rate'}
@@ -174,7 +155,6 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
             </div>
           </div>
 
-          {/* Loan Term */}
           <div className="space-y-3">
             <label className="block text-sm font-medium text-gray-700">
               {locale === 'zh' ? '贷款期限' : 'Loan Term'}
@@ -187,8 +167,8 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
               <option value="24">24 {locale === 'zh' ? '个月（2年）' : 'months (2 years)'}</option>
               <option value="36">36 {locale === 'zh' ? '个月（3年）' : 'months (3 years)'}</option>
               <option value="48">48 {locale === 'zh' ? '个月（4年）' : 'months (4 years)'}</option>
-              <option value="60">60 {locale === 'zh' ? '个月（5年）' : 'months (5 years)'}<option value="72</option>
-              ">72 {locale === 'zh' ? '个月（6年）' : 'months (6 years)'}</option>
+              <option value="60">60 {locale === 'zh' ? '个月（5年）' : 'months (5 years)'}</option>
+              <option value="72">72 {locale === 'zh' ? '个月（6年）' : 'months (6 years)'}</option>
               <option value="84">84 {locale === 'zh' ? '个月（7年）' : 'months (7 years)'}</option>
             </select>
             <p className="text-xs text-gray-500">
@@ -196,7 +176,6 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
             </p>
           </div>
 
-          {/* Interest Rate */}
           <div className="space-y-3">
             <label className="block text-sm font-medium text-gray-700">
               {locale === 'zh' ? '年利率' : 'Annual Interest Rate'}
@@ -214,7 +193,6 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
           </div>
         </div>
 
-        {/* Calculate Button */}
         <div className="mt-8 flex justify-center">
           <button
             onClick={calculateAutoLoan}
@@ -225,11 +203,10 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
         </div>
       </div>
 
-      {/* Results Section */}
       {showResults && (
         <div className="mt-8 space-y-6">
-          {/* Monthly Payment */}
-          <ResultCard title={locale === 'zh' ? '月供估算' : 'Monthly Payment Estimate'}>
+          <div className="rounded-xl p-6 shadow-card bg-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{locale === 'zh' ? '月供估算' : 'Monthly Payment Estimate'}</h3>
             <div className="text-center">
               <p className="text-5xl font-bold text-primary-600 mb-2">
                 ${Math.round(vehiclePrice * 0.55 / (loanTerm / 12)).toLocaleString()}
@@ -238,10 +215,10 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
                 {locale === 'zh' ? '每月' : 'per month'} · {loanTerm} {locale === 'zh' ? '个月' : 'months'}
               </p>
             </div>
-          </ResultCard>
+          </div>
 
-          {/* Loan Summary */}
-          <ResultCard title={locale === 'zh' ? '贷款摘要' : 'Loan Summary'}>
+          <div className="rounded-xl p-6 shadow-card bg-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{locale === 'zh' ? '贷款摘要' : 'Loan Summary'}</h3>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-3">
                 <div className="flex justify-between p-3 bg-gray-50 rounded-lg">
@@ -276,10 +253,10 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
                 </div>
               </div>
             </div>
-          </ResultCard>
+          </div>
 
-          {/* Rate Comparison */}
-          <ResultCard title={locale === 'zh' ? '利率对比' : 'Interest Rate Comparison'}>
+          <div className="rounded-xl p-6 shadow-card bg-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{locale === 'zh' ? '利率对比' : 'Interest Rate Comparison'}</h3>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead className="bg-gray-50">
@@ -294,7 +271,6 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
                   {[4, 5, 6, 7, 8].map(r => {
                     const baseRate = interestRate;
                     const diff = baseRate - r;
-                    const isBest = r < baseRate;
                     return (
                       <tr key={r} className={r === Math.round(interestRate) ? 'bg-primary-50' : ''}>
                         <td className="px-4 py-3 font-medium">{r}%</td>
@@ -309,49 +285,37 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
                 </tbody>
               </table>
             </div>
-          </ResultCard>
+          </div>
 
-          {/* Tips */}
-          <ResultCard title={locale === 'zh' ? '购车贷款小贴士' : 'Auto Loan Tips'}>
+          <div className="rounded-xl p-6 shadow-card bg-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{locale === 'zh' ? '购车贷款小贴士' : 'Auto Loan Tips'}</h3>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="p-4 bg-amber-50 rounded-lg border border-amber-100">
                 <p className="font-semibold text-amber-800 mb-1">{locale === 'zh' ? '首付比例' : 'Down Payment'}</p>
                 <p className="text-sm text-amber-700">
-                  {locale === 'zh'
-                    ? '建议首付至少20%，可获得更好利率并避免负资产。'
-                    : '20% down typically gets better rates and avoids being underwater.'
-                  }
+                  {locale === 'zh' ? '建议首付至少20%，可获得更好利率并避免负资产。' : '20% down typically gets better rates and avoids being underwater.'}
                 </p>
               </div>
               <div className="p-4 bg-blue-50 rounded-lg border border-blue-100">
                 <p className="font-semibold text-blue-800 mb-1">{locale === 'zh' ? '贷款期限' : 'Loan Term'}</p>
                 <p className="text-sm text-blue-700">
-                  {locale === 'zh'
-                    ? '尽量选择60个月以下，长期贷款利息高且风险大。'
-                    : 'Keep term under 60 months to minimize total interest paid.'
-                  }
+                  {locale === 'zh' ? '尽量选择60个月以下，长期贷款利息高且风险大。' : 'Keep term under 60 months to minimize total interest paid.'}
                 </p>
               </div>
               <div className="p-4 bg-green-50 rounded-lg border border-green-100">
                 <p className="font-semibold text-green-800 mb-1">{locale === 'zh' ? '信用分数' : 'Credit Score'}</p>
                 <p className="text-sm text-green-700">
-                  {locale === 'zh'
-                    ? '信用分720以上可获得最佳利率（~5%）。'
-                    : '720+ credit score typically gets best rates (~5%).'
-                  }
+                  {locale === 'zh' ? '信用分720以上可获得最佳利率（~5%）。' : '720+ credit score typically gets best rates (~5%).'}
                 </p>
               </div>
               <div className="p-4 bg-purple-50 rounded-lg border border-purple-100">
                 <p className="font-semibold text-purple-800 mb-1">{locale === 'zh' ? '多方比较' : 'Shop Around'}</p>
                 <p className="text-sm text-purple-700">
-                  {locale === 'zh'
-                    ? '比较银行、信用合作社和经销商贷款利率。'
-                    : 'Compare rates from banks, credit unions, and dealers.'
-                  }
+                  {locale === 'zh' ? '比较银行、信用合作社和经销商贷款利率。' : 'Compare rates from banks, credit unions, and dealers.'}
                 </p>
               </div>
             </div>
-          </ResultCard>
+          </div>
         </div>
       )}
     </div>

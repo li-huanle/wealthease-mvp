@@ -252,8 +252,8 @@ export default async function MortgagePage({ params }: { params: Promise<{ local
                   <div className="p-4 text-gray-600">
                     <p><strong>A:</strong> 取决于您的贷款利率和投资能力：</p>
                     <ul className="list-disc list-inside mt-2 space-y-1">
-                      <li>如果贷款利率 > 5%，提前还贷相当于"无风险收益"</li>
-                      <li>如果贷款利率 < 4%，可考虑投资其他更高收益渠道</li>
+                      <li>如果贷款利率 &gt; 5%，提前还贷相当于&quot;无风险收益&quot;</li>
+                      <li>如果贷款利率 &lt; 4%，可考虑投资其他更高收益渠道</li>
                     </ul>
                     <p className="mt-2">同时注意是否有提前还款罚金（Prepayment Penalty）。</p>
                   </div>
