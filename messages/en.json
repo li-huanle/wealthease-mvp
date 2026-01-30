@@ -725,6 +725,319 @@
           "content": "In most cases, you calculate the tip based on the pre-tax subtotal. Check if your bill shows tax separately and tip on the lower amount for accuracy. Some prefer tipping on the total including tax - both approaches are acceptable."
         }
       }
+    },
+    "creditScore": {
+      "title": "Credit Score Calculator",
+      "subtitle": "Estimate your credit score and understand the factors that affect it",
+      "form": {
+        "title": "Credit Information",
+        "paymentHistory": "On-Time Payment Rate (%)",
+        "paymentHistoryTooltip": "Percentage of on-time credit card and bill payments (typical: 95-100%)",
+        "creditUtilization": "Credit Utilization Rate (%)",
+        "creditUtilizationTooltip": "Used credit limit as percentage of total limit (typical: 10-30%)",
+        "creditHistory": "Credit History Length (Years)",
+        "creditHistoryTooltip": "Years since your oldest credit account was opened",
+        "creditMix": "Number of Credit Types",
+        "creditMixTooltip": "Number of credit products you have (credit cards, loans, installments, etc.)",
+        "newCredit": "Recent Inquiries",
+        "newCreditTooltip": "Number of new credit inquiries in the past 6 months",
+        "calculate": "Estimate Credit Score",
+        "reset": "Reset"
+      },
+      "results": {
+        "title": "Credit Score Estimate",
+        "estimatedScore": "Estimated Credit Score",
+        "scoreRange": "Score Range",
+        "excellent": "Excellent (750-850)",
+        "good": "Good (700-749)",
+        "fair": "Fair (650-699)",
+        "poor": "Poor (<650)",
+        "scoreFactors": "Contributing Factors",
+        "paymentHistory": "Payment History (35%)",
+        "creditUtilization": "Credit Utilization (30%)",
+        "creditHistory": "History Length (15%)",
+        "creditMix": "Credit Mix (10%)",
+        "newCredit": "New Credit (10%)"
+      },
+      "tips": {
+        "title": "Tips to Improve Your Credit Score",
+        "tip1": {
+          "title": "Pay on Time",
+          "content": "Payment history is the most important factor. Even paying the minimum on time avoids late payments."
+        },
+        "tip2": {
+          "title": "Keep Utilization Low",
+          "content": "Below 30% utilization is ideal. Paying before the statement date can lower reported utilization."
+        },
+        "tip3": {
+          "title": "Keep Accounts Open",
+          "content": "Closing old accounts shortens your credit history. Keep your oldest accounts open."
+        }
+      }
+    },
+    "tax": {
+      "title": "Income Tax Calculator",
+      "subtitle": "Estimate your federal, state, and take-home pay",
+      "form": {
+        "title": "Income Information",
+        "annualIncome": "Annual Income ($)",
+        "annualIncomeTooltip": "Gross income before taxes, including wages and investment income",
+        "filingStatus": "Filing Status",
+        "single": "Single",
+        "married": "Married Filing Jointly",
+        "head": "Head of Household",
+        "state": "State of Residence",
+        "stateTooltip": "Select your state to calculate state income tax",
+        "noStateTax": "No State Tax",
+        "filingStatusTooltip": "Choose based on your household situation",
+        "401k": "401(k) Contribution ($)",
+        "401kTooltip": "2024 limit is $23,000 ($30,500 for 50+)",
+        "traditionalIRA": "Traditional IRA Contribution ($)",
+        "traditionalIRATooltip": "2024 limit is $7,000 ($8,000 for 50+), may have income limits",
+        "hsa": "HSA Contribution ($)",
+        "hsaTooltip": "Individual $4,150, Family $8,300 ($1,000 more for 55+)",
+        "has401k": "Has 401(k) Contribution",
+        "hasTraditionalIRA": "Has Traditional IRA Contribution",
+        "hasHSA": "Has HSA Contribution",
+        "calculate": "Calculate Taxes",
+        "reset": "Reset"
+      },
+      "results": {
+        "title": "Tax Estimate Results",
+        "federalTax": "Federal Income Tax",
+        "stateTax": "State Income Tax",
+        "fica": "FICA Tax",
+        "medicare": "Medicare Tax",
+        "totalTax": "Total Taxes",
+        "effectiveRate": "Effective Tax Rate",
+        "marginalRate": "Marginal Tax Rate",
+        "takeHomePay": "Monthly Take-Home Pay",
+        "takeHomePayTooltip": "Actual take-home pay after all taxes",
+        "breakdown": "Tax Breakdown",
+        "taxBracket": "Tax Bracket",
+        "bracketInfo": "Bracket Information",
+        "bracketRange": "Income Range",
+        "taxOwed": "Tax Owed"
+      },
+      "tips": {
+        "title": "Tax-Saving Tips",
+        "tip1": {
+          "title": "Max Out Retirement Accounts",
+          "content": "401(k) and IRA contributions can significantly reduce taxable income. Aim to get the full employer match."
+        },
+        "tip2": {
+          "title": "Consider HSA",
+          "content": "HSA offers triple tax advantage: tax-deductible contributions, tax-free growth, tax-free withdrawals for medical expenses."
+        },
+        "tip3": {
+          "title": "Standard vs Itemized",
+          "content": "2024 standard deduction is $14,600 single, $29,200 married. Itemize if your deductions exceed these amounts."
+        }
+      }
+    },
+    "cd": {
+      "title": "CD Calculator",
+      "subtitle": "Calculate your Certificate of Deposit returns and interest earnings",
+      "form": {
+        "title": "CD Information",
+        "depositAmount": "Deposit Amount ($)",
+        "depositAmountTooltip": "Amount you plan to deposit into the CD",
+        "term": "CD Term",
+        "termTooltip": "Deposit term, rates vary by duration",
+        "months": "months",
+        "interestRate": "Annual Interest Rate (%)",
+        "interestRateTooltip": "Annual rate offered by the bank (current market: 4-5%)",
+        "compoundFrequency": "Compound Frequency",
+        "compoundMonthly": "Monthly",
+        "compoundQuarterly": "Quarterly",
+        "compoundAnnually": "Annually",
+        "calculate": "Calculate Returns",
+        "reset": "Reset"
+      },
+      "results": {
+        "title": "CD Returns",
+        "maturityValue": "Maturity Value",
+        "totalInterest": "Total Interest Earned",
+        "principal": "Principal",
+        "effectiveRate": "Effective Annual Yield",
+        "daysToMaturity": "Days to Maturity",
+        "comparison": "Term Comparison",
+        "earnings": "Projected Interest Earnings"
+      },
+      "tips": {
+        "title": "CD Investment Strategies",
+        "tip1": {
+          "title": "Laddering Strategy",
+          "content": "Split funds across different CD terms for higher yields while maintaining some liquidity."
+        },
+        "tip2": {
+          "title": "Shop Online Banks",
+          "content": "Online banks (Ally, Marcus) often offer 0.5%+ higher rates than traditional banks."
+        },
+        "tip3": {
+          "title": "Watch Early Withdrawal Penalties",
+          "content": "Most CDs charge penalties for early withdrawal. Ensure you won't need the funds."
+        },
+        "tip4": {
+          "title": "FDIC Insurance",
+          "content": "Choose FDIC-insured banks with maximum $250,000 per account protection."
+        }
+      }
+    },
+    "annuity": {
+      "title": "Annuity Calculator",
+      "subtitle": "Plan your retirement income and calculate annuity payments",
+      "form": {
+        "title": "Annuity Information",
+        "annuityType": "Annuity Type",
+        "immediate": "Immediate Annuity",
+        "deferred": "Deferred Annuity",
+        "annuityTypeTooltip": "Immediate annuities start payments right away; deferred annuities grow first",
+        "purchaseAmount": "Purchase Amount ($)",
+        "purchaseAmountTooltip": "Lump sum amount for annuity purchase",
+        "paymentPeriod": "Payout Period",
+        "life": "Lifetime",
+        "years": "Fixed Years",
+        "paymentPeriodTooltip": "Lifetime pays as long as you live; Fixed Years pays for set period",
+        "paymentYears": "Payment Years",
+        "paymentYearsTooltip": "Number of years for fixed payments (10, 20, etc.)",
+        "interestRate": "Assumed Return Rate (%)",
+        "interestRateTooltip": "Insurance company's assumed rate (3-5%)",
+        "payoutAge": "Payout Start Age",
+        "currentAge": "Current Age",
+        "calculate": "Calculate Annuity",
+        "reset": "Reset"
+      },
+      "results": {
+        "title": "Annuity Payment Estimate",
+        "monthlyPayment": "Monthly Payment",
+        "annualPayment": "Annual Payment",
+        "totalReceived": "Total Received",
+        "totalInterest": "Earnings",
+        "payoutRatio": "Payout Ratio",
+        "breakEven": "Break-Even Point",
+        "comparison": "Payout Options Comparison"
+      },
+      "tips": {
+        "title": "Annuity Purchase Tips",
+        "tip1": {
+          "title": "Consider Inflation",
+          "content": "Fixed annuities lose purchasing power to inflation. Consider inflation-protected products."
+        },
+        "tip2": {
+          "title": "Understand Fees",
+          "content": "Annual fees can reach 2-3%, significantly impacting returns over time."
+        },
+        "tip3": {
+          "title": "Liquidity Matters",
+          "content": "Annuities have poor liquidity. Consider allocating no more than 30% of retirement assets."
+        },
+        "tip4": {
+          "title": "Shop Around",
+          "content": "Different insurers may offer 20%+ variations in payouts. Use independent brokers."
+        }
+      }
+    },
+    "socialSecurity": {
+      "title": "Social Security Calculator",
+      "subtitle": "Estimate your retirement benefits and optimal claiming age",
+      "form": {
+        "title": "Social Security Information",
+        "currentAge": "Current Age",
+        "currentAgeTooltip": "Your current age",
+        "birthYear": "Birth Year",
+        "birthYearTooltip": "Affects your Full Retirement Age (67 for those born 1960+)",
+        "annualIncome": "Annual Income ($)",
+        "annualIncomeTooltip": "Current or recent annual earnings for AIME estimation",
+        "retirementAge": "Planned Retirement Age",
+        "retirementAgeTooltip": "Age you plan to start claiming Social Security (62-70)",
+        "calculate": "Estimate Benefits",
+        "reset": "Reset"
+      },
+      "results": {
+        "title": "Social Security Benefit Estimate",
+        "monthlyBenefit": "Monthly Benefit",
+        "annualBenefit": "Annual Benefit",
+        "lifetimeBenefit": "Expected Lifetime Benefits",
+        "filingAge": "Filing Age",
+        "fullRetirement": "Full Retirement Age",
+        "reducedBenefit": "Early Claiming (62)",
+        "fullBenefit": "Full Benefit",
+        "delayedBenefit": "Delayed Claiming (70)",
+        "breakEven": "Break-Even Point",
+        "comparison": "Claiming Age Comparison"
+      },
+      "tips": {
+        "title": "Social Security Strategies",
+        "tip1": {
+          "title": "Delay for Higher Benefits",
+          "content": "Claiming at 70 gives 24% higher monthly benefit than claiming at 62."
+        },
+        "tip2": {
+          "title": "Consider Health",
+          "content": "If health is poor, consider claiming earlier. Life expectancy is a key factor."
+        },
+        "tip3": {
+          "title": "Spousal Benefits",
+          "content": "Eligible spouses can claim 50% of your benefit. Ex-spouses may also qualify."
+        },
+        "tip4": {
+          "title": "Working Doesn't Stop",
+          "content": "Working between 62 and FRA may temporarily reduce benefits but they'll be recalculated."
+        }
+      }
+    },
+    "autoLoan": {
+      "title": "Auto Loan Calculator",
+      "subtitle": "Estimate monthly car payments, total interest, and find the best loan",
+      "form": {
+        "title": "Auto Loan Information",
+        "vehiclePrice": "Vehicle Price ($)",
+        "vehiclePriceTooltip": "Purchase price of the vehicle (before tax and fees)",
+        "downPayment": "Down Payment ($)",
+        "downPaymentTooltip": "Down payment amount, recommended at least 20%",
+        "tradeInValue": "Trade-In Value ($)",
+        "tradeInValueTooltip": "Credit for your old vehicle, can be applied to down payment",
+        "loanTerm": "Loan Term",
+        "loanTermTooltip": "Loan duration, typically 36-72 months",
+        "interestRate": "Annual Interest Rate (%)",
+        "interestRateTooltip": "New car: 5-7%, Used: 7-15%",
+        "salesTaxRate": "Sales Tax Rate (%)",
+        "salesTaxRateTooltip": "Your state's auto sales tax rate (0-10%)",
+        "calculate": "Calculate Payment",
+        "reset": "Reset"
+      },
+      "results": {
+        "title": "Auto Loan Results",
+        "monthlyPayment": "Monthly Payment",
+        "totalLoan": "Loan Amount",
+        "totalInterest": "Total Interest",
+        "totalCost": "Total Cost",
+        "paymentBreakdown": "Payment Breakdown",
+        "principal": "Principal",
+        "interest": "Interest",
+        "salesTax": "Sales Tax",
+        "loanTermComparison": "Term Comparison"
+      },
+      "tips": {
+        "title": "Auto Loan Tips",
+        "tip1": {
+          "title": "Keep Terms Short",
+          "content": "Aim for 60 months or less. Longer terms mean significantly higher total interest."
+        },
+        "tip2": {
+          "title": "Larger Down Payment",
+          "content": "20%+ down prevents being underwater and may qualify you for better rates."
+        },
+        "tip3": {
+          "title": "Check Credit Score",
+          "content": "720+ credit score gets the best rates (~5%). Check your credit report first."
+        },
+        "tip4": {
+          "title": "Shop Around",
+          "content": "Compare rates from banks, credit unions, and dealers. Credit unions often offer better rates."
+        }
+      }
     }
   },
   "footer": {

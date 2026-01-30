@@ -725,6 +725,319 @@
           "content": "在大多数情况下，您基于税前小计计算小费。检查账单是否单独显示税款，以便准确地在较低金额上给小费。有些人喜欢在含税总额上给小费 - 两种方式都是可接受的。"
         }
       }
+    },
+    "creditScore": {
+      "title": "信用分计算器",
+      "subtitle": "估算您的信用分数，了解影响因素",
+      "form": {
+        "title": "信用信息",
+        "paymentHistory": "按时还款比例 (%)",
+        "paymentHistoryTooltip": "信用卡和账单的按时还款比例（典型值：95-100%）",
+        "creditUtilization": "信用额度使用率 (%)",
+        "creditUtilizationTooltip": "已使用信用额度占总额度的比例（典型值：10-30%）",
+        "creditHistory": "信用历史长度 (年)",
+        "creditHistoryTooltip": "最早开设的信用账户至今的年限",
+        "creditMix": "信用类型数量",
+        "creditMixTooltip": "拥有的信用产品种类数（信用卡、贷款、分期等）",
+        "newCredit": "近期查询次数",
+        "newCreditTooltip": "过去6个月内的新信用查询次数",
+        "calculate": "估算信用分",
+        "reset": "重置"
+      },
+      "results": {
+        "title": "信用分估算",
+        "estimatedScore": "估算信用分",
+        "scoreRange": "分数范围",
+        "excellent": "优秀 (750-850)",
+        "good": "良好 (700-749)",
+        "fair": "一般 (650-699)",
+        "poor": "差 (<650)",
+        "scoreFactors": "影响因素",
+        "paymentHistory": "还款历史 (35%)",
+        "creditUtilization": "信用使用率 (30%)",
+        "creditHistory": "历史长度 (15%)",
+        "creditMix": "信用类型 (10%)",
+        "newCredit": "新信用 (10%)"
+      },
+      "tips": {
+        "title": "提升信用分建议",
+        "tip1": {
+          "title": "按时还款",
+          "content": "还款历史是信用分最重要的因素。即使最低还款额也要按时支付，避免逾期记录。"
+        },
+        "tip2": {
+          "title": "控制使用率",
+          "content": "信用额度使用率保持在30%以下最佳。尽量在账单日之前还款可以降低使用率显示。"
+        },
+        "tip3": {
+          "title": "保持账户开放",
+          "content": "关闭老账户会缩短信用历史，可能降低信用分。保留早期开立的账户有益无害。"
+        }
+      }
+    },
+    "tax": {
+      "title": "税务计算器",
+      "subtitle": "估算您的联邦税、州税和实际到手收入",
+      "form": {
+        "title": "收入信息",
+        "annualIncome": "年收入 ($)",
+        "annualIncomeTooltip": "税前总收入，包括工资、投资收益等",
+        "filingStatus": "报税身份",
+        "single": "单身",
+        "married": "已婚联合申报",
+        "head": "一家之主",
+        "state": "所在州",
+        "stateTooltip": "选择您居住的州以计算州税",
+        "noStateTax": "无州税",
+        "filingStatusTooltip": "根据您的家庭情况选择报税身份",
+        "401k": "401(k) 供款 ($)",
+        "401kTooltip": "2024年上限为$23,000（50+为$30,500）",
+        "traditionalIRA": "传统IRA供款 ($)",
+        "traditionalIRATooltip": "2024年上限为$7,000（50+为$8,000），可能有收入限制",
+        "hsa": "HSA供款 ($)",
+        "hsaTooltip": "个人$4,150，家庭$8,300（55+再多$1,000）",
+        "has401k": "有401(k)供款",
+        "hasTraditionalIRA": "有传统IRA供款",
+        "hasHSA": "有HSA供款",
+        "calculate": "计算税款",
+        "reset": "重置"
+      },
+      "results": {
+        "title": "税务估算结果",
+        "federalTax": "联邦所得税",
+        "stateTax": "州所得税",
+        "fica": "FICA税",
+        "medicare": "医疗保险",
+        "totalTax": "总税款",
+        "effectiveRate": "有效税率",
+        "marginalRate": "边际税率",
+        "takeHomePay": "税后月收入",
+        "takeHomePayTooltip": "扣除所有税款后的实际到手收入",
+        "breakdown": "税款明细",
+        "taxBracket": "所属税级",
+        "bracketInfo": "税级信息",
+        "bracketRange": "收入范围",
+        "taxOwed": "应纳税额"
+      },
+      "tips": {
+        "title": "节税建议",
+        "tip1": {
+          "title": "充分利用退休账户",
+          "content": "401(k)和IRA等递延税款账户可以显著降低当前应税收入。尽量达到雇主匹配上限。"
+        },
+        "tip2": {
+          "title": "考虑HSA",
+          "content": "HSA是三重税收优惠：供款抵税、投资免税、取款免税（用于医疗）。有高 deductible 医疗保险者尤其适合。"
+        },
+        "tip3": {
+          "title": "标准 vs 逐项扣除",
+          "content": "2024年标准扣除额为单身$14,600，已婚联合$29,200。如果逐项扣除超过标准额，则选择逐项更划算。"
+        }
+      }
+    },
+    "cd": {
+      "title": "定期存款计算器",
+      "subtitle": "计算定期存单(CD)的到期收益和利息收入",
+      "form": {
+        "title": "定期存款信息",
+        "depositAmount": "存款金额 ($)",
+        "depositAmountTooltip": "您计划存入定期账户的金额",
+        "term": "存款期限",
+        "termTooltip": "存款期限，不同期限利率通常不同",
+        "months": "个月",
+        "interestRate": "年利率 (%)",
+        "interestRateTooltip": "银行提供的年化利率（当前市场约4-5%）",
+        "compoundFrequency": "复利频率",
+        "compoundMonthly": "每月",
+        "compoundQuarterly": "每季度",
+        "compoundAnnually": "每年",
+        "calculate": "计算收益",
+        "reset": "重置"
+      },
+      "results": {
+        "title": "定期存款收益",
+        "maturityValue": "到期金额",
+        "totalInterest": "总利息收入",
+        "principal": "本金",
+        "effectiveRate": "实际年化收益率",
+        "daysToMaturity": "距离到期",
+        "comparison": "期限对比",
+        "earnings": "预期利息收入"
+      },
+      "tips": {
+        "title": "定期存款策略",
+        "tip1": {
+          "title": "阶梯存款法",
+          "content": "将资金分成几份，存不同期限的CD。这样既有较高收益，又保持一定流动性。"
+        },
+        "tip2": {
+          "title": "比较不同银行",
+          "content": "网上银行（如Ally、Marcus）的CD利率通常高于传统银行0.5%以上。"
+        },
+        "tip3": {
+          "title": "注意提前支取罚息",
+          "content": "大多数CD提前支取会损失部分或全部利息。确保资金在期限内不需要使用。"
+        },
+        "tip4": {
+          "title": "FDIC保险",
+          "content": "选择有FDIC标志的银行，每银行每账户最高$25万受保。"
+        }
+      }
+    },
+    "annuity": {
+      "title": "年金计算器",
+      "subtitle": "规划您的退休收入，计算年金支付金额",
+      "form": {
+        "title": "年金信息",
+        "annuityType": "年金类型",
+        "immediate": "立即年金",
+        "deferred": "延期年金",
+        "annuityTypeTooltip": "立即年金缴费后立即开始支付；延期年金在积累期后开始支付",
+        "purchaseAmount": "购买金额 ($)",
+        "purchaseAmountTooltip": "一次性投入的年金金额",
+        "paymentPeriod": "支付期限",
+        "life": "终身",
+        "years": "固定年限",
+        "paymentPeriodTooltip": "终身支付活多久领多久；固定年限支付确定年数",
+        "paymentYears": "支付年限",
+        "paymentYearsTooltip": "选择固定支付年限（如10年、20年）",
+        "interestRate": "预期年化收益率 (%)",
+        "interestRateTooltip": "保险公司使用的假设收益率（约3-5%）",
+        "payoutAge": "开始领取年龄",
+        "currentAge": "当前年龄",
+        "calculate": "计算年金",
+        "reset": "重置"
+      },
+      "results": {
+        "title": "年金支付估算",
+        "monthlyPayment": "月支付金额",
+        "annualPayment": "年支付金额",
+        "totalReceived": "累计领取",
+        "totalInterest": "收益",
+        "payoutRatio": "返还比例",
+        "breakEven": "回本时间",
+        "comparison": "支付选项对比"
+      },
+      "tips": {
+        "title": "年金购买建议",
+        "tip1": {
+          "title": "考虑通胀因素",
+          "content": "固定年金可能被通胀侵蚀。考虑选择有通胀保护或递增支付的年金产品。"
+        },
+        "tip2": {
+          "title": "了解费用结构",
+          "content": "年金年化费用可能高达2-3%，长期影响显著。选择低费用的可变年金或指数年金。"
+        },
+        "tip3": {
+          "title": "流动性考量",
+          "content": "年金流动性差，早期退保可能有退保费用。建议退休资产配置不超过30%在年金。"
+        },
+        "tip4": {
+          "title": "货比三家",
+          "content": "不同保险公司报价可能差异20%以上。使用独立经纪或比价网站获取多个报价。"
+        }
+      }
+    },
+    "socialSecurity": {
+      "title": "社保金计算器",
+      "subtitle": "估算您的退休社保福利金和最佳领取时间",
+      "form": {
+        "title": "社保信息",
+        "currentAge": "当前年龄",
+        "currentAgeTooltip": "您的当前年龄",
+        "birthYear": "出生年份",
+        "birthYearTooltip": "影响您的完全退休年龄（1960年后为67岁）",
+        "annualIncome": "年收入 ($)",
+        "annualIncomeTooltip": "当前或最近几年的年收入，用于估算AIME",
+        "retirementAge": "计划退休年龄",
+        "retirementAgeTooltip": "您计划开始领取社保的年龄（62-70之间）",
+        "calculate": "估算福利",
+        "reset": "重置"
+      },
+      "results": {
+        "title": "社保福利估算",
+        "monthlyBenefit": "月福利金",
+        "annualBenefit": "年福利金",
+        "lifetimeBenefit": "预期终身领取",
+        "filingAge": "领取年龄",
+        "fullRetirement": "完全退休年龄",
+        "reducedBenefit": "提前领取（62岁）",
+        "fullBenefit": "正常领取",
+        "delayedBenefit": "延迟领取（70岁）",
+        "breakEven": "盈亏平衡点",
+        "comparison": "不同年龄领取对比"
+      },
+      "tips": {
+        "title": "社保金策略建议",
+        "tip1": {
+          "title": "延迟领取收益更高",
+          "content": "70岁领取比62岁月收入高24%。如果您预期寿命较长，延迟领取更划算。"
+        },
+        "tip2": {
+          "title": "考虑健康状况",
+          "content": "如果健康状况不佳，可以考虑提前领取。预期寿命是决定因素之一。"
+        },
+        "tip3": {
+          "title": "配偶福利",
+          "content": "符合条件的配偶可领取您社保金的50%。离婚配偶在特定条件下也可申请。"
+        },
+        "tip4": {
+          "title": "继续工作不影响",
+          "content": "62-完全退休年龄之间工作可能会暂时减少福利，但会按比例恢复并可能增加。"
+        }
+      }
+    },
+    "autoLoan": {
+      "title": "车贷计算器",
+      "subtitle": "估算汽车贷款的月供、总利息和最佳贷款方案",
+      "form": {
+        "title": "车贷信息",
+        "vehiclePrice": "车辆价格 ($)",
+        "vehiclePriceTooltip": "车辆的购买价格（未含税和费用）",
+        "downPayment": "首付金额 ($)",
+        "downPaymentTooltip": "首付款金额，建议至少20%",
+        "tradeInValue": "旧车折价 ($)",
+        "tradeInValueTooltip": "以旧换新的折价金额，可抵作部分首付",
+        "loanTerm": "贷款期限",
+        "loanTermTooltip": "贷款期限，常见为36-72个月",
+        "interestRate": "年利率 (%)",
+        "interestRateTooltip": "贷款利率，新约5-7%，二手约7-15%",
+        "salesTaxRate": "销售税率 (%)",
+        "salesTaxRateTooltip": "所在州的汽车销售税率（约0-10%）",
+        "calculate": "计算月供",
+        "reset": "重置"
+      },
+      "results": {
+        "title": "车贷计算结果",
+        "monthlyPayment": "月供",
+        "totalLoan": "贷款金额",
+        "totalInterest": "总利息",
+        "totalCost": "总成本",
+        "paymentBreakdown": "月供明细",
+        "principal": "本金",
+        "interest": "利息",
+        "salesTax": "销售税",
+        "loanTermComparison": "期限对比"
+      },
+      "tips": {
+        "title": "车贷购车建议",
+        "tip1": {
+          "title": "控制贷款期限",
+          "content": "尽量选择60个月以下。超过60个月的长期贷款风险较高，总利息支出显著增加。"
+        },
+        "tip2": {
+          "title": "提高首付比例",
+          "content": "20%以上首付可避免负资产（欠款超过车价），还可能获得更优惠的利率。"
+        },
+        "tip3": {
+          "title": "检查信用分数",
+          "content": "720分以上可获得最佳利率（~5%）。贷款前检查信用报告，确保无错误。"
+        },
+        "tip4": {
+          "title": "多方比较",
+          "content": "比较银行、信用合作社和经销商贷款利率。信用合作社通常利率更低。"
+        }
+      }
     }
   },
   "footer": {

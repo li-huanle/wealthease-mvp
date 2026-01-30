@@ -148,6 +148,48 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
       icon: '⚖️',
       color: 'from-rose-500 to-rose-600',
     },
+    {
+      key: 'tip',
+      href: `/${locale}/calculators/tip`,
+      icon: '💁',
+      color: 'from-pink-400 to-pink-500',
+    },
+    {
+      key: 'creditScore',
+      href: `/${locale}/calculators/credit-score`,
+      icon: '📋',
+      color: 'from-slate-500 to-slate-600',
+    },
+    {
+      key: 'tax',
+      href: `/${locale}/calculators/tax`,
+      icon: '🧾',
+      color: 'from-red-400 to-red-500',
+    },
+    {
+      key: 'cd',
+      href: `/${locale}/calculators/cd`,
+      icon: '🏦',
+      color: 'from-emerald-400 to-emerald-500',
+    },
+    {
+      key: 'annuity',
+      href: `/${locale}/calculators/annuity`,
+      icon: '🔄',
+      color: 'from-amber-400 to-amber-500',
+    },
+    {
+      key: 'socialSecurity',
+      href: `/${locale}/calculators/social-security`,
+      icon: '🛡️',
+      color: 'from-blue-400 to-blue-500',
+    },
+    {
+      key: 'autoLoan',
+      href: `/${locale}/calculators/auto-loan`,
+      icon: '🚗',
+      color: 'from-violet-400 to-violet-500',
+    },
   ];
 
   const features = [
@@ -246,7 +288,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
   ];
 
   const stats = [
-    {value: '12', label: locale === 'zh' ? '专业工具' : 'Professional Tools'},
+    {value: '18', label: locale === 'zh' ? '专业工具' : 'Professional Tools'},
     {value: '100%', label: locale === 'zh' ? '数据不上传' : 'No Data Upload'},
     {value: '本地', label: locale === 'zh' ? '纯前端计算' : 'Client-Side Only'},
     {value: '永久', label: locale === 'zh' ? '完全免费' : 'Forever Free'},
