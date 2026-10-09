@@ -321,4 +321,288 @@ ${sourceNote.zh}`,
     category: 'Retirement',
     tags: ['individual income tax', 'private pension', 'pension insurance', 'retirement planning', 'China'],
   },
+  {
+    slug: 'renting-and-buying-a-home-in-china-protect-your-money',
+    title: {
+      en: 'Renting and Buying a Home in China: Nine Rules That Protect Your Money',
+      zh: '租房与买房：九条保护钱包的规矩',
+    },
+    excerpt: {
+      en: 'Write the deposit terms into the contract, never pay rent through an agent, check the long-term-rental firm\'s escrow account, and pay home-purchase money only through a supervised account.',
+      zh: '押金条款写进合同，租金别经中介手，先查长租公寓的资金监管账户，二手房款只走专用账户。',
+    },
+    content: {
+      en: `Renting is where people most often lose deposits and prepaid rent; buying is where the biggest single sums are at risk. China's Housing Rental Regulations (effective 15 September 2025) and related rules give tenants more protection than most people realise.
+
+## Renting
+
+### 1. Put the deposit amount, refund date and deduction reasons in the contract
+
+The regulation requires landlords who collect a deposit to specify the amount, the return date and the circumstances in which it can be reduced, and says that outside the cases in the contract the landlord may not deduct it without good reason. Photograph and film the flat, and meter readings, when you move out. If the deposit is withheld, complain to the housing rental authority first; for small sums, use small-claims court.
+
+### 2. If you are locked out, cut off or threatened, call the police
+
+Landlords may not use violence, threats or other illegal means to force you to cancel the lease or leave. Water or power cut-offs and changed locks are examples. Call the police and keep the record: it becomes evidence if you later claim losses. Do not confront the landlord yourself.
+
+### 3. Pay the landlord directly, not through the agent
+
+Agencies are prohibited from collecting or paying rent and deposits on the landlord's behalf. Money passing through an agent is one more chance for it to disappear, and if it does you pay rent twice and may be evicted. Check that the payee matches the name on the property certificate, and ask for written authorisation if it doesn't.
+
+### 4. Check a long-term-rental company's escrow account; don't prepay a year for a small discount
+
+Companies that sublet flats must set up and publicly disclose a rental-funds escrow account. A small discount for paying a year upfront does not justify the risk of losing your deposit and the remaining months if the company collapses. A rent loan tied to the lease is worse: if the company disappears, you keep repaying monthly.
+
+### 5. A sale during your lease doesn't end it
+
+Under the Civil Code, a change of ownership during the lease does not affect the lease's validity. The new owner must let you stay to the end of the term, provided you were lawfully in possession; keep the contract, payment records and move-in evidence.
+
+### 6. Check the title and mortgage before signing, and pay only by traceable transfer
+
+The two most common total losses are paying someone who isn't the owner, and renting a flat already mortgaged and later seized. Check ownership and mortgage records at the local property registry, ask the landlord to attend in person (or bring a power of attorney), and require the head landlord's written consent if subletting. Always transfer money and write the purpose in the memo, such as "March rent for Unit X". This is the author's practical advice, not a statutory rule.
+
+### 7. Rent a partitioned room? Don't
+
+The smallest rental unit is the originally designed room; kitchens, bathrooms, balconies and basement storerooms may not be rented as living space, and landlords may not raise rent unilaterally during the term. When a partitioned flat is shut down, the tenant is the one who has to move and often loses the deposit and prepaid rent. Fire safety is also worse: walls block escape routes and a single wiring circuit serves many people.
+
+## Buying
+
+### 8. Used-home payments through an agent must go to a supervised account
+
+The agent regulation requires funds that an agency collects and pays out to move through its dedicated customer settlement account at a bank, not a broker's personal WeChat or bank account. When two agencies cooperate on one deal, only one commission may be charged, and mortgage or title services must be contracted separately with fees disclosed in advance.
+
+### 9. City residents who want a rural home should rent, not buy
+
+State Council and Ministry of Agriculture documents prohibit urban residents from buying homestead land, farmers' houses or "small-property-right" homes. The legal route is a rental, with a maximum term of 20 years, renewable by agreement. Sign a written lease with the household, spelling out term, rent, and what happens to renovations, and never pay many years upfront or agree to "50-year" contracts.
+
+Compare the costs yourself with our [rent vs buy calculator](/en/calculators/rent-vs-buy) and [mortgage calculator](/en/calculators/mortgage).
+
+${sourceNote.en}`,
+      zh: `租房最容易亏的是押金和预付的房租，买房最容易出大事的是那笔单笔最大的房款。2025 年 9 月 15 日起施行的《住房租赁条例》以及相关规章，给租客的保护比多数人以为的多。
+
+## 租房
+
+### 1. 押金的数额、退还时间和扣减情形，必须写进合同
+
+行政法规要求收押金的房东在合同里约定押金数额、返还时间和扣减情形，并规定除合同约定的情形外，房东无正当理由不得扣减押金。退租那天要拍照录像，水电燃气表读数也拍下来。押金被无故扣了，先向房屋租赁管理部门投诉，金额不大的走小额诉讼。
+
+### 2. 被断水断电、换锁、上门威胁赶人，先报警留证
+
+房东不得以暴力、威胁或其他非法方式逼你解约或腾退房子。断水断电、换锁都属于此类。遇上先报警，出警记录是你以后要求赔损失的证据，不要自己动手对抗。
+
+### 3. 中介不得代收代付租金和押金，钱直接给房东
+
+房地产经纪机构被禁止代收、代付房租和押金。钱在中介手里过一道，就多一次卷款跑路的机会；真跑了，你租金白交，还可能被房东赶走。付款前核对收款人是不是产权证上的名字，不是本人的要留一份书面授权。
+
+### 4. 租长租公寓先查它的资金监管账户，别图便宜一次性付一年
+
+转租经营的住房租赁企业必须设立资金监管账户并向社会公示。一次性付一年拿到的那点折扣，抵不上企业倒闭时押金和剩余房租一起没的风险。绑定了租金贷更糟：公寓跑了，贷款你还得按月还完。
+
+### 5. 房子租期内被卖掉，租约继续有效
+
+民法典规定「买卖不破租赁」：租赁物在租期内所有权变动，不影响租赁合同的效力。新房东要让你住到期满。前提是你已经合法住在里面，合同、转账记录、入住时间的证据都要留好。
+
+### 6. 签约前核对产权证和抵押情况，所有款项走转账并备注用途
+
+最常见的两种血本无归，一是租金付给了不是产权人的人，二是房子早已抵押、后来被查封。到当地不动产登记中心查产权和抵押，让房东本人到场（来不了的要授权委托书），二房东转租的要有原房东的书面同意。转账备注写「某某房屋某月租金」，出了纠纷就是直接证据。这一条是作者经验，不是法条。
+
+### 7. 别租隔断房
+
+最小的出租单位是原设计的房间，厨房、卫生间、阳台和地下储藏室不能住人，租期内房东也不能单方面随意涨租。违规隔断被查处时，搬家的是租客，押金和已付房租往往拿不回来。安全上也更差：隔断墙常堵住逃生通道，一屋住很多人还共用一条线路。
+
+## 买房
+
+### 8. 二手房让中介代收房款的，必须走中介在银行开的专用账户
+
+经纪管理办法规定，约定由中介代收代付交易资金的，必须通过其在银行开设的客户交易结算资金专用存款账户划转，不能微信转给经纪人个人。两家中介合做一单只能收一份佣金；代办贷款、代办过户要另外签合同，并事先说明收费。
+
+### 9. 城镇户口想搬去乡下住，只租农房，别买宅基地和宅基地上的房子
+
+国务院办公厅和农业农村部的文件明令禁止城镇居民到农村购买宅基地、农民住宅或「小产权房」。合法的路是租农房，租期一次最长 20 年，到期可另行约定。和出租的农户签书面合同，写清租期、租金、能否装修改建以及装修的钱到期怎么算；别签「租 50 年」「租 70 年」这类合同，更别一次付清多年租金。
+
+可以用我们的[租房还是买房计算器](/zh/calculators/rent-vs-buy)和[房贷计算器](/zh/calculators/mortgage)自己算一算。
+
+${sourceNote.zh}`,
+    },
+    author: 'WealthEase Team',
+    date: '2026-10-09',
+    readTime: '8 min read',
+    category: 'Real Estate',
+    tags: ['renting', 'security deposit', 'home buying', 'tenant rights', 'China'],
+  },
+  {
+    slug: 'laid-off-or-unpaid-wages-china-what-to-claim',
+    title: {
+      en: 'Laid Off or Unpaid? What You Can Claim in China and in What Order',
+      zh: '失业了、被欠薪了：能领什么、按什么顺序办',
+    },
+    excerpt: {
+      en: 'Register for unemployment benefits the day you leave, complain to labour inspection and arbitration for free, apply for legal aid, and know that pension years accumulate even if you stop paying.',
+      zh: '离职当天就去办失业登记；欠薪先投诉劳动监察再申请仲裁，都不收费；打不起官司申请法律援助；社保断缴养老年限不清零。',
+    },
+    content: {
+      en: `Losing income is stressful enough without losing the benefits you are entitled to. These are the steps that matter most, roughly in order.
+
+## 1. Apply for unemployment insurance online right away
+
+If you and your employer paid in for at least one year and you did not resign voluntarily, you can claim after completing unemployment registration. Entitlement is up to **12 months** for 1 to under 5 years of contributions, **18 months** for 5 to under 10 years, and **24 months** for 10 years or more. While you receive benefits, unemployment insurance pays your employee medical insurance.
+
+Benefits run from the day you register, so a month's delay is a month's money lost. Do not sign a resignation letter saying "personal reasons" — voluntary resignation generally disqualifies you. Benefit levels differ widely by province.
+
+## 2. Unpaid wages: complain to labour inspection, then arbitrate — both are free
+
+Call 12333 or go to the labour inspection office. After a complaint is accepted, the inspection must be completed within 60 working days, and the employer can be ordered to pay by a deadline, failing which it owes an additional 50% to 100%. Next comes labour arbitration, which has a 45-day time limit. Note the difference between "case closed" and "money received": if the company has no assets or the boss has fled, you can win and still not be paid, and there is no official data on how many wage cases ultimately pay out.
+
+Serious arrears can also be a crime: for example, unpaid wages to one person for three months or more above a provincial threshold (5,000 to 20,000 yuan), or to ten or more people above a larger cumulative threshold (30,000 to 100,000 yuan), where the employer still refuses after being ordered to pay. Check your province's exact figure. On construction sites, the general contractor is more useful to pursue than the labour subcontractor. Unlicensed workshops and shops still count as employers; private household work such as a nanny is not an employment relationship and goes through the courts.
+
+## 3. Can't afford a lawyer? Apply for legal aid
+
+Wage claims, maintenance, social insurance or subsistence benefits, and work injury cases fall within legal aid. Call 12348 or visit the local legal aid centre. Since 1 January 2022 you no longer need to go back to your home registration place for a proof of hardship; a truthful statement of your finances is enough.
+
+## 4. Use free public job services, not paid agencies
+
+Public employment service centres and labour markets offer job introductions, career guidance, policy advice and registration at no cost, and the law forbids them from profiting from these services. Registering as unemployed is also the prerequisite for claiming unemployment benefits and for "employment-difficulty" status. If you do day labour, settle wages on the spot and keep a record.
+
+## 5. Ask for employment-difficulty status
+
+Once recognised, you may receive a social insurance subsidy for what you pay yourself (generally capped at two thirds of actual payments, for up to three years), and employers who hire you or place you in a public-benefit job may get subsidies too. Such jobs pay little (around the local minimum wage) but come with social insurance, so they suit a transition. Subsidies are often paid after you pay, so you advance the money.
+
+## 6. A gap in social insurance is not the end of your pension
+
+Pension entitlement is based on cumulative years, not continuous years: a gap does not reset the count, and you can draw a monthly pension once you reach retirement age with 15 accumulated years (the threshold rises by six months a year from 2030 toward 20 years). The real impact of gaps is on purchase, household registration and points-based schemes that require continuous payment. Paying a stranger to "register" you is risky and not recommended.
+
+For help estimating your runway, try our [emergency fund guide](/en/blog/emergency-fund-guide) and [savings goal calculator](/en/calculators/savings-goal).
+
+${sourceNote.en}`,
+      zh: `收入断了已经够难受，别再把该拿的保障也漏掉。下面这些步骤，大致按先后顺序排列。
+
+## 1. 失业了，先在线申领失业保险金
+
+单位和你自己交满 1 年、又不是你主动提的辞职，办完失业登记就能领钱。交满 1 年不到 5 年，最多领 **12 个月**；满 5 年不到 10 年，最多 **18 个月**；10 年以上，最多 **24 个月**。领钱这段时间，职工医保由失业保险替你交。
+
+失业保险金从办失业登记那天起算，晚办一个月就少拿一个月。离职时别签「个人原因主动辞职」，主动辞职一般领不了。各省金额差别很大，以参保地公布的为准。
+
+## 2. 被欠薪：先投诉劳动监察，再申请劳动仲裁，两条路都不收费
+
+先打 12333 或去人社局劳动监察投诉，立案后 60 个工作日内查完，能责令公司限期付钱，逾期不付还要多赔 50% 到 100%。再不行申请劳动仲裁，45 天内结案。但「结案」不等于「到账」：公司没财产、老板跑了，赢了也可能拿不到钱，欠薪案最后有多少真到了当事人手里，没有官方数据。
+
+欠薪到一定程度还够刑事立案：欠一个人 3 个月以上且金额达到各省规定的数额（5000 到 2 万元），或者欠 10 人以上累计达到 3 万到 10 万元，责令支付后仍不付的。投诉前查一下本省的具体数额。工地上的农民工，找总包比找包工头管用。没办执照的作坊、店铺照样算用人单位；给家庭干私活（比如当保姆）不算劳动关系，要去法院。
+
+## 3. 打不起官司就申请法律援助
+
+讨薪、要赡养费、要社保或低保待遇、工伤这类案子都在范围内。打 12348，或去当地法律援助中心。2022 年 1 月 1 日起，不用再回原籍开经济困难证明，本人如实说明经济状况就行。
+
+## 4. 找活先用免费的公共就业服务，不找收费中介
+
+就业服务中心、人力资源市场介绍工作、职业指导、政策咨询、办登记全都不收钱，法律还明文不许它们拿这些服务去赚钱。失业登记也是领失业金和认定就业困难人员的前置手续，顺手办掉。干零工按天结账的，当场核对工钱并留下记录。
+
+## 5. 争取就业困难人员认定
+
+认定下来后，自己交社保能拿补贴，原则上不超过实际交的三分之二，最长 3 年；单位招用你或安排你到公益性岗位的，单位那部分社保也有补贴。公益性岗位工资参照当地最低工资，钱不多但带社保，适合过渡。补贴多是先交后补，要先垫钱。
+
+## 6. 社保断缴不要慌
+
+养老金按累计年限算，不按连续年限算，断了不清零，到退休年龄累计满 15 年就能按月领（2030 年起每年提高 6 个月，逐步到 20 年）。真正受影响的是买房、落户、积分这类要求连续缴费的资格。花钱找人「挂靠」代缴，可能钱打水漂，也有法律风险，不建议。
+
+想算算手里的钱能撑多久，可以看我们的[应急金指南](/zh/blog/emergency-fund-guide)和[储蓄目标计算器](/zh/calculators/savings-goal)。
+
+${sourceNote.zh}`,
+    },
+    author: 'WealthEase Team',
+    date: '2026-10-09',
+    readTime: '8 min read',
+    category: 'Basics',
+    tags: ['unemployment insurance', 'unpaid wages', 'legal aid', 'labor arbitration', 'China'],
+  },
+  {
+    slug: 'financial-hardship-safety-net-china-medical-and-living-costs',
+    title: {
+      en: 'When Money Runs Out: The Safety Net, Medical Bills and Cutting Living Costs',
+      zh: '钱不够的时候：救助、医疗费与压低生活成本',
+    },
+    excerpt: {
+      en: 'Temporary relief, subsistence allowance, shelters, 400-yuan resident medical insurance, the right order for serious illness bills, and why housing and food are where to cut first.',
+      zh: '临时救助、低保、救助站、每年 400 元的居民医保、大病费用的办理顺序，以及为什么先压住和吃。',
+    },
+    content: {
+      en: `This is the last-resort checklist. Most of these programmes are free to apply for; the hard part is knowing they exist.
+
+## Government help
+
+### Temporary assistance
+
+If a sudden event such as a fire, accident or a family member's serious illness overwhelms basic living, apply at the township government or street office. You do not need to be a subsistence-allowance household. It is usually a one-off payment, and amounts vary widely by place.
+
+### Subsistence allowance (dibao)
+
+If household income divided by members is below the local line and your assets meet the rules, apply in your registered locality. At the end of 2024 the national average line was **798.1 yuan per person per month in cities and 593.9 yuan in rural areas**. The payment is the line minus actual per-person income. Owning a home, car or savings above the local limit, or having children able to support you, may disqualify you. Once approved you also get help paying resident medical insurance, medical assistance, and legal aid without a hardship check.
+
+### Shelters
+
+Rescue shelters provide food and lodging, send the sick to hospital, help contact family, and give transport tickets home if you have no money, generally for up to about 10 days. It is voluntary, not detention, and no cash is given. Tickets are issued for your registered or residence location, so decide where you are going before you ask.
+
+## Medical bills
+
+### Keep resident medical insurance paid (about 400 yuan a year)
+
+Individuals pay from about 400 yuan and the government subsidises roughly 700 yuan per person. Households in extreme hardship can have the premium fully paid and subsistence-allowance households partly paid. A gap has a price: if you did not enrol in the enrolment period or did not pay continuously, there is a 3-month waiting period after you pay, with an extra month for each additional year of gap.
+
+### For a serious illness, follow this order
+
+Register for cross-province treatment in the National Healthcare Security app before admission so you can settle at discharge without paying the whole bill upfront. After basic insurance and major-illness insurance, apply for medical assistance at your township or street office for what you still cannot pay. Employees get a medical period of 3 to 24 months based on years worked, during which the employer cannot dismiss them. Do not use online loans or private high-interest borrowing: courts only protect interest up to four times the one-year LPR, but the principal must still be repaid. Call 120 in an emergency; hospitals may not refuse treatment, and emergency costs are covered first by a disease emergency relief fund.
+
+### Add a one-year medical policy, and look for "guaranteed renewal"
+
+Such a policy covers the part basic insurance doesn't pay, plus lost income. Policies without the words "guaranteed renewal" may be discontinued or repriced next year. Disclose your health honestly, or claims can be refused; after two years from the start of the contract the insurer can no longer cancel it for non-disclosure. Don't stack two reimbursement-style policies, since the same expense can't be claimed twice. Pay for basic insurance first.
+
+## Cut the two biggest costs first
+
+In 2025, food was 29.3% of average national household consumption and housing 21.7%, together more than half, so trimming them has the biggest effect. In the author's experience, converting a daily-rate room or hourly hotel to a month costs more than a shared flat, and cooking at home is cheaper than takeaway. When job hunting, ask whether food and lodging are included: such a job removes both items.
+
+Build a plan with our [budgeting guide](/en/blog/budgeting-guide) and [emergency fund guide](/en/blog/emergency-fund-guide).
+
+${sourceNote.en}`,
+      zh: `这是最后一道防线的清单。其中多数项目申请都不花钱，难的是知道它们存在。
+
+## 政府能帮什么
+
+### 突发变故先申请临时救助
+
+家里突然出事，比如火灾、车祸、家人突发重病，把基本生活一时压垮了，可以向乡镇政府或街道办申请临时救助。不要求你已经是低保户。多是一次性发一笔，各地金额差别很大。
+
+### 收入低于当地低保线就申请低保
+
+全家收入除以人数低于当地低保线，家里财产也符合规定，就可以回户籍地申请。2024 年末全国城市低保线平均每人每月 **798.1 元**，农村 **593.9 元**，发的是低保线减去家里每人每月收入的差额。有房有车有存款超标，或子女有能力赡养你，可能批不下来。批下来后，交居民医保有资助，看病能走医疗救助，申请法律援助不查经济困难。
+
+### 走投无路时去救助站
+
+救助站管吃、管住，生病了送医院，帮你联系家里人，没钱回家的发车票，一般住不超过 10 天。自愿来、自愿走，不是收容，也不发现金。车票按户籍地或住所地开，去之前先想清楚要回哪儿。
+
+## 医疗费
+
+### 居民医保每年 400 元不要断
+
+个人一年交 400 元起，财政再按人头补 700 元上下；特困人员全额资助，低保对象定额资助。断缴有代价：没在集中期参保、或没连着交的，交完之后有 3 个月看病不给报，每多断 1 年原则上再多加 1 个月。
+
+### 得了重病，按这个顺序办
+
+跨省住院前先在「国家医保局」公众号里备案，出院直接结算，不用先垫全款。基本医保和大病保险报完之后自己还掏不起的，向乡镇或街道申请医疗救助。在职的按工龄有 3 到 24 个月医疗期，这期间公司不能辞你。网贷和民间高息借款不要碰：法院只保护到一年期 LPR 的 4 倍这条线，超出部分不受保护，本金仍要还。急重伤病没钱也要打 120，医院不得拒绝、推诿或拖延救治，急救费先由疾病应急救助基金付。
+
+### 基本医保之外，配一份一年期医疗险，认准「保证续保」
+
+这类保险补的是医保报完之后你自己要掏的那部分，还有停工的损失。条款里没有「保证续保」四个字的，明年可能停售或涨价。健康状况要如实告知，瞒了会被拒赔；合同成立满两年，保险公司就不能再以你没如实告知为由解除合同。两份按实际花费报销的医疗险同一笔钱不能报两次，别叠着买。先把基本医保交上，再考虑这条。
+
+## 先压最大的两项开销
+
+2025 年全国人均消费里，吃占 29.3%，住占 21.7%，两项加起来过半，压这两项最有效。按作者的经验，日租房、钟点房折算到一个月比合租贵，自己做饭比点外卖便宜。找工作时问清包不包吃住，包的岗位等于把这两大项抹掉。
+
+可以用我们的[预算指南](/zh/blog/budgeting-guide)和[应急金指南](/zh/blog/emergency-fund-guide)做一份计划。
+
+${sourceNote.zh}`,
+    },
+    author: 'WealthEase Team',
+    date: '2026-10-09',
+    readTime: '8 min read',
+    category: 'Savings',
+    tags: ['social safety net', 'medical insurance', 'subsistence allowance', 'cutting expenses', 'China'],
+  },
 ];
