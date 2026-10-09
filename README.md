@@ -5,7 +5,8 @@ WealthEase.top 是一个提供免费金融计算器和理财资源的专业网�
 ## 功能特性
 
 ✅ **双语支持**：完整的中英文切换（基于next-intl）
-✅ **7大计算器**：覆盖投资、贷款、房贷、退休、储蓄、ROI、债务管理
+✅ **20个计算器**：覆盖投资、贷款、房贷、退休、储蓄、税务、保险年金、教育储蓄等
+✅ **博客**：理财指南文章，中英双语（含改编自 HowToLiveBetter 的中国个人理财系列，CC BY 4.0）
 ✅ **专业UI设计**：金融级界面，专业的配色方案
 ✅ **响应式设计**：移动端完美适配
 ✅ **SEO优化**：完整的sitemap、meta标签和结构化数据
@@ -14,15 +15,28 @@ WealthEase.top 是一个提供免费金融计算器和理财资源的专业网�
 
 ## 可用计算器
 
-| 计算器 | 功能 |
+| 计算器 | 路径 |
 |--------|------|
-| **复利计算器** | 计算投资随时间的复利增长 |
-| **退休规划计算器** | 规划退休储蓄，估算未来需求 |
-| **储蓄目标计算器** | 规划储蓄，更快实现财务目标 |
-| **贷款计算器** | 计算贷款月供和总利息 |
-| **房贷计算器** | 估算月供，包括税费和保险 |
-| **ROI计算器** | 计算投资回报率和年化收益率 |
-| **债务还清计算器** | 制定计划，摆脱债务 |
+| **复利计算器** | `/calculators/compound-interest` |
+| **退休规划计算器** | `/calculators/retirement` |
+| **储蓄目标计算器** | `/calculators/savings-goal` |
+| **贷款计算器** | `/calculators/loan` |
+| **房贷计算器** | `/calculators/mortgage` |
+| **ROI计算器** | `/calculators/roi` |
+| **债务还清计算器** | `/calculators/debt-payoff` |
+| **401(k) 投资计算器** | `/calculators/investment-401k` |
+| **通货膨胀计算器** | `/calculators/inflation` |
+| **租房 vs 买房计算器** | `/calculators/rent-vs-buy` |
+| **教育储蓄计算器** | `/calculators/college-savings` |
+| **股息收入计算器** | `/calculators/dividend-income` |
+| **投资对比计算器** | `/calculators/investment-comparison` |
+| **年金计算器** | `/calculators/annuity` |
+| **车贷计算器** | `/calculators/auto-loan` |
+| **定期存单（CD）计算器** | `/calculators/cd` |
+| **信用评分计算器** | `/calculators/credit-score` |
+| **社会保障计算器** | `/calculators/social-security` |
+| **税务计算器** | `/calculators/tax` |
+| **小费计算器** | `/calculators/tip` |
 
 ## 技术栈
 
@@ -75,7 +89,7 @@ npm start
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 
 # Google AdSense (可选)
-NEXT_PUBLIC_ADSENSE_ID=pub-XXXXXXXXXXXXXXXX
+NEXT_PUBLIC_ADSENSE_ID=ca-pub-XXXXXXXXXXXXXXXX
 ```
 
 ## 项目结构
@@ -87,13 +101,7 @@ wealthease-mvp/
 │   │   ├── page.tsx           # 首页
 │   │   ├── layout.tsx         # 布局
 │   │   ├── calculators/       # 计算器页面
-│   │   │   ├── compound-interest/
-│   │   │   ├── retirement/
-│   │   │   ├── savings-goal/
-│   │   │   ├── loan/
-│   │   │   ├── mortgage/
-│   │   │   ├── roi/
-│   │   │   └── debt-payoff/
+│   │   │   └── [20个计算器，每个一个目录]
 │   │   ├── about/            # 关于我们
 │   │   ├── privacy/          # 隐私政策
 │   │   └── blog/             # 博客
@@ -103,16 +111,17 @@ wealthease-mvp/
 ├── components/
 │   ├── Navigation.tsx        # 导航栏
 │   ├── Footer.tsx            # 页脚
-│   ├── ui/                   # UI组件库
-│   │   ├── Button.tsx
-│   │   ├── Card.tsx
-│   │   ├── Slider.tsx
-│   │   └── ...
+│   ├── ui/                   # UI组件（Slider）
 │   └── calculators/          # 计算器组件
 │       ├── CalculatorInput.tsx
 │       ├── ResultCard.tsx
 │       ├── ExpertTips.tsx
-│       └── [7个计算器组件]
+│       └── [各计算器组件]
+├── data/
+│   ├── blog-posts.ts         # 博客文章
+│   └── life-guide-posts.ts   # 改编自 HowToLiveBetter 的文章（CC BY 4.0）
+├── lib/
+│   └── markdown.ts           # 博客 Markdown 渲染
 ├── messages/
 │   ├── en.json               # 英文翻译
 │   └── zh.json               # 中文翻译
@@ -152,14 +161,15 @@ wealthease-mvp/
 ## 开发计划
 
 ### 已完成 ✅
-- [x] 7个金融计算器
+- [x] 20个金融计算器
+- [x] 博客（数据文件形式）
 - [x] 中英文双语支持
 - [x] 响应式设计
 - [x] SEO优化
 - [x] 专业UI设计系统
 
 ### 计划中 📋
-- [ ] 博客系统（MDX）
+- [ ] 博客迁移到 MDX
 - [ ] 用户账户系统（NextAuth.js）
 - [ ] 保存和分享计算结果
 - [ ] 更多计算器（预算、通货膨胀等）
