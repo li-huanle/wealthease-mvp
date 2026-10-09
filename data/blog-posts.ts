@@ -1,3 +1,5 @@
+import { lifeGuidePosts } from './life-guide-posts';
+
 export interface BlogPost {
   slug: string;
   title: {
@@ -6397,4 +6399,5 @@ Mindset determines the height of wealth—let's face investment challenges with 
     category: 'Investing',
     tags: ['investment mindset', 'psychology', 'long-term investing', 'risk management', 'discipline', 'emotional control', 'wealth building'],
   },
+  ...lifeGuidePosts,
 ];
