@@ -605,4 +605,304 @@ ${sourceNote.zh}`,
     category: 'Savings',
     tags: ['social safety net', 'medical insurance', 'subsistence allowance', 'cutting expenses', 'China'],
   },
+  {
+    slug: 'starting-a-small-business-in-china-money-and-legal-basics',
+    title: {
+      en: 'Starting a Small Business in China: Money and Legal Basics Before You Open',
+      zh: '创业开张前的钱与法律账：主体、担保、报税、用人与退场',
+    },
+    excerpt: {
+      en: 'Invest only what you can afford to lose, know when a "limited" company stops being limited, file zero-return taxes, sign employment contracts within a month, and exit properly if it fails.',
+      zh: '只投亏得起的钱，搞清「有限」公司什么时候不再有限，没收入也要零申报，一个月内签劳动合同，亏了按程序退场。',
+    },
+    content: {
+      en: `Most small-business disasters are not caused by a bad idea but by personal exposure nobody priced in. These are the money-and-law basics worth settling before you open.
+
+## 1. Put in only money you can afford to lose
+
+A sole proprietor repays debts from their own assets, and if it is unclear whether the business is a household venture, from the whole family's property. Even a limited company is not a guarantee: if it cannot repay creditors, capital you promised but have not yet paid in can be demanded early. Size your investment so that, if it all vanished, you could still pay the mortgage and medical bills. (The source found no verifiable official statistics on how many small firms survive, so it states legal consequences only.)
+
+## 2. Don't sign a personal guarantee for a company loan, and keep your spouse out of it
+
+Banks lending to small companies almost always ask the owner to sign a joint-and-several guarantee. That means a creditor can go straight to you without suing the company first. A "general guarantee" is weaker: the creditor must sue the company and exhaust its assets before coming to you. A spouse who also signs puts the household's assets in the pool, which makes the company's "limited" liability meaningless for you personally. You can still get the loan; just know what you are signing and keep the guaranteed sum within what you can afford to lose.
+
+## 3. Choose the right entity
+
+Sole proprietors and general partners are liable to the end: whatever is owed, they repay. Shareholders of a limited company are liable only up to the capital they committed, but that capital must actually be paid within five years, so registering 1 million yuan can mean a potential 1 million yuan debt. Mixing company and personal accounts can also make "limited" fall away. Keep accounts separate and don't register a big capital figure for show.
+
+## 4. Never be a nominal shareholder or hold shares for someone else
+
+Once your name is on the register you are legally a shareholder. If you committed capital you must pay it in; if other shareholders never paid theirs when the company was formed, you can be asked to cover the shortfall. The business is someone else's but the debt is in your name. Likewise, don't be a nominal legal representative or lend your ID to register a company: the company pays for harm you cause, then can recover from you.
+
+## 5. File tax returns even with zero income
+
+From the day you receive a licence you must file on time, even if you earned nothing: file the form with zeros. Not filing is fined up to 2,000 yuan, and 2,000 to 10,000 yuan if serious. Three months of not filing any tax type makes the system flag you as an "abnormal" taxpayer, and you can no longer issue invoices. Sole proprietors pay business-income personal tax: an advance within 15 days after each month or quarter, and annual reconciliation by 31 March the following year.
+
+## 6. Invoices and small-taxpayer relief
+
+Small-scale VAT payers whose sales are under 100,000 yuan a month (300,000 a quarter) owe no VAT, and the 3% rate was cut to 1% for the same period. But "finding someone to issue invoices to deduct cost" is false invoicing, with up to 3 years in prison and fines of 20,000 to 200,000 yuan. The exemption applies to VAT only; income tax is calculated separately. The VAT law took effect on 1 January 2026 and the thresholds did not change.
+
+## 7. Anyone claiming to be the tax bureau and chasing you is a scammer
+
+Tax authorities never ask for bank card passwords, payment passwords or SMS codes, and never give you an account to pay tax into. Hang up and call 12366, and file only through the official e-tax platform. If you already transferred money, call 110 or 96110 right away to freeze it.
+
+## 8. Contract and payment terms
+
+Write "deposit" in the sense of the legal 定金 (dingjin), not the lookalike 订金 (dingjin, "advance"). Only the former has the double-return rule: if you back out, you lose it; if the other side does, they return double (capped at 20% of the contract value). Specify a penalty amount. Treat credit terms like a loan: you are lending your money interest-free, and it becomes a bad debt if the buyer fails. Check the other party on the National Enterprise Credit Information system first.
+
+## 9. Hiring
+
+If an employee works a month without a written contract, you owe double wages from the second month up to a year. Register social insurance within 30 days of employment; failing to do so can be fined one to three times the contributions due. "Employee voluntarily gives up social insurance" has no legal basis.
+
+## 10. Buy genuine goods and keep paperwork
+
+Selling counterfeit goods can lead to a sentence of up to 3 years if profit reaches 30,000 yuan or sales 50,000 yuan, even if stock never sold. "I didn't know" fails when the buying price is far below market. Keep purchase contracts, invoices and payment records and the supplier's details. Refuse "free" stock from strangers with no paperwork.
+
+## 11. If it fails, exit through the proper procedure
+
+A company with no debts and no unpaid wages, taxes or social insurance can use simplified deregistration: all investors sign a commitment, and after 20 days of public notice without objection it is cancelled. Sole proprietors need 10 days. If you cannot pay your debts, apply for bankruptcy. Leaving the business unattended and failing to file annual reports for two years can lead to the licence being revoked, and the responsible legal representative cannot serve as one for three years.
+
+Plan your numbers with our [ROI calculator](/en/calculators/roi) and [loan calculator](/en/calculators/loan).
+
+${sourceNote.en}`,
+      zh: `小生意出大事，多半不是点子不好，而是没人算过个人要担的风险。开张前，这些钱和法律上的账值得先算清楚。
+
+## 1. 只拿亏得起的钱创业，不动家底、不借钱开张
+
+个体户欠的钱，要拿你自己名下的钱和东西还；分不清是不是全家一起做的，就拿全家的财产还。开公司也不保险：公司还不上债，你当初答应出、还没到期的那笔出资，会被要求提前掏出来。所以投多少，按「全亏光也照样还房贷、看病」来定。（原书没找到能核实的官方存活率统计，所以只写法律后果。）
+
+## 2. 不给公司贷款签个人担保，配偶更不要跟着签
+
+签的是「连带责任保证」，公司还不上钱，债主可以绕开公司直接找你要。写「一般保证」才是先告公司、卖完公司财产还差多少才轮到你。配偶跟着签字，两个人的家产一起搭进去，有限公司的「有限」对你个人就不算数了。贷款照样可以贷，只是签字前要弄清这一页签掉的是什么，把担保金额压在「亏得起」的数以内。
+
+## 3. 开张前选对主体
+
+个体户和普通合伙人要赔到底，欠多少还多少。有限公司的股东只赔自己答应出的那个数，但答应了多少，5 年内就要真拿出多少：填 100 万，就是可能欠着 100 万。公司账和自家账混着用，「有限」也会失效。公私分明，注册资本别为了好看填大数。
+
+## 4. 不当挂名股东，不替人代持股权
+
+名字登记在册，你在法律上就是股东。答应出的钱要按期交齐，公司开办时别的股东没真把钱交进来，缺多少你也跟着还。生意是别人做的，债记在你名下。挂名法定代表人、把身份证借给人注册公司同理：法定代表人执行职务造成的损害公司先赔，赔完可以回头找有过错的你追偿。
+
+## 5. 领了执照就有申报义务，没收入也要零申报
+
+不报先罚 2000 元以下，情节严重的罚 2000 到 1 万元。连着三个月所有税种都不报，系统会把你列为非正常户，发票就开不了了。个体工商户和个人独资企业交的是经营所得个税：月度或季度终了后 15 日内先交一笔，次年 3 月 31 日前做汇算清缴。
+
+## 6. 发票只按真实交易开，小规模纳税人用足免税额
+
+小规模纳税人一个月卖不到 10 万、一个季度卖不到 30 万，增值税免了；原本按 3% 交的，同期也减到 1%。反过来，「找人开票抵成本」就是虚开，起步判 3 年以下，还要罚 2 万到 20 万。免的只是增值税，所得税另算。增值税法 2026 年 1 月 1 日起施行，金额门槛没变。
+
+## 7. 自称税务局催你交钱报税的都是骗子
+
+税务部门不会打电话要银行卡密码、支付密码或验证码，也不会给你一个账号让你把税打过去。接到这类电话先挂断，再打 12366，办税只走电子税务局。已经转了钱，立刻打 110 或 96110 止付。
+
+## 8. 合同与收款
+
+收钱写「定金」不写「订金」。只有「定金」有双倍规则：你毁约，钱要不回来；对方毁约，要退你双倍（超过合同金额 20% 的部分不算）。违约金写明数额。给账期等于把自己的钱无息借给对方，对方倒了就是坏账，先去国家企业信用信息公示系统查对方的记录。
+
+## 9. 用人
+
+人来上班满一个月还没签书面合同，从第二个月起每月按双倍发工资，最长算到满一年。社保要在用工 30 天内登记，不办的罚应交社保费的 1 到 3 倍。法律上没有「员工自愿放弃社保」这一项。
+
+## 10. 进货留票据，价格明显偏低的不进
+
+卖假货，获利 3 万或销售额 5 万就够判，判 3 年以下，货压在仓库没卖出去也算。进货价明显低于市场价又说不出理由，就会被认定你知情。留住采购合同、发票、付款记录和上家信息；陌生人白送货、不给票据的，一律不上架。
+
+## 11. 亏了就按程序退场
+
+没欠债、不欠工资税款社保的企业，全体投资人写份承诺，公示 20 天没人提异议就能简易注销；个体户 10 天没异议直接注销。还不上债就申请破产。放着不管、2 年不报年报又联系不上的，会被吊销执照，负有责任的法定代表人 3 年内不能再当法定代表人。
+
+可以用我们的[投资回报率计算器](/zh/calculators/roi)和[贷款计算器](/zh/calculators/loan)先算算账。
+
+${sourceNote.zh}`,
+    },
+    author: 'WealthEase Team',
+    date: '2026-10-09',
+    readTime: '9 min read',
+    category: 'Basics',
+    tags: ['small business', 'personal guarantee', 'tax filing', 'company registration', 'China'],
+  },
+  {
+    slug: 'scam-and-account-safety-china-stop-payment-and-credit-report',
+    title: {
+      en: 'Scam and Account Safety: Stop Payment Fast, Verify by Callback, Check Your Credit Report',
+      zh: '反诈与账户安全：先止付、回拨核实、每年查征信',
+    },
+    excerpt: {
+      en: 'The minutes after a transfer are the only window to freeze it. Never rent out your bank card, never "lend your face" for a loan, and check your credit report twice a year for free.',
+      zh: '钱刚转出去的那一小段时间是唯一的窗口；银行卡不外借，别帮人「刷脸」办贷款；每年免费查两次征信。',
+    },
+    content: {
+      en: `Fraud losses are rarely recovered, so the cheapest defence is recognising the pattern before you pay.
+
+## The hard rules
+
+Treat anyone who asks you to transfer money, share your screen, install an unknown app, click a link or read out a verification code as a red flag. Hang up, then call back on an official number. The seven most common scam types are fake order-brushing rebates, fake investment, online loans, fake customer service, impersonating police or prosecutors, "pig-butchering" romance scams, and honey-trap order-brushing. All of them ask you to send money first. Two sentences stop most of them: a real loan never needs a deposit, and the police have no "safe account".
+
+## Seeing a face or hearing a voice is not verification
+
+AI can fake both. Before any transfer, hang up and call back using the number already saved in your contacts, or ask a mutual acquaintance. Don't call back the incoming number or a new number sent in chat. If the other side says "bad signal" or "in a meeting" and won't do a live video call, treat it as a scam.
+
+## Already sent money? Call 110 or 96110 immediately
+
+Right after a transfer is the only window: police can request emergency payment stopping and a rapid freeze, and banks must cooperate. Once the money is moved through layers of accounts it is almost unrecoverable. Call before you investigate on your own. If 96110 calls you, it is the police trying to stop you, so pick up.
+
+## Never lend or rent out cards and accounts
+
+Renting, lending or selling your bank card, SIM or payment account is itself illegal: fines of one to ten times any proceeds (up to 200,000 yuan if there are none), up to 15 days' detention for serious cases, credit-record entries and account restrictions. If you knowingly help someone receive and move criminal funds you can face up to 3 years in prison for assisting information-network crime. "I didn't know what he used it for" is not accepted automatically: payments for your help, or very unusual transaction history, can be used to show you knew. Part-time jobs asking you to collect money, withdraw cash or transfer it pay a few hundred yuan and cost you a criminal record; in one case a person was detained for 10 days and fined 1,000 yuan even though prosecutors did not charge him.
+
+## "Package my documents" loans
+
+Helping others "package" documents to get bank loans for a commission is treated as fraud. In one case, a 126-person ring got over 30 million yuan from more than 80 banks; of 80 people sentenced so far, 76 received terms of 1 year 4 months to 6 years 6 months. Whoever signs is the borrower, and the debt and credit record are theirs.
+
+## "Just lend your face for a verification" (AB loans)
+
+When an acquaintance asks you to "do a face scan" or "witness" something for a loan, or to read out a verification code, you are the borrower, not a guarantor. The bank will chase you after the money goes to your acquaintance, and a written promise from them to repay doesn't bind the bank. If you really want to help, ask exactly what role you are signing as; to guarantee, sign a guarantee contract. If you have been loaned in your name, report to police and call the bank at the number on its official website, keeping chats and transfer records. If your ID is lost, report it immediately and keep the receipt: a Guangzhou Internet Court judgment went against a bank that could not prove the victim herself did the face scan.
+
+## Check your credit report twice a year, free
+
+You get two free reports a year online. Use the People's Bank of China Credit Reference Center website or your mobile bank, not third-party "check your credit" apps, which collect your data. Adverse records stay for 5 years from the end of the matter, and objections must be answered in writing within 20 days. Identity theft for loans is often found only when a mortgage is refused, years later.
+
+## Before you sign anything
+
+Read all of it, ask about what you don't understand, and photograph a copy. Never sign on someone else's behalf or on blank paper, and write the purpose on ID photocopies. An e-signature or face confirmation counts as a signature too.
+
+Learn how to size your emergency buffer with our [emergency fund guide](/en/blog/emergency-fund-guide).
+
+${sourceNote.en.replace('Section 5 "Don\'t Waste Money"', 'Sections 5, 8, 9 and 12')}`,
+      zh: `诈骗的钱很少追得回来，所以最便宜的防线是在付钱之前认出套路。
+
+## 反诈硬规则
+
+凡是让你转账、共享屏幕、下载陌生 App、点链接、报验证码的，先挂断，再用官方号码打回去核实。最常见的七类骗局是：刷单返利、虚假投资理财、网络贷款、冒充客服、冒充公检法、杀猪盘、色诱刷单，都是要你先转钱。记住两句就能挡掉一大半：真贷款不需要交保证金，公检法没有「安全账户」。
+
+## 视频里看见脸、电话里听见声音都不算核实
+
+AI 两样都能伪造。涉及转账先挂断，用自己通讯录里存的旧号码打回去，或者找共同认识的人问一句。不要回拨来电显示的号码，也不要用对方在聊天里发来的新号码。对方说「信号不好」「在开会」、不肯当面视频的，直接当骗局处理。
+
+## 发现被骗，立刻打 110 或 96110 要求止付
+
+钱刚转出去的那一小段时间是唯一的窗口，警方可以紧急止付、快速冻结，银行必须配合。等钱被层层转走就基本追不回了。所以先打电话，别先自己去查。96110 打进来的是警察在劝阻你，要接。
+
+## 不把银行卡、手机卡、支付账号借给任何人
+
+把银行卡、手机卡、支付账号租给、借给、卖给别人，本身就违法：罚违法所得的 1 到 10 倍，没有所得的最高罚 20 万元，情节严重的拘留 15 日，还会被记入信用记录、限制账户功能。明知对方犯罪还帮着收钱转钱，就是帮信罪，判 3 年以下。「我不知道他拿去干什么」不一定被采信：收过好处费、流水明显不正常，都可能被认定为知情。让你用自己的卡收钱、取现、转账的「兼职」，挣几百块，代价是一份案底：有人配合转账取款，检察院没起诉，公安仍拘留 10 日、罚 1000 元。
+
+## 「包装材料」贷款，一个都不做
+
+帮人「包装材料」去贷款、拿分成，按诈骗办。有个 126 人的团伙在 80 多家银行骗贷 3000 多万元，已判的 80 人里 76 人判了 1 年 4 个月到 6 年 6 个月。钱贷在谁名下、合同谁签字，谁就是借款人，债和征信记录都是自己的。
+
+## 熟人让你「帮忙刷个脸、做个见证」办贷款（AB 贷）
+
+这其实是用你的名字向银行借钱。借款人是你，不是担保人；钱转给熟人以后，银行照样找你还；熟人写给你的「我来还」承诺书，也管不到银行。真想帮忙，先问清自己在合同上的身份，要担保就以保证人的身份签保证合同。已经被贷了款，先报警，再打放款银行官网上的电话说明情况，留好聊天和转账记录。身份证丢了要马上报警挂失、留好回执：广州互联网法院判过一个案子，银行拿不出她本人刷脸的证据，就输了。
+
+## 每年免费查两次自己的征信报告
+
+每年可在网上免费查两次，十分钟就能查完。用中国人民银行征信中心官网或手机银行，别用第三方的「查征信」App，那类 App 在收集你的信息。不良记录从事情结束那天起留 5 年；有异议可以提，20 天内必须书面答复。身份证被冒用去网贷、办卡，本人往往要到买房贷款被拒才发现，已经拖了好几年。
+
+## 签字之前
+
+把纸从头看到尾，看不懂的当场问，拍照留底。不替人签字，不在空白纸上签，身份证复印件写明用途。电子签和刷脸确认，同样算签字。
+
+可以看看我们的[应急金指南](/zh/blog/emergency-fund-guide)，给自己留一道缓冲。
+
+${sourceNote.zh.replace('第 5 节「不要浪费钱」', '第 5、8、9、12 节')}`,
+    },
+    author: 'WealthEase Team',
+    date: '2026-10-09',
+    readTime: '8 min read',
+    category: 'Basics',
+    tags: ['fraud prevention', 'credit report', 'bank card safety', 'loan scams', 'China'],
+  },
+  {
+    slug: 'iou-guarantees-gifts-and-debts-china-protect-your-money',
+    title: {
+      en: 'IOUs, Guarantees, Gifts and Debts: Protecting Your Money in Personal Dealings',
+      zh: '借条、担保、彩礼与债务：个人之间钱的往来怎么留证据',
+    },
+    excerpt: {
+      en: 'Write a full IOU and pay by transfer, check for the word "joint" before guaranteeing, remember the 3-year limitation period, hide no assets, and treat large gifts as one-way.',
+      zh: '借条写全、走转账；担保前看有没有「连带」；时效 3 年；不转移财产；大额赠与交付后原则上要不回。',
+    },
+    content: {
+      en: `Most disputes about money between people come down to paperwork. These habits are cheap and turn an argument into evidence.
+
+## Write a proper IOU
+
+An IOU should name the lender and borrower, the amount, interest rate, term and repayment method, signed by both. Move the money by bank transfer rather than cash, so it can be proved in court. Interest above four times the LPR is not protected by courts. Writing ID numbers and the word "loan" is common good practice.
+
+## Before guaranteeing a debt, look for the word "joint"
+
+With a general guarantee, the creditor must sue the borrower and fail to collect before coming to you. With a joint-and-several guarantee ("连带责任保证"), the creditor can ask you directly. Be sure you would be willing to repay the amount. Also check you are signing a guarantee, not the loan contract itself.
+
+## Limitation periods: 3 years for civil claims, 1 year for labour arbitration
+
+Civil claims must be brought within 3 years of when you knew your rights were harmed. After that, the court won't raise it itself, but a single remark from the other side, "limitation period has passed", is enough, and your money is still owed but can no longer be recovered. A recorded message demanding payment restarts the three years. Labour arbitration is a separate system with a 1-year period. Agreements to "waive the limitation defence" in advance are invalid, and so are agreements to lengthen or shorten the period.
+
+## If you are sued or enforced against, report assets honestly
+
+Moving your house into a company or your money to relatives is exactly what the crime of refusing to enforce a judgment describes: up to 3 years in prison, and 3 to 7 for especially serious cases. Relatives and companies who help are treated as accomplices and the assets can be recovered. Refusing to report or falsely reporting assets can be fined up to 100,000 yuan for an individual and detained for up to 15 days. Genuinely having no money is not a crime, and living costs for you and your dependants are deducted when judging this. Repaying some or all before prosecution, for a minor case, can lead to no prosecution.
+
+## Large gifts between partners are generally one-way
+
+Before the gift is transferred into the recipient's name you can withdraw it freely. After it is, it can be revoked only if the recipient seriously harms you or your close relatives, fails to support you when they should, or fails to perform agreed obligations. So before any large transfer, decide whether it is a loan or a gift, and write that in the message. A notarised gift cannot be taken back at will.
+
+## Betrothal gifts (彩礼)
+
+Demanding money under the guise of marriage is prohibited and courts support return. You can ask for it back if you did not register the marriage, registered but did not actually live together, or the gift left the giver in hardship. If you registered and lived together, generally it is not returned. Pay by transfer with a memo, keep the chat logs, and note that the giving party holds the burden of proof, men and women alike. How "excessive" a gift is depends on local income levels; there is no national figure.
+
+## Gambling debts in the family
+
+Money owed at the gambling table is not protected by courts; neither are loans made by a creditor who knew they would be used for gambling. A loan taken by one spouse to gamble is not treated as a joint marital debt. Keep transfer records and gambling-platform or police records to prove where the money went.
+
+## Don't be a nominal legal representative
+
+Lending your ID to register a company makes you the legal representative. The company pays for harm caused in that role, then can recover from you for fault. Beyond liability, when the company is enforced against, you can be restricted from high consumption. If you are already one, you may resign and the company must appoint a new representative within 30 days.
+
+Run the numbers before lending with our [loan calculator](/en/calculators/loan).
+
+${sourceNote.en.replace('Section 5 "Don\'t Waste Money"', 'Sections 8 and 12')}`,
+      zh: `人与人之间钱的纠纷，归根结底是证据问题。下面这些习惯成本很低，却能把一场争吵变成一份证据。
+
+## 借钱写清借条
+
+借条要写全：出借人、借款人、金额、利率、期限、还款方式，双方签名。钱走转账，不给现金，写全了才好起诉。利息超过一年期 LPR 4 倍的部分，法院不保护。借条上写身份证号、注明「借款」是常见的好做法。
+
+## 替人担保前，先看有没有「连带」两个字
+
+一般保证：债权人要先告借款人、执行不到钱，才轮到你。连带责任保证：债权人可以直接找你要。签之前想清楚自己愿不愿意替他还，并看清自己签的是保证合同，不是借款合同本身。
+
+## 维权有期限：民事诉讼时效 3 年，劳动仲裁 1 年
+
+民事诉讼时效 3 年，从你知道权利受损那天算起。过了期，法院不会主动管，但对方在法庭上说一句「超过时效」就够了，钱还在，只是要不回来。一条留了痕迹的催款消息，就能让这 3 年从头重算。事先约定「我不拿时效说事」不算数，两边约定把 3 年改长改短也不算数。劳动争议是另一套，仲裁时效 1 年。
+
+## 被起诉、被执行了，如实报财产
+
+把房子挂到公司名下、把钱转给亲友，正是拒执罪写明的情形，判 3 年以下，情节特别严重的判 3 到 7 年。帮着藏钱过户的亲友和公司按同伙算，钱照样追回。拒绝报告或虚报财产，个人可罚 10 万元以下、拘留 15 日。真没钱不构成这个罪，判断时要先扣掉你自己和被扶养人过日子的必需开销。轻微案件在起诉前还上一部分或全部，可以不起诉。
+
+## 恋爱和婚内的大额赠与，交付之后原则上要不回
+
+东西过到对方名下之前，可以随便撤销。过户完成之后，只有对方严重侵害你或近亲属、该扶养你却不扶养、不履行约定义务这三种情形才撤得掉。所以大额转账前想清楚是借还是送，并在转账留言里写明。公证过的赠与不能说反悔就反悔。
+
+## 彩礼走转账并备注，聊天记录留好
+
+借婚姻索取财物是法律禁止的，法院支持返还。没登记的、登记了但确实没共同生活的、婚前给了彩礼导致给钱一方生活困难的，可以要求返还；已登记又共同生活的一般不返还。彩礼、三金、改口费都走转账并备注用途，谁给的钱谁留证据，男女一样。「数额过高」要看当地人均可支配收入，全国没有统一数字。
+
+## 家里人赌博欠了债，别急着替他还
+
+赌桌上欠的钱，法院不保护；债主明知他借钱去赌还借给他，这笔钱也不保护。一方为赌博借的钱，不能算成夫妻共同债务。要证明钱拿去赌了，得有转账流水、赌博平台记录或公安的处理材料，平时就留着。
+
+## 别当「挂名法人」
+
+把身份证借给人注册公司，你就是法定代表人。法定代表人执行职务造成的损害公司先赔，赔完可以回头向有过错的你追偿；公司被法院执行时，你还可能被限制高消费。已经挂了名的，公司法允许你辞任，公司要在 30 日内定出新的法定代表人。
+
+借钱之前，可以先用我们的[贷款计算器](/zh/calculators/loan)算算账。
+
+${sourceNote.zh.replace('第 5 节「不要浪费钱」', '第 8、12 节')}`,
+    },
+    author: 'WealthEase Team',
+    date: '2026-10-09',
+    readTime: '7 min read',
+    category: 'Loans',
+    tags: ['IOU', 'loan guarantee', 'limitation period', 'betrothal gift', 'China'],
+  },
 ];

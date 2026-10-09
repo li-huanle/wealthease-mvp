@@ -1,28 +1,30 @@
 import { MetadataRoute } from 'next';
+import { blogPosts } from '@/data/blog-posts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.wealthease.top';
   const locales = ['en', 'zh'];
 
   const calculators = [
-    // Existing calculators
+    'annuity',
+    'auto-loan',
+    'cd',
+    'college-savings',
     'compound-interest',
-    'retirement',
-    'savings-goal',
+    'credit-score',
+    'debt-payoff',
+    'dividend-income',
+    'inflation',
+    'investment-401k',
+    'investment-comparison',
     'loan',
     'mortgage',
-    'roi',
-    'debt-payoff',
-    'investment-401k',
-    'inflation',
     'rent-vs-buy',
-    'college-savings',
-    'dividend-income',
-    'investment-comparison',
-    // Coming soon calculators (adding to sitemap for SEO)
-    'take-home-pay',
-    'tax-bracket',
-    'area-conversion',
+    'retirement',
+    'roi',
+    'savings-goal',
+    'social-security',
+    'tax',
     'tip',
   ];
 
@@ -73,6 +75,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
           languages: {
             en: `${baseUrl}/en/${page}`,
             zh: `${baseUrl}/zh/${page}`,
+          },
+        },
+      });
+    });
+  });
+
+  // Add individual blog posts for each locale
+  blogPosts.forEach((post) => {
+    locales.forEach((locale) => {
+      routes.push({
+        url: `${baseUrl}/${locale}/blog/${post.slug}`,
+        lastModified: new Date(post.date),
+        changeFrequency: 'monthly',
+        priority: 0.7,
+        alternates: {
+          languages: {
+            en: `${baseUrl}/en/blog/${post.slug}`,
+            zh: `${baseUrl}/zh/blog/${post.slug}`,
           },
         },
       });
