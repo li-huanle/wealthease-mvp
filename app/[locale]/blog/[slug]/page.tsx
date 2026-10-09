@@ -118,9 +118,15 @@ export default async function BlogPostPage({ params }: Props) {
           return `<h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">${paragraph.replace('### ', '')}</h3>`;
         }
 
+        // Horizontal rule
+        if (paragraph.trim() === '---') {
+          return `<hr class="my-10 border-gray-200" />`;
+        }
+
         // Handle lists
         if (paragraph.includes('\n- ')) {
           const items = paragraph
+            .replace(/^- /, '')
             .split('\n- ')
             .filter((item) => item.trim())
             .map((item) => `<li class="mb-2">${item.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</li>`)
