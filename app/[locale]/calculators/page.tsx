@@ -104,6 +104,20 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
           href: `/${locale}/calculators/tax-bracket`,
           available: true,
         },
+        {
+          icon: <Receipt className="w-8 h-8 text-primary-600" />,
+          title: t('tools.tax.title'),
+          description: t('tools.tax.description'),
+          href: `/${locale}/calculators/tax`,
+          available: true,
+        },
+        {
+          icon: <Briefcase className="w-8 h-8 text-primary-600" />,
+          title: t('tools.socialSecurity.title'),
+          description: t('tools.socialSecurity.description'),
+          href: `/${locale}/calculators/social-security`,
+          available: true,
+        },
       ],
     },
     {
@@ -195,6 +209,13 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
           icon: <Car className="w-8 h-8 text-primary-600" />,
           title: t('tools.carLoan.title'),
           description: t('tools.carLoan.description'),
+          href: `/${locale}/calculators/auto-loan`,
+          available: true,
+        },
+        {
+          icon: <Calculator className="w-8 h-8 text-primary-600" />,
+          title: t('tools.loan.title'),
+          description: t('tools.loan.description'),
           href: `/${locale}/calculators/loan`,
           available: true,
         },
@@ -203,6 +224,13 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
           title: t('tools.inflation.title'),
           description: t('tools.inflation.description'),
           href: `/${locale}/calculators/inflation`,
+          available: true,
+        },
+        {
+          icon: <CreditCard className="w-8 h-8 text-primary-600" />,
+          title: t('tools.creditScore.title'),
+          description: t('tools.creditScore.description'),
+          href: `/${locale}/calculators/credit-score`,
           available: true,
         },
       ],
@@ -241,6 +269,20 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
           href: `/${locale}/calculators/debt-payoff`,
           available: true,
         },
+        {
+          icon: <PiggyBank className="w-8 h-8 text-primary-600" />,
+          title: t('tools.cd.title'),
+          description: t('tools.cd.description'),
+          href: `/${locale}/calculators/cd`,
+          available: true,
+        },
+        {
+          icon: <TrendingUp className="w-8 h-8 text-primary-600" />,
+          title: t('tools.annuity.title'),
+          description: t('tools.annuity.description'),
+          href: `/${locale}/calculators/annuity`,
+          available: true,
+        },
       ],
     },
     {
@@ -274,68 +316,76 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
     },
   ];
 
-  return (
-    <div className="py-12 bg-gradient-to-b from-gray-50 to-white min-h-screen">
-      <div className="container mx-auto max-w-6xl">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {t('title')}
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {t('subtitle')}
-          </p>
-        </div>
+  const total = categories.reduce((n, c) => n + c.calculators.filter((x) => x.available).length, 0);
 
-        {/* Categories */}
-        {categories.map((category, categoryIndex) => (
-          <section key={category.id} className="mb-16">
-            {/* Category Header */}
-            <div className="flex items-center gap-3 mb-8">
-              <div className="bg-gradient-to-br from-primary-500 to-primary-600 text-white p-3 rounded-xl">
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="border-b bg-gradient-to-b from-primary-50/60 to-white">
+        <div className="container mx-auto max-w-6xl px-4 py-14">
+          <p className="mb-3 text-sm font-semibold text-primary-700">
+            {locale === 'zh' ? `${total} 个免费计算器` : `${total} free calculators`}
+          </p>
+          <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-950 md:text-5xl">{t('title')}</h1>
+          <p className="max-w-3xl text-lg text-muted-foreground">{t('subtitle')}</p>
+          {/* Category jump links */}
+          <nav className="mt-8 flex flex-wrap gap-2" aria-label={locale === 'zh' ? '分类' : 'Categories'}>
+            {categories.map((category) => (
+              <a
+                key={category.id}
+                href={`#${category.id}`}
+                className="rounded-full border bg-white px-3.5 py-1.5 text-sm font-medium text-gray-700 shadow-sm transition-colors duration-quick ease-out hover:border-primary-300 hover:text-primary-700"
+              >
+                {category.title}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </div>
+
+      <div className="container mx-auto max-w-6xl px-4 py-12">
+        {categories.map((category) => (
+          <section key={category.id} id={category.id} className="mb-14 scroll-mt-24">
+            <div className="mb-6 flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-50 text-primary-700 [&>svg]:h-5 [&>svg]:w-5">
                 {category.icon}
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-gray-900">{category.title}</h2>
-                <p className="text-gray-600">{category.description}</p>
+                <h2 className="text-xl font-semibold tracking-tight text-gray-950">{category.title}</h2>
+                <p className="text-sm text-muted-foreground">{category.description}</p>
               </div>
             </div>
 
-            {/* Calculators Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {category.calculators.map((calc) => (
-                <div key={calc.title}>
-                  {calc.available ? (
-                    <Link
-                      href={calc.href}
-                      className="block h-full p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-primary-500 group"
-                    >
-                      <div className="mb-4">{calc.icon}</div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
-                        {calc.title}
-                      </h3>
-                      <p className="text-gray-600">{calc.description}</p>
-                    </Link>
-                  ) : (
-                    <div className="h-full p-6 bg-gray-50 rounded-xl border-2 border-dashed border-gray-300">
-                      <div className="mb-4">{calc.icon}</div>
-                      <h3 className="text-xl font-semibold text-gray-500 mb-2">
-                        {calc.title}
-                      </h3>
-                      <p className="text-gray-500 mb-3">{calc.description}</p>
-                      <span className="inline-block px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">
-                        {t('comingSoon')}
-                      </span>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {category.calculators.map((calc) =>
+                calc.available ? (
+                  <Link
+                    key={calc.title}
+                    href={calc.href}
+                    className="group flex h-full flex-col rounded-xl bg-white p-5 shadow-card transition-[box-shadow,transform] duration-base ease-out hover:-translate-y-0.5 hover:shadow-card-hover"
+                  >
+                    <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-muted transition-colors duration-quick ease-out group-hover:bg-primary-50 [&>svg]:h-5 [&>svg]:w-5">
+                      {calc.icon}
                     </div>
-                  )}
-                </div>
-              ))}
+                    <h3 className="mb-1.5 font-semibold text-gray-900 transition-colors duration-quick ease-out group-hover:text-primary-700">
+                      {calc.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{calc.description}</p>
+                  </Link>
+                ) : (
+                  <div key={calc.title} className="flex h-full flex-col rounded-xl border border-dashed p-5">
+                    <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-muted opacity-60 [&>svg]:h-5 [&>svg]:w-5">{calc.icon}</div>
+                    <h3 className="mb-1.5 font-semibold text-gray-500">{calc.title}</h3>
+                    <p className="mb-3 text-sm text-muted-foreground">{calc.description}</p>
+                    <span className="mt-auto w-fit rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-gray-600">{t('comingSoon')}</span>
+                  </div>
+                )
+              )}
             </div>
           </section>
         ))}
 
         {/* SEO Content Section */}
-        <section className="mt-20 bg-white rounded-2xl p-8 md:p-12 shadow-card">
+        <section className="mt-6 rounded-xl bg-muted/50 p-8 md:p-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">
             {locale === 'zh' ? '为什么选择按生活场景组织的计算器？' : 'Why Calculators Organized by Life Scenarios?'}
           </h2>

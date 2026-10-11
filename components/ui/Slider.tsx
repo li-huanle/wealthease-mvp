@@ -1,7 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-
 interface SliderProps {
   value: number;
   onChange: (value: number) => void;
@@ -9,6 +7,7 @@ interface SliderProps {
   max?: number;
   step?: number;
   className?: string;
+  ariaLabel?: string;
 }
 
 export default function Slider({
@@ -18,38 +17,32 @@ export default function Slider({
   max = 100,
   step = 1,
   className = '',
+  ariaLabel,
 }: SliderProps) {
-  const percentage = ((value - min) / (max - min)) * 100;
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = Number(e.target.value);
-    onChange(newValue);
-  };
+  const clamped = Math.min(max, Math.max(min, Number.isFinite(value) ? value : min));
+  const percentage = max > min ? ((clamped - min) / (max - min)) * 100 : 0;
 
   return (
-    <div className={`relative h-2 bg-gray-200 rounded-full ${className}`}>
-      {/* Progress bar */}
-      <div
-        className="absolute h-full bg-gradient-to-r from-primary-500 to-primary-600 rounded-full transition-all duration-150 ease-out"
-        style={{ width: `${percentage}%` }}
-      />
-      {/* Slider input */}
+    <div className={`group relative flex h-5 items-center ${className}`}>
+      {/* Track */}
+      <div className="relative h-1.5 w-full overflow-hidden rounded-full bg-muted">
+        <div className="absolute inset-y-0 left-0 rounded-full bg-primary-600" style={{ width: `${percentage}%` }} />
+      </div>
+      {/* Native range input for accessibility and keyboard support */}
       <input
         type="range"
         min={min}
         max={max}
         step={step}
-        value={value}
-        onChange={handleChange}
-        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-        style={{ cursor: 'grab' }}
-        onMouseDown={(e) => (e.currentTarget.style.cursor = 'grabbing')}
-        onMouseUp={(e) => (e.currentTarget.style.cursor = 'grab')}
+        value={clamped}
+        onChange={(e) => onChange(Number(e.target.value))}
+        aria-label={ariaLabel}
+        className="peer absolute inset-0 h-full w-full cursor-pointer opacity-0"
       />
       {/* Thumb */}
       <div
-        className="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-2 border-primary-500 rounded-full shadow-md pointer-events-none transition-transform duration-150 ease-out hover:scale-110"
-        style={{ left: `calc(${percentage}% - 10px)` }}
+        className="pointer-events-none absolute h-4 w-4 rounded-full border-2 border-primary-600 bg-white shadow-sm transition-[transform,box-shadow] duration-quick ease-out group-hover:scale-110 peer-focus-visible:shadow-input-focus peer-active:scale-110"
+        style={{ left: `calc(${percentage}% - 8px)` }}
       />
     </div>
   );

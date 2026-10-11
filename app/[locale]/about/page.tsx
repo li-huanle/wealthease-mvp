@@ -3,6 +3,7 @@ import { CheckCircle, Users, Calculator, TrendingUp, Award, BookOpen, ExternalLi
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { buildMetadata } from '@/lib/seo';
+import { CALCULATOR_SLUGS } from '@/lib/calculators';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -40,23 +41,12 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
     },
   ];
 
+  const zh = locale === 'zh';
   const stats = [
-    {
-      number: '50,000+',
-      label: t('stats.users'),
-    },
-    {
-      number: '200,000+',
-      label: t('stats.calculations'),
-    },
-    {
-      number: '12',
-      label: t('stats.tools'),
-    },
-    {
-      number: '98%',
-      label: t('stats.satisfaction'),
-    },
+    { number: String(CALCULATOR_SLUGS.length), label: zh ? '免费计算器' : 'Free calculators' },
+    { number: '100%', label: zh ? '在浏览器本地计算' : 'Calculated in your browser' },
+    { number: '2', label: zh ? '种语言' : 'Languages' },
+    { number: '2026', label: zh ? '税务数据年份' : 'Tax data year' },
   ];
 
   return (
@@ -79,7 +69,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-white mb-2">
+                <div className="text-3xl sm:text-4xl font-bold text-white mb-2 tabular-nums">
                   {stat.number}
                 </div>
                 <div className="text-primary-100">

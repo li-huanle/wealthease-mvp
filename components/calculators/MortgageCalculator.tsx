@@ -482,7 +482,7 @@ export default function MortgageCalculator() {
                   value={homePrice}
                   onChange={setHomePrice}
                   min={0}
-                  max={50000000}
+                  max={5000000}
                   step={10000}
                   prefix="$"
                   showSlider
@@ -583,7 +583,7 @@ export default function MortgageCalculator() {
                 />
               </div>
 
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-x-6">
                 <CalculatorInput
                   label={t('form.propertyTax')}
                   value={propertyTax}

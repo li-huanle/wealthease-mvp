@@ -1,39 +1,12 @@
 import { MetadataRoute } from 'next';
 import { blogPosts } from '@/data/blog-posts';
+import { CALCULATOR_SLUGS } from '@/lib/calculators';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.wealthease.top';
   const locales = ['en', 'zh'];
 
-  const calculators = [
-    'annuity',
-    'auto-loan',
-    'cd',
-    'college-savings',
-    'compound-interest',
-    'credit-score',
-    'debt-payoff',
-    'dividend-income',
-    'inflation',
-    'investment-401k',
-    'investment-comparison',
-    'loan',
-    'mortgage',
-    'rent-vs-buy',
-    'retirement',
-    'roi',
-    'savings-goal',
-    'social-security',
-    'tax',
-    'tip',
-    'installment-apr',
-    'fund-fees',
-    'emergency-fund',
-    'mortgage-prepayment',
-    'take-home-pay',
-    'tax-bracket',
-    'area-conversion',
-  ];
+  const calculators = CALCULATOR_SLUGS;
 
   const routes: MetadataRoute.Sitemap = [];
 

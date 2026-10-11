@@ -1,5 +1,6 @@
 'use client';
 
+import { useId } from 'react';
 import Slider from '@/components/ui/Slider';
 import { Info } from 'lucide-react';
 
@@ -28,50 +29,47 @@ export default function CalculatorInput({
   tooltip,
   showSlider = true,
 }: CalculatorInputProps) {
-  const formatValue = (val: number) => {
-    return `${prefix}${val.toLocaleString()}${suffix}`;
-  };
+  const id = useId();
+  const formatValue = (val: number) => `${prefix}${val.toLocaleString()}${suffix}`;
 
   return (
     <div className="mb-6">
-      <div className="flex items-center justify-between mb-2">
-        <label className="block text-sm font-semibold text-gray-700 flex items-center">
+      <div className="mb-2 flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+        <label htmlFor={id} className="relative flex min-w-0 items-center gap-1.5 text-sm font-medium text-gray-700">
           {label}
           {tooltip && (
-            <div className="group relative ml-2">
-              <Info className="w-4 h-4 text-primary-500 cursor-help" />
-              <div className="absolute left-0 bottom-full mb-2 hidden group-hover:block w-64 p-3 bg-gray-900 text-white text-xs rounded-lg shadow-lg z-50">
+            <span className="group inline-flex">
+              <Info tabIndex={0} aria-label={tooltip} className="h-3.5 w-3.5 cursor-help text-gray-400" />
+              <span
+                role="tooltip"
+                className="invisible absolute bottom-full left-0 z-50 mb-2 w-64 max-w-[calc(100vw-3rem)] rounded-lg bg-gray-900 p-3 text-xs font-normal text-white opacity-0 shadow-lg transition-opacity duration-quick ease-out group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
+              >
                 {tooltip}
-                <div className="absolute left-4 top-full w-2 h-2 bg-gray-900 transform rotate-45 -mt-1"></div>
-              </div>
-            </div>
+              </span>
+            </span>
           )}
         </label>
-        <div className="flex items-center">
+        <div className="flex h-10 w-full max-w-[11rem] items-center rounded-lg border bg-white shadow-input transition-[border-color,box-shadow] duration-quick ease-out focus-within:border-primary-600 focus-within:shadow-input-focus sm:w-44">
+          {prefix && <span className="pl-3 text-sm text-muted-foreground">{prefix}</span>}
           <input
+            id={id}
             type="number"
+            inputMode="decimal"
             value={value}
             onChange={(e) => onChange(Number(e.target.value))}
             min={min}
             max={max}
             step={step}
-            className="w-40 px-3 py-2 text-right font-mono font-bold text-lg bg-white border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring-2 focus:ring-primary-100 transition-all outline-none"
+            className="h-full w-full min-w-0 bg-transparent px-3 text-right text-base font-semibold tabular-nums text-gray-900 outline-none"
           />
-          <span className="ml-2 text-sm text-gray-500 font-medium">{suffix}</span>
+          {suffix && <span className="pr-3 text-sm text-muted-foreground">{suffix.trim()}</span>}
         </div>
       </div>
 
       {showSlider && (
         <div className="mt-3">
-          <Slider
-            value={value}
-            onChange={onChange}
-            min={min}
-            max={max}
-            step={step}
-            className="w-full"
-          />
-          <div className="flex justify-between mt-1 text-xs text-gray-500">
+          <Slider value={value} onChange={onChange} min={min} max={max} step={step} className="w-full" ariaLabel={label} />
+          <div className="mt-1.5 flex justify-between text-xs text-muted-foreground tabular-nums">
             <span>{formatValue(min)}</span>
             <span>{formatValue(max)}</span>
           </div>

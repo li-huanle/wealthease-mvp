@@ -269,7 +269,7 @@ export default function DebtPayoffCalculator() {
       {/* Main Content Grid */}
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Calculator Form */}
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-2 min-w-0">
           <div className="bg-white rounded-2xl shadow-card p-6 md:p-8 border border-gray-100">
             {/* Debt List */}
             <div className="space-y-4 mb-6">
@@ -280,7 +280,7 @@ export default function DebtPayoffCalculator() {
                       type="text"
                       value={debt.name}
                       onChange={(e) => updateDebt(index, 'name', e.target.value)}
-                      className="font-semibold text-gray-900 bg-transparent border-none focus:ring-0 p-0"
+                      className="min-w-0 flex-1 font-semibold text-gray-900 bg-transparent border-none focus:ring-0 p-0"
                     />
                     {debts.length > 1 && (
                       <button
@@ -475,7 +475,7 @@ export default function DebtPayoffCalculator() {
         </div>
 
         {/* Expert Tips Sidebar */}
-        <div className="lg:col-span-1">
+        <div className="lg:col-span-1 min-w-0">
           <ExpertTips tips={expertTips} locale={currency('locale')} />
         </div>
       </div>

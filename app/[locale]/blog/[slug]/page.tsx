@@ -107,7 +107,7 @@ export default async function BlogPostPage({ params }: Props) {
     .slice(0, 2);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen bg-white">
       {/* Breadcrumb */}
       <div className="bg-white border-b">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -166,34 +166,12 @@ export default async function BlogPostPage({ params }: Props) {
             {t.publishedOn} {post.date}
           </time>
           <span>•</span>
-          <span>{post.readTime} {t.readTime}</span>
-        </div>
-
-        {/* Featured Image Placeholder */}
-        <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
-          <div className="h-96 bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
-            <div className="text-center text-white">
-              <svg
-                className="w-24 h-24 mx-auto mb-4 opacity-50"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1}
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                />
-              </svg>
-              <p className="text-2xl font-bold">{post.title[lang]}</p>
-            </div>
-          </div>
+          <span>{parseInt(post.readTime, 10)} {t.readTime}</span>
         </div>
 
         {/* Article Content */}
         <div
-          className="prose prose-lg max-w-none"
+          className="prose prose-lg max-w-none [overflow-wrap:anywhere]"
           dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content[lang]) }}
         />
 
@@ -204,7 +182,7 @@ export default async function BlogPostPage({ params }: Props) {
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors"
+                className="rounded-md bg-muted px-2.5 py-1 text-sm text-gray-700"
               >
                 {tag}
               </span>
@@ -221,16 +199,13 @@ export default async function BlogPostPage({ params }: Props) {
                 <Link
                   key={relatedPost.slug}
                   href={`/${locale}/blog/${relatedPost.slug}`}
-                  className="block bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                  className="group block rounded-xl bg-white shadow-card transition-[box-shadow,transform] duration-base ease-out hover:-translate-y-0.5 hover:shadow-card-hover"
                 >
-                  <div className="h-48 bg-gradient-to-br from-primary-400 to-primary-600 relative">
-                    <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
-                  </div>
                   <div className="p-6">
                     <div className="text-sm text-gray-500 mb-2">
-                      {relatedPost.readTime} {t.readTime}
+                      {parseInt(relatedPost.readTime, 10)} {t.readTime}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
+                    <h3 className="mb-2 text-lg font-semibold text-gray-900 transition-colors duration-quick ease-out group-hover:text-primary-700">
                       {relatedPost.title[lang]}
                     </h3>
                     <p className="text-gray-600 line-clamp-2">{relatedPost.excerpt[lang]}</p>
@@ -242,20 +217,21 @@ export default async function BlogPostPage({ params }: Props) {
         )}
 
         {/* CTA Section */}
-        <div className="mt-16 bg-gradient-to-r from-primary-600 to-primary-800 rounded-xl p-8 text-center text-white">
-          <h3 className="text-2xl font-bold mb-4">
+        <div className="relative mt-16 overflow-hidden rounded-xl bg-gray-950 p-8 text-center text-white">
+          <div aria-hidden className="pointer-events-none absolute -top-20 left-1/2 h-48 w-96 -translate-x-1/2 rounded-full bg-primary-500/25 blur-3xl" />
+          <h3 className="relative mb-3 text-2xl font-bold tracking-tight">
             {lang === 'en'
               ? 'Put Your Knowledge Into Action'
               : '将您的知识付诸实践'}
           </h3>
-          <p className="text-primary-100 mb-6 max-w-2xl mx-auto">
+          <p className="relative mx-auto mb-6 max-w-2xl text-gray-300">
             {lang === 'en'
               ? 'Use our free financial calculators to apply what you\'ve learned and make informed decisions about your money.'
               : '使用我们的免费理财计算器，应用您所学的知识，为您的财务做出明智决策。'}
           </p>
           <Link
             href={`/${locale}/calculators`}
-            className="inline-block bg-white text-primary-700 font-bold px-8 py-3 rounded-lg hover:bg-primary-50 transition-colors"
+            className="relative inline-flex h-11 items-center rounded-lg bg-white px-6 font-semibold text-gray-950 transition-colors duration-quick ease-out hover:bg-primary-50"
           >
             {lang === 'en' ? 'Try Our Calculators' : '试用计算器'}
           </Link>

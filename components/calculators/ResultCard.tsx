@@ -1,5 +1,8 @@
 'use client';
 
+import { Info } from 'lucide-react';
+import { cn } from '@/lib/cn';
+
 interface ResultCardProps {
   title: string;
   value: string | number;
@@ -24,80 +27,72 @@ export default function ResultCard({
 }: ResultCardProps) {
   return (
     <div
-      className={`rounded-xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 opacity-0 animate-fade-in-up ${highlight
-          ? 'bg-gradient-to-br from-accent-500 to-accent-600 text-white'
-          : 'bg-white'
-        }`}
+      className={cn(
+        'animate-fade-in-up relative rounded-xl p-5 transition-shadow duration-base ease-out',
+        highlight
+          ? 'overflow-hidden bg-gray-950 text-white shadow-card-hover'
+          : 'bg-white shadow-card hover:shadow-card-hover'
+      )}
     >
-      <div className="flex items-start justify-between mb-2">
-        <div className="flex-1">
-          <p
-            className={`text-sm font-medium mb-1 ${highlight ? 'text-accent-100' : 'text-gray-500'
-              }`}
-          >
-            {title}
-          </p>
-          {icon && <div className="mb-2">{icon}</div>}
+      {highlight && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary-500/25 blur-3xl"
+        />
+      )}
+      <div className="relative mb-1.5 flex items-start justify-between gap-2">
+        <div className="min-w-0 flex-1">
+          <p className={cn('text-sm font-medium', highlight ? 'text-gray-300' : 'text-muted-foreground')}>{title}</p>
+          {icon && <div className="mt-2">{icon}</div>}
         </div>
         {tooltip && (
-          <div className="group relative flex-shrink-0 ml-2">
-            <svg
-              className={`w-5 h-5 cursor-help ${highlight ? 'text-accent-200' : 'text-gray-400'
-                }`}
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fillRule="evenodd"
-                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                clipRule="evenodd"
-              />
-            </svg>
+          <div className="group relative flex-shrink-0">
+            <Info
+              tabIndex={0}
+              aria-label={tooltip}
+              className={cn('h-4 w-4 cursor-help', highlight ? 'text-gray-400' : 'text-gray-400')}
+            />
             <div
-              className={`absolute right-0 bottom-full mb-2 hidden group-hover:block w-48 p-3 rounded-lg shadow-lg z-50 text-xs ${highlight ? 'bg-white text-gray-800' : 'bg-gray-900 text-white'
-                }`}
+              role="tooltip"
+              className={cn(
+                'invisible absolute bottom-full right-0 z-50 mb-2 w-56 rounded-lg p-3 text-xs opacity-0 shadow-lg transition-opacity duration-quick ease-out group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100',
+                highlight ? 'bg-white text-gray-800' : 'bg-gray-900 text-white'
+              )}
             >
               {tooltip}
-              <div
-                className={`absolute right-4 top-full w-2 h-2 transform rotate-45 -mt-1 ${highlight ? 'bg-white' : 'bg-gray-900'
-                  }`}
-              ></div>
             </div>
           </div>
         )}
       </div>
 
       <p
-        className={`text-3xl md:text-4xl font-bold mb-2 font-mono ${highlight ? 'text-white' : 'text-gray-900'
-          }`}
+        className={cn(
+          'relative text-2xl font-semibold tabular-nums tracking-tight md:text-3xl',
+          highlight ? 'text-primary-300' : 'text-gray-900'
+        )}
       >
         {value}
       </p>
 
       {subtitle && (
-        <p
-          className={`text-sm ${highlight ? 'text-accent-100' : 'text-gray-500'
-            }`}
-        >
-          {subtitle}
-        </p>
+        <p className={cn('relative mt-1.5 text-sm', highlight ? 'text-gray-400' : 'text-muted-foreground')}>{subtitle}</p>
       )}
 
       {trend && (
-        <div className="mt-3 flex items-center">
-          <span
-            className={`text-sm font-semibold flex items-center ${trend.isPositive
-                ? highlight
-                  ? 'text-white'
-                  : 'text-success-600'
-                : highlight
-                  ? 'text-accent-200'
-                  : 'text-danger-600'
-              }`}
-          >
-            {trend.isPositive ? '↑' : '↓'} {trend.value}
-          </span>
-        </div>
+        <p
+          className={cn(
+            'relative mt-3 text-sm font-semibold',
+            trend.isPositive
+              ? highlight
+                ? 'text-primary-300'
+                : 'text-success-600'
+              : highlight
+                ? 'text-red-300'
+                : 'text-danger-600'
+          )}
+        >
+          {trend.isPositive ? '↑' : '↓'} {trend.value}
+        </p>
       )}
     </div>
   );

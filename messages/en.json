@@ -1219,7 +1219,7 @@
         "description": "Calculate monthly payments, principal-interest ratios, and prepayment savings"
       },
       "roi": {
-        "title": "Rent-to-Value Ratio Calculator",
+        "title": "ROI Calculator",
         "description": "Calculate ROI and analyze investment returns and gains"
       },
       "areaConversion": {

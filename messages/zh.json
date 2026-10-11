@@ -1219,7 +1219,7 @@
         "description": "计算包含地税、保险和HOA费用的月供"
       },
       "roi": {
-        "title": "租售比计算器",
+        "title": "投资回报率计算器 (ROI)",
         "description": "计算投资回报率ROI，分析投资收益和亏损"
       },
       "areaConversion": {

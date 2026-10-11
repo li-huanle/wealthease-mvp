@@ -80,90 +80,62 @@ export default async function BlogPage({ params }: Props) {
   const content = pageContent[lang];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">{content.title}</h1>
-          <p className="text-xl text-primary-100 max-w-3xl">{content.subtitle}</p>
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <div className="border-b bg-gradient-to-b from-primary-50/60 to-white">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+          <p className="mb-3 text-sm font-semibold text-primary-700">{lang === 'zh' ? '理财知识' : 'Learn'}</p>
+          <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">{content.title}</h1>
+          <p className="max-w-3xl text-lg text-muted-foreground">{content.subtitle}</p>
         </div>
       </div>
 
       {/* Blog Posts Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {[...blogPosts].sort((a, b) => b.date.localeCompare(a.date)).map((post) => (
             <article
               key={post.slug}
-              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              className="group relative flex flex-col rounded-xl bg-white p-6 shadow-card transition-[box-shadow,transform] duration-base ease-out hover:-translate-y-0.5 hover:shadow-card-hover"
             >
-              {/* Image Placeholder */}
-              <div className="h-48 bg-gradient-to-br from-primary-400 to-primary-600 relative overflow-hidden">
-                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <span className="inline-block px-3 py-1 bg-white text-primary-700 text-sm font-semibold rounded-full">
-                    {post.category}
-                  </span>
-                </div>
+              <div className="mb-4 flex items-center justify-between gap-3">
+                <span className="inline-flex items-center rounded-full bg-primary-50 px-2.5 py-1 text-xs font-semibold text-primary-700">
+                  {post.category}
+                </span>
+                <span className="text-xs text-muted-foreground tabular-nums">
+                  <time dateTime={post.date}>{post.date}</time> · {parseInt(post.readTime, 10)} {content.readTime}
+                </span>
               </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                  <time dateTime={post.date}>{post.date}</time>
-                  <span>•</span>
-                  <span>{post.readTime} {content.readTime}</span>
-                </div>
+              <h2 className="mb-2 text-lg font-semibold leading-snug text-gray-900 transition-colors duration-quick ease-out group-hover:text-primary-700">
+                <Link href={`/${locale}/blog/${post.slug}`} className="after:absolute after:inset-0 after:rounded-xl">
+                  {post.title[lang]}
+                </Link>
+              </h2>
 
-                <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
-                  <Link href={`/${locale}/blog/${post.slug}`}>
-                    {post.title[lang]}
-                  </Link>
-                </h2>
+              <p className="mb-5 line-clamp-3 text-sm leading-relaxed text-muted-foreground">{post.excerpt[lang]}</p>
 
-                <p className="text-gray-600 mb-4 line-clamp-3">
-                  {post.excerpt[lang]}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {post.tags.slice(0, 3).map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-md"
-                    >
+              <div className="mt-auto flex items-center justify-between gap-3">
+                <div className="flex flex-wrap gap-1.5">
+                  {post.tags.slice(0, 2).map((tag) => (
+                    <span key={tag} className="rounded-md bg-muted px-2 py-0.5 text-xs text-gray-600">
                       {tag}
                     </span>
                   ))}
                 </div>
-
-                {/* Read More Link */}
-                <Link
-                  href={`/${locale}/blog/${post.slug}`}
-                  className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition-colors"
-                >
+                <span className="inline-flex shrink-0 items-center text-sm font-semibold text-primary-700">
                   {content.readMore}
-                  <svg
-                    className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
+                  <svg className="ml-1 h-4 w-4 transition-transform duration-quick ease-out group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                </Link>
+                </span>
               </div>
             </article>
           ))}
         </div>
 
         {/* SEO Content Section */}
-        <div className="mt-16 prose prose-lg max-w-none bg-white rounded-xl p-8 shadow-sm">
+        <div className="mt-16 prose prose-lg max-w-none rounded-xl bg-muted/50 p-8">
           {lang === 'en' ? (
             <>
               <h2>Your Guide to Financial Success</h2>
