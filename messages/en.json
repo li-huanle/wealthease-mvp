@@ -61,7 +61,21 @@
       "emergencyFund": "Emergency Fund Calculator",
       "emergencyFundDesc": "How much to keep for emergencies and how long it takes to get there",
       "mortgagePrepayment": "Mortgage Prepayment Calculator",
-      "mortgagePrepaymentDesc": "Compare paying down your mortgage early with keeping the money invested"
+      "mortgagePrepaymentDesc": "Compare paying down your mortgage early with keeping the money invested",
+      "tip": "Tip Calculator",
+      "tipDesc": "Calculate tips and split bills quickly with friends",
+      "creditScore": "Credit Score Calculator",
+      "creditScoreDesc": "Estimate credit score and get improvement tips",
+      "tax": "Income Tax Calculator",
+      "taxDesc": "Estimate federal, state, and FICA taxes for your actual take-home pay",
+      "cd": "CD Calculator",
+      "cdDesc": "Calculate CD maturity returns and compare different terms and rates",
+      "annuity": "Annuity Calculator",
+      "annuityDesc": "Plan retirement income stream and calculate annuity payment amounts",
+      "socialSecurity": "Social Security Calculator",
+      "socialSecurityDesc": "Estimate retirement benefits and find the optimal claiming age",
+      "autoLoan": "Auto Loan Calculator",
+      "autoLoanDesc": "Estimate monthly car payments, total interest, and find the best loan"
     },
     "newsletter": {
       "title": "Stay Updated",
@@ -1508,7 +1522,7 @@
       "content": "We use cookies and similar technologies to collect information about your browsing activities:",
       "items": {
         "essential": "Essential cookies for site functionality",
-        "analytics": "Google Analytics for understanding user behavior and improving our services",
+        "analytics": "Google Analytics and Cloudflare Web Analytics for understanding user behavior and improving our services (Cloudflare Web Analytics does not use cookies)",
         "advertising": "Google AdSense cookies for displaying relevant advertisements"
       }
     },
