@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useLocale as useSiteLocale } from 'next-intl';
 import ResultCard from './ResultCard';
 
 interface AnnuityCalculatorProps {
@@ -8,7 +9,7 @@ interface AnnuityCalculatorProps {
 }
 
 export default function AnnuityCalculator({ onCalculate }: AnnuityCalculatorProps) {
-  const [locale, setLocale] = useState<'en' | 'zh'>('zh');
+  const locale: 'en' | 'zh' = useSiteLocale() === 'zh' ? 'zh' : 'en';
 
   const [purchasePrice, setPurchasePrice] = useState(100000);
   const [currentAge, setCurrentAge] = useState(50);
@@ -72,24 +73,6 @@ export default function AnnuityCalculator({ onCalculate }: AnnuityCalculatorProp
 
   return (
     <div className="max-w-4xl mx-auto">
-      {/* Toggle */}
-      <div className="flex justify-center mb-6">
-        <div className="inline-flex bg-gray-100 rounded-lg p-1">
-          <button
-            onClick={() => setLocale('zh')}
-            className={`px-4 py-2 rounded-md font-medium transition-colors ${locale === 'zh' ? 'bg-white shadow text-gray-900' : 'text-gray-600'}`}
-          >
-            人民币 (¥)
-          </button>
-          <button
-            onClick={() => setLocale('en')}
-            className={`px-4 py-2 rounded-md font-medium transition-colors ${locale === 'en' ? 'bg-white shadow text-gray-900' : 'text-gray-600'}`}
-          >
-            美元 ($)
-          </button>
-        </div>
-      </div>
-
       {/* Input Section */}
       <div className="bg-white rounded-2xl shadow-card p-8">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">
@@ -104,7 +87,7 @@ export default function AnnuityCalculator({ onCalculate }: AnnuityCalculatorProp
             </label>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
-                {locale === 'zh' ? '¥' : '$'}
+                $
               </span>
               <input
                 type="number"
@@ -208,19 +191,19 @@ export default function AnnuityCalculator({ onCalculate }: AnnuityCalculatorProp
               <div className="text-center p-4 bg-blue-50 rounded-xl">
                 <p className="text-sm text-blue-600 mb-1">{locale === 'zh' ? '月收入' : 'Monthly Income'}</p>
                 <p className="text-3xl font-bold text-blue-600">
-                  {locale === 'zh' ? '¥' : '$'}{Math.round(purchasePrice / 120).toLocaleString()}
+                  ${Math.round(purchasePrice / 120).toLocaleString()}
                 </p>
               </div>
               <div className="text-center p-4 bg-green-50 rounded-xl">
                 <p className="text-sm text-green-600 mb-1">{locale === 'zh' ? '总投入' : 'Total Investment'}</p>
                 <p className="text-2xl font-bold text-green-600">
-                  {locale === 'zh' ? '¥' : '$'}{purchasePrice.toLocaleString()}
+                  ${purchasePrice.toLocaleString()}
                 </p>
               </div>
               <div className="text-center p-4 bg-amber-50 rounded-xl">
                 <p className="text-sm text-amber-600 mb-1">{locale === 'zh' ? '预期总回报' : 'Expected Total Return'}</p>
                 <p className="text-2xl font-bold text-amber-600">
-                  +{locale === 'zh' ? '¥' : '$'}{Math.round(purchasePrice * 0.5).toLocaleString()}
+                  +${Math.round(purchasePrice * 0.5).toLocaleString()}
                 </p>
               </div>
             </div>
@@ -233,14 +216,14 @@ export default function AnnuityCalculator({ onCalculate }: AnnuityCalculatorProp
               <div className="flex items-center gap-4">
                 <div className="w-24 text-sm text-gray-500">{locale === 'zh' ? '当前' : 'Now'}</div>
                 <div className="flex-1 h-8 bg-gray-200 rounded flex items-center px-3">
-                  <span className="text-sm font-medium">{locale === 'zh' ? '已投入' : 'Invested'}: {locale === 'zh' ? '¥' : '$'}{purchasePrice.toLocaleString()}</span>
+                  <span className="text-sm font-medium">{locale === 'zh' ? '已投入' : 'Invested'}: ${purchasePrice.toLocaleString()}</span>
                 </div>
               </div>
               <div className="flex items-center gap-4">
                 <div className="w-24 text-sm text-gray-500">{retirementAge}{locale === 'zh' ? '岁' : ''}</div>
                 <div className="flex-1 h-8 bg-primary-200 rounded flex items-center px-3">
                   <span className="text-sm font-medium text-primary-800">
-                    {locale === 'zh' ? '开始每月领取' : 'Start monthly payments'}: {locale === 'zh' ? '¥' : '$'}{Math.round(purchasePrice / 120).toLocaleString()}
+                    {locale === 'zh' ? '开始每月领取' : 'Start monthly payments'}: ${Math.round(purchasePrice / 120).toLocaleString()}
                   </span>
                 </div>
               </div>
@@ -248,7 +231,7 @@ export default function AnnuityCalculator({ onCalculate }: AnnuityCalculatorProp
                 <div className="w-24 text-sm text-gray-500">{lifeExpectancy}{locale === 'zh' ? '岁' : ''}</div>
                 <div className="flex-1 h-8 bg-green-200 rounded flex items-center px-3">
                   <span className="text-sm font-medium text-green-800">
-                    {locale === 'zh' ? '总领取' : 'Total received'}: {locale === 'zh' ? '¥' : '$'}{Math.round(purchasePrice * 1.5).toLocaleString()}
+                    {locale === 'zh' ? '总领取' : 'Total received'}: ${Math.round(purchasePrice * 1.5).toLocaleString()}
                   </span>
                 </div>
               </div>

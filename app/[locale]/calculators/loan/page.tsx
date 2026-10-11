@@ -1,6 +1,26 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import type { Metadata } from 'next';
+import { buildMetadata } from '@/lib/seo';
 import LoanCalculator from '@/components/calculators/LoanCalculator';
 import RelatedCalculators from '@/components/RelatedCalculators';
+
+const seo = {
+  en: {
+    title: "Loan Calculator - Monthly Payment, Total Interest & Amortization | WealthEase",
+    description: "Free loan calculator: estimate your monthly payment, total interest and payoff date for personal, auto or student loans, with a full amortization schedule.",
+    keywords: "loan calculator, monthly payment calculator, loan amortization, total interest, personal loan calculator",
+  },
+  zh: {
+    title: "贷款计算器 - 月供、总利息与还款计划 | WealthEase",
+    description: "免费贷款计算器：估算个人贷款、车贷或学生贷款的月供、总利息和还清日期，并给出完整还款计划表。",
+    keywords: "贷款计算器, 月供计算器, 还款计划, 总利息, 个人贷款计算",
+  },
+};
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata(locale, '/calculators/loan', seo);
+}
 
 export default async function LoanPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

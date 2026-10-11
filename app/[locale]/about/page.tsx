@@ -1,15 +1,15 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { CheckCircle, Users, Calculator, TrendingUp, Award, BookOpen, ExternalLink, AlertTriangle } from 'lucide-react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+import { buildMetadata } from '@/lib/seo';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'about' });
 
-  return {
-    title: t('title'),
-    description: t('subtitle'),
-  };
+  const seo = { title: t('title'), description: t('subtitle') };
+  return buildMetadata(locale, '/about', { en: seo, zh: seo });
 }
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {

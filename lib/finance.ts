@@ -285,3 +285,45 @@ export function usTakeHome(input: TakeHomeInput): TakeHomeResult {
     effectiveTaxRatePct: gross > 0 ? (totalTax / gross) * 100 : 0,
   };
 }
+
+export interface BracketRow {
+  rate: number;
+  from: number;
+  /** Infinity for the top bracket. */
+  to: number;
+  incomeInBracket: number;
+  taxInBracket: number;
+}
+
+/** Per-bracket breakdown of federal income tax for a given taxable income. */
+export function bracketBreakdown(taxable: number, status: FilingStatus): BracketRow[] {
+  const rows: BracketRow[] = [];
+  let lower = 0;
+  for (const [upper, rate] of BRACKETS[status]) {
+    const incomeInBracket = Math.max(0, Math.min(taxable, upper) - lower);
+    rows.push({ rate, from: lower, to: upper, incomeInBracket, taxInBracket: incomeInBracket * rate });
+    lower = upper;
+  }
+  return rows;
+}
+
+// ---------------------------------------------------------------------------
+// Area units, expressed in square metres.
+// ---------------------------------------------------------------------------
+export const AREA_UNITS = {
+  sqm: { factor: 1, en: 'Square meters (m²)', zh: '平方米 (m²)' },
+  sqft: { factor: 0.09290304, en: 'Square feet (ft²)', zh: '平方英尺 (ft²)' },
+  sqyd: { factor: 0.83612736, en: 'Square yards (yd²)', zh: '平方码 (yd²)' },
+  acre: { factor: 4046.8564224, en: 'Acres', zh: '英亩' },
+  hectare: { factor: 10000, en: 'Hectares', zh: '公顷' },
+  sqkm: { factor: 1_000_000, en: 'Square kilometers (km²)', zh: '平方公里 (km²)' },
+  sqmi: { factor: 2_589_988.110336, en: 'Square miles (mi²)', zh: '平方英里 (mi²)' },
+  mu: { factor: 10000 / 15, en: 'Mu (市亩)', zh: '亩' },
+  ping: { factor: 400 / 121, en: 'Ping (坪)', zh: '坪' },
+} as const;
+
+export type AreaUnit = keyof typeof AREA_UNITS;
+
+export function convertArea(value: number, from: AreaUnit, to: AreaUnit): number {
+  return (value * AREA_UNITS[from].factor) / AREA_UNITS[to].factor;
+}

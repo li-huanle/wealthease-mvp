@@ -77,7 +77,11 @@
       "autoLoan": "Auto Loan Calculator",
       "autoLoanDesc": "Estimate monthly car payments, total interest, and find the best loan",
       "takeHomePay": "Take-Home Pay Calculator (US)",
-      "takeHomePayDesc": "Estimate your 2026 paycheck after federal tax, FICA, state tax and 401(k)"
+      "takeHomePayDesc": "Estimate your 2026 paycheck after federal tax, FICA, state tax and 401(k)",
+      "taxBracket": "Federal Tax Bracket Calculator",
+      "taxBracketDesc": "Find your tax bracket and calculate marginal tax rates",
+      "areaConversion": "Area Unit Converter",
+      "areaConversionDesc": "Quickly convert between sq ft, sq meters, acres, and other units"
     },
     "newsletter": {
       "title": "Stay Updated",
@@ -1082,6 +1086,14 @@
     "takeHomePay": {
       "title": "Take-Home Pay Calculator (US)",
       "subtitle": "Estimate your paycheck after federal tax, FICA, state tax and 401(k)"
+    },
+    "taxBracket": {
+      "title": "Federal Tax Bracket Calculator (US)",
+      "subtitle": "See which federal bracket you are in and how your tax is built, bracket by bracket"
+    },
+    "areaConversion": {
+      "title": "Area Unit Converter",
+      "subtitle": "Convert square feet, square meters, acres, hectares and more"
     }
   },
   "footer": {
@@ -1199,7 +1211,7 @@
         "description": "Plan your retirement with 401(k) employer matching and compound growth"
       },
       "taxBracket": {
-        "title": "Federal Tax Bracket Calculator",
+        "title": "Federal Tax Bracket Calculator (US)",
         "description": "Find your tax bracket and calculate marginal tax rates"
       },
       "mortgage": {

@@ -77,7 +77,11 @@
       "autoLoan": "车贷计算器",
       "autoLoanDesc": "估算汽车贷款的月供、总利息和最佳贷款方案",
       "takeHomePay": "美国税后工资计算器",
-      "takeHomePayDesc": "估算扣除联邦税、FICA、州税和 401(k) 后的 2026 年到手工资"
+      "takeHomePayDesc": "估算扣除联邦税、FICA、州税和 401(k) 后的 2026 年到手工资",
+      "taxBracket": "联邦税阶查询",
+      "taxBracketDesc": "查找您的税阶并计算边际税率",
+      "areaConversion": "面积单位换算",
+      "areaConversionDesc": "在平方英尺、平方米、英亩等单位间快速换算"
     },
     "newsletter": {
       "title": "获取最新资讯",
@@ -1082,6 +1086,14 @@
     "takeHomePay": {
       "title": "美国税后工资计算器",
       "subtitle": "估算扣除联邦税、FICA、州税和 401(k) 后的到手工资"
+    },
+    "taxBracket": {
+      "title": "美国联邦税率档位计算器",
+      "subtitle": "查看你处于哪个联邦税档，以及税款如何按档位逐级累计"
+    },
+    "areaConversion": {
+      "title": "面积单位换算",
+      "subtitle": "平方英尺、平方米、英亩、公顷等单位快速换算"
     }
   },
   "footer": {
@@ -1199,7 +1211,7 @@
         "description": "利用雇主匹配和复利增长规划退休储蓄"
       },
       "taxBracket": {
-        "title": "联邦税阶查询",
+        "title": "美国联邦税率档位计算器",
         "description": "查找您的税阶并计算边际税率"
       },
       "mortgage": {

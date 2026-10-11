@@ -1,16 +1,35 @@
 'use client';
 
 import { useState } from 'react';
+import { useLocale as useSiteLocale } from 'next-intl';
+import { FilingStatus, SS_WAGE_BASE, STANDARD_DEDUCTION, federalIncomeTax } from '@/lib/finance';
+
+interface TaxResult {
+  grossIncome: number;
+  taxableIncome: number;
+  standardDeduction: number;
+  federalTax: number;
+  stateTax: number;
+  ficaTax: number;
+  totalTax: number;
+  effectiveRate: string;
+  marginalRate: string;
+  takeHome: number;
+  perMonth: number;
+  perWeek: number;
+}
 
 interface TaxCalculatorProps {
   onCalculate?: (result: any) => void;
 }
 
 export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
-  const [locale, setLocale] = useState<'en' | 'zh'>('zh');
+  const locale: 'en' | 'zh' = useSiteLocale() === 'zh' ? 'zh' : 'en';
 
   const [income, setIncome] = useState(100000);
   const [filingStatus, setFilingStatus] = useState('single');
+  const status: FilingStatus = filingStatus === 'married' || filingStatus === 'head' ? filingStatus : 'single';
+  const standardDeduction = STANDARD_DEDUCTION[status];
   const [state, setState] = useState('CA');
   const [age, setAge] = useState(30);
   const [isBlind, setIsBlind] = useState(false);
@@ -20,38 +39,16 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
   const [hasTraditionalIRA, setHasTraditionalIRA] = useState(false);
 
   const [showResults, setShowResults] = useState(false);
+  const [result, setResult] = useState<TaxResult | null>(null);
 
   const calculateTax = () => {
-    // 2024 联邦税级（单身）
-    const federalBrackets = [
-      { min: 0, max: 11600, rate: 0.10 },
-      { min: 11600, max: 47150, rate: 0.12 },
-      { min: 47150, max: 100525, rate: 0.22 },
-      { min: 100525, max: 191950, rate: 0.24 },
-      { min: 191950, max: 243725, rate: 0.32 },
-      { min: 243725, max: 609350, rate: 0.35 },
-      { min: 609350, max: Infinity, rate: 0.37 },
-    ];
+    // 2026 federal brackets and standard deduction by filing status (see lib/finance.ts)
 
-    // 标准扣除额 2024
-    const standardDeduction = filingStatus === 'single' ? 14600 :
-                              filingStatus === 'married' ? 29200 :
-                              filingStatus === 'head' ? 21900 : 14600;
-
-    // 调整后收入
-    const deductions = k401Contribution + hsaContribution + (hasTraditionalIRA ? Math.min(7000, income * 0.1) : 0);
+    // Above-the-line deductions
+    const deductions = k401Contribution + hsaContribution + (hasTraditionalIRA ? Math.min(7500, income * 0.1) : 0);
     const taxableIncome = Math.max(0, income - standardDeduction - deductions);
 
-    // 计算联邦税
-    let federalTax = 0;
-    let remainingIncome = taxableIncome;
-
-    for (const bracket of federalBrackets) {
-      if (remainingIncome <= 0) break;
-      const taxableInBracket = Math.min(remainingIncome, bracket.max - bracket.min);
-      federalTax += taxableInBracket * bracket.rate;
-      remainingIncome -= taxableInBracket;
-    }
+    const { tax: federalTax, marginalRate } = federalIncomeTax(taxableIncome, status);
 
     // 州税（简化）
     const stateTaxRates: Record<string, number> = {
@@ -62,17 +59,17 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
     const stateTax = taxableIncome * stateRate;
 
     // FICA（社保+医保）
-    const socialSecurityTax = Math.min(income * 0.062, 168600 * 0.062);
-    const medicareTax = income * 0.0145;
+    const socialSecurityTax = Math.min(income, SS_WAGE_BASE) * 0.062;
+    const medicareTax = income * 0.0145 + Math.max(0, income - (status === 'married' ? 250000 : 200000)) * 0.009;
     const ficaTax = socialSecurityTax + medicareTax;
 
     const totalTax = federalTax + stateTax + ficaTax;
     const effectiveRate = (totalTax / income) * 100;
-    const marginalRate = federalBrackets.find(b => taxableIncome > b.min && taxableIncome <= b.max)?.rate || 0.10;
 
     const result = {
       grossIncome: income,
-      taxableIncome,
+      taxableIncome: Math.round(taxableIncome),
+      standardDeduction,
       federalTax: Math.round(federalTax),
       stateTax: Math.round(stateTax),
       ficaTax: Math.round(ficaTax),
@@ -85,29 +82,12 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
     };
 
     onCalculate?.(result);
+    setResult(result);
     setShowResults(true);
   };
 
   return (
     <div className="max-w-4xl mx-auto">
-      {/* Toggle */}
-      <div className="flex justify-center mb-6">
-        <div className="inline-flex bg-gray-100 rounded-lg p-1">
-          <button
-            onClick={() => setLocale('zh')}
-            className={`px-4 py-2 rounded-md font-medium transition-colors ${locale === 'zh' ? 'bg-white shadow text-gray-900' : 'text-gray-600'}`}
-          >
-            人民币 (¥)
-          </button>
-          <button
-            onClick={() => setLocale('en')}
-            className={`px-4 py-2 rounded-md font-medium transition-colors ${locale === 'en' ? 'bg-white shadow text-gray-900' : 'text-gray-600'}`}
-          >
-            美元 ($)
-          </button>
-        </div>
-      </div>
-
       {/* Input Section */}
       <div className="bg-white rounded-2xl shadow-card p-8">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">
@@ -122,7 +102,7 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
             </label>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
-                {locale === 'zh' ? '¥' : '$'}
+                $
               </span>
               <input
                 type="number"
@@ -191,7 +171,7 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
             </label>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
-                {locale === 'zh' ? '¥' : '$'}
+                $
               </span>
               <input
                 type="number"
@@ -201,7 +181,7 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
               />
             </div>
             <p className="text-xs text-gray-500">
-              {locale === 'zh' ? '2024年上限：$23,000（50+可多缴$7,500）' : '2024 limit: $23,000 (+$7,500 catch-up if 50+)'}
+              {locale === 'zh' ? '2026年上限：$24,500（50岁以上可多缴$8,000）' : '2026 limit: $24,500 (+$8,000 catch-up if 50+)'}
             </p>
           </div>
 
@@ -212,7 +192,7 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
             </label>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
-                {locale === 'zh' ? '¥' : '$'}
+                $
               </span>
               <input
                 type="number"
@@ -222,7 +202,7 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
               />
             </div>
             <p className="text-xs text-gray-500">
-              {locale === 'zh' ? '2024年上限：个人$4,150，家庭$8,300' : '2024 limit: $4,150 (individual), $8,300 (family)'}
+              {locale === 'zh' ? '2026年上限：个人$4,400，家庭$8,750' : '2026 limit: $4,400 (individual), $8,750 (family)'}
             </p>
           </div>
 
@@ -269,7 +249,7 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
       </div>
 
       {/* Results Section */}
-      {showResults && (
+      {showResults && result && (
         <div className="mt-8 space-y-6">
           {/* Income Summary */}
           <div className="rounded-xl p-6 shadow-card bg-white">
@@ -278,19 +258,19 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
               <div className="text-center p-4 bg-gray-50 rounded-xl">
                 <p className="text-sm text-gray-500 mb-1">{locale === 'zh' ? '总收入' : 'Gross Income'}</p>
                 <p className="text-2xl font-bold text-gray-900">
-                  {locale === 'zh' ? '¥' : '$'}{income.toLocaleString()}
+                  ${result.grossIncome.toLocaleString()}
                 </p>
               </div>
               <div className="text-center p-4 bg-gray-50 rounded-xl">
                 <p className="text-sm text-gray-500 mb-1">{locale === 'zh' ? '应税收入' : 'Taxable Income'}</p>
                 <p className="text-2xl font-bold text-blue-600">
-                  {locale === 'zh' ? '¥' : '$'}{(income - k401Contribution - hsaContribution - 14600).toLocaleString()}
+                  ${result.taxableIncome.toLocaleString()}
                 </p>
               </div>
               <div className="text-center p-4 bg-gray-50 rounded-xl">
                 <p className="text-sm text-gray-500 mb-1">{locale === 'zh' ? '标准扣除' : 'Standard Deduction'}</p>
                 <p className="text-2xl font-bold text-green-600">
-                  {locale === 'zh' ? '¥' : '$'}14,600
+                  ${result.standardDeduction.toLocaleString()}
                 </p>
               </div>
             </div>
@@ -303,25 +283,25 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
               <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                 <span className="text-gray-700">{locale === 'zh' ? '联邦所得税' : 'Federal Income Tax'}</span>
                 <span className="font-semibold text-gray-900">
-                  {locale === 'zh' ? '¥' : '$'}{Math.round(income * 0.18).toLocaleString()}
+                  ${result.federalTax.toLocaleString()}
                 </span>
               </div>
               <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                 <span className="text-gray-700">{locale === 'zh' ? '州所得税' : 'State Income Tax'}</span>
                 <span className="font-semibold text-gray-900">
-                  {locale === 'zh' ? '¥' : '$'}{Math.round(income * 0.05).toLocaleString()}
+                  ${result.stateTax.toLocaleString()}
                 </span>
               </div>
               <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                <span className="text-gray-700">FICA (社保+医保)</span>
+                <span className="text-gray-700">{locale === 'zh' ? 'FICA（社保税 + 医疗税）' : 'FICA (Social Security + Medicare)'}</span>
                 <span className="font-semibold text-gray-900">
-                  {locale === 'zh' ? '¥' : '$'}{Math.round(income * 0.0765).toLocaleString()}
+                  ${result.ficaTax.toLocaleString()}
                 </span>
               </div>
               <div className="flex items-center justify-between p-4 bg-red-50 rounded-lg border border-red-100">
                 <span className="font-semibold text-red-800">{locale === 'zh' ? '总税款' : 'Total Tax'}</span>
                 <span className="font-bold text-red-600">
-                  {locale === 'zh' ? '¥' : '$'}{Math.round(income * 0.30).toLocaleString()}
+                  ${result.totalTax.toLocaleString()}
                 </span>
               </div>
             </div>
@@ -334,27 +314,27 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
               <div className="text-center p-4 bg-green-50 rounded-xl border border-green-100">
                 <p className="text-sm text-green-600 mb-1">{locale === 'zh' ? '每周' : 'Per Week'}</p>
                 <p className="text-2xl font-bold text-green-600">
-                  {locale === 'zh' ? '¥' : '$'}{Math.round(income * 0.70 / 52).toLocaleString()}
+                  ${result.perWeek.toLocaleString()}
                 </p>
               </div>
               <div className="text-center p-4 bg-green-50 rounded-xl border border-green-100">
                 <p className="text-sm text-green-600 mb-1">{locale === 'zh' ? '每月' : 'Per Month'}</p>
                 <p className="text-3xl font-bold text-green-600">
-                  {locale === 'zh' ? '¥' : '$'}{Math.round(income * 0.70 / 12).toLocaleString()}
+                  ${result.perMonth.toLocaleString()}
                 </p>
               </div>
               <div className="text-center p-4 bg-green-50 rounded-xl border border-green-100">
                 <p className="text-sm text-green-600 mb-1">{locale === 'zh' ? '每年' : 'Per Year'}</p>
                 <p className="text-2xl font-bold text-green-600">
-                  {locale === 'zh' ? '¥' : '$'}{Math.round(income * 0.70).toLocaleString()}
+                  ${result.takeHome.toLocaleString()}
                 </p>
               </div>
             </div>
             <div className="mt-4 p-4 bg-amber-50 rounded-lg border border-amber-100">
               <p className="text-sm text-amber-800">
                 {locale === 'zh'
-                  ? `有效税率约 ${(30).toFixed(1)}%，边际税率约 ${22}%。实际税率因个人情况而异。`
-                  : `Effective rate ~${30}%, marginal rate ~${22}%. Actual rates vary based on individual circumstances.`
+                  ? `有效税率约 ${result.effectiveRate}%，联邦边际税率 ${result.marginalRate}%。实际税率因个人情况而异。`
+                  : `Effective rate ${result.effectiveRate}%, federal marginal rate ${result.marginalRate}%. Actual rates vary based on individual circumstances.`
                 }
               </p>
             </div>

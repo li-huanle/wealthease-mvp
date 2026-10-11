@@ -99,7 +99,7 @@ export default async function TaxPage({ params }: { params: Promise<{ locale: st
               </section>
 
               <section className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">2024年联邦税级（单身）</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">2026年联邦税级（单身）</h3>
                 <div className="bg-white rounded-xl overflow-hidden">
                   <table className="w-full text-sm">
                     <thead className="bg-gray-50">
@@ -110,13 +110,13 @@ export default async function TaxPage({ params }: { params: Promise<{ locale: st
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100">
-                      <tr><td className="px-4 py-3">10%</td><td>$0 - $11,600</td><td>首$11,600</td></tr>
-                      <tr><td className="px-4 py-3">12%</td><td>$11,601 - $47,150</td><td>超出部分</td></tr>
-                      <tr><td className="px-4 py-3">22%</td><td>$47,151 - $100,525</td><td>超出部分</td></tr>
-                      <tr><td className="px-4 py-3">24%</td><td>$100,526 - $191,950</td><td>超出部分</td></tr>
-                      <tr><td className="px-4 py-3">32%</td><td>$191,951 - $243,725</td><td>超出部分</td></tr>
-                      <tr><td className="px-4 py-3">35%</td><td>$243,726 - $609,350</td><td>超出部分</td></tr>
-                      <tr><td className="px-4 py-3">37%</td><td>$609,351+</td><td>超出部分</td></tr>
+                      <tr><td className="px-4 py-3">10%</td><td>$0 - $12,400</td><td>首$12,400</td></tr>
+                      <tr><td className="px-4 py-3">12%</td><td>$12,401 - $50,400</td><td>超出部分</td></tr>
+                      <tr><td className="px-4 py-3">22%</td><td>$50,401 - $105,700</td><td>超出部分</td></tr>
+                      <tr><td className="px-4 py-3">24%</td><td>$105,701 - $201,775</td><td>超出部分</td></tr>
+                      <tr><td className="px-4 py-3">32%</td><td>$201,776 - $256,225</td><td>超出部分</td></tr>
+                      <tr><td className="px-4 py-3">35%</td><td>$256,226 - $640,600</td><td>超出部分</td></tr>
+                      <tr><td className="px-4 py-3">37%</td><td>$640,601+</td><td>超出部分</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -127,19 +127,19 @@ export default async function TaxPage({ params }: { params: Promise<{ locale: st
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
                     <p className="font-semibold text-amber-800 mb-1">401(k) / 403(b)</p>
-                    <p className="text-gray-600 text-sm">2024年上限$23,000，50+可多缴$7,500。</p>
+                    <p className="text-gray-600 text-sm">2026年上限$24,500，50岁以上可多缴$8,000。</p>
                   </div>
                   <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
                     <p className="font-semibold text-blue-800 mb-1">HSA健康储蓄账户</p>
-                    <p className="text-gray-600 text-sm">个人$4,150，家庭$8,300。</p>
+                    <p className="text-gray-600 text-sm">2026年：个人$4,400，家庭$8,750。</p>
                   </div>
                   <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg">
                     <p className="font-semibold text-green-800 mb-1">传统IRA</p>
-                    <p className="text-gray-600 text-sm">可抵税上限$7,000（收入限制）。</p>
+                    <p className="text-gray-600 text-sm">2026年上限$7,500（50岁以上可多缴$1,100；有收入限制）。</p>
                   </div>
                   <div className="bg-purple-50 border-l-4 border-purple-400 p-4 rounded-r-lg">
                     <p className="font-semibold text-purple-800 mb-1">标准扣除额</p>
-                    <p className="text-gray-600 text-sm">单身$14,600，已婚联合$29,200。</p>
+                    <p className="text-gray-600 text-sm">2026年：单身$16,100，已婚联合$32,200，户主$24,150。</p>
                   </div>
                 </div>
               </section>
@@ -178,23 +178,23 @@ export default async function TaxPage({ params }: { params: Promise<{ locale: st
               </section>
 
               <section className="bg-white rounded-2xl shadow-card p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-6">2024 Tax Brackets (Single)</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-6">2026 Tax Brackets (Single)</h3>
                 <div className="grid md:grid-cols-4 gap-4">
                   <div className="text-center p-4 bg-gray-50 rounded-lg">
                     <p className="font-semibold">10%</p>
-                    <p className="text-sm text-gray-500">$0 - $11,600</p>
+                    <p className="text-sm text-gray-500">$0 - $12,400</p>
                   </div>
                   <div className="text-center p-4 bg-gray-50 rounded-lg">
                     <p className="font-semibold">12%</p>
-                    <p className="text-sm text-gray-500">$11,601 - $47,150</p>
+                    <p className="text-sm text-gray-500">$12,401 - $50,400</p>
                   </div>
                   <div className="text-center p-4 bg-gray-50 rounded-lg">
                     <p className="font-semibold">22%</p>
-                    <p className="text-sm text-gray-500">$47,151 - $100,525</p>
+                    <p className="text-sm text-gray-500">$50,401 - $105,700</p>
                   </div>
                   <div className="text-center p-4 bg-gray-50 rounded-lg">
                     <p className="font-semibold">24%+</p>
-                    <p className="text-sm text-gray-500">$100,526+</p>
+                    <p className="text-sm text-gray-500">$105,701+</p>
                   </div>
                 </div>
               </section>

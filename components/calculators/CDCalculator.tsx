@@ -1,13 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import { useLocale as useSiteLocale } from 'next-intl';
 
 interface CDCalculatorProps {
   onCalculate?: (result: any) => void;
 }
 
 export default function CDCalculator({ onCalculate }: CDCalculatorProps) {
-  const [locale, setLocale] = useState<'en' | 'zh'>('zh');
+  const locale: 'en' | 'zh' = useSiteLocale() === 'zh' ? 'zh' : 'en';
 
   const [principal, setPrincipal] = useState(10000);
   const [rate, setRate] = useState(4.5);
@@ -63,24 +64,6 @@ export default function CDCalculator({ onCalculate }: CDCalculatorProps) {
 
   return (
     <div className="max-w-4xl mx-auto">
-      {/* Toggle */}
-      <div className="flex justify-center mb-6">
-        <div className="inline-flex bg-gray-100 rounded-lg p-1">
-          <button
-            onClick={() => setLocale('zh')}
-            className={`px-4 py-2 rounded-md font-medium transition-colors ${locale === 'zh' ? 'bg-white shadow text-gray-900' : 'text-gray-600'}`}
-          >
-            人民币 (¥)
-          </button>
-          <button
-            onClick={() => setLocale('en')}
-            className={`px-4 py-2 rounded-md font-medium transition-colors ${locale === 'en' ? 'bg-white shadow text-gray-900' : 'text-gray-600'}`}
-          >
-            美元 ($)
-          </button>
-        </div>
-      </div>
-
       {/* Input Section */}
       <div className="bg-white rounded-2xl shadow-card p-8">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">
@@ -95,7 +78,7 @@ export default function CDCalculator({ onCalculate }: CDCalculatorProps) {
             </label>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
-                {locale === 'zh' ? '¥' : '$'}
+                $
               </span>
               <input
                 type="number"
@@ -197,13 +180,13 @@ export default function CDCalculator({ onCalculate }: CDCalculatorProps) {
               <div className="text-center p-4 bg-blue-50 rounded-xl">
                 <p className="text-sm text-blue-600 mb-1">{locale === 'zh' ? '到期本息' : 'Maturity Amount'}</p>
                 <p className="text-3xl font-bold text-blue-600">
-                  {locale === 'zh' ? '¥' : '$'}{Math.round(principal * 1.12).toLocaleString()}
+                  ${Math.round(principal * 1.12).toLocaleString()}
                 </p>
               </div>
               <div className="text-center p-4 bg-green-50 rounded-xl">
                 <p className="text-sm text-green-600 mb-1">{locale === 'zh' ? '利息收入' : 'Interest Earned'}</p>
                 <p className="text-2xl font-bold text-green-600">
-                  +{locale === 'zh' ? '¥' : '$'}{Math.round(principal * 0.12).toLocaleString()}
+                  +${Math.round(principal * 0.12).toLocaleString()}
                 </p>
               </div>
               <div className="text-center p-4 bg-amber-50 rounded-xl">
@@ -239,8 +222,8 @@ export default function CDCalculator({ onCalculate }: CDCalculatorProps) {
                           {m >= 12 ? `${m/12}${locale === 'zh' ? '年' : 'yr'}` : `${m}${locale === 'zh' ? '个月' : 'mo'}`}
                           {isSelected && <span className="ml-2 text-primary-600">✓</span>}
                         </td>
-                        <td className="px-4 py-3 font-medium">{locale === 'zh' ? '¥' : '$'}{amount.toLocaleString()}</td>
-                        <td className="px-4 py-3 text-green-600">+{locale === 'zh' ? '¥' : '$'}{interest.toLocaleString()}</td>
+                        <td className="px-4 py-3 font-medium">${amount.toLocaleString()}</td>
+                        <td className="px-4 py-3 text-green-600">+${interest.toLocaleString()}</td>
                         <td className="px-4 py-3">{apy.toFixed(2)}%</td>
                       </tr>
                     );

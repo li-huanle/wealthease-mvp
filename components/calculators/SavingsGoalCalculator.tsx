@@ -1,7 +1,7 @@
 'use client';
 
 import {useState} from 'react';
-import {useTranslations} from 'next-intl';
+import {useTranslations, useLocale} from 'next-intl';
 import {Line} from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -46,6 +46,7 @@ interface CalculationResult {
 export default function SavingsGoalCalculator() {
   const t = useTranslations('calculator.savingsGoal');
   const currency = useTranslations('common.currency');
+  const yearsSuffix = useLocale() === 'zh' ? ' 年' : ' yrs';
 
   const [goalAmount, setGoalAmount] = useState<number>(50000);
   const [currentSavings, setCurrentSavings] = useState<number>(10000);
@@ -269,7 +270,7 @@ export default function SavingsGoalCalculator() {
                 min={1}
                 max={50}
                 step={1}
-                suffix=" 年"
+                suffix={yearsSuffix}
                 showSlider
                 tooltip={currency('code') === 'CNY'
                   ? '希望达到目标的时间长度（年）'

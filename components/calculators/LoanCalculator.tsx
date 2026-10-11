@@ -1,7 +1,7 @@
 'use client';
 
 import {useState} from 'react';
-import {useTranslations} from 'next-intl';
+import {useTranslations, useLocale} from 'next-intl';
 import {Line} from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -41,6 +41,7 @@ interface CalculationResult {
 export default function LoanCalculator() {
   const t = useTranslations('calculator.loan');
   const currency = useTranslations('common.currency');
+  const yearsSuffix = useLocale() === 'zh' ? ' 年' : ' yrs';
 
   const [loanAmount, setLoanAmount] = useState<number>(200000);
   const [interestRate, setInterestRate] = useState<number>(5);
@@ -223,7 +224,7 @@ export default function LoanCalculator() {
                 min={1}
                 max={40}
                 step={1}
-                suffix=" 年"
+                suffix={yearsSuffix}
                 showSlider
                 tooltip={currency('code') === 'CNY'
                   ? '贷款期限（年）'

@@ -1,6 +1,26 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import type { Metadata } from 'next';
+import { buildMetadata } from '@/lib/seo';
 import MortgageCalculator from '@/components/calculators/MortgageCalculator';
 import RelatedCalculators from '@/components/RelatedCalculators';
+
+const seo = {
+  en: {
+    title: "Mortgage Calculator - Monthly Payment, Taxes & Amortization | WealthEase",
+    description: "Free mortgage calculator: estimate your monthly payment including principal, interest, property tax, insurance and HOA, and see how extra payments change your payoff.",
+    keywords: "mortgage calculator, monthly mortgage payment, home loan calculator, amortization schedule, PITI calculator",
+  },
+  zh: {
+    title: "房贷计算器 - 月供、税费与还款计划 | WealthEase",
+    description: "免费房贷计算器：估算包含本金、利息、房产税、保险和物业费的月供，并查看提前还款对还清时间的影响。",
+    keywords: "房贷计算器, 月供计算, 购房贷款, 还款计划表, 提前还款",
+  },
+};
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata(locale, '/calculators/mortgage', seo);
+}
 
 export default async function MortgagePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

@@ -1,5 +1,6 @@
 'use client';
 
+import { useLocale as useSiteLocale } from 'next-intl';
 import { useState } from 'react';
 
 interface SocialSecurityCalculatorProps {
@@ -7,7 +8,7 @@ interface SocialSecurityCalculatorProps {
 }
 
 export default function SocialSecurityCalculator({ onCalculate }: SocialSecurityCalculatorProps) {
-  const [locale, setLocale] = useState<'en' | 'zh'>('zh');
+  const locale: 'en' | 'zh' = useSiteLocale() === 'zh' ? 'zh' : 'en';
 
   const [currentAge, setCurrentAge] = useState(30);
   const [birthYear, setBirthYear] = useState(1994);
@@ -93,24 +94,6 @@ export default function SocialSecurityCalculator({ onCalculate }: SocialSecurity
 
   return (
     <div className="max-w-4xl mx-auto">
-      {/* Toggle */}
-      <div className="flex justify-center mb-6">
-        <div className="inline-flex bg-gray-100 rounded-lg p-1">
-          <button
-            onClick={() => setLocale('zh')}
-            className={`px-4 py-2 rounded-md font-medium transition-colors ${locale === 'zh' ? 'bg-white shadow text-gray-900' : 'text-gray-600'}`}
-          >
-            人民币 (¥)
-          </button>
-          <button
-            onClick={() => setLocale('en')}
-            className={`px-4 py-2 rounded-md font-medium transition-colors ${locale === 'en' ? 'bg-white shadow text-gray-900' : 'text-gray-600'}`}
-          >
-            美元 ($)
-          </button>
-        </div>
-      </div>
-
       {/* Input Section */}
       <div className="bg-white rounded-2xl shadow-card p-8">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">

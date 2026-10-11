@@ -197,6 +197,18 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
       color: 'from-cyan-400 to-blue-500',
     },
     {
+      key: 'taxBracket',
+      href: `/${locale}/calculators/tax-bracket`,
+      icon: '🧾',
+      color: 'from-red-400 to-rose-500',
+    },
+    {
+      key: 'areaConversion',
+      href: `/${locale}/calculators/area-conversion`,
+      icon: '📐',
+      color: 'from-lime-400 to-green-500',
+    },
+    {
       key: 'installmentApr',
       href: `/${locale}/calculators/installment-apr`,
       icon: '🧮',

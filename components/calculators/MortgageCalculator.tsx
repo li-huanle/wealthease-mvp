@@ -1,7 +1,7 @@
 'use client';
 
 import {useState} from 'react';
-import {useTranslations} from 'next-intl';
+import {useTranslations, useLocale} from 'next-intl';
 import {Doughnut, Line} from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -65,6 +65,7 @@ interface CalculationResult {
 export default function MortgageCalculator() {
   const t = useTranslations('calculator.mortgage');
   const currency = useTranslations('common.currency');
+  const yearsSuffix = useLocale() === 'zh' ? ' 年' : ' yrs';
   const isUS = currency('code') === 'USD';
 
   // Form state
@@ -574,7 +575,7 @@ export default function MortgageCalculator() {
                   min={1}
                   max={40}
                   step={1}
-                  suffix=" 年"
+                  suffix={yearsSuffix}
                   showSlider
                   tooltip={currency('code') === 'CNY'
                     ? '贷款期限（年）'
