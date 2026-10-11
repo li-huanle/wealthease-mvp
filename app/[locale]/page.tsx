@@ -190,6 +190,30 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
       icon: '🚗',
       color: 'from-violet-400 to-purple-500',
     },
+    {
+      key: 'installmentApr',
+      href: `/${locale}/calculators/installment-apr`,
+      icon: '🧮',
+      color: 'from-rose-400 to-red-500',
+    },
+    {
+      key: 'fundFees',
+      href: `/${locale}/calculators/fund-fees`,
+      icon: '💸',
+      color: 'from-sky-400 to-blue-500',
+    },
+    {
+      key: 'emergencyFund',
+      href: `/${locale}/calculators/emergency-fund`,
+      icon: '🛟',
+      color: 'from-emerald-400 to-teal-500',
+    },
+    {
+      key: 'mortgagePrepayment',
+      href: `/${locale}/calculators/mortgage-prepayment`,
+      icon: '🏠',
+      color: 'from-amber-400 to-orange-500',
+    },
   ];
 
   const features = [

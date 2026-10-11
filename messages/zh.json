@@ -53,7 +53,15 @@
       "dividendIncome": "股息收入计算器 (Dividend Income)",
       "dividendIncomeDesc": "构建被动收入。计算分红投资组合的未来股息收入，实现财富持续增长。",
       "investmentComparison": "投资回报对比计算器 (Investment Comparison)",
-      "investmentComparisonDesc": "哪个投资更划算？并排对比不同投资选项，基于数据做出明智决策。"
+      "investmentComparisonDesc": "哪个投资更划算？并排对比不同投资选项，基于数据做出明智决策。",
+      "installmentApr": "分期年化利率计算器",
+      "installmentAprDesc": "把「每月手续费 0.6%」换算成分期、信用卡借款的真实年化利率",
+      "fundFees": "基金费率影响计算器",
+      "fundFeesDesc": "看看基金年费率高一点，10 年、20 年、30 年后会少拿多少钱",
+      "emergencyFund": "应急金计算器",
+      "emergencyFundDesc": "算出该备多少应急金，以及多久能存够",
+      "mortgagePrepayment": "提前还房贷计算器",
+      "mortgagePrepaymentDesc": "对比提前还房贷和把钱留着投资，哪个更划算"
     },
     "newsletter": {
       "title": "获取最新资讯",
@@ -1038,6 +1046,22 @@
           "content": "比较银行、信用合作社和经销商贷款利率。信用合作社通常利率更低。"
         }
       }
+    },
+    "installmentApr": {
+      "title": "分期年化利率计算器",
+      "subtitle": "算出分期和月费率背后真正的年化利率"
+    },
+    "fundFees": {
+      "title": "基金费率影响计算器",
+      "subtitle": "对比两只基金，看费率长期到底吃掉多少收益"
+    },
+    "emergencyFund": {
+      "title": "应急金计算器",
+      "subtitle": "计算你的应急金目标和存够需要的时间"
+    },
+    "mortgagePrepayment": {
+      "title": "提前还房贷计算器",
+      "subtitle": "该不该提前还房贷？算一笔账"
     }
   },
   "footer": {
@@ -1241,6 +1265,22 @@
       "autoLoan": {
         "title": "车贷计算器",
         "description": "估算汽车贷款的月供、总利息和最佳贷款方案"
+      },
+      "installmentApr": {
+        "title": "分期年化利率计算器",
+        "description": "把「每月手续费 0.6%」换算成分期、信用卡借款的真实年化利率"
+      },
+      "fundFees": {
+        "title": "基金费率影响计算器",
+        "description": "看看基金年费率高一点，10 年、20 年、30 年后会少拿多少钱"
+      },
+      "emergencyFund": {
+        "title": "应急金计算器",
+        "description": "算出该备多少应急金，以及多久能存够"
+      },
+      "mortgagePrepayment": {
+        "title": "提前还房贷计算器",
+        "description": "对比提前还房贷和把钱留着投资，哪个更划算"
       }
     },
     "comingSoon": "即将推出"

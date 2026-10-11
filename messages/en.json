@@ -53,7 +53,15 @@
       "dividendIncome": "Dividend Income Calculator",
       "dividendIncomeDesc": "Calculate future dividend income and passive cash flow from dividend stocks",
       "investmentComparison": "Investment Comparison Calculator",
-      "investmentComparisonDesc": "Compare different investment options side-by-side to make smart financial decisions"
+      "investmentComparisonDesc": "Compare different investment options side-by-side to make smart financial decisions",
+      "installmentApr": "Installment APR Calculator",
+      "installmentAprDesc": "Turn a \"0.6% monthly fee\" into the real annual rate of an installment plan or credit-card loan",
+      "fundFees": "Fund Fee Impact Calculator",
+      "fundFeesDesc": "See how much a higher annual fund fee costs you over 10, 20 or 30 years",
+      "emergencyFund": "Emergency Fund Calculator",
+      "emergencyFundDesc": "How much to keep for emergencies and how long it takes to get there",
+      "mortgagePrepayment": "Mortgage Prepayment Calculator",
+      "mortgagePrepaymentDesc": "Compare paying down your mortgage early with keeping the money invested"
     },
     "newsletter": {
       "title": "Stay Updated",
@@ -111,8 +119,8 @@
         "age": "Age",
         "savingsOverTime": "Savings Over Time",
         "chartTitle": "Retirement Savings Projection",
-        "sufficient": "You're on Track! \ud83c\udf89",
-        "insufficient": "Needs Attention \u26a0\ufe0f",
+        "sufficient": "You're on Track! 🎉",
+        "insufficient": "Needs Attention ⚠️",
         "sufficientMessage": "Your current savings plan should provide enough for a comfortable retirement.",
         "insufficientMessage": "Your current savings may not be sufficient for your retirement goals. Consider increasing your monthly savings.",
         "recommendation": "Recommendation",
@@ -233,8 +241,8 @@
         "reset": "Reset"
       },
       "results": {
-        "goalReached": "Goal Reached! \ud83c\udf89",
-        "goalNotReached": "Keep Going! \ud83d\udcc8",
+        "goalReached": "Goal Reached! 🎉",
+        "goalNotReached": "Keep Going! 📈",
         "reachedIn": "You'll reach your goal in",
         "years": "years",
         "shortfall": "Shortfall",
@@ -275,7 +283,7 @@
         "reset": "Reset"
       },
       "results": {
-        "debtFree": "You'll Be Debt-Free! \ud83c\udf89",
+        "debtFree": "You'll Be Debt-Free! 🎉",
         "debtFreeMessage": "Following this plan, you'll be debt-free in",
         "years": "years",
         "months": "months",
@@ -711,10 +719,10 @@
         },
         "standardTips": {
           "title": "Standard Tipping by Region",
-          "usa": "\ud83c\uddfa\ud83c\uddf8 United States: 15-20% is standard for restaurants, taxis, and salons",
-          "europe": "\ud83c\uddea\ud83c\uddfa Europe: 5-10% is common in restaurants, though not expected in many countries",
-          "asia": "\ud83c\udde8\ud83c\uddf3 Asia: Tipping varies widely - common in Japan, Thailand, but not in China, South Korea",
-          "australia": "\ud83c\udde6\ud83c\uddfa Australia/New Zealand: 10% is typical, though not mandatory"
+          "usa": "🇺🇸 United States: 15-20% is standard for restaurants, taxis, and salons",
+          "europe": "🇪🇺 Europe: 5-10% is common in restaurants, though not expected in many countries",
+          "asia": "🇨🇳 Asia: Tipping varies widely - common in Japan, Thailand, but not in China, South Korea",
+          "australia": "🇦🇺 Australia/New Zealand: 10% is typical, though not mandatory"
         },
         "groupDining": {
           "title": "Group Dining Made Easy",
@@ -1038,6 +1046,22 @@
           "content": "Compare rates from banks, credit unions, and dealers. Credit unions often offer better rates."
         }
       }
+    },
+    "installmentApr": {
+      "title": "Installment APR Calculator",
+      "subtitle": "Find the real annual interest rate hidden in monthly fees and installment plans"
+    },
+    "fundFees": {
+      "title": "Fund Fee Impact Calculator",
+      "subtitle": "Compare two funds and see what fees really cost over time"
+    },
+    "emergencyFund": {
+      "title": "Emergency Fund Calculator",
+      "subtitle": "Work out your emergency fund target and how long it will take to build"
+    },
+    "mortgagePrepayment": {
+      "title": "Mortgage Prepayment Calculator",
+      "subtitle": "Should you prepay your mortgage or keep the cash? Run the numbers"
     }
   },
   "footer": {
@@ -1052,7 +1076,7 @@
     "blog": "Blog",
     "tools": "All Tools",
     "guides": "Financial Guides",
-    "copyright": "\u00a9 2025 WealthEase. All rights reserved."
+    "copyright": "© 2025 WealthEase. All rights reserved."
   },
   "about": {
     "title": "About WealthEase",
@@ -1241,6 +1265,22 @@
       "autoLoan": {
         "title": "Auto Loan Calculator",
         "description": "Estimate monthly car payments, total interest, and find the best loan"
+      },
+      "installmentApr": {
+        "title": "Installment APR Calculator",
+        "description": "Turn a \"0.6% monthly fee\" into the real annual rate of an installment plan or credit-card loan"
+      },
+      "fundFees": {
+        "title": "Fund Fee Impact Calculator",
+        "description": "See how much a higher annual fund fee costs you over 10, 20 or 30 years"
+      },
+      "emergencyFund": {
+        "title": "Emergency Fund Calculator",
+        "description": "How much to keep for emergencies and how long it takes to get there"
+      },
+      "mortgagePrepayment": {
+        "title": "Mortgage Prepayment Calculator",
+        "description": "Compare paying down your mortgage early with keeping the money invested"
       }
     },
     "comingSoon": "Coming soon"

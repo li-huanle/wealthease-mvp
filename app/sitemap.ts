@@ -26,6 +26,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'social-security',
     'tax',
     'tip',
+    'installment-apr',
+    'fund-fees',
+    'emergency-fund',
+    'mortgage-prepayment',
   ];
 
   const routes: MetadataRoute.Sitemap = [];
