@@ -75,7 +75,9 @@
       "socialSecurity": "社保金计算器",
       "socialSecurityDesc": "估算退休福利金，了解最佳领取时间",
       "autoLoan": "车贷计算器",
-      "autoLoanDesc": "估算汽车贷款的月供、总利息和最佳贷款方案"
+      "autoLoanDesc": "估算汽车贷款的月供、总利息和最佳贷款方案",
+      "takeHomePay": "美国税后工资计算器",
+      "takeHomePayDesc": "估算扣除联邦税、FICA、州税和 401(k) 后的 2026 年到手工资"
     },
     "newsletter": {
       "title": "获取最新资讯",
@@ -1076,6 +1078,10 @@
     "mortgagePrepayment": {
       "title": "提前还房贷计算器",
       "subtitle": "该不该提前还房贷？算一笔账"
+    },
+    "takeHomePay": {
+      "title": "美国税后工资计算器",
+      "subtitle": "估算扣除联邦税、FICA、州税和 401(k) 后的到手工资"
     }
   },
   "footer": {
@@ -1185,8 +1191,8 @@
     },
     "tools": {
       "takeHomePay": {
-        "title": "到手工资计算器",
-        "description": "计算扣除联邦税、州税和FICA后的税后收入"
+        "title": "美国税后工资计算器",
+        "description": "估算扣除联邦税、FICA、州税和 401(k) 后的 2026 年到手工资"
       },
       "investment401k": {
         "title": "401(k) 退休计算器",

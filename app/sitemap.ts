@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'fund-fees',
     'emergency-fund',
     'mortgage-prepayment',
+    'take-home-pay',
   ];
 
   const routes: MetadataRoute.Sitemap = [];

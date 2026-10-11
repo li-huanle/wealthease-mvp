@@ -191,6 +191,12 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
       color: 'from-violet-400 to-purple-500',
     },
     {
+      key: 'takeHomePay',
+      href: `/${locale}/calculators/take-home-pay`,
+      icon: '💼',
+      color: 'from-cyan-400 to-blue-500',
+    },
+    {
       key: 'installmentApr',
       href: `/${locale}/calculators/installment-apr`,
       icon: '🧮',

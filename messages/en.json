@@ -75,7 +75,9 @@
       "socialSecurity": "Social Security Calculator",
       "socialSecurityDesc": "Estimate retirement benefits and find the optimal claiming age",
       "autoLoan": "Auto Loan Calculator",
-      "autoLoanDesc": "Estimate monthly car payments, total interest, and find the best loan"
+      "autoLoanDesc": "Estimate monthly car payments, total interest, and find the best loan",
+      "takeHomePay": "Take-Home Pay Calculator (US)",
+      "takeHomePayDesc": "Estimate your 2026 paycheck after federal tax, FICA, state tax and 401(k)"
     },
     "newsletter": {
       "title": "Stay Updated",
@@ -1076,6 +1078,10 @@
     "mortgagePrepayment": {
       "title": "Mortgage Prepayment Calculator",
       "subtitle": "Should you prepay your mortgage or keep the cash? Run the numbers"
+    },
+    "takeHomePay": {
+      "title": "Take-Home Pay Calculator (US)",
+      "subtitle": "Estimate your paycheck after federal tax, FICA, state tax and 401(k)"
     }
   },
   "footer": {
@@ -1185,8 +1191,8 @@
     },
     "tools": {
       "takeHomePay": {
-        "title": "Take-Home Pay Calculator",
-        "description": "Calculate your after-tax income with federal, state, and FICA taxes"
+        "title": "Take-Home Pay Calculator (US)",
+        "description": "Estimate your 2026 paycheck after federal tax, FICA, state tax and 401(k)"
       },
       "investment401k": {
         "title": "401(k) Retirement Calculator",

@@ -88,7 +88,7 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
           title: t('tools.takeHomePay.title'),
           description: t('tools.takeHomePay.description'),
           href: `/${locale}/calculators/take-home-pay`,
-          available: false,
+          available: true,
         },
         {
           icon: <PiggyBank className="w-8 h-8 text-primary-600" />,

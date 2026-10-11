@@ -185,3 +185,103 @@ export function mortgagePrepayment(input: PrepaymentInput): PrepaymentResult | n
     advantage: Math.abs(endValuePrepay - endValueInvest),
   };
 }
+
+// ---------------------------------------------------------------------------
+// US take-home pay (federal income tax + FICA + flat state estimate), tax year 2026.
+// Sources: IRS Rev. Proc. 2025-32 (brackets, standard deduction), SSA (wage base),
+// IRS Notice 2025-67 (401(k) limit). Estimate only: ignores credits, itemizing,
+// local taxes and state-specific deductions.
+// ---------------------------------------------------------------------------
+
+export type FilingStatus = 'single' | 'married' | 'head';
+
+export const US_TAX_YEAR = 2026;
+export const SS_WAGE_BASE = 184500;
+export const LIMIT_401K = 24500;
+
+export const STANDARD_DEDUCTION: Record<FilingStatus, number> = {
+  single: 16100,
+  married: 32200,
+  head: 24150,
+};
+
+// [upper bound of bracket, rate]
+const BRACKETS: Record<FilingStatus, [number, number][]> = {
+  single: [[12400, 0.10], [50400, 0.12], [105700, 0.22], [201775, 0.24], [256225, 0.32], [640600, 0.35], [Infinity, 0.37]],
+  married: [[24800, 0.10], [100800, 0.12], [211400, 0.22], [403550, 0.24], [512450, 0.32], [768700, 0.35], [Infinity, 0.37]],
+  head: [[17700, 0.10], [67450, 0.12], [105700, 0.22], [201750, 0.24], [256200, 0.32], [640600, 0.35], [Infinity, 0.37]],
+};
+
+const ADDITIONAL_MEDICARE_THRESHOLD: Record<FilingStatus, number> = {
+  single: 200000,
+  married: 250000,
+  head: 200000,
+};
+
+export function federalIncomeTax(taxable: number, status: FilingStatus): { tax: number; marginalRate: number } {
+  let tax = 0;
+  let lower = 0;
+  let marginalRate = BRACKETS[status][0][1];
+  for (const [upper, rate] of BRACKETS[status]) {
+    if (taxable <= lower) break;
+    tax += (Math.min(taxable, upper) - lower) * rate;
+    marginalRate = rate;
+    lower = upper;
+  }
+  return { tax, marginalRate };
+}
+
+export interface TakeHomeInput {
+  grossSalary: number;
+  status: FilingStatus;
+  /** Traditional 401(k) deferral as a percent of salary. */
+  contribution401kPct: number;
+  /** Annual pre-tax health/dental/vision premiums (Section 125). */
+  pretaxHealth: number;
+  /** Flat state income tax estimate, in percent of state taxable pay. */
+  stateRatePct: number;
+}
+
+export interface TakeHomeResult {
+  gross: number;
+  contribution401k: number;
+  pretaxHealth: number;
+  federalTax: number;
+  socialSecurity: number;
+  medicare: number;
+  stateTax: number;
+  totalTax: number;
+  netAnnual: number;
+  taxableFederal: number;
+  marginalRate: number;
+  effectiveTaxRatePct: number;
+}
+
+export function usTakeHome(input: TakeHomeInput): TakeHomeResult {
+  const gross = Math.max(0, input.grossSalary);
+  const k401 = Math.min(gross * Math.max(0, input.contribution401kPct) / 100, LIMIT_401K, gross);
+  const health = Math.min(Math.max(0, input.pretaxHealth), gross);
+  const ficaWages = Math.max(0, gross - health);
+  const taxableFederal = Math.max(0, gross - k401 - health - STANDARD_DEDUCTION[input.status]);
+  const { tax: federalTax, marginalRate } = federalIncomeTax(taxableFederal, input.status);
+  const socialSecurity = 0.062 * Math.min(ficaWages, SS_WAGE_BASE);
+  const medicare =
+    0.0145 * ficaWages + 0.009 * Math.max(0, ficaWages - ADDITIONAL_MEDICARE_THRESHOLD[input.status]);
+  const stateTax = Math.max(0, gross - k401 - health) * (Math.max(0, input.stateRatePct) / 100);
+  const totalTax = federalTax + socialSecurity + medicare + stateTax;
+  const netAnnual = gross - k401 - health - totalTax;
+  return {
+    gross,
+    contribution401k: k401,
+    pretaxHealth: health,
+    federalTax,
+    socialSecurity,
+    medicare,
+    stateTax,
+    totalTax,
+    netAnnual,
+    taxableFederal,
+    marginalRate,
+    effectiveTaxRatePct: gross > 0 ? (totalTax / gross) * 100 : 0,
+  };
+}
