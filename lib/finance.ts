@@ -327,3 +327,19 @@ export type AreaUnit = keyof typeof AREA_UNITS;
 export function convertArea(value: number, from: AreaUnit, to: AreaUnit): number {
   return (value * AREA_UNITS[from].factor) / AREA_UNITS[to].factor;
 }
+
+/**
+ * Extra 2026 deductions for older or blind filers (applied to the primary filer only):
+ * the additional standard deduction (Rev. Proc. 2025-32 §4.14(3)) and the
+ * OBBBA senior deduction ($6,000, tax years 2025-2028, reduced by 6% of MAGI over the threshold).
+ */
+export function extraStandardDeductions(status: FilingStatus, age: number, blind: boolean, magi: number) {
+  const perCondition = status === 'married' ? 1650 : 2050;
+  const additional = (age >= 65 ? perCondition : 0) + (blind ? perCondition : 0);
+  const threshold = status === 'married' ? 150000 : 75000;
+  const senior = age >= 65 ? Math.max(0, 6000 - 0.06 * Math.max(0, magi - threshold)) : 0;
+  return { additional, senior };
+}
+
+export const LIMIT_IRA = 7500;
+export const LIMIT_IRA_CATCH_UP = 1100;

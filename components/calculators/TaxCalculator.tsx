@@ -2,7 +2,27 @@
 
 import { useState } from 'react';
 import { useLocale as useSiteLocale } from 'next-intl';
-import { FilingStatus, SS_WAGE_BASE, STANDARD_DEDUCTION, federalIncomeTax } from '@/lib/finance';
+import { FilingStatus, LIMIT_IRA, LIMIT_IRA_CATCH_UP, SS_WAGE_BASE, STANDARD_DEDUCTION, extraStandardDeductions, federalIncomeTax } from '@/lib/finance';
+
+// No wage income tax (AK, FL, NV, NH, SD, TN, TX, WA, WY) or long-standing flat rates.
+const FLAT_STATE_RATES: Record<string, number> = {
+  AK: 0, FL: 0, NV: 0, NH: 0, SD: 0, TN: 0, TX: 0, WA: 0, WY: 0,
+  IL: 0.0495, PA: 0.0307,
+};
+
+const STATE_NAMES: Record<string, { en: string; zh: string }> = {
+  TX: { en: 'Texas', zh: '德克萨斯' },
+  FL: { en: 'Florida', zh: '佛罗里达' },
+  WA: { en: 'Washington', zh: '华盛顿' },
+  NV: { en: 'Nevada', zh: '内华达' },
+  TN: { en: 'Tennessee', zh: '田纳西' },
+  AK: { en: 'Alaska', zh: '阿拉斯加' },
+  NH: { en: 'New Hampshire', zh: '新罕布什尔' },
+  SD: { en: 'South Dakota', zh: '南达科他' },
+  WY: { en: 'Wyoming', zh: '怀俄明' },
+  IL: { en: 'Illinois', zh: '伊利诺伊' },
+  PA: { en: 'Pennsylvania', zh: '宾夕法尼亚' },
+};
 
 interface TaxResult {
   grossIncome: number;
@@ -29,14 +49,18 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
   const [income, setIncome] = useState(100000);
   const [filingStatus, setFilingStatus] = useState('single');
   const status: FilingStatus = filingStatus === 'married' || filingStatus === 'head' ? filingStatus : 'single';
-  const standardDeduction = STANDARD_DEDUCTION[status];
-  const [state, setState] = useState('CA');
+  const [state, setState] = useState('TX');
+  const [customStateRate, setCustomStateRate] = useState(5);
   const [age, setAge] = useState(30);
   const [isBlind, setIsBlind] = useState(false);
   const [dependentCount, setDependentCount] = useState(0);
   const [k401Contribution, setk401Contribution] = useState(0);
   const [hsaContribution, setHsaContribution] = useState(0);
-  const [hasTraditionalIRA, setHasTraditionalIRA] = useState(false);
+  const [iraContribution, setIraContribution] = useState(0);
+  const iraLimit = LIMIT_IRA + (age >= 50 ? LIMIT_IRA_CATCH_UP : 0);
+  const adjustedIncome = Math.max(0, income - k401Contribution - hsaContribution - Math.min(iraContribution, iraLimit));
+  const extra = extraStandardDeductions(status, age, isBlind, adjustedIncome);
+  const standardDeduction = STANDARD_DEDUCTION[status] + extra.additional + extra.senior;
 
   const [showResults, setShowResults] = useState(false);
   const [result, setResult] = useState<TaxResult | null>(null);
@@ -45,18 +69,14 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
     // 2026 federal brackets and standard deduction by filing status (see lib/finance.ts)
 
     // Above-the-line deductions
-    const deductions = k401Contribution + hsaContribution + (hasTraditionalIRA ? Math.min(7500, income * 0.1) : 0);
-    const taxableIncome = Math.max(0, income - standardDeduction - deductions);
+    const taxableIncome = Math.max(0, adjustedIncome - standardDeduction);
 
     const { tax: federalTax, marginalRate } = federalIncomeTax(taxableIncome, status);
 
     // 州税（简化）
-    const stateTaxRates: Record<string, number> = {
-      'CA': 0.093, 'NY': 0.085, 'TX': 0, 'FL': 0, 'WA': 0,
-      'IL': 0.0495, 'PA': 0.0307, 'OH': 0.0399, 'MI': 0.0425,
-    };
-    const stateRate = stateTaxRates[state] || 0.05;
-    const stateTax = taxableIncome * stateRate;
+    // Only flat-rate and no-income-tax states are modelled exactly; other states use the rate the user enters.
+    const stateRate = state in FLAT_STATE_RATES ? FLAT_STATE_RATES[state] : customStateRate / 100;
+    const stateTax = adjustedIncome * stateRate;
 
     // FICA（社保+医保）
     const socialSecurityTax = Math.min(income, SS_WAGE_BASE) * 0.062;
@@ -139,16 +159,33 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
               onChange={(e) => setState(e.target.value)}
               className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             >
-              <option value="CA">{locale === 'zh' ? '加利福尼亚' : 'California'} (9.3%)</option>
-              <option value="NY">{locale === 'zh' ? '纽约' : 'New York'} (8.5%)</option>
-              <option value="TX">{locale === 'zh' ? '德克萨斯' : 'Texas'} (0%)</option>
-              <option value="FL">{locale === 'zh' ? '佛罗里达' : 'Florida'} (0%)</option>
-              <option value="WA">{locale === 'zh' ? '华盛顿' : 'Washington'} (0%)</option>
-              <option value="IL">{locale === 'zh' ? '伊利诺伊' : 'Illinois'} (4.95%)</option>
-              <option value="PA">{locale === 'zh' ? '宾夕法尼亚' : 'Pennsylvania'} (3.07%)</option>
-              <option value="OH">{locale === 'zh' ? '俄亥俄' : 'Ohio'} (3.99%)</option>
-              <option value="MI">{locale === 'zh' ? '密歇根' : 'Michigan'} (4.25%)</option>
+              {Object.entries(STATE_NAMES).map(([code, name]) => (
+                <option key={code} value={code}>
+                  {locale === 'zh' ? name.zh : name.en} ({(FLAT_STATE_RATES[code] * 100).toFixed(2).replace(/\.?0+$/, '')}%)
+                </option>
+              ))}
+              <option value="OTHER">{locale === 'zh' ? '其他州（自填税率）' : 'Other state (enter rate)'}</option>
             </select>
+            {state === 'OTHER' && (
+              <div className="relative">
+                <input
+                  type="number"
+                  min={0}
+                  max={15}
+                  step={0.1}
+                  value={customStateRate}
+                  onChange={(e) => setCustomStateRate(Number(e.target.value))}
+                  className="w-full pr-10 px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  aria-label={locale === 'zh' ? '州有效税率' : 'State effective tax rate'}
+                />
+                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">%</span>
+              </div>
+            )}
+            <p className="text-xs text-gray-500">
+              {locale === 'zh'
+                ? '累进税率的州（如加州、纽约）请选「其他州」并填写你的实际税负率。'
+                : 'For states with graduated rates (e.g. California, New York), choose "Other state" and enter your effective rate.'}
+            </p>
           </div>
 
           {/* Age */}
@@ -208,18 +245,26 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
 
           {/* Additional Options */}
           <div className="md:col-span-2 space-y-4">
-            <div className="flex items-center gap-4">
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={hasTraditionalIRA}
-                  onChange={(e) => setHasTraditionalIRA(e.target.checked)}
-                  className="w-5 h-5 rounded border-gray-300 text-primary-600 focus:ring-primary-500"
-                />
-                <span className="text-sm text-gray-700">
-                  {locale === 'zh' ? '有传统IRA缴费（可抵税）' : 'Traditional IRA contribution (tax-deductible)'}
-                </span>
+            <div className="space-y-3 md:max-w-md">
+              <label className="block text-sm font-medium text-gray-700">
+                {locale === 'zh' ? '可抵税的传统 IRA 缴款' : 'Deductible traditional IRA contribution'}
               </label>
+              <div className="relative">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+                <input
+                  type="number"
+                  min={0}
+                  max={iraLimit}
+                  value={iraContribution}
+                  onChange={(e) => setIraContribution(Number(e.target.value))}
+                  className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                />
+              </div>
+              <p className="text-xs text-gray-500">
+                {locale === 'zh'
+                  ? `2026年上限 $${iraLimit.toLocaleString()}（50岁以上含 $${LIMIT_IRA_CATCH_UP.toLocaleString()} 追加额）。若你有雇主退休计划，抵扣额会随收入递减，请只填可抵扣的部分。`
+                  : `2026 limit $${iraLimit.toLocaleString()} (includes $${LIMIT_IRA_CATCH_UP.toLocaleString()} catch-up if 50+). If you are covered by a workplace plan the deduction phases out with income — enter only the deductible part.`}
+              </p>
             </div>
             <div className="flex items-center gap-4">
               <label className="flex items-center gap-2 cursor-pointer">
@@ -230,7 +275,7 @@ export default function TaxCalculator({ onCalculate }: TaxCalculatorProps) {
                   className="w-5 h-5 rounded border-gray-300 text-primary-600 focus:ring-primary-500"
                 />
                 <span className="text-sm text-gray-700">
-                  {locale === 'zh' ? '盲人或视障人士（额外扣除）' : 'Blind or visually impaired (additional deduction)'}
+                  {locale === 'zh' ? '盲人或视障人士（额外标准扣除）' : 'Blind or visually impaired (additional standard deduction)'}
                 </span>
               </label>
             </div>

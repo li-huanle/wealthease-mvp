@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { DollarSign, Users, Plus, Minus, RefreshCw } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 interface Person {
   name: string;
@@ -13,11 +13,11 @@ interface Person {
 
 export default function TipCalculator() {
   const t = useTranslations('calculator.tip');
+  const locale = useLocale();
   const [billAmount, setBillAmount] = useState<string>('');
   const [tipPercentage, setTipPercentage] = useState<number>(15);
   const [customTip, setCustomTip] = useState<string>('');
   const [numberOfPeople, setNumberOfPeople] = useState<number>(1);
-  const [people, setPeople] = useState<Person[]>([{ name: 'Person 1', billShare: 0, tipShare: 0, totalShare: 0 }]);
   const [useCustomTip, setUseCustomTip] = useState<boolean>(false);
 
   const handleQuickTip = (percentage: number) => {
@@ -34,33 +34,7 @@ export default function TipCalculator() {
   };
 
   const handlePeopleChange = (num: number) => {
-    if (num < 1) num = 1;
-    if (num > 50) num = 50;
-
-    const newPeople: Person[] = [];
-    for (let i = 0; i < num; i++) {
-      newPeople.push({
-        name: `Person ${i + 1}`,
-        billShare: 0,
-        tipShare: 0,
-        totalShare: 0,
-      });
-    }
-    setNumberOfPeople(num);
-    setPeople(newPeople);
-  };
-
-  const handlePersonBillChange = (index: number, value: string) => {
-    const newPeople = [...people];
-    const billShare = parseFloat(value) || 0;
-    const tipShare = billShare * (tipPercentage / 100);
-    newPeople[index] = {
-      ...newPeople[index],
-      billShare,
-      tipShare,
-      totalShare: billShare + tipShare,
-    };
-    setPeople(newPeople);
+    setNumberOfPeople(Math.min(50, Math.max(1, num)));
   };
 
   const resetCalculator = () => {
@@ -68,47 +42,21 @@ export default function TipCalculator() {
     setTipPercentage(15);
     setCustomTip('');
     setNumberOfPeople(1);
-    setPeople([{ name: t('results.person'), billShare: 0, tipShare: 0, totalShare: 0 }]);
     setUseCustomTip(false);
   };
-
-  // Auto-calculate when inputs change
-  const calculateResults = () => {
-    const bill = parseFloat(billAmount) || 0;
-    if (bill > 0) {
-      const tip = bill * (tipPercentage / 100);
-      const total = bill + tip;
-
-      if (numberOfPeople === 1) {
-        setPeople([{
-          name: t('results.person'),
-          billShare: bill,
-          tipShare: tip,
-          totalShare: total,
-        }]);
-      } else {
-        const billPerPerson = bill / numberOfPeople;
-        const tipPerPerson = tip / numberOfPeople;
-        const totalPerPerson = total / numberOfPeople;
-
-        const newPeople = people.map((person, index) => ({
-          ...person,
-          billShare: Math.round(billPerPerson * 100) / 100,
-          tipShare: Math.round(tipPerPerson * 100) / 100,
-          totalShare: Math.round(totalPerPerson * 100) / 100,
-        }));
-        setPeople(newPeople);
-      }
-    }
-  };
-
-  useEffect(() => {
-    calculateResults();
-  }, [billAmount, tipPercentage, numberOfPeople, t]);
 
   const bill = parseFloat(billAmount) || 0;
   const tip = bill * (tipPercentage / 100);
   const total = bill + tip;
+
+  // Equal split per person, derived from the inputs.
+  const round2 = (v: number) => Math.round(v * 100) / 100;
+  const people: Person[] = Array.from({ length: numberOfPeople }, (_, index) => ({
+    name: numberOfPeople === 1 ? t('results.person') : locale === 'zh' ? `第 ${index + 1} 位` : `Person ${index + 1}`,
+    billShare: round2(bill / numberOfPeople),
+    tipShare: round2(tip / numberOfPeople),
+    totalShare: round2(total / numberOfPeople),
+  }));
 
   const quickTipOptions = [10, 12, 15, 18, 20, 25];
 

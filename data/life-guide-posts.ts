@@ -648,7 +648,7 @@ Tax authorities never ask for bank card passwords, payment passwords or SMS code
 
 ## 8. Contract and payment terms
 
-Write "deposit" in the sense of the legal 定金 (dingjin), not the lookalike 订金 (dingjin, "advance"). Only the former has the double-return rule: if you back out, you lose it; if the other side does, they return double (capped at 20% of the contract value). Specify a penalty amount. Treat credit terms like a loan: you are lending your money interest-free, and it becomes a bad debt if the buyer fails. Check the other party on the National Enterprise Credit Information system first.
+In Chinese contracts, label the payment as an earnest-money deposit (the legal term "dingjin" written with the character for "fixed"), not the near-identical word for an ordinary advance payment. Only the earnest-money deposit has the double-return rule: if you back out, you lose it; if the other side does, they return double (capped at 20% of the contract value). Specify a penalty amount. Treat credit terms like a loan: you are lending your money interest-free, and it becomes a bad debt if the buyer fails. Check the other party on the National Enterprise Credit Information system first.
 
 ## 9. Hiring
 
@@ -832,7 +832,7 @@ An IOU should name the lender and borrower, the amount, interest rate, term and 
 
 ## Before guaranteeing a debt, look for the word "joint"
 
-With a general guarantee, the creditor must sue the borrower and fail to collect before coming to you. With a joint-and-several guarantee ("连带责任保证"), the creditor can ask you directly. Be sure you would be willing to repay the amount. Also check you are signing a guarantee, not the loan contract itself.
+With a general guarantee, the creditor must sue the borrower and fail to collect before coming to you. With a joint-and-several guarantee, the creditor can ask you directly. Be sure you would be willing to repay the amount. Also check you are signing a guarantee, not the loan contract itself.
 
 ## Limitation periods: 3 years for civil claims, 1 year for labour arbitration
 
@@ -846,7 +846,7 @@ Moving your house into a company or your money to relatives is exactly what the 
 
 Before the gift is transferred into the recipient's name you can withdraw it freely. After it is, it can be revoked only if the recipient seriously harms you or your close relatives, fails to support you when they should, or fails to perform agreed obligations. So before any large transfer, decide whether it is a loan or a gift, and write that in the message. A notarised gift cannot be taken back at will.
 
-## Betrothal gifts (彩礼)
+## Betrothal gifts ("caili")
 
 Demanding money under the guise of marriage is prohibited and courts support return. You can ask for it back if you did not register the marriage, registered but did not actually live together, or the gift left the giver in hardship. If you registered and lived together, generally it is not returned. Pay by transfer with a memo, keep the chat logs, and note that the giving party holds the burden of proof, men and women alike. How "excessive" a gift is depends on local income levels; there is no national figure.
 
