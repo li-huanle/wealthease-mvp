@@ -81,7 +81,19 @@
       "taxBracket": "联邦税阶查询",
       "taxBracketDesc": "查找您的税阶并计算边际税率",
       "areaConversion": "面积单位换算",
-      "areaConversionDesc": "在平方英尺、平方米、英亩等单位间快速换算"
+      "areaConversionDesc": "在平方英尺、平方米、英亩等单位间快速换算",
+      "homeAffordability": "买房预算计算器",
+      "homeAffordabilityDesc": "我能买多贵的房？按 28/36 规则，含房产税、保险和物业费",
+      "creditCardPayoff": "信用卡还清计算器",
+      "creditCardPayoffDesc": "看看还清信用卡要多久、要付多少利息",
+      "salaryHourly": "时薪年薪换算",
+      "salaryHourlyDesc": "时薪换算成年薪、月薪、周薪，或把年薪换算成时薪",
+      "refinance": "房贷再融资计算器",
+      "refinanceDesc": "算出再融资的回本时间，以及扣除手续费后的总节省",
+      "budget": "50/30/20 预算计算器",
+      "budgetDesc": "把到手收入分成必要支出、想要的支出和储蓄，并与实际支出对比",
+      "netWorth": "净资产计算器",
+      "netWorthDesc": "把资产和负债加总，算出净资产和资产负债率"
     },
     "newsletter": {
       "title": "获取最新资讯",
@@ -1094,6 +1106,30 @@
     "areaConversion": {
       "title": "面积单位换算",
       "subtitle": "平方英尺、平方米、英亩、公顷等单位快速换算"
+    },
+    "homeAffordability": {
+      "title": "买房预算计算器",
+      "subtitle": "根据收入、负债和首付，估算你能负担的房价"
+    },
+    "creditCardPayoff": {
+      "title": "信用卡还清计算器",
+      "subtitle": "算出信用卡多久能还清，以及要付多少利息"
+    },
+    "salaryHourly": {
+      "title": "时薪年薪换算",
+      "subtitle": "时薪和年薪互相换算"
+    },
+    "refinance": {
+      "title": "房贷再融资计算器",
+      "subtitle": "看看再融资多久能回本，整个贷款期能不能省钱"
+    },
+    "budget": {
+      "title": "50/30/20 预算计算器",
+      "subtitle": "用 50/30/20 法则分配到手收入，并与实际支出对比"
+    },
+    "netWorth": {
+      "title": "净资产计算器",
+      "subtitle": "把你拥有的和你欠的加起来，算出净资产"
     }
   },
   "footer": {
@@ -1313,6 +1349,30 @@
       "mortgagePrepayment": {
         "title": "提前还房贷计算器",
         "description": "对比提前还房贷和把钱留着投资，哪个更划算"
+      },
+      "homeAffordability": {
+        "title": "买房预算计算器",
+        "description": "我能买多贵的房？按 28/36 规则，含房产税、保险和物业费"
+      },
+      "creditCardPayoff": {
+        "title": "信用卡还清计算器",
+        "description": "看看还清信用卡要多久、要付多少利息"
+      },
+      "salaryHourly": {
+        "title": "时薪年薪换算",
+        "description": "时薪换算成年薪、月薪、周薪，或把年薪换算成时薪"
+      },
+      "refinance": {
+        "title": "房贷再融资计算器",
+        "description": "算出再融资的回本时间，以及扣除手续费后的总节省"
+      },
+      "budget": {
+        "title": "50/30/20 预算计算器",
+        "description": "把到手收入分成必要支出、想要的支出和储蓄，并与实际支出对比"
+      },
+      "netWorth": {
+        "title": "净资产计算器",
+        "description": "把资产和负债加总，算出净资产和资产负债率"
       }
     },
     "comingSoon": "即将推出"

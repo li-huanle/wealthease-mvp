@@ -211,6 +211,42 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
       color: 'from-lime-400 to-green-500',
     },
     {
+      key: 'homeAffordability',
+      href: `/${locale}/calculators/home-affordability`,
+      icon: '🏡',
+      color: 'from-teal-400 to-emerald-500',
+    },
+    {
+      key: 'creditCardPayoff',
+      href: `/${locale}/calculators/credit-card-payoff`,
+      icon: '💳',
+      color: 'from-rose-400 to-pink-500',
+    },
+    {
+      key: 'salaryHourly',
+      href: `/${locale}/calculators/salary-hourly`,
+      icon: '⏱️',
+      color: 'from-indigo-400 to-blue-500',
+    },
+    {
+      key: 'refinance',
+      href: `/${locale}/calculators/refinance`,
+      icon: '🔁',
+      color: 'from-cyan-400 to-sky-500',
+    },
+    {
+      key: 'budget',
+      href: `/${locale}/calculators/budget`,
+      icon: '📊',
+      color: 'from-amber-400 to-yellow-500',
+    },
+    {
+      key: 'netWorth',
+      href: `/${locale}/calculators/net-worth`,
+      icon: '🧮',
+      color: 'from-violet-400 to-fuchsia-500',
+    },
+    {
       key: 'installmentApr',
       href: `/${locale}/calculators/installment-apr`,
       icon: '🧮',
@@ -339,7 +375,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
   ];
 
   // US-first selection shown on the home page; the full list lives on /calculators.
-  const popularKeys = ['takeHomePay', 'mortgage', 'compound', 'retirement', 'taxBracket', 'investment401k', 'loan', 'debtPayoff', 'rentVsBuy'];
+  const popularKeys = ['takeHomePay', 'homeAffordability', 'mortgage', 'creditCardPayoff', 'salaryHourly', 'compound', 'retirement', 'taxBracket', 'investment401k'];
   const popularTools = popularKeys
     .map((key) => tools.find((tool) => tool.key === key))
     .filter((tool): tool is (typeof tools)[number] => Boolean(tool));

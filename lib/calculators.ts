@@ -27,4 +27,10 @@ export const CALCULATOR_SLUGS = [
   'take-home-pay',
   'tax-bracket',
   'area-conversion',
+  'home-affordability',
+  'credit-card-payoff',
+  'salary-hourly',
+  'refinance',
+  'budget',
+  'net-worth',
 ] as const;
