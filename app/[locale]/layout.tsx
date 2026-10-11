@@ -77,6 +77,8 @@ export default async function LocaleLayout({
           <CookieConsent />
         </NextIntlClientProvider>
         <Analytics />
+        {/* Cloudflare Web Analytics */}
+        <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "268614429f7d439fac28fa211bc45364"}'></script>
       </body>
     </html>
   );
