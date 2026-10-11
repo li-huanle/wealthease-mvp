@@ -456,7 +456,7 @@ export default function CollegeSavingsCalculator() {
             )}
           </div>
 
-          {/* Expert Tips */}
+          {/* Practical Tips */}
           <ExpertTips
             tips={[
               {

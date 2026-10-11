@@ -509,7 +509,7 @@ export default function InvestmentComparisonCalculator() {
             </div>
           )}
 
-          {/* Expert Tips */}
+          {/* Practical Tips */}
           <ExpertTips
             tips={[
               {

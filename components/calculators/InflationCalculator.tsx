@@ -1,6 +1,6 @@
 'use client';
 
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import {useTranslations} from 'next-intl';
 import {Line, Bar} from 'react-chartjs-2';
 import {
@@ -124,12 +124,13 @@ export default function InflationCalculator() {
 
   const currentYear = new Date().getFullYear();
 
-  // Update end year when start year changes
-  useEffect(() => {
-    if (startYear >= endYear) {
-      setEndYear(Math.min(startYear + 10, currentYear));
+  // Keep the end year after the start year when the start year changes
+  const handleStartYearChange = (year: number) => {
+    setStartYear(year);
+    if (year >= endYear) {
+      setEndYear(Math.min(year + 10, currentYear));
     }
-  }, [startYear, endYear, currentYear]);
+  };
 
   const calculateInflation = () => {
     const startCPI = getCPIForYear(startYear);
@@ -292,7 +293,7 @@ export default function InflationCalculator() {
                   <CalculatorInput
                     label={t('form.startYear')}
                     value={startYear}
-                    onChange={setStartYear}
+                    onChange={handleStartYearChange}
                     min={1913}
                     max={currentYear - 1}
                     step={1}
@@ -486,7 +487,7 @@ export default function InflationCalculator() {
           )}
         </div>
 
-        {/* Expert Tips Sidebar */}
+        {/* Practical Tips Sidebar */}
         <div className="lg:col-span-1">
           <ExpertTips tips={expertTips} locale={currency('locale')} />
         </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import {useState} from 'react';
-import {useTranslations} from 'next-intl';
+import {useTranslations, useLocale} from 'next-intl';
 import {Doughnut, Line} from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -65,6 +65,7 @@ interface CalculationResult {
 export default function MortgageCalculator() {
   const t = useTranslations('calculator.mortgage');
   const currency = useTranslations('common.currency');
+  const yearsSuffix = useLocale() === 'zh' ? ' 年' : ' yrs';
   const isUS = currency('code') === 'USD';
 
   // Form state
@@ -481,7 +482,7 @@ export default function MortgageCalculator() {
                   value={homePrice}
                   onChange={setHomePrice}
                   min={0}
-                  max={50000000}
+                  max={5000000}
                   step={10000}
                   prefix="$"
                   showSlider
@@ -574,7 +575,7 @@ export default function MortgageCalculator() {
                   min={1}
                   max={40}
                   step={1}
-                  suffix=" 年"
+                  suffix={yearsSuffix}
                   showSlider
                   tooltip={currency('code') === 'CNY'
                     ? '贷款期限（年）'
@@ -582,7 +583,7 @@ export default function MortgageCalculator() {
                 />
               </div>
 
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-x-6">
                 <CalculatorInput
                   label={t('form.propertyTax')}
                   value={propertyTax}
@@ -889,7 +890,7 @@ export default function MortgageCalculator() {
           )}
         </div>
 
-        {/* Expert Tips Sidebar */}
+        {/* Practical Tips Sidebar */}
         <div className="lg:col-span-1">
           <ExpertTips tips={expertTips} locale={currency('locale')} />
         </div>

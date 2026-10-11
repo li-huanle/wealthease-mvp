@@ -1,13 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import { useLocale as useSiteLocale } from 'next-intl';
 
 interface AutoLoanCalculatorProps {
   onCalculate?: (result: any) => void;
 }
 
 export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorProps) {
-  const [locale, setLocale] = useState<'en' | 'zh'>('zh');
+  const locale: 'en' | 'zh' = useSiteLocale() === 'zh' ? 'zh' : 'en';
 
   const [vehiclePrice, setVehiclePrice] = useState(35000);
   const [downPayment, setDownPayment] = useState(5000);
@@ -62,23 +63,6 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="flex justify-center mb-6">
-        <div className="inline-flex bg-gray-100 rounded-lg p-1">
-          <button
-            onClick={() => setLocale('zh')}
-            className={`px-4 py-2 rounded-md font-medium transition-colors ${locale === 'zh' ? 'bg-white shadow text-gray-900' : 'text-gray-600'}`}
-          >
-            人民币 (¥)
-          </button>
-          <button
-            onClick={() => setLocale('en')}
-            className={`px-4 py-2 rounded-md font-medium transition-colors ${locale === 'en' ? 'bg-white shadow text-gray-900' : 'text-gray-600'}`}
-          >
-            美元 ($)
-          </button>
-        </div>
-      </div>
-
       <div className="bg-white rounded-2xl shadow-card p-8">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">
           {locale === 'zh' ? '输入购车信息' : 'Enter Vehicle Information'}
@@ -91,7 +75,7 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
             </label>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
-                {locale === 'zh' ? '¥' : '$'}
+                $
               </span>
               <input
                 type="number"
@@ -108,7 +92,7 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
             </label>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
-                {locale === 'zh' ? '¥' : '$'}
+                $
               </span>
               <input
                 type="number"
@@ -125,7 +109,7 @@ export default function AutoLoanCalculator({ onCalculate }: AutoLoanCalculatorPr
             </label>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
-                {locale === 'zh' ? '¥' : '$'}
+                $
               </span>
               <input
                 type="number"

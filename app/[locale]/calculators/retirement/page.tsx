@@ -1,6 +1,26 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import type { Metadata } from 'next';
+import { buildMetadata } from '@/lib/seo';
 import RetirementCalculator from '@/components/calculators/RetirementCalculator';
 import RelatedCalculators from '@/components/RelatedCalculators';
+
+const seo = {
+  en: {
+    title: "Retirement Calculator - How Much Do You Need to Retire? | WealthEase",
+    description: "Free retirement calculator: estimate how much you need to retire, whether your savings are on track, and how much to save each month.",
+    keywords: "retirement calculator, retirement savings, how much to retire, retirement planning, 401k projection",
+  },
+  zh: {
+    title: "退休规划计算器 - 退休需要攒多少钱？ | WealthEase",
+    description: "免费退休规划计算器：估算退休所需金额、当前储蓄是否达标，以及每月需要存多少。",
+    keywords: "退休计算器, 退休储蓄, 退休需要多少钱, 退休规划, 养老金预测",
+  },
+};
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata(locale, '/calculators/retirement', seo);
+}
 
 export default async function RetirementPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -166,9 +186,9 @@ export default async function RetirementPage({ params }: { params: Promise<{ loc
               </p>
             </section>
 
-            {/* 专家提示 */}
+            {/* 实用提示 */}
             <section className="bg-white rounded-2xl shadow-card p-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">退休规划专家提示</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-6">退休规划实用提示</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
                   <p className="font-semibold text-amber-800 mb-1">💡 充分利用税收优惠</p>
@@ -420,7 +440,7 @@ export default async function RetirementPage({ params }: { params: Promise<{ loc
               </p>
             </section>
 
-            {/* Expert Tips */}
+            {/* Practical Tips */}
             <section className="bg-white rounded-2xl shadow-card p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-6">Expert Retirement Planning Tips</h3>
               <div className="grid md:grid-cols-2 gap-4">

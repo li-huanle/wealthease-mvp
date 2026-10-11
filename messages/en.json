@@ -15,7 +15,7 @@
       "title": "Why Choose WealthEase?",
       "accurate": {
         "title": "Accurate Calculations",
-        "description": "Professional-grade financial formulas trusted by experts"
+        "description": "Standard financial formulas with clearly stated assumptions"
       },
       "easy": {
         "title": "Easy to Use",
@@ -75,7 +75,13 @@
       "socialSecurity": "Social Security Calculator",
       "socialSecurityDesc": "Estimate retirement benefits and find the optimal claiming age",
       "autoLoan": "Auto Loan Calculator",
-      "autoLoanDesc": "Estimate monthly car payments, total interest, and find the best loan"
+      "autoLoanDesc": "Estimate monthly car payments, total interest, and find the best loan",
+      "takeHomePay": "Take-Home Pay Calculator (US)",
+      "takeHomePayDesc": "Estimate your 2026 paycheck after federal tax, FICA, state tax and 401(k)",
+      "taxBracket": "Federal Tax Bracket Calculator",
+      "taxBracketDesc": "Find your tax bracket and calculate marginal tax rates",
+      "areaConversion": "Area Unit Converter",
+      "areaConversionDesc": "Quickly convert between sq ft, sq meters, acres, and other units"
     },
     "newsletter": {
       "title": "Stay Updated",
@@ -1076,6 +1082,18 @@
     "mortgagePrepayment": {
       "title": "Mortgage Prepayment Calculator",
       "subtitle": "Should you prepay your mortgage or keep the cash? Run the numbers"
+    },
+    "takeHomePay": {
+      "title": "Take-Home Pay Calculator (US)",
+      "subtitle": "Estimate your paycheck after federal tax, FICA, state tax and 401(k)"
+    },
+    "taxBracket": {
+      "title": "Federal Tax Bracket Calculator (US)",
+      "subtitle": "See which federal bracket you are in and how your tax is built, bracket by bracket"
+    },
+    "areaConversion": {
+      "title": "Area Unit Converter",
+      "subtitle": "Convert square feet, square meters, acres, hectares and more"
     }
   },
   "footer": {
@@ -1101,11 +1119,11 @@
     },
     "story": {
       "title": "Our Story",
-      "description": "Founded in 2025, WealthEase was created by a team of financial experts and software engineers who saw the need for accessible financial planning tools. We've helped thousands of users plan their retirement, calculate investments, and make smarter financial decisions."
+      "description": "WealthEase launched in 2025 to make everyday money calculations free, private and easy to understand. Every calculator runs entirely in your browser, and we keep adding tools and updating tax figures each year."
     },
     "expertise": {
-      "title": "Professional Background & Reliability",
-      "subtitle": "Why You Can Trust Our Financial Guidance",
+      "title": "Methods & Sources",
+      "subtitle": "How our calculators work and where the numbers come from",
       "formulas": {
         "title": "Industry-Standard Financial Formulas",
         "content": "All our calculators are based on standard financial mathematical formulas widely recognized and used by financial institutions and professionals. These formulas include:"
@@ -1118,11 +1136,11 @@
       },
       "sources": {
         "title": "Data Sources & References",
-        "content": "Our calculation methods and financial theories are based on the following authoritative sources:"
+        "content": "Tax figures and reference material come from these sources:"
       },
       "sourcesList": {
-        "cfa": "CFA Institute investment calculation standards",
-        "fp": "CFP Board financial planning practice standards",
+        "irs": "IRS publications (tax brackets, deductions, contribution limits)",
+        "ssa": "Social Security Administration (wage base and benefits)",
         "federal": "U.S. Federal Reserve System financial literacy education materials",
         "investopedia": "Investopedia and other reputable financial education resources"
       },
@@ -1143,7 +1161,7 @@
       },
       "accurate": {
         "title": "Accurate & Reliable",
-        "description": "We use industry-standard financial formulas trusted by professionals."
+        "description": "We use standard financial formulas and cite official sources, such as the IRS and SSA, for tax figures."
       },
       "private": {
         "title": "Privacy First",
@@ -1162,7 +1180,7 @@
     },
     "cta": {
       "title": "Start Your Financial Journey Today",
-      "subtitle": "Join thousands of users making smarter financial decisions",
+      "subtitle": "Free calculators for everyday money decisions",
       "button": "Explore Calculators"
     }
   },
@@ -1185,15 +1203,15 @@
     },
     "tools": {
       "takeHomePay": {
-        "title": "Take-Home Pay Calculator",
-        "description": "Calculate your after-tax income with federal, state, and FICA taxes"
+        "title": "Take-Home Pay Calculator (US)",
+        "description": "Estimate your 2026 paycheck after federal tax, FICA, state tax and 401(k)"
       },
       "investment401k": {
         "title": "401(k) Retirement Calculator",
         "description": "Plan your retirement with 401(k) employer matching and compound growth"
       },
       "taxBracket": {
-        "title": "Federal Tax Bracket Calculator",
+        "title": "Federal Tax Bracket Calculator (US)",
         "description": "Find your tax bracket and calculate marginal tax rates"
       },
       "mortgage": {
@@ -1201,7 +1219,7 @@
         "description": "Calculate monthly payments, principal-interest ratios, and prepayment savings"
       },
       "roi": {
-        "title": "Rent-to-Value Ratio Calculator",
+        "title": "ROI Calculator",
         "description": "Calculate ROI and analyze investment returns and gains"
       },
       "areaConversion": {
@@ -1308,7 +1326,7 @@
   },
   "contact": {
     "title": "Contact Us",
-    "subtitle": "Have questions or feedback? We'd love to hear from you. Our team is here to help.",
+    "subtitle": "Have questions or feedback? We'd love to hear from you.",
     "email": {
       "title": "Email Us",
       "description": "For general inquiries, support, or feedback, send us an email and we'll get back to you."

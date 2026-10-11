@@ -3,6 +3,8 @@ import Script from 'next/script';
 export default function GoogleAnalytics({ gaId }: { gaId: string }) {
   return (
     <>
+      {/* Rendered from the root layout (app/[locale]/layout.tsx), where App Router supports beforeInteractive. */}
+      {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
       <Script
         id="google-consent-mode"
         strategy="beforeInteractive"

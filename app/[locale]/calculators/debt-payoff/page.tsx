@@ -224,9 +224,9 @@ export default async function DebtPayoffPage({ params }: { params: Promise<{ loc
                 </div>
               </section>
 
-              {/* 专家建议 */}
+              {/* 实用建议 */}
               <section className="bg-white rounded-2xl shadow-card p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-6">加速还债的专家建议</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-6">加速还债的实用建议</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
                     <p className="font-semibold text-amber-800 mb-1">💡 暂停不必要开支</p>

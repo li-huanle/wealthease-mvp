@@ -185,3 +185,161 @@ export function mortgagePrepayment(input: PrepaymentInput): PrepaymentResult | n
     advantage: Math.abs(endValuePrepay - endValueInvest),
   };
 }
+
+// ---------------------------------------------------------------------------
+// US take-home pay (federal income tax + FICA + flat state estimate), tax year 2026.
+// Sources: IRS Rev. Proc. 2025-32 (brackets, standard deduction), SSA (wage base),
+// IRS Notice 2025-67 (401(k) limit). Estimate only: ignores credits, itemizing,
+// local taxes and state-specific deductions.
+// ---------------------------------------------------------------------------
+
+export type FilingStatus = 'single' | 'married' | 'head';
+
+export const US_TAX_YEAR = 2026;
+export const SS_WAGE_BASE = 184500;
+export const LIMIT_401K = 24500;
+
+export const STANDARD_DEDUCTION: Record<FilingStatus, number> = {
+  single: 16100,
+  married: 32200,
+  head: 24150,
+};
+
+// [upper bound of bracket, rate]
+const BRACKETS: Record<FilingStatus, [number, number][]> = {
+  single: [[12400, 0.10], [50400, 0.12], [105700, 0.22], [201775, 0.24], [256225, 0.32], [640600, 0.35], [Infinity, 0.37]],
+  married: [[24800, 0.10], [100800, 0.12], [211400, 0.22], [403550, 0.24], [512450, 0.32], [768700, 0.35], [Infinity, 0.37]],
+  head: [[17700, 0.10], [67450, 0.12], [105700, 0.22], [201750, 0.24], [256200, 0.32], [640600, 0.35], [Infinity, 0.37]],
+};
+
+const ADDITIONAL_MEDICARE_THRESHOLD: Record<FilingStatus, number> = {
+  single: 200000,
+  married: 250000,
+  head: 200000,
+};
+
+export function federalIncomeTax(taxable: number, status: FilingStatus): { tax: number; marginalRate: number } {
+  let tax = 0;
+  let lower = 0;
+  let marginalRate = BRACKETS[status][0][1];
+  for (const [upper, rate] of BRACKETS[status]) {
+    if (taxable <= lower) break;
+    tax += (Math.min(taxable, upper) - lower) * rate;
+    marginalRate = rate;
+    lower = upper;
+  }
+  return { tax, marginalRate };
+}
+
+export interface TakeHomeInput {
+  grossSalary: number;
+  status: FilingStatus;
+  /** Traditional 401(k) deferral as a percent of salary. */
+  contribution401kPct: number;
+  /** Annual pre-tax health/dental/vision premiums (Section 125). */
+  pretaxHealth: number;
+  /** Flat state income tax estimate, in percent of state taxable pay. */
+  stateRatePct: number;
+}
+
+export interface TakeHomeResult {
+  gross: number;
+  contribution401k: number;
+  pretaxHealth: number;
+  federalTax: number;
+  socialSecurity: number;
+  medicare: number;
+  stateTax: number;
+  totalTax: number;
+  netAnnual: number;
+  taxableFederal: number;
+  marginalRate: number;
+  effectiveTaxRatePct: number;
+}
+
+export function usTakeHome(input: TakeHomeInput): TakeHomeResult {
+  const gross = Math.max(0, input.grossSalary);
+  const k401 = Math.min(gross * Math.max(0, input.contribution401kPct) / 100, LIMIT_401K, gross);
+  const health = Math.min(Math.max(0, input.pretaxHealth), gross);
+  const ficaWages = Math.max(0, gross - health);
+  const taxableFederal = Math.max(0, gross - k401 - health - STANDARD_DEDUCTION[input.status]);
+  const { tax: federalTax, marginalRate } = federalIncomeTax(taxableFederal, input.status);
+  const socialSecurity = 0.062 * Math.min(ficaWages, SS_WAGE_BASE);
+  const medicare =
+    0.0145 * ficaWages + 0.009 * Math.max(0, ficaWages - ADDITIONAL_MEDICARE_THRESHOLD[input.status]);
+  const stateTax = Math.max(0, gross - k401 - health) * (Math.max(0, input.stateRatePct) / 100);
+  const totalTax = federalTax + socialSecurity + medicare + stateTax;
+  const netAnnual = gross - k401 - health - totalTax;
+  return {
+    gross,
+    contribution401k: k401,
+    pretaxHealth: health,
+    federalTax,
+    socialSecurity,
+    medicare,
+    stateTax,
+    totalTax,
+    netAnnual,
+    taxableFederal,
+    marginalRate,
+    effectiveTaxRatePct: gross > 0 ? (totalTax / gross) * 100 : 0,
+  };
+}
+
+export interface BracketRow {
+  rate: number;
+  from: number;
+  /** Infinity for the top bracket. */
+  to: number;
+  incomeInBracket: number;
+  taxInBracket: number;
+}
+
+/** Per-bracket breakdown of federal income tax for a given taxable income. */
+export function bracketBreakdown(taxable: number, status: FilingStatus): BracketRow[] {
+  const rows: BracketRow[] = [];
+  let lower = 0;
+  for (const [upper, rate] of BRACKETS[status]) {
+    const incomeInBracket = Math.max(0, Math.min(taxable, upper) - lower);
+    rows.push({ rate, from: lower, to: upper, incomeInBracket, taxInBracket: incomeInBracket * rate });
+    lower = upper;
+  }
+  return rows;
+}
+
+// ---------------------------------------------------------------------------
+// Area units, expressed in square metres.
+// ---------------------------------------------------------------------------
+export const AREA_UNITS = {
+  sqm: { factor: 1, en: 'Square meters (m²)', zh: '平方米 (m²)' },
+  sqft: { factor: 0.09290304, en: 'Square feet (ft²)', zh: '平方英尺 (ft²)' },
+  sqyd: { factor: 0.83612736, en: 'Square yards (yd²)', zh: '平方码 (yd²)' },
+  acre: { factor: 4046.8564224, en: 'Acres', zh: '英亩' },
+  hectare: { factor: 10000, en: 'Hectares', zh: '公顷' },
+  sqkm: { factor: 1_000_000, en: 'Square kilometers (km²)', zh: '平方公里 (km²)' },
+  sqmi: { factor: 2_589_988.110336, en: 'Square miles (mi²)', zh: '平方英里 (mi²)' },
+  mu: { factor: 10000 / 15, en: 'Mu (市亩)', zh: '亩' },
+  ping: { factor: 400 / 121, en: 'Ping (坪)', zh: '坪' },
+} as const;
+
+export type AreaUnit = keyof typeof AREA_UNITS;
+
+export function convertArea(value: number, from: AreaUnit, to: AreaUnit): number {
+  return (value * AREA_UNITS[from].factor) / AREA_UNITS[to].factor;
+}
+
+/**
+ * Extra 2026 deductions for older or blind filers (applied to the primary filer only):
+ * the additional standard deduction (Rev. Proc. 2025-32 §4.14(3)) and the
+ * OBBBA senior deduction ($6,000, tax years 2025-2028, reduced by 6% of MAGI over the threshold).
+ */
+export function extraStandardDeductions(status: FilingStatus, age: number, blind: boolean, magi: number) {
+  const perCondition = status === 'married' ? 1650 : 2050;
+  const additional = (age >= 65 ? perCondition : 0) + (blind ? perCondition : 0);
+  const threshold = status === 'married' ? 150000 : 75000;
+  const senior = age >= 65 ? Math.max(0, 6000 - 0.06 * Math.max(0, magi - threshold)) : 0;
+  return { additional, senior };
+}
+
+export const LIMIT_IRA = 7500;
+export const LIMIT_IRA_CATCH_UP = 1100;

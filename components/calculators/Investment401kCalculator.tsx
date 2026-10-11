@@ -652,7 +652,7 @@ export default function Investment401kCalculator() {
           )}
         </div>
 
-        {/* Expert Tips Sidebar */}
+        {/* Practical Tips Sidebar */}
         <div className="lg:col-span-1">
           <ExpertTips tips={expertTips} locale={currency('locale')} />
         </div>

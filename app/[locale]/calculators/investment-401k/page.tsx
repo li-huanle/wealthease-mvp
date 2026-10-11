@@ -164,7 +164,7 @@ export default async function Investment401kPage({ params }: { params: Promise<{
               </section>
 
               <section className="bg-white rounded-2xl shadow-card p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-6">专家建议</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-6">实用建议</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
                     <p className="font-semibold text-amber-800 mb-1">💡 先拿到全额匹配</p>
@@ -272,7 +272,7 @@ export default async function Investment401kPage({ params }: { params: Promise<{
               </section>
 
               <section className="bg-white rounded-2xl shadow-card p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-6">Expert Tips</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Practical Tips</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
                     <p className="font-semibold text-amber-800 mb-1">Get Full Match First</p>

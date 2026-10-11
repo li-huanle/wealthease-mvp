@@ -15,7 +15,7 @@
       "title": "为什么选择 WealthEase？",
       "accurate": {
         "title": "精准计算",
-        "description": "专业级金融公式，值得信赖"
+        "description": "标准金融公式，并说明计算假设"
       },
       "easy": {
         "title": "简单易用",
@@ -75,7 +75,13 @@
       "socialSecurity": "社保金计算器",
       "socialSecurityDesc": "估算退休福利金，了解最佳领取时间",
       "autoLoan": "车贷计算器",
-      "autoLoanDesc": "估算汽车贷款的月供、总利息和最佳贷款方案"
+      "autoLoanDesc": "估算汽车贷款的月供、总利息和最佳贷款方案",
+      "takeHomePay": "美国税后工资计算器",
+      "takeHomePayDesc": "估算扣除联邦税、FICA、州税和 401(k) 后的 2026 年到手工资",
+      "taxBracket": "联邦税阶查询",
+      "taxBracketDesc": "查找您的税阶并计算边际税率",
+      "areaConversion": "面积单位换算",
+      "areaConversionDesc": "在平方英尺、平方米、英亩等单位间快速换算"
     },
     "newsletter": {
       "title": "获取最新资讯",
@@ -1076,6 +1082,18 @@
     "mortgagePrepayment": {
       "title": "提前还房贷计算器",
       "subtitle": "该不该提前还房贷？算一笔账"
+    },
+    "takeHomePay": {
+      "title": "美国税后工资计算器",
+      "subtitle": "估算扣除联邦税、FICA、州税和 401(k) 后的到手工资"
+    },
+    "taxBracket": {
+      "title": "美国联邦税率档位计算器",
+      "subtitle": "查看你处于哪个联邦税档，以及税款如何按档位逐级累计"
+    },
+    "areaConversion": {
+      "title": "面积单位换算",
+      "subtitle": "平方英尺、平方米、英亩、公顷等单位快速换算"
     }
   },
   "footer": {
@@ -1101,11 +1119,11 @@
     },
     "story": {
       "title": "我们的故事",
-      "description": "WealthEase 成立于 2025 年，由一群金融专家和软件工程师创立，他们看到了对可访问的财务规划工具的需求。我们已经帮助成千上万的用户规划退休、计算投资，并做出更明智的财务决策。"
+      "description": "WealthEase 于 2025 年上线，目标是让日常理财计算免费、私密、易懂。所有计算器都在您的浏览器中运行，我们会持续增加工具，并每年更新税务数据。"
     },
     "expertise": {
-      "title": "专业背景与可靠性",
-      "subtitle": "为什么您可以信任我们的理财建议",
+      "title": "方法与来源",
+      "subtitle": "我们的计算器如何工作，数据从哪里来",
       "formulas": {
         "title": "行业标准金融公式",
         "content": "我们所有的计算器都基于被金融机构和专业人士广泛认可的标准金融数学公式。这些公式包括："
@@ -1118,11 +1136,11 @@
       },
       "sources": {
         "title": "数据来源与参考",
-        "content": "我们的计算方法和金融理论基于以下权威来源："
+        "content": "税务数据和参考资料来自以下来源："
       },
       "sourcesList": {
-        "cfa": "CFA Institute（特许金融分析师协会）的投资计算标准",
-        "fp": "CFP Board（认证金融理财师委员会）的理财规划实践标准",
+        "irs": "美国国税局 IRS 公告（税率档位、扣除额、缴费上限）",
+        "ssa": "美国社会保障局 SSA（工资上限与福利）",
         "federal": "美国联邦储备系统的金融素养教育材料",
         "investopedia": "Investopedia 和其他知名金融教育资源"
       },
@@ -1143,7 +1161,7 @@
       },
       "accurate": {
         "title": "精准可靠",
-        "description": "我们使用专业人士信赖的行业标准金融公式。"
+        "description": "我们使用标准金融公式，税务数据注明 IRS、SSA 等官方来源。"
       },
       "private": {
         "title": "隐私优先",
@@ -1162,7 +1180,7 @@
     },
     "cta": {
       "title": "立即开始您的理财之旅",
-      "subtitle": "加入成千上万明智理财的用户行列",
+      "subtitle": "用免费计算器做出更明智的理财决定",
       "button": "探索计算器"
     }
   },
@@ -1185,15 +1203,15 @@
     },
     "tools": {
       "takeHomePay": {
-        "title": "到手工资计算器",
-        "description": "计算扣除联邦税、州税和FICA后的税后收入"
+        "title": "美国税后工资计算器",
+        "description": "估算扣除联邦税、FICA、州税和 401(k) 后的 2026 年到手工资"
       },
       "investment401k": {
         "title": "401(k) 退休计算器",
         "description": "利用雇主匹配和复利增长规划退休储蓄"
       },
       "taxBracket": {
-        "title": "联邦税阶查询",
+        "title": "美国联邦税率档位计算器",
         "description": "查找您的税阶并计算边际税率"
       },
       "mortgage": {
@@ -1201,7 +1219,7 @@
         "description": "计算包含地税、保险和HOA费用的月供"
       },
       "roi": {
-        "title": "租售比计算器",
+        "title": "投资回报率计算器 (ROI)",
         "description": "计算投资回报率ROI，分析投资收益和亏损"
       },
       "areaConversion": {
@@ -1308,7 +1326,7 @@
   },
   "contact": {
     "title": "联系我们",
-    "subtitle": "有问题或反馈？我们很乐意听取您的意见。我们的团队随时为您提供帮助。",
+    "subtitle": "有问题或反馈？我们很乐意听取您的意见。",
     "email": {
       "title": "发送邮件",
       "description": "如有一般咨询、支持或反馈，请发送邮件给我们，我们会尽快回复。"

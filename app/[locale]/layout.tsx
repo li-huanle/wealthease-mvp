@@ -1,6 +1,7 @@
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, getTranslations} from 'next-intl/server';
 import {notFound} from 'next/navigation';
+import type {Metadata} from 'next';
 import {Analytics} from '@vercel/analytics/next';
 import '../globals.css';
 import Navigation from '@/components/Navigation';
@@ -21,6 +22,35 @@ export function generateStaticParams() {
   return locales.map((locale) => ({locale}));
 }
 
+// Site-wide defaults; pages override these via their own generateMetadata.
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{locale: string}>;
+}): Promise<Metadata> {
+  const {locale} = await params;
+  const seo = await getTranslations({locale, namespace: 'seo'});
+  return {
+    metadataBase: new URL('https://www.wealthease.top'),
+    title: seo('title'),
+    description: seo('description'),
+    keywords: seo('keywords'),
+    authors: [{name: 'WealthEase'}],
+    openGraph: {
+      title: seo('og:title'),
+      description: seo('og:description'),
+      type: 'website',
+      siteName: 'WealthEase',
+      locale,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: seo('og:title'),
+      description: seo('og:description'),
+    },
+  };
+}
+
 export default async function LocaleLayout({
   children,
   params
@@ -34,7 +64,6 @@ export default async function LocaleLayout({
   }
 
   const messages = await getMessages();
-  const seo = await getTranslations('seo');
 
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
   const adSenseId = process.env.NEXT_PUBLIC_ADSENSE_ID;
@@ -48,24 +77,14 @@ export default async function LocaleLayout({
         <meta name="google-site-verification" content="sIjeN1dgXA_DE426qez6fNmHyDss1b8F0iAMiXXamY8" />
 
         {/* SEO Meta Tags */}
-        <meta name="description" content={seo('description')} />
-        <meta name="keywords" content={seo('keywords')} />
-        <meta name="author" content="WealthEase" />
         <meta name="robots" content="index, follow" />
 
         {/* Open Graph */}
-        <meta property="og:title" content={seo('og:title')} />
-        <meta property="og:description" content={seo('og:description')} />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="WealthEase" />
         <meta property="og:image" content="https://wealthease.top/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
         {/* Twitter Card */}
-        <meta name="twitter:card" content={seo('twitter:card')} />
-        <meta name="twitter:title" content={seo('og:title')} />
-        <meta name="twitter:description" content={seo('og:description')} />
         <meta name="twitter:image" content="https://wealthease.top/og-image.jpg" />
       </head>
       <body>
@@ -81,8 +100,6 @@ export default async function LocaleLayout({
           <CookieConsent />
         </NextIntlClientProvider>
         <Analytics />
-        {/* Cloudflare Web Analytics */}
-        <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "268614429f7d439fac28fa211bc45364"}'></script>
       </body>
     </html>
   );

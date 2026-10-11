@@ -1,5 +1,6 @@
 'use client';
 
+import { useLocale as useSiteLocale } from 'next-intl';
 import { useState, useEffect, useMemo } from 'react';
 import { Info } from 'lucide-react';
 
@@ -8,7 +9,7 @@ interface CreditScoreCalculatorProps {
 }
 
 export default function CreditScoreCalculator({ onCalculate }: CreditScoreCalculatorProps) {
-  const [locale, setLocale] = useState<'en' | 'zh'>('zh');
+  const locale: 'en' | 'zh' = useSiteLocale() === 'zh' ? 'zh' : 'en';
   const [paymentHistory, setPaymentHistory] = useState(95);
   const [creditUtilization, setCreditUtilization] = useState(30);
   const [creditHistoryLength, setCreditHistoryLength] = useState(5);
@@ -194,9 +195,9 @@ export default function CreditScoreCalculator({ onCalculate }: CreditScoreCalcul
               className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary-600"
             />
             <div className="flex justify-between text-sm text-gray-500">
-              <span>0年</span>
+              <span>{locale === 'zh' ? '0年' : '0 yrs'}</span>
               <span className="font-semibold text-primary-600">{creditHistoryLength} {locale === 'zh' ? '年' : 'years'}</span>
-              <span>20年</span>
+              <span>{locale === 'zh' ? '20年' : '20 yrs'}</span>
             </div>
           </div>
 

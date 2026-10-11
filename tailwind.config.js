@@ -8,18 +8,27 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // 主色调：深蓝色 - 代表专业、信任、稳重
+        // Primary: deep emerald (growth, trust). 600+ carries white text at WCAG AA.
         primary: {
-          50: '#f0f4f8',
-          100: '#d9e2ec',
-          200: '#bcccdc',
-          300: '#9fb3c8',
-          400: '#829ab1',
-          500: '#627d98',
-          600: '#486581',
-          700: '#334e68',
-          800: '#243b53',
-          900: '#102a43',
+          50: '#ecfdf5',
+          100: '#d1fae5',
+          200: '#a7f3d0',
+          300: '#6ee7b7',
+          400: '#34d399',
+          500: '#10b981',
+          600: '#047857',
+          700: '#065f46',
+          800: '#064e3b',
+          900: '#022c22',
+        },
+        // shadcn-style semantic tokens backed by CSS variables (see globals.css)
+        border: 'hsl(var(--border))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
         },
         // 辅助色：墨绿色 - 代表财富、增长、安全
         secondary: {
@@ -104,11 +113,23 @@ module.exports = {
         mono: ['JetBrains Mono', 'SF Mono', 'Monaco', 'Consolas', 'monospace'],
       },
       boxShadow: {
-        // Material Design 风格的阴影
-        'card': '0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06)',
-        'card-hover': '0 8px 16px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08)',
-        'input': '0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04)',
-        'input-focus': '0 0 0 3px rgba(98, 125, 152, 0.15)',
+        // Hairline ring + soft lift (shadcn-like): reads as a border, not a floating slab.
+        'card': '0 0 0 1px rgb(15 23 42 / 0.06), 0 1px 2px rgb(15 23 42 / 0.04)',
+        'card-hover': '0 0 0 1px rgb(15 23 42 / 0.08), 0 8px 24px -8px rgb(15 23 42 / 0.12)',
+        'input': '0 1px 2px rgb(15 23 42 / 0.04)',
+        'input-focus': '0 0 0 3px rgb(4 120 87 / 0.18)',
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        xl: 'calc(var(--radius) + 4px)',
+        '2xl': 'calc(var(--radius) + 8px)',
+      },
+      transitionDuration: {
+        quick: '150ms',
+        base: '220ms',
+      },
+      transitionTimingFunction: {
+        out: 'cubic-bezier(0.22, 1, 0.36, 1)',
       },
     },
   },

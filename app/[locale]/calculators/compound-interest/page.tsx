@@ -1,4 +1,6 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
+import type { Metadata } from 'next';
+import { buildMetadata } from '@/lib/seo';
 import dynamic from 'next/dynamic';
 import RelatedCalculators from '@/components/RelatedCalculators';
 
@@ -18,6 +20,24 @@ const CompoundInterestCalculator = dynamic(
     ),
   }
 );
+
+const seo = {
+  en: {
+    title: "Compound Interest Calculator - Grow Your Savings | WealthEase",
+    description: "Free compound interest calculator: see how your savings and monthly contributions grow over time at different rates and compounding frequencies.",
+    keywords: "compound interest calculator, investment growth, savings calculator, compounding frequency, future value",
+  },
+  zh: {
+    title: "复利计算器 - 看你的储蓄如何增长 | WealthEase",
+    description: "免费复利计算器：查看不同收益率和复利频率下，储蓄与每月投入随时间的增长情况。",
+    keywords: "复利计算器, 投资增长, 储蓄计算器, 复利频率, 终值",
+  },
+};
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata(locale, '/calculators/compound-interest', seo);
+}
 
 export default async function CompoundInterestPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -158,7 +178,7 @@ export default async function CompoundInterestPage({ params }: { params: Promise
               </p>
             </section>
 
-            {/* 专家提示 */}
+            {/* 实用提示 */}
             <section className="bg-white rounded-2xl shadow-card p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-6">专家理财提示</h3>
               <div className="grid md:grid-cols-2 gap-4">
@@ -392,7 +412,7 @@ export default async function CompoundInterestPage({ params }: { params: Promise
               </p>
             </section>
 
-            {/* Expert Tips */}
+            {/* Practical Tips */}
             <section className="bg-white rounded-2xl shadow-card p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-6">Expert Financial Tips</h3>
               <div className="grid md:grid-cols-2 gap-4">

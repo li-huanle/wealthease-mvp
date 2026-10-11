@@ -54,25 +54,27 @@ export default function NewsletterForm() {
   };
 
   return (
-    <div className="card max-w-2xl mx-auto text-center bg-gradient-to-r from-primary-500 to-primary-600 text-white">
-      <h2 className="text-3xl font-bold mb-4">{t('title')}</h2>
-      <p className="mb-6 text-primary-100">{t('subtitle')}</p>
+    <div className="relative mx-auto max-w-2xl overflow-hidden rounded-2xl bg-gray-950 px-6 py-10 text-center text-white sm:px-10">
+      <div aria-hidden className="pointer-events-none absolute -top-24 left-1/2 h-56 w-[28rem] max-w-full -translate-x-1/2 rounded-full bg-primary-500/25 blur-3xl" />
+      <h2 className="relative mb-3 text-2xl font-bold tracking-tight sm:text-3xl">{t('title')}</h2>
+      <p className="relative mb-6 text-gray-300">{t('subtitle')}</p>
 
-      <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-        <div className="flex gap-4 mb-4">
+      <form onSubmit={handleSubmit} className="relative mx-auto max-w-md">
+        <div className="mb-4 flex flex-col gap-2 sm:flex-row">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder={t('placeholder')}
             disabled={status === 'loading'}
-            className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:ring-2 focus:ring-white outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label={t('placeholder')}
+            className="h-11 min-w-0 flex-1 rounded-lg border-0 bg-white px-4 text-gray-900 outline-none ring-2 ring-transparent transition-[box-shadow] duration-quick ease-out focus:ring-primary-400 disabled:cursor-not-allowed disabled:opacity-50"
             required
           />
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="bg-white text-primary-600 font-semibold px-6 py-3 rounded-lg hover:bg-primary-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="h-11 rounded-lg bg-primary-500 px-6 font-semibold text-gray-950 transition-colors duration-quick ease-out hover:bg-primary-400 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {status === 'loading' ? t('subscribing') : t('subscribe')}
           </button>

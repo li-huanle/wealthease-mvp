@@ -1,6 +1,8 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import Link from 'next/link';
-import {Calculator, TrendingUp, Shield, CheckCircle, ArrowRight, BarChart3, PiggyBank, Target, Clock, Lock, Star, Users, Award, BookOpen} from 'lucide-react';
+import {Calculator, TrendingUp, Shield, CheckCircle, ArrowRight, BarChart3, PiggyBank, Target, Clock, Lock, Star, Users, Award, BookOpen, ChevronDown} from 'lucide-react';
+import Badge from '@/components/ui/Badge';
+import {ButtonLink} from '@/components/ui/Button';
 import {Metadata} from 'next';
 import {OrganizationSchema, WebApplicationSchema} from '@/components/StructuredData';
 import dynamic from 'next/dynamic';
@@ -191,6 +193,24 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
       color: 'from-violet-400 to-purple-500',
     },
     {
+      key: 'takeHomePay',
+      href: `/${locale}/calculators/take-home-pay`,
+      icon: '💼',
+      color: 'from-cyan-400 to-blue-500',
+    },
+    {
+      key: 'taxBracket',
+      href: `/${locale}/calculators/tax-bracket`,
+      icon: '🧾',
+      color: 'from-red-400 to-rose-500',
+    },
+    {
+      key: 'areaConversion',
+      href: `/${locale}/calculators/area-conversion`,
+      icon: '📐',
+      color: 'from-lime-400 to-green-500',
+    },
+    {
       key: 'installmentApr',
       href: `/${locale}/calculators/installment-apr`,
       icon: '🧮',
@@ -232,7 +252,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
       title: t('features.easy.title'),
       description: t('features.easy.description'),
       detail: locale === 'zh'
-        ? '无需复杂输入，3步完成计算。结果附带详细解释和专家建议'
+        ? '无需复杂输入，3步完成计算。结果附带详细解释和实用建议'
         : 'No complex inputs needed, complete calculations in 3 steps',
     },
     {
@@ -241,8 +261,8 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
       title: t('features.free.title'),
       description: t('features.free.description'),
       detail: locale === 'zh'
-        ? '所有功能永久免费，无广告、无订阅、无隐藏费用'
-        : 'All features permanently free, no ads, no subscriptions, no hidden fees',
+        ? '所有功能永久免费，无需注册、无订阅、无隐藏费用'
+        : 'All features permanently free, no sign-up, no subscriptions, no hidden fees',
     },
   ];
 
@@ -279,9 +299,9 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
 
   const trustBadges = [
     {icon: Lock, text: locale === 'zh' ? '数据本地处理' : 'Local Processing', desc: locale === 'zh' ? '您的财务数据不会上传到任何服务器' : 'Your financial data never leaves your device'},
-    {icon: Award, text: locale === 'zh' ? '专业级公式' : 'Professional Formulas', desc: locale === 'zh' ? '基于CFA/CFP认证标准' : 'Based on CFA/CFP certification standards'},
+    {icon: Award, text: locale === 'zh' ? '标准金融公式' : 'Standard Formulas', desc: locale === 'zh' ? '采用通行的金融计算公式，并注明假设' : 'Widely used financial formulas with stated assumptions'},
     {icon: Clock, text: locale === 'zh' ? '全天候可用' : '24/7 Available', desc: locale === 'zh' ? '随时随地免费使用' : 'Free access anytime, anywhere'},
-    {icon: Users, text: locale === 'zh' ? '10万+用户信赖' : '100K+ Users Trust', desc: locale === 'zh' ? '帮助超过10万用户做出明智决策' : 'Helped 100K+ users make informed decisions'},
+    {icon: Users, text: locale === 'zh' ? '2026 年数据' : 'Updated for 2026', desc: locale === 'zh' ? '税率档位、扣除额和缴费上限已更新到 2026 年' : 'Tax brackets, deductions and contribution limits updated for 2026'},
   ];
 
   const faqs = [
@@ -312,11 +332,17 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
   ];
 
   const stats = [
-    {value: '18', label: locale === 'zh' ? '专业工具' : 'Professional Tools'},
-    {value: '100%', label: locale === 'zh' ? '数据不上传' : 'No Data Upload'},
-    {value: '本地', label: locale === 'zh' ? '纯前端计算' : 'Client-Side Only'},
-    {value: '永久', label: locale === 'zh' ? '完全免费' : 'Forever Free'},
+    {value: String(tools.length), label: locale === 'zh' ? '个计算器' : 'Calculators'},
+    {value: '100%', label: locale === 'zh' ? '浏览器本地计算' : 'Runs in your browser'},
+    {value: '$0', label: locale === 'zh' ? '永久免费' : 'Free forever'},
+    {value: '2', label: locale === 'zh' ? '种语言（中/英）' : 'Languages (EN/中文)'},
   ];
+
+  // US-first selection shown on the home page; the full list lives on /calculators.
+  const popularKeys = ['takeHomePay', 'mortgage', 'compound', 'retirement', 'taxBracket', 'investment401k', 'loan', 'debtPayoff', 'rentVsBuy'];
+  const popularTools = popularKeys
+    .map((key) => tools.find((tool) => tool.key === key))
+    .filter((tool): tool is (typeof tools)[number] => Boolean(tool));
 
   return (
     <>
@@ -345,125 +371,132 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
         }}
       />
 
-      <div className="bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+      <div className="bg-white">
         {/* Hero Section */}
-        <section className="relative overflow-hidden">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0" style={{
-              backgroundImage: 'radial-gradient(circle at 2px 2px, #333 1px, transparent 0)',
-              backgroundSize: '40px 40px',
-            }}></div>
-          </div>
+        <section className="relative overflow-hidden border-b">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 [background-image:linear-gradient(to_right,rgb(15_23_42/0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgb(15_23_42/0.04)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]"
+          />
+          <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 h-72 w-[42rem] -translate-x-1/2 rounded-full bg-primary-400/20 blur-3xl" />
 
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 relative">
-            <div className="max-w-4xl mx-auto text-center">
-              {/* Badge */}
-              <div className="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-card mb-8">
-                <Shield className="w-4 h-4 text-success-500 mr-2" />
-                <span className="text-sm font-medium text-gray-600">
-                  {locale === 'zh' ? '专业级计算器 · 完全免费 · 数据安全' : 'Professional Tools · 100% Free · Secure'}
-                </span>
+          <div className="container relative mx-auto px-4 py-20 sm:px-6 md:py-28 lg:px-8">
+            <div className="mx-auto max-w-3xl text-center">
+              <div className="animate-fade-in-up mb-6 flex justify-center">
+                <Badge>
+                  <Shield className="h-3.5 w-3.5 text-primary-600" />
+                  {locale === 'zh' ? '免费 · 无需注册 · 数据不出浏览器' : 'Free · No sign-up · Data stays in your browser'}
+                </Badge>
               </div>
 
-              {/* Main Heading */}
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="animate-fade-in-up animate-delay-1 mb-6 text-4xl font-bold leading-[1.1] tracking-tight text-gray-950 md:text-6xl">
                 {t('hero.title')}
               </h1>
 
-              {/* Subheading */}
-              <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+              <p className="animate-fade-in-up animate-delay-2 mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
                 {t('hero.subtitle')}
               </p>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link
-                  href={`/${locale}/calculators`}
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg font-semibold hover:from-primary-700 hover:to-primary-800 transition-all duration-300 shadow-lg hover:shadow-xl text-lg group"
-                >
+              <div className="animate-fade-in-up animate-delay-3 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <ButtonLink href={`/${locale}/calculators`} size="lg" className="group w-full sm:w-auto">
                   {t('hero.cta')}
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link
-                  href={`/${locale}/about`}
-                  className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300 shadow-card hover:shadow-card-hover border border-gray-200 text-lg"
-                >
-                  {locale === 'zh' ? '了解更多' : 'Learn More'}
-                </Link>
+                  <ArrowRight className="h-4 w-4 transition-transform duration-quick ease-out group-hover:translate-x-0.5" />
+                </ButtonLink>
+                <ButtonLink href={`/${locale}/calculators/take-home-pay`} variant="secondary" size="lg" className="w-full sm:w-auto">
+                  {locale === 'zh' ? '算算税后工资' : 'Estimate my paycheck'}
+                </ButtonLink>
               </div>
 
-              {/* Trust Indicators */}
-              <div className="mt-12 flex flex-wrap justify-center items-center gap-6 text-sm text-gray-500">
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-success-500 mr-2" />
-                  <span>{locale === 'zh' ? '行业标准公式' : 'Industry-Standard Formulas'}</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-success-500 mr-2" />
-                  <span>{locale === 'zh' ? '隐私优先设计' : 'Privacy-First Design'}</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-success-500 mr-2" />
-                  <span>{locale === 'zh' ? '无需注册' : 'No Registration Required'}</span>
-                </div>
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+                {[
+                  locale === 'zh' ? '行业标准公式' : 'Industry-standard formulas',
+                  locale === 'zh' ? '隐私优先设计' : 'Privacy-first design',
+                  locale === 'zh' ? '无需注册' : 'No registration required',
+                ].map((item) => (
+                  <span key={item} className="inline-flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 text-primary-600" />
+                    {item}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 bg-gradient-to-r from-primary-600 to-primary-700">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">
-                    {stat.value}
+        <section className="border-b bg-muted/40">
+          <div className="container mx-auto grid grid-cols-2 divide-x divide-y px-4 md:grid-cols-4 md:divide-y-0">
+            {stats.map((stat) => (
+              <div key={stat.label} className="px-4 py-8 text-center">
+                <div className="text-3xl font-semibold tabular-nums tracking-tight text-gray-950 md:text-4xl">{stat.value}</div>
+                <div className="mt-1 text-sm text-muted-foreground">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Popular Tools Section */}
+        <section className="px-4 py-20">
+          <div className="container mx-auto max-w-6xl">
+            <div className="mb-10 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+              <div>
+                <p className="mb-2 text-sm font-semibold text-primary-700">{locale === 'zh' ? '热门工具' : 'Popular tools'}</p>
+                <h2 className="text-3xl font-bold tracking-tight text-gray-950 md:text-4xl">{t('tools.title')}</h2>
+                <p className="mt-2 text-muted-foreground">
+                  {locale === 'zh' ? '选择适合您的专业理财工具' : 'Choose the right financial tool for your needs'}
+                </p>
+              </div>
+              <ButtonLink href={`/${locale}/calculators`} variant="secondary" className="group">
+                {locale === 'zh' ? `查看全部 ${tools.length} 个` : `View all ${tools.length}`}
+                <ArrowRight className="h-4 w-4 transition-transform duration-quick ease-out group-hover:translate-x-0.5" />
+              </ButtonLink>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {popularTools.map((tool) => (
+                <Link
+                  key={tool.key}
+                  href={tool.href}
+                  className="group flex gap-4 rounded-xl bg-white p-5 shadow-card transition-[box-shadow,transform] duration-base ease-out hover:-translate-y-0.5 hover:shadow-card-hover"
+                >
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-muted text-xl transition-colors duration-quick ease-out group-hover:bg-primary-50">
+                    {tool.icon}
                   </div>
-                  <div className="text-primary-100 text-sm">
-                    {stat.label}
+                  <div className="min-w-0">
+                    <h3 className="font-semibold text-gray-900 transition-colors duration-quick ease-out group-hover:text-primary-700">
+                      {t(`tools.${tool.key}`)}
+                    </h3>
+                    <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-muted-foreground">{t(`tools.${tool.key}Desc`)}</p>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
         </section>
 
         {/* Features Section */}
-        <section className="py-20 px-4">
+        <section className="border-y bg-muted/40 px-4 py-20">
           <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                {t('features.title')}
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <div className="mx-auto mb-12 max-w-2xl text-center">
+              <h2 className="mb-3 text-3xl font-bold tracking-tight text-gray-950 md:text-4xl">{t('features.title')}</h2>
+              <p className="text-muted-foreground">
                 {locale === 'zh'
                   ? '我们致力于提供最专业、最易用的理财计算工具，帮助您做出明智的财务决策'
                   : 'We are committed to providing the most professional and easy-to-use financial calculation tools'}
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {features.map((feature, index) => {
+            <div className="grid gap-6 md:grid-cols-3">
+              {features.map((feature) => {
                 const Icon = feature.icon;
                 return (
-                  <div
-                    key={index}
-                    className="bg-white rounded-2xl shadow-card p-8 hover:shadow-card-hover transition-all duration-300 group"
-                  >
-                    <div className={`${feature.color} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className="w-8 h-8" />
+                  <div key={feature.title} className="rounded-xl bg-white p-6 shadow-card">
+                    <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-primary-50 text-primary-700">
+                      <Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {feature.description}
-                    </p>
-                    <p className="text-sm text-gray-500 mt-3 pt-3 border-t border-gray-100">
-                      {feature.detail}
-                    </p>
+                    <h3 className="mb-2 font-semibold text-gray-900">{feature.title}</h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{feature.description}</p>
+                    <p className="mt-4 border-t pt-4 text-sm text-muted-foreground">{feature.detail}</p>
                   </div>
                 );
               })}
@@ -472,55 +505,39 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
         </section>
 
         {/* Use Cases Section */}
-        <section className="py-20 px-4 bg-gradient-to-br from-blue-50 to-white">
+        <section className="px-4 py-20">
           <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <div className="mx-auto mb-12 max-w-2xl text-center">
+              <h2 className="mb-3 text-3xl font-bold tracking-tight text-gray-950 md:text-4xl">
                 {locale === 'zh' ? '适用场景' : 'Use Cases'}
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-muted-foreground">
                 {locale === 'zh'
                   ? '无论您处于人生哪个阶段，我们都有合适的工具帮助您做出明智的财务决策'
                   : 'No matter what stage of life you are in, we have the right tools to help you make smart financial decisions'}
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {useCases.map((useCase, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-2xl shadow-card p-6 hover:shadow-card-hover transition-all duration-300"
-                >
-                  <div className="text-4xl mb-4">{useCase.icon}</div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
-                    {useCase.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {useCase.description}
-                  </p>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              {useCases.map((useCase) => (
+                <div key={useCase.title} className="rounded-xl bg-white p-6 shadow-card">
+                  <div className="mb-4 text-3xl">{useCase.icon}</div>
+                  <h3 className="mb-2 font-semibold text-gray-900">{useCase.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{useCase.description}</p>
                 </div>
               ))}
             </div>
-          </div>
-        </section>
 
-        {/* Trust Badges Section */}
-        <section className="py-16 px-4 bg-white">
-          <div className="container mx-auto max-w-6xl">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {trustBadges.map((badge, index) => {
+            <div className="mt-14 grid gap-8 border-t pt-12 md:grid-cols-2 lg:grid-cols-4">
+              {trustBadges.map((badge) => {
                 const Icon = badge.icon;
                 return (
-                  <div key={index} className="text-center">
-                    <div className="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <Icon className="w-7 h-7 text-primary-600" />
+                  <div key={badge.text} className="flex gap-3">
+                    <Icon className="mt-0.5 h-5 w-5 shrink-0 text-primary-600" />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">{badge.text}</h4>
+                      <p className="mt-1 text-sm text-muted-foreground">{badge.desc}</p>
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-1">
-                      {badge.text}
-                    </h4>
-                    <p className="text-sm text-gray-500">
-                      {badge.desc}
-                    </p>
                   </div>
                 );
               })}
@@ -529,98 +546,45 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-white">
-          <div className="container mx-auto max-w-4xl">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <section className="border-t bg-muted/40 px-4 py-20">
+          <div className="container mx-auto max-w-3xl">
+            <div className="mb-10 text-center">
+              <h2 className="mb-3 text-3xl font-bold tracking-tight text-gray-950 md:text-4xl">
                 {locale === 'zh' ? '常见问题' : 'FAQ'}
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-muted-foreground">
                 {locale === 'zh'
                   ? '关于WealthEase理财计算器的常见问题解答'
                   : 'Frequently asked questions about WealthEase financial calculators'}
               </p>
             </div>
 
-            <div className="space-y-4">
-              {faqs.map((faq, index) => (
-                <details
-                  key={index}
-                  className="bg-white rounded-2xl shadow-card overflow-hidden group"
-                >
-                  <summary className="cursor-pointer px-6 py-5 font-semibold text-gray-900 flex items-center justify-between list-none">
+            <div className="divide-y rounded-xl bg-white shadow-card">
+              {faqs.map((faq) => (
+                <details key={faq.question} className="group">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 font-medium text-gray-900 [&::-webkit-details-marker]:hidden">
                     <span>{faq.question}</span>
-                    <span className="text-primary-500 group-open:rotate-180 transition-transform duration-300">▼</span>
+                    <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-base ease-out group-open:rotate-180" />
                   </summary>
-                  <div className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-                    {faq.answer}
-                  </div>
+                  <div className="px-6 pb-5 text-sm leading-relaxed text-muted-foreground">{faq.answer}</div>
                 </details>
               ))}
             </div>
 
-            <div className="mt-12 text-center">
+            <div className="mt-8 text-center">
               <Link
                 href={`/${locale}/contact`}
-                className="inline-flex items-center px-6 py-3 text-primary-600 font-medium hover:text-primary-700 transition-colors"
+                className="inline-flex items-center text-sm font-medium text-primary-700 transition-colors duration-quick ease-out hover:text-primary-800"
               >
                 {locale === 'zh' ? '更多问题？联系我们' : 'More questions? Contact Us'}
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Tools Section */}
-        <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-white">
-          <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                {t('tools.title')}
-              </h2>
-              <p className="text-lg text-gray-600">
-                {locale === 'zh' ? '选择适合您的专业理财工具' : 'Choose the right financial tool for your needs'}
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {tools.map((tool) => (
-                <Link
-                  key={tool.key}
-                  href={tool.href}
-                  className="group bg-white rounded-2xl shadow-card p-6 hover:shadow-card-hover transition-all duration-300 border border-gray-100 hover:border-primary-200"
-                >
-                  <div className={`w-14 h-14 bg-gradient-to-br ${tool.color} rounded-xl flex items-center justify-center mb-4 text-2xl group-hover:scale-110 transition-transform duration-300`}>
-                    {tool.icon}
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
-                    {t(`tools.${tool.key}`)}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {t(`tools.${tool.key}Desc`)}
-                  </p>
-                  <div className="mt-4 flex items-center text-primary-600 font-medium text-sm group-hover:translate-x-2 transition-transform duration-300">
-                    {locale === 'zh' ? '开始使用' : 'Start Using'}
-                    <ArrowRight className="ml-1 w-4 h-4" />
-                  </div>
-                </Link>
-              ))}
-            </div>
-
-            <div className="mt-12 text-center">
-              <Link
-                href={`/${locale}/calculators`}
-                className="inline-flex items-center px-8 py-4 bg-white text-primary-700 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300 shadow-card hover:shadow-card-hover border-2 border-primary-200 group"
-              >
-                {locale === 'zh' ? '查看所有工具' : 'View All Tools'}
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-1.5 h-4 w-4" />
               </Link>
             </div>
           </div>
         </section>
 
         {/* Newsletter Section */}
-        <section className="py-20 px-4">
+        <section className="px-4 py-20">
           <div className="container mx-auto max-w-4xl">
             <NewsletterForm />
           </div>
