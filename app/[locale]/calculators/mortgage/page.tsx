@@ -175,9 +175,9 @@ export default async function MortgagePage({ params }: { params: Promise<{ local
               </div>
             </section>
 
-            {/* 专家建议 */}
+            {/* 实用建议 */}
             <section className="bg-white rounded-2xl shadow-card p-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">购房者专家建议</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-6">购房者实用建议</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
                   <p className="font-semibold text-amber-800 mb-1">💡 尽量凑齐20%首付</p>
@@ -408,9 +408,9 @@ export default async function MortgagePage({ params }: { params: Promise<{ local
               </div>
             </section>
 
-            {/* Expert Tips */}
+            {/* Practical Tips */}
             <section className="bg-white rounded-2xl shadow-card p-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Expert Tips for Home Buyers</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-6">Tips for Home Buyers</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
                   <p className="font-semibold text-amber-800 mb-1">Aim for 20% Down</p>

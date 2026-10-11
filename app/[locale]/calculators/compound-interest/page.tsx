@@ -178,7 +178,7 @@ export default async function CompoundInterestPage({ params }: { params: Promise
               </p>
             </section>
 
-            {/* 专家提示 */}
+            {/* 实用提示 */}
             <section className="bg-white rounded-2xl shadow-card p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-6">专家理财提示</h3>
               <div className="grid md:grid-cols-2 gap-4">
@@ -412,7 +412,7 @@ export default async function CompoundInterestPage({ params }: { params: Promise
               </p>
             </section>
 
-            {/* Expert Tips */}
+            {/* Practical Tips */}
             <section className="bg-white rounded-2xl shadow-card p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-6">Expert Financial Tips</h3>
               <div className="grid md:grid-cols-2 gap-4">

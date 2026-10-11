@@ -474,7 +474,7 @@ export default function DebtPayoffCalculator() {
           )}
         </div>
 
-        {/* Expert Tips Sidebar */}
+        {/* Practical Tips Sidebar */}
         <div className="lg:col-span-1 min-w-0">
           <ExpertTips tips={expertTips} locale={currency('locale')} />
         </div>

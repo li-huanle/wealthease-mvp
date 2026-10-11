@@ -441,7 +441,7 @@ export default function DividendIncomeCalculator() {
             </div>
           )}
 
-          {/* Expert Tips */}
+          {/* Practical Tips */}
           <ExpertTips
             tips={[
               {

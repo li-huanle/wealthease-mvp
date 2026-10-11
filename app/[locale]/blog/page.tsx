@@ -14,12 +14,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const metadata = {
     en: {
-      title: 'Financial Planning Blog - Expert Tips & Guides | WealthEase',
+      title: 'Financial Planning Blog - Practical Tips & Guides | WealthEase',
       description: 'Learn about compound interest, retirement planning, investment strategies, and smart borrowing from our expert financial guides. Free educational resources for better money management.',
       keywords: 'financial planning blog, investment tips, retirement planning guide, compound interest explained, loan advice, money management',
     },
     zh: {
-      title: '理财规划博客 - 专家建议与指南 | WealthEase',
+      title: '理财规划博客 - 实用建议与指南 | WealthEase',
       description: '学习复利计算、退休规划、投资策略和明智借贷。免费的专业理财指南，帮助您更好地管理财富。',
       keywords: '理财博客, 投资建议, 退休规划指南, 复利计算, 贷款建议, 财务管理',
     },
@@ -61,7 +61,7 @@ export default async function BlogPage({ params }: Props) {
   const pageContent = {
     en: {
       title: 'Financial Planning Blog',
-      subtitle: 'Expert tips, guides, and insights to help you make smarter financial decisions',
+      subtitle: 'Practical tips, guides, and insights to help you make smarter financial decisions',
       readMore: 'Read More',
       readTime: 'min read',
       allPosts: 'All Posts',
@@ -69,7 +69,7 @@ export default async function BlogPage({ params }: Props) {
     },
     zh: {
       title: '理财规划博客',
-      subtitle: '专家建议、指南和见解，帮助您做出更明智的财务决策',
+      subtitle: '实用建议、指南和见解，帮助您做出更明智的财务决策',
       readMore: '阅读更多',
       readTime: '分钟阅读',
       allPosts: '全部文章',
@@ -140,7 +140,7 @@ export default async function BlogPage({ params }: Props) {
             <>
               <h2>Your Guide to Financial Success</h2>
               <p>
-                Welcome to the WealthEase blog, your trusted source for expert financial advice and practical money management tips.
+                Welcome to the WealthEase blog: practical guides on money management, written to pair with our free calculators.
                 Our mission is to empower you with the knowledge and tools you need to make informed financial decisions and achieve your long-term wealth goals.
               </p>
 
@@ -185,7 +185,7 @@ export default async function BlogPage({ params }: Props) {
             <>
               <h2>您的财务成功指南</h2>
               <p>
-                欢迎来到WealthEase博客，您值得信赖的专业理财建议和实用资金管理技巧来源。
+                欢迎来到 WealthEase 博客：这里有实用的理财指南，可以配合我们的免费计算器一起使用。
                 我们的使命是为您提供所需的知识和工具，帮助您做出明智的财务决策，实现长期财富目标。
               </p>
 

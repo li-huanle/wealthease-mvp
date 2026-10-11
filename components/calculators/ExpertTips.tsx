@@ -23,20 +23,20 @@ const iconMap = {
 export default function ExpertTips({ tips, locale }: ExpertTipsProps) {
   const labels = {
     en: {
-      title: 'Expert Tips',
-      subtitle: 'Professional guidance for better financial decisions',
+      title: 'Practical Tips',
+      subtitle: 'Practical pointers for better financial decisions',
     },
     'en-US': {
-      title: 'Expert Tips',
-      subtitle: 'Professional guidance for better financial decisions',
+      title: 'Practical Tips',
+      subtitle: 'Practical pointers for better financial decisions',
     },
     zh: {
-      title: '专家建议',
-      subtitle: '专业指导，助您做出更明智的财务决策',
+      title: '实用建议',
+      subtitle: '实用要点，助您做出更明智的财务决策',
     },
     'zh-CN': {
-      title: '专家建议',
-      subtitle: '专业指导，助您做出更明智的财务决策',
+      title: '实用建议',
+      subtitle: '实用要点，助您做出更明智的财务决策',
     },
   };
 

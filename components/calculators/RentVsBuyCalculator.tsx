@@ -538,7 +538,7 @@ export default function RentVsBuyCalculator() {
             </div>
           )}
 
-          {/* Expert Tips */}
+          {/* Practical Tips */}
           <ExpertTips
             tips={[
               {

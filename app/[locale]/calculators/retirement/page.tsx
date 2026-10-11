@@ -186,9 +186,9 @@ export default async function RetirementPage({ params }: { params: Promise<{ loc
               </p>
             </section>
 
-            {/* 专家提示 */}
+            {/* 实用提示 */}
             <section className="bg-white rounded-2xl shadow-card p-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">退休规划专家提示</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-6">退休规划实用提示</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
                   <p className="font-semibold text-amber-800 mb-1">💡 充分利用税收优惠</p>
@@ -440,7 +440,7 @@ export default async function RetirementPage({ params }: { params: Promise<{ loc
               </p>
             </section>
 
-            {/* Expert Tips */}
+            {/* Practical Tips */}
             <section className="bg-white rounded-2xl shadow-card p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-6">Expert Retirement Planning Tips</h3>
               <div className="grid md:grid-cols-2 gap-4">

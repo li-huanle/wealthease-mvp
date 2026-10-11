@@ -252,7 +252,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
       title: t('features.easy.title'),
       description: t('features.easy.description'),
       detail: locale === 'zh'
-        ? '无需复杂输入，3步完成计算。结果附带详细解释和专家建议'
+        ? '无需复杂输入，3步完成计算。结果附带详细解释和实用建议'
         : 'No complex inputs needed, complete calculations in 3 steps',
     },
     {
