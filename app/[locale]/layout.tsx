@@ -1,6 +1,7 @@
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, getTranslations} from 'next-intl/server';
 import {notFound} from 'next/navigation';
+import {Analytics} from '@vercel/analytics/next';
 import '../globals.css';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -79,6 +80,9 @@ export default async function LocaleLayout({
           <Footer />
           <CookieConsent />
         </NextIntlClientProvider>
+        <Analytics />
+        {/* Cloudflare Web Analytics */}
+        <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "268614429f7d439fac28fa211bc45364"}'></script>
       </body>
     </html>
   );
