@@ -343,3 +343,146 @@ export function extraStandardDeductions(status: FilingStatus, age: number, blind
 
 export const LIMIT_IRA = 7500;
 export const LIMIT_IRA_CATCH_UP = 1100;
+
+// ---------------------------------------------------------------------------
+// Home affordability (28/36 debt-to-income rule).
+// ---------------------------------------------------------------------------
+export interface AffordabilityInput {
+  annualIncome: number;
+  monthlyDebts: number;
+  downPayment: number;
+  ratePct: number;
+  termYears: number;
+  propertyTaxPct: number;
+  insuranceAnnual: number;
+  hoaMonthly: number;
+  frontRatioPct?: number;
+  backRatioPct?: number;
+}
+
+export interface AffordabilityResult {
+  maxPrice: number;
+  loanAmount: number;
+  maxHousingPayment: number;
+  principalInterest: number;
+  propertyTax: number;
+  insurance: number;
+  hoa: number;
+  limitedBy: 'front' | 'back';
+}
+
+export function homeAffordability(input: AffordabilityInput): AffordabilityResult {
+  const monthlyIncome = Math.max(0, input.annualIncome) / 12;
+  const front = (monthlyIncome * (input.frontRatioPct ?? 28)) / 100;
+  const back = (monthlyIncome * (input.backRatioPct ?? 36)) / 100 - Math.max(0, input.monthlyDebts);
+  const maxHousingPayment = Math.max(0, Math.min(front, back));
+  const limitedBy = back < front ? 'back' : 'front';
+  const n = Math.round(input.termYears * 12);
+  const piPerDollar = pmt(1, input.ratePct, n); // monthly P&I per $1 of loan
+  const taxRate = input.propertyTaxPct / 100 / 12; // monthly tax per $1 of price
+  const insurance = Math.max(0, input.insuranceAnnual) / 12;
+  const hoa = Math.max(0, input.hoaMonthly);
+  const down = Math.max(0, input.downPayment);
+  // maxHousing = loan * piPerDollar + (loan + down) * taxRate + insurance + hoa
+  const loanAmount = Math.max(0, (maxHousingPayment - down * taxRate - insurance - hoa) / (piPerDollar + taxRate));
+  const maxPrice = loanAmount + down;
+  return {
+    maxPrice,
+    loanAmount,
+    maxHousingPayment,
+    principalInterest: loanAmount * piPerDollar,
+    propertyTax: maxPrice * taxRate,
+    insurance,
+    hoa,
+    limitedBy,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Credit card payoff.
+// ---------------------------------------------------------------------------
+export interface CardPayoffResult {
+  /** null when the payment does not cover the monthly interest. */
+  months: number | null;
+  totalInterest: number;
+  totalPaid: number;
+  firstMonthInterest: number;
+}
+
+export function creditCardPayoff(balance: number, aprPct: number, monthlyPayment: number): CardPayoffResult {
+  const r = aprPct / 100 / 12;
+  const firstMonthInterest = balance * r;
+  if (balance <= 0) return { months: 0, totalInterest: 0, totalPaid: 0, firstMonthInterest: 0 };
+  if (monthlyPayment <= firstMonthInterest) return { months: null, totalInterest: Infinity, totalPaid: Infinity, firstMonthInterest };
+  let bal = balance;
+  let interest = 0;
+  let paid = 0;
+  let months = 0;
+  while (bal > 0.005 && months < 1200) {
+    const i = bal * r;
+    interest += i;
+    const pay = Math.min(monthlyPayment, bal + i);
+    bal = bal + i - pay;
+    paid += pay;
+    months++;
+  }
+  return { months, totalInterest: interest, totalPaid: paid, firstMonthInterest };
+}
+
+// ---------------------------------------------------------------------------
+// Mortgage refinance break-even.
+// ---------------------------------------------------------------------------
+export interface RefinanceInput {
+  balance: number;
+  currentRatePct: number;
+  remainingYears: number;
+  newRatePct: number;
+  newTermYears: number;
+  closingCosts: number;
+}
+
+export interface RefinanceResult {
+  currentPayment: number;
+  newPayment: number;
+  monthlySavings: number;
+  /** Months for payment savings to repay closing costs; null if the payment does not drop. */
+  breakEvenMonths: number | null;
+  currentRemainingInterest: number;
+  newTotalInterest: number;
+  /** Lifetime cost difference (current remaining interest − new interest − closing costs). Positive favours refinancing. */
+  lifetimeSavings: number;
+}
+
+export function refinance(input: RefinanceInput): RefinanceResult {
+  const n1 = Math.round(input.remainingYears * 12);
+  const n2 = Math.round(input.newTermYears * 12);
+  const currentPayment = pmt(input.balance, input.currentRatePct, n1);
+  const newPayment = pmt(input.balance, input.newRatePct, n2);
+  const monthlySavings = currentPayment - newPayment;
+  const currentRemainingInterest = currentPayment * n1 - input.balance;
+  const newTotalInterest = newPayment * n2 - input.balance;
+  return {
+    currentPayment,
+    newPayment,
+    monthlySavings,
+    breakEvenMonths: monthlySavings > 0 ? Math.ceil(input.closingCosts / monthlySavings) : null,
+    currentRemainingInterest,
+    newTotalInterest,
+    lifetimeSavings: currentRemainingInterest - newTotalInterest - input.closingCosts,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Hourly <-> salary.
+// ---------------------------------------------------------------------------
+export function payBreakdown(annual: number, hoursPerWeek: number, weeksPerYear: number) {
+  const hours = hoursPerWeek * weeksPerYear;
+  return {
+    annual,
+    monthly: annual / 12,
+    biweekly: annual / 26,
+    weekly: weeksPerYear > 0 ? annual / weeksPerYear : 0,
+    daily: weeksPerYear > 0 ? annual / (weeksPerYear * 5) : 0,
+    hourly: hours > 0 ? annual / hours : 0,
+  };
+}

@@ -81,7 +81,19 @@
       "taxBracket": "Federal Tax Bracket Calculator",
       "taxBracketDesc": "Find your tax bracket and calculate marginal tax rates",
       "areaConversion": "Area Unit Converter",
-      "areaConversionDesc": "Quickly convert between sq ft, sq meters, acres, and other units"
+      "areaConversionDesc": "Quickly convert between sq ft, sq meters, acres, and other units",
+      "homeAffordability": "Home Affordability Calculator",
+      "homeAffordabilityDesc": "How much house can you afford? Uses the 28/36 rule with taxes, insurance and HOA",
+      "creditCardPayoff": "Credit Card Payoff Calculator",
+      "creditCardPayoffDesc": "See how long it takes to pay off a card and how much interest you will pay",
+      "salaryHourly": "Hourly to Salary Calculator",
+      "salaryHourlyDesc": "Convert an hourly wage to annual, monthly and weekly pay, or a salary to hourly",
+      "refinance": "Mortgage Refinance Calculator",
+      "refinanceDesc": "Find your refinance break-even point and lifetime savings after closing costs",
+      "budget": "50/30/20 Budget Calculator",
+      "budgetDesc": "Split your take-home pay into needs, wants and savings and compare with what you spend",
+      "netWorth": "Net Worth Calculator",
+      "netWorthDesc": "Add up your assets and debts to see your net worth and debt-to-asset ratio"
     },
     "newsletter": {
       "title": "Stay Updated",
@@ -1094,6 +1106,30 @@
     "areaConversion": {
       "title": "Area Unit Converter",
       "subtitle": "Convert square feet, square meters, acres, hectares and more"
+    },
+    "homeAffordability": {
+      "title": "Home Affordability Calculator",
+      "subtitle": "Find out how much house you can afford based on your income, debts and down payment"
+    },
+    "creditCardPayoff": {
+      "title": "Credit Card Payoff Calculator",
+      "subtitle": "See how long it takes to pay off your credit card and what it costs in interest"
+    },
+    "salaryHourly": {
+      "title": "Hourly to Salary Calculator",
+      "subtitle": "Convert an hourly wage to salary, or a salary to an hourly rate"
+    },
+    "refinance": {
+      "title": "Mortgage Refinance Calculator",
+      "subtitle": "See when refinancing pays for itself and whether it saves money over the life of the loan"
+    },
+    "budget": {
+      "title": "50/30/20 Budget Calculator",
+      "subtitle": "Split your take-home pay with the 50/30/20 rule and compare it with your real spending"
+    },
+    "netWorth": {
+      "title": "Net Worth Calculator",
+      "subtitle": "Add up what you own and what you owe to see your net worth"
     }
   },
   "footer": {
@@ -1313,6 +1349,30 @@
       "mortgagePrepayment": {
         "title": "Mortgage Prepayment Calculator",
         "description": "Compare paying down your mortgage early with keeping the money invested"
+      },
+      "homeAffordability": {
+        "title": "Home Affordability Calculator",
+        "description": "How much house can you afford? Uses the 28/36 rule with taxes, insurance and HOA"
+      },
+      "creditCardPayoff": {
+        "title": "Credit Card Payoff Calculator",
+        "description": "See how long it takes to pay off a card and how much interest you will pay"
+      },
+      "salaryHourly": {
+        "title": "Hourly to Salary Calculator",
+        "description": "Convert an hourly wage to annual, monthly and weekly pay, or a salary to hourly"
+      },
+      "refinance": {
+        "title": "Mortgage Refinance Calculator",
+        "description": "Find your refinance break-even point and lifetime savings after closing costs"
+      },
+      "budget": {
+        "title": "50/30/20 Budget Calculator",
+        "description": "Split your take-home pay into needs, wants and savings and compare with what you spend"
+      },
+      "netWorth": {
+        "title": "Net Worth Calculator",
+        "description": "Add up your assets and debts to see your net worth and debt-to-asset ratio"
       }
     },
     "comingSoon": "Coming soon"

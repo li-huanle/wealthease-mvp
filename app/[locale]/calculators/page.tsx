@@ -15,6 +15,8 @@ import {
   Utensils,
   Ruler,
   Receipt,
+  RefreshCw,
+  Clock,
   Percent,
   Scale,
   LifeBuoy,
@@ -84,6 +86,13 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
       description: t('categories.incomeTax.description'),
       calculators: [
         {
+          icon: <Clock className="w-8 h-8 text-primary-600" />,
+          title: t('tools.salaryHourly.title'),
+          description: t('tools.salaryHourly.description'),
+          href: `/${locale}/calculators/salary-hourly`,
+          available: true,
+        },
+        {
           icon: <Wallet className="w-8 h-8 text-primary-600" />,
           title: t('tools.takeHomePay.title'),
           description: t('tools.takeHomePay.description'),
@@ -127,6 +136,20 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
       description: t('categories.housing.description'),
       calculators: [
         {
+          icon: <RefreshCw className="w-8 h-8 text-primary-600" />,
+          title: t('tools.refinance.title'),
+          description: t('tools.refinance.description'),
+          href: `/${locale}/calculators/refinance`,
+          available: true,
+        },
+        {
+          icon: <Home className="w-8 h-8 text-primary-600" />,
+          title: t('tools.homeAffordability.title'),
+          description: t('tools.homeAffordability.description'),
+          href: `/${locale}/calculators/home-affordability`,
+          available: true,
+        },
+        {
           icon: <Calculator className="w-8 h-8 text-primary-600" />,
           title: t('tools.mortgage.title'),
           description: t('tools.mortgage.description'),
@@ -162,6 +185,20 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
       title: locale === 'zh' ? '日常理财决策' : 'Everyday Money Decisions',
       description: locale === 'zh' ? '分期年化利率、基金费率、应急金、提前还房贷' : 'Installment APR, fund fees, emergency fund and mortgage prepayment',
       calculators: [
+        {
+          icon: <PieChart className="w-8 h-8 text-primary-600" />,
+          title: t('tools.budget.title'),
+          description: t('tools.budget.description'),
+          href: `/${locale}/calculators/budget`,
+          available: true,
+        },
+        {
+          icon: <CreditCard className="w-8 h-8 text-primary-600" />,
+          title: t('tools.creditCardPayoff.title'),
+          description: t('tools.creditCardPayoff.description'),
+          href: `/${locale}/calculators/credit-card-payoff`,
+          available: true,
+        },
         {
           icon: <Percent className="w-8 h-8 text-primary-600" />,
           title: t('tools.installmentApr.title'),
@@ -241,6 +278,13 @@ export default async function CalculatorsPage({ params }: { params: Promise<{ lo
       title: locale === 'zh' ? '投资与规划' : 'Investment & Planning',
       description: locale === 'zh' ? '复利、储蓄目标、债务还清等投资规划工具' : 'Compound interest, savings goals, debt payoff and other investment planning tools',
       calculators: [
+        {
+          icon: <Wallet className="w-8 h-8 text-primary-600" />,
+          title: t('tools.netWorth.title'),
+          description: t('tools.netWorth.description'),
+          href: `/${locale}/calculators/net-worth`,
+          available: true,
+        },
         {
           icon: <TrendingUp className="w-8 h-8 text-primary-600" />,
           title: t('tools.compound.title'),

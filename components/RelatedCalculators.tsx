@@ -31,7 +31,13 @@ type CalculatorType =
   | 'mortgage-prepayment'
   | 'take-home-pay'
   | 'tax-bracket'
-  | 'area-conversion';
+  | 'area-conversion'
+  | 'home-affordability'
+  | 'credit-card-payoff'
+  | 'salary-hourly'
+  | 'refinance'
+  | 'budget'
+  | 'net-worth';
 
 interface CalculatorInfo {
   id: CalculatorType;
@@ -204,6 +210,42 @@ const calculators: Record<CalculatorType, CalculatorInfo> = {
     descKey: 'areaConversion.description',
     icon: '📐',
   },
+  'home-affordability': {
+    id: 'home-affordability',
+    titleKey: 'homeAffordability.title',
+    descKey: 'homeAffordability.description',
+    icon: '🏡',
+  },
+  'credit-card-payoff': {
+    id: 'credit-card-payoff',
+    titleKey: 'creditCardPayoff.title',
+    descKey: 'creditCardPayoff.description',
+    icon: '💳',
+  },
+  'salary-hourly': {
+    id: 'salary-hourly',
+    titleKey: 'salaryHourly.title',
+    descKey: 'salaryHourly.description',
+    icon: '⏱️',
+  },
+  'refinance': {
+    id: 'refinance',
+    titleKey: 'refinance.title',
+    descKey: 'refinance.description',
+    icon: '🔁',
+  },
+  'budget': {
+    id: 'budget',
+    titleKey: 'budget.title',
+    descKey: 'budget.description',
+    icon: '📊',
+  },
+  'net-worth': {
+    id: 'net-worth',
+    titleKey: 'netWorth.title',
+    descKey: 'netWorth.description',
+    icon: '🧮',
+  },
 };
 
 // 定义计算器之间的关联关系
@@ -213,9 +255,9 @@ const relatedCalculatorsMap: Record<CalculatorType, CalculatorType[]> = {
   'investment-401k': ['take-home-pay', 'retirement', 'compound-interest', 'inflation'],
   'inflation': ['retirement', 'investment-401k', 'rent-vs-buy', 'college-savings'],
   'savings-goal': ['compound-interest', 'emergency-fund', 'debt-payoff', 'retirement'],
-  'debt-payoff': ['loan', 'mortgage', 'savings-goal', 'roi'],
+  'debt-payoff': ['credit-card-payoff', 'loan', 'budget', 'savings-goal'],
   'loan': ['mortgage', 'debt-payoff', 'installment-apr', 'rent-vs-buy'],
-  'mortgage': ['loan', 'mortgage-prepayment', 'rent-vs-buy', 'debt-payoff'],
+  'mortgage': ['home-affordability', 'refinance', 'mortgage-prepayment', 'rent-vs-buy'],
   'roi': ['investment-comparison', 'dividend-income', 'compound-interest', 'investment-401k'],
   'rent-vs-buy': ['mortgage', 'area-conversion', 'loan', 'inflation'],
   'college-savings': ['savings-goal', 'compound-interest', 'investment-401k', 'inflation'],
@@ -232,9 +274,15 @@ const relatedCalculatorsMap: Record<CalculatorType, CalculatorType[]> = {
   'fund-fees': ['compound-interest', 'investment-comparison', 'retirement'],
   'emergency-fund': ['savings-goal', 'debt-payoff', 'inflation'],
   'mortgage-prepayment': ['mortgage', 'loan', 'investment-comparison'],
-  'take-home-pay': ['tax-bracket', 'tax', 'investment-401k', 'savings-goal'],
+  'take-home-pay': ['tax-bracket', 'salary-hourly', 'budget', 'investment-401k'],
   'tax-bracket': ['take-home-pay', 'tax', 'investment-401k'],
   'area-conversion': ['mortgage', 'rent-vs-buy', 'loan'],
+  'home-affordability': ['mortgage', 'rent-vs-buy', 'take-home-pay'],
+  'credit-card-payoff': ['debt-payoff', 'installment-apr', 'budget'],
+  'salary-hourly': ['take-home-pay', 'tax-bracket', 'budget'],
+  'refinance': ['mortgage', 'mortgage-prepayment', 'home-affordability'],
+  'budget': ['emergency-fund', 'take-home-pay', 'net-worth'],
+  'net-worth': ['budget', 'retirement', 'compound-interest'],
 };
 
 interface RelatedCalculatorsProps {
