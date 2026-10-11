@@ -7,6 +7,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import GoogleAdSense from '@/components/GoogleAdSense';
+import CloudflareAnalytics from '@/components/CloudflareAnalytics';
 import dynamic from 'next/dynamic';
 
 // 动态导入非关键组件，延迟加载
@@ -37,6 +38,8 @@ export default async function LocaleLayout({
 
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
   const adSenseId = process.env.NEXT_PUBLIC_ADSENSE_ID;
+  const cfBeaconToken =
+    process.env.NEXT_PUBLIC_CF_BEACON_TOKEN ?? '579b578ba8444267afc5b79cf598c633';
 
   return (
     <html lang={locale}>
@@ -68,6 +71,7 @@ export default async function LocaleLayout({
       <body>
         {gaId && <GoogleAnalytics gaId={gaId} />}
         {adSenseId && <GoogleAdSense adSenseId={adSenseId} />}
+        {cfBeaconToken && <CloudflareAnalytics token={cfBeaconToken} />}
         <NextIntlClientProvider messages={messages}>
           <Navigation />
           <main className="min-h-screen">

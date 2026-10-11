@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { blogPosts } from '@/data/blog-posts';
+import { renderMarkdown } from '@/lib/markdown';
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -105,51 +106,6 @@ export default async function BlogPostPage({ params }: Props) {
     .filter((p) => p.category === post.category && p.slug !== post.slug)
     .slice(0, 2);
 
-  // Format content with proper HTML structure
-  const formatContent = (content: string) => {
-    return content
-      .split('\n\n')
-      .map((paragraph) => {
-        // Handle headings
-        if (paragraph.startsWith('## ')) {
-          return `<h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">${paragraph.replace('## ', '')}</h2>`;
-        }
-        if (paragraph.startsWith('### ')) {
-          return `<h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">${paragraph.replace('### ', '')}</h3>`;
-        }
-
-        // Horizontal rule
-        if (paragraph.trim() === '---') {
-          return `<hr class="my-10 border-gray-200" />`;
-        }
-
-        // Handle lists
-        if (paragraph.includes('\n- ')) {
-          const items = paragraph
-            .replace(/^- /, '')
-            .split('\n- ')
-            .filter((item) => item.trim())
-            .map((item) => `<li class="mb-2">${item.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</li>`)
-            .join('');
-          return `<ul class="list-disc list-inside space-y-2 mb-6 ml-4">${items}</ul>`;
-        }
-
-        // Handle code blocks
-        if (paragraph.startsWith('```')) {
-          const code = paragraph.replace(/```/g, '').trim();
-          return `<pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto mb-6"><code class="text-sm">${code}</code></pre>`;
-        }
-
-        // Handle regular paragraphs with bold text
-        const formattedParagraph = paragraph
-          .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-gray-900">$1</strong>')
-          .replace(/\*(.*?)\*/g, '<em>$1</em>');
-
-        return `<p class="text-lg text-gray-700 leading-relaxed mb-6">${formattedParagraph}</p>`;
-      })
-      .join('');
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
       {/* Breadcrumb */}
@@ -238,7 +194,7 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Article Content */}
         <div
           className="prose prose-lg max-w-none"
-          dangerouslySetInnerHTML={{ __html: formatContent(post.content[lang]) }}
+          dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content[lang]) }}
         />
 
         {/* Tags */}

@@ -19,7 +19,6 @@ export interface BlogPost {
   readTime: string;
   category: string;
   tags: string[];
-  image?: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -130,7 +129,6 @@ Inflation is inevitable, but losing wealth to it is not. By moving your long-ter
     readTime: '5 min read',
     category: 'Economics',
     tags: ['inflation', 'investing', 'purchasing power', 'economics'],
-    image: '/images/blog/inflation.jpg',
   },
   {
     slug: 'rent-vs-buy-making-the-right-decision',
@@ -271,7 +269,6 @@ PWL Capital的投资组合经理Ben Felix提出了5%法则来快速比较成本�
     readTime: '7 min read',
     category: 'Real Estate',
     tags: ['rent vs buy', 'real estate', 'housing market', 'financial decision'],
-    image: '/images/blog/rent-vs-buy.jpg',
   },
   {
     slug: 'debt-payoff-strategies-avalanche-vs-snowball',
@@ -406,7 +403,6 @@ You can do this. The road to financial freedom starts with a single payment.`,
     readTime: '6 min read',
     category: 'Debt Management',
     tags: ['debt payoff', 'personal finance', 'budgeting', 'money management'],
-    image: '/images/blog/debt-strategies.jpg',
   },
   {
     slug: 'compound-interest-guide',
@@ -733,7 +729,6 @@ Remember: Every day you wait is a day of compound growth you'll never get back. 
     readTime: '8 min read',
     category: 'Investment',
     tags: ['compound interest', 'investing', 'wealth building', 'financial planning'],
-    image: '/images/blog/compound-interest.jpg',
   },
   {
     slug: 'retirement-planning-guide',
@@ -1244,7 +1239,6 @@ Roth转换、税损收割和战略性账户提取可以节省数千税金。
     readTime: '10 min read',
     category: 'Retirement',
     tags: ['retirement planning', 'financial security', '401k', 'IRA', 'savings'],
-    image: '/images/blog/retirement-planning.jpg',
   },
   {
     slug: 'choosing-right-loan',
@@ -1957,7 +1951,6 @@ Remember: The best borrowers are those who could afford not to borrow but choose
     readTime: '12 min read',
     category: 'Loans',
     tags: ['loans', 'borrowing', 'personal finance', 'debt management', 'interest rates'],
-    image: '/images/blog/loan-guide.jpg',
   },
   {
     slug: 'roi-investment-guide',
@@ -2570,7 +2563,6 @@ ROI让你可以在同等基础上比较不同规模的投资：
     readTime: '10 min read',
     category: 'Investment',
     tags: ['ROI', 'investment returns', 'financial analysis', 'portfolio management', 'wealth building'],
-    image: '/images/blog/roi-guide.jpg',
   },
   {
     slug: 'mortgage-calculator-guide',
@@ -2644,7 +2636,6 @@ Our [free Mortgage Calculator](/calculators/mortgage) helps you:
     readTime: '8 min read',
     category: 'Mortgage',
     tags: ['mortgage', 'home buying', 'real estate', 'mortgage calculator', 'home loan'],
-    image: '/images/blog/mortgage-guide.jpg',
   },
   {
     slug: 'beginner-guide-to-personal-finance',
@@ -3109,7 +3100,6 @@ Start small, stay consistent, and watch your wealth grow over time. You've got t
     readTime: '15 min read',
     category: 'Basics',
     tags: ['personal finance', 'budgeting', 'saving money', 'financial planning', 'beginner guide'],
-    image: '/images/blog/beginner-finance.jpg',
   },
   {
     slug: 'emergency-fund-guide',
@@ -3526,7 +3516,6 @@ You'll sleep better knowing you're prepared for whatever life throws your way.
     readTime: '10 min read',
     category: 'Savings',
     tags: ['emergency fund', 'savings', 'financial security', 'money management', 'safety net'],
-    image: '/images/blog/emergency-fund.jpg',
   },
   {
     slug: 'budgeting-guide',
@@ -3987,7 +3976,6 @@ Remember: A budget isn't about being perfect. It's about being intentional with 
     readTime: '12 min read',
     category: 'Budgeting',
     tags: ['budgeting', 'money management', 'expense tracking', 'financial planning', 'saving'],
-    image: '/images/blog/budgeting.jpg',
   },
   {
     slug: 'three-pillars-of-financial-management',
@@ -4386,7 +4374,6 @@ Let's embark on the journey of financial management together, using wisdom and p
     readTime: '15 min read',
     category: 'Basics',
     tags: ['asset allocation', 'financial planning', 'saving', 'investment', 'risk management', 'wealth building'],
-    image: '/images/blog/asset-allocation.jpg',
   },
   {
     slug: 'managing-family-finance-trust',
