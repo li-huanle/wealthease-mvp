@@ -81,19 +81,7 @@
       "taxBracket": "联邦税阶查询",
       "taxBracketDesc": "查找您的税阶并计算边际税率",
       "areaConversion": "面积单位换算",
-      "areaConversionDesc": "在平方英尺、平方米、英亩等单位间快速换算",
-      "homeAffordability": "买房预算计算器",
-      "homeAffordabilityDesc": "我能买多贵的房？按 28/36 规则，含房产税、保险和物业费",
-      "creditCardPayoff": "信用卡还清计算器",
-      "creditCardPayoffDesc": "看看还清信用卡要多久、要付多少利息",
-      "salaryHourly": "时薪年薪换算",
-      "salaryHourlyDesc": "时薪换算成年薪、月薪、周薪，或把年薪换算成时薪",
-      "refinance": "房贷再融资计算器",
-      "refinanceDesc": "算出再融资的回本时间，以及扣除手续费后的总节省",
-      "budget": "50/30/20 预算计算器",
-      "budgetDesc": "把到手收入分成必要支出、想要的支出和储蓄，并与实际支出对比",
-      "netWorth": "净资产计算器",
-      "netWorthDesc": "把资产和负债加总，算出净资产和资产负债率"
+      "areaConversionDesc": "在平方英尺、平方米、英亩等单位间快速换算"
     },
     "newsletter": {
       "title": "获取最新资讯",
@@ -1106,30 +1094,6 @@
     "areaConversion": {
       "title": "面积单位换算",
       "subtitle": "平方英尺、平方米、英亩、公顷等单位快速换算"
-    },
-    "homeAffordability": {
-      "title": "买房预算计算器",
-      "subtitle": "根据收入、负债和首付，估算你能负担的房价"
-    },
-    "creditCardPayoff": {
-      "title": "信用卡还清计算器",
-      "subtitle": "算出信用卡多久能还清，以及要付多少利息"
-    },
-    "salaryHourly": {
-      "title": "时薪年薪换算",
-      "subtitle": "时薪和年薪互相换算"
-    },
-    "refinance": {
-      "title": "房贷再融资计算器",
-      "subtitle": "看看再融资多久能回本，整个贷款期能不能省钱"
-    },
-    "budget": {
-      "title": "50/30/20 预算计算器",
-      "subtitle": "用 50/30/20 法则分配到手收入，并与实际支出对比"
-    },
-    "netWorth": {
-      "title": "净资产计算器",
-      "subtitle": "把你拥有的和你欠的加起来，算出净资产"
     }
   },
   "footer": {
@@ -1349,30 +1313,6 @@
       "mortgagePrepayment": {
         "title": "提前还房贷计算器",
         "description": "对比提前还房贷和把钱留着投资，哪个更划算"
-      },
-      "homeAffordability": {
-        "title": "买房预算计算器",
-        "description": "我能买多贵的房？按 28/36 规则，含房产税、保险和物业费"
-      },
-      "creditCardPayoff": {
-        "title": "信用卡还清计算器",
-        "description": "看看还清信用卡要多久、要付多少利息"
-      },
-      "salaryHourly": {
-        "title": "时薪年薪换算",
-        "description": "时薪换算成年薪、月薪、周薪，或把年薪换算成时薪"
-      },
-      "refinance": {
-        "title": "房贷再融资计算器",
-        "description": "算出再融资的回本时间，以及扣除手续费后的总节省"
-      },
-      "budget": {
-        "title": "50/30/20 预算计算器",
-        "description": "把到手收入分成必要支出、想要的支出和储蓄，并与实际支出对比"
-      },
-      "netWorth": {
-        "title": "净资产计算器",
-        "description": "把资产和负债加总，算出净资产和资产负债率"
       }
     },
     "comingSoon": "即将推出"
@@ -1647,5 +1587,189 @@
     "og:description": "智能工具，助力明智财务决策。免费退休规划、房贷计算、债务还清、通货膨胀、401(k)等计算器。",
     "og:type": "website",
     "twitter:card": "summary_large_image"
+  },
+  "brokerCompare": {
+    "title": "在美华人券商对比：5 家美国持牌券商费率、开户门槛全整理（2026）",
+    "subtitle": "先看你能不能开户，再看费贵不贵。费率都 $0 了，区别在于身份要求、中文服务和开户奖励。",
+    "lastUpdated": "费率与奖励截至 2026-10-13 核实，开户奖励轮换快，请以券商官网实时页面为准。",
+    "disclosure": "本页为信息整理，不构成投资建议；暂无返佣链接，仅做信息盘点。",
+    "positioning": {
+      "title": "一句话定位",
+      "items": [
+        {
+          "name": "Charles Schwab（嘉信）",
+          "desc": "全能老牌，客服有中文，适合长期持有、不爱折腾的人。"
+        },
+        {
+          "name": "Fidelity（富达）",
+          "desc": "退休账户最强，客服中文有限，适合 401(k)/IRA 规划的人。"
+        },
+        {
+          "name": "Interactive Brokers（盈透，IBKR）",
+          "desc": "国际化最高，非美国税务居民可开户，适合有跨境需求、资金量大的人。"
+        },
+        {
+          "name": "moomoo（富途美国）",
+          "desc": "原生中文、开户奖励最多，适合刚来美国、有中文客服需求的人。"
+        },
+        {
+          "name": "Webull（微牛美国）",
+          "desc": "原生中文、IRA match 有特色，适合习惯手机交易、做退休供款的人。"
+        }
+      ]
+    },
+    "fees": {
+      "title": "费率对比",
+      "takeaway": "一句结论：美股/ETF 佣金全部 $0，费率已经不是选择券商的决定因素。",
+      "headers": [
+        "券商",
+        "美股/ETF 佣金",
+        "期权合约费",
+        "开户最低金额",
+        "碎股",
+        "中文支持"
+      ],
+      "rows": [
+        [
+          "Charles Schwab",
+          "$0",
+          "$0.65/张",
+          "$0",
+          "$1 起",
+          "有"
+        ],
+        [
+          "Fidelity",
+          "$0",
+          "$0.65/张",
+          "$0",
+          "$1 起",
+          "有限"
+        ],
+        [
+          "Interactive Brokers（IBKR Lite）",
+          "$0",
+          "$0.65/张",
+          "$0",
+          "$1 起",
+          "有"
+        ],
+        [
+          "moomoo（富途美国）",
+          "$0",
+          "美股期权 $0；指数期权 $0.50/张",
+          "$0",
+          "支持",
+          "原生中文"
+        ],
+        [
+          "Webull（微牛美国）",
+          "$0",
+          "美股期权 $0；指数期权 $0.50/张",
+          "$0",
+          "支持",
+          "原生中文"
+        ]
+      ]
+    },
+    "requirements": {
+      "title": "开户门槛——华人最关心的一块",
+      "takeaway": "一句结论：刚来美国、还没 SSN 的人，先看 IBKR 和国际账户选项；有 SSN 的，5 家都打得开。",
+      "items": [
+        {
+          "name": "Charles Schwab",
+          "desc": "标准账户要求美国公民/税务居民 + 美国邮寄地址 + SSN；另有 Schwab One International 账户面向特定国家居民（中国是否在列需核对官网）。"
+        },
+        {
+          "name": "Fidelity",
+          "desc": "一般要求 SSN + 美国居住地址。"
+        },
+        {
+          "name": "Interactive Brokers",
+          "desc": "国际化程度最高，支持多国开户；非美国税务居民走 W-8BEN。"
+        },
+        {
+          "name": "moomoo / Webull（美国持牌券商）",
+          "desc": "一般要求 SSN/ITIN。"
+        }
+      ]
+    },
+    "bonuses": {
+      "title": "开户奖励信息盘点",
+      "note": "以下全部为公开信息整理，奖励轮换极快，入金前务必核对券商官网条款。",
+      "items": [
+        {
+          "name": "moomoo",
+          "desc": "新客按净入金阶梯得 NVDA 股票：$500→$30、$2,000→$100、$10,000→$200、$50,000→$400、$100,000→$1,000；闲置现金促销 8.1% APY。第三方汇总称活动至 2026-12-31，以官网为准。"
+        },
+        {
+          "name": "Webull",
+          "desc": "首次入金 $100+ 得 12 只碎股（单只价值 $3–$300，合计至少 $36）+ 1 个月 Webull Premium 会员；IRA 供款 3.5% match（需 Premium 会员）、IRA 转户 3% match。碎股活动据第三方称 2026-10-14 到期，以官网为准。"
+        },
+        {
+          "name": "Schwab / Fidelity / IBKR",
+          "desc": "常规无大额开户奖励（IBKR 有推荐计划，Schwab 偶发奖励）。"
+        }
+      ],
+      "compliance": "合规说明：本页只做信息盘点，不主推返佣。"
+    },
+    "fit": {
+      "title": "哪类人适合哪家",
+      "items": [
+        {
+          "who": "刚来美国、要中文客服 + 开户奖励",
+          "pick": "moomoo / Webull"
+        },
+        {
+          "who": "长期持有、懒得折腾、要稳定客服",
+          "pick": "Charles Schwab"
+        },
+        {
+          "who": "401(k)/IRA 是主战场",
+          "pick": "Fidelity（退休账户阵容最强）"
+        },
+        {
+          "who": "跨境资金、多国市场、没 SSN",
+          "pick": "Interactive Brokers"
+        },
+        {
+          "who": "想拿 IRA 供款 match",
+          "pick": "Webull（IRA 供款 3.5% match，需 Premium 会员，条款以官网为准）"
+        }
+      ]
+    },
+    "risks": {
+      "title": "风险提示",
+      "items": [
+        "本页信息整理自公开资料与券商官网，不构成投资建议。",
+        "费率与奖励以券商官网实时页面为准，开户奖励轮换快，入金前务必核对条款。",
+        "投资有风险，包括本金损失的可能。"
+      ]
+    },
+    "faq": {
+      "title": "常见问题",
+      "items": [
+        {
+          "q": "美国券商开户一定要 SSN 吗？",
+          "a": "不一定。Schwab、Fidelity 一般要求 SSN；IBKR 国际化程度最高，非美国税务居民可通过 W-8BEN 开户；moomoo/Webull 美国区一般要求 SSN/ITIN。具体以各券商官网为准。"
+        },
+        {
+          "q": "moomoo 和 Webull 哪家开户奖励高？",
+          "a": "两家都以新客奖励见长：moomoo 按净入金阶梯给 NVDA 股票（最高约 $1,000）+ 闲置现金 8.1% APY；Webull 首入金给 12 只碎股 + IRA 供款 3.5% match。奖励轮换快，金额以官网实时条款为准。"
+        },
+        {
+          "q": "非美国税务居民能开美股账户吗？",
+          "a": "可以。Interactive Brokers 支持多国居民开户，非美国税务居民填写 W-8BEN 表格即可。具体资格与所需文件以 IBKR 官网为准。"
+        },
+        {
+          "q": "碎股是什么意思？",
+          "a": "碎股（fractional shares）指不足一整股的股票份额，比如 $1 起买入股价上千美元的股票的一小部分。Schwab、Fidelity、IBKR、moomoo、Webull 均支持碎股交易。"
+        },
+        {
+          "q": "Schwab 和 Fidelity 哪个更适合长期持有？",
+          "a": "两家都是老牌全能券商：Schwab 客服有中文、服务稳定；Fidelity 退休账户（401(k)/IRA）阵容最强。都不爱折腾的长期持有者，选哪家差别不大，看中文服务和退休账户需求二选一。"
+        }
+      ]
+    }
   }
 }
