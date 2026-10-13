@@ -81,19 +81,7 @@
       "taxBracket": "Federal Tax Bracket Calculator",
       "taxBracketDesc": "Find your tax bracket and calculate marginal tax rates",
       "areaConversion": "Area Unit Converter",
-      "areaConversionDesc": "Quickly convert between sq ft, sq meters, acres, and other units",
-      "homeAffordability": "Home Affordability Calculator",
-      "homeAffordabilityDesc": "How much house can you afford? Uses the 28/36 rule with taxes, insurance and HOA",
-      "creditCardPayoff": "Credit Card Payoff Calculator",
-      "creditCardPayoffDesc": "See how long it takes to pay off a card and how much interest you will pay",
-      "salaryHourly": "Hourly to Salary Calculator",
-      "salaryHourlyDesc": "Convert an hourly wage to annual, monthly and weekly pay, or a salary to hourly",
-      "refinance": "Mortgage Refinance Calculator",
-      "refinanceDesc": "Find your refinance break-even point and lifetime savings after closing costs",
-      "budget": "50/30/20 Budget Calculator",
-      "budgetDesc": "Split your take-home pay into needs, wants and savings and compare with what you spend",
-      "netWorth": "Net Worth Calculator",
-      "netWorthDesc": "Add up your assets and debts to see your net worth and debt-to-asset ratio"
+      "areaConversionDesc": "Quickly convert between sq ft, sq meters, acres, and other units"
     },
     "newsletter": {
       "title": "Stay Updated",
@@ -1106,30 +1094,6 @@
     "areaConversion": {
       "title": "Area Unit Converter",
       "subtitle": "Convert square feet, square meters, acres, hectares and more"
-    },
-    "homeAffordability": {
-      "title": "Home Affordability Calculator",
-      "subtitle": "Find out how much house you can afford based on your income, debts and down payment"
-    },
-    "creditCardPayoff": {
-      "title": "Credit Card Payoff Calculator",
-      "subtitle": "See how long it takes to pay off your credit card and what it costs in interest"
-    },
-    "salaryHourly": {
-      "title": "Hourly to Salary Calculator",
-      "subtitle": "Convert an hourly wage to salary, or a salary to an hourly rate"
-    },
-    "refinance": {
-      "title": "Mortgage Refinance Calculator",
-      "subtitle": "See when refinancing pays for itself and whether it saves money over the life of the loan"
-    },
-    "budget": {
-      "title": "50/30/20 Budget Calculator",
-      "subtitle": "Split your take-home pay with the 50/30/20 rule and compare it with your real spending"
-    },
-    "netWorth": {
-      "title": "Net Worth Calculator",
-      "subtitle": "Add up what you own and what you owe to see your net worth"
     }
   },
   "footer": {
@@ -1349,30 +1313,6 @@
       "mortgagePrepayment": {
         "title": "Mortgage Prepayment Calculator",
         "description": "Compare paying down your mortgage early with keeping the money invested"
-      },
-      "homeAffordability": {
-        "title": "Home Affordability Calculator",
-        "description": "How much house can you afford? Uses the 28/36 rule with taxes, insurance and HOA"
-      },
-      "creditCardPayoff": {
-        "title": "Credit Card Payoff Calculator",
-        "description": "See how long it takes to pay off a card and how much interest you will pay"
-      },
-      "salaryHourly": {
-        "title": "Hourly to Salary Calculator",
-        "description": "Convert an hourly wage to annual, monthly and weekly pay, or a salary to hourly"
-      },
-      "refinance": {
-        "title": "Mortgage Refinance Calculator",
-        "description": "Find your refinance break-even point and lifetime savings after closing costs"
-      },
-      "budget": {
-        "title": "50/30/20 Budget Calculator",
-        "description": "Split your take-home pay into needs, wants and savings and compare with what you spend"
-      },
-      "netWorth": {
-        "title": "Net Worth Calculator",
-        "description": "Add up your assets and debts to see your net worth and debt-to-asset ratio"
       }
     },
     "comingSoon": "Coming soon"
@@ -1647,5 +1587,189 @@
     "og:description": "Smart tools for smarter financial decisions. Free retirement, mortgage, debt payoff, inflation, 401(k), and more calculators.",
     "og:type": "website",
     "twitter:card": "summary_large_image"
+  },
+  "brokerCompare": {
+    "title": "Best Brokerage Accounts for Chinese Americans in 2026: Fees, Requirements, and Bonuses Compared",
+    "subtitle": "Check whether you can open an account before comparing fees. Commissions are all $0 now; what actually differs is identity requirements, Chinese-language support, and sign-up bonuses.",
+    "lastUpdated": "Fees and bonuses checked 2026-10-13. Bonuses rotate often; the broker's official site is the final source.",
+    "disclosure": "This page summarizes public information and is not investment advice. No affiliate links; informational roundup only.",
+    "positioning": {
+      "title": "One-line positioning",
+      "items": [
+        {
+          "name": "Charles Schwab",
+          "desc": "The all-rounder with Chinese-language customer service; fits long-term, low-maintenance investors."
+        },
+        {
+          "name": "Fidelity",
+          "desc": "The strongest retirement-account lineup; Chinese support is limited; fits 401(k)/IRA planners."
+        },
+        {
+          "name": "Interactive Brokers (IBKR)",
+          "desc": "Most international; open to non-US tax residents; fits cross-border needs and larger accounts."
+        },
+        {
+          "name": "moomoo (Futu US)",
+          "desc": "Native Chinese and the largest sign-up bonuses; fits recent arrivals who want Chinese-language service."
+        },
+        {
+          "name": "Webull",
+          "desc": "Native Chinese with notable IRA match offers; fits mobile-first traders and IRA contributors."
+        }
+      ]
+    },
+    "fees": {
+      "title": "Fee comparison",
+      "takeaway": "Takeaway: commissions on US stocks/ETFs are $0 everywhere — fees are no longer the deciding factor.",
+      "headers": [
+        "Broker",
+        "US stocks/ETFs",
+        "Options contract fee",
+        "Min. deposit",
+        "Fractional shares",
+        "Chinese support"
+      ],
+      "rows": [
+        [
+          "Charles Schwab",
+          "$0",
+          "$0.65/contract",
+          "$0",
+          "from $1",
+          "Yes"
+        ],
+        [
+          "Fidelity",
+          "$0",
+          "$0.65/contract",
+          "$0",
+          "from $1",
+          "Limited"
+        ],
+        [
+          "Interactive Brokers (IBKR Lite)",
+          "$0",
+          "$0.65/contract",
+          "$0",
+          "from $1",
+          "Yes"
+        ],
+        [
+          "moomoo (US)",
+          "$0",
+          "$0 equity options; $0.50/index options",
+          "$0",
+          "Yes",
+          "Native"
+        ],
+        [
+          "Webull (US)",
+          "$0",
+          "$0 equity options; $0.50/index options",
+          "$0",
+          "Yes",
+          "Native"
+        ]
+      ]
+    },
+    "requirements": {
+      "title": "Account requirements — what Chinese readers care about most",
+      "takeaway": "Takeaway: recent arrivals without an SSN should look at IBKR and international-account options first; with an SSN, all five work.",
+      "items": [
+        {
+          "name": "Charles Schwab",
+          "desc": "Standard account requires US citizen/tax resident + US mailing address + SSN; Schwab One International exists for residents of eligible countries (whether China qualifies needs official-site confirmation)."
+        },
+        {
+          "name": "Fidelity",
+          "desc": "Generally requires SSN + US residential address."
+        },
+        {
+          "name": "Interactive Brokers",
+          "desc": "Most international, multi-country onboarding; non-US tax residents use W-8BEN."
+        },
+        {
+          "name": "moomoo / Webull (US-licensed brokers)",
+          "desc": "Generally require SSN/ITIN."
+        }
+      ]
+    },
+    "bonuses": {
+      "title": "Sign-up bonuses — informational roundup",
+      "note": "All offers below rotate fast; verify terms on the broker's official site before funding.",
+      "items": [
+        {
+          "name": "moomoo",
+          "desc": "Tiered NVDA stock rewards by net deposit: $500→$30, $2,000→$100, $10,000→$200, $50,000→$400, $100,000→$1,000; promotional 8.1% APY on idle cash. Third-party roundups say the offer runs through 2026-12-31 — confirm on moomoo's site."
+        },
+        {
+          "name": "Webull",
+          "desc": "First qualifying deposit of $100+ earns 12 fractional shares ($3–$300 each, at least $36 combined) + 1 month of Webull Premium; 3.5% match on IRA contributions (Premium required), 3% on IRA transfers. Third-party sources say the free-shares offer expires 2026-10-14 — confirm on Webull's site."
+        },
+        {
+          "name": "Schwab / Fidelity / IBKR",
+          "desc": "No large standing sign-up bonuses (IBKR has a referral program; Schwab runs occasional offers)."
+        }
+      ],
+      "compliance": "Compliance note: this page only summarizes publicly available offers; it does not promote rebates."
+    },
+    "fit": {
+      "title": "Which broker for whom",
+      "items": [
+        {
+          "who": "Recent arrival, wants Chinese service + bonus",
+          "pick": "moomoo / Webull"
+        },
+        {
+          "who": "Long-term holder, wants stability and service",
+          "pick": "Charles Schwab"
+        },
+        {
+          "who": "Retirement accounts are the main game",
+          "pick": "Fidelity (strongest 401(k)/IRA lineup)"
+        },
+        {
+          "who": "Cross-border money, multiple markets, no SSN",
+          "pick": "Interactive Brokers"
+        },
+        {
+          "who": "Wants an IRA contribution match",
+          "pick": "Webull (3.5% IRA match, Premium required, terms on official site)"
+        }
+      ]
+    },
+    "risks": {
+      "title": "Risk disclosure",
+      "items": [
+        "This page summarizes public information and broker websites; it is not investment advice.",
+        "Fees and bonuses reflect each broker's live site; verify terms before funding.",
+        "Investing involves risk, including possible loss of principal."
+      ]
+    },
+    "faq": {
+      "title": "FAQ",
+      "items": [
+        {
+          "q": "Do I need an SSN to open a US brokerage account?",
+          "a": "Not always. Schwab and Fidelity generally require an SSN; Interactive Brokers onboards residents of many countries, with non-US tax residents using W-8BEN; moomoo/Webull US generally require SSN/ITIN. Check each broker's official site."
+        },
+        {
+          "q": "moomoo vs Webull: which has the better sign-up bonus?",
+          "a": "Both lead on new-customer offers: moomoo gives tiered NVDA stock (up to ~$1,000) plus 8.1% APY on idle cash; Webull gives 12 fractional shares on first deposit plus a 3.5% IRA contribution match. Bonuses rotate fast — check official terms."
+        },
+        {
+          "q": "Can non-US tax residents open a US brokerage account?",
+          "a": "Yes. Interactive Brokers supports multi-country onboarding; non-US tax residents complete a W-8BEN form. Eligibility and documents per IBKR's official site."
+        },
+        {
+          "q": "What are fractional shares?",
+          "a": "Fractional shares let you buy a slice of a stock — e.g. $1 of a $1,000+ stock. Schwab, Fidelity, IBKR, moomoo and Webull all support them."
+        },
+        {
+          "q": "Schwab vs Fidelity: which is better for buy-and-hold?",
+          "a": "Both are established all-rounders: Schwab has Chinese-language service and steady support; Fidelity has the strongest retirement-account lineup. For low-maintenance long-term holders the difference is small — pick by language needs vs retirement focus."
+        }
+      ]
+    }
   }
 }
