@@ -43,7 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   // Add static pages for each locale
-  const staticPages = ['about', 'privacy', 'terms', 'disclaimer', 'contact', 'blog'];
+  const staticPages = ['about', 'privacy', 'terms', 'disclaimer', 'contact', 'blog', 'compare/broker'];
   staticPages.forEach((page) => {
     locales.forEach((locale) => {
       routes.push({
