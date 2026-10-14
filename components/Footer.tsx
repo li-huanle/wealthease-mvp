@@ -91,6 +91,12 @@ export default function Footer() {
                   {t('tools')}
                 </Link>
               </li>
+              <li>
+                <Link href={`/${locale}/compare/broker`} className="text-gray-400 hover:text-white transition-colors text-sm flex items-center group">
+                  <span className="w-1 h-1 bg-primary-500 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  {t('brokerCompare')}
+                </Link>
+              </li>
             </ul>
           </div>
 

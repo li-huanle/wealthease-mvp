@@ -510,6 +510,35 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
           </div>
         </section>
 
+        {/* Brokerage comparison callout */}
+        <section className="px-4 pb-20">
+          <div className="container mx-auto max-w-6xl">
+            <Link
+              href={`/${locale}/compare/broker`}
+              className="group flex flex-col gap-4 rounded-xl bg-white p-6 shadow-card transition-[box-shadow,transform] duration-base ease-out hover:-translate-y-0.5 hover:shadow-card-hover sm:flex-row sm:items-center sm:justify-between md:p-8"
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary-50 text-primary-700">
+                  <BarChart3 className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="mb-1 text-sm font-semibold text-primary-700">{locale === 'zh' ? '新指南' : 'New guide'}</p>
+                  <h2 className="text-lg font-semibold text-gray-900 transition-colors duration-quick ease-out group-hover:text-primary-700 md:text-xl">
+                    {locale === 'zh' ? '在美华人券商对比：费率、开户门槛和开户奖励' : 'Compare US brokerages: fees, account minimums and bonuses'}
+                  </h2>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {locale === 'zh' ? '5 家美国持牌券商并排对比，并按适合人群给出建议。' : 'Five US-licensed brokers side by side, with who each one fits best.'}
+                  </p>
+                </div>
+              </div>
+              <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-primary-700">
+                {locale === 'zh' ? '查看对比' : 'See the comparison'}
+                <ArrowRight className="h-4 w-4 transition-transform duration-quick ease-out group-hover:translate-x-0.5" />
+              </span>
+            </Link>
+          </div>
+        </section>
+
         {/* Features Section */}
         <section className="border-y bg-muted/40 px-4 py-20">
           <div className="container mx-auto max-w-6xl">

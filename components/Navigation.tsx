@@ -24,6 +24,7 @@ export default function Navigation() {
   const navLinks = [
     { href: home, label: t('home') },
     { href: `/${locale}/calculators`, label: t('calculators') },
+    { href: `/${locale}/compare/broker`, label: t('compare') },
     { href: `/${locale}/blog`, label: t('blog') },
     { href: `/${locale}/about`, label: t('about') },
   ];
