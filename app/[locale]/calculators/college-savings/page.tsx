@@ -2,6 +2,7 @@ import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {Metadata} from 'next';
 import dynamic from 'next/dynamic';
 import RelatedCalculators from '@/components/RelatedCalculators';
+import { SITE_URL } from '@/lib/seo';
 
 // Dynamic import for the calculator component
 const CollegeSavingsCalculator = dynamic(
@@ -21,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations('calculator.collegeSavings');
   const seo = await getTranslations('seo');
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://wealthease.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || SITE_URL;
   const canonicalUrl = `${baseUrl}/${locale}/calculators/college-savings`;
 
   return {
