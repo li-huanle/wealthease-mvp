@@ -6386,5 +6386,151 @@ Mindset determines the height of wealth—let's face investment challenges with 
     category: 'Investing',
     tags: ['investment mindset', 'psychology', 'long-term investing', 'risk management', 'discipline', 'emotional control', 'wealth building'],
   },
+  {
+    slug: 'w8ben-dividend-withholding-guide',
+    title: {
+      en: '30% Withheld From Your US Dividends? One W-8BEN Form Cuts It to 10%',
+      zh: '美股分红被扣了 30%？一张 W-8BEN 表帮你降到 10%',
+    },
+    excerpt: {
+      en: 'Living in China and trading US stocks? Your dividends are withheld at 30% by default. File the right W-8BEN and the US-China tax treaty caps it at 10%. Here is which form to file, how to fill it, and four mistakes to avoid.',
+      zh: '住中国炒美股，股息默认被预扣 30%。填对 W-8BEN，中美协定把税率压到 10%。本文讲清填哪张表、三个关键动作，以及四个千万别踩的坑。',
+    },
+    content: {
+      en: `# 30% Withheld From Your US Dividends? One W-8BEN Form Cuts It to 10%
+
+## The short version: this form is worth real money
+
+If you live in China and earn dividends through a US broker, the US default is to withhold **30%** of your dividends. But the US–China tax treaty caps withholding for Chinese tax residents at **10%** — and you claim it by signing a **W-8BEN** with your broker.
+
+The math: $1,000 of annual dividends means $300 withheld without the form, $100 with it. **You keep $200 a year.**
+
+| Who you are | Which form | What your broker sends you at year-end |
+|---|---|---|
+| China resident, not a US tax resident | W-8BEN | 1042-S |
+| US citizen / green card holder / US tax resident | W-9 | 1099-DIV / 1099-B |
+
+One-line rule: **file US taxes → W-9; live in China trading US stocks → W-8BEN.**
+
+## Which form is yours: a 30-second check
+
+- Do you hold a US green card or US citizenship? → W-9.
+- Were you in the US at least 31 days this year, with 183+ days under the three-year weighted formula (all of this year + 1/3 of last year + 1/6 of the year before)? → You're likely a US tax resident → W-9.
+- None of the above, and you're a China tax resident trading US stocks from China → W-8BEN.
+
+Note: US citizens file W-9 **even if they live abroad** — never W-8BEN.
+
+## How to fill out the W-8BEN: three moves that matter
+
+The form's full name is "Certificate of Foreign Status of Beneficial Owner." It tells your broker two things: I'm not a US person; I'm a China tax resident — apply the treaty rate.
+
+**Move 1 — Identity (Part I):** name and nationality as in your passport; permanent residence address must be a **non-US address**. A change of address to a US address counts as a "change in circumstances" — the IRS requires a new form within 30 days.
+
+**Move 2 — Treaty claim (Part II):** the only step on this form that saves you money. Treaty country: China; article: **Article 9 (Dividends)**; rate: **10%**.
+
+**Move 3 — Sign (Part III):** sign under penalties of perjury. Give the form **to your broker** — never mail it to the IRS.
+
+How long does it last? The **year you sign plus three calendar years**. A form signed in 2026 stays valid through December 31, 2029. Renew on expiry, on moving, or on any change of tax status — otherwise your broker goes back to 30%.
+
+## Four mistakes to avoid
+
+**Mistake 1: Never filing, or letting it expire.** No valid W-8BEN on file, 30% it is. Many brokers send reminders, but set your own calendar alert.
+
+**Mistake 2: Putting a US address on it.** Even a mail-forwarding address counts — the IRS explicitly treats a change to a US address as a change in circumstances requiring a new form within 30 days. Keep your permanent address non-US.
+
+**Mistake 3: A US tax resident filing W-8BEN.** Green card holders, citizens, and those meeting the 183-day rule should file W-9. Filing W-8BEN when you're a US person is a compliance risk.
+
+**Mistake 4: Thinking the W-8BEN is a tax return.** It isn't — it's a *withholding certificate* telling your broker how much to withhold. With correct withholding, nonresidents generally don't need to file a US return. At year-end you'll get a **1042-S**, not a 1099.
+
+## For US-based readers: the W-9 version
+
+US citizens, green card holders, and US tax residents file **W-9** and give the broker your SSN or ITIN. Your broker sends **1099-DIV / 1099-B** at year-end and you file your own return. Dividends are taxed at your normal rates — the 10% treaty rate is for nonresidents only.
+
+## One note on capital gains
+
+Nonresidents generally owe **no US tax on capital gains** from selling US stocks. So the 10% treaty benefit mainly matters for **dividends**, not trading profits. Consult a licensed tax professional for your situation.
+
+## Where to sign it at each broker
+
+- **IBKR**: signed electronically during the "confirm tax residency" step of account opening; most fields are pre-filled — verify them (follow the actual flow on the day you open the account).
+- **Schwab International**: W-8BEN is signed when opening a non-resident account and renewed every three years.
+- **moomoo / Webull / Fidelity**: all include an electronic W-8BEN step in the non-resident account-opening flow; follow each broker's current process.
+
+One boundary to keep clear: IRAs are US-tax-resident products — W-8BEN holders can't open them.
+
+Choosing a broker first? See our [broker comparison](/en/compare/broker): moomoo / Webull / IBKR / Schwab / Fidelity compared side by side.
+
+> Disclaimer: This article summarizes public tax information and is not tax advice. Consult a licensed tax professional for your situation.`,
+      zh: `# 美股分红被扣了 30%？一张 W-8BEN 表帮你降到 10%
+
+## 先说结论：这张表值多少钱
+
+如果你住在中国、用美股券商收分红，默认情况下美国要按 **30%** 预扣你的股息税。但中美税收协定把中国税务居民的股息预扣上限压到了 **10%**——想拿到这个优惠，你需要在券商那里签一张 **W-8BEN** 表。
+
+算笔账：一年收到 1,000 美元股息，不填表扣 300 美元，填了只扣 100 美元，**一年省 200 美元**。这张表就是干这个的。
+
+| 你是哪类人 | 填哪张表 | 年底券商给你什么 |
+|---|---|---|
+| 住中国、不是美国税务居民 | W-8BEN | 1042-S |
+| 美国公民 / 绿卡 / 美国税务居民 | W-9 | 1099-DIV / 1099-B |
+
+记住一句话：**住美国报税 → W-9；住中国炒美股 → W-8BEN。**
+
+## 你该填哪张：30 秒自测
+
+- 你有美国绿卡或美国公民身份吗？→ 有，填 W-9。
+- 你今年在美国待了至少 31 天，且按"三年加权"公式累计满 183 天吗（今年的天数全算，去年算三分之一，前年算六分之一）？→ 是，你大概率是美国税务居民，填 W-9。
+- 以上都没有，你是中国税务居民、人在国内炒美股 → 填 W-8BEN。
+
+注意：美国公民**即使住在国外**也不填 W-8BEN，一律 W-9。
+
+## W-8BEN 怎么填：三个关键动作
+
+这张表的全名是"外国人身份受益所有人证明"，作用是告诉券商两件事：我不是美国人；我是中国税务居民，请按协定给我 10% 的税率。
+
+**动作 1：身份部分（Part I）**——按护照填姓名、国籍，常住地址填**境外地址**。地址变更为美国地址属于"情形变化"，IRS 要求 30 天内重新提交表格。
+
+**动作 2：协定优惠（Part II）**——这是整张表唯一"值钱"的一步。协定国家选 China，条款填 **Article 9（股息）**，税率填 **10%**（以券商电子表单的实际字段为准）。
+
+**动作 3：签名（Part III）**——在"所填信息真实"的声明下签字确认。表格**交给券商**，不要寄给 IRS。
+
+一张表管多久？**签的那年加上之后 3 个日历年**。比如 2026 年签的，有效期到 2029 年 12 月 31 日。到期、搬家、税务身份变化都要重签，否则券商恢复按 30% 扣。
+
+## 四个坑，别踩
+
+**坑 1：没填，或过期了没续。** 没有有效的 W-8BEN 在档，券商不能只看你的地址就给协定优惠——一律按 30% 扣。很多券商到期前会提醒，但别指望，设个自己的日历提醒。
+
+**坑 2：地址填了美国地址。** 哪怕是代收地址，IRS 把"地址变更为美国地址"明确定为情形变化，要 30 天内重填。常住地址老老实实填境外地址。
+
+**坑 3：美国税务居民填了 W-8BEN。** 绿卡、公民、住满 183 天规则的人填 W-8BEN 是合规风险，老老实实填 W-9。
+
+**坑 4：以为 W-8BEN 是报税表。** 它不是。它是"预扣凭证"——告诉券商该扣多少。预扣正确的情况下，非居民一般不用再向美国报税。年底你收到的税表是 **1042-S**，不是 1099。
+
+## 在美读者：W-9 一句话
+
+如果你是美国公民、绿卡持有者或美国税务居民，填 **W-9**，给券商你的 SSN 或 ITIN。券商年底发你 **1099-DIV / 1099-B**，你自行报税。股息按你的税率档正常计税——10% 协定优惠是给非居民的。
+
+## 顺带说一句：资本利得
+
+非居民卖美股赚的**资本利得**，美国一般不征税。所以 10% 优惠的主战场是**股息**，不是买卖差价。具体情形建议咨询税务专业人士。
+
+## 各券商在哪里签这张表
+
+- **IBKR（盈透）**：开户流程的"确认税务居民身份"步骤里电子签署，信息多为预填，核对即可（以开户当天的实际流程为准）。
+- **Schwab International（嘉信国际）**：开户时签署 W-8BEN，每三年更新一次。
+- **moomoo / Webull / Fidelity**：非居民开户流程内均有电子签署 W-8BEN 的环节，具体入口以各券商当天流程为准。
+
+一句话划清边界：IRA（个人退休账户）是美国税务居民的产品，W-8BEN 持有者开不了——别混在一起。
+
+想先选券商再填表？看我们的[券商对比页](/zh/compare/broker)：moomoo / Webull / IBKR / Schwab / Fidelity 五家横向对比。
+
+> 免责声明：本文为公开税务信息整理，不构成税务建议。个人情形请咨询持牌税务专业人士。`,
+    },
+    author: 'WealthEase Team',
+    date: '2026-10-20',
+    readTime: '8 min read',
+    category: 'Tax',
+    tags: ['W-8BEN', 'dividend withholding', 'US-China tax treaty', 'nonresident tax', 'US stocks'],
+  },
   ...lifeGuidePosts,
 ];
