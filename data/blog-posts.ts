@@ -6532,5 +6532,205 @@ Choosing a broker first? See our [broker comparison](/en/compare/broker): moomoo
     category: 'Tax',
     tags: ['W-8BEN', 'dividend withholding', 'US-China tax treaty', 'nonresident tax', 'US stocks'],
   },
+  {
+    slug: 'nonresident-capital-gains-183-day-rule',
+    title: {
+      en: 'In the US 183 Days and Selling Stocks — Is It 30%? First, Separate the Two Rules',
+      zh: '在美国待满 183 天，卖美股就要交 30%？先分清两套规则',
+    },
+    excerpt: {
+      en: 'Nonresidents generally owe no US tax on capital gains — but two rules share the number 183 and confuse everyone. One decides residency, the other decides tax. Here is how to tell them apart, why tax home (not just days) decides whether the 30% flat tax applies, and the three exceptions.',
+      zh: '非居民卖美股，美国一般不征资本利得税——但两个都叫 183 天的规则会把人绕晕。一个定身份，一个定税。本文讲清两套规则怎么分、为什么税籍（不只是天数）才决定 30% 平税是否触发，以及三个例外。',
+    },
+    content: {
+      en: `# In the US 183 Days and Selling Stocks — Is It 30%? First, Separate the Two Rules
+
+### The short version: two 183-day rules, two different questions
+
+Nonresidents generally owe no US tax on capital gains from selling US stocks — but two rules share the number 183 and confuse everyone. **Rule A decides residency**: three-year weighted presence of 183 days makes you a US tax resident, taxed on worldwide income at graduated rates. **Rule B decides tax**: if you are still a nonresident, were actually present in the US for 183 days or more in the year, and the gains are US-source, a flat 30% tax applies to the net gain. **Figure out which rule you are applying before you ask whether tax is due.**
+
+|  | Rule A: residency | Rule B: capital gains tax |
+|---|---|---|
+| Authority | IRC §7701(b)(3), Substantial Presence Test | IRC §871(a)(2), Reg. §1.871-7(d) |
+| Math | Three-year weighted: this year in full + 1/3 of last year + 1/6 of the year before | Simple sum of days actually present in the current year |
+| Threshold | At least 31 days this year, and weighted total ≥ 183 days | 183 days or more in the current year |
+| Result | Tax resident, worldwide income at graduated rates | Still a nonresident: flat 30% on net US-source gains |
+| Relationship | The two rules have **no correlation** (per The Tax Adviser) | Never use one rule's math for the other |
+
+### Rule A: the three-year weighted test
+
+You meet the substantial presence test if you were present at least 31 days this year and your weighted total reaches 183 days.
+
+- **Example 1 (resident):** 150 days this year + 90 last year (counts as 30) + 60 the year before (counts as 10) = 190 ≥ 183 → tax resident.
+- **Example 2 (not resident):** 100 days this year + 120 last year (counts as 40) + 120 the year before (counts as 20) = 160 < 183 → test not met.
+
+Once you are a tax resident, Rule B's flat 30% no longer applies — that rule is for nonresidents. A tax resident's stock gains join worldwide income at graduated rates.
+
+### Rule B: present 183+ days in the year, still a nonresident
+
+Three conditions must all hold:
+
+1. **Present in the US for 183 days or more in the taxable year** (simple sum; an agent's or partner's presence does not count as yours);
+2. **The gains are US-source** (next section — the step most articles skip);
+3. **Not** effectively connected with a US trade or business (ECI, see exceptions).
+
+Tax is **30% of the net amount**: US-source capital gains minus losses allocable to US sources, for the year. Long- and short-term gains both count; losses under this rule offset in the same year and **do not carry over**. Counterintuitive detail: in a qualifying year, gains from sales at **any time during the year** count, even if you were not in the US when the sale happened.
+
+Worked example: a student, still a nonresident, present 200 days in the year, with a US tax home, has US-source gains of $10,000 and allocable losses of $2,000. Net $8,000 × 30% = **$2,400**.
+
+### The step most articles skip: is the gain US-source? It turns on tax home
+
+Section 871(a)(2) taxes only **US-source** gains. For personal property, source generally follows the seller (IRC §865):
+
+- **Tax home outside the US:** gains are generally **foreign-source** — Rule B is not triggered, even if you spent time in the US that year.
+- **Tax home in the US:** gains are generally **US-source** — combine that with 183+ days of presence and Rule B applies.
+
+The IRS page for students, scholars, and foreign-government employees makes this concrete: most are "exempt individuals" for the substantial presence test and stay nonresidents for years — but if they arrived intending to stay longer than one year, their tax home generally shifted to the US on arrival. Exempt status protects **residency**, not this capital gains tax.
+
+So the correct order is: **① residency (Rule A) → ② tax home → ③ days present this year (Rule B)**. Counting days alone and concluding "183 days = 30%" is wrong.
+
+### For readers based in China: normally not triggered
+
+If you live in China, your tax home is in China, and you trade ordinary US stocks through a US broker, your gains are generally foreign-source and Rule B is generally not triggered. **Do not read this as "nonresidents never pay capital gains tax"** — a year spent living long-term in the US must be recalculated on all three steps.
+
+### For US-based readers: residency first, tax second
+
+- Tax resident under Rule A → worldwide income at graduated rates, not the 30% flat tax.
+- Still a nonresident (exempt individual, closer-connection exception, treaty tie-break, etc.) → run Rule B's three-step check: tax home, days present, net amount.
+- If Rule B applies, report on **Form 1040-NR, Schedule NEC** — not Schedule D — because this is a flat-rate tax, not the ordinary capital gains schedule.
+
+### Three exceptions: where "generally not taxed" stops
+
+**Exception 1: Effectively connected income (ECI).** A professional trader with a substantive US business is taxed at graduated rates, not the 30% flat tax. Merely trading stocks through a US broker does not by itself constitute a US trade or business (per the §864(b)(2) safe harbor principle; confirm your situation with a tax professional).
+
+**Exception 2: US real property interests (FIRPTA, IRC §897).** Gains from US real property, or shares in a real-property-rich company, are treated as ECI and taxed at graduated rates **regardless of the 183 days**. Treaty Article 12 paragraphs 4 and 5 reserve the same US taxing right for real-property-rich company shares and for stakes of 25% or more.
+
+**Exception 3: Treaty Article 12(6) is not a "reduced to zero" clause.** Article 12 (Gains) paragraph 6 of the US–China treaty says gains from other property "arising in the other Contracting State" may be taxed there — it **preserves** the source country's taxing right and sets no lower rate cap. So the ordinary nonresident's "generally not taxed" result comes from domestic source rules, not from a treaty benefit. Do not write "the treaty cuts capital gains tax to zero." How paragraph 6's "arising in" interacts with §865 sourcing is a matter for the treaty's Technical Explanation and your tax professional.
+
+### One more note for China-based readers: no US tax does not mean no filing anywhere
+
+Chinese tax residents report worldwide income under domestic law. Property-transfer income sits in a 20% rate bracket under China's Individual Income Tax Law, but how that applies to overseas-listed stocks — including loss netting and filing routes — depends on the tax authority's position and professional advice. This article does not decide that question; verify it separately before filing.
+
+### FAQ
+
+**Q1: I spent 100 days in the US this year. Do I owe the 30%?**
+Not under Rule B on days alone: it requires 183+ days in the year plus US-source gains (ECI and FIRPTA aside).
+
+**Q2: I'm an F-1 student, present 200 days. Is it 30%?**
+It depends on tax home. If you arrived intending to stay over a year and your tax home shifted to the US while you remain a nonresident, all three Rule B conditions are met. If your tax home is still abroad, the gains are foreign-source and Rule B is not triggered. Check residency → tax home → days, in that order.
+
+**Q3: Last year I was present 200 days; this year only 50. How are this year's gains treated?**
+Rule B is annual: under 183 days this year means this year's gains are not counted under Rule B (installment-sale gains from a prior year have special counting rules — ask a tax professional). Rule A's three-year weighting, by contrast, counts last year at 1/3 for residency — don't mix the two formulas.
+
+**Q4: Is the 30% on dividends the same 30%?**
+No. Dividends are FDAP, withheld at 30% (or the 10% treaty rate) on the gross amount — see the W-8 article. This capital gains 30% applies to the **net** amount and only when Rule B's three conditions are met. There is no W-8BEN equivalent for capital gains.
+
+**Q5: If Rule B applies, does my broker withhold it?**
+Unlike dividends, capital gains are generally not withheld by the broker at sale; a person caught by Rule B reports on Form 1040-NR, Schedule NEC (filing and withholding are separate questions — follow the 1040-NR instructions for your case).
+
+### How this relates to the W-8 article
+
+The W-8 article is about **dividends**: treaty Article 9 (Dividends) caps withholding at 10%, claimed with a W-8BEN. This article is about **sale profits**: the treaty provision is Article 12 (Gains), not Article 9 — don't mix them up. Choosing a broker first? See our broker comparison (/en/compare/broker).
+
+> Disclaimer: This article summarizes public tax information and is not tax advice. For F/J/H-1B situations, tax-home determinations, and filing, consult a licensed tax professional.`,
+      zh: `# 在美国待满 183 天，卖美股就要交 30%？先分清两套规则
+
+### 先说结论：两个 183 天，算的是两件事
+
+非居民卖美股，美国这边一般不征资本利得税——但有两个同名规则会把人绕晕。**第一套定身份**：三年加权满 183 天，你就成了美国税务居民，全球收入按累进税率交。**第二套定税**：你仍是非居民、但当年在美国实际待满 183 天，且利得是美国来源的，净利得按 30% 平税。**先分清你算的是哪一套，再谈交不交。**
+
+|  | 规则 A：定身份 | 规则 B：定资本利得税 |
+|---|---|---|
+| 法条 | IRC §7701(b)(3)，Substantial Presence Test | IRC §871(a)(2)，实施细则 Reg. §1.871-7(d) |
+| 算法 | 三年加权：当年全算＋去年 1/3＋前年 1/6 | 当年实际在场天数简单加总，不加权 |
+| 门槛 | 当年至少 31 天，且加权满 183 天 | 当年合计满 183 天 |
+| 结果 | 成为税务居民，全球收入累进税率 | 仍是非居民时，净美国来源利得 30% 平税 |
+| 关系 | 两套规则**没有关联**（The Tax Adviser 原文注记） | 不要拿一套的算法去算另一套 |
+
+### 规则 A：三年加权，算你是不是税务居民
+
+公式：当年在美至少 31 天，且**当年天数＋去年天数 ÷ 3＋前年天数 ÷ 6 ≥ 183 天**，即满足 substantial presence test，成为税务居民（绿卡测试是另一条独立路径，本篇不展开）。
+
+算两个例子就明白：
+
+- **例 1（是居民）**：今年在美 150 天，去年 90 天（算 30 天），前年 60 天（算 10 天），合计 150＋30＋10＝190 天 ≥183 天 → 税务居民。
+- **例 2（不是居民）**：今年在美 100 天，去年 120 天（算 40 天），前年 120 天（算 20 天），合计 100＋40＋20＝160 天 ＜183 天 → 未通过这套测试。
+
+一旦成了税务居民，规则 B 的 30% 平税就**不再适用**——那是给非居民的规则。税务居民卖美股的利得并进全球收入，按累进税率交。
+
+### 规则 B：当年实住满 183 天，非居民的净利得交 30%
+
+这套规则只适用于**仍是非居民**的人，且有三个要件，缺一不可：
+
+1. **当年在美国合计在场 183 天或以上**（简单加总；代理人、合伙人在美不算你的在场）；
+2. **利得是美国来源的**（见下一节，这是最容易被跳过的一环）；
+3. **不是**与美国贸易或业务有效关联的所得（ECI，见例外一节）。
+
+计税方式：**净额 ×30%**。即当年美国来源资本利得减去可归属美国的资本损失，余额按 30% 平税。长短期利得都计入；这套规则下的亏损**当年抵扣、不结转**到下一年。还有一个反直觉的细节：达标那一年，**全年任何时间成交的买卖都计入，哪怕成交时你人不在美国**。
+
+算笔账：某留学生当年在美 200 天、仍是非居民、税籍已在美国，当年美国来源利得 10,000 美元、可归属美国的损失 2,000 美元，净额 8,000 美元 ×30%＝**2,400 美元**。
+
+### 最容易写错的一环：利得是不是「美国来源」，看税籍
+
+法条只对「美国来源」的利得征这 30%。而个人财产买卖利得的来源地，一般按卖方身份定（IRC §865）：
+
+- **税籍不在美国**的非居民：利得一般是**外国来源**，§871(a)(2) 不触发——哪怕你当年在美国待过一段时间。
+- **税籍在美国**的非居民：利得一般是**美国来源**，再叠加当年在美满 183 天，才触发 30%。
+
+IRS 给学生、学者和外国政府雇员的专门说明把这一点说透了：这类人大多是 substantial presence test 下的 exempt individual（豁免个人），在美多年仍是非居民；但如果来美时就打算住 1 年以上，税籍一般在抵达当天就转到了美国——于是「仍是非居民＋在美满 183 天＋美国来源利得」三件套齐了，30% 就适用。**豁免身份保的是身份（不变成税务居民），不保这套资本利得税。**
+
+所以正确的自查顺序是三步：**① 先算身份（规则 A）→ ② 再看税籍在哪 → ③ 最后数当年实住天数（规则 B）**。只数天数、不看税籍，就会把「待满 183 天」直接等同于「交 30%」，这是错的。
+
+### 大陆读者：人在国内炒美股，常态是不触发
+
+如果你住在中国、税籍在中国、通过美国券商买卖普通美股：你的利得一般是外国来源，美国这边一般不触发 §871(a)(2)。**不要写成「非居民永远免资本利得税」**——长住美国的那一年要单独重算：身份、税籍、当年天数三件套都可能变了。
+
+### 在美读者：先算身份，再算税
+
+- 通过规则 A 成了税务居民 → 全球收入累进税率，不走 30% 平税。
+- 仍是非居民（豁免个人、closer connection 例外、协定 tie-break 等情形）→ 再走规则 B 的三步自查：税籍＋当年天数＋净额。
+- 触发规则 B 的，申报在 **1040-NR 的 Schedule NEC** 上，不是 Schedule D——因为这是平税，不是普通资本利得税表。
+
+### 三个例外：本篇「一般不征」的结论到此为止
+
+**例外 1：与美国贸易或业务有效关联（ECI）。** 在美国有实质经营的职业交易员之类情形，资本利得按累进税率征，不走 30% 平税。普通人通过美国券商买卖股票本身，不构成在美从事贸易或业务（以 §864(b)(2) 安全港表述为准，个案问税务师）。
+
+**例外 2：美国不动产权益（FIRPTA，IRC §897）。** 卖美国不动产、或不动产富集公司股票，利得一律按 ECI、累进税率征，**不看 183 天**。中美协定第 12 条第 4、5 款也给美国留了征税权：不动产富集公司股份转让、持股 25% 或以上的公司股份转让，美国都可征税。
+
+**例外 3：协定第 12 条第 6 款不是「降到 0%」的条款。** 中美协定 Article 12（Gains）第 6 款说的是：除第 1–5 款情形外的其他财产转让利得，「在另一缔约国产生的」，可在另一缔约国征税——它**保留**了来源国的征税权，没有给出一个更低的税率上限。所以普通非居民的「一般不征」来自国内法来源地规则，不是协定优惠；不要写成「协定把资本利得税降到 0」。第 6 款「产生地」与 §865 来源地规则如何衔接，以协定技术解释为准，个案问税务师。
+
+### 大陆读者再补一句：美国这头不征，不等于国内那头不用管
+
+中国税务居民的全球所得要按国内法申报。财产转让所得在个税法里适用 20% 这一档比例税率，但境外上市股票的具体适用、盈亏轧差与申报路径，以税务机关口径和税务师意见为准——本篇不下定论，申报前请单独核实。
+
+### 常见问题
+
+**Q1：我今年在美国待了 100 天，卖美股要交 30% 吗？**
+先看身份和税籍。只看天数不够：规则 B 要求当年满 183 天且利得是美国来源；100 天连门槛都没到，规则 B 不触发（ECI、FIRPTA 例外另算）。
+
+**Q2：我是 F-1 留学生，在美 200 天了，是不是按 30% 交？**
+不一定，要看税籍。如果你来美时打算住 1 年以上、税籍已转到美国，且仍是非居民身份，那三件套齐了，规则 B 适用；如果税籍还在境外，利得是外国来源，规则 B 不触发。先按「身份→税籍→天数」三步查，不要只数天数。
+
+**Q3：我去年在美 200 天、今年只待了 50 天，今年的利得怎么算？**
+规则 B 按**当年**算：今年未满 183 天，今年的利得不计入规则 B（分期收款的前一年利得有特殊计入规则，细节问税务师）。规则 A 的三年加权则会把去年的天数按 1/3 计入身份判定——两套算法不要混用。
+
+**Q4：股息和资本利得的 30% 是一回事吗？**
+不是。股息是 FDAP，按 30%（或协定 10%）对总额预扣，见 W-8 篇；资本利得这套 30% 是对**净额**征，且只在规则 B 三件套齐了时才适用。股息用 W-8BEN 降税率，资本利得没有这样一张表。
+
+**Q5：触发了规则 B，券商会直接扣吗？**
+与股息不同，资本利得一般不在卖出时由券商预扣，触发者自行在 1040-NR Schedule NEC 上申报（申报义务与预扣义务分开讲，个案以 1040-NR 说明为准）。
+
+### 和 W-8 篇的关系
+
+W-8 篇讲的是**股息**：中美协定 Article 9（股息）把预扣上限压到 10%，靠 W-8BEN  claim。本篇讲的是**买卖差价**：协定条款是 Article 12（财产收益），不是 Article 9，两篇不要写串。想先选券商再填表？看券商对比页（/zh/compare/broker）。
+
+> 免责声明：本文为公开税务信息整理，不构成税务建议。F/J/H-1B 等具体身份、税籍判定与申报，请咨询持牌税务专业人士。`,
+    },
+    author: 'WealthEase Team',
+    date: '2026-10-27',
+    readTime: '12 min read',
+    category: 'Tax',
+    tags: ['capital gains', '183-day rule', 'nonresident tax', 'US-China tax treaty', '1040-NR'],
+  },
   ...lifeGuidePosts,
 ];
