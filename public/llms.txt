@@ -1,0 +1,152 @@
+# WealthEase
+
+> WealthEase (wealthease.top) provides free online financial calculators and personal-finance guides in English and Chinese, built for Chinese Americans navigating the US financial system. The site launched in 2025. Calculators run in the visitor’s browser; tax data is updated yearly. Content is for general education and information only and is not professional financial, investment, or tax advice. The broker comparison page is an informational roundup with no affiliate links.
+
+> WealthEase（wealthease.top）提供免费在线理财计算器与个人理财指南，英文与中文双语，为在美华人理解美国金融体系而建。2025 年上线。计算器在访客浏览器中运行，税务数据每年更新。内容仅供一般教育与参考，不构成专业财务、投资或税务建议。券商对比页为信息整理，无返佣链接。
+
+## Core
+
+- [WealthEase - Free Financial Calculators](https://www.wealthease.top/en): Free online financial calculators for retirement, mortgage, debt payoff, inflation, 401(k), and more. Make informed decisions about your money with our professional-grade tools.
+- [WealthEase - 免费财务计算器](https://www.wealthease.top/zh): 免费在线财务计算器，包括退休规划、房贷计算、债务还清、通货膨胀、401(k)等。使用我们的专业级工具，做出明智的财务决策。
+- [Financial Calculators](https://www.wealthease.top/en/calculators): All 33 free calculators, in English.
+- [理财计算器](https://www.wealthease.top/zh/calculators): All 33 free calculators, in Chinese. 所有 33 个免费计算器。
+- [Blog](https://www.wealthease.top/en/blog): All personal-finance guides, in English.
+- [博客](https://www.wealthease.top/zh/blog): All personal-finance guides, in Chinese. 所有个人理财指南。
+- [About WealthEase](https://www.wealthease.top/en/about): Empowering financial decisions through smart tools.
+- [关于 WealthEase](https://www.wealthease.top/zh/about): 通过智能工具赋能财务决策。
+- [Best Brokerage Accounts for Chinese Americans in 2026: Fees, Requirements, and Bonuses Compared](https://www.wealthease.top/en/compare/broker): Check whether you can open an account before comparing fees. Commissions are all $0 now; what actually differs is identity requirements, Chinese-language support, and sign-up bonuses. Fees and bonuses checked 2026-10-13. This page summarizes public information and is not investment advice. No affiliate links; informational roundup only.
+- [在美华人券商对比：5 家美国持牌券商费率、开户门槛全整理（2026）](https://www.wealthease.top/zh/compare/broker): 先看你能不能开户，再看费贵不贵。费率都 $0 了，区别在于身份要求、中文服务和开户奖励。费率与奖励截至 2026-10-13 核实。本页为信息整理，不构成投资建议；暂无返佣链接，仅做信息盘点。
+- [Contact Us](https://www.wealthease.top/en/contact): Have questions or feedback? We’d love to hear from you.
+- [联系我们](https://www.wealthease.top/zh/contact): 有问题或反馈？我们很乐意听取您的意见。
+- [Privacy Policy](https://www.wealthease.top/en/privacy): Privacy policy. Last updated January 10, 2025.
+- [隐私政策](https://www.wealthease.top/zh/privacy): 隐私政策。最后更新时间：2025年1月10日。
+- [Terms of Service](https://www.wealthease.top/en/terms): Terms of Service. Last updated January 11, 2025.
+- [服务条款](https://www.wealthease.top/zh/terms): 服务条款。最后更新时间：2025年1月11日。
+- [Disclaimer](https://www.wealthease.top/en/disclaimer): The information and calculators provided on WealthEase are for general educational and informational purposes only. They should not be construed as professional financial advice.
+- [免责声明](https://www.wealthease.top/zh/disclaimer): WealthEase 提供的信息和计算器仅供一般教育和参考之用。它们不应被视为专业财务建议。
+
+## Calculators
+
+- [Annuity Calculator](https://www.wealthease.top/en/calculators/annuity): Plan retirement income stream and calculate annuity payment amounts
+- [年金计算器](https://www.wealthease.top/zh/calculators/annuity): 规划退休收入流，计算年金支付金额
+- [Auto Loan Calculator](https://www.wealthease.top/en/calculators/auto-loan): Estimate monthly car payments, total interest, and find the best loan
+- [车贷计算器](https://www.wealthease.top/zh/calculators/auto-loan): 估算汽车贷款的月供、总利息和最佳贷款方案
+- [CD Calculator](https://www.wealthease.top/en/calculators/cd): Calculate CD maturity returns and compare different terms and rates
+- [定期存款计算器](https://www.wealthease.top/zh/calculators/cd): 计算CD到期收益，比较不同存期和利率
+- [College Savings Calculator (529 Plan)](https://www.wealthease.top/en/calculators/college-savings): Use 529 plans for tax-optimized education savings
+- [大学学费储蓄计算器（529计划）](https://www.wealthease.top/zh/calculators/college-savings): 利用529计划为孩子教育做税务优化储蓄
+- [Compound Interest Calculator](https://www.wealthease.top/en/calculators/compound-interest): Calculate how your money grows with compound interest over time
+- [复利计算器](https://www.wealthease.top/zh/calculators/compound-interest): 计算您的投资如何随复利增长
+- [Credit Score Calculator](https://www.wealthease.top/en/calculators/credit-score): Estimate credit score and get improvement tips
+- [信用分计算器](https://www.wealthease.top/zh/calculators/credit-score): 估算信用分数，了解影响因素并获取提升建议
+- [Debt Payoff Calculator](https://www.wealthease.top/en/calculators/debt-payoff): Create your plan to become debt-free
+- [债务还清计算器](https://www.wealthease.top/zh/calculators/debt-payoff): 制定计划，摆脱债务
+- [Dividend Income Calculator](https://www.wealthease.top/en/calculators/dividend-income): Calculate dividend stock passive cash flow and compound growth
+- [股息收入计算器](https://www.wealthease.top/zh/calculators/dividend-income): 计算分红股的被动现金流和复利增长
+- [Inflation Calculator](https://www.wealthease.top/en/calculators/inflation): See how inflation affects your purchasing power over time using historical CPI data
+- [通货膨胀计算器](https://www.wealthease.top/zh/calculators/inflation): 使用历史 CPI 数据计算通货膨胀对购买力的影响
+- [401(k) & Retirement Calculator](https://www.wealthease.top/en/calculators/investment-401k): Plan your retirement with 401(k) employer matching and compound growth
+- [401(k) 退休计算器](https://www.wealthease.top/zh/calculators/investment-401k): 规划退休储蓄，包含雇主匹配和复利增长
+- [Investment Return Comparison Calculator](https://www.wealthease.top/en/calculators/investment-comparison): Compare different investment options by returns and risks side-by-side
+- [投资回报对比计算器](https://www.wealthease.top/zh/calculators/investment-comparison): 横向比较不同投资选项的回报和风险
+- [Loan Calculator](https://www.wealthease.top/en/calculators/loan): Calculate monthly payments and total interest for any loan
+- [贷款计算器](https://www.wealthease.top/zh/calculators/loan): 计算任何贷款的月供和总利息
+- [Mortgage Calculator](https://www.wealthease.top/en/calculators/mortgage): Estimate your monthly mortgage payment including taxes and insurance
+- [房贷计算器](https://www.wealthease.top/zh/calculators/mortgage): 估算月供，包括税费和保险
+- [Rent vs Buy Calculator](https://www.wealthease.top/en/calculators/rent-vs-buy): Compare renting vs buying long-term costs and make informed decisions
+- [租房 vs 买房计算器](https://www.wealthease.top/zh/calculators/rent-vs-buy): 比较租房与买房的长期成本，做出明智选择
+- [Retirement Planning Calculator](https://www.wealthease.top/en/calculators/retirement): Plan your retirement savings and ensure a comfortable future
+- [退休规划计算器](https://www.wealthease.top/zh/calculators/retirement): 规划您的退休储蓄，确保舒适的未来生活
+- [ROI Calculator](https://www.wealthease.top/en/calculators/roi): Calculate return on investment and annualized returns
+- [投资回报率计算器](https://www.wealthease.top/zh/calculators/roi): 计算投资回报率和年化收益率
+- [Savings Goal Calculator](https://www.wealthease.top/en/calculators/savings-goal): Plan your savings and reach your financial goals
+- [储蓄目标计算器](https://www.wealthease.top/zh/calculators/savings-goal): 规划您的储蓄，实现财务目标
+- [Social Security Calculator](https://www.wealthease.top/en/calculators/social-security): Estimate retirement benefits and find the optimal claiming age
+- [社保金计算器](https://www.wealthease.top/zh/calculators/social-security): 估算退休福利金，了解最佳领取时间
+- [Income Tax Calculator](https://www.wealthease.top/en/calculators/tax): Estimate federal, state, and FICA taxes for your actual take-home pay
+- [税务计算器](https://www.wealthease.top/zh/calculators/tax): 估算联邦税、州税和FICA，了解实际到手收入
+- [Tip Calculator](https://www.wealthease.top/en/calculators/tip): Calculate tips quickly by percentage and split bills with friends
+- [小费计算器](https://www.wealthease.top/zh/calculators/tip): 快速计算小费金额，和朋友轻松分摊账单
+- [Installment APR Calculator](https://www.wealthease.top/en/calculators/installment-apr): Find the real annual interest rate hidden in monthly fees and installment plans
+- [分期年化利率计算器](https://www.wealthease.top/zh/calculators/installment-apr): 算出分期和月费率背后真正的年化利率
+- [Fund Fee Impact Calculator](https://www.wealthease.top/en/calculators/fund-fees): Compare two funds and see what fees really cost over time
+- [基金费率影响计算器](https://www.wealthease.top/zh/calculators/fund-fees): 对比两只基金，看费率长期到底吃掉多少收益
+- [Emergency Fund Calculator](https://www.wealthease.top/en/calculators/emergency-fund): Work out your emergency fund target and how long it will take to build
+- [应急金计算器](https://www.wealthease.top/zh/calculators/emergency-fund): 计算你的应急金目标和存够需要的时间
+- [Mortgage Prepayment Calculator](https://www.wealthease.top/en/calculators/mortgage-prepayment): Should you prepay your mortgage or keep the cash? Run the numbers
+- [提前还房贷计算器](https://www.wealthease.top/zh/calculators/mortgage-prepayment): 该不该提前还房贷？算一笔账
+- [Take-Home Pay Calculator (US)](https://www.wealthease.top/en/calculators/take-home-pay): Estimate your paycheck after federal tax, FICA, state tax and 401(k)
+- [美国税后工资计算器](https://www.wealthease.top/zh/calculators/take-home-pay): 估算扣除联邦税、FICA、州税和 401(k) 后的到手工资
+- [Federal Tax Bracket Calculator (US)](https://www.wealthease.top/en/calculators/tax-bracket): See which federal bracket you are in and how your tax is built, bracket by bracket
+- [美国联邦税率档位计算器](https://www.wealthease.top/zh/calculators/tax-bracket): 查看你处于哪个联邦税档，以及税款如何按档位逐级累计
+- [Area Unit Converter](https://www.wealthease.top/en/calculators/area-conversion): Convert square feet, square meters, acres, hectares and more
+- [面积单位换算](https://www.wealthease.top/zh/calculators/area-conversion): 平方英尺、平方米、英亩、公顷等单位快速换算
+- [Home Affordability Calculator](https://www.wealthease.top/en/calculators/home-affordability): Find out how much house you can afford based on your income, debts and down payment
+- [买房预算计算器](https://www.wealthease.top/zh/calculators/home-affordability): 根据收入、负债和首付，估算你能负担的房价
+- [Credit Card Payoff Calculator](https://www.wealthease.top/en/calculators/credit-card-payoff): See how long it takes to pay off your credit card and what it costs in interest
+- [信用卡还清计算器](https://www.wealthease.top/zh/calculators/credit-card-payoff): 算出信用卡多久能还清，以及要付多少利息
+- [Hourly to Salary Calculator](https://www.wealthease.top/en/calculators/salary-hourly): Convert an hourly wage to salary, or a salary to an hourly rate
+- [时薪年薪换算](https://www.wealthease.top/zh/calculators/salary-hourly): 时薪和年薪互相换算
+- [Mortgage Refinance Calculator](https://www.wealthease.top/en/calculators/refinance): See when refinancing pays for itself and whether it saves money over the life of the loan
+- [房贷再融资计算器](https://www.wealthease.top/zh/calculators/refinance): 看看再融资多久能回本，整个贷款期能不能省钱
+- [50/30/20 Budget Calculator](https://www.wealthease.top/en/calculators/budget): Split your take-home pay with the 50/30/20 rule and compare it with your real spending
+- [50/30/20 预算计算器](https://www.wealthease.top/zh/calculators/budget): 用 50/30/20 法则分配到手收入，并与实际支出对比
+- [Net Worth Calculator](https://www.wealthease.top/en/calculators/net-worth): Add up what you own and what you owe to see your net worth
+- [净资产计算器](https://www.wealthease.top/zh/calculators/net-worth): 把你拥有的和你欠的加起来，算出净资产
+
+## Guides
+
+- [How to Choose the Right Loan: A Complete Guide to Borrowing Wisely](https://www.wealthease.top/en/blog/choosing-right-loan): Not all loans are created equal. Learn how to choose the right loan type, get the best rates, and avoid common borrowing mistakes that could cost you thousands. (Loans, 2024-12-25)
+- [如何选择合适的贷款：明智借贷完全指南](https://www.wealthease.top/zh/blog/choosing-right-loan): 并非所有贷款都是平等的。学习如何选择正确的贷款类型、获得最佳利率并避免可能让你损失数千元的常见借贷错误。 (Loans, 2024-12-25)
+- [Complete Retirement Planning Guide: Secure Your Financial Future](https://www.wealthease.top/en/blog/retirement-planning-guide): Learn how to plan for a comfortable retirement with our comprehensive guide. Discover strategies, common mistakes to avoid, and how much you really need to retire. (Retirement, 2024-12-28)
+- [完整退休规划指南：确保你的财务未来](https://www.wealthease.top/zh/blog/retirement-planning-guide): 通过我们的全面指南学习如何规划舒适的退休生活。了解策略、要避免的常见错误以及退休真正需要多少钱。 (Retirement, 2024-12-28)
+- [The Ultimate Guide to Compound Interest: How to Grow Your Wealth Exponentially](https://www.wealthease.top/en/blog/compound-interest-guide): Discover the power of compound interest and learn how to leverage it to build substantial wealth over time. This comprehensive guide covers everything from basic concepts to advanced strategies. (Investment, 2025-01-01)
+- [复利完全指南：如何让财富呈指数级增长](https://www.wealthease.top/zh/blog/compound-interest-guide): 探索复利的力量，学习如何利用它随时间积累可观财富。这份全面指南涵盖从基础概念到高级策略的所有内容。 (Investment, 2025-01-01)
+- [ROI Explained: How to Calculate and Maximize Your Investment Returns](https://www.wealthease.top/en/blog/roi-investment-guide): Master the concept of Return on Investment (ROI) and learn practical strategies to boost your investment returns. Includes real examples and our free ROI calculator. (Investment, 2025-01-10)
+- [投资回报率详解：如何计算和最大化投资收益](https://www.wealthease.top/zh/blog/roi-investment-guide): 掌握投资回报率（ROI）的概念，学习提升投资收益的实用策略。包含真实案例和我们的免费ROI计算器。 (Investment, 2025-01-10)
+- [Mortgage Calculator Guide: How to Estimate Your Home Loan Payments](https://www.wealthease.top/en/blog/mortgage-calculator-guide): Learn how to calculate mortgage payments, understand PITI, compare loan options, and save thousands on your home loan with our comprehensive guide. (Mortgage, 2025-01-10)
+- [抵押贷款计算指南：如何估算你的房屋贷款月供](https://www.wealthease.top/zh/blog/mortgage-calculator-guide): 学习如何计算抵押贷款月供、理解PITI、比较贷款选项，并通过我们的全面指南在房屋贷款上节省数千元。 (Mortgage, 2025-01-10)
+- [Personal Finance 101: A Complete Beginner's Guide to Managing Money](https://www.wealthease.top/en/blog/beginner-guide-to-personal-finance): Start your financial journey with confidence. Learn the fundamentals of budgeting, saving, investing, and building wealth from scratch. (Basics, 2025-01-10)
+- [个人理财入门：管理金钱的完整新手指南](https://www.wealthease.top/zh/blog/beginner-guide-to-personal-finance): 自信地开始你的财务旅程。从零开始学习预算、储蓄、投资和建立财富的基础知识。 (Basics, 2025-01-10)
+- [Emergency Fund Complete Guide: How Much to Save and Where to Keep It](https://www.wealthease.top/en/blog/emergency-fund-guide): Learn why emergency funds are crucial, how much to save, where to keep your money, and strategies to build your financial safety net quickly. (Savings, 2025-01-10)
+- [应急基金完全指南：需要存多少以及放在哪里](https://www.wealthease.top/zh/blog/emergency-fund-guide): 了解为什么应急基金至关重要、需要存多少、把钱放在哪里，以及快速建立财务安全网的策略。 (Savings, 2025-01-10)
+- [The Complete Guide to Budgeting: Take Control of Your Money](https://www.wealthease.top/en/blog/budgeting-guide): Master your money with proven budgeting methods. Learn how to create a budget that works, track expenses, and achieve your financial goals. (Budgeting, 2025-01-10)
+- [预算制定完全指南：掌控你的金钱](https://www.wealthease.top/zh/blog/budgeting-guide): 掌握经过验证的预算方法，掌控你的金钱。学习如何创建有效的预算、追踪支出并实现财务目标。 (Budgeting, 2025-01-10)
+- [The Three Pillars of Financial Management: Building a Solid Wealth System](https://www.wealthease.top/en/blog/three-pillars-of-financial-management): Discover the three core pillars of financial management - saving, growing, and protecting money. Learn about the practical "Reservoir Model" for personal asset allocation. (Basics, 2025-01-11)
+- [理财的三大环节与资产配置：构建稳健财务体系的核心框架](https://www.wealthease.top/zh/blog/three-pillars-of-financial-management): 揭示理财的三大核心环节——攒钱、生钱、护钱，介绍简单实用的水库模型，帮助您建立稳健的个人资产配置体系。 (Basics, 2025-01-11)
+- [Never Betray Any Trust: The Heavy Responsibility and Prudent Approach to Managing Money for Family and Friends](https://www.wealthease.top/en/blog/managing-family-finance-trust): When family and friends entrust their hard-earned money to us for financial management, the weight of that trust is immeasurable. This article explores the profound responsibility of managing money for loved ones, emphasizing the importance of staying within your circle of competence and exercising prudence. (Investing, 2025-01-11)
+- [不要辜负任何信任：为亲友理财的沉重责任与审慎之道](https://www.wealthease.top/zh/blog/managing-family-finance-trust): 当亲友将自己的血汗钱托付给我们进行理财时，这份信任的重量可想而知。本文将深入探讨为亲友理财时所面临的信任责任，强调能力圈和审慎的重要性，帮助您在面对亲友的信任时做出明智的选择。 (Investing, 2025-01-11)
+- [The Most Important Thing in Investing: Mindset Determines the Height of Wealth](https://www.wealthease.top/en/blog/investment-mindset-most-important): In the world of investing, we often hear: "Investing is a marathon, not a sprint." This reveals the essence of investing—it's not just about managing wealth, but also a test of mindset. This article deeply analyzes the fundamental differences in wealth attitudes between poor and wealthy mindsets, helping you establish the right investment psychology. (Investing, 2025-01-11)
+- [投资中最重要的事：心态决定财富的高度](https://www.wealthease.top/zh/blog/investment-mindset-most-important): 在投资的世界里，我们常常听到："投资是一场马拉松，不是短跑。" 这句话道出了投资的本质——它不仅是对财富的管理，更是对心态的考验。本文将深入分析穷人与富人在财富目标态度上的根本差异，帮助您建立正确的投资心态。 (Investing, 2025-01-11)
+- [Debt Payoff Strategies: Avalanche vs. Snowball Method](https://www.wealthease.top/en/blog/debt-payoff-strategies-avalanche-vs-snowball): Struggling with debt? Learn the difference between the debt snowball and debt avalanche methods to decide which strategy is best for your financial freedom. (Debt Management, 2025-01-20)
+- [债务还清策略：雪崩法 vs 雪球法](https://www.wealthease.top/zh/blog/debt-payoff-strategies-avalanche-vs-snowball): 为债务而苦恼？了解债务雪球法和雪崩法的区别，选择最适合您实现财务自由的策略。 (Debt Management, 2025-01-20)
+- [Rent vs. Buy: Making the Right Real Estate Decision](https://www.wealthease.top/en/blog/rent-vs-buy-making-the-right-decision): Buying a home isn't always better than renting. We break down the math, the myths, and the non-financial factors you need to consider before signing a mortgage. (Real Estate, 2025-01-22)
+- [租房还是买房：如何做出正确的房地产决策](https://www.wealthease.top/zh/blog/rent-vs-buy-making-the-right-decision): 买房并不总是比租房好。我们为您解析在签署抵押贷款前需要考虑的数学计算、常见误区以及非财务因素。 (Real Estate, 2025-01-22)
+- [How Inflation Eats Your Savings (And How to Fix It)](https://www.wealthease.top/en/blog/how-inflation-eats-your-savings): Inflation is the silent killer of wealth. Learn how to protect your purchasing power and why keeping cash under the mattress is a guaranteed losing strategy. (Economics, 2025-01-24)
+- [通货膨胀如何吞噬您的储蓄（以及应对之策）](https://www.wealthease.top/zh/blog/how-inflation-eats-your-savings): 通货膨胀是财富的隐形杀手。了解如何保护您的购买力，以及为什么把现金藏在床垫下是注定失败的策略。 (Economics, 2025-01-24)
+- [Spot the Money Traps: "Guaranteed" Returns, Installment Fees and Crypto](https://www.wealthease.top/en/blog/spot-financial-traps-high-yield-installments-crypto): Regulators draw lines at 6%, 8% and 10% yields, a "0.6% monthly fee" is really about 13.8% a year, and crypto trades get no legal protection in China. Convert everything to an annual rate before you decide. (Basics, 2026-10-09)
+- [识别理财陷阱：「保本高收益」、分期手续费与虚拟货币](https://www.wealthease.top/zh/blog/spot-financial-traps-high-yield-installments-crypto): 监管说收益超过 6% 要打问号、8% 很危险、10% 以上准备赔光；「月费率 0.6%」其实约是年化 13.8%；虚拟货币交易不受法律保护。做决定前先把一切换算成年化利率。 (Basics, 2026-10-09)
+- [Five Evidence-Based Investing Rules: Trade Less, Pay Less, Diversify](https://www.wealthease.top/en/blog/evidence-based-investing-rules-index-funds-low-fees): The most active US households earned 11.4% a year while the market made 17.9%. Each extra 1 point of annual fees costs about 18% of your money over 20 years. Here is how to keep more of your returns. (Investment, 2026-10-09)
+- [五条有数据支持的投资规矩：少交易、选低费率、别押一处](https://www.wealthease.top/zh/blog/evidence-based-investing-rules-index-funds-low-fees): 买卖最频繁的美国家庭年收益 11.4%，同期市场是 17.9%；基金费率每高 1 个百分点，20 年后到手的钱少约 18%。看看怎么把收益留在自己手里。 (Investment, 2026-10-09)
+- [Insurance and Safety-Net Basics: Emergency Fund, Term Life, Avoiding Surrender Scams](https://www.wealthease.top/en/blog/insurance-and-safety-net-basics-china): Build 3 to 6 months of expenses first, insure only the losses you cannot absorb, prefer term cover for the earner, and never hand a "surrender agent" your ID and verification codes. (Savings, 2026-10-09)
+- [保险与安全垫：应急金、定期寿险，以及别踩代理退保的坑](https://www.wealthease.top/zh/blog/insurance-and-safety-net-basics-china): 先存 3 到 6 个月生活费，只为扛不住的损失买保险，先给挣钱的人买定期寿险，别把身份证和验证码交给「代理退保」。 (Savings, 2026-10-09)
+- [China Tax and Pension Checklist: Annual Reconciliation, Private Pension, Self-Paid Social Insurance](https://www.wealthease.top/en/blog/china-tax-pension-checklist-reconciliation-private-pension): File your annual individual income tax reconciliation between March and June, open a private pension account only if your tax rate is 10% or more, and understand that even the minimum self-paid pension takes about 10 years to break even. (Retirement, 2026-10-09)
+- [个税与养老清单：年度汇算、个人养老金、灵活就业交社保](https://www.wealthease.top/zh/blog/china-tax-pension-checklist-reconciliation-private-pension): 每年 3 到 6 月做一次个税汇算；税率 10% 以上才值得开个人养老金账户；没单位的人按最低档交养老保险，也要领约 10 年才回本。 (Retirement, 2026-10-09)
+- [Renting and Buying a Home in China: Nine Rules That Protect Your Money](https://www.wealthease.top/en/blog/renting-and-buying-a-home-in-china-protect-your-money): Write the deposit terms into the contract, never pay rent through an agent, check the long-term-rental firm's escrow account, and pay home-purchase money only through a supervised account. (Real Estate, 2026-10-09)
+- [租房与买房：九条保护钱包的规矩](https://www.wealthease.top/zh/blog/renting-and-buying-a-home-in-china-protect-your-money): 押金条款写进合同，租金别经中介手，先查长租公寓的资金监管账户，二手房款只走专用账户。 (Real Estate, 2026-10-09)
+- [Laid Off or Unpaid? What You Can Claim in China and in What Order](https://www.wealthease.top/en/blog/laid-off-or-unpaid-wages-china-what-to-claim): Register for unemployment benefits the day you leave, complain to labour inspection and arbitration for free, apply for legal aid, and know that pension years accumulate even if you stop paying. (Basics, 2026-10-09)
+- [失业了、被欠薪了：能领什么、按什么顺序办](https://www.wealthease.top/zh/blog/laid-off-or-unpaid-wages-china-what-to-claim): 离职当天就去办失业登记；欠薪先投诉劳动监察再申请仲裁，都不收费；打不起官司申请法律援助；社保断缴养老年限不清零。 (Basics, 2026-10-09)
+- [When Money Runs Out: The Safety Net, Medical Bills and Cutting Living Costs](https://www.wealthease.top/en/blog/financial-hardship-safety-net-china-medical-and-living-costs): Temporary relief, subsistence allowance, shelters, 400-yuan resident medical insurance, the right order for serious illness bills, and why housing and food are where to cut first. (Savings, 2026-10-09)
+- [钱不够的时候：救助、医疗费与压低生活成本](https://www.wealthease.top/zh/blog/financial-hardship-safety-net-china-medical-and-living-costs): 临时救助、低保、救助站、每年 400 元的居民医保、大病费用的办理顺序，以及为什么先压住和吃。 (Savings, 2026-10-09)
+- [Starting a Small Business in China: Money and Legal Basics Before You Open](https://www.wealthease.top/en/blog/starting-a-small-business-in-china-money-and-legal-basics): Invest only what you can afford to lose, know when a "limited" company stops being limited, file zero-return taxes, sign employment contracts within a month, and exit properly if it fails. (Basics, 2026-10-09)
+- [创业开张前的钱与法律账：主体、担保、报税、用人与退场](https://www.wealthease.top/zh/blog/starting-a-small-business-in-china-money-and-legal-basics): 只投亏得起的钱，搞清「有限」公司什么时候不再有限，没收入也要零申报，一个月内签劳动合同，亏了按程序退场。 (Basics, 2026-10-09)
+- [Scam and Account Safety: Stop Payment Fast, Verify by Callback, Check Your Credit Report](https://www.wealthease.top/en/blog/scam-and-account-safety-china-stop-payment-and-credit-report): The minutes after a transfer are the only window to freeze it. Never rent out your bank card, never "lend your face" for a loan, and check your credit report twice a year for free. (Basics, 2026-10-09)
+- [反诈与账户安全：先止付、回拨核实、每年查征信](https://www.wealthease.top/zh/blog/scam-and-account-safety-china-stop-payment-and-credit-report): 钱刚转出去的那一小段时间是唯一的窗口；银行卡不外借，别帮人「刷脸」办贷款；每年免费查两次征信。 (Basics, 2026-10-09)
+- [IOUs, Guarantees, Gifts and Debts: Protecting Your Money in Personal Dealings](https://www.wealthease.top/en/blog/iou-guarantees-gifts-and-debts-china-protect-your-money): Write a full IOU and pay by transfer, check for the word "joint" before guaranteeing, remember the 3-year limitation period, hide no assets, and treat large gifts as one-way. (Loans, 2026-10-09)
+- [借条、担保、彩礼与债务：个人之间钱的往来怎么留证据](https://www.wealthease.top/zh/blog/iou-guarantees-gifts-and-debts-china-protect-your-money): 借条写全、走转账；担保前看有没有「连带」；时效 3 年；不转移财产；大额赠与交付后原则上要不回。 (Loans, 2026-10-09)
+- [30% Withheld From Your US Dividends? One W-8BEN Form Cuts It to 10%](https://www.wealthease.top/en/blog/w8ben-dividend-withholding-guide): Living in China and trading US stocks? Your dividends are withheld at 30% by default. File the right W-8BEN and the US-China tax treaty caps it at 10%. Here is which form to file, how to fill it, and four mistakes to avoid. (Tax, 2026-10-20)
+- [美股分红被扣了 30%？一张 W-8BEN 表帮你降到 10%](https://www.wealthease.top/zh/blog/w8ben-dividend-withholding-guide): 住中国炒美股，股息默认被预扣 30%。填对 W-8BEN，中美协定把税率压到 10%。本文讲清填哪张表、三个关键动作，以及四个千万别踩的坑。 (Tax, 2026-10-20)
+- [In the US 183 Days and Selling Stocks — Is It 30%? First, Separate the Two Rules](https://www.wealthease.top/en/blog/nonresident-capital-gains-183-day-rule): Nonresidents generally owe no US tax on capital gains — but two rules share the number 183 and confuse everyone. One decides residency, the other decides tax. Here is how to tell them apart, why tax home (not just days) decides whether the 30% flat tax applies, and the three exceptions. (Tax, 2026-10-27)
+- [在美国待满 183 天，卖美股就要交 30%？先分清两套规则](https://www.wealthease.top/zh/blog/nonresident-capital-gains-183-day-rule): 非居民卖美股，美国一般不征资本利得税——但两个都叫 183 天的规则会把人绕晕。一个定身份，一个定税。本文讲清两套规则怎么分、为什么税籍（不只是天数）才决定 30% 平税是否触发，以及三个例外。 (Tax, 2026-10-27)
+
+<!-- Generated from origin/main commit eef728f69787b38616ebaf9ad84c44b0e9a5bd93 (2026-10-29) and the live sitemap at https://www.wealthease.top/sitemap.xml (137 entries; 136 WealthEase URLs listed here, excluding the one external valuristories.com link in the sitemap). Full guide texts are in llms-full.txt. -->
