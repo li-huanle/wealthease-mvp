@@ -6732,5 +6732,275 @@ W-8 篇讲的是**股息**：中美协定 Article 9（股息）把预扣上限�
     category: 'Tax',
     tags: ['capital gains', '183-day rule', 'nonresident tax', 'US-China tax treaty', '1040-NR'],
   },
+  {
+    slug: 'itin-application-guide-2026',
+    title: {
+      en: 'ITIN Tax ID Application Guide (2026): Three Application Methods, Document Checklist and Pitfalls',
+      zh: 'ITIN 税号申请指南（2026 版）：三种申请方法、材料清单与避坑',
+    },
+    excerpt: {
+      en: 'An ITIN is the 9-digit number the IRS issues to people with a US federal tax obligation who cannot get an SSN. This guide covers the three application routes (mail, TAC in person, CAA), the document checklist, the 7-week timeline, the three-year non-use expiration rule, and the 2025 change requiring an SSN for the Child Tax Credit.',
+      zh: 'ITIN 是 IRS 发给有美国联邦报税义务、但拿不到 SSN 的人的 9 位税号。本文讲清三条申请路径（邮寄、TAC 面办、CAA 代办）、材料清单、7 周处理时间、三年不用就过期的规则，以及 2025 税年起申领子女税额抵免须持 SSN 的变化。',
+    },
+    content: {
+      en: `# ITIN Tax ID Application Guide (2026): Three Application Methods, Document Checklist and Pitfalls
+
+### The short version: an ITIN is a tax number, not an all-purpose ID
+
+An ITIN (Individual Taxpayer Identification Number) is a 9-digit number the IRS issues to people who need a U.S. taxpayer identification number for federal tax purposes but aren't eligible for a Social Security number (SSN). It starts with 9 and looks like 9XX-XX-XXXX. You apply on **Form W-7** (current revision: **December 2024**).
+
+**Who needs one**: nonresident aliens filing a U.S. tax return or claiming a refund, resident aliens filing a return, spouses or dependents claimed for an allowable tax benefit, people claiming a treaty benefit, and foreign sellers of U.S. real property subject to FIRPTA withholding.
+
+**What it is not** — get the boundaries right before you apply:
+
+- **Not a work permit**: an employer can't accept it on Form I-9.
+- **Not an immigration benefit**: it doesn't change your immigration status or support any immigration application.
+- **Not Social Security**: it earns no Social Security or Medicare credits, and you can't claim the Earned Income Credit (EIC) with it.
+- **Not a general ID**: it doesn't serve as identification outside the federal tax system.
+- **Not issued just to open accounts**: the IRS states plainly that an ITIN "does not get issued solely for opening bank/investment accounts, e-commerce or starting a business" — you need a federal tax purpose.
+- Once you get an SSN, stop using your ITIN. You can't hold both.
+
+### Three ways to apply: the IRS lists three routes, not two
+
+The commonly quoted "two methods" is really a rough split — "do it yourself vs. hire a CAA." The IRS itself lists three submission paths:
+
+| Route | IRS fee | What happens to your passport | Who can use it | Best for |
+|---|---|---|---|---|
+| ① Mail it to the IRS yourself | $0 | You must mail your passport **original** or a certified copy from the issuing agency; originals are generally returned within 60 days | Anyone, anywhere (including from abroad) | No rush for your passport, living abroad, zero cost |
+| ② In person at an IRS Taxpayer Assistance Center (TAC) | Free, **by appointment only** | Documents are checked and returned to you on the spot | Must be in the U.S.; not every TAC offers ITIN service — confirm before you go | In the U.S. and don't want to mail your passport |
+| ③ Through a Certified Acceptance Agent (CAA) | IRS fee $0; **the agent's service fee is extra** | The CAA certifies your documents and returns them immediately; the interview can be by video, but the CAA must **physically hold your originals** during certification | CAAs exist inside and outside the U.S.; the IRS publishes a CAA directory | Abroad, don't want your passport to leave your hands, willing to pay a service fee |
+
+All three routes share the same IRS processing timeline: **a CAA saves you the risk of your passport being away — not processing time.**
+
+On fees, three facts only: the IRS application itself is free; a CAA charges its own service fee, which the IRS doesn't regulate — **ask the price before you engage one**; the free alternatives are a TAC visit or mailing it yourself. A regular Acceptance Agent (AA) can only help with the paperwork and still has to mail your originals to the IRS; only a CAA can certify documents and hand them back. In the IRS directory, AAs are marked with an asterisk.
+
+### Documents: a valid passport is the only stand-alone document
+
+A first-time application is normally filed with Form W-7 attached to the **front of a paper tax return** (leave the SSN space blank). You can't file W-7 on its own, and you can't e-file it. Your package has three parts: **Form W-7 + tax return (or exception documentation) + identity documents**.
+
+**Identity documents (the IRS accepts 13, per the Instructions for Form W-7)**:
+
+- A **valid passport is the only document that proves both identity and foreign status on its own**. Submit a passport and you don't need anything else from the list.
+- Without a passport, submit **at least two** other documents, at least one with a photograph. Common combinations: national ID card (must show name, photo, address, date of birth, expiration date) + civil birth certificate; or a U.S. visa + foreign driver's license. Check the full list of 13 in the current W-7 instructions before you file.
+- All documents must be **originals or certified copies from the issuing agency** — a certified copy is one the issuing agency provides and certifies with an official stamped seal. **Notarized copies are not accepted.**
+- Names, dates of birth, and nationalities on the documents must match Form W-7.
+- Dependents have extra requirements: if the passport has no U.S. entry date stamp, add school or medical records as proof of U.S. residency (medical records for dependents under 6; school records for dependents under 24 who are students — see the W-7 instructions checklist).
+
+**Five exceptions to the tax-return requirement (Exceptions 1–5)**: if you qualify, you can apply without a tax return by attaching the required proof instead — for example: (1) passive income subject to withholding or a treaty benefit (e.g., partnership income — attach the part of the partnership/LLC agreement showing the partnership name, EIN, and your name); (2) scholarships, gambling winnings, and certain other income; (3) U.S. mortgage interest; (4) sale of U.S. real property by a foreign person; (5) T.D. 9363. Use the Exceptions Tables in the W-7 instructions, not memory, to prepare the proof.
+
+### How long it takes: 7 weeks, per the IRS — and there's no expedited service
+
+| Situation | IRS timeline |
+|---|---|
+| Standard | About **7 weeks** for written notice |
+| Peak tax time (Jan 15–Apr 30) or applying from abroad | **9–11 weeks** |
+| Return of mailed originals | Generally **within 60 days**; call if they haven't come back |
+
+- **There is no expedited service.** Anyone charging an "expedite fee" isn't selling you anything real — the IRS application itself is free.
+- After approval, the IRS mails a **CP565 notice** with your number. There is no public online tool to check your ITIN application status; if you haven't heard back in the stated timeframe, call the IRS: **800-829-1040** (in the U.S.) or **267-941-1000** (from abroad, not toll-free).
+- A useful related rule: **you don't need an ITIN to request an extension or make estimated tax payments.** File Form 4868 for an extension, or Form 1040-ES / 1040-ES (NR) for estimated payments, and write "ITIN TO BE REQUESTED" where the SSN/ITIN is asked for. **Don't attach Form W-7 to those forms.**
+
+### Expiration and renewal: unused for three years, it expires — Dec 31, 2026 is the current cutoff
+
+- **The three-year rule**: an ITIN not used on any federal tax return for **three consecutive tax years** (as the filer, spouse, or dependent) expires on **December 31** of the third year of non-use.
+- **By that arithmetic**: ITINs unused in tax years 2023, 2024, and 2025 expire on **December 31, 2026**. This is derived from the IRS three-year rule, not a separate IRS announcement for 2026.
+- **Issued before 2013**: ITINs assigned before 2013 and never renewed are already expired (per the IRS's own text). Note: the IRS's current test is only "three years of non-use" and "pre-2013 never renewed" — **don't use the middle two digits (e.g., "70–88") to judge expiration**. The phased expiration by middle digits has ended, and the IRS no longer uses it as a test.
+- **Renewal**: file the same Form W-7 and check "Renew an existing ITIN." Your **number doesn't change**. Processing time is the same as a new application (about 7 weeks; 9–11 weeks in peak season or from abroad). IRS fee: $0.
+- **Check whether you even need to renew**: only renew if the ITIN will appear on your next federal tax return. If it's only on information returns like a 1099, you don't need to renew now; if you only need it for an extension or estimated payments, you don't need an ITIN at all; if you've since received an SSN, don't renew the ITIN.
+
+### A change for tax year 2025: the Child Tax Credit (CTC) now requires an SSN
+
+Starting with tax year 2025, the parent claiming the Child Tax Credit must also hold a valid Social Security number — an ITIN no longer qualifies. The child must hold an SSN as well (that requirement already existed). This comes from the One Big Beautiful Bill Act (Pub. L. 119-21, signed July 4, 2025), effective for tax years beginning after December 31, 2024. The EIC was never available to ITIN filers. **An ITIN still works fine for filing a tax return itself** — what changed is eligibility for some credits. Check the latest Schedule 8812 instructions before you file.
+
+### Seven mistakes to avoid
+
+1. **Don't mail originals to a middleman, and don't pay for "expediting."** The IRS application is free and has no expedited channel. The only fee is a CAA's service fee, which the IRS doesn't regulate — ask first.
+2. **Don't mail Form W-7 to the tax-return address.** Use the dedicated ITIN Operation address. By USPS: Internal Revenue Service, ITIN Operation, P.O. Box 149342, Austin, TX 78714-9342. By private delivery service (FedEx/UPS, etc.): Internal Revenue Service, ITIN Operation, Mail Stop 6090-AUSC, 3651 S. Interregional, Highway 35, Austin, TX 78741-0000.
+3. **Don't file Form W-7 on its own** unless you qualify for an exception — it normally goes with a paper tax return; filed alone it will be returned or delayed.
+4. **Don't substitute notarized copies for certified copies.** Only the issuing agency can certify a copy, with an official stamped seal.
+5. **Don't treat an ITIN as a work permit, an ID, or an SSN** — an employer accepting it on Form I-9 is in violation. And don't assume it guarantees a bank or brokerage account: each institution sets its own account-opening policy, and an ITIN is not an account-opening guarantee.
+6. **Don't rush to renew an expired ITIN.** First check whether it will appear on your next tax return; renewing one you don't need is a wasted process.
+7. **Don't judge expiration by the middle digits.** The current test is the three-year non-use rule (plus pre-2013 never renewed); the middle digits no longer tell you anything.
+
+### If you're applying from mainland China: you can apply from abroad — no U.S. presence needed
+
+- **Two workable routes from abroad**: mail it yourself (zero cost; your passport original is away for about 60 days) or use a CAA (passport returned on the spot; you pay a service fee). A TAC only works when you're physically in the U.S.
+- If you mail it, you may include a prepaid express/courier return envelope — the IRS will use it to return your originals. If your originals haven't come back within 60 days, call 267-941-1000.
+- You need a federal tax purpose to apply: typically filing a return or claiming a refund, or claiming a treaty withholding reduction (alongside forms like W-8BEN). "Just wanting a number on hand" doesn't qualify.
+
+### If you're in the U.S.: a TAC visit is free, but know three things first
+
+- TACs are free and by appointment only, and documents are checked and returned on the spot — but **not every TAC handles ITIN applications**, so confirm the location offers the service before you go.
+- A TAC doesn't help you prepare the tax return: bring your completed return and Form W-7 with you.
+- Dependent applications are stricter: a passport without an entry stamp needs school or medical records as well — prepare them per the W-7 instructions so you don't make a wasted trip.
+
+### FAQ
+
+**Q1: I have no U.S. visa and have never been to the U.S. Can I still apply?**
+Yes. The IRS doesn't require you to be in the U.S. or hold a U.S. visa. Apply by mail or through a CAA from abroad. You do need a federal tax purpose (filing, refund, or treaty withholding relief).
+
+**Q2: Is a CAA faster than mailing it myself?**
+No. All three routes share the same IRS processing timeline (7 weeks; 9–11 weeks in peak season or from abroad). A CAA saves your passport from being away, not time.
+
+**Q3: What if my mailed passport original gets lost?**
+The IRS says originals are generally returned within 60 days. If they haven't arrived, call 800-829-1040 (in the U.S.) or 267-941-1000 (abroad). If you don't want to risk it, use a TAC or CAA — documents are returned on the spot.
+
+**Q4: Does an ITIN expire?**
+Yes. If it hasn't appeared on any federal tax return for three consecutive tax years, it expires on December 31 of the third year; pre-2013 ITINs that were never renewed are already expired. Renew with the same Form W-7 — your number stays the same.
+
+**Q5: With an ITIN, can I open a U.S. bank account or apply for a credit card?**
+Not necessarily. An ITIN is a tax number, not an account-opening pass. Each bank, broker, or card issuer sets its own policy — some accept an ITIN, some require an SSN. Ask the institution first.
+
+**Q6: Can my spouse or children apply for ITINs too?**
+Yes, but a spouse or dependent only qualifies if they're claimed for an allowable tax benefit or file their own return. Just listing a name on a return without a corresponding benefit doesn't qualify. Allowable benefits include joint filing, head of household, the American Opportunity Tax Credit, the Premium Tax Credit, the child and dependent care credit, and the credit for other dependents.
+
+**Q7: What do I do with my ITIN after I get an SSN?**
+Stop using the ITIN, use the SSN instead, and notify the IRS in writing so your tax records are combined (include a copy of your Social Security card and your CP565 notice if you have it). You can't hold both numbers.
+
+---
+
+### Related reading
+
+The W-8BEN guide covers **dividend withholding**: the US–China treaty Article 9 caps it at 10%, claimed with Form W-8BEN ([read it here](/en/blog/w8ben-dividend-withholding-guide)). This guide covers the **tax ID itself**: without an ITIN, there is no return to file and no treaty benefit to claim. Choosing a broker first? See our [broker comparison](/en/compare/broker).
+
+> Disclaimer: This article summarizes public information and is not tax advice. Information verified as of 2026-11-03; IRS rules are subject to the latest version on irs.gov. Consult a licensed tax professional for your specific situation. Sources: IRS Topic No. 857; IRS "Individual taxpayer identification number (ITIN)"; Instructions for Form W-7 (Rev. December 2024); One Big Beautiful Bill Act (Pub. L. 119-21, signed July 4, 2025).
+`,
+      zh: `# ITIN 税号申请指南（2026 版）：三种申请方法、材料清单与避坑
+
+### 先说结论：ITIN 是报税用的号，不是万能身份证
+
+ITIN（Individual Taxpayer Identification Number，个人纳税识别号）是 IRS 发给**有美国联邦报税义务、但拿不到 SSN**的人的 9 位税号，格式 9XX-XX-XXXX，以 9 开头。申请表是 **Form W-7**，现行版为 **2024 年 12 月修订版**。
+
+**谁需要它**：非居民报税或退税、居民外国人报税、被列为配偶或受养人申领允许的税收优惠、按协定申请预扣减免、卖美国不动产（FIRPTA 预扣）等情形。
+
+**它不是什么**（先把边界说清，免得白跑一趟）：
+
+- **不授权工作**：不能在 I-9 上作工作资格证明。
+- **不改变移民身份**：不给居留、不支持任何移民申请。
+- **不给社保福利**：不积累 Social Security / Medicare 积分，也不能领 EIC（劳动所得税抵免）。
+- **不是通用身份证件**：在联邦税务系统之外不能当身份证用。
+- **不能只为开户而申请**：IRS 明确写了，ITIN 不会仅因"要开银行/投资账户、做电商、开公司"而签发——申请必须有联邦税务目的。
+- 拿到 SSN 后须停用 ITIN、改用 SSN，不能同时持有两个号。
+
+### 三种申请方法：IRS 的口径是三条路，不是两条
+
+常说的"两种方法"其实是"自己办 vs 找 CAA"的粗分。按 IRS 的提交路径，实际是三条：
+
+| 路径 | IRS 收费 | 护照原件怎么处理 | 谁能走 | 适合谁 |
+|---|---|---|---|---|
+| ① 自行邮寄给 IRS | $0 | 须寄护照**原件**或发证机关认证副本；原件一般 60 天内寄回 | 任何地方（境外也行） | 不急着用护照、人在境外、想零成本的人 |
+| ② IRS Taxpayer Assistance Center（TAC）面办 | 免费，**须预约** | 现场验原件、当场归还 | 须人在美国；并非每个 TAC 都提供 ITIN 服务，去之前须先确认 | 人在美国、不想寄护照原件的人 |
+| ③ Certified Acceptance Agent（CAA）代办 | IRS 收费 $0，**代理服务费另计** | CAA 现场认证证件、当场归还；面试可视频，但认证时须**实物持有原件**（不能只对着摄像头） | 美国境内与境外均有 CAA；IRS 官网有 CAA 名录可查 | 人在境外、不想护照离身、愿意付服务费的人 |
+
+三条路径共用同一条处理时间线：**走 CAA 省的是"护照离身"的风险，不是审批时间**。
+
+关于费用只说三句准话：IRS 申请本身不收费；CAA 收服务费、价格各家自定且 IRS 不监管，**事先问清再委托**；免费替代渠道是 TAC 面办或自行邮寄。另有一种普通 Acceptance Agent（AA）：只能协助填表，仍须把原件寄给 IRS；只有 CAA 能认证证件并当场归还，IRS 名录里 AA 以星号标注。
+
+### 材料清单：护照是唯一能单独提交的证件
+
+首次申请一般把 W-7 附在**纸质税表最前面**（SSN 栏留空），不能单独寄 W-7，也不能电子申报。申请包 = **W-7 表 ＋ 税表（或例外证明）＋ 身份证件**，三件缺一不可。
+
+**证件（按 W-7 说明，IRS 共接受 13 种）**：
+
+- **有效护照是唯一能单独证明身份＋外国身份的证件**，交了护照就不用再交其他证件。
+- 没有护照时，须提交**至少两份**其他证件，且至少一份带照片。常见组合：国民身份证（须含姓名、照片、地址、出生日期、有效期）＋ 出生证明；或美国签证 ＋ 外国驾照等。完整 13 种清单见 W-7 说明原文，递交前以最新版为准。
+- 所有证件须为**原件或发证机关认证副本**——认证副本只能由发证机关出具并盖章，**公证复印件不被接受**。
+- 证件上的姓名、出生日期、国籍须与 W-7 表上填写的一致。
+- 受养人（dependent）申请有额外要求：护照上没有美国入境章时，须另附学校/医疗记录等居住证明；6 岁以下多用医疗记录，6 岁以上多用学校记录（具体见 W-7 说明的清单）。
+
+**不用附税表的 5 种例外（Exception 1–5）**：符合例外情形可不附税表，须附对应证明文件，例如：
+
+1. 被动收入预扣 / 条约优惠（如合伙企业收入，须附合伙/LLC 协议中显示合伙名称、EIN 及申请人姓名的部分）；
+2. 奖学金、赌博奖金等特定收入；
+3. 美国房贷利息；
+4. 外国人出售美国不动产；
+5. T.D. 9363（雇主电子报税相关）。
+
+例外情形的证明文件以 W-7 说明的 Exceptions Tables 为准，不要凭记忆准备。
+
+### 要等多久：7 周是 IRS 官方口径，没有加急
+
+| 情形 | IRS 口径 |
+|---|---|
+| 常规 | 约 **7 周**收到书面通知 |
+| 报税高峰期（1 月 15 日–4 月 30 日）或境外申请 | **9–11 周** |
+| 寄出的原件退回 | 一般 **60 天内**；超 60 天未收到可致电查询 |
+
+- **没有加急通道**：ITIN 申请无加急服务，须提前规划。任何收"加急费"的说法都不可信——IRS 申请本身免费。
+- 获批后 IRS 寄 **CP565 通知**告知号码。IRS 目前没有公开的在线查询进度的入口；超期未收到通知，可致电 IRS：美国境内 **800-829-1040**，境外 **267-941-1000**（非免费电话）。
+- 顺带一个实用口径：**申请延期或缴预估税不需要 ITIN**。用 Form 4868 申请延期、或用 Form 1040-ES / 1040-ES (NR) 缴预估税时，在 SSN/ITIN 栏写 "ITIN TO BE REQUESTED" 即可，**不要随这些表附 W-7**。
+
+### 过期与续签：三年不用就过期，2026 年 12 月 31 日是本轮节点
+
+- **三年不用规则**：ITIN 若连续 **3 个纳税年度**未出现在任何联邦税表上（本人、配偶或受养人身份均算），在第三年年底 **12 月 31 日**过期。
+- **按规则推算**：2023、2024、2025 三个税年均未使用的 ITIN，将在 **2026 年 12 月 31 日**过期。这是按 IRS 三年规则推算的日期，不是 IRS 针对 2026 年单独发布的提醒。
+- **2013 年前签发的**：2013 年前签发、从未续签的 ITIN 已经过期（IRS 原文如此）。注意：IRS 现行口径只看"三年不用"和"2013 年前未续签"这两条，**不要再用"中间两位数字是 70–88"来判断是否过期**——网上流传的中间两位数字分批过期计划已结束，IRS 不再用它作判断标准。
+- **续签**：用同一张 Form W-7，勾选 "Renew an existing ITIN"；续签后**号码不变**，IRS 不发新号；处理时间与新申请相同（约 7 周，高峰/境外 9–11 周）；IRS 收费 $0。
+- **先判断要不要续**：只有**将出现在下一份联邦税表上**的过期 ITIN 才需要续签；只出现在 1099 等信息申报表上的，不必续；只为申请延期或缴预估税的，不需要 ITIN；已拿到 SSN 的，不要续签 ITIN。
+
+### 2025 税年的一个变化：子女税额抵免（CTC）须持 SSN
+
+2025 税年起，申领子女税额抵免（CTC）的父母本人也须持有有效的 SSN，ITIN 不再符合资格；孩子本人须持 SSN（这一点此前已是要求）。这是 2025 年 7 月 4 日签署的 One Big Beautiful Bill Act（Pub. L. 119-21）的规定，适用于 2025 税年及之后。EIC 则一直不可用 ITIN 申领。**ITIN 仍可正常用于报税本身**，变的是部分抵免的申领资格，报税前请按 Schedule 8812 最新说明核对。
+
+### 避坑清单：七件不要做的事
+
+1. **不要寄原件给中介 / 不要为"加急"付费**：IRS 申请本身免费、无加急；付费只发生在 CAA 服务费上，且 IRS 不监管定价，须事先问清。
+2. **不要把 W-7 寄到税表地址**：须寄 ITIN Operation 专用地址（见下），否则延误。USPS 地址：Internal Revenue Service, ITIN Operation, P.O. Box 149342, Austin, TX 78714-9342；私人快递（FedEx/UPS 等）地址不同：Internal Revenue Service, ITIN Operation, Mail Stop 6090-AUSC, 3651 S. Interregional, Highway 35, Austin, TX 78741-0000。
+3. **不要单独寄 W-7**：除非符合例外，否则 W-7 须附在纸质税表上；单独寄会被退回或延误。
+4. **不要用公证复印件代替认证副本**：认证副本只能由发证机关出具并盖章。
+5. **不要拿 ITIN 当工作许可 / 身份证 / 社保号用**：雇主在 I-9 上接受 ITIN 是违规；也不要指望只凭 ITIN 就开出银行或券商账户——开户是各家机构自己的政策，ITIN 不是开户通行证。
+6. **过期别急着续**：先判断它是否会出现在下一份税表上；不必续的续了也是白走流程。
+7. **不要只看"中间两位数字"判断过期**：现行口径只看三年不用规则和 2013 年前未续签，中间两位数字已不能作判断标准。
+
+### 大陆读者：人在境外也能申请，不必在美国
+
+- **两条境外可行路径**：自行邮寄（零成本，护照原件离身约 60 天）或 CAA 代办（护照当场归还，付服务费）。TAC 只在人在美国时才用得上。
+- 邮寄时可附一个预付的快递回邮信封，IRS 会用你提供的信封寄回原件；60 天内未收到原件可致电 267-941-1000 查询。
+- 申请须有联邦税务目的：常见情形是报税/退税、或按协定申请预扣减免（配合 W-8BEN 等表）。单纯"想先拿个号备用"不符合申请条件。
+
+### 在美读者：TAC 免费面办是重点，但有三点要先知道
+
+- TAC 免费、须预约，现场验原件当场归还；但**不是每个 TAC 都提供 ITIN 服务**，去之前须先确认该网点是否办理。
+- TAC 不帮填税表：税表须自己先填好、连同 W-7 一起带去。
+- 受养人申请的材料更严：护照无入境章时须另附学校/医疗记录，提前按 W-7 说明备齐，免得白跑一趟。
+
+### 常见问题
+
+**Q1：没有美国签证、没去过美国，能申请 ITIN 吗？**
+能。IRS 不要求申请人在美国、也不要求有美国签证；境外申请人走邮寄或 CAA 两条路。要求是有联邦税务目的（如报税、退税、协定预扣减免）。
+
+**Q2：CAA 代办比自己寄快吗？**
+不快。三条路径共用同一条 IRS 处理时间线（7 周，高峰/境外 9–11 周）。CAA 省的是护照离身的风险，不是审批时间。
+
+**Q3：护照原件寄丢了怎么办？**
+IRS 称原件一般 60 天内寄回；超 60 天未收到，可致电美国境内 800-829-1040、境外 267-941-1000 查询。怕丢原件就走 TAC 或 CAA，当场归还。
+
+**Q4：ITIN 会过期吗？**
+会。连续 3 个纳税年度未出现在任何联邦税表上，就在第三年年底 12 月 31 日过期；2013 年前签发、从未续签的也已过期。续签用同一张 W-7，号码不变。
+
+**Q5：有了 ITIN 就能开美国银行账户、申信用卡吗？**
+不一定。ITIN 是报税用的号，不是开户通行证；各家银行、券商、发卡机构的开户政策自己定，有的接受 ITIN、有的要求 SSN。开户前先问清该机构的要求，不要把 ITIN 当成开户保证。
+
+**Q6：配偶或孩子没有 SSN，能一起申请 ITIN 吗？**
+能，但配偶或受养人只有在"被申领允许的税收优惠"或"自己报税"时才符合条件；仅把名字列在税表上、没有对应优惠的不行。允许的优惠包括夫妻联合报税、户主身份、AOTC、保费税收抵免、子女及受养人照护抵免、其他受养人抵免等。
+
+**Q7：拿到 SSN 之后 ITIN 怎么办？**
+停用 ITIN、改用 SSN，并写信通知 IRS 合并税务记录（附 SSN 复印件与 CP565 通知，如有）。不能同时持有两个号。
+
+---
+
+### 相关阅读
+
+W-8 篇讲的是**股息预扣**：中美协定 Article 9（股息）把预扣上限压到 10%，靠一张 W-8BEN 表 claim（/zh/blog/w8ben-dividend-withholding-guide）。本篇讲的是**税号本身**：没有 ITIN，报税和协定优惠都无从谈起。想先选券商再填表？看券商对比页（/zh/compare/broker）。
+
+> 免责：本文为公开信息整理，不构成税务建议。信息截至 2026-11-03 核实，IRS 规则以官网最新版为准；个案请咨询持牌税务师。来源：IRS Topic No. 857；IRS "Individual taxpayer identification number (ITIN)"；Instructions for Form W-7（2024 年 12 月修订版）；One Big Beautiful Bill Act（Pub. L. 119-21，2025 年 7 月 4 日签署）。
+`,
+    },
+    author: 'WealthEase Team',
+    date: '2026-11-03',
+    readTime: '12 min read',
+    category: 'Tax',
+    tags: ['ITIN', 'W-7', 'IRS', 'nonresident tax', 'US tax', 'child tax credit'],
+  },
   ...lifeGuidePosts,
 ];
