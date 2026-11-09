@@ -25,9 +25,20 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || SITE_URL;
   const canonicalUrl = `${baseUrl}/${locale}/calculators/rent-vs-buy`;
 
+  // Page-specific metadata (was: generic site-wide seo('description'),
+  // shared with several pages — JEV-015/JEV-016). Title follows the
+  // site convention: page title + ' | WealthEase'.
+  const pageTitle = `${t('title')} | WealthEase`;
+  const pageDescription = locale === 'zh'
+    ? '免费租房买房对比计算器：比较租房与买房的真实成本——房贷、房产税、保险、维护、HOA 与过户费用，并找到你的盈亏平衡点。'
+    : 'Free rent vs buy calculator: compare the true cost of renting vs buying a home — mortgage, property tax, insurance, maintenance, HOA and closing costs — and find your break-even point.';
+  const pageOgDescription = locale === 'zh'
+    ? '比较租房与买房的真实成本，找到你的盈亏平衡点。'
+    : 'Compare the true cost of renting vs buying a home, and find your break-even point.';
+
   return {
-    title: t('title'),
-    description: seo('description'),
+    title: pageTitle,
+    description: pageDescription,
     keywords: seo('keywords'),
     alternates: {
       canonical: canonicalUrl,
@@ -37,8 +48,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       },
     },
     openGraph: {
-      title: seo('og:title'),
-      description: seo('og:description'),
+      title: pageTitle,
+      description: pageOgDescription,
       type: 'website',
       siteName: 'WealthEase',
       locale: locale,
@@ -46,8 +57,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     twitter: {
       card: seo('twitter:card'),
-      title: seo('og:title'),
-      description: seo('og:description'),
+      title: pageTitle,
+      description: pageOgDescription,
     } as any
   };
 }
@@ -308,12 +319,92 @@ export default async function RentVsBuyPage({ params }: { params: Promise<{ loca
                 </div>
               </section>
 
+              <section className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Advantages of Renting</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-white rounded-xl p-5">
+                    <p className="font-semibold text-gray-900 mb-2">🔄 Flexibility</p>
+                    <p className="text-gray-600 text-sm">Move anytime to chase a career opportunity, without waiting to sell a home.</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-5">
+                    <p className="font-semibold text-gray-900 mb-2">📊 Predictable costs</p>
+                    <p className="text-gray-600 text-sm">No surprise repair bills — the landlord covers maintenance.</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-5">
+                    <p className="font-semibold text-gray-900 mb-2">💰 Capital stays invested</p>
+                    <p className="text-gray-600 text-sm">Money that would be a down payment can stay invested elsewhere.</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-5">
+                    <p className="font-semibold text-gray-900 mb-2">💸 Lower monthly cost</p>
+                    <p className="text-gray-600 text-sm">In expensive markets, renting is usually cheaper month to month.</p>
+                  </div>
+                </div>
+              </section>
+
               <section className="bg-white rounded-2xl shadow-card p-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-6">The 5-Year Rule</h3>
                 <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg mb-6">
                   <p className="text-amber-800">
                     <strong>Financial experts recommend</strong> staying 5+ years for buying to make sense financially.
                   </p>
+                </div>
+                <p className="text-gray-600 mb-4">Why five years? Because:</p>
+                <ul className="text-gray-600 space-y-2">
+                  <li>• High upfront costs (down payment, closing costs) need time to spread out</li>
+                  <li>• Selling costs about 6% in agent commissions</li>
+                  <li>• Early mortgage payments go mostly to interest, not to building equity</li>
+                </ul>
+              </section>
+
+              <section className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Break-Even Point</h3>
+                <div className="bg-white rounded-xl p-6">
+                  <p className="text-gray-600 mb-4">
+                    The break-even point is when the cumulative cost of buying equals the cumulative
+                    cost of renting (including opportunity cost). After that point, buying becomes
+                    the cheaper option.
+                  </p>
+                  <div className="bg-gray-100 rounded-lg p-4">
+                    <p className="text-sm text-gray-500 mb-2">Typical break-even time</p>
+                    <p className="text-2xl font-bold text-primary-600">3–5 years</p>
+                    <p className="text-xs text-gray-400">Depends on the local market</p>
+                  </div>
+                </div>
+              </section>
+
+              <section className="bg-white rounded-2xl shadow-card p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">When Does Buying Make Sense?</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-green-800 mb-1">✓ Plan to stay 5+ years</p>
+                  </div>
+                  <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-green-800 mb-1">✓ Have a 20% down payment to avoid PMI</p>
+                  </div>
+                  <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-green-800 mb-1">✓ Price-to-rent ratio below 20</p>
+                  </div>
+                  <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-green-800 mb-1">✓ Stable job and an emergency fund</p>
+                  </div>
+                </div>
+              </section>
+
+              <section className="bg-white rounded-2xl shadow-card p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">When Does Renting Make Sense?</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-blue-800 mb-1">✓ New to the area or career in flux</p>
+                  </div>
+                  <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-blue-800 mb-1">✓ Price-to-rent ratio above 20</p>
+                  </div>
+                  <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-blue-800 mb-1">✓ Down-payment money can earn more invested elsewhere</p>
+                  </div>
+                  <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                    <p className="font-semibold text-blue-800 mb-1">✓ You value flexibility and no repair duties</p>
+                  </div>
                 </div>
               </section>
 
@@ -326,7 +417,7 @@ export default async function RentVsBuyPage({ params }: { params: Promise<{ loca
                       <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
                     </summary>
                     <div className="p-4 text-gray-600">
-                      <p><strong>A:</strong> Under 15: buy; 15-20: depends; Over 20: rent</p>
+                      <p><strong>A:</strong> Under 15: buying usually wins; 15–20: run the numbers; Over 20: renting usually wins.</p>
                     </div>
                   </details>
                   <details className="group">
@@ -335,7 +426,21 @@ export default async function RentVsBuyPage({ params }: { params: Promise<{ loca
                       <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
                     </summary>
                     <div className="p-4 text-gray-600">
-                      <p><strong>A:</strong> Home appreciation 3-5% + principal paydown = total return</p>
+                      <p><strong>A:</strong> Two parts: home appreciation, historically 3–5% a year depending on the area, plus forced savings — part of each mortgage payment pays down principal.</p>
+                    </div>
+                  </details>
+                  <details className="group">
+                    <summary className="cursor-pointer font-semibold text-gray-900 flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                      <span>Q: What if the landlord raises the rent?</span>
+                      <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-4 text-gray-600">
+                      <p><strong>A:</strong> Factor it in:</p>
+                      <ul className="list-disc list-inside mt-2 space-y-1">
+                        <li>Annual rent increases are typically 3–5%</li>
+                        <li>Over the long run, rent can outpace inflation</li>
+                        <li>But you keep the investment return on your down-payment money</li>
+                      </ul>
                     </div>
                   </details>
                 </div>
