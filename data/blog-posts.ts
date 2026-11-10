@@ -7002,5 +7002,366 @@ W-8 篇讲的是**股息预扣**：中美协定 Article 9（股息）把预扣�
     category: 'Tax',
     tags: ['ITIN', 'W-7', 'IRS', 'nonresident tax', 'US tax', 'child tax credit'],
   },
+  {
+    slug: 'us-study-abroad-scholarships-2026',
+    title: {
+      en: 'The Complete Guide to US Study-Abroad Scholarships: 10 Need-Blind Universities + Fully Funded PhDs + AAUW/KHS Next Cycles',
+      zh: '美国留学奖学金全指南：10 所 need-blind 大学 + 博士全额资助 + AAUW/KHS 下一轮时间',
+    },
+    excerpt: {
+      en: 'U.S. study-abroad funding runs on three routes: only 10 universities are need-blind for international undergraduates, top PhD programs are commonly fully funded, and outside fellowships run on fixed cycles. This guide covers the 10-school list, the Harvard-Yale income thresholds, Yale PhD funding figures, the next AAUW and Knight-Hennessy cycles, and six merit scholarships open to international students.',
+      zh: '美国留学奖学金分三条路：本科 need-blind 名单全美只有 10 所，博士普遍全额资助，校外基金按下一轮时间准备。本文一次讲清 10 所名单、哈佛耶鲁收入门槛、耶鲁博士资助数字、AAUW 与 Knight-Hennessy 下一轮时间表，以及 6 所对国际生大方的 merit 奖学金。',
+    },
+    content: {
+      en: `# The Complete Guide to US Study-Abroad Scholarships: 10 Need-Blind Universities + Fully Funded PhDs + AAUW/KHS Next Cycles
+
+### The short version: three routes — pick yours first
+
+U.S. study-abroad funding is not one "scholarship." It is three different routes with different rules:
+
+| Route | For whom | Key fact | First step |
+|---|---|---|---|
+| Undergraduate need-blind aid | International undergraduates who need aid | Only **10** U.S. universities are need-blind for international students *and* meet 100% of demonstrated need | Build your list from the 10 — don't gamble outside it |
+| Undergraduate merit scholarships | Undergraduates with outstanding academics or talents | Not based on family finances — but policies vary widely by school; Princeton offers none | Check each school's own site; don't trust second-hand roundups |
+| Fully funded PhD | PhD applicants | Top PhD programs commonly fund you in full: tuition covered + stipend + health insurance | Look for "fully funded PhD," not self-funded master's |
+| Outside fellowships (AAUW, Knight-Hennessy) | Applicants who meet specific criteria | Fixed cycles, very few spots; the 2027–28 rounds have both closed — plan for the next round in 2027 | Work backward from the next cycle's dates, not expired ones |
+
+In one line: undergraduates, follow the list; PhD applicants, follow the program; outside fellowships, follow the calendar. Get the three routes straight before applying anywhere.
+
+### Route 1 (undergraduate): the need-blind list — only 10 schools in the U.S.
+
+Need-blind means your family's finances play no role in the admission decision. Need-blind *plus* meeting 100% of demonstrated need is the full promise: "admitted means funded." For international students, only 10 schools do both in the 2026–27 cycle:
+
+| School | Need-blind for international students | Notes |
+|---|---|---|
+| Harvard | Yes | Families earning under $100,000 pay nothing; under $200,000, at least full tuition free (from 2025–26) |
+| Yale | Yes | Same $100,000 / $200,000 thresholds for students entering in 2026–27 |
+| Princeton | Yes | Need-based aid only — no merit scholarships |
+| MIT | Yes | |
+| Amherst | Yes | |
+| Dartmouth | Yes | Need-blind for international students since the Class of 2026 (announced January 2022) |
+| Bowdoin | Yes | Announced July 2022, effective from the 2022–23 cycle |
+| Brown | Yes (from the Class of 2029) | Announced January 2024; the university says it still needs to raise another $100 million to make the policy permanent — **not permanent yet** |
+| Notre Dame | Yes (from the Class of 2029) | Same cohort as Brown, from the Class of 2029 |
+| Washington and Lee | Yes | Per its own site: "need-blind in its admissions decisions and meets 100% of demonstrated financial need without loans for every admitted student" |
+
+**The list changes every year — check each university's own site.** The criterion is need-blind *and* meeting 100% of demonstrated need; both conditions must hold.
+
+Two traps to avoid:
+
+- **Georgetown is not on the list.** It shows up in some second-hand lists, but cross-checking could not confirm it. Don't plan around it as a need-blind school.
+- **Brown's "Class of 2029" comes with a condition.** Brown's president's office says $120 million has been raised to launch it and another $100 million is still needed to make it permanent; an alumni-site article dated October 28, 2026 says fundraising is "currently underway." Note that caveat in your college list — don't write "Brown is permanently need-blind."
+
+### Route 2 (undergraduate): need-aware — applying for aid costs admission odds
+
+Outside the 10 schools above, most U.S. universities are need-aware for international students: whether you apply for aid affects your admission decision.
+
+The practical meaning is a college-list trade-off. If your family needs aid and you apply to a need-aware school, you are fighting two battles at once — getting in, and getting the school to pay for you. Conversely, applicants who can pay full tuition have a relative edge at need-aware schools. There is no right or wrong here, only a trade-off: before applying to a need-aware school, ask yourself — is this school worth giving up aid for? If the answer is no, take it off your aid-seeking list, or accept the lower admission odds.
+
+**Which form to file: international students apply for aid through the CSS Profile (a College Board form), not the FAFSA — the FAFSA is only open to U.S. citizens and permanent residents.** Filing the wrong form is the most common paperwork mistake; it means your application was never really submitted.
+
+### Route 3 (undergraduate): merit scholarships — compete on merit, but check whether the school offers them at all
+
+Merit-based scholarships ignore family finances and reward academics or talent. That is the third route. The catch: policies vary so much by school that no universal list works.
+
+The one flat fact is Princeton's — and it is a negative: it awards need-based aid only and offers no merit scholarships. For every other school — whether they offer merit aid, how much, and whether a separate application is needed — check that school's own site. The section below gives six examples verified against each university's own site on November 10, 2026, but lists and amounts change every year, so confirm the current year's page before applying. When you see a "complete list of U.S. merit scholarships" roundup, ask one question first: which year's official pages did it verify? If it can't answer, don't use it.
+
+### Examples: six schools generous to international students — plus one counterexample
+
+The six schools below were each checked against the university's own site: all offer merit awards at full-tuition or full-cost level and are open to international students. Amounts and policies change by application cycle — confirm the current year's page before applying.
+
+| School | Representative awards open to international students | How to apply |
+|---|---|---|
+| Vanderbilt | Cornelius Vanderbilt — full tuition + summer stipend; Ingram — full tuition + fees + housing + summer stipend; other merit from $8,000/year | Separate application (MyAppVU, with essays), due December 1 |
+| Emory | Woodruff — full tuition + fees + housing + meals (up to 8 semesters); other awards from partial to full tuition | Self-nominate by answering Yes on the application; no separate application; November 1 (EDI) / November 15 (EDII, RD) |
+| USC | Trustee — full tuition; Presidential — half tuition; Dean's — quarter tuition (does not cover full cost of attendance) | Automatic consideration; no separate application; complete the application by November 1 or December 1 depending on major |
+| Tulane | Dean's Honor — full tuition; Stamps — full cost + enrichment fund; some awards up to $32,000/year | Automatic consideration, no separate application; international students must submit the CSS Profile + Certification of Finances |
+| University of Miami | Stamps — full cost + $12,000 enrichment fund; Singer — full tuition; President's — up to $30,000/year; Canes — up to $20,000/year | Automatic consideration; Premier awards (Stamps, Singer) require EDI or EA, November 1 |
+| Boston University | Trustee — full tuition + fees; Presidential — half tuition (from fall 2026) — only these two are open to international students | Automatic consideration, no extra essays; complete the application by December 1 |
+
+The counterexample is Case Western Reserve: one university, two tracks. Its automatic merit awards go only to U.S. citizens or permanent residents — international students can't get them. The only route for international students is the scholarship competitions — Squire and A.W. Smith are both full-tuition, but they require a separate application plus a prompted essay, due February 15. **"This school offers merit aid" does not mean "international students can get it" — read the eligibility line first.**
+
+Three more schools offer merit to international students with automatic consideration, but don't publish amounts: Rice (about 20% of admitted students receive one), Northeastern, and Rochester. For these, confirm only whether merit exists — don't trust dollar figures from second-hand roundups.
+
+Three outdated figures to stop using: Boston University's Presidential $25,000/year was the pre-fall-2026 amount — it is now half tuition; Miami's President's $28,000 and Canes $16,000 are likewise old — now up to $30,000 and $20,000; and Vanderbilt's Chancellor's Scholarship stops with students entering fall 2027 — don't list it as available.
+
+### The Harvard and Yale income thresholds: how to read the two numbers
+
+The most instructive detail in the need-blind list is the income thresholds Harvard and Yale published in turn. Both use the same two tiers:
+
+- **Family income under $100,000 (with typical assets): parents pay nothing.** This covers not just tuition but all billed costs, including housing, meals, health insurance, and travel.
+- **Family income under $200,000 (with typical assets): at least full tuition is free.** Other costs depend on the individual package.
+
+Mind the timelines: Harvard's policy took effect in **2025–26** (announced March 2025); Yale's applies to **students entering in 2026–27** (announced January 27, 2026). Two reminders: first, "typical assets" is a precondition — families with the right income but atypical assets get less; don't read the income number alone. Second, international students receive the same aid as U.S. students — these thresholds apply to them too.
+
+Yale's 2026–27 execution shows the thresholds are real: more than 53% of new students received need-based aid, with an average scholarship above $78,742; more than a third of new students attend tuition-free.
+
+### PhD: what full funding looks like — Yale as the example
+
+Funding for a PhD and funding for a master's follow different logics. Top U.S. PhD programs commonly fund you in full; most master's programs are self-funded. Here are concrete numbers — Yale's Graduate School of Arts and Sciences (GSAS), 2026–27:
+
+| Item | 2026–27 |
+|---|---|
+| Tuition | **$52,400, fully covered** by fellowship |
+| 12-month stipend | At least **$52,046** (humanities, social sciences, physical sciences); at least **$53,629** (biological and biomedical sciences) |
+| Health insurance | Comprehensive coverage, including hospitalization and specialty care, for the student, legal spouse, and children |
+| Relocation award | One-time **$1,500**, paid with the first stipend payment |
+| Funding duration | Typically at least **5 years** |
+
+Yale GSAS puts it in one sentence: "All PhD students at Yale are fully funded." On average, a doctoral student at Yale receives more than $500,000 in tuition fellowships, stipends, and health care benefits over the course of enrollment.
+
+The contrast is the master's: the same graduate school's site states plainly that master's students are responsible for paying tuition themselves, "or obtaining funding through your program or from external sources." **Applying to the wrong degree type means choosing the wrong funding logic.** If you want full funding for a master's, look at outside fellowships (next section) — not at the university to cover you by default.
+
+Three notes on using these numbers: first, they are 2026–27 figures and change every year — confirm the latest page before you apply. Second, the stipend is a minimum; it varies by division and year. Third, "fully funded" does not mean "zero expenses" — the stipend has to cover real living costs in New Haven, and whether it stretches far enough is your own math.
+
+### Outside fellowships: AAUW and Knight-Hennessy — the next-cycle calendar
+
+Beyond university aid, two outside fellowships come up most often from Chinese applicants. Both 2027–28 rounds have closed; as of this article's writing (November 2026), the only sensible plan is the next round.
+
+**AAUW International Fellowships (for women)**
+
+- For women who are not U.S. citizens or permanent residents, for full-time master's or doctoral study in the U.S.
+- **STEM only**: from the 2027–28 cycle, only degrees formally classified in a STEM discipline qualify (per AAUW's field list or the DHS STEM Designated Degree Program List); non-STEM fields are not eligible this cycle.
+- **2027–28 round closed**: opened August 17, 2026 at 9:00 a.m. ET; closed September 17, 2026 at 5:00 p.m. ET; results notified in March 2027.
+- **2028–29 round not yet announced**; based on the 2026 pattern, expected to open around August 2027 — check AAUW's official site.
+- **Amounts (2027–28 cycle)**: $20,000 for a first master's degree, $25,000 for a first doctorate, paid in two equal installments; **no postdoctoral award this cycle**. Note: many older pages still list the previous scheme's $18,000 / $20,000 / $30,000 tiers — that is the old scheme; don't budget from it.
+- **Hard requirements**: minimum CGPA of 3.5 on a 4.0 scale; only a first master's or first doctorate is funded — holders of the same-level degree are not eligible; full-time only; you must already be admitted to at least one program when you apply.
+- One stale line to correct: many pages say "opens August 1, closes November 15 every year." That was a past year's calendar; 2027–28 actually ran August 17 to September 17. **Do not write November 15.**
+
+**Knight-Hennessy Scholars (Stanford)**
+
+- Stanford's fully funded scholarship program, covering tuition and living costs, open to all nationalities.
+- **2027 cohort closed**: opened June 1, 2026; closed October 6, 2026 at 1:00 p.m. PT.
+- **2028 cohort**: the official site says it opens in June 2027 (summer 2027); the deadline has not been published yet — **expected early October 2027** based on past years, subject to the official site. Do not write "October 6" as a fact: second-hand sources conflict on that date (October 6 vs. October 14), and until the official site publishes it, a specific date is invented.
+- **Eligibility change**: the 2028 cohort requires a bachelor's degree earned in 2021 or later; the 2027 cohort required 2020 or later. Don't carry the 2020 year forward.
+- **Two separate applications**: the KHS application and the Stanford degree application are independent — both must be submitted; for the 2027 cohort, the degree application was due by the earlier of the KHS deadline for applicants and December 1, 2026. The corresponding date for the 2028 cohort has not been published — check the official site.
+- Scale reference: the 2026 cohort admitted 87 scholars from 31 countries.
+
+### Language tests: the Duolingo English Test, in official terms
+
+Language scores are a precondition for scholarship applications, so here is one verified official line: the Duolingo English Test (DET) is now accepted by **over 6,500 programs and institutions worldwide**, including all eight Ivy League universities — among them Harvard Business School, Wharton, Kellogg, and Booth graduate programs.
+
+Two caveats travel with that number: first, institutions marked with an asterisk (*) may still require other proof of English proficiency; second, requirements can differ between programs within the same university, so **don't write "the whole university accepts DET."** By region: North America 4,300+, Europe 800+, Asia 600+. For the program you are actually applying to, confirm it in DET's official institution search.
+
+### Pitfalls to clear before applying
+
+1. **The FAFSA is not for international students.** International students use the CSS Profile; the FAFSA is only for U.S. citizens and permanent residents.
+2. **Georgetown is not on the need-blind list.** If a second-hand list includes it, verify against the official site before trusting it.
+3. **Brown's need-blind policy is not permanent yet.** Another $100 million in fundraising is still needed — add that caveat to your college list.
+4. **AAUW's deadline is not November 15.** The 2027–28 round closed September 17; the amounts are not the old $18,000 / $20,000 / $30,000 tiers either.
+5. **Knight-Hennessy's 2028 deadline has not been published.** Don't trust a specific date from second-hand pages — wait for the official site.
+6. **Master's study is self-funded by default.** For full funding, look at PhD programs first, then outside fellowships.
+
+### FAQ
+
+**Q1: Does need-blind mean free?**
+No. Need-blind only settles "finances don't affect admission." How much you get depends on "meeting 100% of demonstrated need." Only when both hold does "admitted means funded" follow. A school that meets only the first condition can still admit you and underfund you.
+
+**Q2: Will applying for aid hurt my admission chances?**
+Not at the 10 need-blind schools. At other, need-aware schools, yes — applying for aid is part of the admission calculation. Factor that cost into your college list.
+
+**Q3: Is there full funding for a master's?**
+Rarely, and never by default. Top U.S. PhD programs are commonly fully funded; master's programs are mostly self-funded (Yale GSAS states this explicitly). For a funded master's, target outside fellowships.
+
+**Q4: Can I still apply to AAUW now?**
+The 2027–28 round closed on September 17, 2026. The next round, 2028–29, is expected to open around August 2027 — check AAUW's official site.
+
+**Q5: When does the Knight-Hennessy 2028 cohort close?**
+Not yet published. What is known: applications open in June 2027, and based on past years the deadline is expected in early October 2027 — subject to the official site.
+
+**Q6: Can DET replace TOEFL / IELTS?**
+It depends on the program. All eight Ivies accept DET, but that does not mean every program does; asterisk-marked institutions may ask for additional proof. Confirm your program in DET's official institution search before applying.
+
+**Q7: Beyond these 10 schools, are there others generous to international students?**
+Yes. Need-aware schools also award large aid packages — but "whether they pay" is tied to "whether they admit you," and lists and amounts change every year. This article does not republish second-hand roundups; checking each school's own site is the reliable approach.
+
+### Related reading
+
+The W-8BEN guide covers **dividend withholding**: dividends from U.S. stocks are withheld at 30% by default, but the right W-8BEN form brings the U.S.–China treaty rate down to 10% (/en/blog/w8ben-dividend-withholding-guide). The 183-day guide covers **nonresident capital gains**: nonresidents generally owe no U.S. tax on capital gains, but two rules share the number 183 — one decides residency, the other decides tax (/en/blog/nonresident-capital-gains-183-day-rule). Still choosing a broker first? See the broker comparison (/en/compare/broker).
+
+
+---
+
+> Disclaimer: This article summarizes public information and is not admissions or financial advice. Figures were verified on 2026-11-10; costs, lists, and deadlines change every year — confirm the latest pages on each university's and program's official site before applying. Sources: Harvard Magazine (March 2025) and Harvard College financial aid pages; Yale News (January 27, 2026; September 2, 2026) and Yale GSAS; abroadbrief (updated October 31, 2026), gradright (updated October 14, 2026), studyinternational (August 24, 2026); Washington and Lee (verified November 9, 2026); Brown president's office and alumni site (October 28, 2026); AAUW official site; Knight-Hennessy official site; Duolingo English Test official blog (June 29 / July 1, 2026) and institution search.
+`,
+      zh: `# 美国留学奖学金全指南：10 所 need-blind 大学 + 博士全额资助 + AAUW/KHS 下一轮时间
+
+### 先说结论：奖学金分三条路，先看你走哪条
+
+美国留学奖学金不是一个统一的"奖学金"，而是三条不同的路，规则完全不同：
+
+| 路线 | 适合谁 | 关键事实 | 先做什么 |
+|---|---|---|---|
+| 本科 need-blind 助学金 | 申本科、需要资助的国际生 | 全美只有 **10 所**大学对国际生 need-blind 且满足全部 demonstrated need | 对照名单选校，别在名单外赌运气 |
+| 本科 merit 奖学金 | 成绩或特长突出的本科申请者 | 不看家境、看实力；但各校政策差异极大，普林斯顿明确不发 | 逐校查官网，不要信二手汇总 |
+| 博士全额资助 | 申 PhD 的人 | 顶尖博士项目普遍全额资助：学费全免 + 生活费 + 医保 | 认准"PhD 全额资助"，别和自费硕士混淆 |
+| 校外基金（AAUW、Knight-Hennessy） | 符合特定条件的硕博申请者 | 周期固定、名额极少，2027–28 轮次均已截止，下一轮在 2027 年 | 按下一轮时间倒排，不要按过期时间准备 |
+
+一句话：本科看名单，博士看项目，校外基金看日历。先把这三条分清，再谈具体怎么申。
+
+### 本科第一路：need-blind 名单——全美只有 10 所
+
+need-blind 的意思是：录取时不看你的家庭经济状况。need-blind 加上"满足全部 demonstrated need"，才是"录了就给够钱"的完整承诺。对国际生同时做到这两点的学校，2026–27 申请季全美只有 10 所：
+
+| 学校 | 国际生 need-blind | 备注 |
+|---|---|---|
+| Harvard | 是 | 家庭年收入 10 万美元以下父母不出钱，20 万以下至少免全部学费（2025–26 学年起） |
+| Yale | 是 | 2026–27 入学新生起，同样执行 10 万 / 20 万美元两档门槛 |
+| Princeton | 是 | 只发 need-based 助学金，不设 merit 奖学金 |
+| MIT | 是 | |
+| Amherst | 是 | |
+| Dartmouth | 是 | 自 2026 届（2022 年 1 月公布）起对国际生 need-blind |
+| Bowdoin | 是 | 2022 年 7 月公布，2022–23 申请季起 |
+| Brown | 是（2029 届起） | 2024 年 1 月公布；学校自己说还要再筹 1 亿美元才能让政策永久化——**不是永久政策** |
+| Notre Dame | 是（2029 届起） | 与 Brown 同批，2029 届起 |
+| Washington and Lee | 是 | 官网原文："need-blind in its admissions decisions and meets 100% of demonstrated financial need without loans for every admitted student" |
+
+**名单每年会变，以各校官网为准。** 名单口径是 need-blind + 满足全部 demonstrated need，两个条件缺一不可。
+
+两个容易踩的坑：
+
+- **Georgetown 不在名单里。** 个别二手名单把它列进去，但交叉核实未能确认，不要把它当 need-blind 学校来规划。
+- **Brown 的"2029 届起"有附加条件。** Brown 总统办页面说已筹 1.2 亿美元启动、还需再筹 1 亿美元才能永久化；2026 年 10 月 28 日的校友站文章说筹款"仍在进行"。写进选校表时要加这一句 caveat，不能写成"Brown 已永久 need-blind"。
+
+### 本科第二路：need-aware——申助学金要算录取账
+
+除上面 10 所之外，绝大多数美国大学对国际生都是 need-aware：你申不申助学金，会影响录取决定。
+
+这句话的实际含义是选校策略：家境需要资助、又申 need-aware 学校，等于同时打两场仗——既要够格录取，又要让学校愿意为你出钱。反过来，学费自付能力强的申请者，在 need-aware 学校相对占优。没有对错，只有取舍：申 need-aware 学校之前，先问自己一句——这所学校值得我为它放弃助学金吗？如果答案是否定的，就把它从"申助学金"的清单里划掉，或者接受录取率打折的现实。
+
+**申请材料走哪条线：国际生申请助学金走 CSS Profile（College Board 的表格），不走 FAFSA——FAFSA 只对美国公民与永久居民开放。** 这是最常见的材料错误：交错表格等于白交。
+
+### 本科第三路：merit 奖学金——拼成绩，但先看学校发不发
+
+merit-based 奖学金（优秀奖学金）不看家境、看成绩与特长，是第三条路。但这条路的坑在于：各校政策差异极大，没法给一张通用名单。
+
+最确定的反面例子是普林斯顿：它明确只发 need-based 助学金，不设 merit 奖学金。其他学校是否发、发多少、要不要单独申请，都须逐校查官网——下面一节是 2026 年 11 月 10 日逐校核对过官网的 6 个例子，但名单与金额每年都变，申请前仍以官网当年页面为准。看到"美国大学 merit 奖学金大全"这类二手汇总，先问一句：它核对的是哪一年的官网？答不上来就别用。
+
+### 举例：对国际生大方的 6 所 + 1 个反例
+
+下面 6 所是逐校核对过官网的例子：都有全额学费或全部费用级别的 merit 奖，并且对国际生开放。金额与政策按申请季滚动，申请前以各校官网当年页面为准。
+
+| 学校 | 对国际生开放的代表奖项 | 申请要点 |
+|---|---|---|
+| 范德堡大学 | Cornelius Vanderbilt 全额学费 + 暑期津贴；Ingram 全额学费 + 费用 + 住宿 + 暑期津贴；其余 merit 自 $8,000/年起 | 须单独申请（MyAppVU，含文书），12 月 1 日截止 |
+| 埃默里大学 | Woodruff 全额学费 + 费用 + 住宿 + 餐食（最长 8 学期）；其余部分到全额学费 | 申请表上选 Yes 自我提名，无单独申请；11 月 1 日（EDI）/ 11 月 15 日（EDII、RD） |
+| 南加州大学 | Trustee 全额学费；Presidential 半额学费；Dean's 四分之一学费（不覆盖住宿等全部费用） | 自动考虑，无单独申请；按专业在 11 月 1 日或 12 月 1 日前完成申请 |
+| 杜兰大学 | Dean's Honor 全额学费；Stamps 全部费用 + enrichment；部分奖最高 $32,000/年 | 自动考虑，无单独申请；国际生须交 CSS Profile + 资金声明 |
+| 迈阿密大学 | Stamps 全部费用 + $12,000 enrichment；Singer 全额学费；President's 最高 $30,000/年；Canes 最高 $20,000/年 | 自动考虑；Premier 奖（Stamps、Singer）须 EDI/EA，11 月 1 日 |
+| 波士顿大学 | Trustee 全额学费 + 费用；Presidential 半额学费（2026 秋起）——国际生只限这两项 | 自动考虑，无额外文书；12 月 1 日前完成申请 |
+
+反例是凯斯西储大学：同一所学校，两条路。自动考虑的 merit 奖只给美国公民或永久居民，国际生拿不到；国际生只有奖学金竞赛一条路——Squire 与 A.W. Smith 都是全额学费，但须单独申请加命题文书，2 月 15 日截止。**"这所学校发 merit"不等于"国际生能拿"，先看 eligibility 那一行。**
+
+还有三所对国际生开放 merit 且自动考虑，但官网不公布金额：莱斯大学（约 20% 录取者获得）、东北大学、罗彻斯特大学。查这三所时只确认"有没有"，别信二手汇总写的美元数。
+
+三个旧口径不要再用：波士顿大学 Presidential 的 $25,000/年是 2026 秋之前的旧金额，现为半额学费；迈阿密 President's $28,000 与 Canes $16,000 也是旧数，现为最高 $30,000 与 $20,000；范德堡 Chancellor's 奖学金自 2027 年秋季入学生起停发，不要再列为可申奖项。
+
+### 哈佛与耶鲁的收入门槛：两个数字怎么读
+
+need-blind 名单里最值得细看的，是哈佛和耶鲁先后公布的收入门槛。两校口径一致，都是两档：
+
+- **家庭年收入 10 万美元以下（且资产状况典型）：父母不用出钱。** 覆盖的不仅是学费，还包括住宿、餐食、医保等全部 billed 费用。
+- **家庭年收入 20 万美元以下（且资产状况典型）：至少免全部学费。** 住宿等其他费用视具体情况另有补助。
+
+时间线要分清：哈佛的政策自 **2025–26 学年**起执行（2025 年 3 月公布）；耶鲁的政策针对 **2026–27 学年入学的新生**（2026 年 1 月 27 日公布）。两点提醒：第一，"典型资产"是前提条件，收入达标但资产异常的家庭，补助会打折——不要只看收入数字；第二，国际生享受与美国学生相同的助学金待遇，这两档门槛对国际生同样适用。
+
+耶鲁 2026–27 学年的实际执行情况可以佐证门槛不是空话：超过 53% 的新生获得 need-based 助学金，平均奖学金超过 78,742 美元；超过三分之一的新生免学费入学。
+
+### 博士：全额资助长什么样——以耶鲁为例
+
+读博和读硕的资助逻辑完全不同。美国顶尖大学的 PhD 项目普遍提供全额资助，而硕士项目大多自费。先看一个具体数字，耶鲁文理研究生院（GSAS）2026–27 学年：
+
+| 项目 | 2026–27 学年 |
+|---|---|
+| 学费 | **$52,400，全额免除**（fellowship 覆盖） |
+| 12 个月生活费 | 至少 **$52,046**（人文、社科、物理科学）；生物与生物医学科学至少 **$53,629** |
+| 医保 | 全面医保，含住院与专科，覆盖学生本人、合法配偶与子女 |
+| 搬迁费 | 一次性 **$1,500**，随第一笔生活费发放 |
+| 资助年限 | 通常至少 **5 年** |
+
+耶鲁 GSAS 官网的原话是："All PhD students at Yale are fully funded." 平均每位博士生在读期间获得的学费减免、生活费与医保合计超过 50 万美元。
+
+对照组是硕士：同一所研究生院的官网明确写着，硕士生要自己承担学费，"or obtaining funding through your program or from external sources"。**申错学位类型，等于选错资助逻辑。** 想拿全额资助读硕士，要去找校外基金（见下一节），而不是默认学校会包。
+
+三点使用说明：第一，数字是 2026–27 学年的，每年会变，申请时以官网最新页为准；第二，生活费是"至少"这个数，不同院系、不同年份会有浮动；第三，"全额资助"不等于"零花销"，生活费要覆盖纽黑文当地的实际生活成本，够不够用是你自己的账。
+
+### 校外基金：AAUW 与 Knight-Hennessy，下一轮时间表
+
+校内资助之外，还有两项常被中国申请者问到的校外基金。两项的 2027–28 轮次都已截止，写这篇的时间点（2026 年 11 月），只能按下一轮准备。
+
+**AAUW International Fellowships（面向女性）**
+
+- 面向非美国公民 / 永久居民的女性，赴美全日制读硕士或博士。
+- **只限 STEM 专业**：2027–28 周期起只资助正式归类为 STEM 学科的学位（以 AAUW 学科清单或美国国土安全部 DHS STEM 清单为准）；非 STEM 专业本轮不符合资格。
+- **2027–28 轮次已关**：2026 年 8 月 17 日 9:00 ET 开放，2026 年 9 月 17 日 17:00 ET 截止，结果 2027 年 3 月通知。
+- **2028–29 轮次尚未公布**，按 2026 年模式预计 2027 年 8 月前后开放，以 AAUW 官网为准。
+- **金额（2027–28 周期）**：首个硕士学位 $20,000，首个博士学位 $25,000，分两期发放；**本轮不设博士后奖项**。注意：网上很多旧页面写的是上一轮的 $18,000 / $20,000 / $30,000 三档，那是旧方案，不要按旧数字做预算。
+- **硬门槛**：GPA 最低 3.5（4.0 制）；只资助首个硕士或首个博士学位，已有同级学位者不能申请；须全日制；申请时须已被至少一个项目录取。
+- 一个容易错的旧口径：网上很多页面写"每年 8 月 1 日开、11 月 15 日截止"，那是往年的时间表，2027–28 实际是 8 月 17 日开、9 月 17 日截止。**不要写 11 月 15 日。**
+
+**Knight-Hennessy Scholars（斯坦福）**
+
+- 斯坦福的全额奖学金项目，覆盖学费与生活费，面向所有国籍。
+- **2027 届已关**：2026 年 6 月 1 日开放，2026 年 10 月 6 日 13:00 PT 截止。
+- **2028 届**：官网写 2027 年 6 月（summer 2027）开放；截止日官网尚未公布，按往年模式**预计 2027 年 10 月初**，以官网为准。不要写死"10 月 6 日"——二手来源对这个日期有冲突（10 月 6 日与 10 月 14 日两种说法），官网没公布之前，写具体日期就是编数字。
+- **资格变化**：2028 届要求本科学位于 2021 年或之后获得；2027 届是 2020 年或之后。不要沿用 2020 这个年份。
+- **两份独立申请**：KHS 申请与斯坦福学位申请是分开的，都要交；2027 届的学位申请须在项目方给 KHS 申请者的截止日与 2026 年 12 月 1 日二者较早者之前提交，2028 届的对应日期官网尚未公布，以官网为准。
+- 规模参考：2026 级录取 87 人，来自 31 个国家。
+
+### 语言考试：Duolingo English Test 的官方口径
+
+语言成绩是奖学金申请的前置条件，这里只写一个已核实的官方口径：Duolingo English Test（DET）目前被全球 **6,500+ 所院校 / 项目**接受，包括美国八所藤校全部——含哈佛商学院、沃顿、Kellogg、Booth 等研究生项目。
+
+两个 caveat 必须同时写：第一，带星号（*）标注的机构可能仍需其他英语成绩证明；第二，同一所学校不同项目的要求可能不同，**不能写"全校都认 DET"**。分地区看，北美 4,300+、欧洲 800+、亚洲 600+。具体到你要申的项目，仍须在 DET 官网的接受院校查询页里逐个确认。
+
+### 申请前先排掉的坑
+
+1. **FAFSA 不是给国际生的。** 国际生走 CSS Profile；FAFSA 只对美国公民与永久居民开放。
+2. **Georgetown 不在 need-blind 名单里。** 二手名单里出现它时，先核对官网再信。
+3. **Brown 的 need-blind 还没永久化。** 还差 1 亿美元筹款，写进选校表要加 caveat。
+4. **AAUW 的截止日不是 11 月 15 日。** 2027–28 是 9 月 17 日截止；金额也不是旧的三档 $18,000 / $20,000 / $30,000。
+5. **Knight-Hennessy 2028 届截止日还没公布。** 不要信二手页面的具体日期，等官网。
+6. **硕士默认自费。** 想要全额资助，先看 PhD 项目，再看校外基金。
+
+### FAQ
+
+**Q1：need-blind 是不是等于免费？**
+不是。need-blind 只解决"录取时不看家境"，给多少钱由"满足全部 demonstrated need"决定。两个条件要同时成立，才是"录了就给够钱"。只满足前者、不满足后者的学校，录了你也可能给不够。
+
+**Q2：申了助学金会不会影响录取？**
+在 10 所 need-blind 学校不会。在其他 need-aware 学校会——申助学金本身就是录取考量的一部分，选校时要把这个代价算进去。
+
+**Q3：硕士也有全额资助吗？**
+少数有，但不要默认。美国顶尖大学的 PhD 普遍全额资助，硕士大多自费（耶鲁 GSAS 官网明确写了这一点）。想拿全额资助读硕士，主攻校外基金。
+
+**Q4：AAUW 现在还能申请吗？**
+2027–28 轮次已于 2026 年 9 月 17 日截止。下一轮 2028–29 预计 2027 年 8 月前后开放，以 AAUW 官网为准。
+
+**Q5：Knight-Hennessy 2028 届什么时候截止？**
+官网尚未公布。已知的是 2027 年 6 月开放，按往年模式预计 2027 年 10 月初截止，以官网为准。
+
+**Q6：DET 能替代托福 / 雅思吗？**
+看具体项目。八所藤校都接受 DET，但不等于每个项目都接受；带星号标注的机构可能还要其他英语成绩。申之前在 DET 官网查询页确认你的项目。
+
+**Q7：除了这 10 所，还有没有对国际生大方的学校？**
+有。need-aware 学校也会给大额助学金，但"给不给"和"录不录取"挂钩，而且名单与金额每年都变。本篇不列二手汇总名单，逐校查官网是最稳妥的做法。
+
+### 相关阅读
+
+W-8 篇讲的是**股息预扣**：住中国炒美股，股息默认被预扣 30%，填对 W-8BEN，中美协定把税率压到 10%（/zh/blog/w8ben-dividend-withholding-guide）。183 天篇讲的是**非居民资本利得**：非居民卖美股一般不征资本利得税，但两套 183 天规则一个定身份、一个定税，税籍才决定 30% 平税是否触发（/zh/blog/nonresident-capital-gains-183-day-rule）。想先选券商再填表，看券商对比页（/zh/compare/broker）。
+
+
+---
+
+> 免责声明：本文汇总公开信息，不构成留学或财务建议。数字核实于 2026-11-10，费用、名单与截止日期每年变化，申请前以各校官网与项目官网最新页面为准。来源：Harvard Magazine（2025-03）与 Harvard College 助学金页面；Yale News（2026-01-27、2026-09-02）与 Yale GSAS 官网；abroadbrief（2026-10-31 更新）、gradright（2026-10-14 更新）、studyinternational（2026-08-24）；Washington and Lee 官网（2026-11-09 核实）；Brown 总统办页面与校友站（2026-10-28）；AAUW 官网；Knight-Hennessy 官网；Duolingo English Test 官方博客（2026-06-29 / 07-01）与接受院校查询页。
+`,
+    },
+    author: 'WealthEase Team',
+    date: '2026-11-10',
+    readTime: '18 min read',
+    category: 'Education',
+    tags: ['scholarships', 'need-blind', 'merit scholarships', 'PhD funding', 'AAUW', 'Knight-Hennessy', 'study abroad', 'Duolingo English Test'],
+  },
+
   ...lifeGuidePosts,
 ];
