@@ -3,7 +3,6 @@ import Script from 'next/script';
 interface OrganizationData {
   name: string;
   url: string;
-  logo: string;
   description: string;
 }
 
@@ -24,7 +23,6 @@ export function OrganizationSchema({ data }: { data: OrganizationData }) {
     '@type': 'Organization',
     name: data.name,
     url: data.url,
-    logo: data.logo,
     description: data.description,
     sameAs: [],
   };

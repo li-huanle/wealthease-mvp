@@ -386,7 +386,6 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
         data={{
           name: 'WealthEase',
           url: 'https://www.wealthease.top',
-          logo: 'https://www.wealthease.top/logo.png',
           description: locale === 'zh'
             ? '提供专业的免费理财计算器，包括复利计算器、退休规划计算器、贷款计算器、房贷计算器和投资回报率计算器。'
             : 'Professional free financial calculators including compound interest, retirement planning, loan, mortgage, and ROI calculators.',

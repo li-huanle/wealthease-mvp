@@ -14,7 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   locales.forEach((locale) => {
     routes.push({
       url: `${baseUrl}/${locale}`,
-      lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1.0,
       alternates: {
@@ -30,7 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   locales.forEach((locale) => {
     routes.push({
       url: `${baseUrl}/${locale}/calculators`,
-      lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
       alternates: {
@@ -48,7 +46,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     locales.forEach((locale) => {
       routes.push({
         url: `${baseUrl}/${locale}/${page}`,
-        lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.6,
         alternates: {
@@ -84,7 +81,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     locales.forEach((locale) => {
       routes.push({
         url: `${baseUrl}/${locale}/calculators/${calc}`,
-        lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.8,
         alternates: {
@@ -95,14 +91,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       });
     });
-  });
-
-  // Add external links
-  routes.push({
-    url: 'https://valuristories.com/',
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.5,
   });
 
   return routes;
