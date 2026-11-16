@@ -255,10 +255,6 @@ export default async function BlogPostPage({ params }: Props) {
             publisher: {
               '@type': 'Organization',
               name: 'WealthEase',
-              logo: {
-                '@type': 'ImageObject',
-                url: 'https://www.wealthease.top/logo.png',
-              },
             },
             articleSection: post.category,
             keywords: post.tags.join(', '),
