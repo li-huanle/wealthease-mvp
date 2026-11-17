@@ -7363,5 +7363,324 @@ W-8 篇讲的是**股息预扣**：住中国炒美股，股息默认被预扣 30
     tags: ['scholarships', 'need-blind', 'merit scholarships', 'PhD funding', 'AAUW', 'Knight-Hennessy', 'study abroad', 'Duolingo English Test'],
   },
 
+  {
+    slug: 'cross-border-remittance-pitfalls',
+    title: {
+      en: 'Cross-Border Remittance Pitfalls: How the $50,000 Quota Works — and Why Private Currency Swaps Are Off-Limits',
+      zh: '跨境汇款避坑：5 万美元额度怎么用、私下换汇为什么不能碰',
+    },
+    excerpt: {
+      en: 'Cross-border remittance runs on two tracks: sending money out of China under the $50,000 convenience quota and the 2026 RMB 5,000 identity-verification rule, and receiving or sending money in the US under the 1% remittance tax, the frozen-card and criminal risks of private currency swaps, structuring, and the Form 3520 and FBAR filings. This guide covers the quota math, wire costs, scam red flags, and a pre-transfer checklist.',
+      zh: '跨境汇款分两条线：大陆往外寄钱，看 5 万美元便利化额度与 2026 年单笔 5,000 元身份核实新规；在美收钱寄钱，看 1% 汇款税、私下换汇的冻卡与刑事风险、structuring，以及 Form 3520 与 FBAR 两张申报表。本文一次讲清额度算法、电汇费用、骗局识别与汇款前速查表。',
+    },
+    content: {
+      en: `# Cross-Border Remittance Pitfalls: How the $50,000 Quota Works — and Why Private Currency Swaps Are Off-Limits
+
+### The short version: three sentences
+
+1. **The $50,000 annual quota is a "convenience allowance," not a cap.** Within the quota, you exchange currency at a bank with just an ID; above it, legitimate current-account spending (tuition, medical care, travel) can still be handled with supporting documents.
+2. **The two most expensive routes are both the "easy" ones.** Borrowing relatives' quotas to split purchases, or swapping currency privately, saves fees that are a rounding error next to the fines and frozen accounts.
+3. **Both sides tightened the rules in 2026.** In China, banks must verify the sender's identity for any outbound transfer of RMB 5,000 or more from January 1, 2026. In the US, a 1% remittance tax took effect the same day — but it only targets cash and money orders, not bank-account or card payments.
+
+This article runs on two tracks: sending money **out of China** (Sections 1–3) and receiving or sending money **in the US** (Sections 4–7). If both apply to you — say, parents in China wiring tuition to a child in the US — read both.
+
+### 1. How the $50,000 quota actually works
+
+The rule is Article 2 of the SAFE *Detailed Rules for the Implementation of the Measures for the Administration of Individual Foreign Exchange* (汇发〔2007〕1号): annual aggregate management applies to individual foreign exchange settlement and domestic individual foreign exchange purchases, with **an annual aggregate of USD 50,000 equivalent per person per year** for each; within the aggregate, transactions are handled at banks with a valid ID; above the aggregate, current-account items are handled with prescribed supporting documents.
+
+Four common misunderstandings:
+
+| Misunderstanding | Reality |
+|---|---|
+| "Each person can only exchange $50,000 a year" | $50,000 is a **convenience allowance**, not a cap. Genuine, lawful current-account spending above the quota can be processed with documents — there is no total ceiling |
+| "Settlement and purchase share one $50,000 quota" | **Calculated separately**: $50,000 for purchase, $50,000 for settlement |
+| "Unused quota rolls over to next year" | Calculated on a **calendar year** (Jan 1–Dec 31); unused quota expires at year-end and a fresh quota starts the next year |
+| "Any purpose is fine as long as I have quota" | The quota covers **current-account items only**. Buying property or securities abroad falls under the not-yet-open capital account — **not allowed even with quota to spare** |
+
+**Above the quota (tuition example)**: if tuition exceeds $50,000, bring the school's official payment notice and other documents to the bank; amounts matching the notice are generally processed. This is "processing with documents," not asking the bank for a favor, and it does not consume any special channel.
+
+### 2. What a bank wire actually costs: a $5,000 example
+
+Using Bank of China as the example (Bank of China's official *Service Price List*, March 31, 2025 edition, re-checked as current on November 17, 2026):
+
+| Fee | Standard |
+|---|---|
+| Commission | **1‰ of the amount, minimum RMB 50, maximum RMB 260 per transfer** |
+| Cable fee | **RMB 80** for Hong Kong, Macao and Taiwan; **RMB 150** for other countries and regions |
+| Intermediary bank deductions | Each intermediary bank **may deduct $15–50** (practitioner-guide estimate, not an official bank price; whether and how many intermediaries are involved depends on the routing) |
+| Full-amount delivery (OUR) | About **$15–25 extra** (practitioner-guide estimate) |
+
+Worked example: wiring $5,000 from Bank of China to a non–Bank of China account in the US. The commission is charged in RMB: $5,000 ≈ RMB 33,300, 1‰ ≈ RMB 33, below the RMB 50 floor, so **RMB 50 applies** — plus the RMB 150 cable fee, roughly RMB 200 in total. If one intermediary bank is involved, the recipient may receive $15–50 less. **Small transfers pay proportionally more**: wiring $1,000 still incurs the RMB 50 floor, about 0.75%.
+
+**One way to skip both fees**: wiring through mobile banking to an **overseas Bank of China branch** (e.g., Bank of China New York) is **free of commission and cable fees**; wiring to a non–Bank of China overseas account gets a 10% discount on mobile banking. ICBC works the same way for overseas ICBC branches. Whether your bank has a branch in your destination country is worth factoring in when choosing where to open an account.
+
+**Timing**: wires usually take 2–5 business days; holidays and anti-money-laundering reviews can extend this. State the purpose truthfully (tuition, living expenses, travel) — a purpose that clearly mismatches the amount will draw questions or a return.
+
+### 3. The 2026 rule: identity verification kicks in at RMB 5,000
+
+The *Measures for the Administration of Customer Due Diligence and the Retention of Customer Identity Information and Transaction Records by Financial Institutions* (joint order of the People's Bank of China, the National Financial Regulatory Administration and the CSRC, Order No. 11 of 2025, published October 31, 2025, effective **January 1, 2026**) requires that **for outbound transfers of a single transaction of RMB 5,000 or foreign-currency equivalent of $1,000 or more, financial institutions and money-exchange businesses must verify the accuracy of the remitter's information**; customer identity information and transaction records must be kept for at least 10 years after the business ends.
+
+Three clarifications, to prevent misreading:
+
+- **This is "verification," not "prohibition."** Transfers below RMB 5,000 are not cancelled — they are simply exempt from this tier of identity verification. Above the threshold, the bank asks a few more questions; compliant transfers proceed as normal.
+- **It is not limited to banks.** Non-bank payment institutions are also covered, so cross-border remittance inside Alipay and WeChat Pay follows the same rule.
+- **The goal is anti-money-laundering, not tighter FX control.** The rule restates an international standard in force for over 20 years: cross-border transfers above $1,000 must carry accurate remitter information.
+
+**Split purchases: don't borrow relatives' quotas.** Splitting one purchase across several people's quotas to dodge the limit (e.g., borrowing seven relatives' quotas for one property payment) is evasion. Once banks and SAFE detect it through their systems, the individuals involved are placed on a **"watch list" and lose the convenience quota for two years**, after which every transaction must be handled at the counter with supporting documents. Note: the "two years" figure comes from compliance explainers, not a verbatim SAFE quote located on the writing date (see verification record); the characterization of split purchases as a violation is not in dispute.
+
+### 4. In the US: the 1% remittance tax from 2026 only targets cash
+
+The One Big Beautiful Bill Act added IRC Section 4475, imposing a **1% federal excise tax** on certain cross-border remittance transfers **from January 1, 2026**. The word "certain" does the work:
+
+| Funding method | Taxed? |
+|---|---|
+| Cash, money orders, cashier's checks, traveler's checks | **Yes, 1%** (proposed rules add traveler's checks to the taxable list) |
+| Bank accounts, debit/credit cards (any issuing country), personal/business checks, prepaid cards, digital assets | **No** |
+| Transfers of $15 or less | **No** (exemption in the proposed rules) |
+
+Additional points:
+
+- **The provider collects the tax** and remits it quarterly to the IRS (Form 720, IRS No. 155). The tax base is the amount actually transferred to the recipient, excluding fees.
+- **US citizens and residents are not exempt** — paying with a cash-like instrument to send money abroad triggers the tax; income tax treaties provide no relief.
+- **Status of the rules**: the IRS published proposed regulations on April 10, 2026 (REG-114499-25, 91 FR 18797); as of October 21, 2026, **no final regulation has been published**, but taxpayers and providers may rely on the proposed rules. IRS Notice 2025-55 grants penalty relief on deposits for the first three quarters of 2026.
+- **Practical impact on Chinese Americans is small**: most people pay from a bank account or with a debit/credit card, which was never in scope. The people affected are those who habitually carry cash to a transfer counter — switching to a bank transfer avoids the 1%.
+
+### 5. In the US: why private currency swaps are off-limits
+
+Swapping currency with strangers in WeChat or Telegram groups is the most common "money-saving" move among Chinese Americans — and the most dangerous. The chain: you send dollars abroad; the other side sends you RMB from a domestic personal account. **If that RMB came from a telecom-fraud victim, your card is treated as a "first-tier card in the case" and frozen** — no advance notice required, no proof of fault required.
+
+**Three layers of consequences, in order of severity:**
+
+1. **Your card gets frozen (most common).** A freeze is an investigative measure, not a penalty. Under Article 144 of China's Criminal Procedure Law, case-handling authorities may inquire into and freeze a suspect's deposits and remittances; Article 145 requires the freeze to be lifted within three days once the funds are established to be unrelated to the case. But "establishing" takes time — often months in practice — and a freeze generally lasts six months and can be renewed. "Waiting for it to lift itself" almost never works. The only proper route: ask your bank for the freezing authority's name and phone number and a written freeze notice, then present evidence that you genuinely paid the foreign currency.
+2. **Administrative penalty.** Private currency exchange is itself unlawful. Article 45 of the *Regulations on Foreign Exchange Administration*: a warning, confiscation of illegal gains, and a fine of **up to 30% of the amount involved**; in serious cases, up to the equivalent of the amount.
+3. **Criminal liability.** Once illegal business turnover reaches RMB 5 million, or illegal gains reach RMB 100,000, the conduct becomes the crime of **illegal business operation** (Article 225(4) of the Criminal Law; Judicial Interpretation No. 1 of 2019, Article 3). Three cases entered in the People's Courts Case Library in 2025 illustrate the three roles in this chain: a two-way onshore/offshore swap of over RMB 40 million, ringleader sentenced to five years and nine months (2025-03-1-169-003); a "naira–USDT–RMB" chain moving over RMB 20 million for overseas clients, convicted of illegal business operation (2025-03-1-169-002); and an illegal exchange website using USDT as the medium, treated as an accomplice to illegal business operation (2025-03-1-169-001). In June 2026, Shanghai Jing'an District People's Court sentenced a case using virtual currency as the intermediary for matched swaps worth over RMB 200 million — five of nine defendants received prison terms of two and a half to six years — and **even customers who merely lent their bank cards to the swap operation had their cards frozen by police**.
+
+**One more line that is easy to miss: lending your bank card for someone else to receive and pay swap funds, with settlements of RMB 200,000 or more, may constitute the crime of aiding information-network criminal activities** — even if you genuinely did not know the other side was exchanging currency.
+
+**Real case (October 20, 2026)**: a fake-police scam in Flushing, Queens, New York — the victim lost $350,000 and then discovered her Chase account had been frozen for abnormal activity. Scams and frozen accounts often arrive together: the money is gone, and the account is frozen because illicit funds flowed through it.
+
+### 6. In the US: splitting is dangerous here too — structuring
+
+China has split purchases; the US has structuring — same logic, heavier consequences.
+
+The Bank Secrecy Act requires banks to file a Currency Transaction Report (CTR, FinCEN Form 112) for **cash transactions over $10,000 in a single business day**. **Deliberately breaking cash deposits or withdrawals into smaller transactions, each under $10,000, to avoid that report is a standalone federal crime** (31 U.S.C. § 5324), regardless of whether the money is legitimate:
+
+- Standard case: up to **5 years in prison and a $250,000 fine**;
+- More than $100,000 structured within 12 months, or tied to another offense: up to **10 years**;
+- Conviction does not require proving the money came from illegal activity — only that you structured **for the purpose of evading** the reporting requirement.
+
+**Don't do this**: splitting a $12,000 cash deposit into two deposits to "stay under the radar," or trusting the idea that "under $9,000 is safe" — banks file Suspicious Activity Reports (SARs) on suspected structuring at a $5,000 threshold, and by law **they cannot tell you** a SAR was filed. The right approach: make large cash transactions openly and let the bank file normally. Filing itself is not a penalty and creates no tax consequence.
+
+### 7. In the US: after the money arrives, two more forms
+
+The transfer itself creates no US federal income tax (money from your parents is not your taxable income), but **reporting obligations** are a separate matter. The two most commonly missed forms:
+
+**Form 3520 (foreign gift reporting)**: a US tax resident (citizen, green-card holder, or anyone meeting the substantial presence test) who receives gifts or bequests from a foreign individual or foreign estate **totaling more than $100,000 in a tax year** must report to the IRS (IRC § 6039F). The gift itself is usually not taxed, but the penalty for not reporting is **5% per month, up to 25%** — on a $200,000 gift, up to $50,000. Three points: (1) the $100,000 test is on the **aggregate** — gifts from both parents count together; (2) each gift over $5,000 must be separately identified; (3) gifts from foreign corporations or partnerships have a much lower threshold — $20,573 for 2026 (inflation-adjusted). The form is mailed separately to the IRS Ogden center, due with your tax return (April 15, extendable to October 15).
+
+**FBAR (FinCEN Form 114)**: a US tax resident whose foreign financial accounts **exceeded $10,000 in aggregate at any point during the calendar year** must report to FinCEN (not the IRS). The keys are "aggregate" and "any point": three accounts of $4,000 each — $12,000 combined, even for a single day — triggers filing; the test uses the **year's highest point, not the year-end balance**. Due April 15, with an automatic extension to October 15, no request needed. The non-willful penalty runs about $16,536 per report under 2026 figures; a willful failure can reach the greater of $100,000 (inflation-adjusted, now higher) or 50% of the account balance.
+
+**One-line self-check**: parents wired you $120,000 this year → Form 3520 applies. You still hold a bank card in China that hit $8,000 one day, pushing your foreign accounts over $10,000 combined → FBAR applies too. Neither form creates tax; the entire cost of missing them is penalties.
+
+### 8. Cost comparison: sending $1,000 from the US to China
+
+Total cost = visible fees **plus** the markup hidden in the exchange rate. Comparing fees alone is comparing half the price.
+
+**Snapshot (November 17, 2026, third-party live-comparison data; rates move daily — always re-check with each provider's own calculator):**
+
+| Channel | Total cost (approx.) | Recipient receives (approx.) | Notes |
+|---|---|---|---|
+| Wise (ACH payment → Chinese bank card / Alipay) | About **$13–18** (approx. 1.3%–1.9%) | About **¥6,550–6,575** | Based on a mid-market rate of about 6.66–6.68; mid-market exchange, transparent fee |
+| US bank wire | $25–50 in fees, plus possibly $10–30 in intermediary deductions | Reduced accordingly | Plus the bank's exchange-rate markup; 2–5 business days |
+| Cash at a transfer counter | Fees vary, plus **1% US remittance tax** (from 2026) | Reduced accordingly | Only cash-funded payments trigger the 1% tax |
+
+The Wise figures are a cross-check of several third-party live quotes on November 17, 2026 (about 1.3%–1.9%), not a direct reading of Wise's own calculator. **Before sending, enter your actual amount in the provider's calculator** — fees vary by payment method (ACH is cheapest; debit and credit cards cost more) and by amount, and first-transfer promotions can change the numbers.
+
+**Three rules of thumb for choosing a channel**: (1) small, frequent transfers — look at total cost as a percentage and prefer platforms that convert at the mid-market rate; (2) large, one-off transfers — price the bank wire all-in first (fees + cable fee + intermediary deductions + exchange-rate markup), then compare with platforms; (3) always check "how much the recipient actually receives" before paying — "zero-fee" platforms usually hide the cost in the exchange rate.
+
+### 9. Spotting scams: four lines that mean stop
+
+1. **"An exchange rate far better than the bank's"** — a rate above the market is your principal paying for the spread. Private swaps have no "preferential rate," only "not caught yet."
+2. **"Send the money first, the screenshot is proof"** — being asked to pay first, then stalled with excuses, is the standard opening of a swap scam.
+3. **"This is the police / the consulate — you're suspected of money laundering"** — police and prosecutors do not handle cases by phone and never ask you to move money to a "safe account." The $350,000 fake-police case in Queens followed exactly this script.
+4. **"Route it through USDT / crypto — faster and cheaper"** — crypto-mediated swaps are still illegal foreign-exchange trading; a 2021 multi-agency notice already classifies virtual-currency business activity as illegal financial activity.
+
+**If you were scammed or your card was frozen**: (1) contact your bank immediately, explain, and request a stop-payment or assistance; (2) report to the police and keep all chat logs and transfer records; (3) for a frozen card, first get the freezing authority's name and phone number from the bank, then appeal with your payment records — do not pay an "unfreezing agent"; (4) for US tax-reporting questions, consult a licensed tax professional rather than guessing.
+
+### Pre-transfer checklist
+
+- [ ] Is the amount within the $50,000 convenience quota? If above, are the supporting documents (e.g., tuition notice) ready?
+- [ ] Is the purpose a current-account item? Property and securities cannot use this quota.
+- [ ] Is the route a bank or a licensed platform — no private swaps, no borrowed quotas?
+- [ ] Have you priced all four cost items: commission, cable fee, intermediary deductions, exchange-rate markup?
+- [ ] Sending from the US: are you paying from a bank account or card? (Avoids the 1% tax on cash-funded payments.)
+- [ ] Did you receive more than $100,000 in foreign gifts this year in total? If yes, Form 3520 applies.
+- [ ] Did your foreign accounts exceed $10,000 combined at any point this year? If yes, FBAR applies.
+
+### Related reading
+
+The W-8BEN guide covers **dividend withholding**: dividends from U.S. stocks are withheld at 30% by default, but the right W-8BEN form brings the U.S.–China treaty rate down to 10% (/en/blog/w8ben-dividend-withholding-guide). The 183-day guide covers **nonresident capital gains**: nonresidents generally owe no U.S. tax on capital gains, but two rules share the number 183 — one decides residency, the other decides tax (/en/blog/nonresident-capital-gains-183-day-rule). Still choosing a broker first? See the broker comparison (/en/compare/broker).
+
+
+---
+
+*This article is general information only and does not constitute tax, legal, or investment advice. Fees, quotas, and reporting rules follow the latest publications of your bank, the IRS, FinCEN, and China's State Administration of Foreign Exchange; consult a licensed professional for your own case. Figures verified November 17, 2026.*`,
+      zh: `# 跨境汇款避坑：5 万美元额度怎么用、私下换汇为什么不能碰
+
+### 先说结论：三句话
+
+1. **5 万美元是"便利化额度"，不是上限。** 额度内凭身份证件在银行办；超过额度、有真实交易背景的经常项目（留学、就医、旅游），凭材料一样可以办。
+2. **最贵的两条路，都是"省事"的路。** 借亲友额度分拆购汇、私下找人换汇，省下的手续费连罚款和冻卡的零头都不到。
+3. **2026 年两边都在收紧。** 大陆：2026 年 1 月 1 日起，单笔 5,000 元以上的跨境汇出银行必须核实汇款人信息；美国：同日生效的 1% 汇款税，只盯现金、汇票这类实物工具，银行账户和银行卡付款不受影响。
+
+下面分两条线写：人在大陆往外寄钱，看第 1–3 节；人在美国收钱、寄钱回国或在美国境内换汇，看第 4–7 节。两条线都沾边的（比如父母在国内汇学费、孩子在美国收），建议两节都看。
+
+### 1. 5 万美元额度到底怎么算
+
+依据是国家外汇管理局《个人外汇管理办法实施细则》（汇发〔2007〕1 号）第二条：对个人结汇和境内个人购汇实行年度总额管理，**年度总额分别为每人每年等值 5 万美元**；年度总额内的结汇和购汇，凭本人有效身份证件在银行办理；超过年度总额的，经常项目项下凭规定材料办理。
+
+容易误解的四点：
+
+| 误解 | 实际情况 |
+|---|---|
+| "每人每年只能换 5 万美元" | 5 万是**便利化额度**，不是封顶。真实、合法的经常项目支出，超额凭材料（比如学校缴费通知单）可以办，没有总量封顶 |
+| "结汇和购汇共用一个 5 万" | **分别计算**：购汇 5 万、结汇 5 万，各算各的 |
+| "今年没用完可以留到明年" | 按**自然年度**计算，1 月 1 日到 12 月 31 日，年末未用完自动清零，次年重新获得额度 |
+| "有额度就能汇任何用途" | 额度只覆盖**经常项目**。境外买房、证券投资属于尚未开放的资本项目，**有余额也不能办** |
+
+**超额怎么办（以留学为例）**：学费超过 5 万美元，凭学校开具的正式缴费通知单等材料到银行办理，金额与通知单一致一般予以办理。这是"凭材料办"，不是"求银行通融"，也不占用便利化额度之外的特殊通道。
+
+### 2. 银行电汇到底多少钱：一笔 5,000 美元的账
+
+以中国银行为例（中国银行官方《服务价目表》，2025 年 3 月 31 日版，写稿日 2026-11-17 复核仍为现行口径）：
+
+| 费用项 | 标准 |
+|---|---|
+| 手续费 | 汇款金额的 **1‰，最低 50 元／笔，最高 260 元／笔** |
+| 电讯费 | 港澳台地区 **80 元／笔**，其他国家和地区 **150 元／笔** |
+| 中转行扣费 | 中转行**每家可能扣 15–50 美元**（第三方攻略口径，非银行官方定价；是否经过中转行、经过几家，取决于汇款路径） |
+| 全额到账（OUR） | 汇款人要求全额到账，约加收 **15–25 美元**（第三方攻略口径） |
+
+算一笔账：从中行汇 5,000 美元到美国非中行账户，手续费按人民币计价——5,000 美元约合 33,300 元人民币，1‰ 约 33 元，低于 50 元下限，**按 50 元收**——再加电讯费 150 元，合计约 200 元人民币；如果经过一家中转行，到账可能再少 15–50 美元。**小额汇款手续费占比更高**：汇 1,000 美元，手续费同样是 50 元起步，占比约 0.75%。
+
+**一个能省掉这两笔费用的办法**：通过手机银行向**境外中国银行**（如中行纽约分行）汇款，手续费、电讯费**全免**；向境外非中行汇款，手机银行渠道打 9 折。工商银行同理：向境外工行汇款免手续费、电讯费。出发前先在目的国有没有自家银行的分支行，是选开户行时值得算的一笔账。
+
+**到账时间**：电汇一般 2–5 个工作日；遇节假日、反洗钱复核会延长。汇款用途要如实填（留学、生活费、旅游），用途与金额明显不符会被银行问询甚至退回。
+
+### 3. 2026 年新规：单笔 5,000 元就要核实身份
+
+2026 年 1 月 1 日起施行的《金融机构客户尽职调查和客户身份资料及交易记录保存管理办法》（中国人民银行、金融监管总局、证监会令〔2025〕第 11 号，2025 年 10 月 31 日公布）规定：**金融机构和从事汇兑业务的机构为客户向境外汇出资金，单笔人民币 5,000 元或外币等值 1,000 美元以上的，应当核实汇款人信息的准确性**；客户身份资料和交易记录自业务结束后至少保存 10 年。
+
+三点要说清，避免误读：
+
+- **这是"核实"，不是"禁止"。** 5,000 元以下的汇款没有被取消，只是免除了这一档的身份核实义务；5,000 元以上的，银行多问几句、核对一下信息，合规的汇款照常办。
+- **覆盖面不限于银行。** 办法把非银行支付机构也列进义务主体，支付宝、微信支付体系内的跨境汇兑业务同样执行。
+- **立法目标是反洗钱，不是外汇管制加码。** 这条规则重申的是执行 20 余年的国际规则——1,000 美元以上跨境汇款须传递真实汇款人信息。
+
+**分拆购汇：不要借亲友的额度"蚂蚁搬家"**。为规避额度，用多个人的名义化整为零购汇（比如为同一笔购房款借七个人的额度），属于逃避监管。银行与外汇局通过系统识别后，涉事个人会被列入**"关注名单"，两年内取消便利化额度**，只能凭证明材料逐笔到柜台办理。注意：这个"两年"的具体表述来自多家合规解读文章的转述，写稿日未找到外汇局原文逐字引用（见核实记录），但"分拆购汇违规、进关注名单"的定性本身没有争议。
+
+### 4. 在美版：2026 年起的 1% 美国汇款税，只盯现金
+
+《One Big Beautiful Bill Act》（OBBBA）新增《国内税收法典》第 4475 条，**2026 年 1 月 1 日起**对特定跨境汇款征收 **1% 联邦消费税**。关键在"特定"两个字：
+
+| 付款方式 | 是否征税 |
+|---|---|
+| 现金、汇票（money order）、银行本票（cashier's check）、旅行支票 | **征 1%**（拟议规则把旅行支票列入应税清单） |
+| 银行账户、借记卡／信用卡（不限发卡国家）、个人／商业支票、预付卡、数字资产 | **不征** |
+| 单笔 15 美元及以下 | **不征**（拟议规则的豁免额） |
+
+几点补充：
+
+- **税由汇款服务商代收**，按季度向 IRS 缴纳（Form 720，税号 155）；税基是实际汇给收款人的金额，不含手续费。
+- **美国公民和居民也不豁免**，只要用现金类工具向境外汇款就征税；税收协定不提供减免。
+- **规则状态**：IRS 于 2026 年 4 月 10 日发布拟议规则（REG-114499-25，联邦公报 91 FR 18797），截至 2026 年 10 月 21 日**最终规则尚未发布**，但纳税人和服务商可依据拟议规则执行；IRS 2025-55 号通知对 2026 年前三季度的存款罚金给予宽免。
+- **对在美华人的实际影响很小**：绝大多数人用银行账户或借记卡／信用卡付款，本来就不在征税范围内。真正受影响的是习惯拿现金去汇款柜台的人——改用银行转账就能避开这 1%。
+
+### 5. 在美版：私下换汇为什么不能碰
+
+微信群、Telegram 群里跟陌生人换汇，是在美华人最常见的"省钱"操作，也是最危险的。链条是这样的：你把美元打到境外，对方用境内个人账户给你打人民币。**只要那笔人民币来自电信诈骗的被害人，你的卡就会被认定为"一级涉案卡"并冻结**——冻结不需要事前通知你，也不需要先证明你有过错。
+
+**三层后果，按严重程度排：**
+
+1. **卡被冻结（最常见）。** 冻结是侦查措施，不是处罚。依据《刑事诉讼法》第一百四十四条，办案机关可以查询、冻结犯罪嫌疑人的存款、汇款；第一百四十五条规定，经查明确实与案件无关的，应当在三日内解除。但"查明"要时间，实务中常常按月计；冻结期限按规定一般六个月，期满可以续冻。"等它自己解"基本等不到。解冻只有一条正路：先问开户行要冻结机关的名称和电话、拿到书面冻结通知，再带上你"真的付了外币"的付款凭证去申诉。
+2. **行政处罚。** 私下换汇本身就是违法行为。《外汇管理条例》第四十五条：私自买卖外汇、变相买卖外汇的，警告、没收违法所得、**处违法金额 30% 以下罚款**，情节严重的罚到等值。
+3. **刑事责任。** 数额达到非法经营数额 500 万元以上、或违法所得 10 万元以上，就从行政违法转成**非法经营罪**（《刑法》第二百二十五条第四项、法释〔2019〕1 号第三条）。人民法院案例库 2025 年入库的三起案件就是这条链上的三种角色：境内外对敲换汇 4,000 余万元，主犯获刑五年九个月（2025-03-1-169-003）；以"奈拉—泰达币—人民币"链条帮境外客户换汇 2,000 余万元，非法经营罪定罪（2025-03-1-169-002）；搭建非法汇兑网站、以泰达币为媒介换汇，按非法经营罪共犯处理（2025-03-1-169-001）。2026 年 6 月上海静安区人民法院宣判的一起案件：用虚拟货币作中介对敲换汇，涉案金额超 2 亿元，9 名被告人中 5 人被判处二年六个月至六年有期徒刑——**就连只是把银行卡借给换汇方收付款的客户，银行卡也可能被公安冻结**。
+
+**还有一条容易被忽略的线：把卡借给别人收付换汇款，结算金额 20 万元以上的，可能构成帮助信息网络犯罪活动罪**——哪怕你确实不知道对方在换汇。
+
+**真实案例（2026 年 10 月 20 日）**：纽约皇后区假公安骗局，受害人被骗 35 万美元后，发现自己的 Chase 账户因异常被冻结。骗局和冻卡经常同时发生：钱被骗走，账户还因为涉案资金流经而被冻结。
+
+### 6. 在美版：美国的"拆分"也一样危险——structuring
+
+中国有分拆购汇，美国有 structuring（拆分交易规避申报），逻辑相同、后果更重。
+
+美国《银行保密法》要求银行对**单日现金交易超过 10,000 美元**提交货币交易报告（CTR，FinCEN Form 112）。**故意把现金存款、取款拆成多笔、每笔压在 10,000 美元以下，以规避这份报告，就是独立的联邦犯罪**（31 U.S.C. § 5324），与钱本身是否合法无关：
+
+- 标准情形：最高 **5 年监禁、25 万美元罚款**；
+- 12 个月内拆分金额超过 10 万美元、或与另一项犯罪相关联：最高 **10 年监禁**；
+- 定罪不需要证明钱来自非法活动，只需要证明你是"为规避申报"而拆分。
+
+**不要做的事**：为了"不被银行上报"，把一笔 12,000 美元的现金分两次存；也不要听信"9,000 美元以下就安全"的说法——银行对可疑交易（包括 structuring 模式）提交可疑活动报告（SAR）的门槛只有 5,000 美元，而且银行依法**不能告诉你**它提交了 SAR。正确的做法是：大额现金交易如实办理，让银行正常上报；上报本身不是处罚，不会因此产生税务后果。
+
+### 7. 在美版：钱到了美国之后，还有两张表
+
+汇款本身不产生美国联邦所得税（父母给你的钱不是你的应税收入），但**申报义务**是另一回事。两张最容易漏的表：
+
+**Form 3520（外国赠与申报）**：美国税务居民（公民、绿卡、满足实际居留标准者）在一个纳税年度内，从外国个人或外国遗产收受的赠与、遗赠**合计超过 10 万美元**，必须向 IRS 申报（《国内税收法典》第 6039F 条）。赠与本身通常不征税，但漏报的罚金是**每月 5%、最高 25%**——20 万美元的赠与漏报，罚金最高可达 5 万美元。注意三点：① 10 万美元是**合计**数，父母两人分别给的要加总；② 每笔超过 5,000 美元的赠与须单独列明；③ 从外国公司或合伙企业收受的赠与门槛低得多，2026 年为 20,573 美元（随通胀调整）。表格与税表分开寄（IRS Ogden 中心），截止日随税表（4 月 15 日，可延至 10 月 15 日）。
+
+**FBAR（外国银行账户申报，FinCEN Form 114）**：美国税务居民的境外金融账户，**全年任一时点合计超过 1 万美元**，必须向 FinCEN（不是 IRS）申报。关键在"合计"和"任一时点"：三个账户各 4,000 美元、合计 12,000 美元，哪怕只在某一天超过，也要申报；看的是**全年最高点，不是年底余额**。截止日 4 月 15 日，自动延至 10 月 15 日，无需申请。非故意漏报的罚款，2026 年口径约为每份报告 16,536 美元；故意漏报最高为 10 万美元（经通胀调整后更高）或账户余额的 50%。
+
+**一句话自查**：父母一年汇了 12 万美元给你 → Form 3520 要报；你在国内还有一张银行卡，某天余额到了 8,000 美元、加美国境外账户合计过了 1 万 → FBAR 也要报。两张表都不产生税款，漏报的代价全在罚金上。
+
+### 8. 费用对比：1,000 美元从美国汇到中国，到手差多少
+
+汇款成本 = 看得见的手续费 ＋ 藏在汇率里的差价。只比手续费不比汇率，等于只看了一半。
+
+**快照（2026 年 11 月 17 日，第三方实时比价口径；汇率每日变动，以各平台官网计算器实时报价为准）：**
+
+| 渠道 | 总成本（约） | 到手（约） | 备注 |
+|---|---|---|---|
+| Wise（银行 ACH 付款 → 国内银行卡／支付宝） | 约 **13–18 美元**（约 1.3%–1.9%） | 约 **¥6,550–6,575** | 按中间价约 6.66–6.68 折算；用中间价换汇、只收明码手续费 |
+| 美国银行电汇（wire） | 25–50 美元手续费 ＋ 中转行可能再扣 10–30 美元 | 相应减少 | 另有银行汇率差价；到账 2–5 个工作日 |
+| 汇款柜台现金汇款 | 手续费另计 ＋ **1% 美国汇款税**（2026 年起） | 相应减少 | 现金付款才触发 1% 税 |
+
+Wise 的数字是 2026 年 11 月 17 日多家第三方实时比价的交叉口径（约 1.3%–1.9%），不是 Wise 官网计算器的直接读数。**汇款前务必在官网计算器里输入你的实际金额重算一次**——费用随付款方式（ACH 最便宜，借记卡、信用卡更贵）和金额变化，首笔优惠也可能让数字更好看。
+
+**选渠道的三条经验法则**：① 小额、经常汇：看总成本占比，优先中间价换汇的平台；② 大额、单次汇：先算银行电汇的全包价（手续费＋电讯费＋中转行扣费＋汇率差），再跟平台比；③ 永远在付款前看"对方实际收到多少"，不要只看"手续费 0 元"——"零手续费"的平台通常把成本藏在汇率里。
+
+### 9. 骗局识别：四句话，遇到就停
+
+1. **"汇率比银行好很多"**——高出市场价的汇率，差价就是你的本金。私下换汇没有"优惠汇率"，只有"还没出事"。
+2. **"先打钱，截图为证"**——对方先要你付款、再以各种理由拖延放款，是换汇骗局的标准开场。
+3. **"公安／使领馆来电，说你涉嫌洗钱"**——公检法不会通过电话办案、不会让你把钱转到"安全账户"。纽约皇后区 35 万美元假公安案就是这个套路。
+4. **"用 USDT／虚拟货币中转一下，更快更便宜"**——虚拟货币中转的换汇同样属于非法买卖外汇；2021 年多部门通知已明确虚拟货币相关业务活动属于非法金融活动。
+
+**被骗或被冻卡之后怎么办**：① 立即联系银行，说明情况、申请止付或协助；② 报警并保留全部聊天记录、转账凭证；③ 卡被冻结时，先问银行要冻结机关的名称和电话，再带付款凭证去申诉，不要找"解冻中介"花钱疏通；④ 涉及美国税务申报问题的，咨询持牌税务师，不要自己猜。
+
+### 速查表：汇款前逐项打勾
+
+- [ ] 金额在 5 万美元便利化额度内吗？超额的话，材料（缴费通知单等）备齐了吗？
+- [ ] 用途是经常项目吗？买房、证券投资不能用这个额度。
+- [ ] 汇款路径是银行或持牌平台吗？没有经过私人换汇、没有借别人的额度。
+- [ ] 手续费、电讯费、中转行扣费、汇率差，四项都算过总成本了吗？
+- [ ] 从美国汇出：付款方式是银行账户或银行卡吗？（避开现金类付款的 1% 税）
+- [ ] 一年内从境外收受的赠与合计超过 10 万美元吗？超过要报 Form 3520。
+- [ ] 境外账户全年任一时点合计超过 1 万美元吗？超过要报 FBAR。
+
+### 相关阅读
+
+W-8 篇讲的是**股息预扣**：住中国炒美股，股息默认被预扣 30%，填对 W-8BEN，中美协定把税率压到 10%（/zh/blog/w8ben-dividend-withholding-guide）。183 天篇讲的是**非居民资本利得**：非居民卖美股一般不征资本利得税，但两套 183 天规则一个定身份、一个定税，税籍才决定 30% 平税是否触发（/zh/blog/nonresident-capital-gains-183-day-rule）。想先选券商再填表，看券商对比页（/zh/compare/broker）。
+
+
+---
+
+*本文仅为一般信息分享，不构成税务、法律或投资建议。费率、额度与申报规则以银行官网、IRS、FinCEN 及国家外汇管理局的最新公布为准；个案请咨询持牌专业人士。数据核实日期：2026 年 11 月 17 日。*`,
+    },
+    author: 'WealthEase Team',
+    date: '2026-11-17',
+    readTime: '16 min read',
+    category: 'Basics',
+    tags: ['remittance', 'cross-border transfer', 'SAFE', 'FBAR', 'Form 3520', 'structuring', 'Wise', 'foreign exchange'],
+  },
+
   ...lifeGuidePosts,
 ];
