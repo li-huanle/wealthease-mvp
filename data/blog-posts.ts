@@ -7682,5 +7682,318 @@ W-8 篇讲的是**股息预扣**：住中国炒美股，股息默认被预扣 30
     tags: ['remittance', 'cross-border transfer', 'SAFE', 'FBAR', 'Form 3520', 'structuring', 'Wise', 'foreign exchange'],
   },
 
+  {
+    slug: 'us-bank-account-opening-bonuses',
+    title: {
+      en: 'US Bank Account Opening Bonuses: 8 Banks Compared — How to Get Up to $1,000 (End of 2026)',
+      zh: '美国银行开户奖励对比：2026 年底 8 家银行，最高 $1,000 怎么拿',
+    },
+    excerpt: {
+      en: 'Eight banks, ten offers: Wells Fargo pays $500 for $1,000 in direct deposits within 90 days — the lowest bar in the $500 tier. Bank of America headlines $1,000 but requires an invitation and $15,000 in direct deposits. No payroll direct deposit? Chase Secure Banking pays $175 for ten transactions, and Citi pays $325 on Enhanced Direct Deposits that include ACH transfers and Zelle. This guide covers the full table, the W-8 exclusion at Wells Fargo, the tax reporting on Form 1099, and a pre-opening checklist.',
+      zh: '8 家银行、10 个 offer：Wells Fargo $500 门槛最低，90 天 direct deposit 累计 $1,000 就能拿；Bank of America 最高 $1,000 但要邀约、90 天 $15,000；没工资 direct deposit 也别空手走，Chase Secure Banking $175 只要 10 笔交易，Citi $325 的 Enhanced Direct Deposit 连自己 ACH 转账和 Zelle 都算。本文一次讲清总表、各家关键点、W-8 排除条款、1099 报税与开户前速查表。',
+    },
+    content: {
+      en: `# US Bank Account Opening Bonuses: 8 Banks Compared — How to Get Up to $1,000 (End of 2026)
+
+### The short version: three sentences
+
+1. **The easiest $500 right now is Wells Fargo's.** Just $1,000 in direct deposits within 90 days — the lowest bar in the $500 tier — open by January 12, 2027.
+2. **The biggest headline is Bank of America's $1,000, with a catch.** It takes $15,000 in direct deposits within 90 days, and the official terms require entering through a direct communication from Bank of America; without an invitation, plan on the public $500 tier.
+3. **No payroll direct deposit? You can still collect.** Chase Secure Banking pays $175 for ten transactions, and Citi pays $325 on "Enhanced Direct Deposits" that include ACH transfers from your own other bank and Zelle — no paycheck required.
+
+Pick your path: you have payroll direct deposit — Sections 2–3. You have savings to park — Section 4. You just arrived in the US with no paycheck yet — Section 5. You want online-only with no monthly fee — Section 6. You live in a U.S. Bank or PNC state — Section 7. Account-opening and tax notes for Chinese Americans are in Section 8.
+
+### 1. The full table: 8 banks, 10 offers
+
+| Bank | Bonus | What it takes | Deadline | Monthly fee | Payout |
+|---|---|---|---|---|---|
+| Wells Fargo Everyday Checking | **$500** | $1,000+ qualifying direct deposits within 90 days | Jan 12, 2027 | $15 (waivable) | Within 30 days |
+| Bank of America Advantage Plus | **$100–$1,000** in tiers | Direct deposits totaling $2,000 / $5,000 / $10,000 / $15,000+ within 90 days | Jan 31, 2027 | $12 ($15 from Feb 19, 2027; waivable) | Within 60 days after the deposit period |
+| Chase Total Checking | **$300** (a $400 version runs in parallel) | One qualifying direct deposit within 90 days ($400 version: $1,000 total) | Jan 27, 2027 | $15 (waivable) | Within 15 days |
+| Chase Total Checking + Savings | **$900** | Checking requirement above + $15,000 new money in savings, held 90 days | Jan 27, 2027 | $15 + $5 (waivable) | Within 15 days |
+| Chase Secure Banking | **$175** | 10 qualifying transactions within 60 days, no direct deposit needed | Jan 27, 2027 | $4.95 (waivable) | Within 15 days |
+| Citi Regular Checking | **$325** ($475 combo) | Two or more Enhanced Direct Deposits totaling $3,000+ within 90 days | Jan 11, 2027 | $15 (waivable) | 90–120 days after opening |
+| U.S. Bank Smartly Checking | **$250 / $350 / $450** | Two or more direct deposits totaling $2,000+ / $5,000+ / $8,000+ within 90 days | Dec 30, 2026 | $12 (waivable) | Within 30 days |
+| SoFi Checking & Savings | Up to **$500** | $400 for $5,000 in direct deposits within 25 days, plus $100 for keeping direct deposit for 90 days | See §6 | $0 | Within 7 business days |
+| Capital One 360 Checking | **$250** | Two $500+ direct deposits within 75 days, or 20 debit purchases of $10+ | Ongoing | $0 | Within 135 days |
+| PNC Virtual Wallet | **$100 / $400** | Direct deposits totaling $500+ / $5,000+ within 60 days | Jan 7, 2027 | $7 / $25 (third-party figure) | 60–90 days |
+
+Every offer is for **new customers only**: if you already hold that bank's checking account, recently closed one, or recently earned the same bonus, you are generally ineligible. The look-back varies — Chase: one checking bonus every two years; Wells Fargo and U.S. Bank: 12 months; Citi: 365 days.
+
+### 2. The easiest $500: Wells Fargo Everyday Checking
+
+**$500 for $1,000 or more in qualifying direct deposits within 90 days.** Open by January 12, 2027, $25 minimum opening deposit, bonus paid within 30 days of qualifying.
+
+Why it is the easiest: $1,000 is the lowest direct-deposit bar in the $500 tier — Bank of America wants $10,000 for its $500 tier, SoFi wants $5,000. Wells Fargo's definition of "qualifying" is also relatively broad: payroll and government-benefit ACH deposits count, instant payments over RTP/FedNow count, and electronic credits to your debit card from third-party services over the Visa/Mastercard networks count.
+
+**Two things to watch:**
+
+- **The $15 monthly fee.** It is waived with $500 or more in qualifying electronic deposits per fee period, a $1,500 minimum daily balance, $5,000 in combined deposit and investment balances, an owner aged 17–24, or a qualifying military direct deposit. The same $1,000 in direct deposits that earns the bonus usually covers the $500 monthly waiver on its own.
+- **Wells Fargo explicitly excludes W-8 signers.** The official terms state the offer is not available to "non-resident aliens or foreign entities signing any version of IRS Form W-8." If you are a Chinese American whose tax status is nonresident alien (filing W-8), skip this one and look at the other banks. You are also ineligible if you earned a Wells Fargo checking bonus in the past 12 months or are a Wells Fargo employee.
+
+Note: an older $325 version is still live, expiring January 13, 2027, with identical requirements — since the terms are the same, take the $500 version.
+
+### 3. The biggest headline, $1,000: Bank of America's four tiers
+
+**To be clear first: the $1,000 tier is listed on Bank of America's official promotion page, but the terms require entering through a direct communication from Bank of America.** In October, third-party trackers still described the $1,000 tier as targeted-link-only; on November 24, the official promotion page publicly lists all four tiers. If you have not received an invitation from Bank of America, plan on the public $500 tier and treat $1,000 as invitation-only.
+
+The tiers (total Qualifying Direct Deposits within 90 days):
+
+| Bonus | Total direct deposits in 90 days |
+|---|---|
+| $100 | $2,000 |
+| $300 | $5,000 |
+| $500 | $10,000 |
+| $1,000 | $15,000+ |
+
+Open by January 31, 2027; the bonus is paid within 60 days after the 90-day deposit period ends. Eligible accounts: Advantage Plus, Advantage SafeBalance, and Advantage Relationship checking (Family Banking SafeBalance excluded). You are ineligible if you owned or co-owned a Bank of America personal checking account within the last 12 months.
+
+**Watch the monthly fee:** Advantage Plus is $12 a month now and **rises to $15 on February 19, 2027**. The fee can be waived with direct deposit and other conditions — a non-issue if your paycheck already lands at Bank of America, but worth tracking if you opened the account only for the bonus and plan to leave.
+
+### 4. The $900 combo: Chase Total Checking + Savings
+
+Chase pays the $900 in three parts when you open both accounts together:
+
+| Part | Amount | Requirement |
+|---|---|---|
+| Checking | $300 | Open Total Checking; one qualifying direct deposit within 90 days |
+| Savings | $200 | Open Chase Savings; deposit $15,000 in new money within 30 days, hold it for 90 days |
+| Extra | $400 | Open both at the same time and complete both sets of requirements |
+
+Checking alone pays $300. Both accounts must be opened by January 27, 2027; bonuses are paid within 15 days of completing the requirements.
+
+**Three things to watch:**
+
+- **The $15,000 sits for 90 days.** Chase Savings pays 0.01% APY, so weigh the opportunity cost: if the money would otherwise sit in a low-yield account anyway, the extra $400 is easy money; if you would have to pull it out of a high-yield savings account, do the math first.
+- **Two versions of the $300/$400 offer run in parallel.** The public coupon version is $300 (third-party recheck of Chase's offer page on November 18, 2026: no minimum direct deposit amount); a $400 version runs alongside it (NerdWallet and The Money Manual, checked October–November: $1,000 in total direct deposits within 90 days). Chase pays whatever amount the page you enroll from shows — check the offer page before applying rather than taking the figure in this article as final.
+- **The strictest eligibility.** No existing Chase checking or savings account; no Chase account closed within 90 days or closed with a negative balance within the last 3 years; one new checking account bonus every two years. Total Checking carries a $15 monthly fee, waived with $500 or more in monthly direct deposits; Savings is $5 a month. The bonus counts as interest and is reported on Form 1099-INT (Form 1042-S for nonresident aliens).
+
+### 5. No payroll direct deposit? Chase Secure Banking $175 and Citi $325
+
+These two are built for people without a regular paycheck landing by direct deposit — international students, recent arrivals, freelancers.
+
+**Chase Secure Banking: $175, no direct deposit required.** Complete 10 qualifying transactions within 60 days of opening: debit card purchases, Zelle, ACH credits, mobile check deposits, and online bill payments all count. $0 to open, $4.95 a month (waived with $250 or more in qualifying electronic deposits per statement period, or an owner aged 17–24), offer ends January 27, 2027, bonus paid within 15 days. No overdraft fees — a solid first US bank account.
+
+**Citi Regular Checking: $325, with the most flexible definition of direct deposit anywhere.** You need two or more "Enhanced Direct Deposits" (EDD) totaling $3,000 or more within 90 days. Citi's EDD covers more than payroll: **ACH transfers from another bank, Zelle, Venmo, and PayPal (processed via ACH) all count**. In other words, you can move $3,000 from your own account at another bank and qualify — the single biggest selling point of this offer. The bonus is paid 90–120 days after opening.
+
+Citi also offers a $475 combo: in addition to the above, open a Citi Savings account within 45 days, bring in $5,000 in new money, and keep at least $5,000 every day from day 46 through day 90. Two caveats: the $475 terms say you must have received a communication from Citibank to participate, and it may be limited to select markets (New York, California, and others); and **the monthly-fee waiver tightens on January 1, 2027** — from $250 to $1,000 in monthly EDD to waive the $15 fee. You are ineligible if you owned a Citi checking account in the last 365 days.
+
+### 6. Online-only, zero monthly fee: SoFi up to $500 and Capital One 360 $250
+
+**SoFi Checking & Savings: up to $500, no monthly fee.** Two steps: within 25 days of your first eligible direct deposit, $1,000–$4,999.99 in total direct deposits earns $50 and $5,000 or more earns $400; keep the direct deposit going for 90 consecutive days and SoFi adds another $100 — $150 or $500 in total. The bonus lands within 7 business days, among the fastest here.
+
+The end date has two versions: SoFi's official terms run the base promotion to December 31, 2027, while third-party trackers list the $500 version (with the $100 retention kicker) as ending December 30, 2026 — go by the official terms and confirm the $100 kicker on the page when you apply. One more difference: SoFi reports the bonus as miscellaneous income, possibly on Form 1099-MISC rather than 1099-INT, so do not file it as interest income.
+
+**Capital One 360 Checking: $250, ongoing, no monthly fee, no minimum balance.** Two ways to earn it — pick one:
+
+- **CHECKING250:** two qualifying direct deposits of $500 or more each within 75 days of opening (payroll, pension, government payments);
+- **DEBIT250:** 20 debit card purchases of $10 or more within 75 days — no paycheck needed.
+
+The bonus is paid within 135 days of opening (the slowest payout here — only pick this one if you can wait). You are ineligible if you held Capital One 360, Simply, or Total Control Checking at any time since January 1, 2024. The bonus is reported on Form 1099-INT.
+
+### 7. Geography-limited: U.S. Bank $450 and PNC $400
+
+Both pay well, but check your state and the window first.
+
+**U.S. Bank Smartly Checking: $250 / $350 / $450 in tiers.** Two or more direct deposits within 90 days totaling $2,000–$4,999.99 / $5,000–$7,999.99 / $8,000 or more. **The window is short: open between November 12 and December 30, 2026** — miss it and you wait for the next round. $25 minimum opening deposit (fund within 60 days), enroll in mobile or online banking within 90 days, bonus paid within 30 days as "adjusted interest" on Form 1099-INT. The $12 monthly fee is waived with a $1,500 average balance, $1,500 or more in monthly direct deposits, or a Smartly Visa Signature credit card. You are ineligible if you held a U.S. Bank consumer checking account or earned a bonus in the past 12 months.
+
+**PNC Virtual Wallet: $100 / $400 in tiers.** Qualifying direct deposits totaling $500 or more within 60 days earn $100; $5,000 or more earn $400 (Performance Select). The offer runs September 1, 2026 through January 7, 2027, and the reward is credited 60–90 days after you qualify. **The offer varies by market** — PNC only operates in select states, so enter your ZIP code on PNC's site to confirm your area participates before applying. Monthly fees are $7 / $25 (third-party figure; confirm on PNC's site). You are ineligible with an existing PNC checking account or one closed in the past 12 months.
+
+### 8. Five things Chinese Americans should know before opening
+
+**① Start with whether you have an SSN.** Most banks' online applications only accept a Social Security number. Without one, major banks including Bank of America, Chase, Citibank, and PNC accept an ITIN instead — **but only in a branch**. Bring your passport, a second ID, and proof of a US address (lease, utility bill), and call the branch first to confirm what it accepts — execution varies by branch, so do not make a wasted trip.
+
+**② Wells Fargo excludes W-8 signers outright.** If your tax status is nonresident alien (you sign a W-8 when opening), Wells Fargo's $500 is not available to you (see §2). The other banks' terms do not carry this explicit exclusion, but approval is still up to the bank.
+
+**③ The bonus is taxable.** Bank checking bonuses are generally treated as interest income, and the bank will send a Form 1099-INT the following January (SoFi is the exception, with a possible 1099-MISC; nonresident aliens get a 1042-S). A $500 bonus is not $500 after tax — apply your marginal rate. International students: do not forget this line when filing.
+
+**④ Do not open several accounts at once.** Banks check ChexSystems (the banking industry's consumer report) when you open an account, and a burst of new accounts can get you declined. Open one at a time, collect the bonus, and wait before the next. Chase also limits you to one new checking bonus every two years, so plan the order.
+
+**⑤ Do not close the account right after the bonus posts.** Most offers require keeping the account open for at least six months; closing early can trigger a clawback of the bonus, and some banks charge a $25–$50 early-closure fee (Bank of America, Chase, Wells Fargo, and Citi generally do not charge one on standard checking, but the bonus clawback terms differ by offer). The safe play: leave the account open for six months after the bonus posts, and read the holding-period clause in the offer terms before you open. Same for the monthly fee: keep the waiver condition met so fees do not eat the bonus.
+
+### 9. Four steps to collect
+
+1. **Order by deadline and your direct-deposit situation.** Wells Fargo $500 (Jan 12, 2027) expires first and has the lowest bar — take it first. Chase $900 combo (Jan 27, 2027) next, Bank of America (Jan 31, 2027) after that. U.S. Bank's window is the shortest (Dec 30, 2026) — if you are in its footprint, do it first.
+2. **Open through the offer page, not the regular application.** Most bonuses require opening from the bank's promotion page or with a promo code (Capital One: CHECKING250 / DEBIT250). The wrong entry point means no bonus. Screenshot the offer terms after you enroll.
+3. **Set up direct deposit and watch the clock.** Payroll direct deposit goes through your employer's HR. Without payroll, use Citi's EDD (your own ACH transfer), Chase Secure Banking (10 transactions), or Capital One's DEBIT250 (20 debit purchases). Put the day-90 deadline in your calendar.
+4. **Check the 1099 when it arrives.** Banks send Form 1099-INT or 1099-MISC by the end of the following January — report it when you file. Keep the account open for six months after the bonus posts before considering closure.
+
+### Pre-opening checklist
+
+- [ ] Have I earned this bank's bonus or closed an account there in the last 12 months (Chase: two years)?
+- [ ] Did I open through the offer page or with the promo code — and screenshot the terms?
+- [ ] Do I know what counts as a direct deposit here? (Chase: payroll/pension/government benefits only; Citi: Zelle and ACH transfers count; Wells Fargo: ACH/RTP/FedNow.)
+- [ ] Which days are the qualification window — 90, 60, or 25 days? Is day 90 in my calendar?
+- [ ] Can I meet the monthly-fee waiver? (Bank of America's fee rises to $15 on Feb 19, 2027; Citi's waiver threshold rises to $1,000/month on Jan 1, 2027.)
+- [ ] Am I a nonresident alien (W-8)? If so, skip Wells Fargo.
+- [ ] No SSN? Is the branch appointment booked, with passport, second ID, and address proof ready?
+- [ ] Six-month holding period after the bonus — noted?
+
+---
+
+### Related reading
+
+The W-8BEN guide covers **dividend withholding**: dividends from U.S. stocks are withheld at 30% by default, but the right W-8BEN form brings the U.S.–China treaty rate down to 10% (/en/blog/w8ben-dividend-withholding-guide). The 183-day guide covers **nonresident capital gains**: nonresidents generally owe no U.S. tax on capital gains, but two rules share the number 183 — one decides residency, the other decides tax (/en/blog/nonresident-capital-gains-183-day-rule). The ITIN guide explains how to apply for an Individual Taxpayer Identification Number (/en/blog/itin-application-guide-2026). The remittance guide covers the $50,000 quota and why private currency swaps are off-limits (/en/blog/cross-border-remittance-pitfalls). Still choosing a broker first? See the broker comparison (/en/compare/broker).
+
+
+---
+
+*This article is general information only and does not constitute tax, legal, or investment advice. Bonus amounts, requirements, and deadlines follow the latest publications on each bank's official offer page; offers can end early — always re-check the bank's own page before applying. Consult a licensed professional for your own case. Figures verified November 24, 2026.*`,
+      zh: `# 美国银行开户奖励对比：2026 年底 8 家银行，最高 $1,000 怎么拿
+
+### 先说结论：三句话
+
+1. **2026 年底最好拿的一笔是 Wells Fargo 的 $500。** 只需 90 天内 $1,000 direct deposit，门槛是全场最低的一档，截止 2027 年 1 月 12 日。
+2. **最高的是 Bank of America 的 $1,000，但有门槛。** 90 天内 direct deposit 累计满 $15,000，且官网条款要求经 BoA 的直接邀约链接进入；没有邀约，先按公开的 $500 档规划。
+3. **没有工资 direct deposit 也别空手走。** Chase Secure Banking $175（10 笔交易就行）、Citi $325（自己从他行 ACH 转钱、Zelle 都算数），这两条路不靠发工资。
+
+按你的情况选：有工资 direct deposit，看第 2–3 节；存款多、能锁 $15,000，看第 4 节；刚到美国、还没工资，看第 5 节；只要纯线上、零月费，看第 6 节；住在 U.S. Bank 或 PNC 覆盖的州，看第 7 节。开户与报税的注意事项在第 8 节。
+
+### 1. 总表：8 家银行、10 个 offer 一览
+
+| 银行 | 奖励 | 核心要求 | 截止日 | 月费 | 到账 |
+|---|---|---|---|---|---|
+| Wells Fargo Everyday Checking | **$500** | 90 天内 qualifying direct deposit 累计 $1,000+ | 2027-01-12 | $15（可免） | 达标后 30 天内 |
+| Bank of America Advantage Plus | **$100–$1,000** 四档 | 90 天内 DD 累计 $2,000／$5,000／$10,000／$15,000+ | 2027-01-31 | $12（2027-02-19 起 $15；可免） | 存款期结束后 60 天内 |
+| Chase Total Checking | **$300**（另有 $400 并行版） | 90 天内一笔 qualifying DD（$400 版：累计 $1,000） | 2027-01-27 | $15（可免） | 达标后 15 天内 |
+| Chase Total Checking＋Savings | **$900** | 上述 checking 要求＋储蓄存 $15,000 新资金、保持 90 天 | 2027-01-27 | $15＋$5（可免） | 达标后 15 天内 |
+| Chase Secure Banking | **$175** | 60 天内 10 笔 qualifying 交易，无需 DD | 2027-01-27 | $4.95（可免） | 达标后 15 天内 |
+| Citi Regular Checking | **$325**（组合 $475） | 90 天内 2 笔以上 Enhanced Direct Deposit 合计 $3,000+ | 2027-01-11 | $15（可免） | 开户后 90–120 天 |
+| U.S. Bank Smartly Checking | **$250／$350／$450** | 90 天内 2 笔以上 DD 合计 $2,000+／$5,000+／$8,000+ | 2026-12-30 | $12（可免） | 达标后 30 天内 |
+| SoFi Checking & Savings | 最高 **$500** | 25 天内 DD 满 $5,000 拿 $400，连续 90 天保持 DD 再加 $100 | 见 §6 | $0 | 7 个工作日内 |
+| Capital One 360 Checking | **$250** | 75 天内 2 笔 $500+ DD，或 20 笔 $10+ 借记消费 | 长期有效 | $0 | 开户后 135 天内 |
+| PNC Virtual Wallet | **$100／$400** | 60 天内 DD 累计 $500+／$5,000+ | 2027-01-07 | $7／$25（第三方口径） | 60–90 天 |
+
+下面按"谁最适合拿"分节细说每家的关键点。所有 offer 都只给**新客户**：已持有同家 checking、或近期关过户、或近期拿过同家奖励的，一般都没资格，具体年限各家不同（Chase：两年内只能拿一次；Wells Fargo／U.S. Bank：12 个月；Citi：365 天）。
+
+### 2. 最好拿的 $500：Wells Fargo Everyday Checking
+
+**奖励 $500，条件是 90 天内 qualifying direct deposit 累计满 $1,000。** 开户截止 2027 年 1 月 12 日，$25 最低开户存款，奖励达标后 30 天内到账。
+
+为什么说它最好拿：$1,000 的 DD 门槛是 $500 档里最低的——同样是 $500，Bank of America 要 $10,000 DD、SoFi 要 $5,000。Wells Fargo 对"qualifying"的定义也相对宽：工资、政府福利等 ACH direct deposit 算数，RTP／FedNow 即时支付算数，通过 Visa／Mastercard 网络打到借记卡的第三方入账也算数。
+
+**两个注意点：**
+
+- **月费 $15。** 每月 qualifying 电子入账满 $500、日均余额 $1,500、综合存款投资余额 $5,000、户主 17–24 岁、或军人 direct deposit，满足其一即可免。拿奖励的那 $1,000 DD 本身通常就能顺带满足"每月 $500 电子入账"这一项。
+- **Wells Fargo 直接排除持 W-8 的非居民外国人。** 官方条款原文：offer 不适用于"non-resident aliens or foreign entities signing any version of IRS Form W-8"（签署任何版本 W-8 表的非居民外国人或外国实体）。如果你是在美华人、但税务身份是非居民外国人（持 W-8），这家直接跳过，看其他银行。12 个月内拿过 Wells Fargo checking 奖励的、WF 员工，也没资格。
+
+顺带一提：Wells Fargo 还有个老的 $325 版本也在售，截止 2027 年 1 月 13 日，条件与 $500 版完全一样——既然条件相同，优先走 $500 版。
+
+### 3. 最高 $1,000：Bank of America 四档阶梯
+
+**先说清楚：$1,000 档在 BoA 官网 promotion 页上，但条款要求经 BoA 的直接邀约链接进入才算报名。** 10 月时第三方站还写着"$1,000 仅 targeted 链接"；11 月 24 日复核时，官网 promotion 页已公开列出四档。没有收到 BoA 邀约的读者，先按公开的 $500 档规划，$1,000 档以实际收到的邀约为准。
+
+四档阶梯（90 天内 Qualifying Direct Deposits 累计数）：
+
+| 奖励 | 90 天内 DD 累计 |
+|---|---|
+| $100 | $2,000 |
+| $300 | $5,000 |
+| $500 | $10,000 |
+| $1,000 | $15,000+ |
+
+开户截止 2027 年 1 月 31 日，奖励在 90 天存款期结束后 60 天内到账。适用账户：Advantage Plus、Advantage SafeBalance、Advantage Relationship 三种 checking（家庭版 SafeBalance 除外）。12 个月内持有过 BoA 个人 checking 的没有资格。
+
+**月费注意：** Advantage Plus 现在是 $12／月，**2027 年 2 月 19 日起涨到 $15**。月费可用每月 direct deposit 等方式免除——如果你本来就把工资打进 BoA，月费基本不是问题；如果只是为奖励开户、拿完就走，记得在奖励到账前保持免月费条件，别让月费吃掉奖励。
+
+### 4. 组合拿 $900：Chase Total Checking＋Savings
+
+Chase 的 offer 是两户一起开、奖励分三笔：
+
+| 哪一笔 | 金额 | 要求 |
+|---|---|---|
+| Checking | $300 | 开 Total Checking，90 天内一笔 qualifying direct deposit |
+| Savings | $200 | 开 Chase Savings，30 天内存入 $15,000 新资金、保持 90 天 |
+| 额外奖励 | $400 | 两户同时开、两边要求都完成 |
+
+三笔合计 $900。只开 checking 也行，单拿 $300。两户都要在 2027 年 1 月 27 日前开出，奖励在达标后 15 天内到账。
+
+**三个注意点：**
+
+- **$15,000 要锁 90 天。** Savings 利率只有 0.01% APY，$15,000 放 90 天的机会成本要自己算——如果这笔钱本来就躺在低息账户里，$400 额外奖励很划算；如果要从高息储蓄里挪出来，先算一笔账。
+- **Chase 有两个 $300／$400 并行版本。** 公开 coupon 版是 $300（2026 年 11 月 18 日第三方复核官网口径：无最低 DD 金额）；另有 $400 版本并行（NerdWallet 与 The Money Manual 10–11 月核对的官网口径：90 天内累计 $1,000 DD）。Chase 按你报名时页面显示的金额付奖励，申请前以 offer 页为准，别按本文的数字硬套。
+- **资格限制最严。** 已有 Chase checking 或 savings 账户的不行；90 天内关过 Chase 账户的、3 年内负余额关户的都不行；每两年只能拿一次新 checking 开户奖励。Total Checking 月费 $15，每月 DD 满 $500 可免；Savings 月费 $5。奖励计为利息收入，报 1099-INT（非居民外国人适用 1042-S）。
+
+### 5. 没有工资 direct deposit 也能拿：Chase Secure Banking $175＋Citi $325
+
+这两家是给"没有固定工资入账"的人准备的——留学生、刚到美国还没入职、自由职业者。
+
+**Chase Secure Banking：$175，不要 direct deposit。** 开户后 60 天内完成 10 笔 qualifying 交易就行：借记卡消费、Zelle、ACH 入账、手机存支票、在线账单支付都算。$0 开户，月费 $4.95（每月 qualifying 电子入账 $250+ 或户主 17–24 岁可免），截止 2027 年 1 月 27 日，奖励 15 天内到账。没有透支费，适合当第一张美国银行卡。
+
+**Citi Regular Checking：$325，direct deposit 的定义全场最宽松。** 要求是 90 天内 2 笔以上"Enhanced Direct Deposit"（EDD）合计 $3,000+。Citi 的 EDD 不只认工资：**他行 ACH 转账、Zelle、Venmo、PayPal（经 ACH 处理）都算**。也就是说，没有工资也能自己从别的银行转 $3,000 过来达标——这是 Citi 这个 offer 最大的卖点。奖励在开户后 90–120 天到账。
+
+Citi 还有个 $475 组合版：除上述要求外，45 天内开一个 Citi Savings、存入 $5,000 新资金，并在开户后第 46–90 天每天保持 $5,000。注意两点：$475 版条款注明须收到 Citi 邀约参与、且可能限部分市场（纽约、加州等）；以及**月费免除条件 2027 年 1 月 1 日起收紧**——每月 EDD 从 $250+ 涨到 $1,000+ 才能免 $15 月费。365 天内持有过 Citi checking 的没有资格。
+
+### 6. 纯线上、零月费：SoFi 最高 $500＋Capital One 360 $250
+
+**SoFi Checking & Savings：最高 $500，没有月费。** 分两步：首次 DD 后 25 天内，DD 累计满 $1,000 拿 $50、满 $5,000 拿 $400；再连续 90 天保持 direct deposit，额外加 $100。合计 $150 或 $500。奖励在达标后 7 个工作日内到账，是全场到账最快的之一。
+
+截止日有两个口径：SoFi 官网基础版条款写到 2027 年 12 月 31 日，第三方汇总称含 $100 续存奖励的 $500 版本截止 2026 年 12 月 30 日——以官网条款为准，$100 续存奖励按申请时页面口径确认。还有一点与众不同：SoFi 的奖励计为杂项收入、可能报 1099-MISC（不是 1099-INT），报税时别按利息收入填错表。
+
+**Capital One 360 Checking：$250，长期有效、无月费、无最低余额。** 两种拿法，任选其一：
+
+- **CHECKING250：** 开户后 75 天内收到 2 笔 $500+ 的 qualifying direct deposit（工资、养老金、政府付款）；
+- **DEBIT250：** 开户后 75 天内用借记卡完成 20 笔 $10+ 的消费——没有工资也能拿。
+
+奖励在开户后 135 天内到账（全场最慢，等得起再选这家）。2024 年 1 月 1 日以来持有过 Capital One 360／Simply／Total Control Checking 的没有资格。奖励报 1099-INT。
+
+### 7. 地区限定：U.S. Bank $450＋PNC $400
+
+这两家奖励不低，但要看你住哪、以及开户窗口。
+
+**U.S. Bank Smartly Checking：$250／$350／$450 三档。** 90 天内 2 笔以上 direct deposit 合计满 $2,000／$5,000／$8,000，对应三档奖励。**开户窗口很短：2026 年 11 月 12 日至 12 月 30 日**，错过这轮要等下一轮。$25 最低开户存款（60 天内存入），90 天内注册手机银行或网银，奖励 30 天内到账、计为利息收入报 1099-INT。月费 $12，日均余额 $1,500+、每月 DD $1,500+、或持有 Smartly Visa Signature 信用卡可免。12 个月内持有过 U.S. Bank 个人 checking 或拿过奖励的没有资格。
+
+**PNC Virtual Wallet：$100／$400 两档。** 60 天内 qualifying direct deposit 累计满 $500 拿 $100、满 $5,000 拿 $400（Performance Select 版）。offer 有效期 2026 年 9 月 1 日至 2027 年 1 月 7 日，奖励 60–90 天到账。注意：**offer 因市场而异**，PNC 只在部分州有分行覆盖，开户前先在官网输入邮编确认你所在地区是否参与。月费 $7／$25（第三方汇总口径，以官网为准）。已有 PNC checking 或 12 个月内关过户的没有资格。
+
+### 8. 在美华人开户前必读：五件事
+
+**① 先看你有没有 SSN。** 多数银行的线上开户系统只接受 SSN；没有 SSN，BoA、Chase、Citi、PNC 等大行接受 ITIN 代替，但**须到分行办理**。带上护照＋第二证件＋美国地址证明（租房合同、水电账单），出发前先电话确认该分行接受的材料——各分行执行有差异，别白跑一趟。
+
+**② Wells Fargo 直接排除 W-8。** 如果你是税务上的非居民外国人（开户时签 W-8），Wells Fargo 的 $500 与你无关（见 §2）。其他银行的条款里没有这条明文排除，但开户时仍以银行实际审核为准。
+
+**③ 奖励要报税。** 银行 checking 奖励一般计为利息收入，银行会在次年发 1099-INT（SoFi 例外，发 1099-MISC；非居民外国人适用 1042-S）。奖励不是"白拿的钱"，报税时要申报——$500 奖励按你的边际税率，税后实际到手要打个折。留学生报税时别漏了这一笔。
+
+**④ 别短时间连开多家。** 银行开户时会查 ChexSystems（银行版征信记录）；短时间内连开多家可能被拒。建议一次只开一家，拿到奖励、过一段时间再开下一家。Chase 还有"两年内只能拿一次 checking 开户奖励"的限制，排队时先算好顺序。
+
+**⑤ 奖励到账前别关户，到账后也别急着关。** 多数 offer 要求账户至少保留 6 个月，提前关户可能被扣回奖励；另有银行收 $25–$50 不等的提前关户费（BoA、Chase、Wells Fargo、Citi 的标准 checking 一般不收这笔费，但奖励追回条款各家不同）。稳妥做法：奖励到账后，留够 6 个月再关；有关户打算的，先读一遍 offer 条款里的持有期要求。月费也一样：为奖励开的户，记得保持免月费条件，别让月费慢慢吃掉奖励。
+
+### 9. 四步拿奖励
+
+1. **先排顺序：** 按"截止日＋你的 DD 情况"排。Wells Fargo $500（2027-01-12）最先到期、门槛最低，优先；Chase $900 组合（2027-01-27）次之；BoA（2027-01-31）再次；U.S. Bank（2026-12-30）窗口最短，住在覆盖区的先办。
+2. **开户走 offer 页，别走普通开户入口。** 多数奖励要求通过银行的 promotion 页面开户、或使用 promo code（Capital One：CHECKING250／DEBIT250），走错入口等于白开。开户后截图保存 offer 条款页。
+3. **设好 direct deposit，盯住窗口期。** 工资 DD 找雇主 HR 改账号；没有工资的，用 Citi EDD（自己 ACH 转）、Chase Secure（10 笔交易）、Capital One DEBIT250（20 笔消费）这三条路。把"第 90 天"写进日历。
+4. **奖励到账后核对 1099。** 次年 1 月底银行会发 1099-INT 或 1099-MISC，报税时申报；奖励到账后留够 6 个月再考虑关户。
+
+### 速查表：开户前逐项打勾
+
+- [ ] 这家我 12 个月（Chase：两年）内没拿过奖励、没关过户？
+- [ ] 我是走 offer 页／promo code 开户的吗？条款页截图存了吗？
+- [ ] direct deposit 的定义我确认了吗？（Chase 只认工资／养老金／政府福利；Citi 连 Zelle／ACH 转账都算；Wells Fargo 认 ACH／RTP／FedNow）
+- [ ] 达标窗口是哪几天？（90 天／60 天／25 天，各家不同）第 90 天写进日历了吗？
+- [ ] 月费免除条件我满足吗？（BoA 月费 2027-02-19 起涨到 $15；Citi 免月费门槛 2027-01-01 起涨到 $1,000／月）
+- [ ] 我是非居民外国人（W-8）吗？是的话 Wells Fargo 跳过。
+- [ ] 没有 SSN 的话，分行预约打了吗？护照＋第二证件＋地址证明带齐了吗？
+- [ ] 奖励到账后，6 个月持有期记下了吗？
+
+---
+
+### 相关阅读
+
+W-8BEN 篇讲的是**股息预扣**：住中国炒美股，股息默认被预扣 30%，填对 W-8BEN，中美协定把税率压到 10%（/zh/blog/w8ben-dividend-withholding-guide）。183 天篇讲的是**非居民资本利得**：非居民卖美股一般不征资本利得税，但两套 183 天规则一个定身份、一个定税，税籍才决定 30% 平税是否触发（/zh/blog/nonresident-capital-gains-183-day-rule）。ITIN 篇讲的是**个人纳税人识别号申请**：没有 SSN 怎么办、W-7 表怎么填、多久能拿到（/zh/blog/itin-application-guide-2026）。汇款篇讲的是**跨境汇款避坑**：5 万美元额度怎么用、私下换汇为什么不能碰（/zh/blog/cross-border-remittance-pitfalls）。想先选券商再填表，看券商对比页（/zh/compare/broker）。
+
+
+---
+
+*本文仅为一般信息分享，不构成税务、法律或投资建议。奖励金额、要求与截止日以各银行官网 offer 页最新公布为准；offer 可能提前结束，申请前请在银行官网复核。个案请咨询持牌专业人士。数据核实日期：2026 年 11 月 24 日。*
+
+---`,
+    },
+    author: 'WealthEase Team',
+    date: '2026-11-24',
+    readTime: '15 min read',
+    category: 'Banking',
+    tags: ['bank account bonus', 'checking account', 'direct deposit', 'Wells Fargo', 'Bank of America', 'Chase', 'Citi', 'SoFi', 'US banks'],
+  },
+
   ...lifeGuidePosts,
 ];
